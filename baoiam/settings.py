@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     
     # Custom Apps
     'core',
+    'userauths'
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,5 @@ JAZZMIN_SETTINGS = {
     #"site_logo": "logo.png",
     "copyright": "Baoiam.com",
 }
+
+AUTH_USER_MODEL = 'userauths.User'
