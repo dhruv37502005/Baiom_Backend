@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: hidden;
+}
+.cir{
+    position: absolute;
+    top: -118%;
+    left: 48%;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background-image: linear-gradient(-45deg, #ff890b 0%, #f54500 100%);
+    z-index: -1;
+}
+.box1{
+    width: 50%;
+    height: 80%;
+    /* background-color: lightblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+.container{
+    width: 100%;
+    height: auto;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px 0 80px;
+}
+h1{
+    font-size: 2.2rem;
+    color: #444;
+}
+form{
+    width: 100%;
+    height: fit-content;
+    /* background-color: orange; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.username, .email , .password , .passwordagain {
+    width: 100%;
+    max-width: 380px;
+    height: 55px;
+    padding: 0 6.4px;
+    background-color: #f0f0f0;
+    color: #acacac;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 55px;
+    overflow: hidden;
+}
+form .icon{
+    width: 55px;
+    height: 55px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form .inputbox{
+    width: 100%;
+    height: auto;
+    font-size: 1.1rem;
+
+}
+input{
+    width: 100%;
+    height:55px;
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-left: 5px;
+    color: #333;
+}
+input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+    /* opacity: 0; */
+  }
+.social{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.icons{
+    width: 100%;
+    height: 46px;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circle{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    /* background-color: red; */
+    margin: 0 7.2px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    text-decoration: none;
+    overflow: hidden;
+}
+.fab{
+    width:46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    text-align: center;
+    color: #333;
+    transition: ease 0.3s;
+}
+a{
+    text-decoration:none;
+}
+.circle:hover{
+    border:1px solid #ffa200;
+    color: #ffa200;
+}
+.circle .fab:hover{
+    color: #ffa200;
+}
+
+.subbtn{
+    width: 150px;
+    background: linear-gradient(45deg, #ff0000, #ffa200);
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.subbtn:hover {
+    background: linear-gradient(45deg, #ff9d00, #ff0000);
+  }
+
+.socialP{
+    padding: 11.5px 0;
+}
+
+.box2{
+    width: 50%;
+    height: 100%;
+    /* background-color: lightgreen; */
+    padding:48px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.oneAndSign{
+    width: 80%;
+    height: auto;
+    /* background-color: red; */
+    color:white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.oneAndSign h2{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.oneAndSign p{
+    padding: 0 10px 10px 10px;
+}
+.signinBtn{
+    width: 110px;
+    height: 35px;
+    background-color: transparent;
+    border-radius: 25px;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signinBtn a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+.img{
+    width: 100%;
+    height: 50%;
+}
+
+@media screen and (max-width:872px){
+    .main{
+        flex-direction: column;
+    }
+    .box1{
+        width: 100%;
+        height: 80%;
+        flex-direction: column;
+    }
+    .box2{
+        width: 100%;
+        height: 20%;
+        flex-direction: row;
+        padding: 0;
+    }
+    .oneAndSign{
+        width: 60%;
+        height: 100%;
+    }
+    .img{
+        width: 30%;
+        height: 100%;
+        padding: 0;
+    }
+    .oneAndSign h2{
+        font-weight: 600;
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+    .oneAndSign p{
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+    .cir{
+        top: 75%;
+        left: -100%;
+}
+}
