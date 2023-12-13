@@ -1,5 +1,5 @@
 # Baoiam_backend
 pip install django-jazzmin
 
-admin id: admin
+admin id: admin@gmail.com
       password: admin
