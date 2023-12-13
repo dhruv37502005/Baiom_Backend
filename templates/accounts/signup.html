@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup-page</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="{% static 'authentication/css/style.css' %}">
+  <title>signup-Page</title>
+ 
+</head>
+
+<body>
+  <div class="main">
+    <div class="cir"></div>
+    <div class="box1">
+      <div class="container">
+      <div class="Bimg">
+        <img src="{% static 'authentication/img/brand.png' %}" alt="" style="width: 200px;">
+      </div>
+      <h1>Sign up</h1>
+      {% comment %} <p>A varification link has been sent to you email account</p> {% endcomment %}
+      <p>{{error}}</p>
+      {% comment %} <form action="{% url 'signup' %}" method="POST">
+        {% csrf_token %} {% endcomment %}
+        <div class="username">
+          <div class="icon"><i class="fas fa-user"></i></div>
+          <div class="inputbox"><input type="text" name="username" class="" placeholder="Username"></div>
+        </div>
+        <div class="email">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <div class="inputbox">
+          <input type="text" name="email" class="" placeholder="Email">
+        </div></div>
+        <div class="password">
+          <div class="icon"><i class="fas fa-lock"></i></div>
+          <div class="inputbox">
+          <input type="password" name="password" class="" placeholder="Password">
+        </div>
+      </div>
+        <div class="passwordagain">
+          <div class="icon"><i class="fas fa-lock"></i></div>
+          <div class="inputbox">
+          <input type="password" name="passwordagain" class="form-control" placeholder="Confirm-Password">
+        </div></div>
+        <div>
+          <button class="subbtn" type="submit">SignUp</button><br>
+        </div>
+      </form>
+      <div class="social">
+        <p class="socialP">Or Sign up with social platforms</p>
+        <div class="icons">
+          <div class="circle"><a href="#"><i class="fab fa-facebook-f"></i>
+          </a></div>
+          <div class="circle"><a href="#"><i class="fab fa-twitter"></i>
+          </a></div>
+          <div class="circle"><a href="#"> <i class="fab fa-google"></i></a></div>
+          <div class="circle"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="box2">
+      <div class="oneAndSign">
+        <div class="oneOfUs">
+          <h2>One of us ?</h2>
+          <p>Those who see possibilities where other see limitations deserve to Be one in A Million!</p>
+        </div>
+        <div class="signinBtn">
+          <a href="#">SIGN IN</a>
+        </div>
+      </div>
+        <img src="{% static 'authentication/img/register.svg' %}" class="img" alt="">
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+</html>
