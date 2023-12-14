@@ -1,6 +1,6 @@
 from django.shortcuts import render
 # from userauths.forms import Useregisterform
-from userauths.form import Useregisterform
+from userauths.form import UseRegisterForm
 
 
 def signup(request):
@@ -8,7 +8,7 @@ def signup(request):
         print("user registered successfully")
     else:
         print("user canot be register")
-    form=Useregisterform()
+    form = UseRegisterForm()
     context={
         'form':form,
     }
