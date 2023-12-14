@@ -50,7 +50,7 @@
         class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow p-2"
         id="navbar"
       >
-        <a class="navbar-brand" href="{% url 'home' %}">
+        <a class="navbar-brand" href="#">
           <img src="../images/brand.png" alt="" />
         </a>
         <button
@@ -68,7 +68,7 @@
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Home</a>
+              {% comment %} <a class="nav-link" href="{% url 'home' %}">Home</a> {% endcomment %}
             </li>
             <li class="nav-item dropdown">
               <a
@@ -242,10 +242,16 @@
             </div>
           </div>
         </div>
-      <form method="post" action="https://script.google.com/macros/s/AKfycbyFrYBrD6X27DW9gKwXcJXyz2L-e52v_W7Tl_du5dDAnuvzM_hxF3COi2IiCOzbVzEnBg/exec" >
+      <form method="post"  >
+        {% csrf_token %}
         <div class="main-contact-wrapper">
           <div class="contact-right">
             <h2>Submit Your <span>Details</span></h2>
+            {% if thank_you_message %}
+            <div class="thank-you-message">
+              <p>{{ thank_you_message }}</p>
+            </div>
+            {% endif %}
 
             <div class="main-comment">
               <div class="input-icons">
@@ -374,7 +380,7 @@
             <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
             <p>
               <a
-                href="{% url 'home' %}"
+                href=""
                 class="text-white"
                 style="font-size: 0.9rem"
                 ><i class="fa-solid fa-angle-right mr-2"></i>Home</a

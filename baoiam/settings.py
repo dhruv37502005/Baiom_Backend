@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     
     # Custom Apps
     'core',
-    'userauths'
+    'userauths',
+    'contactapp',
 ]
 
 MIDDLEWARE = [
