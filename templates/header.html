@@ -95,7 +95,17 @@
         class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow p-2"
         id="navbar"
       >
-        <a class="navbar-brand" href="./index.html">
+        {% comment %} <a class="navbar-brand" href="./index.html"> {% endcomment %}
+          <!-- ... -->
+          <ul class="navbar-nav">
+            <li class="nav-item {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+              <a class="nav-link {% if request.resolver_match.url_name == 'index' %}disabled{% endif %}" href="{% url 'core:index' %}">Home</a>
+
+            <!-- Other navigation items -->
+          </ul>
+          
+<!-- ... -->
+
           <img src="images/brand.png" alt="" />
         </a>
         <button
@@ -112,9 +122,9 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
-            <li class="nav-item">
+            {% comment %} <li class="nav-item">
               <a class="nav-link" href="./index.html">Home</a>
-            </li>
+            </li> {% endcomment %}
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -253,13 +263,13 @@
               >
             </li>
             <li class="nav-item active">
-              <a class="nav-link" id="active" href="contact-us.html"
+              <a class="nav-link" id="active" href="{% url 'contactapp:contactus' %}"
                 >Contact Us</a
               >
             </li>
 
             <li class="nav-item">
-              <a href="signup.html">
+              <a href="{% url 'userauths:signup' %}">
                 <button class="btn-1">Login</button></a
               >
             </li>

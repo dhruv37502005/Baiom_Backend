@@ -30,7 +30,7 @@
       </div>
       <h1>Sign up</h1>
       {% comment %} <p>A varification link has been sent to you email account</p> {% endcomment %}
-      <p>{{errors}}</p>
+      <p>{{form.errors}}</p>
       <form method="POST">
         {% csrf_token %} 
         <div class="username">
