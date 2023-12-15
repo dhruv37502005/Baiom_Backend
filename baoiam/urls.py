@@ -24,8 +24,8 @@ from userauths import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    path('userauth/', include('userauths.urls')),
-    path('',views.signup,name='signup'),
+    path('userauths/', include('userauths.urls')),
+    path('signup/',views.signup,name='signup'),
     path('', include('contactapp.urls')),
 ]
 

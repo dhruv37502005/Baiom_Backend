@@ -12,10 +12,6 @@ def contactus(request):
         contact_obj = contact(name=name, email=email, phone=phone, content=message)
         contact_obj.save()
 
-        return render(request, 'contact-page/index.html', {'thank_you_message': 'Thank you for contacting us!'})
+        return render(request, 'contact-us.html', {'thank_you_message': 'Thank you for contacting us!'})
 
-    return render(request, 'contact-page/index.html') 
-
-
-
-# Create your views here.
+    return render(request, 'contact-us.html') 

@@ -30,28 +30,28 @@
       </div>
       <h1>Sign up</h1>
       {% comment %} <p>A varification link has been sent to you email account</p> {% endcomment %}
-      <p>{{error}}</p>
-      {% comment %} <form action="{% url 'signup' %}" method="POST">
-        {% csrf_token %} {% endcomment %}
+      <p>{{errors}}</p>
+      <form method="POST">
+        {% csrf_token %} 
         <div class="username">
           <div class="icon"><i class="fas fa-user"></i></div>
-          <div class="inputbox"><input type="text" name="username" class="" placeholder="Username"></div>
+          <div class="inputbox">{{ form.username}}</div>
         </div>
         <div class="email">
           <div class="icon"><i class="fas fa-envelope"></i></div>
           <div class="inputbox">
-          <input type="text" name="email" class="" placeholder="Email">
+            {{ form.email}}
         </div></div>
         <div class="password">
           <div class="icon"><i class="fas fa-lock"></i></div>
           <div class="inputbox">
-          <input type="password" name="password" class="" placeholder="Password">
+            {{ form.password1}}
         </div>
       </div>
         <div class="passwordagain">
           <div class="icon"><i class="fas fa-lock"></i></div>
           <div class="inputbox">
-          <input type="password" name="passwordagain" class="form-control" placeholder="Confirm-Password">
+            {{ form.password2}}
         </div></div>
         <div>
           <button class="subbtn" type="submit">SignUp</button><br>
