@@ -39,14 +39,14 @@ def signup(request):
 def login_view(request):
     if request.user.is_authenticated:
         messages.warning(request, f"You are already logged in as {request.user.username}")
-        return redirect("core:index")
+        
     
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
         
         try:
-            user = User.objects.get(email=email)
+            user = User.objects.get(email = email)
             
         except:
             messages.warning(request, f"User with {email} does not exist")
