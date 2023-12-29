@@ -63,7 +63,7 @@ def login_view(request):
         'title': 'Login',
     }
 
-    return render(request, 'login.html', context)
+    return render(request, 'login.html', context , )
 
 
 def logout_view(request):

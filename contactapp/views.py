@@ -14,4 +14,4 @@ def contactus(request):
 
         return render(request, 'contact-us.html', {'thank_you_message': 'Thank you for contacting us!'})
 
-    return render(request, 'contact-us.html') 
+    return render(request, 'contact-us.html', {'is_contactus_page': True})
