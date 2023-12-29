@@ -65,11 +65,20 @@
     <link rel="preload" as="image" href="images/Full time support/2.jpg" />
     <link rel="preload" as="image" href="images/image-1.jpg" />
 
+    {% if is_index_page %}
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}" />
+    {% endif %}
+
+    {% if is_contactus_page %}
+    <!-- Include CSS file for the "contactus" page -->
+    <link rel="stylesheet" type="text/css" href="{% static 'contact-page/css/contact.css' %}">
+    {% endif %}
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css"
     />
+    
     <link rel="stylesheet" href="{% static 'home/css/otp.css' %}" />
     <!--Js-->
     <script src="{% static 'home/js/script.js' %}" defer></script>
@@ -95,18 +104,9 @@
         class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow p-2"
         id="navbar"
       >
-        {% comment %} <a class="navbar-brand" href="./index.html"> {% endcomment %}
-          <!-- ... -->
-          <ul class="navbar-nav">
-            <li class="nav-item {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
-              <a class="nav-link {% if request.resolver_match.url_name == 'index' %}disabled{% endif %}" href="{% url 'core:index' %}">Home</a>
-
-            <!-- Other navigation items -->
-          </ul>
-          
-<!-- ... -->
-
-          <img src="images/brand.png" alt="" />
+        <a class="navbar-brand" href="{% url 'core:index' %}">
+     
+          <img src="{% static 'home/img/brand.png' %}" />
         </a>
         <button
           class="navbar-toggler"
@@ -122,9 +122,9 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
-            {% comment %} <li class="nav-item">
-              <a class="nav-link" href="./index.html">Home</a>
-            </li> {% endcomment %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'core:index' %}">Home</a>
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
