@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,12 +31,27 @@
       </div>
       <h1>Sign up</h1>
       {% comment %} <p>A varification link has been sent to you email account</p> {% endcomment %}
-      <p>{{form.errors}}</p>
+
+
       <form method="POST">
-        {% csrf_token %} 
+        {% csrf_token %}
+
+         {% if form.non_field_errors %}
+      <div class="alert alert-danger">
+        <strong>Error:</strong> Please correct the following issues:
+        <ul>
+          {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
         <div class="username">
           <div class="icon"><i class="fas fa-user"></i></div>
           <div class="inputbox">{{ form.username}}</div>
+
+
         </div>
         <div class="email">
           <div class="icon"><i class="fas fa-envelope"></i></div>
@@ -77,7 +93,7 @@
           <p>Those who see possibilities where other see limitations deserve to Be one in A Million!</p>
         </div>
         <div class="signinBtn">
-          <a href="login">SIGN IN</a>
+          <a href="{% url 'userauths:login' %}">SIGN IN</a>
         </div>
       </div>
         <img src="{% static 'authentication/img/register.svg' %}" class="img" alt="">

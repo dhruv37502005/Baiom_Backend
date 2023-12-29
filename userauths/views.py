@@ -6,6 +6,7 @@ from django.conf import settings
 
 User = settings.AUTH_USER_MODEL
 
+
 def signup(request):
     if request.method == 'POST':
         form = UseRegisterForm(request.POST or None)
@@ -13,7 +14,6 @@ def signup(request):
             new_user = form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f"Hey {username}, your account was created successfully.")
-            
 
             authenticated_user = authenticate(
                 username=form.cleaned_data['username'],
@@ -39,38 +39,35 @@ def signup(request):
 def login_view(request):
     if request.user.is_authenticated:
         messages.warning(request, f"You are already logged in as {request.user.username}")
-        
-    
+
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        
+
         try:
-            user = User.objects.get(email = email)
-            
+            user = User.objects.get(email=email)
+
         except:
             messages.warning(request, f"User with {email} does not exist")
-        
+
         user = authenticate(request, email=email, password=password)
-        
+
         if user is not None:
             login(request, user)
             messages.success(request, f"Welcome back {user.username}")
             return redirect("core:index")
         else:
             messages.warning(request, f"User does not exist, create an account.")
-    
+
     context = {
         'title': 'Login',
     }
-    
+
     return render(request, 'login.html', context)
-            
+
 
 def logout_view(request):
     logout(request)
     messages.success(request, "You have been logged out.")
-    
+
     return redirect("core:index")
-
-
