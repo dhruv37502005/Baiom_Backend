@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <!-- Carousel section -->
@@ -18,7 +19,7 @@
                   <span class="underline">Skills.</span>
                 </h2>
                 <div class="responsive">
-                  <img src="images/4.jpg" alt="" />
+                  <img src="{% static 'home/img/4.jpg' %}" alt="" />
                 </div>
                 <p class="para-width-medium">
                   Decipher your potential as a product leader with our
@@ -31,7 +32,7 @@
               </div>
 
               <div class="col-md-6 col-sm-12 laptop align-center">
-                <img class="user-image-smaller" src="images/7.jpg" alt="" />
+                <img class="user-image-smaller" src="{% static 'home/img/7.jpg' %}" alt="" />
               </div>
             </div>
           </div>
@@ -45,7 +46,7 @@
                   <span class="underline">Learners.</span>
                 </h2>
                 <div class="responsive">
-                  <img src="images/18.jpg" alt="" />
+                  <img src="{% static 'home/img/18.jpg' %}" alt="" />
                 </div>
                 <p>
                   Empower your destiny with SAP mastery, and drive excellent
@@ -58,7 +59,7 @@
               </div>
 
               <div class="col-md-6 col-sm-12 laptop align-center">
-                <img src="images/44.jpg" alt="" />
+                <img src="{% static 'home/img/44.jpg' %}" alt="" />
               </div>
             </div>
           </div>
@@ -73,7 +74,7 @@
                   <span class="underline">Career.</span>
                 </h2>
                 <div class="responsive">
-                  <img src="images/22.jpg" alt="" />
+                  <img src="{% static 'home/img/22.jpg' %}" alt="" />
                 </div>
                 <p>
                   Get ahead of the pack, and scale up new heights with the
@@ -85,7 +86,7 @@
                 </div>
               </div>
               <div class="col-md-6 col-sm-12 laptop align-center">
-                <img src="images/42.jpg" alt="" />
+                <img src="{% static 'home/img/42.jpg' %}" alt="" />
               </div>
             </div>
           </div>
@@ -173,7 +174,7 @@
         <div class="d-block w-100">
           <div class="row mr-lr-0">
             <div class="col-md-6 col-sm-12 align-center">
-              <img class="user-image" src="images/39.jpg" alt="" />
+              <img class="user-image" src="{% static 'home/img/39.jpg' %}" alt="" />
             </div>
 
             <div class="col-md-6 col-sm-12 text-left">
@@ -211,13 +212,13 @@
                     <div class="row">
                       <img
                         class="m-3 col-lg-3 col-md-3"
-                        src="images/business.png"
+                        src=""
                         alt=""
                         style="width: 40px"
                       />
                       <div class="col-lg-7 queries">
                         <p>Have Queries? Click Below Link</p>
-                        <a href="./contact-page/index.html"
+                        <a href="{% url 'contactapp:contactus' %}"
                           ><i
                             class="fa-solid fa-hand-point-right orange-color"
                             style="color: #757575"
@@ -252,7 +253,7 @@
           <div class="card-img">
             <img
               class="card-img-top"
-              src="images/courses/course3.jpg"
+              src="{% static 'home/img/courses/course3.jpg' %}"
               alt="Card image cap"
             />
             <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
@@ -278,7 +279,7 @@
           <div class="card-img">
             <img
               class="card-img-top"
-              src="images/courses/course1.jpg"
+              src="{% static 'home/img/courses/course1.jpg' %}"
               alt="Card image cap"
             />
             <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
@@ -302,7 +303,7 @@
           <div class="card-img">
             <img
               class="card-img-top"
-              src="images/courses/course2.jpg"
+              src="{% static 'home/img/courses/course2.jpg' %}"
               alt="Card image cap"
             />
             <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
@@ -403,7 +404,7 @@
             <div id="virtues-tab-1-content" class="virtues-tab-content-item">
               <div class="row align-center">
                 <div class="col">
-                  <img src="images/Full time support/1.jpg" alt="" />
+                  <img src="{% static 'home/img/support/1.jpg' %}" alt="" />
                 </div>
                 <div class="col">
                   <h1 class="virtues-heading">FULL-TIME SUPPORT</h1>
@@ -420,7 +421,7 @@
             <div id="virtues-tab-2-content" class="virtues-tab-content-item">
               <div class="row align-center">
                 <div class="col">
-                  <img src="images/Full time support/2.jpg" alt="" />
+                  <img src="{% static 'home/img/support/2.jpg' %}" alt="" />
                 </div>
                 <div class="col align-center">
                   <h1 class="virtues-heading">EXPERIENCED TRAINERS</h1>
@@ -437,7 +438,7 @@
             <div id="virtues-tab-3-content" class="virtues-tab-content-item">
               <div class="row">
                 <div class="col">
-                  <img src="images/Full time support/3.jpg" alt="" />
+                  <img src="{% static 'home/img/support/3.jpg' %}" alt="" />
                 </div>
                 <div class="col">
                   <h1 class="virtues-heading">EASE OF USE</h1>
@@ -456,7 +457,7 @@
           class="col-md-5 col-sm-12 align-center"
           id="virtues-protocol-section"
         >
-          <img class="user-image-medium-small" src="images/4.jpg" alt="" />
+          <img class="user-image-medium-small" src="{% static 'home/img/4jpg' %}" alt="" />
         </div>
       </div>
     </section>
@@ -475,7 +476,7 @@
 
       <div class="contents">
         <div class="steps">
-          <img src="images/step1.png" alt="" />
+          <img src="{% static 'home/img/step1.png' %}" alt="" />
           <h5>Learn with top experts</h5>
           <p>
             Get your confusion replaced with confidence and doubts with solution
@@ -483,7 +484,7 @@
           </p>
         </div>
         <div class="steps">
-          <img src="images/step2.png" alt="" />
+          <img src="{% static 'home/img/step2.png' %}" alt="" />
           <h5>Community discussion</h5>
           <p>
             Attend the regular and planned community discussions to share and
@@ -491,7 +492,7 @@
           </p>
         </div>
         <div class="steps step-3">
-          <img src="images/step3.png" alt="" />
+          <img src="{% static 'home/img/step3.png' %}" alt="" />
           <h5>Live Corporate projects</h5>
           <p>
             Work on live projects and get the practical knowledge required to
@@ -499,7 +500,7 @@
           </p>
         </div>
         <div class="steps step-4">
-          <img src="images/step4.png" alt="" />
+          <img src="{% static 'home/img/step4.png' %}" alt="" />
           <h5>Placement Assistance</h5>
           <p>
             Learn to crack interviews from our experienced trainers and get
@@ -507,7 +508,7 @@
           </p>
         </div>
         <div class="steps last">
-          <img src="images/step5.png" alt="" />
+          <img src="{% static 'home/img/step5.png' %}" alt="" />
           <h5>Networking and Investment Support</h5>
           <p>
             Master the art of networking by enhancing your communication skills
@@ -538,28 +539,28 @@
 
         <div class="experts">
           <div class="expertImage" id="left">
-            <img src="images/intern4.jpg" alt="" class="meet_img" />
+            <img src="{% static 'home/img/intern4.jpg' %}" alt="" class="meet_img" />
             <div class="about">
               <h4>Prasun Kumar</h4>
               <p>R&D Lead</p>
             </div>
           </div>
           <div class="expertImage">
-            <img src="images/15.jpg" alt="" class="meet_img" />
+            <img src="{% static 'home/img/15.jpg' %}" alt="" class="meet_img" />
             <div class="about">
               <h4>Surbhi Vandana</h4>
               <p>Project Manager</p>
             </div>
           </div>
           <div class="expertImage">
-            <img src="images/intern1.jpg" alt="" class="meet_img" />
+            <img src="{% static 'home/img/intern1.jpg' %}" alt="" class="meet_img" />
             <div class="about">
               <h4>Vipakshi Joshi</h4>
               <p>Senior Website developer</p>
             </div>
           </div>
           <div class="expertImage" id="right">
-            <img src="images/intern6.jpg" alt="" class="meet_img" />
+            <img src="{% static 'home/img/intern6.jpg' %}" alt="" class="meet_img" />
             <div class="about">
               <h4>Prajwal</h4>
               <p>Software Testing Expert</p>
@@ -605,7 +606,7 @@
         </div>
         <div class="row col-md-12 col-sm-12">
           <div class="col-md-4 col-sm-12">
-            <img src="images/tab1img.png" alt="" style="border-radius: 10px" />
+            <img src="{% static 'home/img/tab1img.png' %}" alt="" style="border-radius: 10px" />
           </div>
           <div class="list col-md-7 col-sm-12">
             <ul style="list-style-type: none">
@@ -661,7 +662,7 @@
         </div>
         <div class="row col-md-12 col-sm-12">
           <div class="col-md-4 col-sm-12">
-            <img src="images/tab2img.png" alt="" style="border-radius: 10px" />
+            <img src="{% static 'home/img/tab2img.png' %}" alt="" style="border-radius: 10px" />
           </div>
           <div class="list col-md-7 col-sm-12">
             <ul style="list-style-type: none">
@@ -720,7 +721,7 @@
         </div>
         <div class="row col-md-12 col-sm-12">
           <div class="col-md-4 col-sm-12">
-            <img src="images/tab1img.png" alt="" style="border-radius: 10px" />
+            <img src="{% static 'home/img/tab1img.png' %}" alt="" style="border-radius: 10px" />
           </div>
           <div class="list col-md-7 col-sm-12">
             <ul style="list-style-type: none">
@@ -776,7 +777,7 @@
         </div>
         <div class="row col-md-12 col-sm-12">
           <div class="col-md-4 col-sm-12">
-            <img src="images/tab4img.png" alt="" style="border-radius: 10px" />
+            <img src="{% static 'home/img/tab4img.png' %}" alt="" style="border-radius: 10px" />
           </div>
           <div class="list col-md-7 col-sm-12">
             <ul style="list-style-type: none">
@@ -829,7 +830,7 @@
           <div class="text-left d-block w-100">
             <div class="row">
               <div class="col-md-6 col-sm-12 img-none">
-                <img src="images/slide1.png" alt="" />
+                <img src="{% static 'home/img/slide1.png' %}" alt="" />
               </div>
               <div class="col-md-6 col-sm-12 h2-dec">
                 <h2 class="heading2">
@@ -855,7 +856,7 @@
               </div>
               <div class="col-md-6 col-sm-12 row imginfo">
                 <div class="col-md-2 col-sm-4 col-6">
-                  <img src="images/slide1.png" alt="" />
+                  <img src="{% static 'home/img/slide1.png' %}" alt="" />
                 </div>
                 <div class="col-md-6 infoimg">
                   <h5>Apurva Kulpe</h5>
@@ -870,7 +871,7 @@
           <div class="text-left d-block w-100">
             <div class="row">
               <div class="col-md-6 col-sm-12 img-none">
-                <img src="images/slide2.png" alt="" />
+                <img src="{% static 'home/img/slide2.png' %}" alt="" />
               </div>
               <div class="col-md-6 col-sm-12 h2-dec">
                 <h2 class="heading2">
@@ -896,7 +897,7 @@
               </div>
               <div class="col-md-6 col-sm-12 row imginfo">
                 <div class="col-md-2 col-sm-4 col-6 active">
-                  <img src="images/slide2.png" alt="" />
+                  <img src="{% static 'home/img/slide2.png' %}" alt="" />
                 </div>
                 <div class="col-md-6 infoimg">
                   <h5>Ritesh Rana</h5>
@@ -911,7 +912,7 @@
           <div class="text-left d-block w-100">
             <div class="row">
               <div class="col-md-6 col-sm-12 img-none">
-                <img src="images/slide2.png" alt="" />
+                <img src="{% static 'home/img/slide2.png' %}" alt="" />
               </div>
               <div class="col-md-6 col-sm-12 h2-dec">
                 <h2 class="heading2">
@@ -937,7 +938,7 @@
               </div>
               <div class="col-md-6 col-sm-12 row imginfo">
                 <div class="col-md-2 col-sm-4 col-6">
-                  <img src="images/slide2.png" alt="" />
+                  <img src="{% static 'home/img/slide2.png' %}" alt="" />
                 </div>
                 <div class="col-md-6 infoimg">
                   <h5>Padi Akhil</h5>
@@ -969,7 +970,7 @@
               <div class="we__offer">
                 <div class="we__offer_card">
                   <div class="course_img">
-                    <img src="images/blog1.jpg" alt="" />
+                    <img src="{% static 'home/img/blog1.png' %}" alt="" />
 
                     <div class="img-text">
                       <div class="text">
@@ -1020,7 +1021,7 @@
               <div class="we__offer">
                 <div class="we__offer_card">
                   <div class="course_img">
-                    <img src="images/blog2.jpg" alt="" />
+                    <img src="{% static 'home/img/blog2.png' %}" alt="" />
 
                     <div class="img-text">
                       <div class="text">
@@ -1072,7 +1073,7 @@
               <div class="we__offer">
                 <div class="we__offer_card">
                   <div class="course_img">
-                    <img src="images/blog3.jpg" alt="" />
+                    <img src="{% static 'home/img/blog3.png' %}" alt="" />
 
                     <div class="img-text">
                       <div class="text">
@@ -1198,7 +1199,7 @@
           class="box_2"
           style="display: flex; align-items: center; justify-content: center"
         >
-          <img src="./images/13.jpg" alt="" srcset="" />
+          <img src="{% static 'home/img/13.jpg' %}" alt="" srcset="" />
         </div>
       </section>
     </div>
@@ -1214,24 +1215,24 @@
             </h5>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="images/HCL.jpeg" alt="" />
+            <img src="{% static 'home/img/HCL.jpeg' %}" alt="" />
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="images/HelloIntern.jpeg" alt="" />
+            <img src="{% static 'home/img/HelloIntern.jpeg' %}" alt="" />
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="images/Hirect.jpeg" alt="" />
+            <img src="{% static 'home/img/Hirect.jpeg' %}" alt="" />
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="images/Internshala.jpeg" alt="" />
+            <img src="{% static 'home/img/Internshala.jpeg' %}" alt="" />
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="images/Lenskart.jpeg" alt="" />
+            <img src="{% static 'home/img/Lenskart.jpeg' %}" alt="" />
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="images/Entorsity.jpeg" alt="" />
+            <img src="{% static 'home/img/Entorsity.jpeg' %}" alt="" />
           </div>
         </div>
       </div>
     </section>
-    {% endblock  %}
+    {% endblock content %}
