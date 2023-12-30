@@ -150,3 +150,5 @@ JAZZMIN_SETTINGS = {
 }
 
 AUTH_USER_MODEL = 'userauths.User'
+AUTH_GROUP_MODEL = 'dashboard.DashboardGroup'
+AUTH_PERMISSION_MODEL = 'dashboard.DashboardPermission'
