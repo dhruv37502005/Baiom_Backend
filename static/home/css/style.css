@@ -54,6 +54,15 @@ section:not(
     .carousel-inner
   ) {
   padding: 3rem 6%;
+  /* margin-top: -40px; */
+}
+.homepage{
+  padding: 1rem 6%;
+  margin-top: -40px;
+}
+.women{
+  padding: 1rem 6%;
+  margin-top: -60px;
 }
 
 h1,
