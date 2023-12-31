@@ -31,14 +31,22 @@ class Dashboard_User(models.Model):
         return self.user.username
 
     
-    
+
+   
 
     
-    @property
-    def age(self):
-        today = date.today()
-        db = self.dob
-        age = today.year - db.year
-        if today.month < db.month or today.month == db.month and today.day < db.day:
-            age -= 1
-        return age 
+class Employee(models.Model):
+     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+
+     is_user = models.BooleanField(default=False)   
+     is_employee = models.BooleanField(default=True)
+     bio = models.CharField(max_length=100, blank=True)
+     fname = models.CharField(max_length=30, blank=True)
+     lname = models.CharField(max_length=30, blank=True)
+     mname = models.CharField(max_length=30, blank=True)
+     mobilenumber = models.CharField(max_length=15, blank=True)
+     photo = models.ImageField(upload_to='user_photos/', blank=True, null=True)
+     designation = models.CharField(max_length=30, blank=True)
+
+     def __str__(self):
+         return self.user.username
