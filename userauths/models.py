@@ -1,23 +1,41 @@
-from django.core.exceptions import ValidationError
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
+from django.contrib.postgres.fields import ArrayField
+
+from datetime import date
+
+# Create your models here.
 
 
-class User(AbstractUser):
-    email = models.EmailField(unique=True)
-    username = models.CharField(max_length=50, unique=True)
-    bio = models.CharField(max_length=100, blank=True)
+#user = models.OneToOneField(settings.AUTH_USER_MODEL)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+class Dashboard_User(models.Model):
 
-    def __str__(self):
-        return self.username
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     
-        
-    class Meta(AbstractUser.Meta):
-        pass
+    is_user = models.BooleanField(default=True)
+    
+    is_employee = models.BooleanField(default=False)
 
+    bio = models.CharField(max_length=100, blank=True)
+    fname = models.CharField(max_length=30, blank=True)
+    lname = models.CharField(max_length=30, blank=True)
+    mname = models.CharField(max_length=30, blank=True)
+    mobilenumber = models.CharField(max_length=15, blank=True)
+    photo = models.ImageField(upload_to='user_photos/', blank=True, null=True)
+    collegename = models.CharField(max_length=100, blank=True)
+    graduation_year = models.PositiveIntegerField(blank=True, null=True)
+    current_designation = models.CharField(max_length=50, blank=True)
 
-User._meta.get_field('groups').related_name = 'userauths_groups'
-User._meta.get_field('user_permissions').related_name = 'userauths_user_permissions'
+    
+    
+
+    
+    @property
+    def age(self):
+        today = date.today()
+        db = self.dob
+        age = today.year - db.year
+        if today.month < db.month or today.month == db.month and today.day < db.day:
+            age -= 1
+        return age 

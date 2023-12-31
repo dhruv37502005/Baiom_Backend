@@ -36,38 +36,36 @@
       <form method="POST">
         {% csrf_token %}
 
-         {% if form.non_field_errors %}
+        
       <div class="alert alert-danger">
         <strong>Error:</strong> Please correct the following issues:
         <ul>
-          {% for error in form.non_field_errors %}
-            <li>{{ error }}</li>
-          {% endfor %}
+          
         </ul>
       </div>
-    {% endif %}
+    
 
         <div class="username">
           <div class="icon"><i class="fas fa-user"></i></div>
-          <div class="inputbox">{{ form.username}}</div>
+          <div class="inputbox"><input class="input-field" type="text" placeholder="Username" name="username" required></div>
 
 
         </div>
         <div class="email">
           <div class="icon"><i class="fas fa-envelope"></i></div>
           <div class="inputbox">
-            {{ form.email}}
+            <input class="input-field" type="text" placeholder="Email" name="email" required>
         </div></div>
         <div class="password">
           <div class="icon"><i class="fas fa-lock"></i></div>
           <div class="inputbox">
-            {{ form.password1}}
+            <input class="input-field" type="password" placeholder="Password" name="password1" required>
         </div>
       </div>
         <div class="passwordagain">
           <div class="icon"><i class="fas fa-lock"></i></div>
           <div class="inputbox">
-            {{ form.password2}}
+            <input class="input-field" type="password" placeholder="Password" name="password2" required>
         </div></div>
         <div>
           <button class="subbtn" type="submit">SignUp</button><br>
