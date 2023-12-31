@@ -27,6 +27,9 @@ class Dashboard_User(models.Model):
     graduation_year = models.PositiveIntegerField(blank=True, null=True)
     current_designation = models.CharField(max_length=50, blank=True)
 
+    def __str__(self):
+        return self.user.username
+
     
     
 

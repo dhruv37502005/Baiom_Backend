@@ -274,7 +274,12 @@
                     </div>
 
                     <div id="content2" style="display: none;font-size: xx-large;">
-                       MY PROFILE COMING SOON......
+                        {% if user %}
+                       <h1>{{user.username}}</h1>
+                       <h1> {{user.email}} </h1>
+                       <h1> {{user.bio}} </h1>
+
+                       {% endif %}
                     </div>
 
                     <div id="content3" style="display: none;font-size: xx-large;">

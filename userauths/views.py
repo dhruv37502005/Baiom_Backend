@@ -75,12 +75,18 @@ def login_view(request):
           password =  request.POST.get('password')
  
           user = authenticate(username=username,password=password)
-          print(user)
-          if user is not None :             
-              auth.login(request,user)
 
-              request.session['username'] = user.username
-              return redirect('core:user_ui')
+          
+          print(user)
+          if user is not None : 
+
+              if (user.is_superuser==True):
+                 auth.login(request, user)
+                 return redirect('dashboard:admin_ui')
+              else:
+                auth.login(request,user)
+                request.session['username'] = user.username
+                return redirect('dashboard:user_ui')
           else :
              messages.info(request,'invalid credentials')
              return redirect('userauths:login')
