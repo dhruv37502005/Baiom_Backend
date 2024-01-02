@@ -161,15 +161,28 @@
             <a class="nav-link" href="./WPF/wpf.html"><b style="color: #fa3c23">WEP</b></a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="./Blog-Section-main/main-blog.html">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./Baoiam-refer-page-main/index.html">Refer & Earn</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" id="active" href="{% url 'contactapp:contactus' %}">Contact Us</a>
-          </li>
+
+            {% if user.username %}
+
+            <li class="nav-item">
+              <a href="{% url 'userauths:logout' %}">
+                <button class="btn-1">Logout</button></a>
+                
+            </li>
+              {% else %}
+
+            <li class="nav-item">
+              <a href="{% url 'userauths:login' %}">
+                <button class="btn-1">Login</button></a>
+            </li>
+            {% endif %}
+
+
+          </ul>
+        </div>
+      </nav>
+    </header>
+
 
           <li class="nav-item">
             <a href="{% url 'userauths:signup' %}">

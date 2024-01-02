@@ -150,6 +150,6 @@ JAZZMIN_SETTINGS = {
     "copyright": "Baoiam.com",
 }
 
-AUTH_USER_MODEL = 'userauths.User'
+AUTH_USER_MODEL = 'auth.user'
 AUTH_GROUP_MODEL = 'dashboard.DashboardGroup'
 AUTH_PERMISSION_MODEL = 'dashboard.DashboardPermission'

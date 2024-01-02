@@ -1,12 +1,11 @@
 from django.urls import path
-from dashboard.views import dashboard, update_user_details
-
+from .views import user_ui, admin_ui
 
 
 app_name = 'dashboard'
 
 urlpatterns = [
-    path("dashboard/", dashboard, name='dashboard'),
-    path("updateuser/", update_user_details, name='updateuser'),
-
+    
+    path('user_ui/', user_ui , name='user_ui'),
+    path('admin_ui/', admin_ui , name='admin_ui'),
 ]

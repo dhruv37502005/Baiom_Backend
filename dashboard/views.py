@@ -1,22 +1,45 @@
+from django.shortcuts import render
 from django.shortcuts import render, redirect
-from  .forms import UserUpdateForm
-from django.contrib import messages
-from . models import DashboardUser
+from userauths.models import Dashboard_User
+from django.contrib.auth.models import User , auth
 
-def dashboard(request):
-    return render(request, 'dashboard.html')
 
-def update_user_details(request):
-    if request.method=="POST":
-        form  = UserUpdateForm(request.POST, instance =  request.user)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "SUccess")
-            return redirect(dashboard)
-    else:
-        form = UserUpdateForm()
+
+def user_ui(request):
+
+    if request.method == 'GET':
+
+      if request.user.is_authenticated:
+
+        username = request.session['username']
+        user = User.objects.get(username=username)
+        dash_user=Dashboard_User.objects.get(user_id=user.id)
+
+
+        return render(request,'dashboard.html' , {"user":user})
+
+      else :
+        return redirect('userauths:login')
+
+
+
+    if request.method == 'POST':
+
+       return render(request,'profile.html')
     
-    return render(request, "dashboard222.html",{'form':form})
-        
 
-# Create your views here.
+def admin_ui(request):
+    if request.method == 'GET':
+
+      if request.user.is_authenticated:
+
+        auser = request.user
+
+        return redirect('/admin')
+
+      else :
+        return redirect('core:index')
+
+
+
+    

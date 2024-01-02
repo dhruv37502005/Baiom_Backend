@@ -1,69 +1,100 @@
 from django.shortcuts import redirect, render
-from userauths.form import UseRegisterForm
+#from userauths.form import UseRegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.conf import settings
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
-User = settings.AUTH_USER_MODEL
+from django.contrib import messages
+from django.contrib.auth.models import User , auth
+from .models import Dashboard_User
+
 
 
 def signup(request):
+
+
     if request.method == 'POST':
-        form = UseRegisterForm(request.POST or None)
-        if form.is_valid():
-            new_user = form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f"Hey {username}, your account was created successfully.")
+      
+      if request.POST['username'] and request.POST['email'] and request.POST['password1']and request.POST['password2'] :
 
-            authenticated_user = authenticate(
-                username=form.cleaned_data['username'],
-                password=form.cleaned_data['password1'],
-            )
+          username =  request.POST['username']
+          email =  request.POST['email']
 
-            if authenticated_user is not None:
-                login(request, authenticated_user)
-                return redirect("core:index")
-            else:
-                # Handle authentication failure, e.g., display an error message
-                messages.error(request, "Authentication failed.")
+          #name =  request.POST['name']
+          #dob =  request.POST['dob']
+          #gender =  request.POST['gender']
+          #address =  request.POST['address']
+          #mobile_no = request.POST['mobile']
+          password =  request.POST.get('password1')
+          password1 =  request.POST.get('password2')
 
-    else:
-        form = UseRegisterForm()
+          if password == password1:
+              if User.objects.filter(username = username).exists():
+                messages.info(request,'username already taken')
+                return redirect("userauths:signup")
 
-    context = {
-        'form': form,
-    }
-    return render(request, 'signup.html', context)
+              elif User.objects.filter(email = email).exists():
+                messages.info(request,'email already taken')
+                return redirect("userauths:signup")
+                
+              else :
+                user = User.objects.create_user(username=username,password=password,email=email)   
+                user.save()
+                
+                patientnew = Dashboard_User(user=user)
+                patientnew.save()
+                messages.info(request,'user created sucessfully')
+                
+              return redirect("userauths:login")
+
+          else:
+            messages.info(request,'password not matching, please try again')
+            return redirect("userauths:signup")
+
+      else :
+        messages.info(request,'Please make sure all required fields are filled out correctly')
+        return redirect("userauths:signup") 
+
+
+    
+    else :
+      return render(request,'signup.html')
+
+    
 
 
 def login_view(request):
-    if request.user.is_authenticated:
-        messages.warning(request, f"You are already logged in as {request.user.username}")
+  
 
     if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
 
-        try:
-            user = User.objects.get(email=email)
+          username =  request.POST.get('username')
+          password =  request.POST.get('password')
+ 
+          user = authenticate(username=username,password=password)
 
-        except:
-            messages.warning(request, f"User with {email} does not exist")
+          
+          print(user)
+          if user is not None : 
 
-        user = authenticate(request, email=email, password=password)
+              if (user.is_superuser==True):
+                 auth.login(request, user)
+                 return redirect('dashboard:admin_ui')
+              else:
+                auth.login(request,user)
+                request.session['username'] = user.username
+                return redirect('dashboard:user_ui')
+          else :
+             messages.info(request,'invalid credentials')
+             return redirect('userauths:login')
+   
 
-        if user is not None:
-            login(request, user)
-            messages.success(request, f"Welcome back {user.username}")
-            return redirect("core:index")
-        else:
-            messages.warning(request, f"User does not exist, create an account.")
+    else :
+      return render(request,'login.html')
 
-    context = {
-        'title': 'Login',
-    }
-
-    return render(request, 'login.html', context , )
 
 
 def logout_view(request):
