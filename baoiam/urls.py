@@ -6,12 +6,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from userauths import views
 from dashboard import views
+from course import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('userauths/', include('userauths.urls')),
     path('contactus/', include('contactapp.urls')),
+    path('webdevelopment/', include('course.urls')),
     path('dashboard/', include('dashboard.urls')),
 ]
 

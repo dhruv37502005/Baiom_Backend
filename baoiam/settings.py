@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'userauths',
     'contactapp',
     'dashboard',
+    'course',
 ]
 
 
