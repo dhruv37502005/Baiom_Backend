@@ -86,13 +86,14 @@ header {
 
 header .nav-item {
   padding: 0.5rem;
+  /* padding: 0; */
 }
 
 header .nav-item a {
   padding-top: 0.7rem;
   color: rgb(6, 0, 56) !important;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 @media (max-width: 1054px) {
@@ -110,7 +111,7 @@ header .nav-item a {
   }
 
   #nav-courses-one .dropdown-toggle + .dropdown-menu > .nav-link {
-    padding-left: 1.5rem;
+    /* padding-left: 1.5rem; */
     padding-top: 0;
   }
 
@@ -118,7 +119,9 @@ header .nav-item a {
     border-radius: 0;
   }
 }
-
+a{
+  padding: 0;
+}
 header .navbar-brand {
   padding-left: 4rem;
 }
@@ -137,7 +140,7 @@ header .nav-item a:hover {
 
 .btn-1 {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.8em 2em;
   background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
   -webkit-text-fill-color: #ffffff;
