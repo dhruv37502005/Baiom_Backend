@@ -10,5 +10,4 @@ app_name = 'course'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('webdevelopment/',views.webdevelopment,name="webdevelopment") ,
-
 ]
