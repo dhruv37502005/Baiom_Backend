@@ -34,6 +34,7 @@
     integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
+  <link rel="stylesheet" href="{% static 'home/css/profile.css' %}">
 
 <!-- css files link -->
 <link rel="stylesheet" href="{% static 'home/css/navbar.css' %}">
@@ -55,6 +56,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" />
   <!-- <link rel="stylesheet" href="{% static 'home/css/otp.css' %}" /> -->
 
+  <script src="{% static 'home/js/profile.js' %}" defer></script>
 
   <!--Js file links-->
   {% if is_index_page %}
@@ -124,32 +126,32 @@
                   </li>
 
                   <li>
-                    <a class="test" href="./course-master/DataAnalyst.html">DataAnalyst</a>
+                    <a class="test" href="{% url 'course:dataanalyst' %}">DataAnalyst</a>
                   </li>
 
                   <li>
-                    <a class="test" href="./course-master/DataScience.html">DataScience</a>
+                    <a class="test" href="{% url 'course:datascience' %}">DataScience</a>
                   </li>
                   <li>
-                    <a class="test" href="./course-master/content_wr.html">Content Writing</a>
+                    <a class="test" href="{% url 'course:contentwriting' %}">Content Writing</a>
                   </li>
                   <li>
-                    <a class="test" href="./course-master/Graphic_Designing.html">Graphic Designing</a>
+                    <a class="test" href="{% url 'course:graphicdesigning' %}">Graphic Designing</a>
                   </li>
                   <li>
-                    <a class="test" href="./course-master/seo.html">Seo Marketing</a>
+                    <a class="test" href="{% url 'course:seomarketing' %}">Seo Marketing</a>
                   </li>
                   <li>
-                    <a class="test" href="./course-master/Digital_Marketing.html">Digital Marketing Course</a>
+                    <a class="test" href="{% url 'course:digitalmarketing' %}">Digital Marketing Course</a>
                   </li>
                   <li>
-                    <a class="test" href="./course-master/Project_Management.html">Project Management</a>
+                    <a class="test" href="{% url 'course:projectmanagement' %}">Project Management</a>
                   </li>
                   <li>
-                    <a class="test" href="./course-master/Human_Resources.html">Human Resources</a>
+                    <a class="test" href="{% url 'course:humanresource' %}">Human Resources</a>
                   </li>
                   <li>
-                    <a class="test" href="./course-master/corporate.html">Corporate Law</a>
+                    <a class="test" href="{% url 'course:corporatelaw' %}">Corporate Law</a>
                   </li>
                 </ul>
               </div>
@@ -163,11 +165,21 @@
 
 
             {% if user.username %}
-
-            <li class="nav-item">
-              <a href="{% url 'userauths:logout' %}">
-                <button class="btn-1">Logout</button></a>
-                
+            <li class="nav-item" id="profile">
+              <button type="button" id="profile-btn" class="profile-btn">
+                <div class="profile-dropdown" id="profile-dropdown">
+                  <div id="profile-content">
+                    <a
+                      id="profile-dropdown-item"
+                      href="{% url 'dashboard:user_ui' %}"
+                      >Dashboard</a
+                    >
+                    <a id="profile-dropdown-item" href="{% url 'userauths:logout' %}"
+                      >Logout</a
+                    >
+                  </div>
+                </div>
+              </button>
             </li>
               {% else %}
 

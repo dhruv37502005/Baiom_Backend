@@ -17,8 +17,8 @@ def datascience(request):
 
 
 def contentwriting(request):
-    Content_Writing_courses = Course.objects.filter(category='Content Writing', status='active')
-    return render(request, 'Contentwriting.html', {'is_ContentWriting_page': True, 'Content_Writing': Content_Writing_courses})
+    content_Writing_courses = Course.objects.filter(category='content Writing', status='active')
+    return render(request, 'contentwriting.html', {'is_contentWriting_page': True, 'content_Writing': content_Writing_courses})
 
 def graphicdesigning(request):
     graphic_designing_courses = Course.objects.filter(category='Graphic Designing', status='active')
