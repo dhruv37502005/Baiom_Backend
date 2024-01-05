@@ -7,6 +7,7 @@ app_name = 'course'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('dashboard/',views.dashboard_view,name="dashboard") ,
     path('webdevelopment/',views.webdevelopment,name="webdevelopment"),
     path('dataanalyst/',views.dataanalyst,name="dataanalyst"),
     path('datascience/',views.datascience,name="datascience"),
@@ -19,4 +20,5 @@ urlpatterns = [
     path('corporatelaw/',views.corporatelaw,name="corporatelaw"),
     path('enterpreneurship/',views.enterpreneurship,name="enterpreneurship"),
     path('webdevelopment/',views.webdevelopment,name="webdevelopment"),
+
 ]

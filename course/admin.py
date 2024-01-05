@@ -9,4 +9,4 @@ from .models import Course
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title', 'category','status')
