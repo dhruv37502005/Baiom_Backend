@@ -1,5 +1,3 @@
-
-
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -9,7 +7,18 @@ app_name = 'course'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('webdevelopment/',views.webdevelopment,name="webdevelopment") ,
     path('dashboard/',views.dashboard_view,name="dashboard") ,
-    
+    path('webdevelopment/',views.webdevelopment,name="webdevelopment"),
+    path('dataanalyst/',views.dataanalyst,name="dataanalyst"),
+    path('datascience/',views.datascience,name="datascience"),
+    path('contentwriting/',views.contentwriting,name="contentwriting"),
+    path('graphicdesigning/',views.graphicdesigning,name="graphicdesigning"),
+    path('seomarketing/',views.seomarketing,name="seomarketing"),
+    path('digitalmarketing/',views.digitalmarketing,name="digitalmarketing"),
+    path('projectmanagement/',views.projectmanagement,name="projectmanagement"),
+    path('humanresource/',views.humanresource,name="humanresource"),
+    path('corporatelaw/',views.corporatelaw,name="corporatelaw"),
+    path('enterpreneurship/',views.enterpreneurship,name="enterpreneurship"),
+    path('webdevelopment/',views.webdevelopment,name="webdevelopment"),
+
 ]
