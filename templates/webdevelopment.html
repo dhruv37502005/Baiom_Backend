@@ -22,18 +22,30 @@
             <div class="progress-bar"></div>
             <span>55%</span>
           </div>
+          <div>
           {% if course.image %}
           <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
           {% else %}
           <p>No image available</p>
           {% endif %}
+          </div>
+          <div>{% if course.video %}
+            <video width="320" height="240" controls>
+                <source src="{{ course.video.url }}" type="video/mp4">
+                <source src="{{ course.video.url }}" type="video/webm">
+                <source src="{{ course.video.url }}" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        {% else %}
+            <p>No video available</p>
+        {% endif %}</div>
           <h4 style="color: black">Name: {{course.title}}</h4>
           <h4 style="color: black">Description: {{course.description}}</h4>
           <h4 style="color: black">Category: {{course.category}}</h4>
           <h4 style="color: black">Price: {{course.price}}</h4>
           <h4 style="color: black">Instructor: {{course.instructor}}</h4>
           <h4 style="color: black">Discount Price: {{course.discount}}</h4>
-          <button>
+          {% comment %} <button>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -52,16 +64,20 @@
               </svg>
             </span>
             Resume Course
-          </button>
+          </button> {% endcomment %}
         </div>
+        {% comment %} <button class="btn-enroll" onclick="showRegistrationForm()"> {% endcomment %}
+          <a href="{% url 'course:dashboard' %}" class="btn-enroll">
+            Enroll Now
+          </a>
+        {% comment %} </button> {% endcomment %}
       </div>
-
       {% endfor %}
     </div>
 
-    <button class="btn-enroll" onclick="showRegistrationForm()">
+    {% comment %} <button class="btn-enroll" onclick="showRegistrationForm()">
       Enroll Now
-    </button>
+    </button> {% endcomment %}
   </div>
   <div class="pic">
     <img src="35.jpg" />

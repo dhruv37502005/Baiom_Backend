@@ -139,14 +139,32 @@
                             <button>Complete (1)</button>
                         </div>
                         <div class="cards">
+                        {% for course in all_courses %}
                             <div class="custom-card">
-                                <img src="{% static 'dashboard/img/card.jpg' %}" alt="Card Image">
+                                <div>
+                                {% if course.video %}
+                                    <video width="320" height="240" controls>
+                                        <source src="{{ course.video.url }}" type="video/mp4">
+                                        <source src="{{ course.video.url }}" type="video/webm">
+                                        <source src="{{ course.video.url }}" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                    </video>
+                                {% else %}
+                                {% if course.image %}
+                                    <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+                                {% else %}
+                                    <p>No image available</p>
+                                {% endif %}
+                                {% endif %}
+                                </div>
+                                {% comment %} <img src="{% static 'dashboard/img/card.jpg' %}" alt="Card Image"> {% endcomment %}
                                 <div class="card-body">
                                     <div class="custom-progress">
                                         <div class="progress-bar"></div><span>55%</span>
                                     </div>
                                     <p class="card-text">55/100 lectures completed</p>
-                                    <h4>Course Name</h4>
+                                    <h4>Course Name: {{course.title}}</h4>
+                                    <h4>Course Description: {{course.description}}</h4>
                                     <small>Last Read: Layout Grids Guidelines</small>
                                     <button>
                                         <span>
@@ -161,6 +179,7 @@
                                     </button>
                                 </div>
                             </div>
+                            {% endfor %}
                             <div class="custom-card">
                                 <img src="{% static 'dashboard/img/card.jpg' %}" alt="Card Image">
                                 <div class="card-body">
