@@ -3,6 +3,7 @@ from .form import UseRegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.conf import settings
+from .models import Dashboard_User
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_str
@@ -40,16 +41,17 @@ def signup(request):
         print("below the form")
         if form.is_valid():
             print("Valid")
-            new_user = form.save()
-
+            new_user = form.save(commit=False)
+            new_user.is_active=False
+            new_user.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f"Hey {username}, your account was created successfully.")
             print("below the suceess massage")
 
-            authenticated_user = authenticate(
+            """authenticated_user = authenticate(
                 username=form.cleaned_data['username'],
                 password=form.cleaned_data['password1'],
-            )
+            )"""
 
             # if authenticated_user is not None:
             #     login(request, authenticated_user)
@@ -178,10 +180,12 @@ def home(request):
 
 def activate(request, uidb64, token):
     User = get_user_model()
+    print("hiiiii")
 
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
+        print(user)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
 
@@ -189,6 +193,9 @@ def activate(request, uidb64, token):
         # Activate the user account
         user.is_active = True
         user.save()
+        new = Dashboard_User(user=user)
+        new.save()
+        
 
         # Redirect to the login page
         return redirect('userauths:login')
