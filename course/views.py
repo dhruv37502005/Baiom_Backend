@@ -49,18 +49,3 @@ def enterpreneurship(request):
     enterpreneurship_courses = Course.objects.filter(category='Enterpreneurship', status='active')
     return render(request, 'enterpreneurship.html', {'is_enterpreneurship_page': True, 'enterpreneurship': enterpreneurship_courses})
 
-
-
-
-def dashboard_view(request):
-    all_courses = Course.objects.all()
-    return render(request, 'dashboard.html',{'is_dashboard_page': True, 'all_courses': all_courses})
-
-
-# def courses(request):
-#     course = Course.objects.all()
-#     context={
-#         'course': course,
-#     }
-#     print(course)
-#     return render(request, 'webdevelopment.html', context)

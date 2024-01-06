@@ -294,12 +294,36 @@
                     </div>
 
                     <div id="content2" style="display: none;font-size: xx-large;">
-                        {% if user %}
+                        {% comment %} {% if user %}
                        <h1>{{user.username}}</h1>
                        <h1> {{user.email}} </h1>
                        <h1> {{user.bio}} </h1>
-
-                       {% endif %}
+{% endif %} {% endcomment %}
+                       <form id="profileForm">
+                        <dl>
+                            <dt><label for="userName">User Name:</label></dt>
+                            <dd><input type="text" id="userName" name="userName" placeholder="User Name" value="{{ user.username }}"></dd>
+                            <dt><label for="firstName">First Name:</label></dt>
+                            <dd><input type="text" id="firstName" name="firstName" placeholder="First Name" value="{{ dash_user.fname }}"></dd>
+                            <dt><label for="middleName">Middle Name:</label></dt>
+                            <dd><input type="text" id="middleName" name="middleName" placeholder="Middle Name" value="{{ dash_user.mname }}"></dd>
+                            <dt><label for="lastName">Last Name:</label></dt>
+                            <dd><input type="text" id="lastName" name="lastName" placeholder="Last Name" value="{{ dash_user.lname }}"></dd>
+                            <dt><label for="email">Email:</label></dt>
+                            <dd><input type="email" id="email" name="email" placeholder="XXXXXXX@Email.com" value="{{ user.email }}"></dd>
+                            <dt><label for="mobileNumber">Mobile Number:</label></dt>
+                            <dd><input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter Mobile Number" value="{{ dash_user.mobilenumber }}"></dd>
+                            <dt><label for="collegeName">College Name:</label></dt>
+                            <dd><input type="text" id="collegeName" name="collegeName" placeholder="Collage Name" value="{{ dash_user.collegename }}"></dd>
+                            <dt><label for="graduationYear">Graduation Year:</label></dt>
+                            <dd><input type="number" id="graduationYear" name="graduationYear" placeholder="Graduation Year" value="{{ dash_user.graduation_year }}"></dd>
+                            <dt><label for="bio">Bio :</label></dt>
+                            <dd><input type="text" id="firstName" name="firstName" placeholder="Bio" value="{{ user.bio }}"></dd>
+                            <dt><label for="fileUpload">Upload Your Photo:</label></dt>
+                            <dd><input type="file" id="fileUpload" name="fileUpload"></dd>
+                        </dl>
+                        <button type="submit">Submit</button>
+                      </form>
                     </div>
 
                     <div id="content3" style="display: none;font-size: xx-large;">
