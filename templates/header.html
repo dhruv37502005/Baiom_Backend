@@ -36,9 +36,9 @@
 
   <link rel="stylesheet" href="{% static 'home/css/profile.css' %}">
 
-<!-- css files link -->
-<link rel="stylesheet" href="{% static 'home/css/navbar.css' %}">
-<!-- home page css 'index.html' -->
+  <!-- css files link -->
+  <link rel="stylesheet" href="{% static 'home/css/navbar.css' %}">
+  <!-- home page css 'index.html' -->
   {% if is_index_page %}
   <link rel="stylesheet" href="{% static 'home/css/style.css' %}" />
   {% endif %}
@@ -162,45 +162,59 @@
           <li class="nav-item">
             <a class="nav-link" href="./WPF/wpf.html"><b style="color: #fa3c23">WEP</b></a>
           </li>
-
-
-            {% if user.username %}
-            <li class="nav-item" id="profile">
-              <button type="button" id="profile-btn" class="profile-btn">
-                <div class="profile-dropdown" id="profile-dropdown">
-                  <div id="profile-content">
-                    <a
-                      id="profile-dropdown-item"
-                      href="{% url 'dashboard:user_ui' %}"
-                      >Dashboard</a
-                    >
-                    <a id="profile-dropdown-item" href="{% url 'userauths:logout' %}"
-                      >Logout</a
-                    >
-                  </div>
-                </div>
-              </button>
-            </li>
-              {% else %}
-
+          <li class="nav-item">
+            <a class="nav-link" href="./Blog-Section-main/main-blog.html"
+              >Blog</a
+            >
             <li class="nav-item">
-              <a href="{% url 'userauths:login' %}">
-                <button class="btn-1">Login</button></a>
+              <a class="nav-link" href="../Baioam_web/Pay after payment/index.html"
+                >PAP</a
+              >
             </li>
-            {% endif %}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Baoiam-refer-page-main/index.html"
+              >Refer & Earn</a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" id="active" href="{% url 'contactapp:contactus' %}"
+              >Contact Us</a
+            >
+          </li>
 
 
-          </ul>
-        </div>
-      </nav>
-    </header>
-
+          {% if user.username %}
+          <li class="nav-item" id="profile">
+            <button type="button" id="profile-btn" class="profile-btn">
+              <div class="profile-dropdown" id="profile-dropdown">
+                <div id="profile-content">
+                  <a id="profile-dropdown-item" href="{% url 'dashboard:user_ui' %}">Dashboard</a>
+                  <a id="profile-dropdown-item" href="{% url 'userauths:logout' %}">Logout</a>
+                </div>
+              </div>
+            </button>
+          </li>
+          {% else %}
 
           <li class="nav-item">
-            <a href="{% url 'userauths:signup' %}">
+            <a href="{% url 'userauths:login' %}">
               <button class="btn-1">Login</button></a>
           </li>
+          {% endif %}
+
+
         </ul>
       </div>
     </nav>
+  </header>
+
+
+  <li class="nav-item">
+    <a href="{% url 'userauths:signup' %}">
+      <button class="btn-1">Login</button></a>
+  </li>
+  </ul>
+  </div>
+  </nav>
   </header>
