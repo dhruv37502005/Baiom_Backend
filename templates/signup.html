@@ -47,25 +47,25 @@
 
         <div class="username">
           <div class="icon"><i class="fas fa-user"></i></div>
-          <div class="inputbox"><input class="input-field" type="text" placeholder="Username" name="username" required></div>
+          <div class="inputbox">{{form.username}}</div>
 
 
         </div>
         <div class="email">
           <div class="icon"><i class="fas fa-envelope"></i></div>
           <div class="inputbox">
-            <input class="input-field" type="text" placeholder="Email" name="email" required>
+            {{form.email}}
         </div></div>
         <div class="password">
           <div class="icon"><i class="fas fa-lock"></i></div>
           <div class="inputbox">
-            <input class="input-field" type="password" placeholder="Password" name="password1" required>
+            {{form.password1}}
         </div>
       </div>
         <div class="passwordagain">
           <div class="icon"><i class="fas fa-lock"></i></div>
           <div class="inputbox">
-            <input class="input-field" type="password" placeholder="Password" name="password2" required>
+            {{form.password2}}
         </div></div>
         <div>
           <button class="subbtn" type="submit">SignUp</button><br>
