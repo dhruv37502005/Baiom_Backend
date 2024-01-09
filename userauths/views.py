@@ -3,7 +3,6 @@ from .form import UseRegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.conf import settings
-from .models import Dashboard_User
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_str
@@ -41,18 +40,14 @@ def signup(request):
         print("below the form")
         if form.is_valid():
             print("Valid")
-            new_user = form.save(commit=False)
-            new_user.is_active=False
-            new_user.save()
+            new_user = form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f"Hey {username}, your account was created successfully.")
             print("below the suceess massage")
-
-            """authenticated_user = authenticate(
+            authenticated_user = authenticate(
                 username=form.cleaned_data['username'],
                 password=form.cleaned_data['password1'],
-            )"""
-
+            )
             # if authenticated_user is not None:
             #     login(request, authenticated_user)
             #     return redirect("core:index")
@@ -67,38 +62,30 @@ def signup(request):
                 'uid': urlsafe_base64_encode(force_bytes(new_user.pk)),
                 'token': account_activation_token.make_token(new_user),
             })
-
             to_email = form.cleaned_data.get('email')
             print("On the email message")
             email = EmailMessage(
                 mail_subject, message, to=[to_email]
             )
-
             email.send()
             print("abouve the email sender")
             messages.success(request, "Please confirm your email address to complete the registration")
-
         else:
             print("somthing went wrong")
     else:
         print("In else")
         form = UseRegisterForm()
-
     context = {'form': form}
     return render(request, 'signup.html', context)
 
 
 def login_view(request):
     if request.method == 'POST':
-
         username = request.POST.get('username')
         password = request.POST.get('password')
-
         user = authenticate(username=username, password=password)
-
         print(user)
         if user is not None:
-
             if user.is_superuser == True:
                 login(request, user)
                 return redirect('dashboard:admin_ui')
@@ -109,8 +96,6 @@ def login_view(request):
         else:
             messages.info(request, 'invalid credentials')
             return redirect('userauths:login')
-
-
     else:
         return render(request, 'login.html')
 
@@ -180,23 +165,15 @@ def home(request):
 
 def activate(request, uidb64, token):
     User = get_user_model()
-    print("hiiiii")
-
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
-        print(user)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
-
     if user is not None and account_activation_token.check_token(user, token):
         # Activate the user account
         user.is_active = True
         user.save()
-        new = Dashboard_User(user=user)
-        new.save()
-        
-
         # Redirect to the login page
         return redirect('userauths:login')
     else:
