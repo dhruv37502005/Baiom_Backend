@@ -19,4 +19,4 @@ userauths/migrations/0002_user_bio.py
 userauths/migrations/0003_dashboard_user_delete_user.py
 userauths/migrations/0004_remove_dashboard_user_address_and_more.py
 userauths/migrations/0005_employee.py
-db.sqlite3
+/db.sqlite3
