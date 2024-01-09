@@ -86,10 +86,6 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         print(user)
         if user is not None:
-            if user.is_superuser == True:
-                login(request, user)
-                return redirect('dashboard:admin_ui')
-            else:
                 login(request, user)
                 request.session['username'] = user.username
                 return redirect('core:index')
