@@ -1,12 +1,32 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from userauths.models import Dashboard_User
 from .models import Course
 
-def webdevelopment(request):
-    # courses = Course.objects.all()
-    web_dev_courses = Course.objects.filter(category='Web Development', status='active')
-    print(web_dev_courses)
-    return render(request, 'webdevelopment.html', {'is_webdevelopment_page': True, 'web_dev_courses': web_dev_courses})
+# def webdevelopment(request):
+#     # courses = Course.objects.all()
+#     web_dev_courses = Course.objects.filter(category='Web Development', status='active')
+#     print(web_dev_courses)
+#     return render(request, 'webdevelopment.html', {'is_webdevelopment_page': True, 'web_dev_courses': web_dev_courses})
 
+# @login_required(login_url='/userauths/login/')
+def webdevelopment(request):
+    web_dev_courses = Course.objects.filter(category='Web Development', status='active')
+    user = request.user
+    if user.is_authenticated:
+        dash_user, created = Dashboard_User.objects.get_or_create(user=user)
+        enrolled_courses = dash_user.enrolled_courses.all()
+        return render(request, 'webdevelopment.html', {
+            'is_webdevelopment_page': True,
+            'web_dev_courses': web_dev_courses,
+            'enrolled_courses': enrolled_courses
+        })
+    else:
+        return render(request, 'webdevelopment.html', {
+            'is_webdevelopment_page': True,
+            'web_dev_courses': web_dev_courses
+        })
+        
 def dataanalyst(request):
     data_analyst_courses = Course.objects.filter(category='Data Analyst', status='active')
     return render(request, 'dataanalyst.html', {'is_dataanalyst_page': True, 'data_analyst': data_analyst_courses})
