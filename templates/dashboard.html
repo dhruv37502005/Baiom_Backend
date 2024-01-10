@@ -28,8 +28,8 @@
             alt=""
           />
         </div>
-        <h1>Lord Hanuman</h1>
-        <p>srihanuman@gmail.com</p>
+        <h1>{{ user.username }}</h1>
+        <p>{{ user.email }}</p>
       </div>
       <div class="links">
         <div class="link">
@@ -66,9 +66,9 @@
           >
         </div>
         <div class="link">
-          <a href="#">
+          <a href="{% url 'userauths:logout' %}">
             <span class="material-symbols-outlined"> logout </span>
-            <h2>Logout</h2></a
+            <h2 >Logout</h2></a
           >
         </div>
         <div class="down">
@@ -104,7 +104,8 @@
           </header>
         </section>
         <section class="form-section" id="form-section">
-          <form class="form">
+          <form class="form" method="POST">
+            {% csrf_token %}
             <section class="close-details-section" id="close-details-section">
               <div class="close-details" id="close-details">&times;</div>
             </section>
@@ -123,52 +124,53 @@
             <section class="form-content">
               <div class="form-element">
                 <label for="first-name" class="first-name"></label>
-                <input type="text" id="middle-name" placeholder="First name" />
+                <input type="text" id="first-name" placeholder="First name" value="{{ dash_user.fname }}" name="first_name"/>
               </div>
               <div class="form-element">
                 <label for="middle-name" class="middle-name"></label>
-                <input type="text" id="middle-name" placeholder="Middle name" />
+                <input type="text" id="middle-name" placeholder="Middle name" value="{{ dash_user.mname }}" name="middle_name"/>
               </div>
               <div class="form-element">
                 <label for="last-name" class="last-name"></label>
-                <input type="text" id="last-name" placeholder="Last-name" />
+                <input type="text" id="last-name" placeholder="Last-name" value="{{ dash_user.lname }}" name="last_name" />
               </div>
               <div class="form-element">
-                <label for="email" class="email"></label>
-
-                <input type="text" id="email" placeholder="xxxxxx@Email.com" />
+                <label for="education" class="education"></label>
+                <input type="text" id="education" placeholder="Education"/>
               </div>
               <div class="form-element">
                 <label for="mobile-number" class="mobile-number"></label>
-
                 <input
                   type="text"
                   id="mobile-number"
                   placeholder="Enter Mobile Number"
+                  value="{{ dash_user.mobilenumber }}"
+                  name="mobile_number"
                 />
               </div>
               <div class="form-element">
                 <label for="college-name" class="college-name"></label>
-
                 <input
                   type="text"
                   id="college-name"
                   placeholder="College Name"
+                  value="{{ dash_user.collegename }}"
+                  name="college_name"
                 />
               </div>
               <div class="form-element">
                 <label for="graduation-year" class="graduation-year"></label>
-
                 <input
                   type="text"
                   id="graduation-year"
                   placeholder="Graduation Year"
+                  value="{{ dash_user.graduation_year }}"
+                  name="graduation_year"
                 />
               </div>
               <div class="form-element">
                 <label for="bio" class="bio"></label>
-
-                <input type="text" id="bio" placeholder="Bio" />
+                <input type="text" id="bio" placeholder="Bio" value="{{ dash_user.bio }}" name="bio"/>
               </div>
               <div class="form-element btn" id="submit-btn-section">
                 <button type="submit" class="submit-btn">Submit</button>
@@ -185,7 +187,7 @@
             <!-- <section class="registered-photo"></section> -->
             <section class="registered-details">
               <section class="registered-name-section">
-                <h2 class="registered-name">Lord Hanuman</h2>
+                <h2 class="registered-name">{{ dash_user.fname }}</h2>
                 <button type="button" class="edit-details" id="edit-details">
                   <span class="material-symbols-outlined"> edit </span>
                 </button>
@@ -196,7 +198,7 @@
                 <div class="first-part">
                   <div class="registered-college-name element">
                     <span class="material-symbols-outlined"> school </span
-                    >Pragati Engineering college
+                    >{{ dash_user.collegename }}
                   </div>
                   <div class="registered-college-name element">
                     <span class="material-symbols-outlined">
@@ -212,12 +214,12 @@
                 <div class="second-part">
                   <div class="registered-mobile-number element">
                     <span class="material-symbols-outlined"> call </span
-                    >1234567890
+                    >{{ dash_user.mobilenumber }}
                   </div>
 
                   <div class="registered-email-id element">
                     <span class="material-symbols-outlined"> mail </span
-                    >xxxx@gmail.com
+                    >{{ user.email }}
                   </div>
                   <div class="registered-email-id element">
                     <span class="material-symbols-outlined"> link </span
