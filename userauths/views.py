@@ -56,7 +56,11 @@ def signup(request):
             email.send()
 
             messages.success(request, "Please confirm your email address to complete the registration")
-            
+
+            return redirect('userauths:signup')
+        else:
+            return render(request, 'signup.html', {'form': form})
+
     else:
         form = UseRegisterForm()
 

@@ -23,6 +23,15 @@
         <h1>Sign In</h1>
         <form method="POST">
           {% csrf_token %}
+
+            {% if messages %}
+            <ul class="messages">
+              {% for message in messages %}
+                  <strong><li>{{ message }}</li></strong>
+              {% endfor %}
+            </ul>
+        {% endif %}
+
           <div class="username">
             <div class="icon"><i class="fas fa-user"></i></div>
             <div class="inputbox"><input type="username" name="username" class="" placeholder="username"></div>
