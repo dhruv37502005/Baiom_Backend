@@ -1,6 +1,23 @@
 {% load static%}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAOIAM</title>
+    <meta name="title" content="Baoiam" />
+    <link
+      rel="icon"
+      href="{% static 'home/img/brand.png' %}"
+      type="image/icon type"
+      style="background-color: wheat"
+    />
+    <meta
+      name="description"
+      content="Baoiam is a fully-certified platform since 2020, helping millions of students through the entire world to achieve their personal and professional goals."
+    />
+
 
 <head>
   <meta charset="UTF-8" />
@@ -156,66 +173,164 @@
                   </li>
                 </ul>
               </div>
-              <a class="dropdown-item" href="./Entre-master/index.html">Enterpreneurship Courses</a>
-            </div>
-          </li>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="./WPF/wpf.html"><b style="color: #fa3c23">WEP</b></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./Blog-Section-main/main-blog.html"
-              >Blog</a
-            >
             <li class="nav-item">
-              <a class="nav-link" href="../Baioam_web/Pay after payment/index.html"
+              <a href="./ITIE-master/index.html" class="nav-link"
+                >ITIE <span class="bar"></span
+              ></a>
+              <ul class="sub-courses-list"></ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Courses
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a
+                  class="dropdown-item dropdown-toggle"
+                  href="./career/career.html"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Courses</a
+                >
+                <div
+                  class="dropdown-menu relative"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <ul class="sub-courses-list">
+                    <li>
+                      <a class="test" href="{% url 'course:webdevelopment' %}"
+                        >Web Development</a
+                      >
+                    </li>
+
+                    <li>
+                      <a class="test" href="{% url 'course:dataanalyst' %}"
+                        >DataAnalyst</a
+                      >
+                    </li>
+
+                    <li>
+                      <a class="test" href="{% url 'course:datascience' %}"
+                        >DataScience</a
+                      >
+                    </li>
+                    <li>
+                      <a class="test" href="{% url 'course:contentwriting' %}"
+                        >Content Writing</a
+                      >
+                    </li>
+                    <li>
+                      <a class="test" href="{% url 'course:graphicdesigning' %}"
+                        >Graphic Designing</a
+                      >
+                    </li>
+                    <li>
+                      <a class="test" href="{% url 'course:seomarketing' %}"
+                        >Seo Marketing</a
+                      >
+                    </li>
+                    <li>
+                      <a class="test" href="{% url 'course:digitalmarketing' %}"
+                        >Digital Marketing Course</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="test"
+                        href="{% url 'course:projectmanagement' %}"
+                        >Project Management</a
+                      >
+                    </li>
+                    <li>
+                      <a class="test" href="{% url 'course:humanresource' %}"
+                        >Human Resources</a
+                      >
+                    </li>
+                    <li>
+                      <a class="test" href="{% url 'course:corporatelaw' %}"
+                        >Corporate Law</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <a class="dropdown-item" href="./Entre-master/index.html"
+                  >Enterpreneurship Courses</a
+                >
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./WPF/wpf.html"
+                ><b style="color: #fa3c23">WEP</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Blog-Section-main/main-blog.html"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="../Baioam_web/Pay after payment/index.html"
                 >PAP</a
               >
             </li>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./Baoiam-refer-page-main/index.html"
-              >Refer & Earn</a
-            >
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" id="active" href="{% url 'contactapp:contactus' %}"
-              >Contact Us</a
-            >
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Baoiam-refer-page-main/index.html"
+                >Refer & Earn</a
+              >
+            </li>
+            <li class="nav-item active">
+              <a
+                class="nav-link"
+                id="active"
+                href="{% url 'contactapp:contactus' %}"
+                >Contact Us</a
+              >
+            </li>
 
-
-          {% if user.username %}
-          <li class="nav-item" id="profile">
-            <button type="button" id="profile-btn" class="profile-btn">
-              <div class="profile-dropdown" id="profile-dropdown">
-                <div id="profile-content">
-                  <a id="profile-dropdown-item" href="{% url 'dashboard:user_ui' %}">Dashboard</a>
-                  <a id="profile-dropdown-item" href="{% url 'userauths:logout' %}">Logout</a>
+            {% if user.username %}
+            <li class="nav-item" id="profile">
+              <button type="button" id="profile-btn" class="profile-btn">
+                <div class="profile-dropdown" id="profile-dropdown">
+                  <div id="profile-content">
+                    <a
+                      id="profile-dropdown-item"
+                      href="{% url 'dashboard:user_ui' %}"
+                      >Dashboard</a
+                    >
+                    <a
+                      id="profile-dropdown-item"
+                      href="{% url 'userauths:logout' %}"
+                      >Logout</a
+                    >
+                  </div>
                 </div>
-              </div>
-            </button>
-          </li>
-          {% else %}
+              </button>
+            </li>
+            {% else %}
 
-          <li class="nav-item">
-            <a href="{% url 'userauths:login' %}">
-              <button class="btn-1">Login</button></a>
-          </li>
-          {% endif %}
-
-
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-
-  <li class="nav-item">
-    <a href="{% url 'userauths:signup' %}">
-      <button class="btn-1">Login</button></a>
-  </li>
-  </ul>
-  </div>
-  </nav>
-  </header>
+            <li class="nav-item">
+              <a href="{% url 'userauths:login' %}">
+                <button class="btn-1">Login</button></a
+              >
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>
