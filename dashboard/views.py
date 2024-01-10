@@ -27,16 +27,16 @@ def user_ui(request):
        return render(request,'profile.html')
     
 
-# def admin_ui(request):
-#     if request.method == 'GET':
-#       if request.user.is_authenticated:
-#         auser = request.user
-#         if auser.is_staff==True:
-#           return redirect('core:index')
-#         else:
-#           return redirect('/admin')
-#       else :
-#         return redirect('core:index')
+def admin_ui(request):
+    if request.method == 'GET':
+      if request.user.is_authenticated:
+        auser = request.user
+        if auser.is_staff==True:
+          return redirect('core:index')
+        else:
+          return redirect('/admin')
+      else :
+        return redirect('core:index')
 
 @login_required(login_url='/userauths/login/')
 def enroll_course(request, course_id):

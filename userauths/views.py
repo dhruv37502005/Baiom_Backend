@@ -32,28 +32,13 @@ account_activation_token = AccountActivationTokenGenerator()
 
 
 def signup(request):
-    print("yupp")
     if request.method == 'POST':
-        print("Inside POST")
-        print(request.POST)
         form = UseRegisterForm(request.POST or None)
-        print("below the form")
         if form.is_valid():
-            print("Valid")
             new_user = form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f"Hey {username}, your account was created successfully.")
-            print("below the suceess massage")
-            authenticated_user = authenticate(
-                username=form.cleaned_data['username'],
-                password=form.cleaned_data['password1'],
-            )
-            # if authenticated_user is not None:
-            #     login(request, authenticated_user)
-            #     return redirect("core:index")
-            # else:
-            #     messages.error(request, "Authentication failed.")
-            print("On the email")
+
             current_site = get_current_site(request)
             mail_subject = 'Activation link has been sent to your email id'
             message = render_to_string('acc_active_email.html', {
@@ -63,21 +48,24 @@ def signup(request):
                 'token': account_activation_token.make_token(new_user),
             })
             to_email = form.cleaned_data.get('email')
-            print("On the email message")
+
             email = EmailMessage(
                 mail_subject, message, to=[to_email]
             )
+            email.content_subtype = 'html'
             email.send()
-            print("abouve the email sender")
+
             messages.success(request, "Please confirm your email address to complete the registration")
+
+            return redirect('userauths:signup')
         else:
-            print("somthing went wrong")
+            return render(request, 'signup.html', {'form': form})
+
     else:
-        print("In else")
         form = UseRegisterForm()
+
     context = {'form': form}
     return render(request, 'signup.html', context)
-
 
 def login_view(request):
     if request.method == 'POST':

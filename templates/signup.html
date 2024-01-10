@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +34,27 @@
 
       <form method="POST">
         {% csrf_token %}
+
+
+
+         {% if messages %}
+            <ul class="messages">
+              {% for message in messages %}
+                  <strong><li>{{ message }}</li></strong>
+              {% endfor %}
+            </ul>
+        {% endif %}
+
+
+        {% if form.errors %}
+            <div class="error-messages">
+                 {% for field, errors in form.errors.items %}
+                      {% for error in errors %}
+              <strong><p>{{ error }}</p></strong>
+                     {% endfor %}
+                {% endfor %}
+            </div>
+        {% endif %}
 
         
       <!-- <div class="alert alert-danger">
