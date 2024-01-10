@@ -70,8 +70,9 @@ def signup(request):
             email.send()
             print("abouve the email sender")
             messages.success(request, "Please confirm your email address to complete the registration")
+            return redirect('userauths:signup')
         else:
-            print("somthing went wrong")
+            return render(request, 'signup.html', {'form': form})
     else:
         print("In else")
         form = UseRegisterForm()
