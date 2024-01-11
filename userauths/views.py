@@ -1,4 +1,6 @@
 from django.shortcuts import redirect, render
+
+from userauths.models import Dashboard_User
 from .form import UseRegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -18,6 +20,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.auth import get_user_model
+from django.db import transaction
 
 User = settings.AUTH_USER_MODEL
 
@@ -31,10 +34,13 @@ class AccountActivationTokenGenerator(PasswordResetTokenGenerator):
 account_activation_token = AccountActivationTokenGenerator()
 
 
+@transaction.atomic
 def signup(request):
+    new_user = None
     if request.method == 'POST':
         form = UseRegisterForm(request.POST or None)
         if form.is_valid():
+            dashboard_user, created = Dashboard_User.objects.get_or_create(user=new_user)
             new_user = form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f"Hey {username}, your account was created successfully.")
@@ -48,22 +54,15 @@ def signup(request):
                 'token': account_activation_token.make_token(new_user),
             })
             to_email = form.cleaned_data.get('email')
-
-            email = EmailMessage(
-                mail_subject, message, to=[to_email]
-            )
+            email = EmailMessage(mail_subject, message, to=[to_email])
             email.content_subtype = 'html'
             email.send()
-
             messages.success(request, "Please confirm your email address to complete the registration")
-
             return redirect('userauths:signup')
         else:
             return render(request, 'signup.html', {'form': form})
-
     else:
         form = UseRegisterForm()
-
     context = {'form': form}
     return render(request, 'signup.html', context)
 
