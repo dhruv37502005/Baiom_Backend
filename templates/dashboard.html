@@ -5,15 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'dashboard/css/style.css'%}" />
-    <link rel="stylesheet" href="{% static 'dashboard/css/styles.css'%}" />
-    <link rel="stylesheet" href="{% static 'dashboard/css/another.css'%}" />
-    <link rel="stylesheet" href="{% static 'dashboard/css/courses.css'%}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/another.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/courses.css' %}" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
-    <script src="{% static 'dashboard/js/script.js'%}" defer></script>
+    <script src="{% static 'dashboard/js/script.js' %}" defer></script>
   </head>
   <body>
     <div class="blackshadow" id="blackshadow"></div>
@@ -40,37 +40,34 @@
         </div>
         <div class="link">
           <a
-            href="#" class="a activeHai"
-            style="box-shadow: 4px 8px 8px rgb(255, 68, 0); color: orangered"
+            href="#" id="profile" class="a activeHai"
           >
             <span class="material-symbols-outlined"> person </span>
             <h2>Profile</h2></a
           >
         </div>
         <div class="link">
-          <a href="#" class="a"
+          <a href="#" id="course" class="a"
             ><span class="material-symbols-outlined"> laptop_mac </span>
             <h2>Course</h2></a
           >
         </div>
         <div class="link">
-          <a href="#" class="a"
+          <a href="#" id="certificate" class="a"
             ><span class="material-symbols-outlined"> developer_guide </span>
-            <h2>Course</h2></a
+            <h2>Certificate</h2></a
           >
         </div>
         <div class="link">
-          <a href="#" class="a" >
+          <a href="#" id="liveClasses" class="a"> 
             <span class="material-symbols-outlined"> live_tv </span>
             <h2>Live Classes</h2></a
           >
         </div>
         <div class="link">
-
-          <a href="{% url 'userauths:logout' %}" class="a">
-
+          <a href="#" class="a" >
             <span class="material-symbols-outlined"> logout </span>
-            <h2 >Logout</h2></a
+            <h2>Logout</h2></a
           >
         </div>
         <div class="down">
@@ -257,7 +254,6 @@
             </div>
           </section>
         </section>
-        </section>
 
         <!-- //course section -->
         <div class="courseDiv" id="courseDiv">
@@ -282,12 +278,12 @@
           </div>
         </section>
       </div>
-        <section id="certificate-section">
+        <section id="certificate-section" style="background-color: red;">
      
         </section>
 
 
-        <section id="liveClasses-section">
+        <section id="liveClasses-section" style="background-color: rgb(179, 255, 0);">
      
         </section>
         </section>
