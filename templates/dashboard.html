@@ -19,7 +19,7 @@
     <div class="blackshadow" id="blackshadow"></div>
     <aside class="aside" id="aside">
       <div class="image">
-        <img src="./images/brand.jpg" alt="" />
+        <img src="{% static 'home/img/brand.png'%}" alt="" />
       </div>
       <div class="ProfileAndName">
         <div class="profilePic">
@@ -33,7 +33,7 @@
       </div>
       <div class="links">
         <div class="link">
-          <a href="#" class="a"
+          <a href="{% url 'core:index' %}" class="a"
             ><span class="material-symbols-outlined"> home </span>
             <h2>Home</h2></a
           >
@@ -65,7 +65,7 @@
           >
         </div>
         <div class="link">
-          <a href="#" class="a" >
+          <a href="{% url 'userauths:logout' %}" class="a" >
             <span class="material-symbols-outlined"> logout </span>
             <h2>Logout</h2></a
           >
