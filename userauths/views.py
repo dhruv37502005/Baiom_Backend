@@ -1,8 +1,11 @@
 from django.shortcuts import redirect, render
+
+from userauths.models import Dashboard_User
 from .form import UseRegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.conf import settings
+from .models import Dashboard_User
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_str
@@ -18,6 +21,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.auth import get_user_model
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.views import PasswordResetCompleteView, PasswordResetConfirmView
+
+
 
 User = settings.AUTH_USER_MODEL
 
@@ -32,9 +41,12 @@ account_activation_token = AccountActivationTokenGenerator()
 
 
 def signup(request):
+    new_user = None
     if request.method == 'POST':
         form = UseRegisterForm(request.POST or None)
         if form.is_valid():
+            new_user = form.save(commit=False)
+            new_user.is_active=False
             new_user = form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f"Hey {username}, your account was created successfully.")
@@ -48,18 +60,15 @@ def signup(request):
                 'token': account_activation_token.make_token(new_user),
             })
             to_email = form.cleaned_data.get('email')
-
-            email = EmailMessage(
-                mail_subject, message, to=[to_email]
-            )
+            email = EmailMessage(mail_subject, message, to=[to_email])
             email.content_subtype = 'html'
             email.send()
-
             messages.success(request, "Please confirm your email address to complete the registration")
-            
+            return redirect('userauths:signup')
+        else:
+            return render(request, 'signup.html', {'form': form})
     else:
         form = UseRegisterForm()
-
     context = {'form': form}
     return render(request, 'signup.html', context)
 
@@ -70,10 +79,6 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         print(user)
         if user is not None:
-            if user.is_superuser == True:
-                login(request, user)
-                return redirect('dashboard:admin_ui')
-            else:
                 login(request, user)
                 request.session['username'] = user.username
                 return redirect('core:index')
@@ -83,39 +88,6 @@ def login_view(request):
     else:
         return render(request, 'login.html')
 
-
-# def login_view(request):
-#     print("Done")
-#     if request.user.is_authenticated:
-#
-#         messages.warning(request, f"You are already logged in as {request.user.username}")
-#
-#     if request.method == 'POST':
-#         print("InsidePost")
-#         email = request.POST.get('email')
-#         password = request.POST.get('password')
-#
-#         try:
-#             user = User.objects.get(email=email)
-#
-#         except:
-#             messages.warning(request, f"User with {email} does not exist")
-#
-#         user = authenticate(request, email=email, password=password)
-#
-#         if user is not None:
-#             print("Inside if")
-#             login(request, user)
-#             messages.success(request, f"Welcome back {user.username}")
-#             return redirect("core:index")
-#         else:
-#             messages.warning(request, f"User does not exist, create an account.")
-#
-#     context = {
-#         'title': 'Login',
-#     }
-#
-#     return render(request, 'login.html', context)
 
 
 def logout_view(request):
@@ -129,23 +101,6 @@ def home(request):
     return render(request, "home.html")
 
 
-# def activate(request, uidb64, token):
-#     try:
-#         uid = force_str(urlsafe_base64_decode(uidb64))
-#         user = User.objects.get(pk=uid)
-#     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-#         user = None
-
-#     if user is not None and account_activation_token.check_token(user, token):
-#         # Activate the user account
-#         user.is_active = True
-#         user.save()
-
-#         # Redirect to the login page
-#         return redirect('userauths:login')
-#     else:
-#         return HttpResponse('Activation link is invalid!')
-
 
 def activate(request, uidb64, token):
     User = get_user_model()
@@ -158,9 +113,34 @@ def activate(request, uidb64, token):
         # Activate the user account
         user.is_active = True
         user.save()
+        new = Dashboard_User(user=user)
+        new.save()
         # Redirect to the login page
         return redirect('userauths:login')
     else:
         return HttpResponse('Activation link is invalid!')
 
 
+
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = 'password_reset.html'
+    email_template_name = 'password_reset_email.html'
+    #subject_template_name = 'users/password_reset_subject'
+    success_message = "We've emailed you instructions for setting your password, " \
+                      "if an account exists with the email you entered. You should receive them shortly." \
+                      " If you don't receive an email, " \
+                      "please make sure you've entered the address you registered with, and check your spam folder."
+    success_url = reverse_lazy('userauths:login')
+
+
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    template_name = 'password_reset_confirm.html'  # Set your custom template name
+    # Override success_url attribute
+    success_url = reverse_lazy('userauths:password_reset_complete') 
+    
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = 'password_reset_complete.html'  # Set your custom template name
+    # Override success_url attribute
+    success_url = 'userauths:login' 
