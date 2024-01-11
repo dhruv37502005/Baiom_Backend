@@ -3,6 +3,7 @@ from .form import UseRegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.conf import settings
+from .models import Dashboard_User
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_str
@@ -21,6 +22,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.views import PasswordResetCompleteView, PasswordResetConfirmView
 
 User = settings.AUTH_USER_MODEL
 
@@ -38,7 +40,9 @@ def signup(request):
     if request.method == 'POST':
         form = UseRegisterForm(request.POST or None)
         if form.is_valid():
-            new_user = form.save()
+            new_user = form.save(commit=False)
+            new_user.is_active=False
+            new_user.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f"Hey {username}, your account was created successfully.")
 
@@ -161,6 +165,8 @@ def activate(request, uidb64, token):
         # Activate the user account
         user.is_active = True
         user.save()
+        new = Dashboard_User(user=user)
+        new.save()
         # Redirect to the login page
         return redirect('userauths:login')
     else:
@@ -178,16 +184,15 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
                       "please make sure you've entered the address you registered with, and check your spam folder."
     success_url = reverse_lazy('userauths:login')
 
-from django.contrib.auth.views import PasswordResetCompleteView, PasswordResetConfirmView
+
 
 class CustomPasswordResetConfirmView(PasswordResetConfirmView):
     template_name = 'password_reset_confirm.html'  # Set your custom template name
-
     # Override success_url attribute
     success_url = reverse_lazy('userauths:password_reset_complete') 
+    
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'password_reset_complete.html'  # Set your custom template name
-
     # Override success_url attribute
     success_url = 'userauths:login' 
