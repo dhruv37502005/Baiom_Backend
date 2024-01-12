@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Zanabazar+Square&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 
 /* Common */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
@@ -80,7 +80,7 @@ img {
 /* Header */
 header {
   background: var(--color-white);
-  z-index: 1 !important;
+  z-index: 1 ;
   box-shadow: rgb(49, 49, 49);
 }
 
@@ -91,9 +91,10 @@ header .nav-item {
 
 header .nav-item a {
   padding-top: 0.7rem;
-  color: rgb(6, 0, 56) !important;
+  /* color: rgb(6, 0, 56); */
+  color: black;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @media (max-width: 1054px) {
@@ -135,7 +136,7 @@ header img {
 }
 
 header .nav-item a:hover {
-  color: #ec4f01 !important;
+  color: #ec4f01;
 }
 
 .btn-1 {
@@ -1424,7 +1425,7 @@ p.virtues-sub-heading {
 }
 
 .nav-courses-list > li > a:hover {
-  color: orangered !important;
+  color: orangered;
   background-color: rgba(241, 214, 164, 0.603);
 }
 
