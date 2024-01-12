@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
-
+from django.shortcuts import render, get_object_or_404
 from userauths.models import Dashboard_User
 from .models import Course
+from django.db.models import Sum
+
 
 # def webdevelopment(request):
 #     # courses = Course.objects.all()
@@ -71,6 +73,23 @@ def corporatelaw(request):
 def enterpreneurship(request):
     enterpreneurship_courses = Course.objects.filter(category='Enterpreneurship', status='active')
     return render(request, 'enterpreneurship.html', {'is_enterpreneurship_page': True, 'enterpreneurship': enterpreneurship_courses})
+
+def user_progress(request,course_id):
+    course = get_object_or_404(Course,pk=course_id)
+    #current user logged in
+    user = request.user
+    videos = course.videos.all()
+    total_duration = sum(video.duration for video in videos)
+    watched_duration = Course.objects.filter(user=user, video__in=videos).aggregate(models.Sum('watched_duration'))['watched_duration__sum']
+    progress_percentage = (watched_duration / total_duration) * 100 if total_duration > 0 else 0
+    context = {
+        'course': course,
+        'progress_percentage': progress_percentage,
+    }
+
+    return render(request,'dashboard.html', context)
+
+
 
 
 

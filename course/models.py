@@ -49,6 +49,8 @@ class Course(models.Model):
     price=models.FloatField(null=True, blank=True)
     discount = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     slug = models.SlugField(unique=True, blank=True)
+    duration_field = models.DurationField(default=timezone.timedelta)
+    watch_percent = models.FloatField(blank=True,null=True)
     status_choices = [
         ('active', 'Active'),
         ('inactive', 'Inactive'),
