@@ -3,6 +3,8 @@ from django.urls import path, include
 from django.conf import settings
 
 from course import views
+
+
 app_name = 'course'
 
 urlpatterns = [
@@ -19,5 +21,8 @@ urlpatterns = [
     path('corporatelaw/',views.corporatelaw,name="corporatelaw"),
     path('enterpreneurship/',views.enterpreneurship,name="enterpreneurship"),
     path('webdevelopment/',views.webdevelopment,name="webdevelopment"),
+
+
+
 
 ]
