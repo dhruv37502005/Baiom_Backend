@@ -1,5 +1,5 @@
 from django.urls import path
-from core.views import index,career,hire_from_us,itie,wep,blog,pap,refer_earn
+from core.views import index,career,hire_from_us,itie,wep,blog,pap,refer_earn,course
 
 
 app_name = 'core'
@@ -13,6 +13,5 @@ urlpatterns = [
     path("blog/", blog, name="blog"),
     path("pap/", pap, name="pap"),
     path("refer_earn/", refer_earn, name="refer_earn"),
-    
-    
+    path("course/", course, name="course"),
 ]

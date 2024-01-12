@@ -28,3 +28,5 @@ def pap(request):
 def refer_earn(request):
     return render(request, 'referEarn.html')
 
+def course(request):
+    return render(request, 'course.html', {'is_courses': True})
