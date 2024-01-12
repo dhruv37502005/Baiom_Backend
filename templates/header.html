@@ -79,7 +79,7 @@
   {% endif %}
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" />
-  <!-- <link rel="stylesheet" href="{% static 'home/css/otp.css' %}" /> -->
+  <link rel="stylesheet" href="{% static 'home/css/otp.css' %}" />
 
   <script src="{% static 'home/js/profile.js' %}" defer></script>
 
@@ -142,51 +142,13 @@
             </div>
           </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Courses
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item dropdown-toggle" href="./career/career.html" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Courses</a>
-              <div class="dropdown-menu relative" aria-labelledby="navbarDropdown">
-                <ul class="sub-courses-list">
-                  <li>
-                    <a class="test" href="{% url 'course:webdevelopment' %}">Web Development</a>
-                  </li>
-
-                  <li>
-                    <a class="test" href="{% url 'course:dataanalyst' %}">DataAnalyst</a>
-                  </li>
-
-                  <li>
-                    <a class="test" href="{% url 'course:datascience' %}">DataScience</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:contentwriting' %}">Content Writing</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:graphicdesigning' %}">Graphic Designing</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:seomarketing' %}">Seo Marketing</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:digitalmarketing' %}">Digital Marketing Course</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:projectmanagement' %}">Project Management</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:humanresource' %}">Human Resources</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:corporatelaw' %}">Corporate Law</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
+          <li class="nav-item">
+            {% url 'core:course' as courses %} 
+            <a class="nav-link {% if request.path == courses %}isactive{% endif %}" href="{{courses}}"
+              >Courses</b></a
+            >
+          </li>
+         
 
             <li class="nav-item">
               {% url 'core:itie' as itie %} 
@@ -235,7 +197,6 @@
                 >Contact Us</a
               >
             </li>
-
             {% if user.username %}
             <li class="nav-item" id="profile">
               <button type="button" id="profile-btn" class="profile-btn">
@@ -249,8 +210,7 @@
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'userauths:logout' %}"
-                      >Logout</a
-                    >
+                      >Logout</a>
                   </div>
                 </div>
               </button>
