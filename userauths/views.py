@@ -26,8 +26,6 @@ from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import PasswordResetCompleteView, PasswordResetConfirmView
 
-
-
 User = settings.AUTH_USER_MODEL
 
 
@@ -46,7 +44,7 @@ def signup(request):
         form = UseRegisterForm(request.POST or None)
         if form.is_valid():
             new_user = form.save(commit=False)
-            new_user.is_active=False
+            new_user.is_active = False
             new_user = form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f"Hey {username}, your account was created successfully.")
@@ -66,11 +64,15 @@ def signup(request):
             messages.success(request, "Please confirm your email address to complete the registration")
             return redirect('userauths:signup')
         else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f'{error}')
             return render(request, 'signup.html', {'form': form})
     else:
         form = UseRegisterForm()
     context = {'form': form}
     return render(request, 'signup.html', context)
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -79,15 +81,14 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         print(user)
         if user is not None:
-                login(request, user)
-                request.session['username'] = user.username
-                return redirect('core:index')
+            login(request, user)
+            request.session['username'] = user.username
+            return redirect('core:index')
         else:
-            messages.info(request, 'invalid credentials')
+            messages.info(request, 'Invalid Credentials')
             return redirect('userauths:login')
     else:
         return render(request, 'login.html')
-
 
 
 def logout_view(request):
@@ -99,7 +100,6 @@ def logout_view(request):
 
 def home(request):
     return render(request, "home.html")
-
 
 
 def activate(request, uidb64, token):
@@ -121,26 +121,24 @@ def activate(request, uidb64, token):
         return HttpResponse('Activation link is invalid!')
 
 
-
 class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
     template_name = 'password_reset.html'
     email_template_name = 'password_reset_email.html'
-    #subject_template_name = 'users/password_reset_subject'
+    # subject_template_name = 'users/password_reset_subject'
     success_message = "We've emailed you instructions for setting your password, " \
                       "if an account exists with the email you entered. You should receive them shortly." \
                       " If you don't receive an email, " \
-                      "please make sure you've entered the address you registered with, and check your spam folder."
+                      "please make sure you've entered the addre ss you registered with, and check your spam folder."
     success_url = reverse_lazy('userauths:login')
-
 
 
 class CustomPasswordResetConfirmView(PasswordResetConfirmView):
     template_name = 'password_reset_confirm.html'  # Set your custom template name
     # Override success_url attribute
-    success_url = reverse_lazy('userauths:password_reset_complete') 
-    
+    success_url = reverse_lazy('userauths:password_reset_complete')
+
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'password_reset_complete.html'  # Set your custom template name
     # Override success_url attribute
-    success_url = 'userauths:login' 
+    success_url = 'userauths:login'

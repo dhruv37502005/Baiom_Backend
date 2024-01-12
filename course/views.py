@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
+
 from userauths.models import Dashboard_User
 from .models import Course
 
@@ -10,6 +12,7 @@ from .models import Course
 #     return render(request, 'webdevelopment.html', {'is_webdevelopment_page': True, 'web_dev_courses': web_dev_courses})
 
 # @login_required(login_url='/userauths/login/')
+
 def webdevelopment(request):
     web_dev_courses = Course.objects.filter(category='Web Development', status='active')
     user = request.user
@@ -67,4 +70,7 @@ def corporatelaw(request):
 def enterpreneurship(request):
     enterpreneurship_courses = Course.objects.filter(category='Enterpreneurship', status='active')
     return render(request, 'enterpreneurship.html', {'is_enterpreneurship_page': True, 'enterpreneurship': enterpreneurship_courses})
+
+
+
 
