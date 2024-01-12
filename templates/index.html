@@ -3,6 +3,24 @@
 
 {% block content %}
 <!-- Carousel section -->
+
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Display Django messages using SweetAlert2
+        {% if messages %}
+            document.addEventListener('DOMContentLoaded', function() {
+                {% for message in messages %}
+                    Swal.fire({
+                        icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% elif message.tags == "error" %}error{% else %}info{% endif %}',
+                        title: "{{ message|escapejs }}",
+                        showConfirmButton: false,
+                        timer: 3000  // Adjust the duration of the notification
+                    });
+                {% endfor %}
+            });
+        {% endif %}
+    </script>
+
     <div
       class="home-section carousel slide mb-5"
       id="carouselExampleSlidesOnly"

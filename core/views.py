@@ -14,7 +14,7 @@ def career(request):
 def hire_from_us(request):
     return render(request, 'hire_from_us.html')
 
-def ITIE(request):
+def itie(request):
     return render(request, 'ITIE.html')
 
 def wep(request):
@@ -24,11 +24,11 @@ def blog(request):
     return render(request, 'blog.html')
 
 
-def PAP(request):
+def pap(request):
     return render(request, 'pap.html')
 
-def earn_refer(request):
-    return render(request, 'earn_refer.html')
+def refer_earn(request):
+    return render(request, 'referEarn.html')
 
 def maintenance_page(request):
     return render(request, 'maintenance_break.html')
@@ -37,3 +37,7 @@ def locked_page(request):
     # form =  AccessForm()
     # return render(request, 'maintenance_locked.html', {'form': form})
     pass
+  
+
+def course(request):
+    return render(request, 'course.html', {'is_courses': True})

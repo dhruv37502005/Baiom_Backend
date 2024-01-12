@@ -5,21 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'dashboard/css/style.css'%}" />
-    <link rel="stylesheet" href="{% static 'dashboard/css/styles.css'%}" />
-    <link rel="stylesheet" href="{% static 'dashboard/css/another.css'%}" />
-    <!-- <link rel="stylesheet" href="courses.css" /> -->
+    <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/another.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/courses.css' %}" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
-    <script src="{% static 'dashboard/js/script.js'%}" defer></script>
+    <script src="{% static 'dashboard/js/script.js' %}" defer></script>
   </head>
   <body>
     <div class="blackshadow" id="blackshadow"></div>
     <aside class="aside" id="aside">
       <div class="image">
-        <img src="./images/brand.jpg" alt="" />
+        <img src="{% static 'home/img/brand.png'%}" alt="" />
       </div>
       <div class="ProfileAndName">
         <div class="profilePic">
@@ -29,46 +29,46 @@
           />
         </div>
         <h1>{{ user.username }}</h1>
+        
         <p>{{ user.email }}</p>
       </div>
       <div class="links">
         <div class="link">
-          <a href="#"
+          <a href="{% url 'core:index' %}" class="a"
             ><span class="material-symbols-outlined"> home </span>
             <h2>Home</h2></a
           >
         </div>
         <div class="link">
           <a
-            href="#"
-            style="box-shadow: 4px 8px 8px rgb(255, 68, 0); color: orangered"
+            href="#" id="profile" class="a activeHai"
           >
             <span class="material-symbols-outlined"> person </span>
             <h2>Profile</h2></a
           >
         </div>
         <div class="link">
-          <a href="#"
+          <a href="#" id="course" class="a"
             ><span class="material-symbols-outlined"> laptop_mac </span>
             <h2>Course</h2></a
           >
         </div>
         <div class="link">
-          <a href="#"
+          <a href="#" id="certificate" class="a"
             ><span class="material-symbols-outlined"> developer_guide </span>
-            <h2>Course</h2></a
+            <h2>Certificate</h2></a
           >
         </div>
         <div class="link">
-          <a href="#">
+          <a href="#" id="liveClasses" class="a"> 
             <span class="material-symbols-outlined"> live_tv </span>
             <h2>Live Classes</h2></a
           >
         </div>
         <div class="link">
-          <a href="{% url 'userauths:logout' %}">
+          <a href="{% url 'userauths:logout' %}" class="a" >
             <span class="material-symbols-outlined"> logout </span>
-            <h2 >Logout</h2></a
+            <h2>Logout</h2></a
           >
         </div>
         <div class="down">
@@ -254,6 +254,38 @@
               </div>
             </div>
           </section>
+        </section>
+
+        <!-- //course section -->
+        <div class="courseDiv" id="courseDiv">
+          <h2>Enroll Courses</h2>
+        <section id="course-card-section">
+          <div class="course-card">
+            <div class="card-image-section">
+              <img src="./images\card1 img.jpg" />
+            </div>
+            <div class="card-content">
+              <div class="completed-percentage">
+                <div class="inner" style="width: 55%;"></div>
+              </div>
+              <div class="lectures-completed">55/100 lectures completed</div>
+              <h3 class="course-name">Web Development</h3>
+              <div class="last-read">Last read: Layout grids</div>
+              <button type="button" class="resume-btn-element">
+                <span class="material-symbols-outlined"> play_arrow </span
+                >Resume Course
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+        <section id="certificate-section" style="background-color: red;">
+     
+        </section>
+
+
+        <section id="liveClasses-section" style="background-color: rgb(179, 255, 0);">
+     
         </section>
         </section>
       </main>

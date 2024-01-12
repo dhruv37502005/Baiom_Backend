@@ -9,6 +9,26 @@
 
   <link rel="stylesheet" href="{% static 'authentication/css/style1.css' %}">
   <title>Login-Page</title>
+
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Display Django messages using SweetAlert2
+        {% if messages %}
+            document.addEventListener('DOMContentLoaded', function() {
+                {% for message in messages %}
+                    Swal.fire({
+                        icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% elif message.tags == "error" %}error{% else %}info{% endif %}',
+                        title: "{{ message|escapejs }}",
+                        showConfirmButton: false,
+                        timer: 3000  // Adjust the duration of the notification
+                    });
+                {% endfor %}
+            });
+        {% endif %}
+    </script>
+
+
+
 </head>
 
 <body>
@@ -24,14 +44,6 @@
         <form method="POST">
           {% csrf_token %}
 
-            {% if messages %}
-            <ul class="messages">
-              {% for message in messages %}
-                  <strong><li>{{ message }}</li></strong>
-              {% endfor %}
-            </ul>
-        {% endif %}
-
           <div class="username">
             <div class="icon"><i class="fas fa-user"></i></div>
             <div class="inputbox"><input type="username" name="username" class="" placeholder="username"></div>
@@ -45,7 +57,7 @@
             </div>
           </div>
           <div class="forgot">
-            <a href="#">Forgot Password</a>
+            <a href="{% url 'userauths:password_reset' %}">Forgot Password</a>
           </div>
           <div>
             <button class="subbtn" type="submit">Sign In</button><br>

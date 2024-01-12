@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Zanabazar+Square&display=swap");
 
 /* Common */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
@@ -53,14 +53,14 @@ section:not(
     .section-4,
     .carousel-inner
   ) {
-  padding: 3rem 6%;
+  padding: 5rem 1% 3rem 0;
   /* margin-top: -40px; */
 }
-.homepage{
+.homepage {
   padding: 1rem 6%;
   margin-top: -40px;
 }
-.women{
+.women {
   padding: 1rem 6%;
   margin-top: -60px;
 }
@@ -80,19 +80,17 @@ img {
 /* Header */
 header {
   background: var(--color-white);
-  z-index: 1 ;
+  z-index: 1 !important;
   box-shadow: rgb(49, 49, 49);
 }
 
 header .nav-item {
   padding: 0.5rem;
-  /* padding: 0; */
 }
 
 header .nav-item a {
   padding-top: 0.7rem;
-  /* color: rgb(6, 0, 56); */
-  color: black;
+  color: rgb(6, 0, 56) !important;
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -112,7 +110,7 @@ header .nav-item a {
   }
 
   #nav-courses-one .dropdown-toggle + .dropdown-menu > .nav-link {
-    /* padding-left: 1.5rem; */
+    padding-left: 1.5rem;
     padding-top: 0;
   }
 
@@ -120,9 +118,7 @@ header .nav-item a {
     border-radius: 0;
   }
 }
-a{
-  padding: 0;
-}
+
 header .navbar-brand {
   padding-left: 4rem;
 }
@@ -136,12 +132,12 @@ header img {
 }
 
 header .nav-item a:hover {
-  color: #ec4f01;
+  color: #ec4f01 !important;
 }
 
 .btn-1 {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.8em 2em;
   background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
   -webkit-text-fill-color: #ffffff;
@@ -1193,6 +1189,17 @@ p.virtues-sub-heading {
   color: white;
 }
 
+#virtues-tab-1-content {
+  display: block;
+}
+
+#virtues-tab-2-content {
+  display: none;
+}
+
+#virtues-tab-3-content {
+  display: none;
+}
 
 /* Home Blog Section */
 
@@ -1425,7 +1432,7 @@ p.virtues-sub-heading {
 }
 
 .nav-courses-list > li > a:hover {
-  color: orangered;
+  color: orangered !important;
   background-color: rgba(241, 214, 164, 0.603);
 }
 
