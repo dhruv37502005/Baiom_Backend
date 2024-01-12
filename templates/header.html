@@ -59,7 +59,15 @@
   {% if is_index_page %}
   <link rel="stylesheet" href="{% static 'home/css/style.css' %}" />
   {% endif %}
+  {% if is_courses %}
+  <link rel="stylesheet" href="{% static 'courses/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/faq.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/sidebar.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/style3.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/slider2.css' %}" />
+  <script src="{% static 'courses/js/slider2.js' %}" defer></script>
 
+  {% endif %}
   <!-- contact-page css 'contact-us.html' -->
   {% if is_contactus_page %}
   <link rel="stylesheet" type="text/css" href="{% static 'contact-page/css/contact.css' %}">

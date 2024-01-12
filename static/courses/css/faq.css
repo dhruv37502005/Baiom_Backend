@@ -1,0 +1,247 @@
+.container-main {
+    display: flex;
+    justify-content: center;
+    margin: 50px 95px;
+  }
+  
+  .faq .accordion {
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+  
+  }
+  
+  .ac-main h1 {
+    margin-top: 50px;
+    font-size: 3rem;
+    text-align: center;
+    color: #031864;
+    font-weight: bold;
+    margin-bottom:50px;
+  }
+  
+  .ac-main h1 span {
+    font-size: 3rem;
+    background: -webkit-linear-gradient(45deg, #fa2424, #fb8721);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid red;
+  }
+  
+  .faq .accordion-item {
+    background-color: #fff;
+    color: #050237;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+  }
+  .faq .accordion-item-header {
+    font-size: 1.2rem;
+    padding: 2rem 3rem;
+    min-height: 3.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .faq .accordion-item-header:hover {
+    color: rgb(251, 96, 13);
+  }
+  
+  .faq .accordion-item-header::after {
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    right: 3rem;
+  }
+  
+  
+  @media(max-width:650px){
+    .ac-main h1{
+      margin-top: 2rem;
+    }
+  }
+  
+  @media (max-width:700px){
+    .faq .accordion-item-header::after {
+      display: none;
+    } 
+  }
+  
+  .faq .accordion-item-header.active::after {
+    content: "\2212";
+  }
+  
+  .faq .accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    color: rgb(99, 99, 99);
+    font-weight: 500;
+  }
+  
+  .faq .accordion-item-body-content {
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+  }
+  
+  .faq .accordion-item-body-content ul {
+    margin: 0 15px;
+  }
+  
+  .img {
+    width: 40%;
+    margin: 100px 0;
+  }
+  
+  .img img {
+    width: 600px;
+    height: 500px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    padding-left: 5px;
+  
+  }
+  
+  .fa-xmark{
+    font-size: 2rem;
+  }
+  
+  @media screen and (max-width:1000px) {
+  
+    .homepage {
+      margin: 50px 50px;
+      /* background: url("/abstract-background-illustration-watercolor-blue-green.jpg"); */
+      margin-top: 100px;
+  
+    }
+  
+    .refer_row {
+      flex-direction: column;
+    }
+  
+    .rf_col {
+      width: 90%;
+      margin: 40px 0;
+    }
+  
+    .rf_col2 {
+      width: 90%;
+      float: none;
+    }
+  
+    .rf_col2 img {
+      width: 90%;
+    }
+  
+  
+    /* HOW REFER WORK */
+  
+    .how {
+      padding: 60px 40px;
+      margin-bottom: 10px;
+      /* background: url("/abstract-background-illustration-watercolor-blue-green.jpg"); */
+  
+    }
+  
+    .titale h2 {
+      font-size: 45px;
+    }
+  
+    .titale h2 span {
+      font-size: 45px;
+    }
+  
+  
+    .titale p {
+      padding: 0 50px;
+    }
+  
+  
+    /* Why Baoiam */
+  
+    .why {
+      padding: 50px 50px;
+    }
+  
+    .why_list {
+      flex-direction: column;
+    }
+  
+    .list2 img {
+      margin-top: 50px;
+      width: 90%;
+      float: none;
+    }
+  
+    /* FAQ */
+    .container-main {
+      flex-direction: column-reverse;
+      margin: 10px 50px;
+    }
+  
+    .img {
+      width: 90%;
+      margin: 50px 0;
+    }
+  
+    .img img {
+      width: 90%;
+    }
+  
+  
+  }
+  
+  @media screen and (max-width:600px) {
+    .ac-main h1 {
+      margin-top: 0px;
+      font-size: 24px;
+      text-align: center;
+      color: #031864;
+      font-weight: bold;
+    }
+  
+    .ac-main h1 span {
+      font-size: 24px;
+    }
+  
+    .faq .accordion {
+      width: 100%;
+  
+    }
+  
+    .faq .accordion-item-header {
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: left;
+      padding:1rem 1.5rem;
+    }
+  
+    .faq .accordion-item-body-content {
+      font-size: 0.8rem;
+      text-align: justify;
+  
+    }
+  
+    .img img {
+      display: none;
+  
+    }
+  
+    /*
+    .col-md-7 h2{
+      font-size: 24px;
+      text-align:center;
+    }
+    .col-md-7 p{
+      font-size: 16px;
+      text-align:center ;
+      padding-left: 10px;
+    }
+    */
+  
+  }

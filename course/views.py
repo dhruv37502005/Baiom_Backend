@@ -29,7 +29,6 @@ def webdevelopment(request):
             'is_webdevelopment_page': True,
             'web_dev_courses': web_dev_courses
         })
-        
 def dataanalyst(request):
     data_analyst_courses = Course.objects.filter(category='Data Analyst', status='active')
     return render(request, 'dataanalyst.html', {'is_dataanalyst_page': True, 'data_analyst': data_analyst_courses})

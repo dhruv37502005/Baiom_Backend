@@ -37,3 +37,7 @@ def locked_page(request):
     # form =  AccessForm()
     # return render(request, 'maintenance_locked.html', {'form': form})
     pass
+  
+
+def course(request):
+    return render(request, 'course.html', {'is_courses': True})
