@@ -257,28 +257,51 @@
         </section>
 
         <!-- //course section -->
+       
         <div class="courseDiv" id="courseDiv">
           <h2>Enroll Courses</h2>
-        <section id="course-card-section">
+          
+          <section id="course-card-section">
+          {% for course in enrolled_courses %}
           <div class="course-card">
             <div class="card-image-section">
-              <img src="./images\card1 img.jpg" />
+              {% if course.video %}
+              
+              <video id="courseVideo" width="1000" height="1000" controls style="display: none;" >
+              <source src="{{ course.video.url }}"  type="video/mp4">
+              <!--<source src="{{ course.video.url }}" type="video/webm">
+              <source src="{{ course.video.url }}" type="video/ogg"> -->
+               Your browser does not support the video tag.
+              </video>
+              {% else %}
+              <p>No video available</p>
+              {% endif %}
             </div>
             <div class="card-content">
               <div class="completed-percentage">
                 <div class="inner" style="width: 55%;"></div>
               </div>
               <div class="lectures-completed">55/100 lectures completed</div>
-              <h3 class="course-name">Web Development</h3>
+              <h3 class="course-name">{{course.title}}</h3>
               <div class="last-read">Last read: Layout grids</div>
-              <button type="button" class="resume-btn-element">
-                <span class="material-symbols-outlined"> play_arrow </span
-                >Resume Course
+              
+              <button type="button" class="resume-btn-element" onclick="playVideo()">
+                <span class="material-symbols-outlined"> play_arrow </span>Resume Course
               </button>
             </div>
           </div>
         </section>
       </div>
+      {% endfor %}
+      
+      <script>
+        function playVideo() {
+          var videoElement = document.getElementById("courseVideo");
+          videoElement.style.display = "block";
+          videoElement.play();
+        }
+      </script>
+
         <section id="certificate-section" style="background-color: red;">
      
         </section>
