@@ -94,7 +94,7 @@
 
 .two{
     margin-bottom: 1em;
-    padding:0 !important;
+    padding:0 ;
 }
 
 .two i,
@@ -128,7 +128,7 @@
     align-items: center;
     max-width: 100em;
     grid-template-columns: repeat(3,1fr);
-    padding-left:0 !important;
+    padding-left:0 ;
 }
 
 .two li{
@@ -166,7 +166,7 @@
 
 .three{
     margin-bottom: 0;
-    padding-left: 100px !important;
+    padding-left: 100px ;
 }
 
 .why-web-dev-box, .placement-info{
@@ -178,7 +178,7 @@
 
 .five{
     margin-bottom:2.5em;
-    padding-left: 100px !important;
+    padding-left: 100px ;
 }
 
 #why-web-dev-heading-2,
@@ -234,7 +234,7 @@
     grid-template-columns: repeat(2,1fr);
     gap:2em;
     place-items:center;
-    padding-left:0 !important;
+    padding-left:0 ;
 }
 
 .six h1{
@@ -347,17 +347,17 @@ footer p{
   }
 
   .navbar-toggler{
-    box-shadow: none !important;
+    box-shadow: none ;
   }
 
 
   .accordion-item-header::after{
-    right: 1rem !important;
+    right: 1rem ;
   }
 
 @media(max-width:1240px){
     .one{
-        padding:2em !important;
+        padding:2em ;
     }
     .seven .accordion{
         margin-left: 10rem;
@@ -374,7 +374,7 @@ footer p{
 @media(max-width:1150px){
     header a,
     header button{
-        font-size: 0.95rem !important;
+        font-size: 0.95rem ;
     }
 
     header .nav-item button{
@@ -399,7 +399,7 @@ footer p{
         border-radius: 0;
     }
     .two{
-        padding: 2rem 6% !important;
+        padding: 2rem 6% ;
     }
 
   }
@@ -538,8 +538,8 @@ footer p{
 
 @media (max-width:700px) {
     .blog-slider {
-        margin: 0 !important;
-        margin-top: 8rem !important;
+        margin: 0 ;
+        margin-top: 8rem ;
     }
 }
 
@@ -561,7 +561,7 @@ footer p{
 
 @media(max-width:500px){
     .one{
-        padding:0 !important;
+        padding:0 ;
     }
 
     .accordion-body{
@@ -626,8 +626,9 @@ footer p{
   display: none;
 }
 
+
 .heading2 {
-  font-family: "Noto Sans Zanabazar Square", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .heading2_underline {
@@ -798,7 +799,7 @@ footer p{
 }
 
 .div_text:hover {
-  color: #fff !important;
+  color: #fff ;
 }
 
 .div_text p {
@@ -820,7 +821,7 @@ footer p{
   background-image: url("../images/wave.png");
   background-position: center;
   background-size: cover;
-  color: #f9eded !important;
+  color: #f9eded ;
 }
 
 .virtues-heading {
@@ -927,7 +928,7 @@ footer p{
 }
 
 .card-body .card-title {
-  padding-bottom: 0.4em !important;
+  padding-bottom: 0.4em ;
   margin-bottom: 0;
 }
 
@@ -978,7 +979,7 @@ footer p{
 }
 
 .fa-check {
-  font-weight: 700 !important;
+  font-weight: 700 ;
   color: #e26d5c;
   background: #fff;
   border-radius: 100%;
@@ -988,7 +989,7 @@ footer p{
 
 @media (max-width: 1146px) {
   .card-body .card-subtitle {
-    margin-top: 0 !important;
+    margin-top: 0 ;
     font-size: 0.8rem;
   }
 
@@ -1054,15 +1055,15 @@ footer p{
 }
 
 .decrease-font-size-small {
-  font-size: clamp(1rem, calc(-0.256rem + 4vw), 3rem) !important;
+  font-size: clamp(1rem, calc(-0.256rem + 4vw), 3rem) ;
 }
 
 .decrease-font-size-bigger {
-  font-size: clamp(1rem, calc(-0.256rem + 6vw), 3rem) !important;
+  font-size: clamp(1rem, calc(-0.256rem + 6vw), 3rem) ;
 }
 
 .decrease-font-size-bigger-xl {
-  font-size: clamp(1rem, calc(-0.156rem + 7vw), 3rem) !important;
+  font-size: clamp(1rem, calc(-0.156rem + 7vw), 3rem) ;
 }
 
 /** align images center class **/
@@ -1072,8 +1073,8 @@ footer p{
 }
 
 .flex-grow {
-  flex-grow: 1 !important;
-  max-width: max-content !important;
+  flex-grow: 1 ;
+  max-width: max-content ;
 }
 
 .section-3 .user-image {
@@ -1296,7 +1297,7 @@ section.work .contents p {
 
 @media (max-width: 1298px) {
   section.work .contents .step-4::after {
-    display: none !important;
+    display: none ;
   }
 }
 
@@ -1314,16 +1315,16 @@ section.work .contents p {
 
   #baoiam-info .mr-lr-0 {
     column-gap: 2em;
-    margin: auto 0 !important;
+    margin: auto 0 ;
     justify-content: center;
   }
 
   #baoiam-info .align-center {
-    max-width: 45% !important;
+    max-width: 45% ;
   }
 
   #baoiam-info .col-sm-12:last-child {
-    margin: 0 !important;
+    margin: 0 ;
   }
 
   #virtues-protocol-section {
@@ -1354,11 +1355,11 @@ section.work .contents p {
 
 @media (max-width: 1000px) {
   section.work .contents .step-3::after {
-    display: none !important;
+    display: none ;
   }
 
   section.work .contents .step-4::after {
-    display: inline-block !important;
+    display: inline-block ;
   }
 }
 
@@ -1368,7 +1369,7 @@ section.work .contents p {
   }
 
   section.work .contents .step-4::after {
-    display: none !important;
+    display: none ;
   }
 }
 
@@ -1383,8 +1384,8 @@ section.expert {
     #f2851e
   );
   color: #fff;
-  font-family: "PT Sans", sans-serif;
-  padding: 5rem auto !important;
+  font-family: "Montserrat", sans-serif;
+  padding: 5rem auto ;
   margin-bottom: 5rem;
 }
 
@@ -1554,7 +1555,7 @@ section .contact-us-box {
 }
 
 .contact-us-number p {
-  margin: 0 !important;
+  margin: 0 ;
 }
 
 .orange-bg {
@@ -1566,7 +1567,7 @@ section .contact-us-box {
     #f57319,
     #f5851e
   );
-  color: #fdecbe !important;
+  color: #fdecbe ;
   border-radius: 5px;
   width: 100%;
 }
@@ -1855,7 +1856,7 @@ p.virtues-sub-heading {
 }
 
 .nav-courses-list > li > a:hover {
-  color: orangered !important;
+  color: orangered ;
   background-color: rgba(241, 214, 164, 0.603);
 }
 
@@ -1903,16 +1904,16 @@ p.virtues-sub-heading {
 
 .nav-btn::after,
 .nav-btn::before {
-  font-size: 20px !important;
+  font-size: 20px ;
   color: orangered;
 }
 
 .swiper-pagination-bullet {
-  background-color: orangered !important;
+  background-color: orangered ;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: red !important;
+  background-color: red ;
 }
 
 /* Resonsive */
@@ -2139,8 +2140,8 @@ section div.wrapper {
 }
 
 .show {
-  display: block !important;
-  opacity: 1 !important;
+  display: block ;
+  opacity: 1 ;
   transition: all 1000 ease-in;
 }
 
@@ -2300,7 +2301,7 @@ footer {
 }
 
 .footer-container {
-  padding-top: 9rem !important;
+  padding-top: 9rem ;
   padding: 1rem 4%;
 }
 
@@ -2599,7 +2600,7 @@ footer .contact-us p div i {
 
   #baoiam-info .col-sm-12:last-child {
     padding: 2em 2em 1.5em;
-    margin: 0 auto !important;
+    margin: 0 auto ;
     max-width: 50em;
   }
 
@@ -2622,7 +2623,7 @@ footer .contact-us p div i {
   #baoiam-info .align-center {
     display: grid;
     place-items: center;
-    max-width: 20em !important;
+    max-width: 20em ;
     margin: 0 auto;
   }
 
@@ -2646,7 +2647,7 @@ footer .contact-us p div i {
   }
 
   .card-body .card-subtitle {
-    font-size: 0.6rem !important;
+    font-size: 0.6rem ;
   }
 
   a.card-action {
@@ -2686,7 +2687,7 @@ footer .contact-us p div i {
   }
 
   .decrease-font-size-small {
-    font-size: clamp(1rem, calc(-0.256rem + 6vw), 3.5rem) !important;
+    font-size: clamp(1rem, calc(-0.256rem + 6vw), 3.5rem) ;
   }
 
   .section-3 .explore-btn {
@@ -2822,7 +2823,7 @@ ul{
 
 .two{
     margin-bottom: 1em;
-    /* padding:0 !important; */
+    /* padding:0 ; */
 }
 
 .two i,
@@ -2857,7 +2858,7 @@ ul{
     align-items: center;
     max-width: 100em;
     grid-template-columns: repeat(3,1fr);
-    /* padding-left:0 !important; */
+    /* padding-left:0 ; */
 }
 
 .two li{
@@ -2895,7 +2896,7 @@ ul{
 
 .three{
     margin-bottom: 0;
-    /* padding-left: 100px !important; */
+    /* padding-left: 100px ; */
 }
 
 .why-web-dev-box, .placement-info{
@@ -2907,7 +2908,7 @@ ul{
 
 .five{
     margin-bottom:2.5em;
-    /* padding-left: 100px !important; */
+    /* padding-left: 100px ; */
 }
 
 #why-web-dev-heading-2,
@@ -2962,7 +2963,7 @@ ul{
     grid-template-columns: repeat(2,1fr);
     gap:2em;
     place-items:center;
-    /* padding-left:0 !important; */
+    /* padding-left:0 ; */
 }
 
 .six h1{
@@ -3076,12 +3077,12 @@ footer p{
   }
 
   .navbar-toggler{
-    box-shadow: none !important;
+    box-shadow: none ;
   }
 
 
   .accordion-item-header::after{
-    right: 1rem !important;
+    right: 1rem ;
   }
 
   .row div{
@@ -3090,7 +3091,7 @@ footer p{
 
 @media(max-width:1240px){
     .one{
-        /* padding:2em !important; */
+        /* padding:2em ; */
     }
     .seven .accordion{
         margin-left: 10rem;
@@ -3107,7 +3108,7 @@ footer p{
 @media(max-width:1150px){
     header a,
     header button{
-        font-size: 0.95rem !important;
+        font-size: 0.95rem ;
     }
 
     header .nav-item button{
@@ -3132,7 +3133,7 @@ footer p{
         border-radius: 0;
     }
     .two{
-        /* padding: 2rem 6% !important; */
+        /* padding: 2rem 6% ; */
     }
 
   }
@@ -3274,8 +3275,8 @@ footer p{
 
 @media screen and (max-width:700px) {
     .blog-slider {
-        /* margin: 0 !important; */
-        margin-top: 8rem !important;
+        /* margin: 0 ; */
+        margin-top: 8rem ;
     }
 }
 
@@ -3306,7 +3307,7 @@ footer p{
 
 @media(max-width:500px){
     .one{
-        /* padding:0 !important; */
+        /* padding:0 ; */
     }
 
     .accordion-body{
@@ -3827,19 +3828,19 @@ footer p{
     position: absolute;
     z-index: 21;
     right: 20px;
-    width: 11px !important;
+    width: 11px ;
     text-align: center;
-    left: auto !important;
+    left: auto ;
     top: 50%;
-    bottom: auto !important;
+    bottom: auto ;
     transform: translateY(-50%);
  }
   @media screen and (max-width: 768px) {
     .blog-slider__pagination {
       transform: translateX(-50%);
-      left: 50% !important;
+      left: 50% ;
       top: 205px;
-      width: 100% !important;
+      width: 100% ;
       display: flex;
       justify-content: center;
       align-items: center;
