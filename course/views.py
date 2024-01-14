@@ -1,9 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
-
+from django.shortcuts import render, get_object_or_404
 from userauths.models import Dashboard_User
 from .models import Course
+from django.db.models import Sum
+from django.db import models
+# import cv2
+from django.shortcuts import render
+from django.http import HttpResponse
+from userauths.models import Dashboard_User
+
 
 # def webdevelopment(request):
 #     # courses = Course.objects.all()
@@ -70,6 +77,69 @@ def corporatelaw(request):
 def enterpreneurship(request):
     enterpreneurship_courses = Course.objects.filter(category='Enterpreneurship', status='active')
     return render(request, 'enterpreneurship.html', {'is_enterpreneurship_page': True, 'enterpreneurship': enterpreneurship_courses})
+
+
+##
+
+#def watch_video(request, course_id):
+    # Assuming you have a Course model with a video_name field
+    # course = Course.objects.get(id=course_id)
+    # video_path = "{Course.video_name}"
+
+    # cap = cv2.VideoCapture(video_path)
+    # start_time = cv2.getTickCount()
+
+    # while cap.isOpened():
+    #     ret, frame = cap.read()
+
+    #     if not ret:
+    #         break  # Break the loop if there are no more frames to read
+
+    #     cv2.imshow("Video", frame)
+
+    #     if cv2.waitKey(30) & 0xFF == 27:  # Press 'Esc' to exit
+    #         break
+
+    # end_time = cv2.getTickCount()
+    # elapsed_time = (end_time - start_time) / cv2.getTickFrequency()
+
+    #  # Save the elapsed_time in the watchedTime field of the DashboardUser model
+    # dashboard_user, created = Dashboard_User.objects.get_or_create(user=request.user)
+    # dashboard_user.watchedTime += elapsed_time
+    # dashboard_user.save()
+
+    # # Here, you can save the elapsed_time in your database or perform other actions
+    # # For simplicity, let's just print the time
+    # print(f"User watched the video for {elapsed_time:.2f} seconds")
+
+    # cap.release()
+    # cv2.destroyAllWindows()
+
+    # return HttpResponse("Video watched successfully!")
+
+
+
+
+
+#def user_progress(request,course_id):
+ #   course = get_object_or_404(Course,pk=course.id)
+    #current user logged in
+  #  user = request.user
+   # videos = course.videos.all()
+    #total_duration = sum(video.duration for video in videos)
+    #course.duration_field = total_duration
+    #Course.save()
+    #watched_duration = Course.objects.filter(user=user, video__in=videos).aggregate(models.Sum('watched_duration'))['watched_duration__sum']
+    #progress_percentage = (watched_duration / total_duration) * 100 if total_duration > 0 else 0
+    #context = {
+     #   'course': course,
+      #  'progress_percentage': progress_percentage,
+    #}
+
+    
+    #return render(request,'dashboard.html', context)
+
+
 
 
 

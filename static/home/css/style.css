@@ -43,7 +43,7 @@
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: none ;
 }
 
 section:not(
@@ -208,7 +208,7 @@ header .nav-item a:hover {
 }
 
 .heading2 {
-  font-family: "Noto Sans Zanabazar Square", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .heading2_underline {
@@ -379,7 +379,7 @@ header .nav-item a:hover {
 }
 
 .div_text:hover {
-  color: #fff !important;
+  color: #fff ;
 }
 
 .div_text p {
@@ -401,7 +401,7 @@ header .nav-item a:hover {
   background-image: url("../images/wave.png");
   background-position: center;
   background-size: cover;
-  color: #f9eded !important;
+  color: #f9eded ;
 }
 
 .virtues-heading {
@@ -508,7 +508,7 @@ header .nav-item a:hover {
 }
 
 .card-body .card-title {
-  padding-bottom: 0.4em !important;
+  padding-bottom: 0.4em ;
   margin-bottom: 0;
 }
 
@@ -559,7 +559,7 @@ header .nav-item a:hover {
 }
 
 .fa-check {
-  font-weight: 700 !important;
+  font-weight: 700 ;
   color: #e26d5c;
   background: #fff;
   border-radius: 100%;
@@ -569,7 +569,7 @@ header .nav-item a:hover {
 
 @media (max-width: 1146px) {
   .card-body .card-subtitle {
-    margin-top: 0 !important;
+    margin-top: 0 ;
     font-size: 0.8rem;
   }
 
@@ -635,15 +635,15 @@ header .nav-item a:hover {
 }
 
 .decrease-font-size-small {
-  font-size: clamp(1rem, calc(-0.256rem + 4vw), 3rem) !important;
+  font-size: clamp(1rem, calc(-0.256rem + 4vw), 3rem) ;
 }
 
 .decrease-font-size-bigger {
-  font-size: clamp(1rem, calc(-0.256rem + 6vw), 3rem) !important;
+  font-size: clamp(1rem, calc(-0.256rem + 6vw), 3rem) ;
 }
 
 .decrease-font-size-bigger-xl {
-  font-size: clamp(1rem, calc(-0.156rem + 7vw), 3rem) !important;
+  font-size: clamp(1rem, calc(-0.156rem + 7vw), 3rem) ;
 }
 
 /** align images center class **/
@@ -653,8 +653,8 @@ header .nav-item a:hover {
 }
 
 .flex-grow {
-  flex-grow: 1 !important;
-  max-width: max-content !important;
+  flex-grow: 1 ;
+  max-width: max-content ;
 }
 
 .section-3 .user-image {
@@ -877,7 +877,7 @@ section.work .contents p {
 
 @media (max-width: 1298px) {
   section.work .contents .step-4::after {
-    display: none !important;
+    display: none ;
   }
 }
 
@@ -895,16 +895,16 @@ section.work .contents p {
 
   #baoiam-info .mr-lr-0 {
     column-gap: 2em;
-    margin: auto 0 !important;
+    margin: auto 0 ;
     justify-content: center;
   }
 
   #baoiam-info .align-center {
-    max-width: 45% !important;
+    max-width: 45% ;
   }
 
   #baoiam-info .col-sm-12:last-child {
-    margin: 0 !important;
+    margin: 0 ;
   }
 
   #virtues-protocol-section {
@@ -935,11 +935,11 @@ section.work .contents p {
 
 @media (max-width: 1000px) {
   section.work .contents .step-3::after {
-    display: none !important;
+    display: none ;
   }
 
   section.work .contents .step-4::after {
-    display: inline-block !important;
+    display: inline-block ;
   }
 }
 
@@ -949,7 +949,7 @@ section.work .contents p {
   }
 
   section.work .contents .step-4::after {
-    display: none !important;
+    display: none ;
   }
 }
 
@@ -964,8 +964,8 @@ section.expert {
     #f2851e
   );
   color: #fff;
-  font-family: "PT Sans", sans-serif;
-  padding: 5rem auto !important;
+  font-family: "Montserrat", sans-serif;
+  padding: 5rem auto ;
   margin-bottom: 5rem;
 }
 
@@ -1135,7 +1135,7 @@ section .contact-us-box {
 }
 
 .contact-us-number p {
-  margin: 0 !important;
+  margin: 0 ;
 }
 
 .orange-bg {
@@ -1147,7 +1147,7 @@ section .contact-us-box {
     #f57319,
     #f5851e
   );
-  color: #fdecbe !important;
+  color: #fdecbe ;
   border-radius: 5px;
   width: 100%;
 }
@@ -1473,16 +1473,16 @@ p.virtues-sub-heading {
 
 .nav-btn::after,
 .nav-btn::before {
-  font-size: 20px !important;
+  font-size: 20px ;
   color: orangered;
 }
 
 .swiper-pagination-bullet {
-  background-color: orangered !important;
+  background-color: orangered ;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: red !important;
+  background-color: red ;
 }
 
 /* Resonsive */
@@ -1709,8 +1709,8 @@ section div.wrapper {
 }
 
 .show {
-  display: block !important;
-  opacity: 1 !important;
+  display: block ;
+  opacity: 1 ;
   transition: all 1000 ease-in;
 }
 
@@ -1870,7 +1870,7 @@ footer {
 }
 
 .footer-container {
-  padding-top: 9rem !important;
+  padding-top: 9rem ;
   padding: 1rem 4%;
 }
 
@@ -2169,7 +2169,7 @@ footer .contact-us p div i {
 
   #baoiam-info .col-sm-12:last-child {
     padding: 2em 2em 1.5em;
-    margin: 0 auto !important;
+    margin: 0 auto ;
     max-width: 50em;
   }
 
@@ -2192,7 +2192,7 @@ footer .contact-us p div i {
   #baoiam-info .align-center {
     display: grid;
     place-items: center;
-    max-width: 20em !important;
+    max-width: 20em ;
     margin: 0 auto;
   }
 
@@ -2216,7 +2216,7 @@ footer .contact-us p div i {
   }
 
   .card-body .card-subtitle {
-    font-size: 0.6rem !important;
+    font-size: 0.6rem ;
   }
 
   a.card-action {
@@ -2256,7 +2256,7 @@ footer .contact-us p div i {
   }
 
   .decrease-font-size-small {
-    font-size: clamp(1rem, calc(-0.256rem + 6vw), 3.5rem) !important;
+    font-size: clamp(1rem, calc(-0.256rem + 6vw), 3.5rem) ;
   }
 
   .section-3 .explore-btn {
