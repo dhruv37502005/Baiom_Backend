@@ -6,7 +6,7 @@ from userauths.models import Dashboard_User
 from .models import Course
 from django.db.models import Sum
 from django.db import models
-import cv2
+# import cv2
 from django.shortcuts import render
 from django.http import HttpResponse
 from userauths.models import Dashboard_User
@@ -83,39 +83,39 @@ def enterpreneurship(request):
 
 #def watch_video(request, course_id):
     # Assuming you have a Course model with a video_name field
-    course = Course.objects.get(id=course_id)
-    video_path = "{Course.video_name}"
+    # course = Course.objects.get(id=course_id)
+    # video_path = "{Course.video_name}"
 
-    cap = cv2.VideoCapture(video_path)
-    start_time = cv2.getTickCount()
+    # cap = cv2.VideoCapture(video_path)
+    # start_time = cv2.getTickCount()
 
-    while cap.isOpened():
-        ret, frame = cap.read()
+    # while cap.isOpened():
+    #     ret, frame = cap.read()
 
-        if not ret:
-            break  # Break the loop if there are no more frames to read
+    #     if not ret:
+    #         break  # Break the loop if there are no more frames to read
 
-        cv2.imshow("Video", frame)
+    #     cv2.imshow("Video", frame)
 
-        if cv2.waitKey(30) & 0xFF == 27:  # Press 'Esc' to exit
-            break
+    #     if cv2.waitKey(30) & 0xFF == 27:  # Press 'Esc' to exit
+    #         break
 
-    end_time = cv2.getTickCount()
-    elapsed_time = (end_time - start_time) / cv2.getTickFrequency()
+    # end_time = cv2.getTickCount()
+    # elapsed_time = (end_time - start_time) / cv2.getTickFrequency()
 
-     # Save the elapsed_time in the watchedTime field of the DashboardUser model
-    dashboard_user, created = Dashboard_User.objects.get_or_create(user=request.user)
-    dashboard_user.watchedTime += elapsed_time
-    dashboard_user.save()
+    #  # Save the elapsed_time in the watchedTime field of the DashboardUser model
+    # dashboard_user, created = Dashboard_User.objects.get_or_create(user=request.user)
+    # dashboard_user.watchedTime += elapsed_time
+    # dashboard_user.save()
 
-    # Here, you can save the elapsed_time in your database or perform other actions
-    # For simplicity, let's just print the time
-    print(f"User watched the video for {elapsed_time:.2f} seconds")
+    # # Here, you can save the elapsed_time in your database or perform other actions
+    # # For simplicity, let's just print the time
+    # print(f"User watched the video for {elapsed_time:.2f} seconds")
 
-    cap.release()
-    cv2.destroyAllWindows()
+    # cap.release()
+    # cv2.destroyAllWindows()
 
-    return HttpResponse("Video watched successfully!")
+    # return HttpResponse("Video watched successfully!")
 
 
 
