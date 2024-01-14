@@ -1,0 +1,134 @@
+.aside {
+  position: fixed;
+
+  width: 320px;
+  height: 100%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 4px 8px 8px gray;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.aside button {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border: none;
+}
+.aside .image {
+  width: 100%;
+  height: fit-content;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+}
+.aside .image img {
+  width: 150px;
+}
+.ProfileAndName {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profilePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 8px 12px 12px gray;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 0 15px 0;
+}
+.profilePic img {
+  width: 200px;
+  height: 200px;
+}
+.ProfileAndName h1 {
+  width: 100%;
+  background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.ProfileAndName p {
+  width: 100%;
+  font-size: small;
+  /* font-weight: bold; */
+  color: black;
+  text-align: center;
+}
+
+.links {
+  width: 100%;
+  height: fit-content;
+  /* background-color: gold; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0;
+}
+.links .link {
+  width: 80%;
+  height: 40px;
+  /* background-color: red; */
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 4px 8px 8px rgba(128, 128, 128, 0.466);
+  border-radius: 12px;
+  transition: ease 0.5s;
+}
+.a:hover {
+  transform: scale(1.01);
+  color: orangered;
+  font-weight: bold;
+  /* background-color: rgb(202, 202, 202); */
+  box-shadow: 8px 12px 12px gray;
+}
+.activeHai{
+  box-shadow: 4px 8px 8px rgb(255, 106, 7);
+}
+.links .link a span {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.links .link a h2 {
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media only screen and (max-width: 950px) {
+  .aside {
+    display: none;
+    width: 100%;
+  }
+
+  .just {
+    display: none;
+  }
+}

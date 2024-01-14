@@ -58,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'core.middleware.maintenance_middleware'
 ]
 
 ROOT_URLCONF = 'baoiam.urls'
@@ -160,3 +161,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER ='niruranjan2001@gmail.com '
 EMAIL_HOST_PASSWORD ='pktz pdbd ndtx zpng'
+
+STAGING = True

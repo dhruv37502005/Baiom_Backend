@@ -1,5 +1,24 @@
-{% autoescape off %}
+<!DOCTYPE html>
+<html lang="en">
 
-"http://{{ domain }}{% url 'userauths:activate' uidb64=uid token=token %}"
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+</head>
 
-{% endautoescape %}
+<body>
+    <p>Dear user,</p>
+    <p>Click the link below to verify your email address:</p>
+    
+    <!-- Hidden link format -->
+    <a href="http://{{ domain }}{% url 'userauths:activate' uidb64=uid token=token %}" style="display:none;">Verify Email</a>
+    
+    <!-- Visible text, you can style this as needed -->
+    <p>Click <a href="http://{{ domain }}{% url 'userauths:activate' uidb64=uid token=token %}" onclick="document.querySelector('a[style*=display\:none;]').click(); return false;">here</a> to verify your email.</p>
+    
+
+</body>
+
+</html>
+

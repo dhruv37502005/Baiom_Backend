@@ -1,6 +1,23 @@
 {% load static%}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAOIAM</title>
+    <meta name="title" content="Baoiam" />
+    <link
+      rel="icon"
+      href="{% static 'home/img/brand.png' %}"
+      type="image/icon type"
+      style="background-color: wheat"
+    />
+    <meta
+      name="description"
+      content="Baoiam is a fully-certified platform since 2020, helping millions of students through the entire world to achieve their personal and professional goals."
+    />
+
 
 <head>
   <meta charset="UTF-8" />
@@ -42,7 +59,15 @@
   {% if is_index_page %}
   <link rel="stylesheet" href="{% static 'home/css/style.css' %}" />
   {% endif %}
+  {% if is_courses %}
+  <link rel="stylesheet" href="{% static 'courses/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/faq.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/sidebar.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/style3.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/slider2.css' %}" />
+  <script src="{% static 'courses/js/slider2.js' %}" defer></script>
 
+  {% endif %}
   <!-- contact-page css 'contact-us.html' -->
   {% if is_contactus_page %}
   <link rel="stylesheet" type="text/css" href="{% static 'contact-page/css/contact.css' %}">
@@ -54,7 +79,7 @@
   {% endif %}
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" />
-  <!-- <link rel="stylesheet" href="{% static 'home/css/otp.css' %}" /> -->
+  <link rel="stylesheet" href="{% static 'home/css/otp.css' %}" />
 
   <script src="{% static 'home/js/profile.js' %}" defer></script>
 
@@ -68,12 +93,34 @@
       position: absolute;
       left: 277px;
       top: 18px;
-      width: 250px !important;
+      width: 250px ;
     }
 
     .test {
       float: left;
       margin: 5px 19px;
+    }
+    nav{
+height: 80px;
+
+    }
+    .navbar-nav, .isactive{
+      display: flex;
+      align-items: center;
+    }
+    .nav-link {
+      width:fit-content;
+      height: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+ 
+    .isactive{
+      font-size: 18px;
+      background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
@@ -82,6 +129,7 @@
   <header>
     <!-- navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow p-2" id="navbar">
+      
       <a class="navbar-brand" href="{% url 'core:index' %}">
 
         <img src="{% static 'home/img/brand.png' %}" style="width:100px" />
@@ -94,127 +142,106 @@
         <div class="mr-auto"></div>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'core:index' %}">Home</a>
+            {% url 'core:index' as urlhome %} 
+            <a class="nav-link {% if request.path == urlhome %}isactive{% endif %}" href="{{urlhome}}" style="font-size: 18px;">Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+            {% url 'core:career' as urlcareer %} 
+            {% url 'core:hire_from_us' as urlhirefrom %}
+            <a class="nav-link dropdown-toggle  {% if request.path == urlcareer or request.path == urlhirefrom %}isactive{% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="font-size: 18px;">
               Company
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./career/career.html">Career</a>
-              <a class="dropdown-item" href="./Hire-From-Us/index.html">Hire from us</a>
+              <a class="dropdown-item {% if request.path == urlcareer%}isactive{% endif %}" href="{{urlcareer}}" style="font-size: 18px;">Career</a>
+              <a class="dropdown-item {% if request.path == urlhirefrom %}isactive{% endif %}" href="{{urlhirefrom}}" style="font-size: 18px;">Hire from us</a>
             </div>
           </li>
 
           <li class="nav-item">
-            <a href="./ITIE-master/index.html" class="nav-link">ITIE <span class="bar"></span></a>
-            <ul class="sub-courses-list"></ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Courses
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item dropdown-toggle" href="./career/career.html" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Courses</a>
-              <div class="dropdown-menu relative" aria-labelledby="navbarDropdown">
-                <ul class="sub-courses-list">
-                  <li>
-                    <a class="test" href="{% url 'course:webdevelopment' %}">Web Development</a>
-                  </li>
-
-                  <li>
-                    <a class="test" href="{% url 'course:dataanalyst' %}">DataAnalyst</a>
-                  </li>
-
-                  <li>
-                    <a class="test" href="{% url 'course:datascience' %}">DataScience</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:contentwriting' %}">Content Writing</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:graphicdesigning' %}">Graphic Designing</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:seomarketing' %}">Seo Marketing</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:digitalmarketing' %}">Digital Marketing Course</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:projectmanagement' %}">Project Management</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:humanresource' %}">Human Resources</a>
-                  </li>
-                  <li>
-                    <a class="test" href="{% url 'course:corporatelaw' %}">Corporate Law</a>
-                  </li>
-                </ul>
-              </div>
-              <a class="dropdown-item" href="./Entre-master/index.html">Enterpreneurship Courses</a>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="./WPF/wpf.html"><b style="color: #fa3c23">WEP</b></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./Blog-Section-main/main-blog.html"
-              >Blog</a
+            {% url 'core:course' as courses %} 
+            <a class="nav-link {% if request.path == courses %}isactive{% endif %}" href="{{courses}}"
+            style="font-size: 18px;" >Courses</b></a
             >
+          </li>
+         
+
             <li class="nav-item">
-              <a class="nav-link" href="../Baioam_web/Pay after payment/index.html"
-                >PAP</a
+              {% url 'core:itie' as itie %} 
+
+              <a href="{{itie}}" class="nav-link {% if request.path == itie %}isactive{% endif %}"
+              style="font-size: 18px;"  >ITIE <span class="bar"></span
+              ></a>
+              <ul class="sub-courses-list"></ul>
+            </li>
+            
+            <li class="nav-item">
+              {% url 'core:wep' as urlwep %} 
+
+              <a class="nav-link {% if request.path == urlwep %}isactive{% endif %}" href="{{urlwep}}"
+              style="font-size: 18px;"  >WEP</b></a
               >
             </li>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./Baoiam-refer-page-main/index.html"
-              >Refer & Earn</a
-            >
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" id="active" href="{% url 'contactapp:contactus' %}"
-              >Contact Us</a
-            >
-          </li>
+            <li class="nav-item">
+              {% url 'core:blog' as urlblog %} 
 
-
-          {% if user.username %}
-          <li class="nav-item" id="profile">
-            <button type="button" id="profile-btn" class="profile-btn">
-              <div class="profile-dropdown" id="profile-dropdown">
-                <div id="profile-content">
-                  <a id="profile-dropdown-item" href="{% url 'dashboard:user_ui' %}">Dashboard</a>
-                  <a id="profile-dropdown-item" href="{% url 'userauths:logout' %}">Logout</a>
+              <a class="nav-link {% if request.path == urlblog %}isactive{% endif %}" href="{{urlblog}}"
+              style="font-size: 18px;"   >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              {% url 'core:pap' as urlpap %} 
+              <a
+                class="nav-link {% if request.path == urlpap %}isactive{% endif %}"
+                href="{{urlpap}}"
+                style="font-size: 18px;"  >PAP</a
+              >
+            </li>
+            <li class="nav-item">
+              {% url 'core:refer_earn' as refer_earn %} 
+              
+              <a class="nav-link  {% if request.path == refer_earn %}isactive{% endif %}" href="{{refer_earn}}"
+              style="font-size: 18px;"   >Refer & Earn</a
+              >
+            </li>
+            <li class="nav-item">
+              {% url 'contactapp:contactus' as urlContactus %} 
+              <a
+                class="nav-link  {% if request.path == urlContactus %}isactive{% endif %}"
+                id="active"
+                href="{{urlContactus}}"
+                style="font-size: 18px;" >Contact Us</a
+              >
+            </li>
+            {% if user.username %}
+            <li class="nav-item" id="profile">
+              <button type="button" id="profile-btn" class="profile-btn">
+                <div class="profile-dropdown" id="profile-dropdown">
+                  <div id="profile-content">
+                    <a
+                      id="profile-dropdown-item"
+                      href="{% url 'dashboard:user_ui' %}"
+                      style="font-size: 18px;"     >Dashboard</a
+                    >
+                    <a
+                      id="profile-dropdown-item"
+                      href="{% url 'userauths:logout' %}"
+                      style="font-size: 18px;"    >Logout</a>
+                  </div>
                 </div>
-              </div>
-            </button>
-          </li>
-          {% else %}
+              </button>
+            </li>
+            {% else %}
 
-          <li class="nav-item">
-            <a href="{% url 'userauths:login' %}">
-              <button class="btn-1">Login</button></a>
-          </li>
-          {% endif %}
-
-
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-
-  <li class="nav-item">
-    <a href="{% url 'userauths:signup' %}">
-      <button class="btn-1">Login</button></a>
-  </li>
-  </ul>
-  </div>
-  </nav>
-  </header>
+            <li class="nav-item">
+              <a href="{% url 'userauths:login' %}">
+                <button class="btn-1">Login</button></a
+              >
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>

@@ -3,6 +3,24 @@
 
 {% block content %}
 <!-- Carousel section -->
+
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Display Django messages using SweetAlert2
+        {% if messages %}
+            document.addEventListener('DOMContentLoaded', function() {
+                {% for message in messages %}
+                    Swal.fire({
+                        icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% elif message.tags == "error" %}error{% else %}info{% endif %}',
+                        title: "{{ message|escapejs }}",
+                        showConfirmButton: false,
+                        timer: 3000  // Adjust the duration of the notification
+                    });
+                {% endfor %}
+            });
+        {% endif %}
+    </script>
+
     <div
       class="home-section carousel slide mb-5"
       id="carouselExampleSlidesOnly"
@@ -369,85 +387,89 @@
               Virtues and protocols <span class="underline">BAOIAM</span> works
               on
             </h2>
-            <div class="row mx-1">
+            <!-- <div class="row mx-1">
               <p
                 id="virtues-tab-1"
                 class="col-md-5 virtue flex-grow"
                 onclick="showFulltime()"
               >
-                <i class="fa fa-check mr-2"></i>FULL-TIME SUPPORT
+                <i class="fa fa-check mr-2"></i>FULL-TIME SUPPORT -->
 
                 <!-- <input onclick="showFulltime()" id="virtues-tab-1" type="radio" class="col-lg-2 virtues-tab-item"
                 name="radioA" checked> FULL-TIME SUPPORT -->
-              </p>
+              <!-- </p>
               <p
                 onclick="showTrainer()"
                 id="virtues-tab-2"
                 class="col-md-5 virtue flex-grow"
               >
-                <i class="fa fa-check mr-2"></i>EXPERIENCED TRAINERS
+                <i class="fa fa-check mr-2"></i>EXPERIENCED TRAINERS -->
 
                 <!-- <input onclick="showTrainer()" id="virtues-tab-2" type="radio" class="col-lg-2 virtues-tab-item"
                 name="radioA"> EXPERIENCED TRAINERS -->
-              </p>
+              <!-- </p>
               <p
                 onclick="showEase()"
                 class="col-md-5 virtue flex-grow"
                 id="virtues-tab-3"
               >
-                <i class="fa fa-check mr-2"></i>EASE OF USE
+                <i class="fa fa-check mr-2"></i>EASE OF USE -->
                 <!-- <input onclick="showEase()" id="virtues-tab-3" type="radio"
                 class="col-lg-2 virtues-tab-item" name="radioA"> EASE OF USE -->
-              </p>
-            </div>
+              <!-- </p>
+            </div> -->
+            <div id="virtues-carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
 
-            <div id="virtues-tab-1-content" class="virtues-tab-content-item">
-              <div class="row align-center">
-                <div class="col">
-                  <img src="{% static 'home/img/support/1.jpg' %}" alt="" />
+                <div id="virtues-tab-1-content" class="virtues-tab-content-item carousel-item active">
+                  <div class="row align-center">
+                    <div class="col">
+                      <img src="{% static 'home/img/support/1.jpg' %}" alt="" />
+                    </div>
+                    <div class="col">
+                      <h1 class="virtues-heading">FULL-TIME SUPPORT</h1>
+                      <p class="virtues-sub-heading">
+                      BAOIAM is an E-learning platform that focuses on the overall
+                      skill development of it's learners by furnishing courses in
+                      a variety of disciplines that can help anyone level their
+                      skill & pursue their passion.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col">
-                  <h1 class="virtues-heading">FULL-TIME SUPPORT</h1>
-                  <p class="virtues-sub-heading">
-                    BAOIAM is an E-learning platform that focuses on the overall
-                    skill development of it's learners by furnishing courses in
-                    a variety of disciplines that can help anyone level their
-                    skill & pursue their passion.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div id="virtues-tab-2-content" class="virtues-tab-content-item">
-              <div class="row align-center">
-                <div class="col">
-                  <img src="{% static 'home/img/support/2.jpg' %}" alt="" />
+                <div id="virtues-tab-2-content" class="virtues-tab-content-item carousel-item">
+                  <div class="row align-center">
+                    <div class="col">
+                      <img src="{% static 'home/img/support/2.jpg' %}" alt="" />
+                    </div>
+                    <div class="col align-center">
+                      <h1 class="virtues-heading">EXPERIENCED TRAINERS</h1>
+                      <p class="virtues-sub-heading">
+                        The guidance and expertise that the learner receives from
+                        the course is a lifetime experience. As our skilled Trainers
+                        give their best to provide you with a remembering
+                        experience.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col align-center">
-                  <h1 class="virtues-heading">EXPERIENCED TRAINERS</h1>
-                  <p class="virtues-sub-heading">
-                    The guidance and expertise that the learner receives from
-                    the course is a lifetime experience. As our skilled Trainers
-                    give their best to provide you with a remembering
-                    experience.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div id="virtues-tab-3-content" class="virtues-tab-content-item">
-              <div class="row">
-                <div class="col">
-                  <img src="{% static 'home/img/support/3.jpg' %}" alt="" />
-                </div>
-                <div class="col">
-                  <h1 class="virtues-heading">EASE OF USE</h1>
-                  <p class="virtues-sub-heading">
-                    The user-friendly interface and intuitive design of our
-                    platform make the finest learning experience. The platform
-                    is easy to navigate and understand, making it accessible to
-                    people of all age groups and backgrounds.
-                  </p>
+                <div id="virtues-tab-3-content" class="virtues-tab-content-item carousel-item">
+                  <div class="row">
+                    <div class="col">
+                      <img src="{% static 'home/img/support/3.jpg' %}" alt="" />
+                    </div>
+                    <div class="col">
+                      <h1 class="virtues-heading">EASE OF USE</h1>
+                      <p class="virtues-sub-heading">
+                        The user-friendly interface and intuitive design of our
+                        platform make the finest learning experience. The platform
+                        is easy to navigate and understand, making it accessible to
+                        people of all age groups and backgrounds.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -457,7 +479,7 @@
           class="col-md-5 col-sm-12 align-center"
           id="virtues-protocol-section"
         >
-          <img class="user-image-medium-small" src="{% static 'home/img/4jpg' %}" alt="" />
+          <img class="user-image-medium-small" src="{% static 'home/img/4.jpg' %}" alt="" />
         </div>
       </div>
     </section>

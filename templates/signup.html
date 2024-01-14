@@ -1,11 +1,39 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup-page</title>
+
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    // Display Django messages including form errors using SweetAlert2
+    {% if messages %}
+        document.addEventListener('DOMContentLoaded', function() {
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                    Swal.fire({
+                        icon: 'error',
+                        title: "{{ message|escapejs }}",
+                        showConfirmButton: true, // Display a close button for errors
+                    });
+                {% else %}
+                    Swal.fire({
+                        icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% else %}info{% endif %}',
+                        title: "{{ message|escapejs }}",
+                        showConfirmButton: false,
+                        timer: 5000  // Adjust the duration of the notification
+                    });
+                {% endif %}
+            {% endfor %}
+        });
+    {% endif %}
+</script>
+
+
+
+
 </head>
 <body>
     <!DOCTYPE html>
@@ -36,7 +64,7 @@
       <form method="POST">
         {% csrf_token %}
 
-        
+
       <!-- <div class="alert alert-danger">
         <strong>Error:</strong> Please correct the following issues:
         <ul>
