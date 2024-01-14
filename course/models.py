@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.utils import timezone
-import cv2
+# import cv2
 import datetime
 # Create your models here.
 
