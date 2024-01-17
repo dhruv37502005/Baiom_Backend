@@ -26,6 +26,7 @@
   <title>BAOIAM</title>
   <meta name="title" content="Baoiam" />
   <link rel="icon" href="{% static 'home/img/brand.png' %}" type="image/icon type" style="background-color: wheat;">
+<link rel="stylesheet" href="{% static 'home/css/footer.css' %}">
   <meta name="description"
     content="Baoiam is a fully-certified platform since 2020, helping millions of students through the entire world to achieve their personal and professional goals." />
 
@@ -68,6 +69,13 @@
   <script src="{% static 'courses/js/slider2.js' %}" defer></script>
 
   {% endif %}
+  {% if is_itie %}
+  <link rel="stylesheet" href="{% static 'itie/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'itie/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'itie/css/slideshow.css' %}">
+  <link rel="stylesheet" href="{% static 'itie/css/itiecards.css' %}">
+  <link rel="stylesheet" href="{% static 'itie/css/refer.css' %}">
+  {% endif %}
   <!-- contact-page css 'contact-us.html' -->
   {% if is_contactus_page %}
   <link rel="stylesheet" type="text/css" href="{% static 'contact-page/css/contact.css' %}">
@@ -87,7 +95,6 @@
   {% if is_index_page %}
   <script src="{% static 'home/js/script.js' %}" defer></script>
   {% endif %}
-
   <style>
     .relative {
       position: absolute;
@@ -95,14 +102,12 @@
       top: 18px;
       width: 250px ;
     }
-
     .test {
       float: left;
       margin: 5px 19px;
     }
     nav{
-height: 80px;
-
+    height: 80px;
     }
     .navbar-nav, .isactive{
       display: flex;
@@ -114,8 +119,6 @@ height: 80px;
       display: flex;
       align-items: center;
     }
-
- 
     .isactive{
       font-size: 18px;
       background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
@@ -129,9 +132,7 @@ height: 80px;
   <header>
     <!-- navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow p-2" id="navbar">
-      
       <a class="navbar-brand" href="{% url 'core:index' %}">
-
         <img src="{% static 'home/img/brand.png' %}" style="width:100px" />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -157,34 +158,27 @@ height: 80px;
               <a class="dropdown-item {% if request.path == urlhirefrom %}isactive{% endif %}" href="{{urlhirefrom}}" style="font-size: 18px;">Hire from us</a>
             </div>
           </li>
-
           <li class="nav-item">
             {% url 'core:course' as courses %} 
             <a class="nav-link {% if request.path == courses %}isactive{% endif %}" href="{{courses}}"
             style="font-size: 18px;" >Courses</b></a
             >
           </li>
-         
-
             <li class="nav-item">
               {% url 'core:itie' as itie %} 
-
               <a href="{{itie}}" class="nav-link {% if request.path == itie %}isactive{% endif %}"
               style="font-size: 18px;"  >ITIE <span class="bar"></span
               ></a>
               <ul class="sub-courses-list"></ul>
             </li>
-            
             <li class="nav-item">
               {% url 'core:wep' as urlwep %} 
-
               <a class="nav-link {% if request.path == urlwep %}isactive{% endif %}" href="{{urlwep}}"
               style="font-size: 18px;"  >WEP</b></a
               >
             </li>
             <li class="nav-item">
               {% url 'core:blog' as urlblog %} 
-
               <a class="nav-link {% if request.path == urlblog %}isactive{% endif %}" href="{{urlblog}}"
               style="font-size: 18px;"   >Blog</a
               >
@@ -199,7 +193,6 @@ height: 80px;
             </li>
             <li class="nav-item">
               {% url 'core:refer_earn' as refer_earn %} 
-              
               <a class="nav-link  {% if request.path == refer_earn %}isactive{% endif %}" href="{{refer_earn}}"
               style="font-size: 18px;"   >Refer & Earn</a
               >
@@ -221,18 +214,17 @@ height: 80px;
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'dashboard:user_ui' %}"
-                      style="font-size: 18px;"     >Dashboard</a
+                      style="font-size: 18px;">Dashboard</a
                     >
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'userauths:logout' %}"
-                      style="font-size: 18px;"    >Logout</a>
+                      style="font-size: 18px;">Logout</a>
                   </div>
                 </div>
               </button>
             </li>
             {% else %}
-
             <li class="nav-item">
               <a href="{% url 'userauths:login' %}">
                 <button class="btn-1">Login</button></a
