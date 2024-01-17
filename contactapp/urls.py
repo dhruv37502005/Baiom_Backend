@@ -7,6 +7,5 @@ app_name = 'contactapp'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contactus/',views.contactus,name="contactus") ,
-
+    path('contactus/',views.contactus,name="contactus"),
 ]
