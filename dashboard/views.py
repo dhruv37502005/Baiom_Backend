@@ -6,9 +6,10 @@ from userauths.models import Dashboard_User
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from django.db import transaction
 
 @login_required(login_url="/userauths/login/")
+@transaction.atomic
 def user_ui(request):
     if request.method == "GET":
         auser = request.user
@@ -16,8 +17,11 @@ def user_ui(request):
             if auser.is_staff == True:
                 return redirect("/admin")
             else:
-                username = request.session["username"]
-                user = User.objects.get(username=username)
+                # username = request.session['username']
+                user = User.objects.get(username=request.user.username)
+                if not Dashboard_User.objects.filter(user_id=user.id).exists():
+                    dashboard_user, created = Dashboard_User.objects.get_or_create(user=auser)
+                    dashboard_user.save()
                 dash_user = Dashboard_User.objects.get(user_id=user.id)
                 # all_courses = Course.objects.all()
                 enrolled_courses = dash_user.enrolled_courses.filter(status="active")

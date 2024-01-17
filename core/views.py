@@ -1,10 +1,21 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
-
+from social_django.models import UserSocialAuth
+from django.contrib.auth.models import User
 from core.forms import AccessForm
-
+from django.contrib.auth import authenticate, login, logout
 
 def index(request):
+
+    try:
+        existing_user = User.objects.filter(email=request.user.email).exclude(username=request.user.username).first()
+        if existing_user:
+            user = User.objects.get(id=request.user.id)
+            user.delete()
+            return redirect('userauths:login')
+    except:
+        print("None")
+            
     return render(request, 'index.html',{'is_index_page': True})
 
 
