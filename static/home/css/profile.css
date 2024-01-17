@@ -31,13 +31,13 @@
   height: 120px;
   /* padding: 6px; */
   background-color: #fff;
-  border: 1px solid rgb(210, 207, 207);
+  /* border: 1px solid rgb(210, 207, 207); */
 }
 
 #profile-dropdown-item {
   padding: 6px;
 }
 
-#profile-dropdown-item:hover {
+/* #profile-dropdown-item:hover {
   background-color: rgb(230, 228, 228);
-}
+} */
