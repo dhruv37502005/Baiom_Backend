@@ -24,3 +24,4 @@ contactapp/migrations/0001_initial.py
 media/course_images
 .gitignore
 .gitignore
+core/migrations/0001_initial.py
