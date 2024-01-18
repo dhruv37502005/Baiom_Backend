@@ -1,13 +1,13 @@
 from django.contrib import admin
 
-from .models import Course
+from .models import Course, CourseCategory
 
 # Register your models here.
 
-# admin.site.register(Course)
-# admin.site.register(Author)
-
-# @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
     list_display = ('title', 'category','status')
 admin.site.register(Course,CourseAdmin)
+
+class CourseCategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+admin.site.register(CourseCategory,CourseCategoryAdmin)
