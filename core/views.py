@@ -20,16 +20,16 @@ def index(request):
 
 
 def career(request):
-    return render(request, 'career.html')
+    return render(request, 'career.html',{'is_career': True})
 
 def hire_from_us(request):
-    return render(request, 'hire_from_us.html',{'is_courses': True})
+    return render(request, 'hire_from_us.html',{'is_hire': True})
 
 def itie(request):
     return render(request, 'ITIE.html',{'is_itie': True})
 
 def wep(request):
-    return render(request, 'wep.html',{'is_web': True})
+    return render(request, 'wep.html',{'is_wep': True})
 
 def blog(request):
     return render(request, 'blog.html',{'is_blog': True})
