@@ -17,8 +17,6 @@
       name="description"
       content="Baoiam is a fully-certified platform since 2020, helping millions of students through the entire world to achieve their personal and professional goals."
     />
-
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -76,6 +74,47 @@
   <link rel="stylesheet" href="{% static 'itie/css/itiecards.css' %}">
   <link rel="stylesheet" href="{% static 'itie/css/refer.css' %}">
   {% endif %}
+
+
+  {% if is_career %}
+  <link rel="stylesheet" href="{% static 'career/css/career.css' %}">
+  <link rel="stylesheet" href="{% static 'career/css/style.css' %}">
+  <script src="{% static 'career/js/style.js' %}" defer></script>
+  {% endif %}
+  {% if is_blog %}
+  <link rel="stylesheet" href="{% static 'blog/css/Header-footer.css' %}">
+  <link rel="stylesheet" href="{% static 'blog/css/main_blog.css' %}">
+  <script src="{% static 'blog/js/index.js' %}" defer></script>
+  {% endif %} 
+  
+  {% if is_hire %}
+  <link rel="stylesheet" href="{% static 'Hirefromus/css/hire_with_us.css' %}">
+  <link rel="stylesheet" href="{% static 'Hirefromus/css/our_students.css' %}">
+  <script src="{% static 'Hirefromus/js/style.js' %}" defer></script>
+  {% endif %} 
+
+
+  {% if is_wep %}
+  <link rel="stylesheet" href="{% static 'wep/css/faq.css' %}">
+  <link rel="stylesheet" href="{% static 'wep/css/slider1.css' %}">
+  <link rel="stylesheet" href="{% static 'wep/css/slider2.css' %}">
+  <link rel="stylesheet" href="{% static 'wep/css/style.css' %}">
+  <script src="{% static 'wep/js/script.js' %}" defer></script>
+  {% endif %} 
+
+  {% if is_pap %}
+  <link rel="stylesheet" href="{% static 'PAP/css/faq.css' %}">
+  <link rel="stylesheet" href="{% static 'PAP/css/slider1.css' %}">
+  <link rel="stylesheet" href="{% static 'PAP/css/slider2.css' %}">
+  <link rel="stylesheet" href="{% static 'PAP/css/style.css' %}">
+  <script src="{% static 'PAP/js/script.js' %}" defer></script>
+  {% endif %} 
+  {% if is_refer %}
+  <link rel="stylesheet" href="{% static 'ReferEarn/css/Header-footer.css.css' %}">
+  <link rel="stylesheet" href="{% static 'ReferEarn/css/referEarn.css' %}">
+  <script src="{% static 'ReferEarn/js/script.js' %}" defer></script>
+  {% endif %} 
+
   <!-- contact-page css 'contact-us.html' -->
   {% if is_contactus_page %}
   <link rel="stylesheet" type="text/css" href="{% static 'contact-page/css/contact.css' %}">

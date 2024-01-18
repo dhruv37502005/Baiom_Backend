@@ -5,15 +5,15 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
-  font-family: "Open Sans", sans-serif;
 }
 
 /* section2 */
 section {
-    transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .we__offer {
   margin-top: 30px;
