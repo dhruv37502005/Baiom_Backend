@@ -1,5 +1,5 @@
 from django.urls import path
-from course.views import categories
+# from course.views import categories
 from core.views import index, career, hire_from_us, itie,wep, blog,pap, refer_earn, course
 
 
@@ -15,5 +15,5 @@ urlpatterns = [
     path("pap/", pap, name="pap"),
     path("refer_earn/", refer_earn, name="refer_earn"),
     path("course/", course, name="course"),
-    path('categories/', categories, name='categories'),
+    # path('categories/', categories, name='categories'),
 ]
