@@ -11,27 +11,6 @@ html,body{
     font-family: "Poppins", sans-serif;
     position: relative;
 }
-.loading-screen {
-    position: relative;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    background-image: linear-gradient(-45deg, #ff890b 0%, #f54500 100%);
-        width: 0%;
-    height:100%;
-
-}
-.load-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 10;
-    pointer-events: none;
-}
 .main{
     width: 100%;
     height: 100%;
@@ -187,7 +166,7 @@ a{
     outline: none;
     height: 49px;
     border-radius: 49px;
-    /* color: #fff; */
+    color: #fff;
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px 0;
@@ -217,7 +196,7 @@ a{
     width: 80%;
     height: auto;
     /* background-color: red; */
-    /* color:white; */
+    color:white;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -238,7 +217,7 @@ a{
     height: 35px;
     background-color: transparent;
     border-radius: 25px;
-    /* border: 2px solid white; */
+    border: 2px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
