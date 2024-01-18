@@ -14,7 +14,7 @@ urlpatterns = [
     path('', include('core.urls')),
     path('userauths/', include('userauths.urls')),
     path('contactus/', include('contactapp.urls')),
-    path('webdevelopment/', include('course.urls')),
+    path('course/', include('course.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('maintenance/', maintenance_page, name='maintenance'),
     # path('locked/', locked_page, name='locked'),

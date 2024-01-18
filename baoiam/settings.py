@@ -192,3 +192,4 @@ EMAIL_HOST_USER ='niruranjan2001@gmail.com '
 EMAIL_HOST_PASSWORD ='pktz pdbd ndtx zpng'
 
 STAGING = True
+ALLOWED_HOSTS = ['*']

@@ -89,7 +89,7 @@
         <section id="head-section-content">
           <header class="head-section" id="head-section">
             <section class="name-section">
-              <h2>Namaskar Hanuman</h2>
+              <h2>Namaskar {{ user.username }}</h2>
               <p>It's good to see you again.</p>
             </section>
             <section class="searchbar-section">
@@ -292,8 +292,7 @@
           </div>
           {% endfor %}
         </section>
-      </div>
-      
+      </div> 
       <script>
         function playVideo() {
           var videoElement = document.getElementById("courseVideo");

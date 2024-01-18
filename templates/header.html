@@ -67,6 +67,15 @@
   <script src="{% static 'courses/js/slider2.js' %}" defer></script>
 
   {% endif %}
+  {% if is_category %}
+  <link rel="stylesheet" href="{% static 'courses/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/faq.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/sidebar.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/style3.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/slider2.css' %}" />
+  <script src="{% static 'courses/js/slider2.js' %}" defer></script>
+  {% endif %}
+
   {% if is_itie %}
   <link rel="stylesheet" href="{% static 'itie/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'itie/css/style.css' %}">
