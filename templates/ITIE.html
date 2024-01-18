@@ -1,3 +1,1325 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<h1>hello world</h1>
+<!-- logo -->
+<div class="wep">
+  <img src="{% static 'home/img/49.png' %}" alt="" srcset="" />
+</div>
+<!--refer and earn SECTION-->
+<section class="homepage">
+  <div class="heading">
+    <h3>Learn,<span>Teach</span>,Earn</h3>
+  </div>
+
+  <div class="refer_row">
+    <div class="rf_col">
+      <!-- <h3> <span>REFER</span> A FRIEND</h3>-->
+      <h4>ITIE Program revolutionizes internships.</h4>
+      <p>
+        We aim to empower learners to share their expertise and earn
+        simultaneously.
+      </p>
+      <!-- <form action="">
+              <input
+                type="email"
+                class="emailtext"
+                name="Email"
+                placeholder="Enter Email"
+                required
+              /> -->
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeK_rk7yGQPps8JzEZIU8RsFf7ZjUmHrbfYleWQd4iIpmjfAw/viewform"
+      >
+        <button type="submit" class="bttn">BECOME A TRAINER</button></a
+      >
+      <!-- </form> -->
+    </div>
+    <div class="rf_col2">
+      <img src="{% static 'home/img/pt.jpg' %}" alt="" />
+      <!-- <img src="image/p t.jpg" alt="" /> -->
+    </div>
+  </div>
+</section>
+<!--HOW SECTION-->
+<section class="how">
+  <div class="ad_header1">
+    <div class="titale">
+      <h2>How <span>ITIE Program</span> Works?</h2>
+      <p>
+        By leveraging the knowledge and skills within the intern community, the
+        program empowers interns to both share their expertise and earn rewards,
+        fostering a dynamic and collaborative learning environment.
+      </p>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content_list1">
+      <div class="content_data">
+        <div class="data_list">
+          <i class="uil uil-refresh"></i>
+          <h3>Enrollment and Skill Assessment</h3>
+          <p>
+            Interns interested in participating in the program sign up and
+            provide details about their skills, areas of expertise, and
+            availability. They also undergo a skill assessment to determine
+            their proficiency in specific subjects or areas.
+          </p>
+        </div>
+      </div>
+
+      <div class="arrow">
+        <i class="uil uil-arrow-circle-right"></i>
+      </div>
+
+      <div class="content_data">
+        <div class="data_list">
+          <i class="uil uil-refresh"></i>
+          <h3>Matching and Teaching</h3>
+          <p>
+            The ITIE program matches interns with fellow interns who are seeking
+            to learn the skills the former possess. The matching process takes
+            into account the skill requirements and availability of both the
+            teaching intern and the learning intern. Once a match is made, the
+            teaching intern and learning intern connect virtually or in person,
+            depending on the program's format, to begin the teaching sessions.
+            The teaching intern imparts their knowledge, shares insights, and
+            provides guidance to help the learning intern enhance their skills
+            and understanding in the chosen area.
+          </p>
+        </div>
+      </div>
+
+      <div class="arrow">
+        <i class="uil uil-arrow-circle-right"></i>
+      </div>
+
+      <div class="content_data">
+        <div class="data_list">
+          <i class="uil uil-refresh"></i>
+          <h3>Earn and Feedbacl</h3>
+          <p>
+            After completing the teaching sessions, the learning intern provides
+            feedback on the teaching intern's performance. This feedback helps
+            improve the program and ensures quality teaching experiences for all
+            participants. As a reward for their teaching efforts, the teaching
+            intern earns compensation or incentives determined by the program.
+            This can be in the form of monetary compensation, skill credits, or
+            other mutually agreed-upon benefits
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--why SECTION-->
+<section class="why">
+  <div class="why_list">
+    <div class="list1">
+      <div class="why_head">
+        <h3>WHY <span>ITIE</span>?</h3>
+        <p>
+          ITIE program promotes skill-sharing, knowledge transfer, and a sense
+          of community among interns.
+        </p>
+      </div>
+
+      <div class="why_content">
+        <div class="why_content_data">
+          <div class="icons">
+            <i class="uil uil-shield-check"></i>
+          </div>
+          <div class="why_content_data_list">
+            <h3>Empowering Interns</h3>
+            <p>
+              Recognizes that interns possess unique talents and allowing
+              interns to become teachers.
+            </p>
+          </div>
+        </div>
+
+        <div class="why_content_data">
+          <div class="icons">
+            <i class="uil uil-shield-check"></i>
+          </div>
+          <div class="why_content_data_list">
+            <h3>Practical Learning Experience</h3>
+            <p>
+              By teaching their peers, interns develop a deeper understanding of
+              their subject matter. Explaining concepts, answering questions,
+              and guiding others in their learning journey reinforces their own
+              knowledge
+            </p>
+          </div>
+        </div>
+
+        <div class="why_content_data">
+          <div class="icons">
+            <i class="uil uil-shield-check"></i>
+          </div>
+          <div class="why_content_data_list">
+            <h3>Dual Benefit of Learning and Earning</h3>
+            <p>
+              Creates a win-win situation for both teaching and learning
+              interns. Learning interns gain access to affordable and
+              personalized learning experiences directly from their peers, who
+              possess practical insights and experiences in the subject matter
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list2">
+      <img src="{% static 'home/img/photoshop.jpg' %}" alt="" />
+    </div>
+  </div>
+</section>
+
+<!-- <button>Pay now</button> -->
+<section class="interns-container">
+  <div class="sec1-container">
+    <div class="content-container">
+      <div class="hheading">
+        <h1>
+          Over<br /><span class="highlights"> 5000+ </span><br />Satisfied
+          Interns Partners
+        </h1>
+      </div>
+      <div class="sub-heading">
+        <h4>
+          Our top interns earn<br />
+          <span>Rs 20,000 to 50,000</span> per month
+        </h4>
+      </div>
+    </div>
+    <div class="intern-pic">
+      <img src="{% static 'home/img/rt.jpg' %}" />
+    </div>
+  </div>
+</section>
+<section class="intern-reviews">
+  <div class="heading-container">
+    <h2>Don't Just believe us</h2>
+    <h1>Listen to our Interns' <span>Reviews</span> Ahead</h1>
+  </div>
+
+  <div class="slider-wrapper">
+    <div class="slider-container">
+      <!-- seven cards  -->
+
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/ajay_pawar.jpeg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Ajay Pawar</p>
+            <p class="info-02-text program">SAP</p>
+            <p class="info-02-text date">3 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            The mentor was very knowledgeable in her teachings of
+            <b>SAP</b>. I recommended their services to other looking for
+            different <b>SAP</b> modules as well.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/kumar_abhinav.jpeg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Kumar Abhinav</p>
+            <p class="info-02-text program">Product Manager</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            I am greatful for taking this
+            <b>Product management</b> course. The instructor was knowledgeable
+            and engaging, and the course material was practical. I learned great
+            deal about best practices for <b>Product Mangement</b> and now feel
+            more equipped to lead product development teams.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/somtirtha.jpg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Somtirtha Dutta</p>
+            <p class="info-02-text program">Entrepreneur</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            I can't say enough good things about
+            <b>Entrepreneurship</b> course at BAOIAM. The instructors were
+            passionate and knowledgeable, and the course material was practical
+            and relevant. i learned so much about what it takes to start and run
+            a successful business.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/Basant.jpg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Basant</p>
+            <p class="info-02-text program">Product Manager</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            This <b>Product Management</b> course has helped me improve my
+            skills. The instructor used real-world examples to explain the
+            concepts, and the material was comprehensive and informative. i am
+            excited to apply what I have learned.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/akash_nigam.png" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Akash Nigam</p>
+            <p class="info-02-text program">Entrepreneur</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            Being on this <b>Entrepreneurship</b> course really shifted my
+            mindset on a lot of things as an entrepreneur. i look at myself and
+            my business in a different light, I really grow a lot am really
+            appreciative of BAOIAM for making this opportunity available for me.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/adrija_shrivastav.jpeg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Adrija Shrivastava</p>
+            <p class="info-02-text program">SAP</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            This <b>SAP</b> course was valuable. the instructore provided
+            practical insights applicable to my work and the course material was
+            well-organised. I feel more confident after completing the course.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/suryanshu_singh.jpeg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Suryanshu Singh</p>
+            <p class="info-02-text program">Product Manager</p>
+            <p class="info-02-text date">2 weeks ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            I took this course to enhance my
+            <b>Product Management</b> skills, and I'm delighted I did! The
+            course was well-structured, and the instructor provided practical
+            examples that helped me understand the concepts better. I feel more
+            confident in my ability to manage products now.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/surbhi_vandana.jpg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Surbhi Vandana</p>
+            <p class="info-02-text program">Entrepreneur</p>
+            <p class="info-02-text date">1 month ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            The <b>Entrepreneurship</b> course at BAOIAM was a game-changer for
+            me. I learned so much about what it takes to start and run a
+            business, and the instructors were so supportive and knowledgeable.
+            I feel like i have a solid foundation to build on now.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img class="card-img-01" src="./Images/himanshu_rawat.jpg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Himanshu Rawat</p>
+            <p class="info-02-text program">Entrepreneur</p>
+            <p class="info-02-text date">1 week ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            I can't say enough good things about
+            <b>Entrepreneurship</b> course at BAOIAM. The instructors were
+            passionate and knowledgeable, and the course material was practical
+            and relevant. i learned so much about what it takes to start and run
+            a successful business.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- same slide cards  -->
+
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/ajay_pawar.jpeg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Ajay Pawar</p>
+            <p class="info-02-text program">SAP</p>
+            <p class="info-02-text date">3 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            The mentor was very knowledgeable in her teachings of
+            <b>SAP</b>. I recommended their services to other looking for
+            different <b>SAP</b> modules as well.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/kumar_abhinav.jpeg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Kumar Abhinav</p>
+            <p class="info-02-text program">Product Manager</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            I am greatful for taking this
+            <b>Product management</b> course. The instructor was knowledgeable
+            and engaging, and the course material was practical. I learned great
+            deal about best practices for <b>Product Mangement</b> and now feel
+            more equipped to lead product development teams.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/somtirtha.jpg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Somtirtha Dutta</p>
+            <p class="info-02-text program">Entrepreneur</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            I can't say enough good things about
+            <b>Entrepreneurship</b> course at BAOIAM. The instructors were
+            passionate and knowledgeable, and the course material was practical
+            and relevant. i learned so much about what it takes to start and run
+            a successful business.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/Basant.jpg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Basant</p>
+            <p class="info-02-text program">Product Manager</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            This <b>Product Management</b> course has helped me improve my
+            skills. The instructor used real-world examples to explain the
+            concepts, and the material was comprehensive and informative. i am
+            excited to apply what I have learned.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/akash_nigam.png" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Akash Nigam</p>
+            <p class="info-02-text program">Entrepreneur</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            Being on this <b>Entrepreneurship</b> course really shifted my
+            mindset on a lot of things as an entrepreneur. i look at myself and
+            my business in a different light, I really grow a lot am really
+            appreciative of BAOIAM for making this opportunity available for me.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/adrija_shrivastav.jpeg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Adrija Shrivastava</p>
+            <p class="info-02-text program">SAP</p>
+            <p class="info-02-text date">2 months ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            This <b>SAP</b> course was valuable. the instructore provided
+            practical insights applicable to my work and the course material was
+            well-organised. I feel more confident after completing the course.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/suryanshu_singh.jpeg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Suryanshu Singh</p>
+            <p class="info-02-text program">Product Manager</p>
+            <p class="info-02-text date">2 weeks ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            I took this course to enhance my
+            <b>Product Management</b> skills, and I'm delighted I did! The
+            course was well-structured, and the instructor provided practical
+            examples that helped me understand the concepts better. I feel more
+            confident in my ability to manage products now.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img src="./Images/surbhi_vandana.jpg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Surbhi Vandana</p>
+            <p class="info-02-text program">Entrepreneur</p>
+            <p class="info-02-text date">1 month ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            The <b>Entrepreneurship</b> course at BAOIAM was a game-changer for
+            me. I learned so much about what it takes to start and run a
+            business, and the instructors were so supportive and knowledgeable.
+            I feel like i have a solid foundation to build on now.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="slider-container-card">
+        <div class="person-info">
+          <div class="person-info-01">
+            <div class="card-img-01">
+              <img class="card-img-01" src="./Images/himanshu_rawat.jpg" />
+            </div>
+            <div class="review-star">&star; &star; &star; &star; &star;</div>
+          </div>
+          <div class="person-info-02">
+            <p class="info-02-text name">Himanshu Rawat</p>
+            <p class="info-02-text program">Entrepreneur</p>
+            <p class="info-02-text date">1 week ago</p>
+          </div>
+        </div>
+
+        <div class="card-body-01">
+          <p>
+            I can't say enough good things about
+            <b>Entrepreneurship</b> course at BAOIAM. The instructors were
+            passionate and knowledgeable, and the course material was practical
+            and relevant. i learned so much about what it takes to start and run
+            a successful business.
+          </p>
+        </div>
+        <svg
+          class="curve"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!-- end desktop view  -->
+  <!-- start mobileview  -->
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+    <input type="radio" name="cards" id="c1" checked />
+    <input type="radio" name="cards" id="c2" />
+    <input type="radio" name="cards" id="c3" />
+    <input type="radio" name="cards" id="c4" />
+    <input type="radio" name="cards" id="c5" />
+    <input type="radio" name="cards" id="c6" />
+    <input type="radio" name="cards" id="c7" />
+    <input type="radio" name="cards" id="c8" />
+    <input type="radio" name="cards" id="c9" />
+    <div class="slider-container-card" id="one">
+      <div class="person-info">
+        <div class="person-info-01">
+          <div class="card-img-01">
+            <img src="./Images/ajay_pawar.jpeg" />
+          </div>
+          <div class="review-star">&star; &star; &star; &star; &star;</div>
+        </div>
+        <div class="person-info-02">
+          <p class="info-02-text name">Ajay Pawar</p>
+          <p class="info-02-text program">SAP</p>
+          <p class="info-02-text date">3 months ago</p>
+        </div>
+      </div>
+
+      <div class="card-body-01">
+        <p>
+          The mentor was very knowledgeable in her teachings of
+          <b>SAP</b>. I recommended their services to other looking for
+          different <b>SAP</b> modules as well.
+        </p>
+      </div>
+      <svg
+        class="curve"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <label class="pre" for="c9"
+        ><i class="fa fa-angle-left" style="font-size: 36px"></i>
+      </label>
+      <label for="c2" class="nxt"
+        ><i class="fa fa-angle-right" style="font-size: 36px"></i
+      ></label>
+    </div>
+    <div class="slider-container-card" id="two">
+      <div class="person-info">
+        <div class="person-info-01">
+          <div class="card-img-01">
+            <img src="./Images/kumar_abhinav.jpeg" />
+          </div>
+          <div class="review-star">&star; &star; &star; &star; &star;</div>
+        </div>
+        <div class="person-info-02">
+          <p class="info-02-text name">Kumar Abhinav</p>
+          <p class="info-02-text program">Product Manager</p>
+          <p class="info-02-text date">2 months ago</p>
+        </div>
+      </div>
+
+      <div class="card-body-01">
+        <p>
+          I am greatful for taking this
+          <b>Product management</b> course. The instructor was knowledgeable and
+          engaging, and the course material was practical. I learned great deal
+          about best practices for <b>Product Mangement</b> and now feel more
+          equipped to lead product development teams.
+        </p>
+      </div>
+      <svg
+        class="curve"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <label class="pre" for="c1"
+        ><i class="fa fa-angle-left" style="font-size: 36px"></i
+      ></label>
+      <label for="c3" class="nxt"
+        ><i class="fa fa-angle-right" style="font-size: 36px"></i
+      ></label>
+    </div>
+    <div class="slider-container-card" id="three">
+      <div class="person-info">
+        <div class="person-info-01">
+          <div class="card-img-01">
+            <img src="./Images/somtirtha.jpg" />
+          </div>
+          <div class="review-star">&star; &star; &star; &star; &star;</div>
+        </div>
+        <div class="person-info-02">
+          <p class="info-02-text name">Somtirtha Dutta</p>
+          <p class="info-02-text program">Entrepreneur</p>
+          <p class="info-02-text date">2 months ago</p>
+        </div>
+      </div>
+
+      <div class="card-body-01">
+        <p>
+          I can't say enough good things about
+          <b>Entrepreneurship</b> course at BAOIAM. The instructors were
+          passionate and knowledgeable, and the course material was practical
+          and relevant. i learned so much about what it takes to start and run a
+          successful business.
+        </p>
+      </div>
+      <svg
+        class="curve"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <label class="pre" for="c2"
+        ><i class="fa fa-angle-left" style="font-size: 36px"></i
+      ></label>
+      <label for="c4" class="nxt"
+        ><i class="fa fa-angle-right" style="font-size: 36px"></i
+      ></label>
+    </div>
+    <div class="slider-container-card" id="four">
+      <div class="person-info">
+        <div class="person-info-01">
+          <div class="card-img-01">
+            <img src="./Images/Basant.jpg" />
+          </div>
+          <div class="review-star">&star; &star; &star; &star; &star;</div>
+        </div>
+        <div class="person-info-02">
+          <p class="info-02-text name">Basant</p>
+          <p class="info-02-text program">Product Manager</p>
+          <p class="info-02-text date">2 months ago</p>
+        </div>
+      </div>
+
+      <div class="card-body-01">
+        <p>
+          This <b>Product Management</b> course has helped me improve my skills.
+          The instructor used real-world examples to explain the concepts, and
+          the material was comprehensive and informative. i am excited to apply
+          what I have learned.
+        </p>
+      </div>
+      <svg
+        class="curve"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <label class="pre" for="c3"
+        ><i class="fa fa-angle-left" style="font-size: 36px"></i
+      ></label>
+      <label for="c5" class="nxt"
+        ><i class="fa fa-angle-right" style="font-size: 36px"></i
+      ></label>
+    </div>
+    <div class="slider-container-card" id="five">
+      <div class="person-info">
+        <div class="person-info-01">
+          <div class="card-img-01">
+            <img src="./Images/akash_nigam.png" />
+          </div>
+          <div class="review-star">&star; &star; &star; &star; &star;</div>
+        </div>
+        <div class="person-info-02">
+          <p class="info-02-text name">Akash Nigam</p>
+          <p class="info-02-text program">Entrepreneur</p>
+          <p class="info-02-text date">2 months ago</p>
+        </div>
+      </div>
+
+      <div class="card-body-01">
+        <p>
+          Being on this <b>Entrepreneurship</b> course really shifted my mindset
+          on a lot of things as an entrepreneur. i look at myself and my
+          business in a different light, I really grow a lot am really
+          appreciative of BAOIAM for making this opportunity available for me.
+        </p>
+      </div>
+      <svg
+        class="curve"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <label class="pre" for="c4"
+        ><i class="fa fa-angle-left" style="font-size: 36px"></i
+      ></label>
+      <label for="c6" class="nxt"
+        ><i class="fa fa-angle-right" style="font-size: 36px"></i
+      ></label>
+    </div>
+    <div class="slider-container-card" id="six">
+      <div class="person-info">
+        <div class="person-info-01">
+          <div class="card-img-01">
+            <img src="./Images/adrija_shrivastav.jpeg" />
+          </div>
+          <div class="review-star">&star; &star; &star; &star; &star;</div>
+        </div>
+        <div class="person-info-02">
+          <p class="info-02-text name">Adrija Shrivastava</p>
+          <p class="info-02-text program">SAP</p>
+          <p class="info-02-text date">2 months ago</p>
+        </div>
+      </div>
+
+      <div class="card-body-01">
+        <p>
+          This <b>SAP</b> course was valuable. the instructore provided
+          practical insights applicable to my work and the course material was
+          well-organised. I feel more confident after completing the course.
+        </p>
+      </div>
+      <svg
+        class="curve"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <label class="pre" for="c5"
+        ><i class="fa fa-angle-left" style="font-size: 36px"></i
+      ></label>
+      <label for="c7" class="nxt"
+        ><i class="fa fa-angle-right" style="font-size: 36px"></i
+      ></label>
+    </div>
+    <div class="slider-container-card" id="seven">
+      <div class="person-info">
+        <div class="person-info-01">
+          <div class="card-img-01">
+            <img src="./Images/suryanshu_singh.jpeg" />
+          </div>
+          <div class="review-star">&star; &star; &star; &star; &star;</div>
+        </div>
+        <div class="person-info-02">
+          <p class="info-02-text name">Suryanshu Singh</p>
+          <p class="info-02-text program">Product Manager</p>
+          <p class="info-02-text date">2 weeks ago</p>
+        </div>
+      </div>
+
+      <div class="card-body-01">
+        <p>
+          I took this course to enhance my
+          <b>Product Management</b> skills, and I'm delighted I did! The course
+          was well-structured, and the instructor provided practical examples
+          that helped me understand the concepts better. I feel more confident
+          in my ability to manage products now.
+        </p>
+      </div>
+      <svg
+        class="curve"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <label class="pre" for="c6"
+        ><i class="fa fa-angle-left" style="font-size: 36px"></i
+      ></label>
+      <label for="c8" class="nxt"
+        ><i class="fa fa-angle-right" style="font-size: 36px"></i
+      ></label>
+    </div>
+    <div class="slider-container-card" id="eight">
+      <div class="person-info">
+        <div class="person-info-01">
+          <div class="card-img-01">
+            <img src="./Images/surbhi_vandana.jpg" />
+          </div>
+          <div class="review-star">&star; &star; &star; &star; &star;</div>
+        </div>
+        <div class="person-info-02">
+          <p class="info-02-text name">Surbhi Vandana</p>
+          <p class="info-02-text program">Entrepreneur</p>
+          <p class="info-02-text date">1 month ago</p>
+        </div>
+      </div>
+
+      <div class="card-body-01">
+        <p>
+          The <b>Entrepreneurship</b> course at BAOIAM was a game-changer for
+          me. I learned so much about what it takes to start and run a business,
+          and the instructors were so supportive and knowledgeable. I feel like
+          i have a solid foundation to build on now.
+        </p>
+      </div>
+      <svg
+        class="curve"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <label class="pre" for="c7"
+        ><i class="fa fa-angle-left" style="font-size: 36px"></i
+      ></label>
+      <label for="c9" class="nxt"
+        ><i class="fa fa-angle-right" style="font-size: 36px"></i
+      ></label>
+    </div>
+    <div class="slider-container-card" id="nine">
+      <div class="person-info">
+        <div class="person-info-01">
+          <div class="card-img-01">
+            <img class="card-img-01" src="./Images/himanshu_rawat.jpg" />
+          </div>
+          <div class="review-star">&star; &star; &star; &star; &star;</div>
+        </div>
+        <div class="person-info-02">
+          <p class="info-02-text name">Himanshu Rawat</p>
+          <p class="info-02-text program">Entrepreneur</p>
+          <p class="info-02-text date">1 week ago</p>
+        </div>
+      </div>
+
+      <div class="card-body-01">
+        <p>
+          I can't say enough good things about
+          <b>Entrepreneurship</b> course at BAOIAM. The instructors were
+          passionate and knowledgeable, and the course material was practical
+          and relevant. i learned so much about what it takes to start and run a
+          successful business.
+        </p>
+      </div>
+      <svg
+        class="curve"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L80,122.7C160,149,320,203,480,186.7C640,171,800,85,960,64C1120,43,1280,85,1360,106.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      <label class="pre" for="c8"
+        ><i class="fa fa-angle-left" style="font-size: 36px"></i
+      ></label>
+      <label for="c1" class="nxt"
+        ><i class="fa fa-angle-right" style="font-size: 36px"></i
+      ></label>
+    </div>
+    <div class="dot-container">
+      <label for="c1" class="dots" id="dot1"></label>
+      <label for="c2" class="dots" id="dot2"></label>
+      <label for="c3" class="dots" id="dot3"></label>
+      <label for="c4" class="dots" id="dot4"></label>
+      <label for="c5" class="dots" id="dot5"></label>
+      <label for="c6" class="dots" id="dot6"></label>
+      <label for="c7" class="dots" id="dot7"></label>
+      <label for="c8" class="dots" id="dot8"></label>
+      <label for="c9" class="dots" id="dot9"></label>
+    </div>
+  </div>
+</section>
+
+<div>
+  <center>
+    <div class="main-heading">
+      <p class="heading">Apply for Tutor <span>Partnership</span></p>
+      <h2 style="color: #031864">
+        A one-time Registration fee is payable to become a Tutor Partner on
+        UrbanPro.
+      </h2>
+    </div>
+  </center>
+  <div class="container">
+    <div class="price"><h1>Rs 1999</h1></div>
+    <div class="benefits">
+      <h1>Benefits</h1>
+      <br />
+      <ul>
+        <li>
+          Live Master classes and Industrial Training (Domain of your Choice)
+        </li>
+        <li>Mentorship Support</li>
+        <li>Live Corporate Projects</li>
+        <li>Become a Certified Trainer</li>
+        <li>Resume Building</li>
+        <li>Earn upto 50k every month</li>
+      </ul>
+      <a href="../pay-now/index.html"> <button>Pay now</button></a>
+    </div>
+  </div>
+</div>
+
+<!--FQA SECTION-->
+<div class="container-main faq">
+  <div class="img">
+    <img id="faq-img" src="../images/intern5.jpg" />
+  </div>
+
+  <div class="ac-main">
+    <h1>Frequently Asked <span>Questions</span></h1>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-item-header">
+          Q1. I am not a student of BAOIAM. Can I still participate?
+        </div>
+        <!-- /.accordion-item-header -->
+        <div class="accordion-item-body">
+          <div class="accordion-item-body-content">
+            Yes, If you are aware of BAOIAM and believe in what we are doing,
+            then feel free to participate.
+          </div>
+        </div>
+        <!-- /.accordion-item-body -->
+      </div>
+      <!-- /.accordion-item -->
+    </div>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-item-header">
+          Q2. How can I track the status of my earning?
+        </div>
+        <div class="accordion-item-body">
+          <div class="accordion-item-body-content">
+            You can see it on the website dashboard once you login.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-item-header">Q3. Who all can participate?</div>
+        <div class="accordion-item-body">
+          <div class="accordion-item-body-content">
+            Anyone who has a skill expertise & has passion for teaching.Be it
+            working professional or student.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock content %}

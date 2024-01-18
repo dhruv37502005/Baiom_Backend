@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .maintenance {
+    margin-top: 6rem;
+    height: 36rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 800;
+  }
+  
+  .maintenance_h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #03003f;
+  }
+  
+  img {
+    height: 15rem;
+  }
+  
+  .maintenance_timer {
+    display: flex;
+    gap: 1rem;
+  }
+  .maintenance_timer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .maintenance_number {
+    font-size: 2rem;
+    color: #03003f;
+  }
+  .maintenance_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  
+  .maintenance_heading {
+    font-size: 1.8rem;
+    color: #03003f;
+  }
+  .maintenance_para {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .maintenance_button {
+    padding: 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
+    color: #fff;
+    border: none;
+  }
+  
+  .maintenance_button:hover {
+    background: -webkit-linear-gradient(45deg, #ff8000, #ff0000);
+  }
+  
+  @media (max-width: 650px) {
+    .maintenance {
+      margin: auto;
+      margin-top: 8rem;
+      width: 35rem;
+    }
+    img {
+      height: 10rem;
+    }
+    .maintenance_content {
+      width: 100%;
+    }
+    .maintenance_button {
+      font-size: 1.3rem;
+    }
+  }
