@@ -1,0 +1,114 @@
+.slideshow-container {
+  /* min-width: 75%; */
+  margin: auto;
+  margin-bottom: 2rem;
+  height: 530px;
+  position: relative;
+  /* overflow: hidden; */
+}
+.dot-container {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .slider-container-card {
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    height: 100%;
+    width: 100%;
+
+    align-items: center;
+    padding: 15px 30px;
+    transition: transform 0.8s;
+    background: linear-gradient(white, white) padding-box,
+      linear-gradient(45deg, #fb8721, #fa2424) border-box;
+    border: 6px solid transparent;
+    box-shadow: none;
+    border-radius: 30px;
+    margin: 0;
+    z-index: -3;
+    overflow: hidden;
+  }
+  .slider-container-card:hover {
+    transform: scale(1);
+  }
+  .card-body-01 {
+    width: 85%;
+    margin: auto;
+  }
+
+  .pre,
+  .nxt {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bebebe52;
+    z-index: 99;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .pre {
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nxt {
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .dot-container {
+    position: absolute;
+    bottom: -2rem;
+    display: flex;
+    width: 100%;
+    /* height: 11px; */
+    margin-top: 15px;
+    justify-content: center;
+  }
+
+  .dots {
+    width: 18px;
+    height: 18px;
+    background: #b5b5b5;
+    z-index: 99;
+    cursor: pointer;
+    margin: 4px;
+    border-radius: 50%;
+  }
+
+  .slideshow-container input {
+    display: none;
+  }
+
+  #c1:checked ~ #one,
+  #c2:checked ~ #two,
+  #c3:checked ~ #three,
+  #c4:checked ~ #four,
+  #c5:checked ~ #five,
+  #c6:checked ~ #six,
+  #c7:checked ~ #seven,
+  #c8:checked ~ #eight,
+  #c9:checked ~ #nine {
+    z-index: 10;
+  }
+
+  #c1:checked ~ .dot-container #dot1,
+  #c2:checked ~ .dot-container #dot2,
+  #c3:checked ~ .dot-container #dot3,
+  #c4:checked ~ .dot-container #dot4,
+  #c5:checked ~ .dot-container #dot5,
+  #c6:checked ~ .dot-container #dot5,
+  #c7:checked ~ .dot-container #dot6,
+  #c8:checked ~ .dot-container #dot7,
+  #c9:checked ~ .dot-container #dot9 {
+    background: #000;
+  }
+}

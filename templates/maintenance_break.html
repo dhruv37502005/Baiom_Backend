@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance</title>
+    <link rel="stylesheet" href="{% static 'maintenance/css/maintenance.css' %}" />
+</head>
+<body>
+    <div class="maintenance">
+        <h1 class="maintenance_h1">Oops!</h1>
+        <img src="https://daynday.co.in/wp-content/uploads/2021/05/slider_10repair-MAINTENANCE.jpg"
+            alt="maintenance_img" />
+        <div class="maintenance_timer">
+            <div>
+                <span class="maintenance_number">{{ hours|default:"00" }}</span>
+                <p>HOURS</p>
+            </div>
+            <div>
+                <span class="maintenance_number">{{ minutes|default:"00" }}</span>
+                <p>MINUTES</p>
+            </div>
+            <div>
+                <span class="maintenance_number">{{ seconds|default:"00" }}</span>
+                <p>SECONDS</p>
+            </div>
+        </div>
+        <div class="maintenance_content">
+            <h2 class="maintenance_heading">WE'RE DOWN FOR MAINTENANCE</h2>
+            <p class="maintenance_para">This page is undergoing maintenance and will be back soon</p>
+        </div>
+        <div>
+            <!-- <button class="maintenance_button">Go Back</button> -->
+            <button class="maintenance_button">Contact Us</button>
+            <!-- <button class="maintenance_button">MORE INFO.</button> -->
+            <!-- <button class="maintenance_button">Notify Me</button> -->
+        </div>
+    </div>
+</body>
+</html>

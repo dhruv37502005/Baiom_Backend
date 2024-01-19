@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.utils import timezone
-import cv2
+# import cv2
 import datetime
 # Create your models here.
 
@@ -27,26 +27,19 @@ import datetime
 #         return self.title
     
 
-class Course(models.Model):
-    CATEGORY_CHOICES = [
-        ('Web Development', 'Web Development'),
-        ('Data Analyst', 'Data Analyst'),
-        ('Data Science', 'Data Science'),
-        ('Content Writing', 'Content Writing'),
-        ('Graphic Designing', 'Graphic Designing'),
-        ('SEO Marketing', 'SEO Marketing'),
-        ('Digital Marketing', 'Digital Marketing'),
-        ('Project Management', 'Project Management'),
-        ('Human Resources', 'Human Resources'),
-        ('Corporation', 'Corporation'),
-    ]
+class CourseCategory(models.Model):
+    name = models.CharField(max_length=50, unique=True)
 
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='Web Development')
+    def __str__(self):
+        return self.name
+
+class Course(models.Model):
+    category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     description = models.TextField()
     instructor = models.CharField(max_length=50)
     image = models.ImageField(upload_to='course_images/', null=True, blank=True)
-    video = models.FileField(null=True, blank=True)
+    video = models.FileField(upload_to='course_videos/',null=True, blank=True)
     price=models.FloatField(null=True, blank=True)
     discount = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     slug = models.SlugField(unique=True, blank=True)

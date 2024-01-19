@@ -1,193 +1,189 @@
 {% load static %}
 
 
-    <!-- Subscribe -->
-    <div class="container subscribe" id="subscribe">
-        <div class="col-md-12 p-4 row">
-          <div class="col-md-7">
-            <h2 style="color: #fff">Get in Touch with us</h2>
-            <p>Connect with our Experts in 60 seconds and clear your queries.</p>
-          </div>
-          <div class="col-md-5 pt-3">
-            <div class="form">
-              <input
-                type="email"
-                name="Email"
-                style="text-align: center"
-                placeholder="Enter Phone Number"
-                required
-              />
-              <button type="Submit" class="btn-1" onclick="alertmessage()">
-                Get In Touch
-              </button>
-            </div>
-          </div>
+<div class="container subscribe" id="subscribe">
+  <div class="col-md-12 p-4 row">
+    <div class="col-md-7">
+      <h2 style="color: #fff">Get in Touch with us</h2>
+      <p>Connect with our Experts in 60 seconds and clear your queries.</p>
+    </div>
+    <div class="col-md-5 pt-3">
+      <div class="form">
+        <input
+          type="email"
+          name="Email"
+          style="text-align: center"
+          placeholder="Enter Phone Number"
+          required
+        />
+        <button type="Submit" class="btn-1" onclick="alertmessage()">
+          Get In Touch
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="text-center text-white">
+  <div class="footer-container text-left text-md-start mt-4">
+    <div class="row mr-3">
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 style="color: #fff">Quick Links</h6>
+        <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
+        <p>
+          <a
+            href="{% url 'core:index' %}"
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>Home</a
+          >
+        </p>
+        <p>
+          <a
+            href="{% url 'core:career' %}"
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>Career</a
+          >
+        </p>
+        <p>
+          <a
+            href="{% url 'core:hire_from_us' %}"
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>Hire From Us</a
+          >
+        </p>
+        <p>
+          <a
+            href="{% url 'core:coming_soon' %}"
+            class="text-white"
+            style="font-size: 0.8rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>BTH - Talent Hunt
+            Exam</a
+          >
+        </p>
+        <p>
+          <a
+            href="{% url 'core:refer_earn' %}"
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>Refer and Earn</a
+          >
+        </p>
+      </div>
+
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 style="color: #fff">Other Links</h6>
+        <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
+        <p>
+          <a
+            href="{% url 'core:blog' %} "
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>Blog</a
+          >
+        </p>
+        <p>
+          <a
+            href="{% url 'core:coming_soon' %}"
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>Events and
+            Contest</a
+          >
+        </p>
+        <p>
+          <a
+            href="{% url 'contactapp:contactus' %}"
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>Contact Us</a
+          >
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 style="color: #fff">Courses</h6>
+        <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
+        <p>
+          <a
+            href="{% url 'core:coming_soon' %}"
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>Entrepreneurship</a
+          >
+        </p>
+        <p>
+          <a
+            href="{% url 'core:coming_soon' %}"
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>Product
+            Management</a
+          >
+        </p>
+        <p>
+          <a
+            href="{% url 'core:coming_soon' %}"
+            class="text-white"
+            style="font-size: 0.9rem"
+            ><i class="fa-solid fa-angle-right mr-2"></i>SAP FICO</a
+          >
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div
+        class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-3 contact-us"
+        style="padding-left: 15px"
+      >
+        <!-- Links -->
+        <h6 style="color: #fff">Contact Us</h6>
+        <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
+        <p style="font-size: 0.8rem">
+          <i class="fas fa-home mr-1 p-2 rounded"></i> B Block Noida Sector
+          15 Uttar Pradesh
+        </p>
+        <p style="font-size: 0.9rem">
+          <i class="fas fa-envelope mr-1 p-2 rounded"></i> tutors@baoiam.com
+        </p>
+        <p style="font-size: 0.9rem">
+          <i class="fas fa-phone mr-1 p-2 rounded"></i> 08069640635
+        </p>
+        <div class="social">
+          <a href="https://www.facebook.com/profile.php?id=100064896061625"
+            ><i class="bx bxl-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/beaoneinamillion/"
+            ><i class="bx bxl-instagram-alt"></i
+          ></a>
+          <a href="https://twitter.com/BAOIAM1"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <!--             <a href="https://youtube.com/@baoiam9043"><i class='bx bxl-youtube'></i></a> -->
+          <a
+            href="https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
         </div>
       </div>
-  
-      <!-- Footer -->
-      <footer class="text-center text-white">
-        <div class="footer-container text-left text-md-start mt-4">
-          <div class="row mr-3">
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              <!-- Links -->
-              <h6 style="color: #fff">Quick Links</h6>
-              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-              <p>
-                <a
-                  href="./index.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>Home</a
-                >
-              </p>
-              <p>
-                <a
-                  href="./career/career.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>Career</a
-                >
-              </p>
-              <p>
-                <a
-                  href="./Hire-From-Us/index.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>Hire From Us</a
-                >
-              </p>
-              <p>
-                <a
-                  href="./Comming-Soon/Coming_soon.html"
-                  class="text-white"
-                  style="font-size: 0.8rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>BTH - Talent Hunt
-                  Exam</a
-                >
-              </p>
-              <p>
-                <a
-                  href="./Baoiam-refer-page-main/index.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>Refer and Earn</a
-                >
-              </p>
-            </div>
-  
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              <!-- Links -->
-              <h6 style="color: #fff">Other Links</h6>
-              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-              <p>
-                <a
-                  href="./Blog-Section-main/main-blog.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>Blog</a
-                >
-              </p>
-              <p>
-                <a
-                  href="./Comming-Soon/Coming_soon.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>Events and
-                  Contest</a
-                >
-              </p>
-              <p>
-                <a
-                  href="./contact-page/index.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>Contact Us</a
-                >
-              </p>
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              <!-- Links -->
-              <h6 style="color: #fff">Courses</h6>
-              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-              <p>
-                <a
-                  href="./Blog-Section-main/blogs/Entrepreneurship.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>Entrepreneurship</a
-                >
-              </p>
-              <p>
-                <a
-                  href="./Blog-Section-main/blogs/Product_Development.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>Product
-                  Management</a
-                >
-              </p>
-              <p>
-                <a
-                  href="./Comming-Soon/Coming_soon.html"
-                  class="text-white"
-                  style="font-size: 0.9rem"
-                  ><i class="fa-solid fa-angle-right mr-2"></i>SAP FICO</a
-                >
-              </p>
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div
-              class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-3 contact-us"
-              style="padding-left: 15px"
-            >
-              <!-- Links -->
-              <h6 style="color: #fff">Contact Us</h6>
-              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-              <p style="font-size: 0.8rem">
-                <i class="fas fa-home mr-1 p-2 rounded"></i> B Block Noida Sector
-                15 Uttar Pradesh
-              </p>
-              <p style="font-size: 0.9rem">
-                <i class="fas fa-envelope mr-1 p-2 rounded"></i> tutors@baoiam.com
-              </p>
-              <p style="font-size: 0.9rem">
-                <i class="fas fa-phone mr-1 p-2 rounded"></i> +91-8062179867
-              </p>
-              <div class="social">
-                <a href="https://www.facebook.com/profile.php?id=100064896061625"
-                  ><i class="bx bxl-facebook"></i
-                ></a>
-                <a href="https://www.instagram.com/beaoneinamillion/"
-                  ><i class="bx bxl-instagram-alt"></i
-                ></a>
-                <a href="https://twitter.com/BAOIAM1"
-                  ><i class="bx bxl-twitter"></i
-                ></a>
-                <!--             <a href="https://youtube.com/@baoiam9043"><i class='bx bxl-youtube'></i></a> -->
-                <a
-                  href="https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/"
-                  ><i class="bx bxl-linkedin"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="footer-end text-left p-2">
-          <div class="footer-end-container">
-            Copyright © 2023
-            <a class="text-white" href="https://mdbootstrap.com/">BAOIAM. </a>All
-            Rights Reserved
-          </div>
-        </div>
-      </footer>
-  
+    </div>
+  </div>
+
+  <div class="footer-end text-left p-2">
+    <div class="footer-end-container">
+      Copyright © 2023
+      <a class="text-white" href="https://mdbootstrap.com/">BAOIAM. </a>All
+      Rights Reserved
+    </div>
+  </div>
+</footer>
       <script
         src="https://kit.fontawesome.com/aa16f6569f.js"
         crossorigin="anonymous"

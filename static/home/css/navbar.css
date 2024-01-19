@@ -6,7 +6,6 @@ header {
   z-index: 1;
   box-shadow: rgb(49, 49, 49);
   font-family: "Montserrat", sans-serif;
-
 }
 a {
   text-decoration: none;
@@ -17,8 +16,8 @@ header .nav-item {
 
 header .nav-item a {
   padding-top: 0.7rem;
-  color: rgb(6, 0, 56) !important;
-  font-size: 1.1rem;
+  color: rgb(6, 0, 56);
+  font-size: 1.1rem; 
   font-weight: 600;
 }
 
@@ -64,7 +63,7 @@ header img {
 }
 
 /* header .nav-item a:hover {
-  color: #ec4f01 !important;
+  color: #ec4f01 ;
 } */
 
 .btn-1 {
@@ -97,14 +96,12 @@ header img {
   border-color: #03003f;
   border-radius: 5px;
 }
-
 @media (max-width: 1000px) {
   .btn-1,
   .btn-2 {
     padding: 0.6em 1em;
   }
 }
-
 @media (max-width: 900px) {
   .btn-1,
   .btn-2 {

@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'contactapp',
     'dashboard',
     'course',
+
+    # For socialauth
+    'social_django',
 ]
 
 
@@ -58,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'core.middleware.maintenance_middleware'
 ]
 
 ROOT_URLCONF = 'baoiam.urls'
@@ -150,6 +154,32 @@ JAZZMIN_SETTINGS = {
     "copyright": "Baoiam.com",
 }
 
+
+AUTHENTICATION_BACKENDS = [
+    # ...
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.github.GithubOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+    # ...
+]
+
+
+
+# For Google
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '703254856844-cobffnq2eph2pj92qfhnokbln7q90grr.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+# For Github
+SOCIAL_AUTH_GITHUB_KEY = '9c5760417d3d9e11cc05'
+SOCIAL_AUTH_GITHUB_SECRET = '4e3e33c32a2c8b9037e357da592f05eb2c4b6ba1'
+SOCIALACCOUNT_PROVIDERS = {'github': {'SCOPE': ['user','repo','user:email',],}}
+
+
+
+LOGIN_REDIRECT_URL = '/'
+
+
+
 AUTH_USER_MODEL = 'auth.user'
 AUTH_GROUP_MODEL = 'dashboard.DashboardGroup'
 AUTH_PERMISSION_MODEL = 'dashboard.DashboardPermission'
@@ -160,3 +190,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER ='niruranjan2001@gmail.com '
 EMAIL_HOST_PASSWORD ='pktz pdbd ndtx zpng'
+
+STAGING = True
+ALLOWED_HOSTS = ['*']

@@ -12,7 +12,7 @@ from course.models import Course
 #user = models.OneToOneField(settings.AUTH_USER_MODEL)
 
 class Dashboard_User(models.Model):
-
+    
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     
     is_user = models.BooleanField(default=True)
