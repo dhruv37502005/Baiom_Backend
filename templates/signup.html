@@ -23,7 +23,7 @@
                         icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% else %}info{% endif %}',
                         title: "{{ message|escapejs }}",
                         showConfirmButton: false,
-                        timer: 5000  // Adjust the duration of the notification
+                         // Adjust the duration of the notification
                     });
                 {% endif %}
             {% endfor %}

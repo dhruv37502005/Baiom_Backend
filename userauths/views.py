@@ -61,7 +61,7 @@ def signup(request):
             email = EmailMessage(mail_subject, message, to=[to_email])
             email.content_subtype = 'html'
             email.send()
-            messages.success(request, "Please confirm your email address to complete the registration")
+            messages.success(request,f"Please confirm your email address to complete the registration.<a href='{('https://mail.google.com/')}'>Click here</a> to go to Gmail.")
             return redirect('userauths:signup')
         else:
             for field, errors in form.errors.items():
