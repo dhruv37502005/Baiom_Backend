@@ -82,14 +82,18 @@
   <link rel="stylesheet" href="{% static 'itie/css/slideshow.css' %}">
   <link rel="stylesheet" href="{% static 'itie/css/itiecards.css' %}">
   <link rel="stylesheet" href="{% static 'itie/css/refer.css' %}">
+  <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
   {% endif %}
 
 
   {% if is_career %}
   <link rel="stylesheet" href="{% static 'career/css/career.css' %}">
   <link rel="stylesheet" href="{% static 'career/css/style.css' %}">
-  <script src="{% static 'career/js/style.js' %}" defer></script>
-  {% endif %}
+  <script src="{% static 'career/js/script.js' %}" defer></script>
+{% endif %}
   {% if is_blog %}
   <link rel="stylesheet" href="{% static 'blog/css/Header-footer.css' %}">
   <link rel="stylesheet" href="{% static 'blog/css/main_blog.css' %}">

@@ -23,7 +23,7 @@
                         icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% else %}info{% endif %}',
                         title: "{{ message|escapejs }}",
                         showConfirmButton: false,
-                        timer: 5000  // Adjust the duration of the notification
+                         // Adjust the duration of the notification
                     });
                 {% endif %}
             {% endfor %}
@@ -104,9 +104,8 @@
         <div class="icons">
           <div class="circle"><a href="#"><i class="fab fa-facebook-f"></i>
           </a></div>
-          <div class="circle"><a href="#"><i class="fab fa-twitter"></i>
-          </a></div>
-          <div class="circle"><a href="#"> <i class="fab fa-google"></i></a></div>
+          <div class="circle"><a href="{% url 'social:begin' 'github' %}"><i class="fab fa-github fa-2x"></i></a></div>
+          <div class="circle"><a href="{% url 'social:begin' 'google-oauth2' %}"> <i class="fab fa-google"></i></a></div>
           <div class="circle"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
         </div>
       </div>
