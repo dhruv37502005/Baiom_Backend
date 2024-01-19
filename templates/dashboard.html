@@ -29,7 +29,7 @@
           />
         </div>
         <h1>{{ user.username }}</h1>
-        
+
         <p>{{ user.email }}</p>
       </div>
       <div class="links">
@@ -40,9 +40,7 @@
           >
         </div>
         <div class="link">
-          <a
-            href="#" id="profile" class="a activeHai"
-          >
+          <a href="#" id="profile" class="a activeHai">
             <span class="material-symbols-outlined"> person </span>
             <h2>Profile</h2></a
           >
@@ -60,19 +58,19 @@
           >
         </div>
         <div class="link">
-          <a href="#" id="liveClasses" class="a"> 
+          <a href="#" id="liveClasses" class="a">
             <span class="material-symbols-outlined"> live_tv </span>
             <h2>Live Classes</h2></a
           >
         </div>
         <div class="link">
-          <a href="{% url 'userauths:logout' %}" class="a" >
+          <a href="{% url 'userauths:logout' %}" class="a">
             <span class="material-symbols-outlined"> logout </span>
             <h2>Logout</h2></a
           >
         </div>
         <div class="down">
-          <button class="in">
+          <button class="in" id="up-arrow">
             <span class="material-symbols-outlined"> expand_less </span>
           </button>
         </div>
@@ -82,14 +80,14 @@
       <div class="just"></div>
       <main class="main" id="main">
         <div class="down">
-          <button class="in">
+          <button class="in" id="down-arrow">
             <span class="material-symbols-outlined"> expand_more </span>
           </button>
         </div>
         <section id="head-section-content">
           <header class="head-section" id="head-section">
             <section class="name-section">
-              <h2>Namaskar Hanuman</h2>
+              <h2>Namaskar {{ user.username }}</h2>
               <p>It's good to see you again.</p>
             </section>
             <section class="searchbar-section">
@@ -109,69 +107,139 @@
             <section class="close-details-section" id="close-details-section">
               <div class="close-details" id="close-details">&times;</div>
             </section>
-            <div class="profile-image-section">
-              <section class="profile-image"></section>
-              <br />
-              <input
-                type="file"
-                class="upload-photo"
-                accept="image/*"
-                placeholder="Select Profile Photo"
-              />
-            </div>
-            <br />
-            <br />
+
             <section class="form-content">
-              <div class="form-element">
-                <label for="first-name" class="first-name"></label>
-                <input type="text" id="first-name" placeholder="First name" value="{{ dash_user.fname }}" name="first_name"/>
-              </div>
-              <div class="form-element">
-                <label for="middle-name" class="middle-name"></label>
-                <input type="text" id="middle-name" placeholder="Middle name" value="{{ dash_user.mname }}" name="middle_name"/>
-              </div>
-              <div class="form-element">
-                <label for="last-name" class="last-name"></label>
-                <input type="text" id="last-name" placeholder="Last-name" value="{{ dash_user.lname }}" name="last_name" />
-              </div>
-              <div class="form-element">
-                <label for="education" class="education"></label>
-                <input type="text" id="education" placeholder="Education"/>
-              </div>
-              <div class="form-element">
-                <label for="mobile-number" class="mobile-number"></label>
+              <div class="profile-image-section">
+                <section class="profile-image"></section>
+                <br />
                 <input
-                  type="text"
-                  id="mobile-number"
-                  placeholder="Enter Mobile Number"
-                  value="{{ dash_user.mobilenumber }}"
-                  name="mobile_number"
+                  type="file"
+                  class="upload-photo"
+                  accept="image/*"
+                  placeholder="Select Profile Photo"
                 />
               </div>
-              <div class="form-element">
-                <label for="college-name" class="college-name"></label>
-                <input
-                  type="text"
-                  id="college-name"
-                  placeholder="College Name"
-                  value="{{ dash_user.collegename }}"
-                  name="college_name"
-                />
+              <br /><br />
+              <div class="first-middle-last">
+                <div class="form-element">
+                  <label for="first-name" class="first-name"></label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    placeholder="First name"
+                    value="{{ dash_user.fname }}"
+                    name="first_name"
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="middle-name" class="middle-name"></label>
+                  <input
+                    type="text"
+                    id="middle-name"
+                    placeholder="Middle name"
+                    value="{{ dash_user.mname }}"
+                    name="middle_name"
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="last-name" class="last-name"></label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    placeholder="Last-name"
+                    value="{{ dash_user.lname }}"
+                    name="last_name"
+                  />
+                </div>
+              </div>
+              <div class="college-details">
+                <div class="form-element">
+                  <label for="college-name" class="college-name"></label>
+                  <input
+                    type="text"
+                    id="college-name"
+                    placeholder="College Name"
+                    value="{{ dash_user.collegename }}"
+                    name="college_name"
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="education" class="education"></label>
+                  <select
+                    type="text"
+                    id="education"
+                    placeholder="Education"
+                  ></select>
+                </div>
+
+                <div class="form-element">
+                  <label for="graduation-year" class="graduation-year"></label>
+                  <select
+                    type="text"
+                    id="graduation-year"
+                    placeholder="Graduation Year"
+                    value="{{ dash_user.graduation_year }}"
+                    name="graduation_year"
+                  ></select>
+                </div>
+              </div>
+              <div class="personal-details">
+                <div class="form-element">
+                  <label for="mobile-number" class="mobile-number"></label>
+                  <input
+                    type="text"
+                    id="mobile-number"
+                    placeholder="Enter Mobile Number"
+                    value="{{ dash_user.mobilenumber }}"
+                    name="mobile_number"
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="github" class="github"></label>
+
+                  <input
+                    type="text"
+                    id="github"
+                    placeholder="Github URL"
+                    required
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="linkedin" class="linkdin"></label>
+
+                  <input type="text" id="linkdin" placeholder="Linkdin URL" />
+                </div>
               </div>
               <div class="form-element">
-                <label for="graduation-year" class="graduation-year"></label>
-                <input
-                  type="text"
-                  id="graduation-year"
-                  placeholder="Graduation Year"
-                  value="{{ dash_user.graduation_year }}"
-                  name="graduation_year"
-                />
+                <!-- <label for="bio" class="bio"></label> -->
+                <textarea
+                  id="bio"
+                  placeholder="Bio : Your Profile Summary should mention the highlights of your career and education, what your professional interests are, and what kind of a career you are looking for. Write a meaningful summary of more than 50 characters."
+                  value="{{ dash_user.bio }}"
+                  name="bio"
+                  maxlength="50"
+                ></textarea>
               </div>
-              <div class="form-element">
-                <label for="bio" class="bio"></label>
-                <input type="text" id="bio" placeholder="Bio" value="{{ dash_user.bio }}" name="bio"/>
+              <div class="socialmedia-section" id="socialmedia-section">
+                <div class="add-section">
+                  <input
+                    type="text"
+                    id="socialmedia"
+                    placeholder="Social Media URL"
+                  />
+                  <button
+                    type="button"
+                    class="socialmedia-icon"
+                    id="socialmedia-icon"
+                    onclick="addIcon()"
+                  >
+                    <span class="material-symbols-outlined add-icon">
+                      add_circle
+                    </span>
+                  </button>
+                </div>
               </div>
+
               <div class="form-element btn" id="submit-btn-section">
                 <button type="submit" class="submit-btn">Submit</button>
               </div>
@@ -194,11 +262,18 @@
               </section>
               <hr />
               <br />
+              <div class="bio">
+                <b>Bio :</b> Your Profile Summary should mention the highlights
+                of your career and education, what your professional interests
+                are, and what kind of a career you are looking for. Write a
+                meaningful summary of more than 50 characters.
+              </div>
+              <br />
               <div class="registered-other-details">
                 <div class="first-part">
                   <div class="registered-college-name element">
-                    <span class="material-symbols-outlined"> school </span
-                    >{{ dash_user.collegename }}
+                    <span class="material-symbols-outlined"> school </span>{{
+                    dash_user.collegename }}
                   </div>
                   <div class="registered-college-name element">
                     <span class="material-symbols-outlined">
@@ -209,21 +284,29 @@
                     <span class="material-symbols-outlined"> date_range </span
                     >2023
                   </div>
+                  <div class="registered-github element">
+                    <span class="material-symbols-outlined"> link </span
+                    >hanuman.github.com
+                  </div>
                 </div>
                 <!-- <div class="vl"></div> -->
                 <div class="second-part">
                   <div class="registered-mobile-number element">
-                    <span class="material-symbols-outlined"> call </span
-                    >{{ dash_user.mobilenumber }}
+                    <span class="material-symbols-outlined"> call </span>{{
+                    dash_user.mobilenumber }}
                   </div>
 
                   <div class="registered-email-id element">
-                    <span class="material-symbols-outlined"> mail </span
-                    >{{ user.email }}
+                    <span class="material-symbols-outlined"> mail </span>{{
+                    user.email }}
                   </div>
                   <div class="registered-email-id element">
                     <span class="material-symbols-outlined"> link </span
                     >hanumn.linkedin.com
+                  </div>
+                  <div class="registered-socialmedia element">
+                    <span class="material-symbols-outlined"> link </span>social
+                    media
                   </div>
                 </div>
               </div>
@@ -257,60 +340,70 @@
         </section>
 
         <!-- //course section -->
-       
+
         <div class="courseDiv" id="courseDiv">
           <h2>Enroll Courses</h2>
-          
+
           <section id="course-card-section">
-          {% for course in enrolled_courses %}
-          <div class="course-card">
-            <div class="card-image-section">
-              {% if course.video %}
-              
-              <video id="courseVideo" width="1000" height="1000" controls style="display: none;" >
-              <source src="{{ course.video.url }}"  type="video/mp4">
-              <!--<source src="{{ course.video.url }}" type="video/webm">
+            {% for course in enrolled_courses %}
+            <div class="course-card">
+              <div class="card-image-section">
+                {% if course.video %}
+
+                <video
+                  id="courseVideo"
+                  width="1000"
+                  height="1000"
+                  controls
+                  style="display: none"
+                >
+                  <source src="{{ course.video.url }}" type="video/mp4" />
+                  <!--<source src="{{ course.video.url }}" type="video/webm">
               <source src="{{ course.video.url }}" type="video/ogg"> -->
-               Your browser does not support the video tag.
-              </video>
-              {% else %}
-              <p>No video available</p>
-              {% endif %}
-            </div>
-            <div class="card-content">
-              <div class="completed-percentage">
-                <div class="inner" style="width: 55%;"></div>
+                  Your browser does not support the video tag.
+                </video>
+                {% else %}
+                <p>No video available</p>
+                {% endif %}
               </div>
-              <div class="lectures-completed">55/100 lectures completed</div>
-              <h3 class="course-name">{{course.title}}</h3>
-              <div class="last-read">Last read: Layout grids</div>
-              
-              <button type="button" class="resume-btn-element" onclick="playVideo()">
-                <span class="material-symbols-outlined"> play_arrow </span>Resume Course
-              </button>
+              <div class="card-content">
+                <div class="completed-percentage">
+                  <div class="inner" style="width: 55%"></div>
+                </div>
+                <div class="lectures-completed">55/100 lectures completed</div>
+                <h3 class="course-name">{{course.title}}</h3>
+                <div class="last-read">Last read: Layout grids</div>
+
+                <button
+                  type="button"
+                  class="resume-btn-element"
+                  onclick="playVideo()"
+                >
+                  <span class="material-symbols-outlined"> play_arrow </span
+                  >Resume Course
+                </button>
+              </div>
             </div>
-          </div>
-          {% endfor %}
-        </section>
-      </div>
-      
-      <script>
-        function playVideo() {
-          var videoElement = document.getElementById("courseVideo");
-          videoElement.style.display = "block";
-          videoElement.play();
-        }
-      </script>
+            {% endfor %}
+          </section>
+        </div>
+        <script>
+          function playVideo() {
+            var videoElement = document.getElementById("courseVideo");
+            videoElement.style.display = "block";
+            videoElement.play();
+          }
+        </script>
 
-        <section id="certificate-section" style="background-color: red;">
-     
-        </section>
+        <section
+          id="certificate-section"
+          style="background-color: red"
+        ></section>
 
-
-        <section id="liveClasses-section" style="background-color: rgb(179, 255, 0);">
-     
-        </section>
-        </section>
+        <section
+          id="liveClasses-section"
+          style="background-color: rgb(179, 255, 0)"
+        ></section>
       </main>
     </section>
   </body>

@@ -67,20 +67,33 @@
   <script src="{% static 'courses/js/slider2.js' %}" defer></script>
 
   {% endif %}
+  {% if is_category %}
+  <link rel="stylesheet" href="{% static 'courses/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/faq.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/sidebar.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/style3.css' %}" />
+  <link rel="stylesheet" href="{% static 'courses/css/slider2.css' %}" />
+  <script src="{% static 'courses/js/slider2.js' %}" defer></script>
+  {% endif %}
+
   {% if is_itie %}
   <link rel="stylesheet" href="{% static 'itie/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'itie/css/style.css' %}">
   <link rel="stylesheet" href="{% static 'itie/css/slideshow.css' %}">
   <link rel="stylesheet" href="{% static 'itie/css/itiecards.css' %}">
   <link rel="stylesheet" href="{% static 'itie/css/refer.css' %}">
+  <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
   {% endif %}
 
 
   {% if is_career %}
   <link rel="stylesheet" href="{% static 'career/css/career.css' %}">
   <link rel="stylesheet" href="{% static 'career/css/style.css' %}">
-  <script src="{% static 'career/js/style.js' %}" defer></script>
-  {% endif %}
+  <script src="{% static 'career/js/script.js' %}" defer></script>
+{% endif %}
   {% if is_blog %}
   <link rel="stylesheet" href="{% static 'blog/css/Header-footer.css' %}">
   <link rel="stylesheet" href="{% static 'blog/css/main_blog.css' %}">

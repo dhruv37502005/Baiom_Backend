@@ -1,9 +1,12 @@
+from django.contrib import messages
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from social_django.models import UserSocialAuth
 from django.contrib.auth.models import User
 from core.forms import AccessForm
+from course.models import CourseCategory
 from django.contrib.auth import authenticate, login, logout
+
 
 def index(request):
 
@@ -12,6 +15,7 @@ def index(request):
         if existing_user:
             user = User.objects.get(id=request.user.id)
             user.delete()
+            messages.error(request, f' Email already exists {existing_user.username}')
             return redirect('userauths:login')
     except:
         print("None")
@@ -44,6 +48,9 @@ def refer_earn(request):
 def maintenance_page(request):
     return render(request, 'maintenance_break.html')
 
+def coming_soon(request):
+    return render(request, 'coming_soon.html')
+
 def locked_page(request):
     # form =  AccessForm()
     # return render(request, 'maintenance_locked.html', {'form': form})
@@ -51,4 +58,6 @@ def locked_page(request):
   
 
 def course(request):
-    return render(request, 'course.html', {'is_courses': True})
+    categories = CourseCategory.objects.all()
+    # print(categories)
+    return render(request, 'course.html', {'is_courses': True, 'categories': categories})
