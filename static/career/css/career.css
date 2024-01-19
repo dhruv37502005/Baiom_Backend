@@ -442,12 +442,11 @@ article p {
   width: 100%;
 }
 
-.container {
+/* .container {
   width: 80%;
   display: block;
   margin: auto;
-  /* padding-top: 100px; */
-}
+} */
 
 .content-section {
   float: left;
@@ -738,6 +737,7 @@ article p {
   width: 60%;
   padding: 1%;
   border-radius: 20px;
+  height: 400px;
 }
 
 .member-details p {
@@ -757,7 +757,7 @@ article p {
   text-align: left;
   display: block;
   font-size: 8rem;
-  height: 20%;
+  height: 25%;
 }
 
 .team-container {
@@ -1220,10 +1220,7 @@ article p {
     padding: 15px;
     border-radius: 50%;
   }
-  #subscribe h2 {
-    font-size: 1.5rem;
-    padding: 10px 0 10px 0;
-  }
+
   #subb2.col-md-12 {
     position: relative;
     width: 111%;
@@ -1246,19 +1243,7 @@ article p {
 }
 
 /* changes start */
-@media (min-width: 768px) and (max-width: 1210px) {
-  footer .row {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-  }
-  footer .row .col-md-3 {
-    max-width: 50vw;
-    padding-left: 5rem;
-  }
-  .footer-container {
-    padding-bottom: 2rem;
-  }
-}
+
 
 /* Mobile View  */
 
@@ -1488,13 +1473,13 @@ article p {
     width: 86%;
     margin: 7%;
   }
-
+/* 
   .container {
     width: 80%;
     display: block;
     margin: auto;
     padding-top: 50px;
-  }
+  } */
 
   .content-section {
     float: none;
@@ -1827,19 +1812,7 @@ article p {
 }
 
 /* change 2 */
-@media (min-width: 768px) and (max-width: 1210px) {
-  footer .row {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-  }
-  footer .row .col-md-3 {
-    max-width: 50vw;
-    padding-left: 5rem;
-  }
-  .footer-container {
-    padding-bottom: 2rem;
-  }
-}
+
 
 .main-contact {
   width: 80vw;
