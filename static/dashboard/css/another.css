@@ -18,25 +18,37 @@
 }
 
 .registered-details {
-  width: 50%;
+  width: 65%;
 }
+
+.bio {
+  padding: 20px;
+  text-wrap: wrap;
+  box-shadow: 2px 2px 5px rgb(147, 146, 146);
+  line-height: 25px;
+  border-radius: 10px;
+}
+
 .statistics {
-  width: 50%;
+  width: 35%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+
+  /* align-items: center; */
   /* background-color: blue; */
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 .static {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
 }
 .divi {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   /* background-color: green; */
   border-radius: 50%;
   box-shadow: 4px 8px 8px gray;
@@ -143,12 +155,17 @@
   justify-content: center;
   /* gap: 5px; */
 }
-@media only screen and (max-width: 1430px) {
+
+.material-symbols-outlined {
+  color: orangered;
+}
+
+@media only screen and (max-width: 1024px) {
   #registered-profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: rgb(255, 0, 0); */
+
     padding: 10px;
     justify-content: space-between;
     overflow: hidden;
@@ -162,6 +179,32 @@
     display: flex;
     margin-top: 50px;
     margin-bottom: 50px;
+  }
+  .static {
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 8px 12px 12px gray;
+    border-radius: 30px;
+    padding: 20px;
+  }
+  .divi {
+    width: 150px;
+    height: 150px;
+  }
+  .div1,
+  .div2,
+  .div3 {
+    width: 100%;
+    display: flex;
+  }
+  .div1 {
+    justify-content: flex-start;
+  }
+  .div2 {
+    justify-content: center;
+  }
+  .div3 {
+    justify-content: flex-end;
   }
 }
 @media only screen and (max-width: 650px) {
@@ -189,29 +232,7 @@
     gap: 0px;
     align-items: flex-start;
   }
-  .static {
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 8px 12px 12px gray;
-    border-radius: 30px;
-    padding: 20px;
-  }
 
-  .div1,
-  .div2,
-  .div3 {
-    width: 100%;
-    display: flex;
-  }
-  .div1 {
-    justify-content: flex-start;
-  }
-  .div2 {
-    justify-content: center;
-  }
-  .div3 {
-    justify-content: flex-end;
-  }
   .first-part,
   .second-part {
     width: 100%;
@@ -224,5 +245,9 @@
   }
   .static {
     box-shadow: 0px 0px 12px gray;
+  }
+  .divi {
+    width: 120px;
+    height: 120px;
   }
 }
