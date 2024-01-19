@@ -1,5 +1,4 @@
 # Baoiam_backend
-
 pip install django-jazzmin
 pip install psycopg2-binary
 pip install pillow
