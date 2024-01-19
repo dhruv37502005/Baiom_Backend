@@ -48,6 +48,9 @@ def refer_earn(request):
 def maintenance_page(request):
     return render(request, 'maintenance_break.html')
 
+def coming_soon(request):
+    return render(request, 'coming_soon.html')
+
 def locked_page(request):
     # form =  AccessForm()
     # return render(request, 'maintenance_locked.html', {'form': form})
