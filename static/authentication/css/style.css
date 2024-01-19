@@ -10,11 +10,19 @@ html,body{
     overflow: hidden;
     font-family: "Poppins", sans-serif;
     position: relative;
+
 }
 .main{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
+    background-color: white;
     /* background-color: red; */
+    box-shadow: 4px 8px 8px gray;
+    position: absolute;
+    border-radius: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,23 +30,34 @@ html,body{
 }
 .cir{
     position: absolute;
-    top: -118%;
-    left: 48%;
+    top: -130%;
+    right: 48%;
     width: 2000px;
     height: 2000px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #ff890b 0%, #f54500 100%);
+    z-index: -1;
+}
+.cir2{
+    position: absolute;
+    top: 80%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     background-image: linear-gradient(-45deg, #ff890b 0%, #f54500 100%);
     z-index: -1;
 }
 .box1{
     width: 50%;
-    height: 80%;
+    height: 100%;
     /* background-color: lightblue; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:center;
 }
+
 .container{
     width: 100%;
     height: auto;
@@ -64,15 +83,16 @@ form{
 .username, .email , .password , .passwordagain {
     width: 100%;
     max-width: 380px;
-    height: 55px;
+    height: 50px;
     padding: 0 6.4px;
-    background-color: #f0f0f0;
-    color: #acacac;
+    background-color: transparent;
+    box-shadow: 2px 4px 4px gray;
+    color: black;
     margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 55px;
+    border-radius: 25px;
     overflow: hidden;
 }
 form .icon{
@@ -143,7 +163,7 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: red; */
+    /* background-color: rgb(94, 255, 0); */
     text-align: center;
     color: #333;
     transition: ease 0.3s;
@@ -164,8 +184,9 @@ a{
     background: linear-gradient(45deg, #ff0000, #ffa200);
     border: none;
     outline: none;
-    height: 49px;
-    border-radius: 49px;
+    height: 40px;
+    border-radius: 12px;
+    box-shadow: 2px 4px 4px gray;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -174,6 +195,8 @@ a{
     transition: 0.5s;
 }
 .subbtn:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 8px 8px gray;
     background: linear-gradient(45deg, #ff9d00, #ff0000);
   }
 
@@ -183,59 +206,107 @@ a{
 
 .box2{
     width: 50%;
-    height: 100%;
+    height: 80%;
     /* background-color: lightgreen; */
-    padding:48px 0;
+    padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .oneAndSign{
-    width: 80%;
-    height: auto;
-    /* background-color: red; */
-    color:white;
+    width: 100%;
+    height: 400px;
+    /* border-radius: 50%; */
+    /* background: linear-gradient(-45deg, #ff0000, #ffa200); */
+    color:black;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    /* animation: move 4s ease-in-out infinite; */
 }
 .oneAndSign h2{
     font-weight: 600;
     line-height: 1;
     font-size: 1.5rem;
+    background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
     padding: 10px;
 }
 .oneAndSign p{
     padding: 0 10px 10px 10px;
+    margin-bottom: 5px;
 }
 .signinBtn{
     width: 110px;
     height: 35px;
-    background-color: transparent;
-    border-radius: 25px;
-    border: 2px solid white;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #ff9d00, #ff0000);
+    /* border: 2px solid black; */
+    box-shadow: 2px 4px 4px gray;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.signinBtn:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 8px 8px gray;
+  }
 .signinBtn a{
     text-decoration: none;
     color: white;
     padding: 5px;
 }
-.img{
+.image{
     width: 100%;
     height: 50%;
+    object-fit: cover;
+    object-position: center;
+    /* background-color: red; */
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
 }
+.image img{
+    width: 300px;
+}
+@keyframes move {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(5%, 5%);
+    }
+    50% {
+      transform: translate(10%, 0);
+    }
+    75% {
+      transform: translate(5%, -5%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+
+  @media screen and (max-width:1063px){
+      .main{
+        width: 90%;
+        height: 90%;
+    }
+  }
 
 @media screen and (max-width:872px){
-    .main{
-        flex-direction: column;
-    }
+  .main{
+    width: 94%;
+    height: 94%;
+    flex-direction: column;
+  }
     .box1{
         width: 100%;
         height: 80%;
@@ -247,14 +318,20 @@ a{
         flex-direction: row;
         padding: 0;
     }
+    .container{
+        width: 100%;
+        padding:20px;
+    }
     .oneAndSign{
-        width: 60%;
+        width: 100%;
         height: 100%;
+        background-color: red;
+    }
+    .image{
+        display: none;
     }
     .img{
-        width: 30%;
-        height: 100%;
-        padding: 0;
+        display: none;
     }
     .oneAndSign h2{
         font-weight: 600;
@@ -265,8 +342,4 @@ a{
         font-weight: 600;
         font-size: 0.8rem;
     }
-    .cir{
-        top: 75%;
-        left: -100%;
-}
 }

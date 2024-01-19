@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from social_django.models import UserSocialAuth
@@ -14,6 +15,7 @@ def index(request):
         if existing_user:
             user = User.objects.get(id=request.user.id)
             user.delete()
+            messages.error(request, f' Email already exists {existing_user.username}')
             return redirect('userauths:login')
     except:
         print("None")
@@ -45,6 +47,9 @@ def refer_earn(request):
 
 def maintenance_page(request):
     return render(request, 'maintenance_break.html')
+
+def coming_soon(request):
+    return render(request, 'coming_soon.html')
 
 def locked_page(request):
     # form =  AccessForm()

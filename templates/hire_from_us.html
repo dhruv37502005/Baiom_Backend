@@ -197,8 +197,11 @@
       happy to help you!
     </h1>
     <div class="contact-more-info-btn">
-      <button class="contact_us_btn">Contact Us</button>
-      <button class="explore_btn">Explore Courses</button>
+      <a href="
+      {% url 'contactapp:contactus' %}"><button class="contact_us_btn" >Contact Us</button></a>
+      <a href="
+      {% url 'core:course' %}"><button class="explore_btn">Explore Courses</button></a>
+      
     </div>
   </div>
 
