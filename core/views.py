@@ -3,7 +3,9 @@ from django.shortcuts import render, redirect
 from social_django.models import UserSocialAuth
 from django.contrib.auth.models import User
 from core.forms import AccessForm
+from course.models import CourseCategory
 from django.contrib.auth import authenticate, login, logout
+
 
 def index(request):
 
@@ -51,4 +53,6 @@ def locked_page(request):
   
 
 def course(request):
-    return render(request, 'course.html', {'is_courses': True})
+    categories = CourseCategory.objects.all()
+    # print(categories)
+    return render(request, 'course.html', {'is_courses': True, 'categories': categories})

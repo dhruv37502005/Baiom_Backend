@@ -2,24 +2,62 @@
 <div class="containerr">
   <nav class="sidebarrr">
     <ul class="sidebarrr_ul">
-      <img class="baoiam_img" src="../Images/brand.png" alt="" />
-      <li>Web Development</li>
-      <li>Data Science</li>
-      <li>Data Analiyst</li>
-      <li>Conent Writing</li>
-      <li>Graphic Designing</li>
-      <li>Seo Marketing</li>
-      <li>Digital Marketing Course</li>
-      <li>Project Management</li>
-      <li>Human Resources</li>
-      <li>Corporate Law</li>
+      {% for category in categories %}
+      <li><a href="{% url 'course:category_courses' category_id=category.id %}">{{ category.name }}</a></li>
+      </li>
+      {% endfor %}
     </ul>
   </nav>
   <div>
     <section class="one">
       <div class="info">
         <button id="certified">Certified Online Training</button>
-        <h1>Web <span class="underline">Development</span> Course</h1>
+        
+        <div class="cards">
+          {% for course in courses %}
+          <div class="custom-card">
+            <div class="card-body">
+              <div class="custom-progress">
+                <div class="progress-bar"></div>
+                <span>55%</span>
+              </div>
+              <div>
+                {% if course.image %}
+                <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
+              </div>
+              {% comment %} <div>{% if course.video %}
+                <video width="320" height="240" controls>
+                  <source src="{{ course.video.url }}" type="video/mp4">
+                  <source src="{{ course.video.url }}" type="video/webm">
+                  <source src="{{ course.video.url }}" type="video/ogg">
+                  Your browser does not support the video tag.
+                </video>
+                {% else %}
+                <p>No video available</p>
+                {% endif %}
+              </div> {% endcomment %}
+              <h4 style="color: black">Name: {{course.title}}</h4>
+              <h4 style="color: black">Description: {{course.description}}</h4>
+              <h4 style="color: black">Category: {{course.category}}</h4>
+              <h4 style="color: black">Price: {{course.price}}</h4>
+              <h4 style="color: black">Instructor: {{course.instructor}}</h4>
+              <h4 style="color: black">Discount Price: {{course.discount}}</h4>
+            </div>
+              {% if course in enrolled_courses %}
+              <button class="btn-enroll">
+                Already Enrolled
+              </button>
+              {% else %}
+              <a href="{% url 'dashboard:enroll_course' course_id=course.id %}" class="btn-enroll">
+                Enroll Now
+              </a>
+              {% endif %}
+          </div>
+          {% endfor %}
+        </div>
         <p>
           Learn how to design eye-catching websites, develop attractive web
           applications and much more with Baoiam’s Web Development Course!
@@ -34,7 +72,7 @@
         </button>
       </div>
       <div class="pic">
-        <img src="{% static 'home/img/35.jpg' %}" />
+        {% comment %} <img src="{% static 'home/img/35.jpg' %}" /> {% endcomment %}
       </div>
     </section>
 
