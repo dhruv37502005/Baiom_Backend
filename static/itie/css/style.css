@@ -77,23 +77,6 @@ img {
   width: 100%;
 }
 
-/* Header */
-header {
-  background: var(--color-white);
-  z-index: 1 !important;
-  box-shadow: rgb(49, 49, 49);
-}
-
-header .nav-item {
-  padding: 0.5rem;
-}
-
-header .nav-item a {
-  padding-top: 0.7rem;
-  color: rgb(6, 0, 56) !important;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
 
 @media (max-width: 1054px) {
   #nav-courses-one {
@@ -104,11 +87,6 @@ header .nav-item a {
     display: none;
   }
 
-  header .nav-item a,
-  header button {
-    font-size: 0.9rem;
-  }
-
   #nav-courses-one .dropdown-toggle + .dropdown-menu > .nav-link {
     padding-left: 1.5rem;
     padding-top: 0;
@@ -117,22 +95,6 @@ header .nav-item a {
   .dropdown-menu[aria-labelledby="navbarDropdown-subcourses"] {
     border-radius: 0;
   }
-}
-
-header .navbar-brand {
-  padding-left: 4rem;
-}
-
-header .navbar-nav {
-  padding-right: 4rem;
-}
-
-header img {
-  width: 120px;
-}
-
-header .nav-item a:hover {
-  color: #ec4f01 !important;
 }
 
 .btn-1 {
@@ -238,10 +200,6 @@ header .nav-item a:hover {
 }
 
 @media (max-width: 576px) {
-  header .navbar-brand {
-    padding-left: 0rem;
-  }
-
   .carousel-inner {
     padding: 0 15px;
   }
@@ -284,10 +242,6 @@ header .nav-item a:hover {
   .imginfo {
     position: inherit;
     left: 0;
-  }
-
-  header .navbar-brand {
-    padding-left: 1rem;
   }
 }
 
@@ -1558,25 +1512,6 @@ p.virtues-sub-heading {
 }
 
 /* changes */
-@media (min-width: 768px) and (max-width: 1210px) {
-  footer .row {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-  }
-
-  footer .row .col-md-3 {
-    max-width: 32vw;
-  }
-
-  .footer-container {
-    padding-bottom: 2rem;
-    padding-left: 5rem;
-  }
-}
-
-footer h6 {
-  color: #fff;
-}
 
 /* cnange end */
 

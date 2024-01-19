@@ -11,21 +11,29 @@
   <title>Login-Page</title>
 
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        // Display Django messages using SweetAlert2
-        {% if messages %}
-            document.addEventListener('DOMContentLoaded', function() {
-                {% for message in messages %}
+        <script>
+    // Display Django messages including form errors using SweetAlert2
+    {% if messages %}
+        document.addEventListener('DOMContentLoaded', function() {
+            {% for message in messages %}
+                {% if message.tags == "error" %}
                     Swal.fire({
-                        icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% elif message.tags == "error" %}error{% else %}info{% endif %}',
+                        icon: 'error',
+                        title: "{{ message|escapejs }}",
+                        showConfirmButton: true, // Display a close button for errors
+                    });
+                {% else %}
+                    Swal.fire({
+                        icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% else %}info{% endif %}',
                         title: "{{ message|escapejs }}",
                         showConfirmButton: false,
-                        timer: 3000
+                        timer: 5000
                     });
-                {% endfor %}
-            });
-        {% endif %}
-    </script>
+                {% endif %}
+            {% endfor %}
+        });
+    {% endif %}
+</script>
 
 
 
@@ -68,12 +76,9 @@
         <div class="social">
           <p class="socialP">Or Sign up with social platforms</p>
           <div class="icons">
-            {% comment %} <div class="circle"><a href="#"><i class="fab fa-facebook-f"></i>
-              </a></div>
-            <div class="circle"><a href="#"><i class="fab fa-twitter"></i>
-              </a></div> {% endcomment %}
               <div class="circle"><a href="{% url 'social:begin' 'github' %}"><i class="fab fa-github fa-2x"></i></a></div>
               <div class="circle"><a href="{% url 'social:begin' 'google-oauth2' %}"> <i class="fab fa-google"></i></a></div>
+
           </div>
         </div>
       </div>
