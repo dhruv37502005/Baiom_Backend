@@ -14,7 +14,6 @@
 body {
   overflow-x: hidden;
   width: fit-content;
-  background-color: red;
 }
 :root {
   --color-orange: linear-gradient(45deg, #fa2424, #ed7e1e);
