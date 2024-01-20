@@ -104,7 +104,7 @@
     
   <link rel="stylesheet" href="{% static 'home/css/style.css' %}" />
   <script src="{% static 'home/js/script.js' %}" defer></script>
-
+  <script src="{% static 'home/js/opt.js' %}" defer></script>
   {% endif %}
 
 
@@ -578,6 +578,7 @@
                 style="font-size: 18px;" >Contact Us</a
               >
             </li>
+
             {% if user.username %}
             <li class="nav-item" id="profile">
               <button type="button" id="profile-btn" class="profile-btn">
