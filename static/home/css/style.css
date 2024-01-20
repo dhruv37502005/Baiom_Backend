@@ -46,16 +46,16 @@ a {
   text-decoration: none ;
 }
 
-/* section:not(
+section:not(
     .contact-us,
     .footer-container,
     #courses,
     .section-4,
     .carousel-inner
   ) {
-  padding: 3rem 6%; */
-  /* margin-top: -40px; */
-/* } */
+  padding: 3rem 6%;
+  margin-top: -40px; 
+ }
 /* .homepage{
   padding: 1rem 6%;
   margin-top: -40px;
@@ -1716,7 +1716,7 @@ section div.wrapper {
 .section-4 #tab-3-content,
 .section-4 #tab-4-content {
   display: none;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .show {
