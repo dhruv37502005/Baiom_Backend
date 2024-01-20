@@ -42,7 +42,7 @@
     <div class="box1">
       <div class="container">
       <div class="Bimg">
-        <img src="{% static 'authentication/img/brand.png' %}" alt="" style="width: 200px;">
+        <img src="{% static 'authentication/img/brand.png' %}" alt="" style="width: 150px;">
       </div>
       <h1>Sign up</h1>
       <!--{% comment %} <p>A varification link has been sent to you email account</p> {% endcomment %} -->
@@ -84,7 +84,11 @@
             {{form.password2}}
         </div></div>
         <div class="inbtn">
-          <button class="subbtn" type="submit">SignUp</button><br>
+          <button class="subbtn" type="submit">Sign Up</button>
+          <p class="pin" style="padding: 0 10px;">Or</p>
+          <div  class="signinBtnpin">
+            <a style="color: white;" href="{% url 'userauths:login' %}">SIGN IN</a>
+          </div>
         </div>
       </form>
       <div class="social">
