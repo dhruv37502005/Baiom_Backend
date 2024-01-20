@@ -27,7 +27,7 @@ html,body{
     border-radius: 25px;
     flex-direction: row-reverse;
     align-items: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .cir{
     position: absolute;
