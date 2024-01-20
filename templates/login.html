@@ -48,7 +48,7 @@
     <div class="box1">
       <div class="container">
         <div class="Bimg">
-          <img src="{% static 'authentication/img/brand.png' %}" alt="" style="width: 200px;">
+          <img src="{% static 'authentication/img/brand.png' %}" alt="" style="width: 150px;">
         </div>
         <h1>Sign In</h1>
         <form method="POST">
@@ -70,7 +70,15 @@
             <a href="{% url 'userauths:password_reset' %}">Forgot Password</a>
           </div>
           <div>
-            <button class="subbtn" type="submit">Sign In</button><br>
+            <div class="inbtn">
+
+            <button class="subbtn" type="submit">Sign In</button>
+            <p class="pin" style="padding: 0 10px;">Or</p>
+            <div  class="signinBtnpin">
+              <a style="color: white;" href="{% url 'userauths:signup' %}">SIGN IN</a>
+            </div>
+          </div>
+
           </div>
         </form>
         <div class="social">
