@@ -148,7 +148,7 @@ body {
 .second-half .each-image h2,
 p {
   margin: 0;
-  text-align: justify;
+  text-align: center;
   /* font-size: 1.5rem; */
 }
 
@@ -200,6 +200,7 @@ p {
   font-size: 1.1rem;
   color: grey;
   margin: 2rem auto 3rem;
+  text-align: center;
 }
 
 .second .features {
@@ -268,7 +269,7 @@ p {
 
 .third .text-div h3{
   font-size: 1.5rem;
-  color: black;
+  color: #031864;
   margin-bottom: 1rem;
   text-align: center;
 }
