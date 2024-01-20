@@ -93,10 +93,8 @@ transition: ease .5s;
   transform: scale(1.01);
   box-shadow: 4px 8px 8px gray;
   }
-
   .card-content .resume-btn-element span{
     color: rgb(255, 255, 255);
     font-size: 30px;
     font-weight: bold;
-
   }

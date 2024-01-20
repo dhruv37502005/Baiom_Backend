@@ -24,9 +24,26 @@
   <title>BAOIAM</title>
   <meta name="title" content="Baoiam" />
   <link rel="icon" href="{% static 'home/img/brand.png' %}" type="image/icon type" style="background-color: wheat;">
-<link rel="stylesheet" href="{% static 'home/css/footer.css' %}">
   <meta name="description"
-    content="Baoiam is a fully-certified platform since 2020, helping millions of students through the entire world to achieve their personal and professional goals." />
+  content="Baoiam is a fully-certified platform since 2020, helping millions of students through the entire world to achieve their personal and professional goals." />
+  
+  <link rel="stylesheet" href="{% static 'home/css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/navbar.css' %}">
+  <script src="JS/navbar.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -40,24 +57,59 @@
 
   <!-- swiper  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css" />
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
     integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="{% static 'home/css/profile.css' %}">
-
   <!-- css files link -->
-  <link rel="stylesheet" href="{% static 'home/css/navbar.css' %}">
   <!-- home page css 'index.html' -->
+
+
   {% if is_index_page %}
+  <!-- swiper  -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css"
+  />
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+      integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    
   <link rel="stylesheet" href="{% static 'home/css/style.css' %}" />
   {% endif %}
+
+
+
+
   {% if is_courses %}
   <link rel="stylesheet" href="{% static 'courses/css/style.css' %}" />
   <link rel="stylesheet" href="{% static 'courses/css/faq.css' %}" />
@@ -92,8 +144,32 @@
   {% if is_career %}
   <link rel="stylesheet" href="{% static 'career/css/career.css' %}">
   <link rel="stylesheet" href="{% static 'career/css/style.css' %}">
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+      integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   <script src="{% static 'career/js/script.js' %}" defer></script>
+
 {% endif %}
+
+
+
   {% if is_blog %}
   <link rel="stylesheet" href="{% static 'blog/css/Header-footer.css' %}">
   <link rel="stylesheet" href="{% static 'blog/css/main_blog.css' %}">
@@ -103,6 +179,31 @@
   {% if is_hire %}
   <link rel="stylesheet" href="{% static 'Hirefromus/css/hire_with_us.css' %}">
   <link rel="stylesheet" href="{% static 'Hirefromus/css/our_students.css' %}">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+      integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
   <script src="{% static 'Hirefromus/js/style.js' %}" defer></script>
   {% endif %} 
 
