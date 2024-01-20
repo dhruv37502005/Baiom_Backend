@@ -689,11 +689,11 @@ form input {
   text-align: justify;
   height: 260px;
   margin-top: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  
 }
-/* ::-webkit-scrollbar {
-  display: none;
-} */
+
 .refer_buttom {
   text-align: center;
   margin-top: 30px;

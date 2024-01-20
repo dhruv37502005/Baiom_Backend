@@ -65,7 +65,7 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
   <!-- css files link -->
-  <!-- home page css 'index.html' --> 
+  <!-- home page css 'index.html' -->
 
   {% if is_index_page %}
   <!-- swiper  -->
@@ -449,6 +449,9 @@
   <script src="{% static 'home/js/script.js' %}" defer></script>
   {% endif %}
   <style>
+    body, html{
+      overflow-x: hidden;
+    }
     .relative {
       position: absolute;
       left: 277px;
@@ -477,6 +480,22 @@
       background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+    }
+    ::-webkit-scrollbar {
+      width: 12px; 
+    }
+    
+    ::-webkit-scrollbar-track {
+      background-color: transparent; 
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: orange;
+      border-radius: 6px; 
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: orangered;
     }
   </style>
 </head>
