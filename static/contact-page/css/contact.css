@@ -68,44 +68,6 @@ img {
     background: -webkit-linear-gradient(45deg, #ff8000, #ff0000);
 }
 
-header {
-    background: var(--color-white);
-    z-index: 1 !important;
-    box-shadow: rgb(49, 49, 49);
-}
-
-header .nav-item {
-    padding: 0.5rem;
-}
-
-header .nav-item a {
-    padding-top: 0.7rem;
-    color: rgb(6, 0, 56) !important;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-header .navbar-brand {
-    /* border: 1px solid red; */
-    padding-left: 4rem;
-}
-
-header .navbar-nav {
-    padding-right: 4rem;
-}
-
-header img {
-    width: 120px;
-}
-
-.fa-xmark{
-  font-size: 2rem;
-}
-
-header .nav-item a:hover {
-    color: #ec4f01 !important;
-}
-
 section {
     /* padding: 60px 6%; */
     padding: 120px 5%;
