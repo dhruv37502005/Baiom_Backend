@@ -1,39 +1,3 @@
-$(document).ready(function() {
-    $("#phone").intlTelInput({
-      separateDialCode: true,
-    });
-  });
-  
-  function generateOTP() {
-  var phoneNumber = $("#phone").intlTelInput("getNumber");
-  var appointmentDate = $("#date").val();
-  $('#genOtpBtn').css("display","none")
-  $('#resendOtp').css("display","block")
-  $("#otp-section").show();
-  $("#bookBtn").show();
-  }
-  var lastScrollTop = 0;
-  var navbar = document.getElementById('navbar');
-  var dropdown = document.querySelectorAll('.dropdown-menu');
-  window.addEventListener("scroll", function () {
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
-  
-    if (scrollTop > lastScrollTop) {
-      navbar.style.top = '-200px';
-      dropdown.forEach(function(menu) {
-        menu.style.top = '-200px';
-    });
-    } else {
-      navbar.style.top = '0';
-      dropdown.forEach(function(menu) {
-        menu.style.top = '65px';
-    });
-  
-    }
-    lastScrollTop = scrollTop;
-  });
-  
-  
   
   $('.carousel').carousel({
     interval: 7000

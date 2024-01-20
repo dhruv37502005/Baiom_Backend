@@ -46,11 +46,12 @@ body::before{
     width: calc(100% / 2 - 10px);
     display: flex;
     flex-wrap: wrap;
-    margin: 0 20px;
+    margin: 0px 20px;
     justify-content: space-between;
+    height: fit-content;
   }
   .main-card .cards .card {
-    width: calc(100% / 3 - 10px);
+    width: calc(100% / 3 - 15px);
     background: #fff;
     border-radius: 12px;
     padding: 30px;
