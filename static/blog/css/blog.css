@@ -5,7 +5,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 section {
@@ -33,17 +33,14 @@ section {
 
 .blog-left .blog-left-icon a {
   color: rgb(71, 71, 110);
-
 }
 
 .blog-left .blog-left-icon a:hover {
   color: orangered;
 }
 
-
 .blog-left-icon .blog-comment i:hover {
   color: rgb(71, 71, 110);
-
 }
 
 .blog-left .blog-left-icon span {
@@ -97,7 +94,7 @@ section {
 #blog-content-left-space {
   padding-left: 2rem;
   text-align: justify;
-  color: rgb(71, 71, 110);;
+  color: rgb(71, 71, 110);
 }
 
 .sub-content1 .content p {
@@ -269,7 +266,6 @@ section {
   width: 100%;
   padding: 10px;
 }
-
 
 ::placeholder .na {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -453,7 +449,8 @@ section {
   padding-bottom: 20px;
 }
 
-.post1 .post-content {}
+.post1 .post-content {
+}
 
 .post1 .post-content h4 {
   /* background-color: rgb(172, 181, 163); */
@@ -513,21 +510,18 @@ section {
     padding: 40px 20px;
   }
 
-
-
   .subcomment {
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: 20px;
   }
 
-
   .post1 .post-content h4 {
     padding: 0px 0px 0px 14px;
   }
 }
 
-.fa-xmark{
+.fa-xmark {
   font-size: 2rem;
 }
 
@@ -705,7 +699,6 @@ section {
 }
 
 @media (max-width: 400px) {
-
   .post1 .post-content h4 {
     font-size: 0.6rem;
   }
@@ -721,7 +714,7 @@ section {
   .blog-left-icon {
     padding: 10px;
   }
-  
+
   .blog-left .blog-left-icon .icon-tag {
     font-size: 0.9rem;
   }
@@ -729,7 +722,6 @@ section {
   #courses {
     padding: 0 50px;
   }
-  
 }
 
 @media (max-width: 350px) {
