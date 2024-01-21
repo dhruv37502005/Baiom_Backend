@@ -7,14 +7,13 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 :root {
   --color-orange: linear-gradient(45deg, #fa2424, #ed7e1e);
 }
 
 /* Navbar */
-
 
 /* First */
 .first {
@@ -267,7 +266,7 @@ p {
   border-bottom: 2px solid red;
 }
 
-.third .text-div h3{
+.third .text-div h3 {
   font-size: 1.5rem;
   color: #031864;
   margin-bottom: 1rem;
@@ -441,7 +440,6 @@ p {
 }
 
 /* Footer section */
-
 
 /* MEDIA QUERY///////////////////////////// */
 @media (max-width: 1200px) {
@@ -681,7 +679,7 @@ p {
   background: -webkit-linear-gradient(45deg, #fa2424, #fb8721);
   /* -webkit-background-clip: text; */
   /* -webkit-text-fill-color: transparent; */
-  width: 4.5rem;
+  width: 5rem;
   border-radius: 50%;
   padding: 1rem;
   color: white;
