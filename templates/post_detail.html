@@ -1,0 +1,177 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- blog/templates/blog/post_detail.html -->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - {{ post.title }}</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'blog:categories' %}">My Blog</a></h1>
+    </header>
+    <main>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content|linebreaks }}</p>
+        <p>Created by: {{ post.created_by.username }}</p>
+
+        <h2>Comments</h2>
+        {% for comment in comments %}
+            <p>{{ comment.user.username }} on {{ comment.created_at }}:</p>
+            <p>{{ comment.text }}</p>
+        {% endfor %}
+
+        <h3>Add a comment</h3>
+        <form method="post" action="{% url 'blog:post_detail' post_id=post.id %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>-->
+
+
+
+<section>
+  <div class="main-blog">
+    <div class="blog-left">
+      <div class="blog-left1">
+        <img src="../images/blog1.jpg" alt="" />
+
+        <div class="blog-left-icon">
+          <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
+            {{post.created_by.username}}</span>
+          
+          <br />
+          <br />
+          
+        </div>
+
+        <div class="blog-content">
+          <h2>{{post.title}}</h2>
+          <br>
+          
+          <p>{{ post.content|linebreaks }}</p>
+
+        </div>
+
+
+
+
+        <!-- Social Icons -->
+
+        <!--<div class="social-icons">
+
+          <div class="tags">
+            <div class="tag-name">Tags:</div>
+            <div class="education">Education </div>
+            <div class="online">Online</div>
+          </div>
+          <div class="share-icon">
+
+            <span class="icon">
+              <div class="heading">Share:</div>
+
+              <div class="sub-icon">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </span>
+          </div>
+
+        </div>
+
+      </div>-->
+
+
+      <!-- Comment Section -->
+      <!-- <section> -->
+        
+        <div class="blog-left2">
+            <h2>Comments</h2>
+            <div class="comments-section">
+                {% for comment in comments %}
+                    <div class="comment">
+                        <p>{{ comment.text }}</p>
+                        <div class="comment-meta">
+                            <i class="fa fa-regular fa-user" aria-hidden="true"></i> By {{ comment.user.username }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        
+            {% if user.username %}
+                <div class="comment-form-section">
+                    <h3>Add a Comment</h3>
+                    <form method="post" action="{% url 'blog:post_detail' post_id=post.id %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            
+            {% endif %}
+        </div>
+        
+
+
+
+    <!-- </div> -->
+
+
+    <!-- Right section -->
+    <div class="blog-right">
+        <div class="main-search">
+          <div class="search">
+            <input type="text" name="search" id="search" placeholder=" Search .." />
+            <li class="fas fa-search"></li>
+          </div>
+        </div>
+  
+        <div class="categoery">
+          <h3>Categories</h3>
+  
+          {% for category in categories %}
+          <a href="{% url 'blog:post_list_by_category' category.id %}" class="course_btn" >
+            <div class="categoery1">
+              <span><i class="fa fa-play"></i>{{category.name}}</span>
+            </div>
+          </a>
+  
+            {% endfor %}
+            
+          </div>
+  
+  
+          
+  
+        <div class="posts">
+          <h3>Recent Posts</h3>
+  
+          {% for post in recent_posts %}
+          <div class="post1">
+            <!--<img src="../images/blog2.jpg" alt="" />-->
+            <div class="post-content">
+              <h4><a href="{% url 'blog:post_detail' post_id=post.id %}">
+                  {{post.title}}</a>
+              </h4>
+              <span><i class="fa fa-calendar" aria-hidden="true"> </i>{{post.pub_date}}</span>
+            </div>
+  
+            {% endfor%}
+          </div>
+  
+          
+  
+  
+        </div>
+      </div>
+</section>
+
+{% endblock content %}

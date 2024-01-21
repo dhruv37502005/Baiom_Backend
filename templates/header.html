@@ -447,6 +447,11 @@
     />
 
   {% endif %}
+  {% if is_blog_details %}
+  <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}" />
+  
+
+  {% endif %}
 
   <!-- Webdevelopment page css 'webdevelopment.css' -->
   {% if is_webdevelopment_page %}
@@ -564,7 +569,7 @@
               >
             </li>
             <li class="nav-item">
-              {% url 'core:blog' as urlblog %} 
+              {% url 'blog:categories' as urlblog %} 
               <a class="nav-link {% if request.path == urlblog %}isactive{% endif %}" href="{{urlblog}}"
               style="font-size: 18px;"   >Blog</a
               >
