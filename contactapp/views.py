@@ -9,9 +9,10 @@ def contactus(request):
         phone = request.POST.get('number')
         message = request.POST.get('msg')
         course = request.POST.get('course')
+        current_occupation = request.POST.get('current_occupation')
 
         if name and email and phone and message and course != "Courses":
-            contact_obj = Contact(name=name, email=email, phone=phone, course=course, content=message)
+            contact_obj = Contact(name=name, email=email, phone=phone, course=course, content=message,current_occupation=current_occupation)
             contact_obj.save()
             messages.success(request, "Thank you for contacting us!")
             return redirect("contactapp:contactus")
