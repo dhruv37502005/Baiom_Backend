@@ -6,6 +6,7 @@ from userauths.models import Dashboard_User
 from .models import Course, CourseCategory
 from django.db.models import Sum
 from django.db import models
+from wsgiref.util import FileWrapper
 # import cv2
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -29,6 +30,16 @@ def category_courses(request, category_id):
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
+    
+def course_brochure(request,id):
+    document = get_object_or_404(Course,pk=id)
+    brochure_path = document.brochure.path
+    with open(brochure_path,'rb') as brochure:
+        wrapper= FileWrapper(brochure)
+        response= HttpResponse(wrapper,content_type='application/pdf')
+        response['content-disposition'] = f'attachment;filename="{document.brochure.name}"'
+        return response
+    
 
 # def categories(request):
 #     categories = CourseCategory.objects.all()

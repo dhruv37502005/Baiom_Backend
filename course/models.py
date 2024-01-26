@@ -45,6 +45,7 @@ class Course(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     duration_field = models.DurationField(default=timezone.timedelta)
     watch_percent = models.FloatField(blank=True,null=True)
+    brochure = models.FileField(upload_to='course_brochure/',null=True,blank=True)
     status_choices = [
         ('active', 'Active'),
         ('inactive', 'Inactive'),

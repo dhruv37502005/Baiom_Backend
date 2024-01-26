@@ -56,8 +56,14 @@
               </a>
               {% endif %}
           </div>
-          {% endfor %}
+          <div>
+            <a href="{% url 'course:brochure_download' id=course.id %}" class="button">download brochure</a>
+          </div>
         </div>
+        {% endfor %}
+        <div>
+            </a>
+          </div>
         <p>
           Learn how to design eye-catching websites, develop attractive web
           applications and much more with Baoiam’s Web Development Course!
