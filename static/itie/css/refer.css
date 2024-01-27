@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -89,13 +89,13 @@ img {
   border-radius: 30px;
   position: relative;
 }
-.price .img{
+.price .img {
   position: absolute;
   width: 350px;
   height: 350px;
-  top:20%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
 }
 
 .price:hover {
@@ -107,9 +107,9 @@ img {
   position: absolute;
   color: orange;
   font-size: 40px;
-  top:50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 .benefits {
@@ -689,11 +689,10 @@ form input {
   text-align: justify;
   height: 260px;
   margin-top: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-/* ::-webkit-scrollbar {
-  display: none;
-} */
+
 .refer_buttom {
   text-align: center;
   margin-top: 30px;

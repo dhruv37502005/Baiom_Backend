@@ -31,3 +31,4 @@ core/migrations/0001_initial.py
 core/migrations/0001_initial.py
 course/migrations/0002_course_duration_field_course_watch_percent.py
 
+blog/migrations/0001_initial.py

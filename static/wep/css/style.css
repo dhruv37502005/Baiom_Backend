@@ -7,14 +7,13 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 :root {
   --color-orange: linear-gradient(45deg, #fa2424, #ed7e1e);
 }
 
 /* Navbar */
-
 
 /* First */
 .first {
@@ -148,7 +147,7 @@ body {
 .second-half .each-image h2,
 p {
   margin: 0;
-  text-align: justify;
+  /* text-align: center; */
   /* font-size: 1.5rem; */
 }
 
@@ -200,6 +199,7 @@ p {
   font-size: 1.1rem;
   color: grey;
   margin: 2rem auto 3rem;
+  text-align: center;
 }
 
 .second .features {
@@ -266,9 +266,9 @@ p {
   border-bottom: 2px solid red;
 }
 
-.third .text-div h3{
+.third .text-div h3 {
   font-size: 1.5rem;
-  color: black;
+  color: #031864;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -440,69 +440,6 @@ p {
 }
 
 /* Footer section */
-footer {
-  display: relative;
-  background-color: #000121;
-  /* height: 80vh; */
-}
-
-.footer-container {
-  padding-top: 9rem !important;
-  padding: 1rem 4%;
-}
-
-.footer-end-container {
-  text-align: center;
-  padding: 1rem 6%;
-}
-
-footer .row h6 {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-#hr-line {
-  width: 60px;
-  background: var(--color-orange);
-  height: 1.5px;
-}
-
-footer .contact-us p i {
-  background: var(--color-orange);
-  font-weight: 700;
-}
-
-footer .contact-us p div i {
-  background: var(--color-orange);
-  font-weight: 700;
-}
-
-.footer-end {
-  background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
-}
-
-.social {
-  padding-right: 5px;
-}
-
-.social a {
-  height: 37px;
-  width: 37px;
-  background: #fa2424;
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 21px;
-  border-radius: 15px;
-  margin-top: 20px;
-  transition: 1s;
-}
-
-.social a:hover {
-  background: #fff;
-  color: #fa2424;
-}
 
 /* MEDIA QUERY///////////////////////////// */
 @media (max-width: 1200px) {
@@ -742,7 +679,7 @@ footer .contact-us p div i {
   background: -webkit-linear-gradient(45deg, #fa2424, #fb8721);
   /* -webkit-background-clip: text; */
   /* -webkit-text-fill-color: transparent; */
-  width: 4.5rem;
+  width: 5rem;
   border-radius: 50%;
   padding: 1rem;
   color: white;
