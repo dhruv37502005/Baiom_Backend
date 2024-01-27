@@ -83,3 +83,4 @@ def enroll_course(request, course_id):
     # messages.success(request, f"You have successfully enrolled in {course.title}.")
     return redirect("dashboard:user_ui")
 
+
