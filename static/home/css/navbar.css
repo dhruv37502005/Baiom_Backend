@@ -16,11 +16,10 @@ header .nav-item {
 
 header .nav-item a {
   padding-top: 0.7rem;
-  color: rgb(6, 0, 56);
-  font-size: 1.1rem; 
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.1rem;
   font-weight: 600;
 }
-
 
 #profile-content a {
   border-bottom: none;
@@ -101,10 +100,19 @@ header img {
   .btn-2 {
     padding: 0.6em 1em;
   }
+  header .navbar-nav {
+    background-color: #fff;
+    padding-right: 0;
+  }
 }
 @media (max-width: 900px) {
   .btn-1,
   .btn-2 {
     padding: 0.4em 0.7em;
   }
+}
+
+header .navbar-nav {
+  color: rgba(0, 0, 0, 0.5) !important;
+  font-size: 18px !important;
 }

@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
@@ -76,7 +76,6 @@ h6 {
 img {
   width: 100%;
 }
-
 
 @media (max-width: 1054px) {
   #nav-courses-one {

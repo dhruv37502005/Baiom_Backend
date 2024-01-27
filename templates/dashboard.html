@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{% static 'dashboard/css/courses.css' %}" />
     <link
       rel="stylesheet"
+      href="{% static 'dashboard/css/live-classes.css' %}"
+    />
+    <link
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
     <script src="{% static 'dashboard/js/script.js' %}" defer></script>
@@ -272,8 +276,8 @@
               <div class="registered-other-details">
                 <div class="first-part">
                   <div class="registered-college-name element">
-                    <span class="material-symbols-outlined"> school </span>{{
-                    dash_user.collegename }}
+                    <span class="material-symbols-outlined"> school </span
+                    >{{dash_user.collegename}}
                   </div>
                   <div class="registered-college-name element">
                     <span class="material-symbols-outlined">
@@ -292,13 +296,13 @@
                 <!-- <div class="vl"></div> -->
                 <div class="second-part">
                   <div class="registered-mobile-number element">
-                    <span class="material-symbols-outlined"> call </span>{{
-                    dash_user.mobilenumber }}
+                    <span class="material-symbols-outlined"> call </span
+                    >{{dash_user.mobilenumber}}
                   </div>
 
                   <div class="registered-email-id element">
-                    <span class="material-symbols-outlined"> mail </span>{{
-                    user.email }}
+                    <span class="material-symbols-outlined"> mail </span
+                    >{{user.email}}
                   </div>
                   <div class="registered-email-id element">
                     <span class="material-symbols-outlined"> link </span
@@ -400,10 +404,25 @@
           style="background-color: red"
         ></section>
 
-        <section
-          id="liveClasses-section"
-          style="background-color: rgb(179, 255, 0)"
-        ></section>
+        <!-- live classes section -->
+
+        <section id="liveClasses-section">
+          <button type="button" class="live-card" id="live-card">
+            Course name
+          </button>
+          <div id="live-content">
+            <div class="live-card-description">
+              <div class="live-course-name">Course name</div>
+              <div class="live-batch">Batch1</div>
+              <div class="live-tutor">Tutor</div>
+              <div class="live-start-date">Starting date</div>
+              <div class="live-link">
+                <a href="#">Link for the session</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        
       </main>
     </section>
   </body>

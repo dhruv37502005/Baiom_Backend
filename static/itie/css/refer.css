@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -79,15 +79,23 @@ img {
 }
 .price {
   margin-top: 100px;
-  height: 300px;
+  height: 350px;
   width: 350px;
   text-align: center;
-  background-image: url(image/giphy.gif);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: "Open Sans";
   border-radius: 30px;
+  position: relative;
+}
+.price .img {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .price:hover {
@@ -96,9 +104,13 @@ img {
 }
 
 .price h1 {
-  margin-top: 120px;
+  position: absolute;
   color: orange;
-  font-size: 50px;
+  font-size: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 .benefits {
   font-size: x-large;
@@ -677,11 +689,10 @@ form input {
   text-align: justify;
   height: 260px;
   margin-top: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-::-webkit-scrollbar {
-  display: none;
-}
+
 .refer_buttom {
   text-align: center;
   margin-top: 30px;
@@ -763,7 +774,7 @@ form input {
   margin-bottom: 20px;
 }
 .icons {
-  margin-top: 27px;
+  margin-top: 38px;
 }
 .icons i {
   /* border: 2px solid red; */
