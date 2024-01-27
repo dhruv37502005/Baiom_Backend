@@ -1,226 +1,212 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
+<!-- blog/templates/blog/category_list.html -->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - Categories</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'blog:categories' %}">My Blog</a></h1>
+    </header>
+    <main>
+        <h1>Categories</h1>
+        {% for category in categories %}
+            <a href="{% url 'blog:post_list_by_category' category.id %}">
+                <div class="category-card">
+                    {% if category.image %}
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    {% endif %}
+                    <h2>{{ category.name }}</h2>
+                    {% if category.description %}
+                    <p>{{ category.description }}</p>
+                {% endif %}
+                </div>
+            </a>
+        {% endfor %}
+    </main>
+</body>
+</html> -->
+
+
+
     <!--refer and earn SECTION-->
-    <section class="homepage">
-        <div class="heading">
-          <h3><span>REFER</span> A FRIEND</h3>
+    <div class="swipe">
+      <!-- Swiper -->
+      <div class="swiper mySwiper new" style="padding: 35px, 55px">
+        <div class="swiper-wrapper">
+          <!-- swiper1 -->
+
+          {% for category in categories %}
+          
+          <div class="swiper-slide">
+            <section id="courses">
+              <div class="we__offer">
+                <div class="we__offer_card">
+                  <div class="course_img">
+                    {% if category.image %}
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    {% endif %}
+
+                    <div class="img-text">
+                      <div class="text" id="main_head">
+                        <i class="fa-regular fa-folder-closed">
+                          <span>{{category.name}} </span>
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="we__offer_content">
+                    <div class="blog-icon">
+                      <span>
+                        <i class="fa fa-calendar" aria-hidden="true"></i
+                        >March,30 2023</span
+                      >
+                      <span class="blog-comment">
+                        <a href="#"
+                          ><i class="fa-regular fa-comment"></i>Comments(3)</a
+                        ></span
+                      >
+                    </div>
+                    <h2>
+                        {% if category.description %}
+                        <p>{{ category.description }}</p>
+                    {% endif %}
+                    </h2>
+
+                    <div class="subcontent">
+                      
+                        
+                      
+                      <br />
+                    </div>
+
+                    <a
+                    href="{% url 'blog:post_list_by_category' category.id %}"
+                      class="course_btn"
+                    >
+                      <span>Read</span> More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </a>
+                  {% endfor %}
+
+          <!--
+
+          <div class="swiper-slide">
+            <section id="courses">
+              <div class="we__offer">
+                <div class="we__offer_card">
+                  <div class="course_img">
+                    <img src="{% static 'blog/img/blog2.jpg' %}" alt="" />
+
+                    <div class="img-text">
+                      <div class="text" id="main_head">
+                        <i class="fa-regular fa-folder-closed">
+                          <span>Entrepreneurship </span>
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="we__offer_content">
+                    <div class="blog-icon">
+                      <span>
+                        <i class="fa fa-calendar" aria-hidden="true"></i>Feb,20
+                        2023</span
+                      >
+                      <span class="blog-comment">
+                        <a href="#"
+                          ><i class="fa-regular fa-comment"></i>Comments(3)</a
+                        ></span
+                      >
+                    </div>
+                    <h2>
+                      The ERA on Entrepreneurship: How You can be the Next
+                      Success Story
+                    </h2>
+
+                    <div class="subcontent">
+                      <p>
+                        Starting a business from scratch can be a daunting task
+                        , but the reward of entrepreneurship can be significant.
+                      </p>
+                    </div>
+
+                    <a href="./blogs/Entrepreneurship.html" class="course_btn">
+                      <span>Read</span> More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          
+
+          <div class="swiper-slide">
+            <section id="courses">
+              <div class="we__offer">
+                <div class="we__offer_card">
+                  <div class="course_img">
+                    <img src="{% static 'blog/img/blog3.jpg' %}" alt="" />
+
+                    <div class="img-text">
+                      <div class="text" id="main_head">
+                        <i class="fa-regular fa-folder-closed">
+                          <span>Internship </span>
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="we__offer_content">
+                    <div class="blog-icon">
+                      <span>
+                        <i class="fa fa-calendar" aria-hidden="true"></i>April,1
+                        2023</span
+                      >
+                      <span class="blog-comment">
+                        <a href="#"
+                          ><i class="fa-regular fa-comment"></i>Comments(3)</a
+                        ></span
+                      >
+                    </div>
+                    <h2>
+                      Having an INTERNSHIP EXPERIENCE before getting info
+                      professional life is like ICING ON THE CAKE
+                    </h2>
+
+                    <div class="subcontent">
+                      <p>
+                        BAOIAM (Be a one in a million) is a fully certified
+                        platform that helps millions of...
+                      </p>
+                    </div>
+
+                    <a href="./blogs/Internship.html" class="course_btn">
+                      <span>Read</span> More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        -->
         </div>
-  
-        <div class="refer_row">
-          <div class="rf_col">
-            <!-- <h3> <span>REFER</span> A FRIEND</h3>-->
-            <h4>Earn Cash and Exciting Prizes</h4>
-            <p>
-              We are on a mission to empower learners to acquire knowledge,
-              skills, and competencies & transform the way we learn.
-            </p>
-            <form action="">
-              <input
-                type="email"
-                class="emailtext"
-                name="Email"
-                placeholder="Enter Email"
-                required
-              />
-              <button type="submit" class="bttn">Get Refferal Code</button>
-            </form>
-          </div>
-          <div class="rf_col2">
-            <img src="image/Refer_img.png" alt="" />
-          </div>
-        </div>
-      </section>
-      <!--HOW SECTION-->
-      <section class="how">
-        <div class="ad_header1">
-          <div class="titale">
-            <h2>How <span>BAOIAM Referrals</span> Work?</h2>
-            <p>
-              Get a ₹500 cash bonus when your referred business collects the first
-              payment. Get a ₹1,000 cash bonus when referred business subscribes
-              to the Growth annual plan of the BAOIAM online website.
-            </p>
-          </div>
-        </div>
-  
-        <div class="content">
-          <div class="content_list1">
-            <div class="content_data">
-              <div class="data_list">
-                <i class="uil uil-refresh"></i>
-                <h3>Join BAOIAM</h3>
-                <p>Create your account on BAOIAM and generate a referral link.</p>
-              </div>
-            </div>
-  
-            <div class="arrow">
-              <i class="uil uil-arrow-circle-right"></i>
-            </div>
-  
-            <div class="content_data">
-              <div class="data_list">
-                <i class="uil uil-refresh"></i>
-                <h3>Refer other friends</h3>
-                <p>
-                  Share the link with your friends. When your friend enrolls, they
-                  get up to 20% off on programs
-                </p>
-              </div>
-            </div>
-  
-            <div class="arrow">
-              <i class="uil uil-arrow-circle-right"></i>
-            </div>
-  
-            <div class="content_data">
-              <div class="data_list">
-                <i class="uil uil-refresh"></i>
-                <h3>Enjoy cash bonus</h3>
-                <p>3 Get Rewarded</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="refer_buttom">
-          <button type="submit" class="bttn2">Get Refferal Code</button>
-        </div>
-      </section>
-      <!--why SECTION-->
-      <section class="why">
-        <div class="why_list">
-          <div class="list1">
-            <div class="why_head">
-              <h3>WHY <span>REFER</span> BAOIAM?</h3>
-              <p>
-                We belive in creating a holistic and dynamic workplace where you
-                can create,innovate and idea and turn them into reality!
-              </p>
-            </div>
-  
-            <div class="why_content">
-              <div class="why_content_data">
-                <div class="icons">
-                  <i class="uil uil-shield-check"></i>
-                </div>
-                <div class="why_content_data_list">
-                  <h3>Upskilling Courses</h3>
-                  <p>
-                    Get access to best curated courses mentored by Top-notch
-                    experts.
-                  </p>
-                </div>
-              </div>
-  
-              <div class="why_content_data">
-                <div class="icons">
-                  <i class="uil uil-shield-check"></i>
-                </div>
-                <div class="why_content_data_list">
-                  <h3>Experienced Mentors & High-Quality Content</h3>
-                  <p>
-                    Courses crafted just for you that help you enhance your skills
-                    and crack your dream job.
-                  </p>
-                </div>
-              </div>
-  
-              <div class="why_content_data">
-                <div class="icons">
-                  <i class="uil uil-shield-check"></i>
-                </div>
-                <div class="why_content_data_list">
-                  <h3>100% Placement assistances</h3>
-                  <p>
-                    Learn to crack interviews from our experienced trainers and
-                    get placed at top companies.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="list2">
-            <img src="image/Yes_or_no.png" alt="" />
-          </div>
-        </div>
-      </section>
-      <!--FQA SECTION-->
-      <div class="container-main faq">
-        <div class="img">
-          <img id="faq-img" src="image/FAQs-amico.png" />
-        </div>
-  
-        <div class="ac-main">
-          <h1>Frequently Asked <span>Questions</span></h1>
-          <div class="accordion">
-            <div class="accordion-item">
-              <div class="accordion-item-header">
-                Q1. I am not a student of BAOIAM. Can I still refer a friend?
-              </div>
-              <!-- /.accordion-item-header -->
-              <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                  Yes, If you are aware of BAOIAM and believe in what we are
-                  doing, then feel free to refer your friend.
-                </div>
-              </div>
-              <!-- /.accordion-item-body -->
-            </div>
-            <!-- /.accordion-item -->
-          </div>
-          <div class="accordion">
-            <div class="accordion-item">
-              <div class="accordion-item-header">
-                Q2. How can I track the status of my referrals?
-              </div>
-              <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                  You will be informed by email once BAOIAM receives your referral
-                  details.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion">
-            <div class="accordion-item">
-              <div class="accordion-item-header">
-                Q3. How will my friends be informed that I referred them?
-              </div>
-              <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                  Your friends will receive an email confirmation from BAOIAM
-                  informing them that they have been referred by you. They will be
-                  asked to confirm.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion">
-            <div class="accordion-item">
-              <div class="accordion-item-header">
-                Q4. Will I get a referral reward if a friend/connection already
-                exists in the BAOIAM database?
-              </div>
-              <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                  No, there is no reward if your friend is connected with BAOIAM
-                  or its infromation exists in BAOIAM database
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion">
-            <div class="accordion-item">
-              <div class="accordion-item-header">Q5. Who all can I refer to?</div>
-              <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                  Anyone who meets the eligibility criteria for our courses can be
-                  referred. They should be between 18 - 28 years of age. They
-                  should know the basics of the English language, have a laptop,
-                  and a good internet connection.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="swiper-button-next nav-btn"></div>
+        <div class="swiper-button-prev nav-btn"></div>
+        <div class="swiper-pagination"></div>
       </div>
-  
+    </div>
 {% endblock content %}
+

@@ -1,0 +1,237 @@
+.container-main {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 35% 60%;
+    gap: 5rem;
+    justify-content: center;
+    margin: 0px 70px 0px 70px;
+    /* margin: 50px 95px; */
+  }
+  
+  .accordion {
+    width: 72%;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+  
+  .ac-main h1 {
+    margin-top: 50px;
+    font-size: 45px;
+    /* font-size: 50px; */
+    text-align: center;
+    color: #031864;
+    font-weight: bold;
+  }
+  
+  .ac-main h1 span {
+    font-size: 45px;
+    /* font-size: 50px; */
+    background: -webkit-linear-gradient(45deg, #fa2424, #fb8721);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid red;
+  }
+  
+  .accordion-item {
+    background-color: #fff;
+    color: #050237;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .accordion-item-header {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+  
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .accordion-item-header:hover {
+    color: rgb(251, 96, 13);
+    font-size: 1.05rem;
+  }
+  
+  .accordion-item-header::after {
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+  }
+  
+  .accordion-item-header.active::after {
+    content: "\2212";
+  }
+  
+  .accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    color: rgb(99, 99, 99);
+    font-weight: 500;
+  }
+  
+  .accordion-item-body-content {
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+  }
+  
+  .accordion-item-body-content ul {
+    margin: 0 15px;
+  }
+  
+  .img {
+    /* width: 40%; */
+    width: 100%;
+    margin: 100px 0;
+  }
+  
+  .img img {
+    width: 600px;
+    /* height: 500px; */
+    padding-bottom: 10px;
+    padding-right: 40px;
+    padding-left: 5px;
+  }
+  
+  @media screen and (max-width: 1260px) {
+    .homepage {
+      margin: 50px 50px;
+      /* background: url("/abstract-background-illustration-watercolor-blue-green.jpg"); */
+      margin-top: 100px;
+    }
+    .container-main {
+      grid-template-columns: 40% 60%;
+      gap: 0rem;
+    }
+    .refer_row {
+      flex-direction: column;
+    }
+  
+    .rf_col {
+      width: 90%;
+      margin: 40px 0;
+    }
+  
+    .rf_col2 {
+      width: 90%;
+      float: none;
+    }
+  
+    .rf_col2 img {
+      width: 90%;
+    }
+  
+    /* HOW REFER WORK */
+  
+    .how {
+      padding: 60px 40px;
+      margin-bottom: 10px;
+      /* background: url("/abstract-background-illustration-watercolor-blue-green.jpg"); */
+    }
+  
+    .titale h2 {
+      font-size: 45px;
+    }
+  
+    .titale h2 span {
+      font-size: 45px;
+    }
+  
+    .titale p {
+      padding: 0 50px;
+    }
+  
+    /* Why Baoiam */
+  
+    .why {
+      padding: 50px 50px;
+    }
+  
+    .why_list {
+      flex-direction: column;
+    }
+  
+    .list2 img {
+      margin-top: 50px;
+      width: 90%;
+      float: none;
+    }
+  
+    /* FAQ */
+    .container-main {
+      flex-direction: column-reverse;
+      margin: 10px 50px;
+    }
+  
+    .img {
+      width: 100%;
+      margin: 50px 0;
+    }
+  
+    .img img {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .container-main {
+      grid-template-columns: 1fr;
+    }
+    .container-main .img {
+      margin: 0 auto;
+      width: 35rem;
+    }
+    .accordion-item-header {
+      font-size: 1.2rem;
+    }
+    .accordion-item-header:hover {
+      font-size: 1.2rem;
+    }
+    .accordion-item-body-content {
+      font-size: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .ac-main h1 {
+      font-size: 3.5rem;
+      margin-bottom: 3rem;
+      margin-top: 0px;
+      text-align: center;
+      color: #031864;
+      font-weight: bold;
+    }
+  
+    .ac-main h1 span {
+      font-size: 3.5rem;
+    }
+  
+    .accordion {
+      width: 100%;
+      max-width: 1000px;
+      margin: 2rem 10px;
+    }
+  
+    .accordion-item-header {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: left;
+    }
+    .accordion-item-body-content {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      text-align: justify;
+    }
+    .img img {
+      display: none;
+    }
+    .accordion-item-header:hover {
+      font-size: 2rem;
+    }
+  }

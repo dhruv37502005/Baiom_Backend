@@ -1,7 +1,7 @@
 *,
 html {
   margin: 0;
-  /* padding: 0; */
+  padding: 0;
   /* color: #040052; */
   box-sizing: border-box;
 }
@@ -23,21 +23,35 @@ ul {
 }
 
 .one {
-  color: white;
-  margin-top: 1em;
+  width:90%;
+  height:fit-content;
+  /* background-color: red; */
+  /* margin-top: 1em; */
   border-radius: 30px;
   margin-bottom: 4em;
   display: flex;
+  margin: 0 auto;
   align-items: center;
+  justify-content:space-between;
+  margin: 20px 100px ;
 }
 
 .one .info {
-  margin-top: 40px;
-  margin-left: 3rem;
-  /* padding-top: 1rem; */
-  width: 45vw;
+width: 50%;
+height: fit-content;
+/* background-color: greenyellow; */
 }
-
+.one .pic{
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px;
+}
 #nav-courses-one {
   display: none;
 }
@@ -99,14 +113,17 @@ ul {
 }
 
 .one img {
-  width: 100%;
+  width:600px;
+  object-fit: cover;
+  object-position: center;
+
 }
 
 /* # section two */
 
 .two {
   margin-bottom: 1em;
-  /* padding:0 !important; */
+  /* padding:0 ; */
 }
 
 .two i,
@@ -140,7 +157,7 @@ ul {
   align-items: center;
   max-width: 60em;
   grid-template-columns: repeat(3, 1fr);
-  /* padding-left:0 !important; */
+  /* padding-left:0 ; */
 }
 
 .two li {
@@ -178,7 +195,7 @@ ul {
 
 .three {
   margin-bottom: 0;
-  /* padding-left: 100px !important; */
+  /* padding-left: 100px ; */
 }
 
 .why-web-dev-box,
@@ -191,7 +208,7 @@ ul {
 
 .five {
   margin-bottom: 2.5em;
-  /* padding-left: 100px !important; */
+  /* padding-left: 100px ; */
 }
 
 #why-web-dev-heading-2,
@@ -251,7 +268,7 @@ ul {
   grid-template-columns: repeat(2, 1fr);
   gap: 2em;
   place-items: center;
-  /* padding-left:0 !important; */
+  /* padding-left:0 ; */
 }
 
 .six h1 {
@@ -365,11 +382,11 @@ footer p {
 }
 
 .navbar-toggler {
-  box-shadow: none !important;
+  box-shadow: none ;
 }
 
 .accordion-item-header::after {
-  right: 1rem !important;
+  right: 1rem ;
 }
 
 .row div {
@@ -378,7 +395,7 @@ footer p {
 
 @media (max-width: 1240px) {
   .one {
-    /* padding:2em !important; */
+    /* padding:2em ; */
   }
   .seven .accordion {
     margin-left: 10rem;
@@ -394,7 +411,7 @@ footer p {
 @media (max-width: 1150px) {
   header a,
   header button {
-    font-size: 0.95rem !important;
+    font-size: 0.95rem ;
   }
 
   header .nav-item button {
@@ -419,7 +436,7 @@ footer p {
     border-radius: 0;
   }
   .two {
-    /* padding: 2rem 6% !important; */
+    /* padding: 2rem 6% ; */
   }
 }
 
@@ -558,7 +575,7 @@ footer p {
 
 @media screen and (max-width: 700px) {
   .blog-slider {
-    margin-top: 8rem !important;
+    margin-top: 8rem ;
   }
 }
 
@@ -588,7 +605,7 @@ footer p {
 
 @media (max-width: 500px) {
   .one {
-    /* padding:0 !important; */
+    /* padding:0 ; */
   }
 
   .accordion-body {

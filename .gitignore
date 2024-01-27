@@ -22,5 +22,13 @@ userauths/migrations/0005_employee.py
 /db.sqlite3
 contactapp/migrations/0001_initial.py
 media/course_images
-.gitignore
-.gitignore
+contactapp/migrations/0001_initial.py
+core/migrations/0001_initial.py
+contactapp/migrations/0001_initial.py
+contactapp/migrations/0001_initial.py
+media/course_videos/All_About_Django_Forms__Part_1__Django_Forms_Tutorial.mp4
+core/migrations/0001_initial.py
+core/migrations/0001_initial.py
+course/migrations/0002_course_duration_field_course_watch_percent.py
+
+blog/migrations/0001_initial.py
