@@ -60,6 +60,10 @@
         <button class="offer">
          ₹ {{course.price}}
         </button>
+        <a href="{% url 'course:brochure_download' id=course.id %}"class="btn-enroll">
+          download brochure
+        </a>
+        <hr>
         {% if course in enrolled_courses %}
         <button class="btn-enroll">
           Already Enrolled
@@ -79,6 +83,8 @@
                 {% else %}
                 <p>No image available</p>
                 {% endif %}
+      </div>
+      <div>
       </div>
     </section>
     {% endfor %}
