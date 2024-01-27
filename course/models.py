@@ -52,6 +52,8 @@ class Course(models.Model):
     ]
     status = models.CharField(max_length=10, choices=status_choices, default='draft')
     created_at = models.DateTimeField(auto_now_add=True)
+    carriculum_title = models.CharField(max_length=100, default=False)
+    carriculum_desc =  models.TextField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.slug:
