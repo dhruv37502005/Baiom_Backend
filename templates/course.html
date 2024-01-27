@@ -68,6 +68,9 @@
         <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
           Enroll Now  </button>
         </a>
+        <h1>{{course}} Carriculum</h1>
+        <h2>{{course.carriculum_title}}</h2>
+        <p>{{course.carriculum_desc}}</p>
         {% endif %}
       </div>
       <div class="pic">
