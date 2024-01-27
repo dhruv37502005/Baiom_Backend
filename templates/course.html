@@ -1,0 +1,661 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="containerr">
+  <nav class="sidebarrr">
+    <ul class="sidebarrr_ul">
+      {% for category in categories %}
+      <li><a href="{% url 'course:category_courses' category_id=category.id %}">{{ category.name }}</a></li>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div>
+    {% for course in courses %}
+    <section class="one">
+      <div class="info">
+        {% comment %} <button id="certified">Certified Online Training</button> {% endcomment %}
+        <!-- <div class="cards">
+          <div class="custom-card">
+            <div class="card-body">
+              <div class="custom-progress">
+                <div class="progress-bar"></div>
+                <span>55%</span>
+              </div>
+              <div>
+              
+              </div>
+              {% comment %} <div>{% if course.video %}
+                <video width="320" height="240" controls>
+                  <source src="{{ course.video.url }}" type="video/mp4">
+                  <source src="{{ course.video.url }}" type="video/webm">
+                  <source src="{{ course.video.url }}" type="video/ogg">
+                  Your browser does not support the video tag.
+                </video>
+                {% else %}
+                <p>No video available</p>
+                {% endif %}
+              </div> {% endcomment %}
+              <h4 style="color: black">Name: {{course.title}}</h4>
+              <h4 style="color: black">Description: {{course.description}}</h4>
+              <h4 style="color: black">Category: {{course.category}}</h4>
+              <h4 style="color: black">Price: {{course.price}}</h4>
+              <h4 style="color: black">Instructor: {{course.instructor}}</h4>
+              <h4 style="color: black">Discount Price: {{course.discount}}</h4>
+            </div>
+              {% if course in enrolled_courses %}
+              <button class="btn-enroll">
+                Already Enrolled
+              </button>
+              {% else %}
+              <a href="{% url 'dashboard:enroll_course' course_id=course.id %}" class="btn-enroll">
+                Enroll Now
+              </a>
+              {% endif %}
+          </div>
+        </div> -->
+        <h1>{{course.title}}</h1>
+        <p>
+          {{course.description}}
+        </p>
+        <p>Instructor : <strong>{{course.instructor}}</strong></p>
+        <button class="offer">
+         ₹ {{course.price}}
+        </button>
+        {% if course in enrolled_courses %}
+        <button class="btn-enroll">
+          Already Enrolled
+        </button>
+        {% else %}
+        <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
+          Enroll Now  </button>
+        </a>
+        {% endif %}
+      </div>
+      <div class="pic">
+        {% if course.image %}
+                <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
+      </div>
+    </section>
+    {% endfor %}
+
+
+    <section class="two">
+      <h1>Course <span class="underline">Highlights</span></h1>
+      <div class="features">
+        <ul>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div>
+              <p class="heading">Live Sessions</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-sharp fa-solid fa-certificate"></i>
+            <div>
+              <p class="heading">Personalised Mentorship</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-user-group"></i>
+            <div>
+              <p class="heading">Placement Assessment</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <p class="heading">Live Projects and Internship Opportunities</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-diagram-project"></i>
+            <div>
+              <p class="heading">Webinar and Seminar Access</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-calendar"></i>
+            <div>
+              <p class="heading">Doubt-clearing sessions</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-handshake-angle"></i>
+            <div>
+              <p class="heading">Certification</p>
+            </div>
+          </li>
+          <!-- <li>
+            <i class="fa-solid fa-lightbulb"></i>
+            <div>
+              <p class="heading">Doubt clearing</p>
+              <p>Through Q&A forum</p>
+            </div>
+          </li>
+          <li id="last">
+            <i class="fa-solid fa-business-time"></i>
+            <div>
+              <p class="heading">Downloadable content</p>
+              <p>With lifetime access</p>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- <section class="three">
+      <h3 id="why-web-dev-heading-2">
+        <span>Why <span class="underline">learn</span> web development?</span>
+      </h3>
+      <div class="why-web-dev-box">
+        <div class="why-web-dev">
+          <h3 id="why-web-dev-heading-1">
+            Why <span class="underline">learn</span> web development?
+          </h3>
+          <p class="heading">High-Demand Skill</p>
+          <p>
+            With the world moving towards digitalisation, web development is one
+            skill that ranks high on the chart in terms of priority as well as
+            income.
+          </p>
+          <p class="heading">Explore your Creative side</p>
+          <p>
+            Web developers get to bring out their creative personality through
+            designing applications.
+          </p>
+          <p class="heading">Flexibility</p>
+          <p>
+            Freelancing, internships, part-time or full-time jobs, students can
+            choose the type of job that best suits them.
+          </p>
+        </div>
+        <div class="image">
+          <img src="{% static 'home/img/41.jpg' %}" />
+        </div>
+      </div>
+    </section> -->
+
+    <section class="five">
+      <h3 id="placement-info-heading-2">
+        <span
+          >What <span class="underline">placement assistance</span> will you
+          receive?</span
+        >
+      </h3>
+      <div class="placement-info">
+        <div class="why-web-dev">
+          <h3 id="placement-info-heading-1">
+            <span
+              >What <span class="underline">placement assistance</span> will you
+              receive?</span
+            >
+          </h3>
+          <p>
+            <span>•</span>
+            Baoiam promises to be by your side and guide you at every step till
+            you successfully get placed.
+          </p>
+          <p>
+            <span>•</span>
+            From helping you create your CV to assisting you in building a
+            strong LinkedIn profile, we have got your back all the way.
+          </p>
+          <p>
+            <span>•</span>
+            Our experts will mentor you at each stage of the placement process.
+          </p>
+          <!-- <p class="heading">Free Placement Prep Training</p>
+          <p>
+            Learn how to build your resume, make great applications, and ace
+            your interviews.
+          </p>
+          <p class="heading">Curated internships & jobs</p>
+          <p>
+            Get internships and fresher jobs as per your preference in your
+            inbox.
+          </p>
+          <p class="heading">Get highlighted on Internshala</p>
+          <p>
+            Top performers will be highlighted in their internship & job
+            applications on Internshala.
+          </p> -->
+        </div>
+        <div class="image">
+          <img src="{% static 'home/img/23.jpg' %}" />
+        </div>
+      </div>
+    </section>
+
+    <section class="six">
+      <h1>How will your <span class="underline">training</span> work?</h1>
+      <div class="features">
+        <ul>
+          <li>
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <div>
+              <p class="heading">Interactive Sessions</p>
+              <p>
+                Attend classes and get tutored by our highly qualified mentors.
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check-double"></i>
+            <div>
+              <p class="heading">Doubt-clearing Sessions</p>
+              <p>
+                Do not hesitate to ask any questions, as we are always willing
+                to help you understand the concepts better.
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-brain"></i>
+            <div>
+              <p class="heading">Case Studies</p>
+              <p>
+                Assignments and projects that will help you in the practical
+                application of concepts will be given.
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-pen"></i>
+            <div>
+              <p class="heading">Tests and quizzes</p>
+              <p>
+                You will be tested after the completion of each module to know
+                how much you have learned.
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-hands"></i>
+            <div>
+              <p class="heading">Certification</p>
+              <p>
+                You will then be awarded with the Certificate of Completion.
+              </p>
+            </div>
+          </li>
+          <!-- <li>
+            <i class="fa-solid fa-award"></i>
+            <div>
+              <p class="heading">Get certified</p>
+              <p>
+                Get certified in Web Development upon successful completion
+                of training
+              </p>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- <section class="seven">
+      <h1>Web Development Syllabus</h1>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Html
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the first item's accordion body.</strong> It is
+              shown by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              CSS
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              JavaScript
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is
+              hidden by default, until the collapse plugin adds the appropriate
+              classes that we use to style each element. These classes control
+              the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or
+              overriding our default variables. It's also worth noting that just
+              about any HTML can go within the <code>.accordion-body</code>,
+              though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Design Patterns
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
+              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Object Modelling
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
+              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Applications
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
+              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Computer Graphics
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
+              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="true"
+              aria-controls="collapseThree"
+            >
+              Bootstrap
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
+              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="nine"> -->
+      <!-- <h1><span class="underline">Reviews</span> From Students</h1>
+      <h2>Average Rating : 4.5</h2> -->
+
+      <!-- Slider2 -->
+      <section class="slider2">
+        <div class="blog-slider">
+          <div class="blog-slider__wrp swiper-wrapper">
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'home/img/9.jpg' %}" alt="" />
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">26 December 2019</span>
+                <div class="blog-slider__title">REVIEW</div>
+                <div class="blog-slider__text">
+                  The platform's responsive customer support is a significant
+                  advantage. Baoiam's prompt assistance has consistently upheld
+                  my seamless learning journey, making them an indispensable
+                  part of my progress.
+                </div>
+                <a href="#" class="blog-slider__button">READ MORE</a>
+              </div>
+            </div>
+
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'home/img/19.jpg' %}" alt="" />
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">26 December 2019</span>
+                <div class="blog-slider__title">REVIEW</div>
+                <div class="blog-slider__text">
+                  Baoiam's interactive assignments and projects have
+                  significantly elevated my practical skills. The platform's
+                  unique approach enabled immediate application of knowledge,
+                  fostering my confidence. A crucial companion on my learning
+                  journey.
+                </div>
+                <a href="#" class="blog-slider__button">READ MORE</a>
+              </div>
+            </div>
+
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'home/img/14.jpg' %}" alt="" />
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">26 December 2019</span>
+                <div class="blog-slider__title">REVIEW</div>
+                <div class="blog-slider__text">
+                  Baoiam revolutionized my learning journey! Its intuitive
+                  interface, interactive lessons, and fun quizzes turned
+                  studying into a delightful and fruitful experience. A true
+                  game-changer in my learning process.
+                </div>
+                <a href="#" class="blog-slider__button">READ MORE</a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-slider__pagination"></div>
+        </div>
+      </section>
+    </section>
+
+    <!-- FAQ -->
+    <div class="container-main faq">
+      <div class="ac-main">
+        <h1>Frequently Asked <span>Questions</span></h1>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q1. I am not a student of BAOIAM. Can I still refer a friend?
+            </div>
+            <!-- /.accordion-item-header -->
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Yes, If you are aware of BAOIAM and believe in what we are
+                doing, then feel free to refer your friend.
+              </div>
+            </div>
+            <!-- /.accordion-item-body -->
+          </div>
+          <!-- /.accordion-item -->
+        </div>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q2. How can I track the status of my referrals?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                You will be informed by email once BAOIAM receives your referral
+                details.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q3. How will my friends be informed that I referred them?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Your friends will receive an email confirmation from BAOIAM
+                informing them that they have been referred by you. They will be
+                asked to confirm.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q4. Will I get a referral reward if a friend/connection already
+              exists in the BAOIAM database?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                No, there is no reward if your friend is connected with BAOIAM
+                or its infromation exists in BAOIAM database
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">Q5. Who all can I refer to?</div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Anyone who meets the eligibility criteria for our courses can be
+                referred. They should be between 18 - 28 years of age. They
+                should know the basics of the English language, have a laptop,
+                and a good internet connection.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

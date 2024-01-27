@@ -1,1 +1,212 @@
-<h1>coming soon!!!!!</h1>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- blog/templates/blog/category_list.html -->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - Categories</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'blog:categories' %}">My Blog</a></h1>
+    </header>
+    <main>
+        <h1>Categories</h1>
+        {% for category in categories %}
+            <a href="{% url 'blog:post_list_by_category' category.id %}">
+                <div class="category-card">
+                    {% if category.image %}
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    {% endif %}
+                    <h2>{{ category.name }}</h2>
+                    {% if category.description %}
+                    <p>{{ category.description }}</p>
+                {% endif %}
+                </div>
+            </a>
+        {% endfor %}
+    </main>
+</body>
+</html> -->
+
+
+
+    <!--refer and earn SECTION-->
+    <div class="swipe">
+      <!-- Swiper -->
+      <div class="swiper mySwiper new" style="padding: 35px, 55px">
+        <div class="swiper-wrapper">
+          <!-- swiper1 -->
+
+          {% for category in categories %}
+          
+          <div class="swiper-slide">
+            <section id="courses">
+              <div class="we__offer">
+                <div class="we__offer_card">
+                  <div class="course_img">
+                    {% if category.image %}
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    {% endif %}
+
+                    <div class="img-text">
+                      <div class="text" id="main_head">
+                        <i class="fa-regular fa-folder-closed">
+                          <span>{{category.name}} </span>
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="we__offer_content">
+                    <div class="blog-icon">
+                      <span>
+                        <i class="fa fa-calendar" aria-hidden="true"></i
+                        >March,30 2023</span
+                      >
+                      <span class="blog-comment">
+                        <a href="#"
+                          ><i class="fa-regular fa-comment"></i>Comments(3)</a
+                        ></span
+                      >
+                    </div>
+                    <h2>
+                        {% if category.description %}
+                        <p>{{ category.description }}</p>
+                    {% endif %}
+                    </h2>
+
+                    <div class="subcontent">
+                      
+                        
+                      
+                      <br />
+                    </div>
+
+                    <a
+                    href="{% url 'blog:post_list_by_category' category.id %}"
+                      class="course_btn"
+                    >
+                      <span>Read</span> More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </a>
+                  {% endfor %}
+
+          <!--
+
+          <div class="swiper-slide">
+            <section id="courses">
+              <div class="we__offer">
+                <div class="we__offer_card">
+                  <div class="course_img">
+                    <img src="{% static 'blog/img/blog2.jpg' %}" alt="" />
+
+                    <div class="img-text">
+                      <div class="text" id="main_head">
+                        <i class="fa-regular fa-folder-closed">
+                          <span>Entrepreneurship </span>
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="we__offer_content">
+                    <div class="blog-icon">
+                      <span>
+                        <i class="fa fa-calendar" aria-hidden="true"></i>Feb,20
+                        2023</span
+                      >
+                      <span class="blog-comment">
+                        <a href="#"
+                          ><i class="fa-regular fa-comment"></i>Comments(3)</a
+                        ></span
+                      >
+                    </div>
+                    <h2>
+                      The ERA on Entrepreneurship: How You can be the Next
+                      Success Story
+                    </h2>
+
+                    <div class="subcontent">
+                      <p>
+                        Starting a business from scratch can be a daunting task
+                        , but the reward of entrepreneurship can be significant.
+                      </p>
+                    </div>
+
+                    <a href="./blogs/Entrepreneurship.html" class="course_btn">
+                      <span>Read</span> More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          
+
+          <div class="swiper-slide">
+            <section id="courses">
+              <div class="we__offer">
+                <div class="we__offer_card">
+                  <div class="course_img">
+                    <img src="{% static 'blog/img/blog3.jpg' %}" alt="" />
+
+                    <div class="img-text">
+                      <div class="text" id="main_head">
+                        <i class="fa-regular fa-folder-closed">
+                          <span>Internship </span>
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="we__offer_content">
+                    <div class="blog-icon">
+                      <span>
+                        <i class="fa fa-calendar" aria-hidden="true"></i>April,1
+                        2023</span
+                      >
+                      <span class="blog-comment">
+                        <a href="#"
+                          ><i class="fa-regular fa-comment"></i>Comments(3)</a
+                        ></span
+                      >
+                    </div>
+                    <h2>
+                      Having an INTERNSHIP EXPERIENCE before getting info
+                      professional life is like ICING ON THE CAKE
+                    </h2>
+
+                    <div class="subcontent">
+                      <p>
+                        BAOIAM (Be a one in a million) is a fully certified
+                        platform that helps millions of...
+                      </p>
+                    </div>
+
+                    <a href="./blogs/Internship.html" class="course_btn">
+                      <span>Read</span> More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        -->
+        </div>
+        <div class="swiper-button-next nav-btn"></div>
+        <div class="swiper-button-prev nav-btn"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+{% endblock content %}
+

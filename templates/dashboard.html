@@ -1,355 +1,429 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}">
-    <title>Dashboard</title>
-</head>
-
-<body>
-    <div class="container">
-        <!-- FOR-SIDEBAR -->
-        <div class="sidebar" id="sidebar">
-            <div id="close" onclick="closeSidebar()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-lg"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                </svg>
-            </div>
-            <div class="brand-img toggle-sidebar">
-                <img style="width: 180px;" src="{% static 'dashboard/img/brand.jpg' %}" alt="BAOIAM">
-            </div>
-            <div class="sidebar-content">
-                <div class="user-dashboard user" style="color: rgb(255, 30, 0);" id="line-1">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" fill="currentColor"
-                            class="bi bi-microsoft" viewBox="0 0 16 16">
-                            <path
-                                d="M7.462 0H0v7.19h7.462zM16 0H8.538v7.19H16zM7.462 8.211H0V16h7.462zm8.538 0H8.538V16H16z" />
-                        </svg>
-                    </span>
-                    Dashboard
-                </div>
-                <div class="user-profile user" id="line-2">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
-                            class="bi bi-person-fill" viewBox="0 0 16 16">
-                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                        </svg>
-                    </span>
-                    My Profile
-                </div>
-                <div class="user-course user" id="line-3">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
-                            class="bi bi-laptop" viewBox="0 0 16 16">
-                            <path
-                                d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5" />
-                        </svg>
-                    </span>
-                    My Course
-                </div>
-                <div class="user-certificate user" id="line-4">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
-                            class="bi bi-receipt" viewBox="0 0 16 16">
-                            <path
-                                d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27m.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0z" />
-                            <path
-                                d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5" />
-                        </svg>
-                    </span>
-                    Certificate
-                </div>
-                <div class="user-project user" id="line-5">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
-                            class="bi bi-file-richtext" viewBox="0 0 16 16">
-                            <path
-                                d="M7 4.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208M5 9a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z" />
-                            <path
-                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
-                        </svg>
-                    </span>
-                    Open Projects
-                </div>
-                <div class="setting user" id="line-6">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
-                            class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
-                            <path
-                                d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z" />
-                        </svg>
-                    </span>
-                    Setting
-                </div>
-                <div class="logout user" id="line-7">
-                    <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
-                            class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
-                            <path fill-rule="evenodd"
-                                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                        </svg>
-                    </span>
-                    
-                    Logout
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/another.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/courses.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/css/live-classes.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script src="{% static 'dashboard/js/script.js' %}" defer></script>
+  </head>
+  <body>
+    <div class="blackshadow" id="blackshadow"></div>
+    <aside class="aside" id="aside">
+      <div class="image">
+        <img src="{% static 'home/img/brand.png'%}" alt="" />
+      </div>
+      <div class="ProfileAndName">
+        <div class="profilePic">
+          <img
+            src="https://imgs.search.brave.com/duA2S9Wsl1l-UlkFs_zNe144nS0QHgngWR8l3gwhS7A/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9mdW5r/eXN0YXR1cy5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MTIvSGFudW1hbi1p/bWFnZXMzNS5qcGc"
+            alt=""
+          />
         </div>
+        <h1>{{ user.username }}</h1>
 
-        <!-- MAIN-CONTENT -->
-        <div class="main-content" id="main-content">
-            <!-- FOR-NAVBAR -->
-            <div class="navbar">
-                <button class="toggle-sidebar-btn" onclick="toggleSidebar()">☰</button>
-                <div class="nav-text">
-                    <h1>Hello John!</h1>
-                    <p>It's good to see you again.</p>
-                </div>
-
-                <div class="search-box">
-                    <input type="text" placeholder="Search Courses...">
-                </div>
-
-                <a href="#" class="nav-link">
-                    <p> <svg class="icon-bell" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                            fill="currentColor" viewBox="0 0 16 16">
-                            <path
-                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
-                        </svg>
-                    </p>
-                </a>
-            </div>
-            <!-- MAIN-SECTION -->
-            <main>
-                <!-- FOR WHEN USER CLICK ON THE DIFFERENT OPTION ON THE LEFT SIDE THEN THIS CONTENT SHOWS -->
-                <div class="content">
-                    <div id="content1">
-                        <h2>Enrolled Courses</h2>
-                        <div class="btn-row">
-                            <button>All (5)</button>
-                            <button>In-Progresss (4)</button>
-                            <button>Yet to start (0)</button>
-                            <button>Complete (1)</button>
-                        </div>
-                        <div class="cards">
-                        {% for course in enrolled_courses %}
-                            <div class="custom-card">
-                                <div>
-                                {% if course.video %}
-                                    <video width="320" height="240" controls>
-                                        <source src="{{ course.video.url }}" type="video/mp4">
-                                        <source src="{{ course.video.url }}" type="video/webm">
-                                        <source src="{{ course.video.url }}" type="video/ogg">
-                                            Your browser does not support the video tag.
-                                    </video>
-                                {% else %}
-                                {% if course.image %}
-                                    <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
-                                {% else %}
-                                    <p>No image available</p>
-                                {% endif %}
-                                {% endif %}
-                                </div>
-                                {% comment %} <img src="{% static 'dashboard/img/card.jpg' %}" alt="Card Image"> {% endcomment %}
-                                <div class="card-body">
-                                    <div class="custom-progress">
-                                        <div class="progress-bar"></div><span>55%</span>
-                                    </div>
-                                    <p class="card-text">55/100 lectures completed</p>
-                                    <h4>Course Name: {{course.title}}</h4>
-                                    <h4>Course Description: {{course.description}}</h4>
-                                    <small>Last Read: Layout Grids Guidelines</small>
-                                    <button>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                                <path
-                                                    d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-                                            </svg> 
-                                        </span> Resume Course
-                                    </button>
-                                </div>
-                            </div>
-                            {% endfor %}
-                            <div class="custom-card">
-                                <img src="{% static 'dashboard/img/card.jpg' %}" alt="Card Image">
-                                <div class="card-body">
-                                    <div class="custom-progress">
-                                        <div class="progress-bar"></div><span>55%</span>
-                                    </div>
-                                    <p class="card-text">55/100 lectures completed</p>
-                                    <h4>Course Name</h4>
-                                    <small>Last Read: Layout Grids Guidelines</small>
-                                    <button>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                                <path
-                                                    d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-                                            </svg> 
-                                        </span> Resume Course
-                                    </button>
-                                </div>
-                            </div>
-                             <div class="custom-card">
-                                <img src="{% static 'dashboard/img/card.jpg' %}" alt="Card Image">
-                                <div class="card-body">
-                                    <div class="custom-progress">
-                                        <div class="progress-bar"></div><span>55%</span>
-                                    </div>
-                                    <p class="card-text">55/100 lectures completed</p>
-                                    <h4>Course Name</h4>
-                                    <small>Last Read: Layout Grids Guidelines</small>
-                                    <button>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                                <path
-                                                    d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-                                            </svg> 
-                                        </span> Resume Course
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="custom-card">
-                                <img src="{% static 'dashboard/img/card.jpg' %}" alt="Card Image">
-                                <div class="card-body">
-                                    <div class="custom-progress">
-                                        <div class="progress-bar"></div><span>55%</span>
-                                    </div>
-                                    <p class="card-text">55/100 lectures completed</p>
-                                    <h4>Course Name</h4>
-                                    <small>Last Read: Layout Grids Guidelines</small>
-                                    <button>
-                                        <span> 
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                                <path
-                                                    d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-                                            </svg> 
-                                        </span> Resume Course
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="custom-card">
-                                <img src="{% static 'dashboard/img/card.jpg' %}" alt="Card Image">
-                                <div class="card-body">
-                                    <div class="custom-progress">
-                                        <div class="progress-bar"></div><span>55%</span>
-                                    </div>
-                                    <p class="card-text">55/100 lectures completed</p>
-                                    <h4>Course Name</h4>
-                                    <small>Last Read: Layout Grids Guidelines</small>
-                                    <button>
-                                        <span> 
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                                <path
-                                                    d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-                                            </svg> 
-                                        </span> Resume Course
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="custom-card">
-                                <img src="{% static 'dashboard/img/card.jpg' %}" alt="Card Image">
-                                <div class="card-body">
-                                    <div class="custom-progress">
-                                        <div class="progress-bar"></div><span>55%</span>
-                                    </div>
-                                    <p class="card-text">55/100 lectures completed</p>
-                                    <h4>Course Name</h4>
-                                    <small>Last Read: Layout Grids Guidelines</small>
-                                    <button>
-                                        <span> 
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                                <path
-                                                    d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445" />
-                                            </svg>
-                                        </span> Resume Course
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="content2" style="display: none;font-size: xx-large;">
-                        {% comment %} {% if user %}
-                       <h1>{{user.username}}</h1>
-                       <h1> {{user.email}} </h1>
-                       <h1> {{user.bio}} </h1>
-{% endif %} {% endcomment %}
-                       <form id="profileForm">
-                        <dl>
-                            <dt><label for="userName">User Name:</label></dt>
-                            <dd><input type="text" id="userName" name="userName" placeholder="User Name" value="{{ user.username }}"></dd>
-                            <dt><label for="firstName">First Name:</label></dt>
-                            <dd><input type="text" id="firstName" name="firstName" placeholder="First Name" value="{{ dash_user.fname }}"></dd>
-                            <dt><label for="middleName">Middle Name:</label></dt>
-                            <dd><input type="text" id="middleName" name="middleName" placeholder="Middle Name" value="{{ dash_user.mname }}"></dd>
-                            <dt><label for="lastName">Last Name:</label></dt>
-                            <dd><input type="text" id="lastName" name="lastName" placeholder="Last Name" value="{{ dash_user.lname }}"></dd>
-                            <dt><label for="email">Email:</label></dt>
-                            <dd><input type="email" id="email" name="email" placeholder="XXXXXXX@Email.com" value="{{ user.email }}"></dd>
-                            <dt><label for="mobileNumber">Mobile Number:</label></dt>
-                            <dd><input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter Mobile Number" value="{{ dash_user.mobilenumber }}"></dd>
-                            <dt><label for="collegeName">College Name:</label></dt>
-                            <dd><input type="text" id="collegeName" name="collegeName" placeholder="Collage Name" value="{{ dash_user.collegename }}"></dd>
-                            <dt><label for="graduationYear">Graduation Year:</label></dt>
-                            <dd><input type="number" id="graduationYear" name="graduationYear" placeholder="Graduation Year" value="{{ dash_user.graduation_year }}"></dd>
-                            <dt><label for="bio">Bio :</label></dt>
-                            <dd><input type="text" id="firstName" name="firstName" placeholder="Bio" value="{{ user.bio }}"></dd>
-                            <dt><label for="fileUpload">Upload Your Photo:</label></dt>
-                            <dd><input type="file" id="fileUpload" name="fileUpload"></dd>
-                        </dl>
-                        <button type="submit">Submit</button>
-                      </form>
-                    </div>
-
-                    <div id="content3" style="display: none;font-size: xx-large;">
-                        MY COURSE COMING SOON......
-                    </div>
-
-                    <div id="content4" style="display: none;font-size: xx-large;">
-                       CERTIFICATE COMING SOON......
-                    </div>
-
-                    <div id="content5" style="display: none;font-size: xx-large;">
-                       OPEN PROJECTS COMING SOON......
-                    </div>
-
-                    <div id="content6" style="display: none;font-size: xx-large;">
-                       SETTING COMING SOON......
-                    </div>
-
-                    <div id="content7" style="display: none;font-size: xx-large;">
-                        LOGOUT:<a href="{% url 'userauths:logout' %}">
-                            <button class="btn-1">Logout</button></a>
-                    </div>
-                </div>
-            </main>
+        <p>{{ user.email }}</p>
+      </div>
+      <div class="links">
+        <div class="link">
+          <a href="{% url 'core:index' %}" class="a"
+            ><span class="material-symbols-outlined"> home </span>
+            <h2>Home</h2></a
+          >
         </div>
-    </div>
-    <script src="{% static 'dashboard/js/script.js' %}"></script>
-</body>
+        <div class="link">
+          <a href="#" id="profile" class="a activeHai">
+            <span class="material-symbols-outlined"> person </span>
+            <h2>Profile</h2></a
+          >
+        </div>
+        <div class="link">
+          <a href="#" id="course" class="a"
+            ><span class="material-symbols-outlined"> laptop_mac </span>
+            <h2>Course</h2></a
+          >
+        </div>
+        <div class="link">
+          <a href="#" id="certificate" class="a"
+            ><span class="material-symbols-outlined"> developer_guide </span>
+            <h2>Certificate</h2></a
+          >
+        </div>
+        <div class="link">
+          <a href="#" id="liveClasses" class="a">
+            <span class="material-symbols-outlined"> live_tv </span>
+            <h2>Live Classes</h2></a
+          >
+        </div>
+        <div class="link">
+          <a href="{% url 'userauths:logout' %}" class="a">
+            <span class="material-symbols-outlined"> logout </span>
+            <h2>Logout</h2></a
+          >
+        </div>
+        <div class="down">
+          <button class="in" id="up-arrow">
+            <span class="material-symbols-outlined"> expand_less </span>
+          </button>
+        </div>
+      </div>
+    </aside>
+    <section class="container">
+      <div class="just"></div>
+      <main class="main" id="main">
+        <div class="down">
+          <button class="in" id="down-arrow">
+            <span class="material-symbols-outlined"> expand_more </span>
+          </button>
+        </div>
+        <section id="head-section-content">
+          <header class="head-section" id="head-section">
+            <section class="name-section">
+              <h2>Namaskar {{ user.username }}</h2>
+              <p>It's good to see you again.</p>
+            </section>
+            <section class="searchbar-section">
+              <input type="text" class="search-bar" placeholder="Search" />
+              <span
+                class="material-symbols-outlined bell-icon"
+                id="notifications"
+              >
+                notifications
+              </span>
+            </section>
+          </header>
+        </section>
+        <section class="form-section" id="form-section">
+          <form class="form" method="POST">
+            {% csrf_token %}
+            <section class="close-details-section" id="close-details-section">
+              <div class="close-details" id="close-details">&times;</div>
+            </section>
+
+            <section class="form-content">
+              <div class="profile-image-section">
+                <section class="profile-image"></section>
+                <br />
+                <input
+                  type="file"
+                  class="upload-photo"
+                  accept="image/*"
+                  placeholder="Select Profile Photo"
+                />
+              </div>
+              <br /><br />
+              <div class="first-middle-last">
+                <div class="form-element">
+                  <label for="first-name" class="first-name"></label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    placeholder="First name"
+                    value="{{ dash_user.fname }}"
+                    name="first_name"
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="middle-name" class="middle-name"></label>
+                  <input
+                    type="text"
+                    id="middle-name"
+                    placeholder="Middle name"
+                    value="{{ dash_user.mname }}"
+                    name="middle_name"
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="last-name" class="last-name"></label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    placeholder="Last-name"
+                    value="{{ dash_user.lname }}"
+                    name="last_name"
+                  />
+                </div>
+              </div>
+              <div class="college-details">
+                <div class="form-element">
+                  <label for="college-name" class="college-name"></label>
+                  <input
+                    type="text"
+                    id="college-name"
+                    placeholder="College Name"
+                    value="{{ dash_user.collegename }}"
+                    name="college_name"
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="education" class="education"></label>
+                  <select
+                    type="text"
+                    id="education"
+                    placeholder="Education"
+                  ></select>
+                </div>
+
+                <div class="form-element">
+                  <label for="graduation-year" class="graduation-year"></label>
+                  <select
+                    type="text"
+                    id="graduation-year"
+                    placeholder="Graduation Year"
+                    value="{{ dash_user.graduation_year }}"
+                    name="graduation_year"
+                  ></select>
+                </div>
+              </div>
+              <div class="personal-details">
+                <div class="form-element">
+                  <label for="mobile-number" class="mobile-number"></label>
+                  <input
+                    type="text"
+                    id="mobile-number"
+                    placeholder="Enter Mobile Number"
+                    value="{{ dash_user.mobilenumber }}"
+                    name="mobile_number"
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="github" class="github"></label>
+
+                  <input
+                    type="text"
+                    id="github"
+                    placeholder="Github URL"
+                    required
+                  />
+                </div>
+                <div class="form-element">
+                  <label for="linkedin" class="linkdin"></label>
+
+                  <input type="text" id="linkdin" placeholder="Linkdin URL" />
+                </div>
+              </div>
+              <div class="form-element">
+                <!-- <label for="bio" class="bio"></label> -->
+                <textarea
+                  id="bio"
+                  placeholder="Bio : Your Profile Summary should mention the highlights of your career and education, what your professional interests are, and what kind of a career you are looking for. Write a meaningful summary of more than 50 characters."
+                  value="{{ dash_user.bio }}"
+                  name="bio"
+                  maxlength="50"
+                ></textarea>
+              </div>
+              <div class="socialmedia-section" id="socialmedia-section">
+                <div class="add-section">
+                  <input
+                    type="text"
+                    id="socialmedia"
+                    placeholder="Social Media URL"
+                  />
+                  <button
+                    type="button"
+                    class="socialmedia-icon"
+                    id="socialmedia-icon"
+                    onclick="addIcon()"
+                  >
+                    <span class="material-symbols-outlined add-icon">
+                      add_circle
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-element btn" id="submit-btn-section">
+                <button type="submit" class="submit-btn">Submit</button>
+              </div>
+            </section>
+          </form>
+        </section>
+        <section
+          class="registered-details-section"
+          id="registered-details-section"
+        >
+          <section class="registered-profile" id="registered-profile">
+            <!-- <div></div> -->
+            <!-- <section class="registered-photo"></section> -->
+            <section class="registered-details">
+              <section class="registered-name-section">
+                <h2 class="registered-name">{{ dash_user.fname }}</h2>
+                <button type="button" class="edit-details" id="edit-details">
+                  <span class="material-symbols-outlined"> edit </span>
+                </button>
+              </section>
+              <hr />
+              <br />
+              <div class="bio">
+                <b>Bio :</b> Your Profile Summary should mention the highlights
+                of your career and education, what your professional interests
+                are, and what kind of a career you are looking for. Write a
+                meaningful summary of more than 50 characters.
+              </div>
+              <br />
+              <div class="registered-other-details">
+                <div class="first-part">
+                  <div class="registered-college-name element">
+                    <span class="material-symbols-outlined"> school </span
+                    >{{dash_user.collegename}}
+                  </div>
+                  <div class="registered-college-name element">
+                    <span class="material-symbols-outlined">
+                      workspace_premium</span
+                    >Master of Computer Application
+                  </div>
+                  <div class="registered-graduation-year element">
+                    <span class="material-symbols-outlined"> date_range </span
+                    >2023
+                  </div>
+                  <div class="registered-github element">
+                    <span class="material-symbols-outlined"> link </span
+                    >hanuman.github.com
+                  </div>
+                </div>
+                <!-- <div class="vl"></div> -->
+                <div class="second-part">
+                  <div class="registered-mobile-number element">
+                    <span class="material-symbols-outlined"> call </span
+                    >{{dash_user.mobilenumber}}
+                  </div>
+
+                  <div class="registered-email-id element">
+                    <span class="material-symbols-outlined"> mail </span
+                    >{{user.email}}
+                  </div>
+                  <div class="registered-email-id element">
+                    <span class="material-symbols-outlined"> link </span
+                    >hanumn.linkedin.com
+                  </div>
+                  <div class="registered-socialmedia element">
+                    <span class="material-symbols-outlined"> link </span>social
+                    media
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="statistics">
+              <div class="static">
+                <div class="div1">
+                  <div class="divi">
+                    <h2>20hr</h2>
+                    <p>Tracked time</p>
+                  </div>
+                </div>
+
+                <div class="div2">
+                  <div class="divi">
+                    <h2>15</h2>
+                    <p>Finished tasks</p>
+                  </div>
+                </div>
+                <div class="div3">
+                  <div class="divi">
+                    <h2>
+                      <span class="material-symbols-outlined"> widgets </span>
+                    </h2>
+                    <p>New widget</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- //course section -->
+
+        <div class="courseDiv" id="courseDiv">
+          <h2>Enroll Courses</h2>
+
+          <section id="course-card-section">
+            {% for course in enrolled_courses %}
+            <div class="course-card">
+              <div class="card-image-section">
+                {% if course.video %}
+
+                <video
+                  id="courseVideo"
+                  width="1000"
+                  height="1000"
+                  controls
+                  style="display: none"
+                >
+                  <source src="{{ course.video.url }}" type="video/mp4" />
+                  <!--<source src="{{ course.video.url }}" type="video/webm">
+              <source src="{{ course.video.url }}" type="video/ogg"> -->
+                  Your browser does not support the video tag.
+                </video>
+                {% else %}
+                <p>No video available</p>
+                {% endif %}
+              </div>
+              <div class="card-content">
+                <div class="completed-percentage">
+                  <div class="inner" style="width: 55%"></div>
+                </div>
+                <div class="lectures-completed">55/100 lectures completed</div>
+                <h3 class="course-name">{{course.title}}</h3>
+                <div class="last-read">Last read: Layout grids</div>
+
+                <button
+                  type="button"
+                  class="resume-btn-element"
+                  onclick="playVideo()"
+                >
+                  <span class="material-symbols-outlined"> play_arrow </span
+                  >Resume Course
+                </button>
+              </div>
+            </div>
+            {% endfor %}
+          </section>
+        </div>
+        <script>
+          function playVideo() {
+            var videoElement = document.getElementById("courseVideo");
+            videoElement.style.display = "block";
+            videoElement.play();
+          }
+        </script>
+
+        <section
+          id="certificate-section"
+          style="background-color: red"
+        ></section>
+
+        <!-- live classes section -->
+
+        <section id="liveClasses-section">
+          <button type="button" class="live-card" id="live-card">
+            Course name
+          </button>
+          <div id="live-content">
+            <div class="live-card-description">
+              <div class="live-course-name">Course name</div>
+              <div class="live-batch">Batch1</div>
+              <div class="live-tutor">Tutor</div>
+              <div class="live-start-date">Starting date</div>
+              <div class="live-link">
+                <a href="#">Link for the session</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </main>
+    </section>
+  </body>
 </html>

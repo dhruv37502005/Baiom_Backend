@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+.slider-container-card {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  height: 32rem;
+  width: 22rem;
+
+  align-items: center;
+  padding: 15px;
+  transition: transform 0.8s;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(45deg, #fb8721, #fa2424) border-box;
+  border-radius: 50em;
+  border: 6px solid transparent;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 8px;
+  margin: 3em 1em;
+}
+
+.slider-container-card:hover {
+  transform: scale(1.1);
+}
+
+.person-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.person-info-01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  /* height: 12rem; */
+}
+.card-img-01 {
+  position: relative;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-img-01 img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.person-info-02 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.person-info-02 p {
+  margin: 0 0.2rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.person-info-02 .name {
+  font-size: 0.9em;
+}
+.person-info-02 .program {
+  font-size: 1em;
+}
+.person-info-02 .date {
+  font-size: 0.7em;
+}
+
+.card-body-01 p {
+  text-align: center;
+}
+.slideshow-container {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .slider-container {
+    display: none;
+  }
+
+  .slideshow-container {
+    display: block;
+  }
+}

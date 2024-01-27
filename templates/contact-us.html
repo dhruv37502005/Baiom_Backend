@@ -1,5 +1,24 @@
 {% load static %}
 {% include 'header.html' %}
+
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script>
+        // Display Django messages using SweetAlert2
+        {% if messages %}
+            document.addEventListener('DOMContentLoaded', function() {
+                {% for message in messages %}
+                    Swal.fire({
+                        icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% elif message.tags == "error" %}error{% else %}info{% endif %}',
+                        title: "{{ message|escapejs }}",
+                        showConfirmButton: false,
+                        timer: 3000  // Adjust the duration of the notification
+                    });
+                {% endfor %}
+            });
+        {% endif %}
+    </script>
+
+
     <section>
       <div class="main-contact">
         <div class="contact-left">
@@ -36,11 +55,13 @@
         <div class="main-contact-wrapper">
           <div class="contact-right">
             <h2>Submit Your <span>Details</span></h2>
-            {% if thank_you_message %}
-            <div class="thank-you-message">
-              <p>{{ thank_you_message }}</p>
-            </div>
-            {% endif %}
+            <!--{% if messages %}
+                  <ul class="messages">
+                     {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                  </ul>
+             {% endif %}-->
 
             <div class="main-comment">
               <div class="input-icons">
@@ -58,6 +79,7 @@
                       class="input-field"
                       type="email" name="email"
                       placeholder="Your Email"
+
                     />
                     <i class="fa fa-envelope icon" aria-hidden="true"></i>
                   </span>
@@ -70,19 +92,20 @@
                       type="number"
                       name="number"
                       placeholder="Phone No."
+
                     />
                     <i class="fa fa-phone icon" aria-hidden="true"></i>
                   </span>
                   <span>
                     <!-- <label for="course" class="label"> courses</label> -->
-                    <select id="cars" name="course">
+                    <select id="cars" name="course" >
                       <option value="Courses">Select Course</option>
-                      <option value="Product Development">
+                      <option value="Product Development" }>
                         Product Management
                       </option>
                       <option value=" Enterpreneurship">
                         Entrepreneurship
-                      </option>
+                      </optio n>
                       <option value="Internship">Internship</option>
                       <option value="Internship">SAP FICO</option></select
                     ><i
@@ -99,6 +122,7 @@
                     type="text"
                     rows="7"
                     cols="100"
+                    value="{{ form_data.message }}"
                   ></textarea>
 
                   <i class="fa fa-comment icon"></i>
