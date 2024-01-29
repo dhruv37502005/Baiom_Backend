@@ -3,6 +3,9 @@ from django.utils.text import slugify
 from django.utils import timezone
 # import cv2
 import datetime
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 # Create your models here.
 
 # class Author(models.Model):
@@ -29,7 +32,9 @@ import datetime
 
 class CourseCategory(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    is_itie = models.BooleanField(default=False)
 
+ 
     def __str__(self):
         return self.name
 
@@ -46,6 +51,7 @@ class Course(models.Model):
     duration_field = models.DurationField(default=timezone.timedelta)
     watch_percent = models.FloatField(blank=True,null=True)
     brochure = models.FileField(upload_to='course_brochure/',null=True,blank=True)
+    itie = models.BooleanField(default=False)
     status_choices = [
         ('active', 'Active'),
         ('inactive', 'Inactive'),
@@ -59,7 +65,16 @@ class Course(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
+    
         super().save(*args, **kwargs)
+
+
+@receiver(post_save, sender=CourseCategory)
+def update_itie(sender, instance, **kwargs):
+    courses = Course.objects.filter(category=instance)
+    for course in courses:
+        course.itie = instance.is_itie
+        course.save()   
 
 
 

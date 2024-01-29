@@ -41,6 +41,12 @@ def course_brochure(request,id):
         return response
     
 
+#@login_required(login_url='/userauths/login/')
+#def itie_courses(request,category_id):
+ #   category = get_object_or_404(CourseCategory,category_id=id)
+
+    
+
 # def categories(request):
 #     categories = CourseCategory.objects.all()
 #     print(categories)
