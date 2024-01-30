@@ -17,6 +17,7 @@ urlpatterns = [
     path('course/', include('course.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('maintenance/', maintenance_page, name='maintenance'),
+   # path('itie/',include('itie.urls')),
     # path('locked/', locked_page, name='locked'),
     # path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),
     path('blog/', include('blog.urls', namespace='blog')),

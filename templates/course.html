@@ -1,4 +1,28 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+  // Display Django messages including form errors using SweetAlert2
+  {% if messages %}
+      document.addEventListener('DOMContentLoaded', function() {
+          {% for message in messages %}
+              {% if message.tags == "error" %}
+                  Swal.fire({
+                      icon: 'error',
+                      title: "{{ message|escapejs }}",
+                      showConfirmButton: true, // Display a close button for errors
+                  });
+              {% else %}
+                  Swal.fire({
+                      icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% else %}info{% endif %}',
+                      title: "{{ message|escapejs }}",
+                      showConfirmButton: false,
+                      // timer: 5000  
+                  });
+              {% endif %}
+          {% endfor %}
+      });
+  {% endif %}
+</script>
 <div class="containerr">
   <nav class="sidebarrr">
     <ul class="sidebarrr_ul">
@@ -60,8 +84,14 @@
         <button class="offer">
          ₹ {{course.price}}
         </button>
+        {% if course.brochure %}
         <a href="{% url 'course:brochure_download' id=course.id %}"class="btn-enroll">
           download brochure
+          {% else %}
+          <button class="btn-enroll">
+            No brochure
+          </button>
+          {% endif %}
         </a>
         <hr>
         {% if course in enrolled_courses %}
