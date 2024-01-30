@@ -32,3 +32,9 @@ core/migrations/0001_initial.py
 course/migrations/0002_course_duration_field_course_watch_percent.py
 
 blog/migrations/0001_initial.py
+course/migrations/0002_course_carriculum_desc_course_carriculum_title_and_more.py
+course/migrations/0003_alter_purchase_additional_access_date_and_more.py
+course/migrations/0004_rename_end_date_purchase_purchase_end_date_and_more.py
+course/migrations/0005_batch.py
+course/migrations/0006_purchase_batch.py
+media/course_videos/k-drama__start_up___sad_scene.mp4

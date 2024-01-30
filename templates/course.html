@@ -68,9 +68,19 @@
         <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
           Enroll Now  </button>
         </a>
-        <h1>{{course}} Carriculum</h1>
+        <h1>{{course.title}} Carriculum</h1>
         <h2>{{course.carriculum_title}}</h2>
         <p>{{course.carriculum_desc}}</p>
+
+        <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button class="my-2 btn-enroll">
+          3 Month Plan  </button>
+        </a>
+        <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-6-27' %}"><button class="my-2 btn-enroll">
+          6 Month Plan  </button>
+        </a>
+        <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-9-27' %}"><button class="my-2 btn-enroll">
+          9 Month Plan  </button>
+        </a>
         {% endif %}
       </div>
       <div class="pic">
