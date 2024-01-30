@@ -38,6 +38,9 @@ def wep(request):
 def blog(request):
     return render(request, 'blog.html',{'is_blog': True})
 
+def blog_details(request):
+    return render(request, 'blog_details.html', {'is_blog_details': True})
+
 
 def pap(request):
     return render(request, 'pap.html',{'is_pap': True})

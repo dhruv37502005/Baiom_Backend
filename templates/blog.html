@@ -1,21 +1,61 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
+<!-- blog/templates/blog/category_list.html -->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - Categories</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'blog:categories' %}">My Blog</a></h1>
+    </header>
+    <main>
+        <h1>Categories</h1>
+        {% for category in categories %}
+            <a href="{% url 'blog:post_list_by_category' category.id %}">
+                <div class="category-card">
+                    {% if category.image %}
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    {% endif %}
+                    <h2>{{ category.name }}</h2>
+                    {% if category.description %}
+                    <p>{{ category.description }}</p>
+                {% endif %}
+                </div>
+            </a>
+        {% endfor %}
+    </main>
+</body>
+</html> -->
+
+
+
     <!--refer and earn SECTION-->
     <div class="swipe">
       <!-- Swiper -->
       <div class="swiper mySwiper new" style="padding: 35px, 55px">
         <div class="swiper-wrapper">
           <!-- swiper1 -->
+
+          {% for category in categories %}
+          
           <div class="swiper-slide">
             <section id="courses">
               <div class="we__offer">
                 <div class="we__offer_card">
                   <div class="course_img">
-                    <img src="images/blog1.jpg" alt="" />
+                    {% if category.image %}
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                    {% endif %}
 
                     <div class="img-text">
                       <div class="text" id="main_head">
                         <i class="fa-regular fa-folder-closed">
-                          <span>Product Development </span>
+                          <span>{{category.name}} </span>
                         </i>
                       </div>
                     </div>
@@ -34,19 +74,20 @@
                       >
                     </div>
                     <h2>
-                      Product development is not a course to learn , Its an Art
+                        {% if category.description %}
+                        <p>{{ category.description }}</p>
+                    {% endif %}
                     </h2>
 
                     <div class="subcontent">
-                      <p>
-                        An important aspect of an product development as an art
-                        is the ability to think outside the box.
-                      </p>
+                      
+                        
+                      
                       <br />
                     </div>
 
                     <a
-                      href="./blogs/Product_Development.html"
+                    href="{% url 'blog:post_list_by_category' category.id %}"
                       class="course_btn"
                     >
                       <span>Read</span> More</a
@@ -56,15 +97,17 @@
               </div>
             </section>
           </div>
+        </a>
+                  {% endfor %}
 
-          <!-- swiper2 -->
+          <!--
 
           <div class="swiper-slide">
             <section id="courses">
               <div class="we__offer">
                 <div class="we__offer_card">
                   <div class="course_img">
-                    <img src="images/blog2.jpg" alt="" />
+                    <img src="{% static 'blog/img/blog2.jpg' %}" alt="" />
 
                     <div class="img-text">
                       <div class="text" id="main_head">
@@ -108,14 +151,14 @@
             </section>
           </div>
 
-          <!-- swiper3 -->
+          
 
           <div class="swiper-slide">
             <section id="courses">
               <div class="we__offer">
                 <div class="we__offer_card">
                   <div class="course_img">
-                    <img src="./images/blog3.jpg" alt="" />
+                    <img src="{% static 'blog/img/blog3.jpg' %}" alt="" />
 
                     <div class="img-text">
                       <div class="text" id="main_head">
@@ -158,6 +201,7 @@
               </div>
             </section>
           </div>
+        -->
         </div>
         <div class="swiper-button-next nav-btn"></div>
         <div class="swiper-button-prev nav-btn"></div>
@@ -165,3 +209,4 @@
       </div>
     </div>
 {% endblock content %}
+

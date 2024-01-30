@@ -9,12 +9,11 @@
     </ul>
   </nav>
   <div>
+    {% for course in courses %}
     <section class="one">
       <div class="info">
-        <button id="certified">Certified Online Training</button>
-        
-        <div class="cards">
-          {% for course in courses %}
+        {% comment %} <button id="certified">Certified Online Training</button> {% endcomment %}
+        <!-- <div class="cards">
           <div class="custom-card">
             <div class="card-body">
               <div class="custom-progress">
@@ -22,11 +21,7 @@
                 <span>55%</span>
               </div>
               <div>
-                {% if course.image %}
-                <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
-                {% else %}
-                <p>No image available</p>
-                {% endif %}
+              
               </div>
               {% comment %} <div>{% if course.video %}
                 <video width="320" height="240" controls>
@@ -56,25 +51,48 @@
               </a>
               {% endif %}
           </div>
-          {% endfor %}
-        </div>
+        </div> -->
+        <h1>{{course.title}}</h1>
         <p>
-          Learn how to design eye-catching websites, develop attractive web
-          applications and much more with Baoiam’s Web Development Course!
+          {{course.description}}
         </p>
-        <p>Languages : <strong>Hindi, English</strong></p>
+        <p>Instructor : <strong>{{course.instructor}}</strong></p>
         <button class="offer">
-          1+1 Offer: Get Internship & Job Preparation training FREE on purchase
-          of Web Development training!
+         ₹ {{course.price}}
         </button>
-        <button class="btn-enroll" onclick="showRegistrationForm()">
-          Enroll Now
+        {% if course in enrolled_courses %}
+        <button class="btn-enroll">
+          Already Enrolled
         </button>
+        {% else %}
+        <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
+          Enroll Now  </button>
+        </a>
+        <h1>{{course.title}} Carriculum</h1>
+        <h2>{{course.carriculum_title}}</h2>
+        <p>{{course.carriculum_desc}}</p>
+
+        <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button class="my-2 btn-enroll">
+          3 Month Plan  </button>
+        </a>
+        <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-6-27' %}"><button class="my-2 btn-enroll">
+          6 Month Plan  </button>
+        </a>
+        <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-9-27' %}"><button class="my-2 btn-enroll">
+          9 Month Plan  </button>
+        </a>
+        {% endif %}
       </div>
       <div class="pic">
-        <img src="{% static 'home/img/35.jpg' %}" />
+        {% if course.image %}
+                <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
       </div>
     </section>
+    {% endfor %}
+
 
     <section class="two">
       <h1>Course <span class="underline">Highlights</span></h1>
@@ -140,7 +158,7 @@
       </div>
     </section>
 
-    <section class="three">
+    <!-- <section class="three">
       <h3 id="why-web-dev-heading-2">
         <span>Why <span class="underline">learn</span> web development?</span>
       </h3>
@@ -170,7 +188,7 @@
           <img src="{% static 'home/img/41.jpg' %}" />
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="five">
       <h3 id="placement-info-heading-2">
@@ -289,7 +307,7 @@
       </div>
     </section>
 
-    <section class="seven">
+    <!-- <section class="seven">
       <h1>Web Development Syllabus</h1>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -509,9 +527,9 @@
         </div>
       </div>
     </section>
-    <section class="nine">
-      <h1><span class="underline">Reviews</span> From Students</h1>
-      <h2>Average Rating : 4.5</h2>
+    <section class="nine"> -->
+      <!-- <h1><span class="underline">Reviews</span> From Students</h1>
+      <h2>Average Rating : 4.5</h2> -->
 
       <!-- Slider2 -->
       <section class="slider2">

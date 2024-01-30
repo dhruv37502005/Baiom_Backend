@@ -19,7 +19,7 @@ urlpatterns = [
     path('maintenance/', maintenance_page, name='maintenance'),
     # path('locked/', locked_page, name='locked'),
     # path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),
-
+    path('blog/', include('blog.urls', namespace='blog')),
     # For social auth
 
     path('auth/', include('social_django.urls', namespace='social')),
