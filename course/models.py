@@ -32,7 +32,7 @@ from django.dispatch import receiver
 
 class CourseCategory(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    is_itie = models.BooleanField(default=False)
+   # is_itie = models.BooleanField(default=False)
 
  
     def __str__(self):
@@ -69,12 +69,11 @@ class Course(models.Model):
         super().save(*args, **kwargs)
 
 
-@receiver(post_save, sender=CourseCategory)
-def update_itie(sender, instance, **kwargs):
-    courses = Course.objects.filter(category=instance)
-    for course in courses:
-        course.itie = instance.is_itie
-        course.save()   
+#@receiver(post_save, sender=CourseCategory)
+#def update_itie(sender, instance, **kwargs):
+ #   courses = Course.objects.filter(category=instance)
+  #  for course in courses:
+   ##    course.save()   
 
 
 

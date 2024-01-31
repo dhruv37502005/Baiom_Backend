@@ -15,8 +15,8 @@ from userauths.models import Dashboard_User
 @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
     category = get_object_or_404(CourseCategory, id=category_id)
-    courses = Course.objects.filter(category=category, status='active')
-    categories = CourseCategory.objects.all()
+    courses = Course.objects.filter(category=category, status='active',itie='False')
+    categories = CourseCategory.objects.all
 
     user = request.user
     if user.is_authenticated:
@@ -30,7 +30,8 @@ def category_courses(request, category_id):
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
-    
+
+@login_required(login_url='/userauths/login/')
 def course_brochure(request, id):
     try:
         document = get_object_or_404(Course, pk=id)
