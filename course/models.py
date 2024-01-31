@@ -1,10 +1,19 @@
 from django.db import models
 from django.utils.text import slugify
 from django.utils import timezone
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+Dashboard_User = get_user_model()
 # import cv2
 import datetime
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+
+
+# from userauths.models import Dashboard_User
+# course/models.py
+
+
 
 # Create your models here.
 
@@ -62,18 +71,14 @@ class Course(models.Model):
     carriculum_title = models.CharField(max_length=100, default=False)
     carriculum_desc =  models.TextField(default=False)
 
+    def __str__(self):
+        return f"{self.title}"
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
     
         super().save(*args, **kwargs)
-
-
-#@receiver(post_save, sender=CourseCategory)
-#def update_itie(sender, instance, **kwargs):
- #   courses = Course.objects.filter(category=instance)
-  #  for course in courses:
-   ##    course.save()   
 
 
 
@@ -107,8 +112,8 @@ class Course(models.Model):
    #     self.duration_field = duration_timedelta
     
     
-    def __str__(self):
-       return self.title
+    # def __str__(self):
+    #    return self.title
 
 
 
