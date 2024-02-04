@@ -404,26 +404,47 @@
           style="background-color: red"
         ></section>
 
-        <!-- live classes section -->
-
+      
+        {% for batch in batches %}
         <section id="liveClasses-section">
           <button type="button" class="live-card" id="live-card">
-            Course name
+            {{ batch.course.title }}
           </button>
           <div id="live-content">
             <div class="live-card-description">
-              <div class="live-course-name">Course name</div>
-              <div class="live-batch">Batch1</div>
-              <div class="live-tutor">Tutor</div>
-              <div class="live-start-date">Starting date</div>
+              <div class="live-course-name">Course Deacription: {{batch.couse.description}}</div>
+              <div class="live-batch">Batch Name: {{batch.batch_name}}</div>
+              <div class="live-tutor">Tutor Name: {{batch.course.instructor}}</div>
+              <div class="live-start-date">Start Date: {{batch.start_date}}</div>
               <div class="live-link">
                 <a href="#">Link for the session</a>
               </div>
+        <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Created at</th><br>
+              <th>Notes</th><br>
+              <th>Video link</th><br>
+            </tr>
+          </thead>
+          <tbody>
+            {% for resource in batch.resource_set.all %}
+              <tr>
+                <td>{{ resource.created_at }}</td>
+                <td>{% if resource.notes %}<a href="{{ resource.notes.url }}" target="_blank">View Notes</a>{% else %}No notes available{% endif %}</td><br>
+                <td>{% if resource.recorded_video_link %}<a href="{{ resource.recorded_video_link.url }}" target="_blank">View Video</a>{% else %}No video available{% endif %}</td><br>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
             </div>
           </div>
         </section>
-        
+      {% endfor %}
       </main>
-    </section>
+      </section>
   </body>
 </html>

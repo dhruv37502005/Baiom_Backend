@@ -105,6 +105,15 @@ class Purchase(models.Model):
         now = timezone.now()
         return self.end_date <= now <= self.additional_access_date
 
+class Resource(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    batch = models.ForeignKey(Batch, on_delete=models.CASCADE)
+    notes = models.FileField(upload_to='course_notes/', null=True, blank=True)
+    recorded_video_link = models.FileField(upload_to='course_recorded_lectures/',null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.course.title} - {self.created_at}"
 
   #  def save(self, *args, **kwargs):
         # Call the function to calculate and update the duration

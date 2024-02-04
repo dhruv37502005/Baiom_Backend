@@ -38,3 +38,14 @@ course/migrations/0004_rename_end_date_purchase_purchase_end_date_and_more.py
 course/migrations/0005_batch.py
 course/migrations/0006_purchase_batch.py
 media/course_videos/k-drama__start_up___sad_scene.mp4
+course/migrations/0002_batch.py
+userauths/migrations/0002_dashboard_user_enrolled_batches_and_more.py
+course/migrations/0003_course_carriculum_desc_course_carriculum_title_and_more.py
+userauths/migrations/0003_remove_dashboard_user_enrolled_batches_and_more.py
+course/migrations/0004_resource.py
+media/course_notes/gym_admin_credentials.txt
+media/course_notes/pgadmin.log
+media/course_notes/read_JglhaIm.txt
+media/course_notes/read.txt
+media/course_recorded_lectures/All_About_Django_Forms__Part_1__Django_Forms_Tutorial_rAqx2UB.mp4
+.gitignore
