@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render, redirect
-from course.models import Course,Purchase, Batch
+from course.models import Course,Purchase, Batch, Resource
 from .forms import UserUpdateForm
 from userauths.models import Dashboard_User
 from django.contrib.auth.models import User, auth
@@ -12,6 +12,8 @@ from datetime import datetime, timedelta
 
 @login_required(login_url="/userauths/login/")
 @transaction.atomic
+# FIXME: this function is handling multiple API's calls need to make sub-fuctions to pass context
+# TODO: seperate POST and GET API from this function
 def user_ui(request):
     if request.method == "GET":
         auser = request.user
@@ -25,8 +27,18 @@ def user_ui(request):
                     dashboard_user, created = Dashboard_User.objects.get_or_create(user=auser)
                     dashboard_user.save()
                 dash_user = Dashboard_User.objects.get(user_id=user.id)
-                # all_courses = Course.objects.all()
+                # get active courses if enrolled
                 enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+                # get batch of that course
+                batches = Batch.objects.filter(course__in=enrolled_courses)
+                # get notes for that batch
+                batch_notes ={}
+                for batch in batches:
+                    notes = Resource.objects.filter(batch=batch, notes__isnull=False)
+                    batch_notes[batch] = notes
+                print(f"batch_notes: {batch_notes}")
+                print(f"Batch: {batch}")
+                print(f"Notes for Batch: {notes}")
                 return render(
                     request,
                     "dashboard.html",
@@ -34,13 +46,17 @@ def user_ui(request):
                         "user": user,
                         "dash_user": dash_user,
                         "enrolled_courses": enrolled_courses,
+                        "batches": batches,
+                        "batch_notes": batch_notes,
                     },
                 )
+        # FIXME handling POST request  
         else:
+            # TODO: NEED TO CREATE A NE POST API FOR USER UPDATE
             return redirect("userauths:login")
     if request.method == "POST":
         user_profile = Dashboard_User.objects.get(user=request.user)
-
+        
     if request.method == "POST":
       #get from frontend
         first_name = request.POST.get("first_name")
