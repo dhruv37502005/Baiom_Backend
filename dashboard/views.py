@@ -29,6 +29,13 @@ def user_ui(request):
                 dash_user = Dashboard_User.objects.get(user_id=user.id)
                 # get active courses if enrolled
                 enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+                purchase_courses = Purchase.objects.filter(user=request.user)
+                todays_date = timezone.now().date()
+                print(todays_date)
+
+                ongoing_courses = [purchase.course  for purchase in purchase_courses
+                    if (purchase.purchase_end_date and purchase.additional_access_date) >todays_date]
+
                 # get batch of that course
                 batches = Batch.objects.filter(course__in=enrolled_courses)
                 # get notes for that batch
