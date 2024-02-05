@@ -50,6 +50,7 @@
 .profilePic img {
   width: 200px;
   height: 200px;
+  object-fit: cover;
 }
 .ProfileAndName h1 {
   width: 100%;
