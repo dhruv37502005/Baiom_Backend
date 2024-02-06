@@ -5,9 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 Dashboard_User = get_user_model()
 # import cv2
-import datetime
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+
 
 
 # from userauths.models import Dashboard_User
@@ -79,6 +77,39 @@ class Course(models.Model):
             self.slug = slugify(self.title)
     
         super().save(*args, **kwargs)
+
+class Batch(models.Model):
+    batch_name = models.CharField(max_length=100)
+    course = models.ForeignKey('Course', on_delete=models.CASCADE)
+    # users = models.ManyToManyField(Dashboard_User)
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+    def __str__(self):
+        return f"{self.course.title} - Batch {self.id}"
+
+
+
+class Purchase(models.Model):
+    user = models.ForeignKey(Dashboard_User, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    Batch = models.ForeignKey(Batch, on_delete=models.CASCADE, null=True, blank=True)
+    purchase_date = models.DateField(auto_now_add=True)
+    purchase_start_date = models.DateField()
+    purchase_end_date = models.DateField()
+    additional_access_date = models.DateField()
+
+    
+    def __str__(self):
+        return f"{self.course.title} - Course"
+
+    def is_course_access_valid(self):
+        now = timezone.now()
+        return self.start_date <= now <= self.end_date
+
+    def can_access_recorded_videos(self):
+        now = timezone.now()
+        return self.end_date <= now <= self.additional_access_date
 
 
 
