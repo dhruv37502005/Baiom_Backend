@@ -27,10 +27,12 @@
       </div>
       <div class="ProfileAndName">
         <div class="profilePic">
-          <img
-            src="https://imgs.search.brave.com/duA2S9Wsl1l-UlkFs_zNe144nS0QHgngWR8l3gwhS7A/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9mdW5r/eXN0YXR1cy5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MTIvSGFudW1hbi1p/bWFnZXMzNS5qcGc"
-            alt=""
-          />
+          {% if dash_user.photo %}
+          <img src="{{ dash_user.photo.url }}" alt="Profile Photo">
+      {% else %}
+          <!-- Provide a default image or use a placeholder if the user has no photo -->
+          <img src="{% static 'path/to/default/profile/photo.jpg' %}" alt="Default Profile Photo">
+      {% endif %}
         </div>
         <h1>{{ user.username }}</h1>
 
@@ -106,22 +108,18 @@
           </header>
         </section>
         <section class="form-section" id="form-section">
-          <form class="form" method="POST">
+          <form class="form" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <section class="close-details-section" id="close-details-section">
               <div class="close-details" id="close-details">&times;</div>
             </section>
 
             <section class="form-content">
+
               <div class="profile-image-section">
-                <section class="profile-image"></section>
+                <section class="profile_photo"></section>
                 <br />
-                <input
-                  type="file"
-                  class="upload-photo"
-                  accept="image/*"
-                  placeholder="Select Profile Photo"
-                />
+                <input type="file" name="profile_photo" class="profile_photo" accept="image/*" placeholder="Select Profile Photo" />
               </div>
               <br /><br />
               <div class="first-middle-last">
@@ -167,16 +165,44 @@
                     name="college_name"
                   />
                 </div>
-                <div class="form-element">
+                <div class="form-element" hidden>
                   <label for="education" class="education"></label>
                   <select
                     type="text"
                     id="education"
                     placeholder="Education"
+                    name="education"
                   ></select>
                 </div>
 
                 <div class="form-element">
+                  <label for="education" class="education"></label>
+                  <select type="text" value="{{ dash_user.education }}" name="education" placeholder="Education">
+                    <option selected disabled hidden>Education</option>
+
+                    <option value="Board of Intermediate" {% if dash_user.education == "Board of Intermediate" %}selected{% endif %}>Board of Intermediate</option>
+                    <option value="B-tech" {% if dash_user.education == "B-tech" %}selected{% endif %}>B-tech</option>
+                    <option value="MCA" {% if dash_user.education == "MCA" %}selected{% endif %}>MCA</option>
+                    <option value="Diploma" {% if dash_user.education == "Diploma" %}selected{% endif %}>Diploma</option>
+                    <option value="Ph.D." {% if dash_user.education == "Ph.D." %}selected{% endif %}>Ph.D.</option>
+                    <option value="Bachelor of Science" {% if dash_user.education == "Bachelor of Science" %}selected{% endif %}>Bachelor of Science</option>
+                    <option value="Master of Science" {% if dash_user.education == "Master of Science" %}selected{% endif %}>Master of Science</option>
+                    <option value="Bachelor of Arts" {% if dash_user.education == "Bachelor of Arts" %}selected{% endif %}>Bachelor of Arts</option>
+                    <option value="Master of Arts" {% if dash_user.education == "Master of Arts" %}selected{% endif %}>Master of Arts</option>
+                    <option value="Bachelor of Commerce" {% if dash_user.education == "Bachelor of Commerce" %}selected{% endif %}>Bachelor of Commerce</option>
+                    <option value="Master of Commerce" {% if dash_user.education == "Master of Commerce" %}selected{% endif %}>Master of Commerce</option>
+                    <option value="Bachelor of Engineering" {% if dash_user.education == "Bachelor of Engineering" %}selected{% endif %}>Bachelor of Engineering</option>
+                    <option value="Master of Engineering" {% if dash_user.education == "Master of Engineering" %}selected{% endif %}>Master of Engineering</option>
+                    <option value="Bachelor of Business Administration" {% if dash_user.education == "Bachelor of Business Administration" %}selected{% endif %}>Bachelor of Business Administration</option>
+                    <option value="Master of Business Administration" {% if dash_user.education == "Master of Business Administration" %}selected{% endif %}>Master of Business Administration</option>
+                    <option value="Bachelor of Fine Arts" {% if dash_user.education == "Bachelor of Fine Arts" %}selected{% endif %}>Bachelor of Fine Arts</option>
+                    <option value="Master of Fine Arts" {% if dash_user.education == "Master of Fine Arts" %}selected{% endif %}>Master of Fine Arts</option>
+                    <option value="Bachelor of Medicine, Bachelor of Surgery (MBBS)" {% if dash_user.education == "Bachelor of Medicine, Bachelor of Surgery (MBBS)" %}selected{% endif %}>Bachelor of Medicine, Bachelor of Surgery (MBBS)</option>
+                    <option value="Doctor of Dental Medicine (DMD)" {% if dash_user.education == "Doctor of Dental Medicine (DMD)" %}selected{% endif %}>Doctor of Dental Medicine (DMD)</option>
+                  </select>
+                </div>
+
+                <div class="form-element" hidden>
                   <label for="graduation-year" class="graduation-year"></label>
                   <select
                     type="text"
@@ -184,7 +210,25 @@
                     placeholder="Graduation Year"
                     value="{{ dash_user.graduation_year }}"
                     name="graduation_year"
-                  ></select>
+                  >
+                </select>
+                </div>
+
+
+                <div class="form-element">
+                  <label for="graduation-year" class="graduation-year"></label>
+                  <select
+                    type="text"
+                    placeholder="Graduation Year"
+                    value="{{ dash_user.graduation_year }}"
+                    name="graduation_year"
+                  >
+                  <option selected disabled hidden>Education Year</option>
+                  {% for year in years %}
+                      <option value="{{ year }}" {% if dash_user.graduation_year == year %}selected{% endif %}>{{ year }}</option>
+                  {% endfor %}
+                
+                </select>
                 </div>
               </div>
               <div class="personal-details">
@@ -204,6 +248,8 @@
                   <input
                     type="text"
                     id="github"
+                    name="github"
+                    value="{{ dash_user.github }}"
                     placeholder="Github URL"
                     required
                   />
@@ -211,21 +257,28 @@
                 <div class="form-element">
                   <label for="linkedin" class="linkdin"></label>
 
-                  <input type="text" id="linkdin" placeholder="Linkdin URL" />
+                  <input
+                    type="text"
+                    id="linkdin"
+                    name="linkedin"
+                    placeholder="Linkdin URL"
+                    value="{{ dash_user.linkedin }}"
+                  />
                 </div>
               </div>
               <div class="form-element">
                 <!-- <label for="bio" class="bio"></label> -->
                 <textarea
                   id="bio"
-                  placeholder="Bio : Your Profile Summary should mention the highlights of your career and education, what your professional interests are, and what kind of a career you are looking for. Write a meaningful summary of more than 50 characters."
                   value="{{ dash_user.bio }}"
+                  placeholder="Bio : Your Profile Summary should mention the highlights of your career and education, what your professional interests are, and what kind of a career you are looking for. Write a meaningful summary of more than 50 characters."
+                 
                   name="bio"
-                  maxlength="50"
-                ></textarea>
+                  
+                >{{ dash_user.bio }}</textarea>
               </div>
               <div class="socialmedia-section" id="socialmedia-section">
-                <div class="add-section">
+                <!-- <div class="add-section">
                   <input
                     type="text"
                     id="socialmedia"
@@ -241,7 +294,7 @@
                       add_circle
                     </span>
                   </button>
-                </div>
+                </div> -->
               </div>
 
               <div class="form-element btn" id="submit-btn-section">
@@ -267,10 +320,7 @@
               <hr />
               <br />
               <div class="bio">
-                <b>Bio :</b> Your Profile Summary should mention the highlights
-                of your career and education, what your professional interests
-                are, and what kind of a career you are looking for. Write a
-                meaningful summary of more than 50 characters.
+                <b>Bio :</b> {{dash_user.bio}}
               </div>
               <br />
               <div class="registered-other-details">
@@ -282,15 +332,15 @@
                   <div class="registered-college-name element">
                     <span class="material-symbols-outlined">
                       workspace_premium</span
-                    >Master of Computer Application
+                    >{{dash_user.education}}
                   </div>
                   <div class="registered-graduation-year element">
                     <span class="material-symbols-outlined"> date_range </span
-                    >2023
+                    >{{dash_user.graduation_year}}
                   </div>
                   <div class="registered-github element">
                     <span class="material-symbols-outlined"> link </span
-                    >hanuman.github.com
+                    >{{dash_user.github}}
                   </div>
                 </div>
                 <!-- <div class="vl"></div> -->
@@ -306,7 +356,7 @@
                   </div>
                   <div class="registered-email-id element">
                     <span class="material-symbols-outlined"> link </span
-                    >hanumn.linkedin.com
+                    >{{dash_user.linkedin}}
                   </div>
                   <div class="registered-socialmedia element">
                     <span class="material-symbols-outlined"> link </span>social
