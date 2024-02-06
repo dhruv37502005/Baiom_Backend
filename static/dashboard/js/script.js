@@ -20,7 +20,7 @@ var upArrow = document.getElementById("up-arrow");
 var live_card=document.getElementById("live-card");
 var live_close=document.getElementById("live-close");
 var live_content=document.getElementById("live-content");
-
+var course_name=document.querySelectorAll(".course-name");
 
 
 var gradYear = `<option selected disabled hidden>Graduation Year</option>`;
@@ -133,12 +133,24 @@ upArrow.addEventListener("click", () => {
 });
 
 live_card.addEventListener("click", () => {
-    if (live_content.style.display == "none") {
+    if (live_content.style.display == "block") {
 
-        live_content.style.display = "block";
-    }
-    else {
-        
         live_content.style.display = "none";
     }
+    else {
+        live_content.style.display = "block";
+        
+    }
 })
+
+course_name.forEach(function(button) {
+  button.addEventListener("click", function() {
+      var courseContent = this.nextElementSibling;
+    if (courseContent.style.display === "block") {
+        courseContent.style.display = "none";
+    } else {
+        courseContent.style.display = "block";
+    }
+  });
+});
+

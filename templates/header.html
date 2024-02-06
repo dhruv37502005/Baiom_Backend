@@ -17,7 +17,6 @@
       name="description"
       content="Baoiam is a fully-certified platform since 2020, helping millions of students through the entire world to achieve their personal and professional goals."
     />
-
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -626,8 +625,8 @@
               >
             </li>
             <li class="nav-item dropdown">
-              {% url 'core:career' as urlcareer %} {% url 'core:hire_from_us' as
-              urlhirefrom %}
+              <!-- {% url 'core:career' as urlcareer %} {% url 'core:hire_from_us' as
+              urlhirefrom %} -->
               <a
                 class="nav-link dropdown-toggle {% if request.path == urlcareer or request.path == urlhirefrom %}isactive{% endif %}"
                 href="#"
@@ -655,51 +654,14 @@
                 >
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
               {% url 'core:course' as courses %}
               <a
-                class="nav-link dropdown-toggle {% if request.path == courses %}isactive{% endif %}"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
+                class="nav-link {% if request.path == courses %}isactive{% endif %}"
+                href="{{courses}}"
                 style="font-size: 18px"
                 >Courses</a
               >
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >Web Development</a
-                >
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >DataAnalyst</a
-                >
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >DataScience</a
-                >
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >Content Writing</a
-                >
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >Graphic Designing</a
-                >
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >Seo Marketing</a
-                >
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >Digital Marketing Course</a
-                >
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >Project Management</a
-                >
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >Human Resources</a
-                >
-                <a class="dropdown-item" href="#" style="font-size: 18px"
-                  >Corporate Law</a
-                >
-              </div>
             </li>
             <li class="nav-item">
               {% url 'core:itie' as itie %}
@@ -717,7 +679,7 @@
                 class="nav-link {% if request.path == urlwep %}isactive{% endif %}"
                 href="{{urlwep}}"
                 style="font-size: 18px"
-                >WE</a
+                >WEP</a
               >
             </li>
             <li class="nav-item">
@@ -729,14 +691,15 @@
                 >Blog</a
               >
             </li>
-            <!-- <li class="nav-item">
-              {% url 'core:pap' as urlpap %} 
+            <li class="nav-item">
+              {% url 'core:pap' as urlpap %}
               <a
                 class="nav-link {% if request.path == urlpap %}isactive{% endif %}"
                 href="{{urlpap}}"
-                style="font-size: 18px;"  >PAP</a
+                style="font-size: 18px"
+                >PAP</a
               >
-            </li> -->
+            </li>
             <li class="nav-item">
               {% url 'core:refer_earn' as refer_earn %}
               <a

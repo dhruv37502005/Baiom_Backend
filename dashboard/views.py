@@ -52,7 +52,7 @@ def user_ui(request):
                     {
                         "user": user,
                         "dash_user": dash_user,
-                        "enrolled_courses": enrolled_courses,
+                        "enrolled_courses": ongoing_courses,
                         "batches": batches,
                         "batch_notes": batch_notes,
                     },
