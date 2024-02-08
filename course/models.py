@@ -76,6 +76,8 @@ class Course(models.Model):
 class Batch(models.Model):
     batch_name = models.CharField(max_length=100)
     course = models.ForeignKey('Course', on_delete=models.CASCADE)
+    is_cohort = models.BooleanField(default=False)
+    users = models.ManyToManyField(User)
     # users = models.ManyToManyField(Dashboard_User)
     start_date = models.DateField()
     end_date = models.DateField()
@@ -115,6 +117,15 @@ class Resource(models.Model):
 
     def __str__(self):
         return f"{self.course.title} - {self.created_at}"
+    
+class wep(models.Model):
+    Host = models.ForeignKey(User, on_delete=models.CASCADE)
+    Title=models.CharField(max_length=100)
+    batch = models.ForeignKey(Batch,on_delete=models.CASCADE,null=True,blank=True)
+    description = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return f"{self.Host}" - {self.batch}
 
   #  def save(self, *args, **kwargs):
         # Call the function to calculate and update the duration

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Course, CourseCategory, Purchase, Batch, Resource
-from .models import Course
+from .models import wep
 
 # Register your models here.
 
@@ -27,3 +27,5 @@ class ResourceAdmin(admin.ModelAdmin):
     get_course_title.short_description = 'Course Title'
 
 admin.site.register(Resource, ResourceAdmin)
+
+admin.site.register(wep)
