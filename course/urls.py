@@ -24,6 +24,7 @@ urlpatterns = [
     
     # path('categories/', views.categories, name='categories'),
     path('categories/<int:category_id>/', views.category_courses, name='category_courses'),
+    path('brochure/<int:id>/',views.course_brochure,name='brochure_download'),
 
 
 

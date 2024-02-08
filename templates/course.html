@@ -58,12 +58,18 @@
           </div>
         </div>
       </div>
+      {% for category in categories %}
       <div class="topsection1-image">
         <img src="{% static 'courses/img/img1.avif' %}" alt="image" />
+        {% if category.brochure %}
         <div class="topsection1-button">
           <button class="interested">I AM INTERESTED</button>
-          <button class="broucher">DOWNLOAD BROCHER</button>
+          <a href="{% url 'course:brochure_download' id=category.id %}"class="broucher">DOWNLOAD BROCHER</a>
+          {% else %}
+          <button class="broucher"> No brouchre </button>
+          {% endif %}
         </div>
+        {% endfor %}
       </div>
     </div>
 

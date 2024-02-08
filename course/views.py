@@ -6,6 +6,9 @@ from userauths.models import Dashboard_User
 from .models import Course, CourseCategory, Purchase, Batch
 from django.db.models import Sum
 from django.db import models
+from django.contrib import messages
+import logging
+from wsgiref.util import FileWrapper
 # import cv2
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -35,6 +38,22 @@ def category_courses(request, category_id):
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
 
+
+@login_required(login_url='/userauths/login/')
+def course_brochure(request, id):
+    try:
+        document = get_object_or_404(CourseCategory, pk=id)
+        brochure_path = document.brochure.path
+
+        with open(brochure_path, 'rb') as brochure:
+            wrapper = FileWrapper(brochure)
+            response = HttpResponse(wrapper, content_type='application/pdf')
+            response['Content-Disposition'] = f'inline; filename="{document.brochure.name}"'
+            return response
+
+    except Exception as e:
+        messages.error(request,f"An error occurred: {e}") 
+        return render(request, 'course.html')
 # def categories(request):
 #     categories = CourseCategory.objects.all()
 #     print(categories)
