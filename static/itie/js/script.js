@@ -48,5 +48,3 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
     }
   });
 });
-
-
