@@ -18,6 +18,8 @@ def category_courses(request, category_id):
     category = get_object_or_404(CourseCategory, id=category_id)
     courses = Course.objects.filter(category=category, status='active')
     categories = CourseCategory.objects.all()
+    course = Course.objects.get(id=category_id)
+    batches = Batch.objects.get(course=course)
     
     
     user = request.user
@@ -30,7 +32,8 @@ def category_courses(request, category_id):
             'is_category': True,
             'courses': courses,
             'enrolled_courses': enrolled_courses,
-            'categories': categories
+            'categories': categories,
+            'batch':batches
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
