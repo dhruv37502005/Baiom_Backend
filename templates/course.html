@@ -30,14 +30,67 @@
 <div class="containerr">
   <div>
     <!-- I'm interested -->
+
+
     <div class="topsection1-container">
       <div class="topsection1-content">
+
+
         <h1>Learn a <span>New Skill</span> Everyday, Anytime, and Anywhere.</h1>
         <p>
           <b>1000+</b> Courses covering all tech domains for you to learn and
           explore new opportunities. Learn from Industry Experts and land your
           Dream Job.
         </p>
+
+
+        {% for course in courses %}
+             <section class="one">
+                <div class="info">
+                   {% comment %} <button id="certified">Certified Online Training</button> {% endcomment %}
+                       <h1>{{course.title}}</h1>
+                       <p>{{course.description}}</p>
+                       <p>Instructor : <strong>{{course.instructor}}</strong></p>
+                       <button class="offer">
+                          ₹ {{course.price}}</button>
+                      {% if course in enrolled_courses %}
+                          <button class="btn-enroll">
+                            Already Enrolled</button>
+                      {% else %}
+                      <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
+                          Enroll Now  </button></a>
+                     <h4>{{course.title}} Carriculum</h4>
+                     <h4>{{course.carriculum_title}}</h4>
+                     <h4>{{course.carriculum_desc}}</h4>
+                     <h4>{{course.batch}}</h4>
+                     <h4>Batches for {{ course.title }}</h4>
+                  <ul>
+
+                    <li>{{ batch.batch_name }} - Start Date: {{ batch.start_date }} - End Date: {{ batch.end_date }}</li>
+                  </ul>
+                  <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button class="my-2 btn-enroll">
+                      3 Month Plan  </button>
+                  </a>
+                  <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-6-27' %}"><button class="my-2 btn-enroll">
+                    6 Month Plan  </button>
+                  </a>
+                   <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-9-27' %}"><button class="my-2 btn-enroll">
+                    9 Month Plan  </button>
+                  </a>
+                 {% endif %}
+      </div>
+      <div class="pic">
+        {% if course.image %}
+                <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+                {% else %}
+                <p>No image available</p>
+        {% endif %}
+      </div>
+    </section>
+    {% endfor %}
+
+
+
         <!-- <div class="topsection1-input">
           <span class="material-symbols-outlined"> search </span>
           <input type="text" placeholder="What to learn?" />

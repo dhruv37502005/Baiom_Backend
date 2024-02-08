@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'dashboard',
     'course',
     'blog',
+    'subscription',
 
     # For socialauth
     'social_django',
