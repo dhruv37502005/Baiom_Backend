@@ -397,64 +397,40 @@
 
         <div class="courseDiv" id="courseDiv">
           <h2>Enroll Courses</h2>
-
-          <section id="course-card-section">
-            {% for course in enrolled_courses %}
-            <div class="course-card">
-              <div class="card-image-section">
-                {% if course.video %}
-
-                <video
-                  id="courseVideo"
-                  width="1000"
-                  height="1000"
-                  controls
-                  style="display: none"
-                >
-                  <source src="{{ course.video.url }}" type="video/mp4" />
-                  <!--<source src="{{ course.video.url }}" type="video/webm">
-              <source src="{{ course.video.url }}" type="video/ogg"> -->
-                  Your browser does not support the video tag.
-                </video>
-                {% else %}
-                <p>No video available</p>
-                {% endif %}
+          {% for batch in batches %}
+          <section class="course-card-section">
+            <button type="button" class="course-name">{{ batch.course.title }}</button>
+            {% if batch.resource_set.all %}
+            <div class="course-card-content">
+              {% for resource in batch.resource_set.all %}
+              <div class="inner-content">
+                <span>Batch: {{ batch.course.title }}</span>
+                <span>DATE: {{ resource.created_at }}</span>
+                <section>
+                  <button type="button" class="course-resume-btn">
+                    <span class="material-symbols-outlined">
+                      play_arrow
+                    </span>
+                    <span>Resume</span>
+                  </button>
+                  <div class="notes">NOTES: {% if resource.notes %}<a href="{{ resource.notes.url }}" target="_blank">View Notes</a>{% else %}No notes available{% endif %}</a></div>
+                </section>
               </div>
-              <div class="card-content">
-                <div class="completed-percentage">
-                  <div class="inner" style="width: 55%"></div>
-                </div>
-                <div class="lectures-completed">55/100 lectures completed</div>
-                <h3 class="course-name">{{course.title}}</h3>
-                <div class="last-read">Last read: Layout grids</div>
-
-                <button
-                  type="button"
-                  class="resume-btn-element"
-                  onclick="playVideo()"
-                >
-                  <span class="material-symbols-outlined"> play_arrow </span
-                  >Resume Course
-                </button>
-              </div>
+              {% endfor %}
             </div>
-            {% endfor %}
+            {% else %}
+            <div class="no-resources">No resources available</div>
+            {% endif %}
           </section>
+          {% endfor %}
         </div>
-        <script>
-          function playVideo() {
-            var videoElement = document.getElementById("courseVideo");
-            videoElement.style.display = "block";
-            videoElement.play();
-          }
-        </script>
+        
 
         <section
           id="certificate-section"
           style="background-color: red"
         ></section>
 
-      
         {% for batch in batches %}
         <section id="liveClasses-section">
           <button type="button" class="live-card" id="live-card">
@@ -462,40 +438,26 @@
           </button>
           <div id="live-content">
             <div class="live-card-description">
-              <div class="live-course-name">Course Deacription: {{batch.couse.description}}</div>
+              <div class="live-course-name">
+                Course Description: {{batch.couse.description}}
+              </div>
               <div class="live-batch">Batch Name: {{batch.batch_name}}</div>
-              <div class="live-tutor">Tutor Name: {{batch.course.instructor}}</div>
-              <div class="live-start-date">Start Date: {{batch.start_date}}</div>
+              <div class="live-tutor">
+                Tutor Name: {{batch.course.instructor}}
+              </div>
+              <div class="live-start-date">
+                Start Date: {{batch.start_date}}
+              </div>
               <div class="live-link">
                 <a href="#">Link for the session</a>
               </div>
-        <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Created at</th><br>
-              <th>Notes</th><br>
-              <th>Video link</th><br>
-            </tr>
-          </thead>
-          <tbody>
-            {% for resource in batch.resource_set.all %}
-              <tr>
-                <td>{{ resource.created_at }}</td>
-                <td>{% if resource.notes %}<a href="{{ resource.notes.url }}" target="_blank">View Notes</a>{% else %}No notes available{% endif %}</td><br>
-                <td>{% if resource.recorded_video_link %}<a href="{{ resource.recorded_video_link.url }}" target="_blank">View Video</a>{% else %}No video available{% endif %}</td><br>
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-      
+              <div>
+              </div>
             </div>
           </div>
         </section>
-
-      {% endfor %}
+        {% endfor %}
       </main>
-      </section>
+    </section>
   </body>
 </html>

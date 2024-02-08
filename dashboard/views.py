@@ -31,18 +31,21 @@ def user_ui(request):
                     dashboard_user.save()
                 dash_user = Dashboard_User.objects.get(user_id=user.id)
                 # get active courses if enrolled
-                enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+                # enrolled_courses = dash_user.enrolled_courses.filter(status="active")
                 purchase_courses = Purchase.objects.filter(user=request.user)
                 todays_date = timezone.now().date()
                 print(todays_date)
 
                 ongoing_courses = [purchase.course  for purchase in purchase_courses
                     if (purchase.purchase_end_date and purchase.additional_access_date) >todays_date]
-
-                years = list(range(1980, 2031))
+                print(f"ongoing_courses: {ongoing_courses}")
+                years = list(range(1990, 2031))
 
                 # get batch of that course
-                batches = Batch.objects.filter(course__in=enrolled_courses)
+                batches = Batch.objects.filter(course__in=ongoing_courses)
+                print(f"batches: {batches}")
+                # get batch of that course
+                batches = Batch.objects.filter(course__in=ongoing_courses)
                 # get notes for that batch
                 batch_notes ={}
                 for batch in batches:
@@ -59,7 +62,7 @@ def user_ui(request):
                         'years': years,
                         "user": user,
                         "dash_user": dash_user,
-                        "enrolled_courses": enrolled_courses,
+                        "enrolled_courses": ongoing_courses,
                         "batches": batches,
                         "batch_notes": batch_notes,
                     },
@@ -127,19 +130,27 @@ def admin_ui(request):
             return redirect("core:index")
 
 
+
 @login_required(login_url="/userauths/login/")
 def enroll_course(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
-    dashboard_user, created = Dashboard_User.objects.get_or_create(user=request.user)
-    dashboard_user.enrolled_courses.add(course) 
-    # messages.success(request, f"You have successfully enrolled in {course.title}.")
-    return redirect("dashboard:user_ui")
+    batches = Batch.objects.filter(course_id=course_id)
+
+    if request.method == "POST":
+        batch_id = request.POST.get("batch_id")
+        if batch_id:
+            batch = get_object_or_404(Batch, pk=batch_id)
+            dashboard_user, created = Dashboard_User.objects.get_or_create(user=request.user)
+            dashboard_user.enrolled_batches.add(batch)
+    return redirect("dashboard:user_ui")  # Redirect to the dashboard
+
+
 
 @login_required(login_url="/userauths/login/")
 def enroll_plan(request, date, course_id):
     dashboard_user, created = Dashboard_User.objects.get_or_create(user=request.user)
     course = get_object_or_404(Course, pk=course_id)
-    batch = get_object_or_404(Batch, course=course)
+    batch = get_object_or_404(Batch, course_id=course_id)
     
     start_date = timezone.now()
     end_date = datetime.strptime(date, "%Y-%m-%d")
@@ -153,6 +164,7 @@ def enroll_plan(request, date, course_id):
         additional_access_date=additional_access_date
     )
     dashboard_user.enrolled_courses.add(course)
+    dashboard_user.enrolled_batches.add(batch)
 
     return redirect("dashboard:user_ui")
 
