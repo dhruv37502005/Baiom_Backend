@@ -63,7 +63,7 @@ var swiper = new Swiper(".slide-content",{
 var splide = new Splide( '.splide', {
   perPage: 3,
   perMove: 1,
-  gap    : '2rem',
+  gap    : '7rem',
   padding : '1rem',
   autowidth: 'true',
   type: 'loop',
