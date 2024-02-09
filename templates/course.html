@@ -1,4 +1,4 @@
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -596,3 +596,4 @@
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script src="{% static 'courses\js\index.js' %}"></script>
 </html>
+{% endblock content %}
