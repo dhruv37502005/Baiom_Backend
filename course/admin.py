@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course, CourseCategory, Purchase, Batch, Resource
+from .models import Course, CourseCategory, Purchase, Batch, Resource, CourseCarriculum
 from .models import Course
 
 # Register your models here.
@@ -13,6 +13,7 @@ class CourseCategoryAdmin(admin.ModelAdmin):
 admin.site.register(CourseCategory,CourseCategoryAdmin)
 
 admin.site.register(Purchase)
+admin.site.register(CourseCarriculum)
 
 class BatchAdmin(admin.ModelAdmin):
     list_display = ('batch_name',)
