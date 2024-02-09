@@ -9,6 +9,8 @@ html,body{
     height: 100%;
     overflow: hidden;
     font-family: "Poppins", sans-serif;
+    position: relative;
+
 }
 .main{
     width: 80%;
@@ -25,14 +27,14 @@ html,body{
     border-radius: 25px;
     flex-direction: row-reverse;
     align-items: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .cir{
     position: absolute;
     top: 18%;
     left: 48%;
-    width: 2000px;
-    height: 2000px;
+    width: 1200px;
+    height: 1200px;
     border-radius: 50%;
     background-image: linear-gradient(-45deg, #ff890b 0%, #f54500 100%);
     z-index: -1;
@@ -64,11 +66,11 @@ html,body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 0 80px 0 80px;
+    padding: 40px;
 }
 h1{
-    font-size: 2.2rem;
-    color: #444;
+    font-size: 25px;
+    color: black;
 }
 form{
     width: 100%;
@@ -80,13 +82,13 @@ form{
 }
 .username, .email , .password , .passwordagain {
     width: 100%;
-    max-width: 380px;
-    height: 55px;
+    max-width: 330px;
+    height: 42px;
     padding: 0 6.4px;
     background-color: transparent;
     box-shadow: 2px 4px 4px gray;
     color: black;
-    margin: 10px 0;
+    margin: 8px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,8 +96,8 @@ form{
     overflow: hidden;
 }
 form .icon{
-    width: 55px;
-    height: 55px;
+    width: 42px;
+    height: 42px;
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -104,18 +106,18 @@ form .icon{
 form .inputbox{
     width: 100%;
     height: auto;
-    font-size: 1.1rem;
+    font-size: 10px;
 
 }
 input{
     width: 100%;
-    height:55px;
+    height:42px;
     background: none;
     outline: none;
     border: none;
     line-height: 1;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 12px;
     padding-left: 5px;
     color: #333;
 }
@@ -134,7 +136,7 @@ input::placeholder {
 }
 .forgot{
     width: 100%;
-    max-width: 380px;
+    max-width: 330px;
     height: 30px;
     display: flex;
     align-items: center;
@@ -156,28 +158,30 @@ input::placeholder {
     
 }
 .circle{
-    width: 46px;
-    height: 46px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     /* background-color: red; */
     margin: 0 7.2px;
+    padding: 3px;
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
+    color: black;
     text-decoration: none;
     overflow: hidden;
 }
 .fab{
-    width:46px;
-    height: 46px;
+    width:25px;
+    height: 25px;
     display: flex;
+    border-radius: 50%;
     align-items: center;
     justify-content: center;
     /* background-color: red; */
     text-align: center;
-    color: #333;
+    color: black;
     transition: ease 0.3s;
 }
 a{
@@ -190,19 +194,28 @@ a{
 .circle .fab:hover{
     color: #ffa200;
 }
-
+.inbtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.pin{
+    display: none;
+}
 .subbtn{
-    width: 150px;
+    width: 110px;
     background: linear-gradient(45deg, #ff0000, #ffa200);
     border: none;
     outline: none;
-    height: 49px;
+    font-size: 15px;
+    height: 35px;
     border-radius: 12px;
     box-shadow: 2px 4px 4px gray;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
-    margin: 10px 0;
+    margin: 8px 0;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -213,6 +226,7 @@ a{
   }
 .socialP{
     padding: 11.5px 0;
+    font-size: 15px;
 }
 
 .box2{
@@ -250,22 +264,55 @@ a{
 }
 .oneAndSign p{
     padding: 0 10px 10px 10px;
+    margin-bottom: 5px;
 }
 .signinBtn{
     width: 110px;
+    background: linear-gradient(45deg, #ff0000, #ffa200);
+    border: none;
+    outline: none;
     height: 35px;
-    border-radius: 12px;
-    background: linear-gradient(45deg, #ff9d00, #ff0000);
-    /* border: 2px solid black; */
-    box-shadow: 2px 4px 4px gray;
-    color: white;
     display: flex;
+    font-size: 15px;
     align-items: center;
     justify-content: center;
+    border-radius: 12px;
+    box-shadow: 2px 4px 4px gray;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.signinBtnpin{
+    width: 110px;
+    background: linear-gradient(45deg, #ff0000, #ffa200);
+    border: none;
+    outline: none;
+    height: 35px;
+    display: none;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 2px 4px 4px gray;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: 0.5s;
 }
 .signinBtn:hover {
     transform: scale(1.03);
     box-shadow: 4px 8px 8px gray;
+    background: linear-gradient(45deg, #ff9d00, #ff0000);
+  }
+  .signinBtnpin:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 8px 8px gray;
+    background: linear-gradient(45deg, #ff9d00, #ff0000);
   }
 .signinBtn a{
     text-decoration: none;
@@ -285,41 +332,37 @@ a{
 .image img{
     width: 300px;
 }
-@media screen and (max-width:872px){
+@media screen and (max-width:1063px){
     .main{
-        flex-direction: column-reverse;
-    }
-    .box1{
-        width: 100%;
-        height: 80%;
-        flex-direction: column;
-    }
-    .box2{
-        width: 100%;
-        height: 20%;
-        flex-direction: row;
-        padding: 0;
-    }
-    .oneAndSign{
-        width: 60%;
-        height: 100%;
-    }
-    .img{
-        width: 30%;
-        height: 100%;
-        padding: 0;
-    }
-    .oneAndSign h2{
-        font-weight: 600;
-        font-size: 1.2rem;
-        padding: 8px;
-    }
-    .oneAndSign p{
-        font-weight: 600;
-        font-size: 0.8rem;
-    }
-    .cir{
-        top: -175%;
-        left: -110%;
+      width: 90%;
+      height: 90%;
+  }
 }
+
+@media screen and (max-width:872px){
+.main{
+  width: 94%;
+  height: 94%;
+  flex-direction: column;
+}
+  .box1{
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+  }
+  .box2{
+      display: none;
+  }
+  .container{
+      width: 100%;
+      padding:20px;
+  }
+  .pin{
+      display: block;
+  }
+  .signinBtnpin{
+      display: flex;
+  }
+
+
 }

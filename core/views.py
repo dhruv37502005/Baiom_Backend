@@ -8,19 +8,23 @@ from course.models import CourseCategory
 from django.contrib.auth import authenticate, login, logout
 
 
-def index(request):
+# def index(request):
 
-    try:
-        existing_user = User.objects.filter(email=request.user.email).exclude(username=request.user.username).first()
-        if existing_user:
-            user = User.objects.get(id=request.user.id)
-            user.delete()
-            messages.error(request, f' Email already exists {existing_user.username}')
-            return redirect('userauths:login')
-    except:
-        print("None")
+#     try:
+#         existing_user = User.objects.filter(email=request.user.email).exclude(username=request.user.username).first()
+#         if existing_user:
+#             user = User.objects.get(id=request.user.id)
+#             user.delete()
+#             messages.error(request, f' Email already exists {existing_user.username}')
+#             return redirect('userauths:login')
+#     except:
+#         print("None")
             
-    return render(request, 'index.html',{'is_index_page': True})
+#     return render(request, 'index.html',{'is_index_page': True})
+
+def index(request):
+    categories = CourseCategory.objects.all()
+    return render(request, 'index.html',{'is_index_page': True, 'categories': categories})
 
 
 def career(request):
@@ -37,6 +41,9 @@ def wep(request):
 
 def blog(request):
     return render(request, 'blog.html',{'is_blog': True})
+
+def blog_details(request):
+    return render(request, 'blog_details.html', {'is_blog_details': True})
 
 
 def pap(request):

@@ -17,7 +17,10 @@ var aside = document.getElementById("aside");
 var main = document.getElementById("main");
 var downArrow = document.getElementById("down-arrow");
 var upArrow = document.getElementById("up-arrow");
-
+var live_card=document.getElementById("live-card");
+var live_close=document.getElementById("live-close");
+var live_content=document.getElementById("live-content");
+var course_name=document.querySelectorAll(".course-name");
 
 
 var gradYear = `<option selected disabled hidden>Graduation Year</option>`;
@@ -55,6 +58,7 @@ profile.addEventListener('click' , () => {
     certificate.classList.remove("activeHai");
     liveClasses.classList.remove("activeHai");
 
+
 });
 course.addEventListener('click' , () => {
     profileDetails.style.display = "none";
@@ -87,6 +91,7 @@ liveClasses.addEventListener('click' , () => {
     course.classList.remove("activeHai");
     certificate.classList.remove("activeHai");
     liveClasses.classList.add("activeHai");
+    
 
 });
 
@@ -127,4 +132,25 @@ upArrow.addEventListener("click", () => {
     downArrow.style.display = "revert";
 });
 
+live_card.addEventListener("click", () => {
+    if (live_content.style.display == "block") {
+
+        live_content.style.display = "none";
+    }
+    else {
+        live_content.style.display = "block";
+        
+    }
+})
+
+course_name.forEach(function(button) {
+  button.addEventListener("click", function() {
+      var courseContent = this.nextElementSibling;
+    if (courseContent.style.display === "block") {
+        courseContent.style.display = "none";
+    } else {
+        courseContent.style.display = "block";
+    }
+  });
+});
 

@@ -5,7 +5,7 @@
   // GSAP animation
   gsap.from(cirElement, {
     duration: 2,
-    top: '-130%',
+    top: '-80%',
     left: '-48%',
     ease: 'power2.out',
   });
