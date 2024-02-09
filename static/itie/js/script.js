@@ -1,6 +1,10 @@
 const carousel = document.querySelector(".carousel");
 const firstCardWidth = carousel.querySelector(".testimonials").offsetWidth;
 const arrowBtns = document.querySelectorAll(".carousel i");
+const popup_form = document.getElementById("popup-form");
+const I_am_interested = document.getElementById("button-one");
+const popup_close = document.getElementById("popup-close");
+
 
 arrowBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -19,6 +23,23 @@ arrowBtnsTwo.forEach((btn) => {
       btn.id == "left" ? -plansCardWidth : plansCardWidth;
   });
 });
+
+//popup form
+
+I_am_interested.addEventListener("click", () => {
+  popup_form.style.display = "revert";
+  // document.getElementById("container").style.opacity = "0.7";
+})
+
+popup_close.addEventListener("click", () => {
+  popup_form.style.display = "none";
+})
+
+// popup_form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   popup_form.style.display = "none";
+// })
+
 
 // FAQ's
 
@@ -48,5 +69,3 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
     }
   });
 });
-
-
