@@ -184,93 +184,308 @@
     </div>
   </div>
 </footer>
-      <script
-        src="https://kit.fontawesome.com/aa16f6569f.js"
-        crossorigin="anonymous"
-      ></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-      <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-        crossorigin="anonymous"
-      ></script>
-      <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
-      ></script>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-      <script src="JS/script.js"></script>
-      <script>
-        function alertmessage() {
-          alert("You will receive a call within 60 seconds from our executive");
+ 
+  {% if is_index_page %}
+  <script
+  src="https://kit.fontawesome.com/aa16f6569f.js"
+  crossorigin="anonymous"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    {% comment %} <script src="JS/script.js"></script> ------------------------------ {% endcomment %}
+    <script>
+      function alertmessage() {
+        alert("You will receive a call within 60 seconds from our executive");
+      }
+    </script>
+  {% endif %}
+
+
+  {% if is_career %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous"
+></script>
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var lastScrollTop = 0;
+      navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", function () {
+        var scrollTop =
+          window.pageXOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+          navbar.style.top = "-100px";
+        } else {
+          navbar.style.top = "0";
         }
-      </script>
-      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput-jquery.min.js"></script>
-  
-      <script src="{% static 'home/js/otp.js' %}"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        lastScrollTop = scrollTop;
+      });
+    </script>
+    <script>
+      function alertmessage() {
+        alert("You will receive a call within 60 seconds from our executive");
+      }
+    </script>
+  {% endif %}
 
-<!-- faq -->
-{% if is_webdevelopment_page %}
+
+  {% if is_hire %}
+  <script
+      src="https://kit.fontawesome.com/aa16f6569f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
 <script>
-  // var lastScrollTop = 0;
-  // navbar = document.getElementById("navbar");
-  // window.addEventListener("scroll", function () {
-  //   console.log("navbar function called");
-  //   var scrollTop = window.pageXOffset || document.documentElement.scrollTop;
+var lastScrollTop = 0;
+navbar = document.getElementById("navbar");
+window.addEventListener("scroll", function () {
+var scrollTop =
+window.pageXOffset || document.documentElement.scrollTop;
 
-  //   if (scrollTop > lastScrollTop) {
-  //     navbar.style.top = "-100px";
-  //   } else {
-  //     navbar.style.top = "0";
-  //   }
-  //   lastScrollTop = scrollTop;
-  // });
+if (scrollTop > lastScrollTop) {
+navbar.style.top = "-100px";
+} else {
+navbar.style.top = "0";
+}
+lastScrollTop = scrollTop;
+});
 
-  const accordionItemHeaders = document.querySelectorAll(
-    ".accordion-item-header"
-  );
+const accordionItemHeaders = document.querySelectorAll(
+".accordion-item-header"
+);
 
-  accordionItemHeaders.forEach((accordionItemHeader) => {
-    accordionItemHeader.addEventListener("click", (event) => {
-      const currentlyActiveAccordionItemHeader = document.querySelector(
-        ".accordion-item-header.active"
-      );
-      if (
-        currentlyActiveAccordionItemHeader &&
-        currentlyActiveAccordionItemHeader !== accordionItemHeader
-      ) {
-        currentlyActiveAccordionItemHeader.classList.toggle("active");
-        currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-      }
+accordionItemHeaders.forEach((accordionItemHeader) => {
+accordionItemHeader.addEventListener("click", (event) => {
+const currentlyActiveAccordionItemHeader = document.querySelector(
+".accordion-item-header.active"
+);
+if (
+currentlyActiveAccordionItemHeader &&
+currentlyActiveAccordionItemHeader !== accordionItemHeader
+) {
+currentlyActiveAccordionItemHeader.classList.toggle("active");
+currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+}
 
-      accordionItemHeader.classList.toggle("active");
-      const accordionItemBody = accordionItemHeader.nextElementSibling;
-      if (accordionItemHeader.classList.contains("active")) {
-        accordionItemBody.style.maxHeight =
-          accordionItemBody.scrollHeight + "px";
-      } else {
-        accordionItemBody.style.maxHeight = 0;
-      }
-    });
-  });
+accordionItemHeader.classList.toggle("active");
+const accordionItemBody = accordionItemHeader.nextElementSibling;
+if (accordionItemHeader.classList.contains("active")) {
+accordionItemBody.style.maxHeight =
+accordionItemBody.scrollHeight + "px";
+} else {
+accordionItemBody.style.maxHeight = 0;
+}
+});
+});
 </script>
-
-<!-- slider2 -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-<script type="text/javascript" src="{% static 'course/js/slider2.js' %}"></script>
 <script>
   function alertmessage() {
     alert("You will receive a call within 60 seconds from our executive");
   }
 </script>
 
-  {% endif %}
+  {% endif %} 
 
+
+  {% if is_courses %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+  {% endif %} 
+
+  {% if is_wep %}
+  <script src="../JS/navbar.js" defer></script>
+<script
+      src="https://kit.fontawesome.com/aa16f6569f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  {% endif %} 
+
+  {% if is_blog %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  {% endif %} 
+
+  {% if is_pap %}
+  <script
+      src="https://kit.fontawesome.com/aa16f6569f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+
+  {% endif %} 
+  {% if is_refer %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+
+
+  {% endif %} 
+
+  {% if is_contactus_page %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+  {% endif %} 
+
+  {% if is_itie %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous"
+></script>
+
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+
+  {% endif %} 
+
+  {% if is_category %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+  {% endif %} 
+
+
+<script>
+  var lastScrollTop = 0;
+  navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", function () {
+  var scrollTop =
+  window.pageXOffset || document.documentElement.scrollTop;
+  
+  if (scrollTop > lastScrollTop) {
+  navbar.style.top = "-100px";
+  } else {
+  navbar.style.top = "0";
+  }
+  lastScrollTop = scrollTop;
+  });
+  
+  const accordionItemHeaders = document.querySelectorAll(
+  ".accordion-item-header"
+  );
+  
+  accordionItemHeaders.forEach((accordionItemHeader) => {
+  accordionItemHeader.addEventListener("click", (event) => {
+  const currentlyActiveAccordionItemHeader = document.querySelector(
+  ".accordion-item-header.active"
+  );
+  if (
+  currentlyActiveAccordionItemHeader &&
+  currentlyActiveAccordionItemHeader !== accordionItemHeader
+  ) {
+  currentlyActiveAccordionItemHeader.classList.toggle("active");
+  currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+  }
+  
+  accordionItemHeader.classList.toggle("active");
+  const accordionItemBody = accordionItemHeader.nextElementSibling;
+  if (accordionItemHeader.classList.contains("active")) {
+  accordionItemBody.style.maxHeight =
+  accordionItemBody.scrollHeight + "px";
+  } else {
+  accordionItemBody.style.maxHeight = 0;
+  }
+  });
+  });</script>
+  
     </body>
   </html>
