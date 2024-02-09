@@ -1,4 +1,5 @@
 {% load static %}
+{% include 'header.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,17 +60,24 @@
         </div>
       </div>
       {% for category in categories %}
-      <div class="topsection1-image">
-        <img src="{% static 'courses/img/img1.avif' %}" alt="image" />
-        {% if category.brochure %}
-        <div class="topsection1-button">
-          <button class="interested">I AM INTERESTED</button>
-          <a href="{% url 'course:brochure_download' id=category.id %}"class="broucher">DOWNLOAD BROCHER</a>
+      {% if not category.is_wep %}
+        <div class="topsection1-image">
+          {% if category.image %}
+          <img src="{{ category.image.url }}" alt="{{ category.name }} Image" />
           {% else %}
-          <button class="broucher"> No brouchre </button>
+          <img src="{% static 'courses/img/img1.avif' %}" alt="image" />
+          {% endif %}
+          {% if category.brochure %}
+            <div class="topsection1-button">
+              <button class="interested">I AM INTERESTED</button>
+              <a href="{% url 'course:brochure_download' id=category.id %}" class="broucher">DOWNLOAD BROCHURE</a>
+            </div>
+          {% else %}
+            <button class="brochure"> No brochure </button>
           {% endif %}
         </div>
-        {% endfor %}
+      {% endif %}
+    {% endfor %}
       </div>
     </div>
 

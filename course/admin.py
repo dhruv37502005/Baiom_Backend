@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Course, CourseCategory, Purchase, Batch, Resource
-from .models import wep
 
 # Register your models here.
 
@@ -28,4 +27,3 @@ class ResourceAdmin(admin.ModelAdmin):
 
 admin.site.register(Resource, ResourceAdmin)
 
-admin.site.register(wep)

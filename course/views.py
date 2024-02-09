@@ -3,9 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.shortcuts import render, get_object_or_404
 from userauths.models import Dashboard_User
-from .models import Course, CourseCategory, Purchase, Batch
+from .models import Course, CourseCategory
 from django.db.models import Sum
-from django.db import models
+from django.core.exceptions import PermissionDenied
 from django.contrib import messages
 import logging
 from wsgiref.util import FileWrapper
@@ -54,6 +54,10 @@ def course_brochure(request, id):
     except Exception as e:
         messages.error(request,f"An error occurred: {e}") 
         return render(request, 'course.html')
+    
+
+
+
 # def categories(request):
 #     categories = CourseCategory.objects.all()
 #     print(categories)

@@ -38,7 +38,9 @@ import datetime
 
 class CourseCategory(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    is_wep = models.BooleanField(default = False)
     brochure = models.FileField(upload_to='course_brochure/',null=True,blank=True)
+    image = models.ImageField(upload_to='category_images/',null = True ,blank=True )
 
     def __str__(self):
         return self.name
@@ -55,6 +57,7 @@ class Course(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     duration_field = models.DurationField(default=timezone.timedelta)
     watch_percent = models.FloatField(blank=True,null=True)
+ 
     status_choices = [
         ('active', 'Active'),
         ('inactive', 'Inactive'),
@@ -118,14 +121,6 @@ class Resource(models.Model):
     def __str__(self):
         return f"{self.course.title} - {self.created_at}"
     
-class wep(models.Model):
-    Host = models.ForeignKey(User, on_delete=models.CASCADE)
-    Title=models.CharField(max_length=100)
-    batch = models.ForeignKey(Batch,on_delete=models.CASCADE,null=True,blank=True)
-    description = models.CharField(max_length=1000)
-
-    def __str__(self):
-        return f"{self.Host}" - {self.batch}
 
   #  def save(self, *args, **kwargs):
         # Call the function to calculate and update the duration
