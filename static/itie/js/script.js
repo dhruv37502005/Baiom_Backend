@@ -1,6 +1,7 @@
 const carousel = document.querySelector(".carousel");
 const firstCardWidth = carousel.querySelector(".testimonials").offsetWidth;
 const arrowBtns = document.querySelectorAll(".carousel i");
+
 const popup_form = document.getElementById("popup-form");
 const I_am_interested = document.getElementById("button-one");
 const popup_close = document.getElementById("popup-close");
@@ -24,6 +25,7 @@ arrowBtnsTwo.forEach((btn) => {
   });
 });
 
+
 //popup form
 
 I_am_interested.addEventListener("click", () => {
@@ -39,7 +41,6 @@ popup_close.addEventListener("click", () => {
 //   e.preventDefault();
 //   popup_form.style.display = "none";
 // })
-
 
 // FAQ's
 

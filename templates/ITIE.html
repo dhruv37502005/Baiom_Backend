@@ -1,5 +1,4 @@
-{% load static %}
-
+{% extends 'base.html' %} {% load static %} {% block content %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -165,90 +164,7 @@
       <section class="section-four">
         <h2>Courses</h2>
         <div class="cards_container">
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Marketing</h4>
-            <h6>(SEO,DM.Strategic Marketing)</h6>
-            <p>
-              Gain parctical insights into creating compelling campaigns,
-              optimizing digital channel ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Web developer</h4>
-            <h6>(Frontend & Backend)</h6>
-            <p>
-              Dive into the world of development with our comprehensive course
-              ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Human Resourse</h4>
-            <h6>Management</h6>
-            <p>
-              Deep dive into the strategic and talent acquisition and employee
-              relation to performance ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>UX/UI Designing</h4>
-            <h6>Design</h6>
-            <p>
-              Gain hand-on expertise in crafting seamless digital interaction,
-              mastering us ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Graphics Designing</h4>
-            <h6>Design</h6>
-            <p>
-              Master industry-standard software to honing your artistic
-              expression, this program p ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Data Analytics</h4>
-            <h6>Bussiness</h6>
-            <p>
-              Gain proficiency in statistical analysis, and machine learning,
-              empowerning yourself to ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Bussiness Communication</h4>
-            <h6>Bussiness</h6>
-            <p>
-              Hone your interpersonal skills to master written and verbal
-              communication strategies...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
+          
           <div class="cards">
             <img src="{% static 'itie/img/img1.avif' %}" alt="" />
             <h4>Product Management</h4>
@@ -566,3 +482,4 @@
     </main>
   </body>
 </html>
+ {% endblock content %}        

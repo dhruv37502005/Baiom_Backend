@@ -10,6 +10,9 @@ import datetime
 
 class CourseCategory(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    is_wep = models.BooleanField(default = False)
+    brochure = models.FileField(upload_to='course_brochure/',null=True,blank=True)
+    image = models.ImageField(upload_to='category_images/',null = True ,blank=True )
 
     def __str__(self):
         return self.name
@@ -26,6 +29,7 @@ class Course(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     duration_field = models.DurationField(default=timezone.timedelta)
     watch_percent = models.FloatField(blank=True,null=True)
+ 
     status_choices = [
         ('active', 'Active'),
         ('inactive', 'Inactive'),
@@ -47,6 +51,8 @@ class Course(models.Model):
 class Batch(models.Model):
     batch_name = models.CharField(max_length=100)
     course = models.ForeignKey('Course', on_delete=models.CASCADE)
+    is_cohort = models.BooleanField(default=False)
+    users = models.ManyToManyField(User)
     # users = models.ManyToManyField(Dashboard_User)
     start_date = models.DateField()
     end_date = models.DateField()
@@ -86,6 +92,7 @@ class Resource(models.Model):
 
     def __str__(self):
         return f"{self.course.title} - {self.created_at}"
+    
 
 
 
