@@ -14,6 +14,13 @@ class CourseCategory(models.Model):
     def __str__(self):
         return self.name
 
+class CourseCarriculum(models.Model):
+    carriculum_title = models.CharField(max_length=100, default=False)
+    carriculum_desc =  models.TextField(default=False)
+
+    def __str__(self):
+        return self.carriculum_title
+
 class Course(models.Model):
     category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
@@ -33,8 +40,7 @@ class Course(models.Model):
     ]
     status = models.CharField(max_length=10, choices=status_choices, default='draft')
     created_at = models.DateTimeField(auto_now_add=True)
-    carriculum_title = models.CharField(max_length=100, default=False)
-    carriculum_desc =  models.TextField(default=False)
+    curriculum = models.ManyToManyField(CourseCarriculum, related_name='carriculum', blank=True)
 
     def __str__(self):
         return f"{self.title}"
