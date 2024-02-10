@@ -43,7 +43,7 @@
           Dream Job.
         </p>
 
-
+        
         {% for course in courses %}
              <section class="one">
                 <div class="info">
@@ -80,12 +80,12 @@
                  {% endif %}
       </div>
       <div class="pic">
-        {% if course.image %}
+       <!-- {% if course.image %}
                 <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
                 {% else %}
                 <p>No image available</p>
         {% endif %}
-      </div>
+      </div>  -->
     </section>
  
 
@@ -112,13 +112,20 @@
         </div>
       </div>
       <div class="topsection1-image">
-        <img src="{{ course.image.url}}" alt="image" />
-        <div class="topsection1-button">
-          <button class="interested">I AM INTERESTED</button>
-          <button class="broucher">DOWNLOAD BROCHER</button>
-        </div>
+         
+       <img src="{{ course.image.url}}" alt="image" />
+       <div class="topsection1-button">
+        <button class="interested">I AM INTERESTED</button>
+      {% for category in categories %}
+          {% if category.file and category == course.category %}
+          <a href="{% url 'course:download_file' file_id=category.id %}" class="broucher">
+            <button>DOWNLOAD BROCHURE</button> </a>  
+            {% endif %}
+        </div> 
+        {% endfor %}
       </div>
     </div>
+
  
     <!-- Program overview -->
     <section class="three">

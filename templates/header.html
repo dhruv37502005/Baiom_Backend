@@ -659,17 +659,18 @@
 
 
             <li class="nav-item dropdown">
-              {% url 'core:course' as courses %}
+             <!---- {% url 'core:course' as courses %} -->
+             
               <a
                 class="nav-link dropdown-toggle {% if request.path == courses %}isactive{% endif %}"
-                href="#"
+                href="#"    
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
-                aria-expanded="false"
+                aria-expanded="false" 
                 style="font-size: 18px"
-              >Courses</a>
+              >Courses</a>    
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for category in categories %}
                 <a
