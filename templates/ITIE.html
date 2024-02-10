@@ -1,4 +1,4 @@
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -162,7 +162,7 @@
         </div>
       </section>
 
-      <section class="section-four">
+   <!--   <section class="section-four">
         <h2>Courses</h2>
         <div class="cards_container">
           <div class="cards">
@@ -262,7 +262,24 @@
             </div>
           </div>
         </div>
-      </section>
+      </section>  -->
+      <section class="section-four">
+        <h2>Courses</h2>
+        <div class="cards_container">
+            {% for course in courses %}
+            <div class="cards">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>{{ course.title }}</h4>
+                <h6>{{ course.description }}</h6>
+                <!-- Add other fields as needed -->
+                <div class="timing">
+                    <p><span>🕓</span> 3 months</p>
+                </div>
+             </div>
+            {% endfor %}
+         </div>
+       </section>
+  
 
       <section class="section-five">
         <h2>Testimonials</h2>
@@ -448,7 +465,7 @@
               <h6>OFF</h6>
               <span>15%</span>
             </div>
-            <div class="on">
+            <div class="off">
               <p>BUY 3 CORESES & GET</p>
               <h6>OFF</h6>
               <span>20%</span>
@@ -566,3 +583,4 @@
     </main>
   </body>
 </html>
+{% endblock content %}

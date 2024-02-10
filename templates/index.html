@@ -1,355 +1,333 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <!-- Carousel section -->
 
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        // Display Django messages using SweetAlert2
-        {% if messages %}
-            document.addEventListener('DOMContentLoaded', function() {
-                {% for message in messages %}
-                    Swal.fire({
-                        icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% elif message.tags == "error" %}error{% else %}info{% endif %}',
-                        title: "{{ message|escapejs }}",
-                        showConfirmButton: false,
-                        timer: 3000  // Adjust the duration of the notification
-                    });
-                {% endfor %}
-            });
-        {% endif %}
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  // Display Django messages using SweetAlert2
+  {% if messages %}
+      document.addEventListener('DOMContentLoaded', function() {
+          {% for message in messages %}
+              Swal.fire({
+                  icon: '{% if message.tags == "success" %}success{% elif message.tags == "warning" %}warning{% elif message.tags == "error" %}error{% else %}info{% endif %}',
+                  title: "{{ message|escapejs }}",
+                  showConfirmButton: false,
+                  timer: 3000  // Adjust the duration of the notification
+              });
+          {% endfor %}
+      });
+  {% endif %}
+</script>
 
-    <div
-      class="home-section carousel slide mb-5"
-      id="carouselExampleSlidesOnly"
-      data-ride="carousel"
-      data-interval="4500"
-    >
-      <section class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="text-left d-block w-100">
-            <div class="row">
-              <div class="col-md-6 col-sm-12">
-                <h2 class="carousel-heading decrease-font-size-bigger-xl">
-                  Unlock the full potential, Upgrade your
-                  <span class="underline">Skills.</span>
-                </h2>
-                <div class="responsive">
-                  <img src="{% static 'home/img/4.jpg' %}" alt="" />
-                </div>
-                <p class="para-width-medium">
-                  Decipher your potential as a product leader with our
-                  cutting-edge, top-notch skilled trainers
-                </p>
-                <div class="home-btn">
-                  <!-- <button class="btn-1">Get Started</button> -->
-                  <a href="{% url 'core:course' %}"><button class="btn-2">Explore Our Courses</button></a>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-sm-12 laptop align-center">
-                <img class="user-image-smaller" src="{% static 'home/img/7.jpg' %}" alt="" />
-              </div>
+<div
+  class="home-section carousel slide mb-5"
+  id="carouselExampleSlidesOnly"
+  data-ride="carousel"
+  data-interval="4500"
+>
+  <section class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="text-left d-block w-100">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <h2 class="carousel-heading decrease-font-size-bigger-xl">
+              Unlock the full potential, Upgrade your
+              <span class="underline">Skills.</span>
+            </h2>
+            <div class="responsive">
+              <img src="{% static 'home/img/4.jpg' %}" alt="" />
             </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="text-left d-block w-100">
-            <div class="row">
-              <div class="col-md-6 col-sm-12">
-                <h2 class="decrease-font-size-small">
-                  Redefining the classroom experience and Empowering
-                  <span class="underline">Learners.</span>
-                </h2>
-                <div class="responsive">
-                  <img src="{% static 'home/img/18.jpg' %}" alt="" />
-                </div>
-                <p>
-                  Empower your destiny with SAP mastery, and drive excellent
-                  outcomes.
-                </p>
-                <div class="home-btn">
-                  <!-- <button class="btn-1">Get Started</button> -->
-                  <button class="btn-2">Explore Our Courses</button>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-sm-12 laptop align-center">
-                <img src="{% static 'home/img/44.jpg' %}" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="text-left d-block w-100">
-            <div class="row">
-              <div class="col-md-6 col-sm-12">
-                <h2 class="decrease-font-size-bigger">
-                  Boost your Skillset, Accelerate your
-                  <span class="underline">Career.</span>
-                </h2>
-                <div class="responsive">
-                  <img src="{% static 'home/img/22.jpg' %}" alt="" />
-                </div>
-                <p>
-                  Get ahead of the pack, and scale up new heights with the
-                  chance to interact with top CEOs and Founders.
-                </p>
-                <div class="home-btn">
-                  <!-- <button class="btn-1">Get Started</button> -->
-                  <button class="btn-2">Explore Our Courses</button>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12 laptop align-center">
-                <img src="{% static 'home/img/42.jpg' %}" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Boxes(Descriptions) -->
-    <div class="boxes ">
-        <div
-          class="row_first "
-          style="border-radius: 70px"
-        >
-          <div class="text-center">
-            <div class="icons">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div class="div_text">
-              <h2>12500+ Hrs of Learning</h2>
-              <p>
-                We have already crossed 12500+ Hrs of learning on this platform
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="row_first "
-          style="border-radius: 70px"
-        >
-          <div class="text-center">
-            <div class="icons">
-              <i class="fa-regular fa-lightbulb"></i>
-            </div>
-            <div class="div_text">
-              <h2>500+ Projects</h2>
-              <p>
-                BAOIAM has excelled in 500+ realtime Corporate and Client
-                projects.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="row_first "
-          style="border-radius: 70px"
-        >
-          <div class="text-center">
-            <div class="icons">
-              <i class="fa-solid fa-person"></i>
-            </div>
-            <div class="div_text">
-              <h2>75000+ Students</h2>
-              <p>
-                75000+ students learning from all over the world anytime.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="row_first"
-          style="border-radius: 70px"
-        >
-          <div class="text-center">
-            <div class="icons">
-              <i class="fa-solid fa-industry"></i>
-            </div>
-            <div class="div_text">
-              <h2>350+Industrial Expert</h2>
-              <p>
-                We have courses mentored by more than 350+ industrial experts.
-              </p>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <!-- Enhance skill section -->
-    <section class="section-3 mb-5" id="baoiam-info">
-      <div>
-        <div class="d-block w-100">
-          <div class="row mr-lr-0">
-            <div class="col-md-6 col-sm-12 align-center">
-              <img class="user-image" src="{% static 'home/img/39.jpg' %}" alt="" />
-            </div>
-
-            <div class="col-md-6 col-sm-12 text-left">
-              <div class="horizon">
-                <h2 class="decrease-font-size-small">
-                  Expand Your <span class="underline">Horizons,</span> Enhance
-                  Your Skills
-                </h2>
-                <p class="horizon-sub-heading" style="letter-spacing: 0.2px">
-                  BAOIAM is an E-learning platform that focuses on the overall
-                  skill development of it's learners by furnishing courses in a
-                  variety of disciplines that can help anyone level their skill
-                  & pursue their passion.
-                </p>
-                <div class="row check mx-1">
-                  <p class="col-md-5">
-                    <i class="fa-solid fa-check mr-2"></i>Self-Paced Learning
-                  </p>
-                  <p class="col-md-5">
-                    <i class="fa-solid fa-check mr-2"></i>Quality Content
-                  </p>
-                  <p class="col-md-12">
-                    <i class="fa-solid fa-check mr-2"></i>Experienced Trainers
-                  </p>
-                </div>
-
-                <div class="row mentors-outer-div">
-                  <div class="col-md-5 col-sm-5 mentors">
-                    <h4 class="mt-2">
-                      <span class="orange-color">250+</span> Mentors
-                    </h4>
-                  </div>
-
-                  <div class="col-md-7 col-sm-7 queries-outer-div">
-                    <div class="row">
-                      <img
-                        class="m-3 col-lg-3 col-md-3"
-                        src=""
-                        alt=""
-                        style="width: 40px"
-                      />
-                      <div class="col-lg-7 queries">
-                        <p>Have Queries? Click Below Link</p>
-                        <a href="{% url 'contactapp:contactus' %}"
-                          ><i
-                            class="fa-solid fa-hand-point-right orange-color"
-                            style="color: #757575"
-                          ></i>
-                          <span class="underline">Contact Us</span></a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-             
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Courses section -->
-    <section class="blogs section-2 courses mt-5 mb-5">
-      <h1>Advance your <span class="underline">career</span></h1>
-      <p class="sub-heading center-align">
-        Learn in-demand skills, Here's our best-selling courses, handpicked for
-        you.
-      </p>
-      <div class="blog-card-deck">
-        <div class="blog-card shadow">
-          <div class="card-img">
-            <img
-              class="card-img-top"
-              src="{% static 'home/img/courses/course3.jpg' %}"
-              alt="Card image cap"
-            />
-            
-          </div>
-          <div class="card-body">
-            <h6 class="card-subtitle">
-              <i class="fa-solid fa-link mr-1 orange-color"></i>Entrepreneurship
-            </h6>
-            <div>
-              <h5 class="card-title">Entrepreneurship Course</h5>
-              <p class="card-text">
-                Learn to start you own business with skills, experience and
-                knowledge.
-              </p>
-            </div>
-          </div>
-          <a href="#" class="btn-1 btn0001" style="border-radius: 50px">
-            <span>Read More</span></a
-          >
-        </div>
-
-        <div class="blog-card shadow">
-          <div class="card-img">
-            <img
-              class="card-img-top"
-              src="{% static 'home/img/courses/course1.jpg' %}"
-              alt="Card image cap"
-            />
-            
-          </div>
-          <div class="card-body">
-            <h6 class="card-subtitle">
-              <i class="fa-solid fa-link mr-1 orange-color"></i>Product
-              Management
-            </h6>
-            <h5 class="card-title">Product Management Course</h5>
-            <p class="card-text">
-              Reinvent your career with product management course
+            <p class="para-width-medium">
+              Decipher your potential as a product leader with our cutting-edge,
+              top-notch skilled trainers
             </p>
+            <div class="home-btn">
+              <!-- <button class="btn-1">Get Started</button> -->
+              <a href="{% url 'core:course' %}"
+                ><button class="btn-2">Explore Our Courses</button></a
+              >
+            </div>
           </div>
-          <a href="#" class="btn-1 btn0001" style="border-radius: 50px"
-            ><span>Read More</span></a
-          >
-        </div>
 
-        <div class="blog-card shadow">
-          <div class="card-img">
+          <div class="col-md-6 col-sm-12 laptop align-center">
             <img
-              class="card-img-top"
-              src="{% static 'home/img/courses/course2.jpg' %}"
-              alt="Card image cap"
+              class="user-image-smaller"
+              src="{% static 'home/img/7.png' %}"
+              alt=""
             />
-            
           </div>
-          <div class="card-body">
-            <h6 class="card-subtitle">
-              <i class="fa-solid fa-link mr-1 orange-color"></i>Business Ideas
-            </h6>
-            <h5 class="card-title">SAP FICO</h5>
-            <p class="card-text">Explore the field of data processing</p>
-          </div>
-          <a href="#" class="btn-1 btn0001" style="border-radius: 50px"
-            ><span>Read More</span></a
-          >
         </div>
       </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExample"
-        role="button"
-        data-bs-slide="prev"
-      >
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExample"
-        role="button"
-        data-bs-slide="next"
-      >
-      </a>
-    </section>
+    </div>
+    <div class="carousel-item">
+      <div class="text-left d-block w-100">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <h2 class="decrease-font-size-small">
+              Redefining the classroom experience and Empowering
+              <span class="underline">Learners.</span>
+            </h2>
+            <div class="responsive">
+              <img src="{% static 'home/img/18.jpg' %}" alt="" />
+            </div>
+            <p>
+              Empower your destiny with SAP mastery, and drive excellent
+              outcomes.
+            </p>
+            <div class="home-btn">
+              <!-- <button class="btn-1">Get Started</button> -->
+              <button class="btn-2">Explore Our Courses</button>
+            </div>
+          </div>
 
-    <!-- Contact us section -->
-    <!-- <section class="contact-us center-align">
+          <div class="col-md-6 col-sm-12 laptop align-center">
+            <img src="{% static 'home/img/44.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="text-left d-block w-100">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <h2 class="decrease-font-size-bigger">
+              Boost your Skillset, Accelerate your
+              <span class="underline">Career.</span>
+            </h2>
+            <div class="responsive">
+              <img src="{% static 'home/img/22.jpg' %}" alt="" />
+            </div>
+            <p>
+              Get ahead of the pack, and scale up new heights with the chance to
+              interact with top CEOs and Founders.
+            </p>
+            <div class="home-btn">
+              <!-- <button class="btn-1">Get Started</button> -->
+              <button class="btn-2">Explore Our Courses</button>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 laptop align-center">
+            <img src="{% static 'home/img/42.png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Boxes(Descriptions) -->
+<div class="boxes">
+  <div class="row_first" style="border-radius: 70px">
+    <div class="text-center">
+      <div class="icons">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div class="div_text">
+        <h2>12500+ Hrs of Learning</h2>
+        <p>We have already crossed 12500+ Hrs of learning on this platform</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row_first" style="border-radius: 70px">
+    <div class="text-center">
+      <div class="icons">
+        <i class="fa-regular fa-lightbulb"></i>
+      </div>
+      <div class="div_text">
+        <h2>500+ Projects</h2>
+        <p>
+          BAOIAM has excelled in 500+ realtime Corporate and Client projects.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row_first" style="border-radius: 70px">
+    <div class="text-center">
+      <div class="icons">
+        <i class="fa-solid fa-person"></i>
+      </div>
+      <div class="div_text">
+        <h2>75000+ Students</h2>
+        <p>75000+ students learning from all over the world anytime.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row_first" style="border-radius: 70px">
+    <div class="text-center">
+      <div class="icons">
+        <i class="fa-solid fa-industry"></i>
+      </div>
+      <div class="div_text">
+        <h2>350+Industrial Expert</h2>
+        <p>We have courses mentored by more than 350+ industrial experts.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Enhance skill section -->
+<section class="section-3 mb-5" id="baoiam-info">
+  <div>
+    <div class="d-block w-100">
+      <div class="row mr-lr-0">
+        <div class="col-md-6 col-sm-12 align-center">
+          <img class="user-image" src="{% static 'home/img/39.jpg' %}" alt="" />
+        </div>
+
+        <div class="col-md-6 col-sm-12 text-left">
+          <div class="horizon">
+            <h2 class="decrease-font-size-small">
+              Expand Your <span class="underline">Horizons,</span> Enhance Your
+              Skills
+            </h2>
+            <p class="horizon-sub-heading" style="letter-spacing: 0.2px">
+              BAOIAM is an E-learning platform that focuses on the overall skill
+              development of it's learners by furnishing courses in a variety of
+              disciplines that can help anyone level their skill & pursue their
+              passion.
+            </p>
+            <div class="row check mx-1">
+              <p class="col-md-5">
+                <i class="fa-solid fa-check mr-2"></i>Self-Paced Learning
+              </p>
+              <p class="col-md-5">
+                <i class="fa-solid fa-check mr-2"></i>Quality Content
+              </p>
+              <p class="col-md-12">
+                <i class="fa-solid fa-check mr-2"></i>Experienced Trainers
+              </p>
+            </div>
+
+            <div class="row mentors-outer-div">
+              <div class="col-md-5 col-sm-5 mentors">
+                <h4 class="mt-2">
+                  <span class="orange-color">250+</span> Mentors
+                </h4>
+              </div>
+
+              <div class="col-md-7 col-sm-7 queries-outer-div">
+                <div class="row">
+                  <img
+                    class="m-3 col-lg-3 col-md-3"
+                    src=""
+                    alt=""
+                    style="width: 40px"
+                  />
+                  <div class="col-lg-7 queries">
+                    <p>Have Queries? Click Below Link</p>
+                    <a href="{% url 'contactapp:contactus' %}"
+                      ><i
+                        class="fa-solid fa-hand-point-right orange-color"
+                        style="color: #757575"
+                      ></i>
+                      <span class="underline">Contact Us</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Courses section -->
+<section class="blogs section-2 courses mt-5 mb-5">
+  <h1>Advance your <span class="underline">career</span></h1>
+  <p class="sub-heading center-align">
+    Learn in-demand skills, Here's our best-selling courses, handpicked for you.
+  </p>
+  <div class="blog-card-deck">
+    <div class="blog-card shadow">
+      <div class="card-img">
+        <img
+          class="card-img-top"
+          src="{% static 'home/img/courses/course3.jpg' %}"
+          alt="Card image cap"
+        />
+      </div>
+      <div class="card-body">
+        <h6 class="card-subtitle">
+          <i class="fa-solid fa-link mr-1 orange-color"></i>Entrepreneurship
+        </h6>
+        <div>
+          <h5 class="card-title">Entrepreneurship Course</h5>
+          <p class="card-text">
+            Learn to start you own business with skills, experience and
+            knowledge.
+          </p>
+        </div>
+      </div>
+      <a href="#" class="btn-1 btn0001" style="border-radius: 50px">
+        <span>Read More</span></a
+      >
+    </div>
+
+    <div class="blog-card shadow">
+      <div class="card-img">
+        <img
+          class="card-img-top"
+          src="{% static 'home/img/courses/course1.jpg' %}"
+          alt="Card image cap"
+        />
+      </div>
+      <div class="card-body">
+        <h6 class="card-subtitle">
+          <i class="fa-solid fa-link mr-1 orange-color"></i>Product Management
+        </h6>
+        <h5 class="card-title">Product Management Course</h5>
+        <p class="card-text">
+          Reinvent your career with product management course
+        </p>
+      </div>
+      <a href="#" class="btn-1 btn0001" style="border-radius: 50px"
+        ><span>Read More</span></a
+      >
+    </div>
+
+    <div class="blog-card shadow">
+      <div class="card-img">
+        <img
+          class="card-img-top"
+          src="{% static 'home/img/courses/course2.jpg' %}"
+          alt="Card image cap"
+        />
+      </div>
+      <div class="card-body">
+        <h6 class="card-subtitle">
+          <i class="fa-solid fa-link mr-1 orange-color"></i>Business Ideas
+        </h6>
+        <h5 class="card-title">SAP FICO</h5>
+        <p class="card-text">Explore the field of data processing</p>
+      </div>
+      <a href="#" class="btn-1 btn0001" style="border-radius: 50px"
+        ><span>Read More</span></a
+      >
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carouselExample"
+    role="button"
+    data-bs-slide="prev"
+  >
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExample"
+    role="button"
+    data-bs-slide="next"
+  >
+  </a>
+</section>
+
+<!-- Contact us section -->
+<!-- <section class="contact-us center-align">
       <div class="row center-align">
         <div class="left" style="height: 140px">
           <h1 class="center-align">Contact us for more Information!</h1>
@@ -372,16 +350,15 @@
       </div>
     </section> -->
 
-    <!-- Virtues and Protocol section -->
-    <section class="section-3 virtues">
-      <div class="row" id="virtues-row">
-        <div class="col-md-7 col-sm-12 text-left">
-          <div class="horizon" style="border-bottom: 0">
-            <h2 class="heading mb-4 decrease-font-size-bigger">
-              Virtues and protocols <span class="underline">BAOIAM</span> works
-              on
-            </h2>
-            <!-- <div class="row mx-1">
+<!-- Virtues and Protocol section -->
+<section class="section-3 virtues">
+  <div class="row" id="virtues-row">
+    <div class="col-md-7 col-sm-12 text-left">
+      <div class="horizon" style="border-bottom: 0">
+        <h2 class="heading mb-4 decrease-font-size-bigger">
+          Virtues and protocols <span class="underline">BAOIAM</span> works on
+        </h2>
+        <!-- <div class="row mx-1">
               <p
                 id="virtues-tab-1"
                 class="col-md-5 virtue flex-grow"
@@ -389,9 +366,9 @@
               >
                 <i class="fa fa-check mr-2"></i>FULL-TIME SUPPORT -->
 
-                <!-- <input onclick="showFulltime()" id="virtues-tab-1" type="radio" class="col-lg-2 virtues-tab-item"
+        <!-- <input onclick="showFulltime()" id="virtues-tab-1" type="radio" class="col-lg-2 virtues-tab-item"
                 name="radioA" checked> FULL-TIME SUPPORT -->
-              <!-- </p>
+        <!-- </p>
               <p
                 onclick="showTrainer()"
                 id="virtues-tab-2"
@@ -399,687 +376,711 @@
               >
                 <i class="fa fa-check mr-2"></i>EXPERIENCED TRAINERS -->
 
-                <!-- <input onclick="showTrainer()" id="virtues-tab-2" type="radio" class="col-lg-2 virtues-tab-item"
+        <!-- <input onclick="showTrainer()" id="virtues-tab-2" type="radio" class="col-lg-2 virtues-tab-item"
                 name="radioA"> EXPERIENCED TRAINERS -->
-              <!-- </p>
+        <!-- </p>
               <p
                 onclick="showEase()"
                 class="col-md-5 virtue flex-grow"
                 id="virtues-tab-3"
               >
                 <i class="fa fa-check mr-2"></i>EASE OF USE -->
-                <!-- <input onclick="showEase()" id="virtues-tab-3" type="radio"
+        <!-- <input onclick="showEase()" id="virtues-tab-3" type="radio"
                 class="col-lg-2 virtues-tab-item" name="radioA"> EASE OF USE -->
-              <!-- </p>
+        <!-- </p>
             </div> -->
-            <div id="virtues-carousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-
-                <div id="virtues-tab-1-content" class="virtues-tab-content-item carousel-item active">
-                  <div class="row align-center">
-                    <div class="col">
-                      <img src="{% static 'home/img/support/1.jpg' %}" alt="" />
-                    </div>
-                    <div class="col">
-                      <h1 class="virtues-heading">FULL-TIME SUPPORT</h1>
-                      <p class="virtues-sub-heading">
-                      BAOIAM is an E-learning platform that focuses on the overall
-                      skill development of it's learners by furnishing courses in
-                      a variety of disciplines that can help anyone level their
-                      skill & pursue their passion.
-                      </p>
-                    </div>
-                  </div>
+        <div id="virtues-carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div
+              id="virtues-tab-1-content"
+              class="virtues-tab-content-item carousel-item active"
+            >
+              <div class="row align-center">
+                <div class="col">
+                  <img src="{% static 'home/img/support/1.jpg' %}" alt="" />
                 </div>
-
-                <div id="virtues-tab-2-content" class="virtues-tab-content-item carousel-item">
-                  <div class="row align-center">
-                    <div class="col">
-                      <img src="{% static 'home/img/support/2.jpg' %}" alt="" />
-                    </div>
-                    <div class="col align-center">
-                      <h1 class="virtues-heading">EXPERIENCED TRAINERS</h1>
-                      <p class="virtues-sub-heading">
-                        The guidance and expertise that the learner receives from
-                        the course is a lifetime experience. As our skilled Trainers
-                        give their best to provide you with a remembering
-                        experience.
-                      </p>
-                    </div>
-                  </div>
+                <div class="col">
+                  <h1 class="virtues-heading">FULL-TIME SUPPORT</h1>
+                  <p class="virtues-sub-heading">
+                    BAOIAM is an E-learning platform that focuses on the overall
+                    skill development of it's learners by furnishing courses in
+                    a variety of disciplines that can help anyone level their
+                    skill & pursue their passion.
+                  </p>
                 </div>
+              </div>
+            </div>
 
-                <div id="virtues-tab-3-content" class="virtues-tab-content-item carousel-item">
-                  <div class="row">
-                    <div class="col">
-                      <img src="{% static 'home/img/support/3.jpg' %}" alt="" />
-                    </div>
-                    <div class="col">
-                      <h1 class="virtues-heading">EASE OF USE</h1>
-                      <p class="virtues-sub-heading">
-                        The user-friendly interface and intuitive design of our
-                        platform make the finest learning experience. The platform
-                        is easy to navigate and understand, making it accessible to
-                        people of all age groups and backgrounds.
-                      </p>
-                    </div>
-                  </div>
+            <div
+              id="virtues-tab-2-content"
+              class="virtues-tab-content-item carousel-item"
+            >
+              <div class="row align-center">
+                <div class="col">
+                  <img src="{% static 'home/img/support/2.jpg' %}" alt="" />
+                </div>
+                <div class="col align-center">
+                  <h1 class="virtues-heading">EXPERIENCED TRAINERS</h1>
+                  <p class="virtues-sub-heading">
+                    The guidance and expertise that the learner receives from
+                    the course is a lifetime experience. As our skilled Trainers
+                    give their best to provide you with a remembering
+                    experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="virtues-tab-3-content"
+              class="virtues-tab-content-item carousel-item"
+            >
+              <div class="row">
+                <div class="col">
+                  <img src="{% static 'home/img/support/3.jpg' %}" alt="" />
+                </div>
+                <div class="col">
+                  <h1 class="virtues-heading">EASE OF USE</h1>
+                  <p class="virtues-sub-heading">
+                    The user-friendly interface and intuitive design of our
+                    platform make the finest learning experience. The platform
+                    is easy to navigate and understand, making it accessible to
+                    people of all age groups and backgrounds.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="col-md-5 col-sm-12 d-flex align-center justify-content-center"
-          id="virtues-protocol-section"
-        >
-          <img class="user-image-medium-small" src="{% static 'home/img/4.jpg' %}" alt="" />
-        </div>
       </div>
-    </section>
+    </div>
+    <div
+      class="col-md-5 col-sm-12 d-flex align-center justify-content-center"
+      id="virtues-protocol-section"
+    >
+      <img
+        class="user-image-medium-small"
+        src="{% static 'home/img/4.jpg' %}"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
 
-    <!-- How we work section -->
-    <section class="work mt-5">
-      <h1 class="decrease-font-size-bigger-xl">
-        How we <span class="underline">work?</span>
-      </h1>
-      <p class="sub-heading center-align">
-        Revolutionize the era of learning by creating high-quality content
-        courses mentored by top-notch skilled trainers with full time support &
-        live corporate trainings accompanied by placement assistance &
-        networking support.
+<!-- How we work section -->
+<section class="work mt-5">
+  <h1 class="decrease-font-size-bigger-xl">
+    How we <span class="underline">work?</span>
+  </h1>
+  <p class="sub-heading center-align">
+    Revolutionize the era of learning by creating high-quality content courses
+    mentored by top-notch skilled trainers with full time support & live
+    corporate trainings accompanied by placement assistance & networking
+    support.
+  </p>
+
+  <div class="contents">
+    <div class="steps">
+      <img src="{% static 'home/img/step1.png' %}" alt="" />
+      <h5>Learn with top experts</h5>
+      <p>
+        Get your confusion replaced with confidence and doubts with solution
+        under the guidance of our top experts
       </p>
+    </div>
+    <div class="steps">
+      <img src="{% static 'home/img/step2.png' %}" alt="" />
+      <h5>Community discussion</h5>
+      <p>
+        Attend the regular and planned community discussions to share and
+        support innovative ideas and dreams.
+      </p>
+    </div>
+    <div class="steps step-3">
+      <img src="{% static 'home/img/step3.png' %}" alt="" />
+      <h5>Live Corporate projects</h5>
+      <p>
+        Work on live projects and get the practical knowledge required to boost
+        up your career
+      </p>
+    </div>
+    <div class="steps step-4">
+      <img src="{% static 'home/img/step4.png' %}" alt="" />
+      <h5>Placement Assistance</h5>
+      <p>
+        Learn to crack interviews from our experienced trainers and get placed
+        at top companies.
+      </p>
+    </div>
+    <div class="steps last">
+      <img src="{% static 'home/img/step5.png' %}" alt="" />
+      <h5>Networking and Investment Support</h5>
+      <p>
+        Master the art of networking by enhancing your communication skills and
+        get the financial aid to start your business.
+      </p>
+    </div>
+  </div>
+</section>
 
-      <div class="contents">
-        <div class="steps">
-          <img src="{% static 'home/img/step1.png' %}" alt="" />
-          <h5>Learn with top experts</h5>
-          <p>
-            Get your confusion replaced with confidence and doubts with solution
-            under the guidance of our top experts
-          </p>
+<!-- Meet Our expert section -->
+<section class="expert center-align">
+  <div class="center-align wrapper">
+    <div class="row center-align mb-5">
+      <div class="col-lg-12 row">
+        <div class="col-lg-6">
+          <h1 style="color: #fff">Meet Our Experts</h1>
         </div>
-        <div class="steps">
-          <img src="{% static 'home/img/step2.png' %}" alt="" />
-          <h5>Community discussion</h5>
-          <p>
-            Attend the regular and planned community discussions to share and
-            support innovative ideas and dreams.
-          </p>
-        </div>
-        <div class="steps step-3">
-          <img src="{% static 'home/img/step3.png' %}" alt="" />
-          <h5>Live Corporate projects</h5>
-          <p>
-            Work on live projects and get the practical knowledge required to
-            boost up your career
-          </p>
-        </div>
-        <div class="steps step-4">
-          <img src="{% static 'home/img/step4.png' %}" alt="" />
-          <h5>Placement Assistance</h5>
-          <p>
-            Learn to crack interviews from our experienced trainers and get
-            placed at top companies.
-          </p>
-        </div>
-        <div class="steps last">
-          <img src="{% static 'home/img/step5.png' %}" alt="" />
-          <h5>Networking and Investment Support</h5>
-          <p>
-            Master the art of networking by enhancing your communication skills
-            and get the financial aid to start your business.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Meet Our expert section -->
-    <section class="expert center-align">
-      <div class="center-align wrapper">
-        <div class="row center-align mb-5">
-          <div class="col-lg-12 row">
-            <div class="col-lg-6">
-              <h1 style="color: #fff">Meet Our Experts</h1>
-            </div>
-            <div class="col-lg-6 row">
-              <p class="col-lg-1 line"></p>
-              <div class="col-lg-11 text">
-                BAOIAM students get mentored by the industry experts who have
-                achieved mastery in their respective domains & are passionate
-                about helping students to achieve their dreams.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="experts">
-          <div class="expertImage" id="left">
-            <img src="{% static 'home/img/intern4.jpg' %}" alt="" class="meet_img" />
-            <div class="about">
-              <h4>Prasun Kumar</h4>
-              <p>R&D Lead</p>
-            </div>
-          </div>
-          <div class="expertImage">
-            <img src="{% static 'home/img/15.jpg' %}" alt="" class="meet_img" />
-            <div class="about">
-              <h4>Surbhi Vandana</h4>
-              <p>Project Manager</p>
-            </div>
-          </div>
-          <div class="expertImage">
-            <img src="{% static 'home/img/intern1.jpg' %}" alt="" class="meet_img" />
-            <div class="about">
-              <h4>Vipakshi Joshi</h4>
-              <p>Senior Website developer</p>
-            </div>
-          </div>
-          <div class="expertImage" id="right">
-            <img src="{% static 'home/img/intern6.jpg' %}" alt="" class="meet_img" />
-            <div class="about">
-              <h4>Prajwal</h4>
-              <p>Software Testing Expert</p>
-            </div>
+        <div class="col-lg-6 row">
+          <p class="col-lg-1 line"></p>
+          <div class="col-lg-11 text">
+            BAOIAM students get mentored by the industry experts who have
+            achieved mastery in their respective domains & are passionate about
+            helping students to achieve their dreams.
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Tabs -->
-    <section class="section-4">
-      <div id="downloads" class="">
-        <ul class="nav nav-pills">
-          <li id="tab-1" class="nav-item tab-item">
-            <p>Our Services</p>
+    <div class="experts">
+      <div class="expertImage" id="left">
+        <img
+          src="{% static 'home/img/intern4.jpg' %}"
+          alt=""
+          class="meet_img"
+        />
+        <div class="about">
+          <h4>Prasun Kumar</h4>
+          <p>R&D Lead</p>
+        </div>
+      </div>
+      <div class="expertImage">
+        <img src="{% static 'home/img/15.jpg' %}" alt="" class="meet_img" />
+        <div class="about">
+          <h4>Surbhi Vandana</h4>
+          <p>Project Manager</p>
+        </div>
+      </div>
+      <div class="expertImage">
+        <img
+          src="{% static 'home/img/intern1.jpg' %}"
+          alt=""
+          class="meet_img"
+        />
+        <div class="about">
+          <h4>Vipakshi Joshi</h4>
+          <p>Senior Website developer</p>
+        </div>
+      </div>
+      <div class="expertImage" id="right">
+        <img
+          src="{% static 'home/img/intern6.jpg' %}"
+          alt=""
+          class="meet_img"
+        />
+        <div class="about">
+          <h4>Prajwal</h4>
+          <p>Software Testing Expert</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tabs -->
+<section class="section-4">
+  <div id="downloads" class="">
+    <ul class="nav nav-pills">
+      <li id="tab-1" class="nav-item tab-item">
+        <p>Our Services</p>
+      </li>
+      <li id="tab-2" class="nav-item tab-item">
+        <p>Our features</p>
+      </li>
+      <li id="tab-3" class="nav-item tab-item">
+        <p>Perks</p>
+      </li>
+      <li id="tab-4" class="nav-item tab-item">
+        <p>Top reviews overview</p>
+      </li>
+    </ul>
+    <br />
+  </div>
+
+  <!-- Tab Content 1 -->
+  <div id="tab-1-content" class="tab-content-item show">
+    <div class="col-md-12 col-sm-12">
+      <h2 class="tabs-content-heading">
+        Expand your <span class="underline">knowledge</span>, boost up your
+        <span class="underline">career</span>.
+      </h2>
+      <p class="mt-4 mb-4 tabs-content-subheading">
+        Baoiam provides various services, including personalized career
+        counselling, resume and cover letter writing, interview preparation, and
+        networking oppurtunities to ensure students' career growth is
+        accelerated.
+      </p>
+    </div>
+    <div class="row col-md-12 col-sm-12">
+      <div class="col-md-4 col-sm-12">
+        <img
+          src="{% static 'home/img/tab1img.png' %}"
+          alt=""
+          style="border-radius: 10px"
+        />
+      </div>
+      <div class="list col-md-7 col-sm-12">
+        <ul style="list-style-type: none">
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Counseling
+            </p>
           </li>
-          <li id="tab-2" class="nav-item tab-item">
-            <p>Our features</p>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Mentorship
+            </p>
           </li>
-          <li id="tab-3" class="nav-item tab-item">
-            <p>Perks</p>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Assistance
+            </p>
           </li>
-          <li id="tab-4" class="nav-item tab-item">
-            <p>Top reviews overview</p>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Networking
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Investment
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Support
+            </p>
           </li>
         </ul>
-        <br />
       </div>
-
-      <!-- Tab Content 1 -->
-      <div id="tab-1-content" class="tab-content-item show">
-        <div class="col-md-12 col-sm-12">
-          <h2 class="tabs-content-heading">
-            Expand your <span class="underline">knowledge</span>, boost up your
-            <span class="underline">career</span>.
-          </h2>
-          <p class="mt-4 mb-4 tabs-content-subheading">
-            Baoiam provides various services, including personalized career
-            counselling, resume and cover letter writing, interview preparation,
-            and networking oppurtunities to ensure students' career growth is
-            accelerated.
-          </p>
-        </div>
-        <div class="row col-md-12 col-sm-12">
-          <div class="col-md-4 col-sm-12">
-            <img src="{% static 'home/img/tab1img.png' %}" alt="" style="border-radius: 10px" />
-          </div>
-          <div class="list col-md-7 col-sm-12">
-            <ul style="list-style-type: none">
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Counseling
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Mentorship
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Assistance
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Networking
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Investment
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Support
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab Content 2 -->
-      <div id="tab-2-content" class="tab-content-item">
-        <div class="col-md-12 col-sm-12">
-          <h2 class="tabs-content-heading">
-            Accelerate your career, unleash your
-            <span class="underline">potential</span>
-          </h2>
-          <p class="mt-4 mb-4 tabs-content-subheading">
-            Baoiam provides various features like live expert classes, mock
-            tests, and real-time projects to make sure students' career growth
-            is accelerated. These interactive sessions provide students with the
-            oppotunity to learn from the best, ask questioins, clear doubts, and
-            receive proper feedback.
-          </p>
-        </div>
-        <div class="row col-md-12 col-sm-12">
-          <div class="col-md-4 col-sm-12">
-            <img src="{% static 'home/img/tab2img.png' %}" alt="" style="border-radius: 10px" />
-          </div>
-          <div class="list col-md-7 col-sm-12">
-            <ul style="list-style-type: none">
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Live Experts
-                  Classes
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Doubts & Query
-                  Sessions
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Real-Time Projects
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Interview
-                  Preparations
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Internships and
-                  Trainings
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Mock and
-                  Assessments
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab Content 3 -->
-      <div id="tab-3-content" class="tab-content-item">
-        <div class="col-md-12 col-sm-12">
-          <h2 class="tabs-content-heading">
-            Perks <span class="underline">strengthen & reinforce</span> company
-            culture
-          </h2>
-          <p class="mt-4 mb-4 tabs-content-subheading">
-            Companies often provide various perks to their employees in order to
-            enhance their overall job satisfaction and wellbeing. Some of the
-            most common perks offered by companies include.
-          </p>
-        </div>
-        <div class="row col-md-12 col-sm-12">
-          <div class="col-md-4 col-sm-12">
-            <img src="{% static 'home/img/tab1img.png' %}" alt="" style="border-radius: 10px" />
-          </div>
-          <div class="list col-md-7 col-sm-12">
-            <ul style="list-style-type: none">
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>100% Academic and
-                  Employment Opportunities
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Placement
-                  Assistance
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Group Discussion
-                  Rounds
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Personal
-                  Interaction with top leaders
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Membership Access
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Hackathons and
-                  Contest Entries
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab Content 4 -->
-      <div id="tab-4-content" class="tab-content-item">
-        <div class="col-md-12 col-sm-12">
-          <h2 class="tabs-content-heading">
-            Result speak more <span class="underline">louder</span> than words
-          </h2>
-          <p class="mt-4 mb-4 tabs-content-subheading">
-            These are some of the top reviews of our company by our learners.
-          </p>
-        </div>
-        <div class="row col-md-12 col-sm-12">
-          <div class="col-md-4 col-sm-12">
-            <img src="{% static 'home/img/tab4img.png' %}" alt="" style="border-radius: 10px" />
-          </div>
-          <div class="list col-md-7 col-sm-12">
-            <ul style="list-style-type: none">
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Got placed in MNC's
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Highest Packages
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Contest Winners
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Skilled
-                  Proffesionals
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Get Investment
-                </p>
-              </li>
-              <li>
-                <p class="col-md-12">
-                  <i class="fa-solid fa-check mr-2 mt-3"></i>Premium Members
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Carousel 2nd -->
-    <div
-      class="home-section carousel slide carousel2"
-      id="carouselExampleSlidesOnly"
-      data-ride="carousel"
-      data-interval="5000"
-    >
-      <section class="carousel-inner" style="padding-bottom: 0">
-        <div class="carousel-item active">
-          <div class="text-left d-block w-100">
-            <div class="row">
-              <div class="col-md-6 col-sm-12 img-none">
-                <img src="{% static 'home/img/slide1.png' %}" alt="" />
-              </div>
-              <div class="col-md-6 col-sm-12 h2-dec">
-                <h2 class="heading2">
-                  BAOIAM <br /><span class="heading2 heading2_underline"
-                    >'IONS.</span
-                  >
-                </h2>
-                <br />
-                <p>
-                  Customer feedback is really a boost for improving the quality
-                  of courses with time. Let's see how our learners transformed
-                  their career jouney after learning with us.
-                </p>
-                <p class="quote">
-                  <span class="special">❝</span>I am elated to share that I got
-                  placed as a Risk Consultant at PWC with a package of 9 LPA. I
-                  would like to thank the BAOIAM team for its immense support &
-                  guidance. My mentor was very helpful & has been very
-                  particular about my preparation throughout, even if I would
-                  miss out something she would point it out which helped me in
-                  preparing better.<span class="special">❞</span>
-                </p>
-              </div>
-              <div class="col-md-6 col-sm-12 row imginfo">
-                <div class="col-md-2 col-sm-4 col-6">
-                  <img src="{% static 'home/img/slide1.png' %}" alt="" />
-                </div>
-                <div class="col-md-6 infoimg">
-                  <h5>Apurva Kulpe</h5>
-                  <p class="about-slide">Risk Consultant PwC</p>
-                  <p class="about-slide">9 LPA CTC</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="text-left d-block w-100">
-            <div class="row">
-              <div class="col-md-6 col-sm-12 img-none">
-                <img src="{% static 'home/img/slide2.png' %}" alt="" />
-              </div>
-              <div class="col-md-6 col-sm-12 h2-dec">
-                <h2 class="heading2">
-                  BAOIAM <br /><span class="heading2 heading2_underline"
-                    >'IONS.</span
-                  >
-                </h2>
-                <br />
-                <p>
-                  Customer feedback is really a boost for improving the quality
-                  of courses with time. Let's see how our learners transformed
-                  their career jouney after learning with us.
-                </p>
-                <p class="quote">
-                  <span class="special">❝</span>I am elated to share that I got
-                  placed as a Risk Consultant at PWC with a package of 9 LPA. I
-                  would like to thank the BAOIAM team for its immense support &
-                  guidance. My mentor was very helpful & has been very
-                  particular about my preparation throughout, even if I would
-                  miss out something she would point it out which helped me in
-                  preparing better.<span class="special">❞</span>
-                </p>
-              </div>
-              <div class="col-md-6 col-sm-12 row imginfo">
-                <div class="col-md-2 col-sm-4 col-6 active">
-                  <img src="{% static 'home/img/slide2.png' %}" alt="" />
-                </div>
-                <div class="col-md-6 infoimg">
-                  <h5>Ritesh Rana</h5>
-                  <p class="about-slide">Software Developer (Byjus)</p>
-                  <p class="about-slide">9 LPA CTC</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="text-left d-block w-100">
-            <div class="row">
-              <div class="col-md-6 col-sm-12 img-none">
-                <img src="{% static 'home/img/slide2.png' %}" alt="" />
-              </div>
-              <div class="col-md-6 col-sm-12 h2-dec">
-                <h2 class="heading2">
-                  BAOIAM <br /><span class="heading2 heading2_underline"
-                    >'IONS.</span
-                  >
-                </h2>
-                <br />
-                <p>
-                  Customer feedback is really a boost for improving the quality
-                  of courses with time. Let's see how our learners transformed
-                  their career jouney after learning with us.
-                </p>
-                <p class="quote">
-                  <span class="special">❝</span>I am elated to share that I got
-                  placed as a Risk Consultant at PWC with a package of 9 LPA. I
-                  would like to thank the BAOIAM team for its immense support &
-                  guidance. My mentor was very helpful & has been very
-                  particular about my preparation throughout, even if I would
-                  miss out something she would point it out which helped me in
-                  preparing better.<span class="special">❞</span>
-                </p>
-              </div>
-              <div class="col-md-6 col-sm-12 row imginfo">
-                <div class="col-md-2 col-sm-4 col-6">
-                  <img src="{% static 'home/img/slide2.png' %}" alt="" />
-                </div>
-                <div class="col-md-6 infoimg">
-                  <h5>Padi Akhil</h5>
-                  <p class="about-slide">Associate Software Engineer EY</p>
-                  <p class="about-slide">18 LPA CTC</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
+  </div>
 
-
-    <div class="otp-section">
-      <section class="FormContainer" style="padding-bottom: 0.5rem">
-        <div class="box_1">
-          <form action="">
-            <h2>
-              Crack your <span class="underline">goal</span> with India’s
-              <span class="underline">top</span> educators
-            </h2>
-            <p class="firstp">
-              Over 10 crore learners trust us for their preparation
+  <!-- Tab Content 2 -->
+  <div id="tab-2-content" class="tab-content-item">
+    <div class="col-md-12 col-sm-12">
+      <h2 class="tabs-content-heading">
+        Accelerate your career, unleash your
+        <span class="underline">potential</span>
+      </h2>
+      <p class="mt-4 mb-4 tabs-content-subheading">
+        Baoiam provides various features like live expert classes, mock tests,
+        and real-time projects to make sure students' career growth is
+        accelerated. These interactive sessions provide students with the
+        oppotunity to learn from the best, ask questioins, clear doubts, and
+        receive proper feedback.
+      </p>
+    </div>
+    <div class="row col-md-12 col-sm-12">
+      <div class="col-md-4 col-sm-12">
+        <img
+          src="{% static 'home/img/tab2img.png' %}"
+          alt=""
+          style="border-radius: 10px"
+        />
+      </div>
+      <div class="list col-md-7 col-sm-12">
+        <ul style="list-style-type: none">
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Live Experts Classes
             </p>
-            <br />
-
-            <input
-              type="number"
-              id="phone"
-              placeholder="Enter your mobile number"
-              required
-            />
-
-            <div class="otpAndDate">
-              <p class="otpParagraph" style="color: #5e5e5e; font-size: 14px">
-                We’ll send an OTP for verification
-              </p>
-
-              <label for="date"></label>
-              <input
-                type="text"
-                id="date"
-                placeholder="Select a date"
-                onfocus="this.type='date'"
-                .onblur="this.type='text'"
-                required
-              />
-            </div>
-            <div id="otp-section" style="display: none">
-              <label for="otp"></label>
-              <input
-                type="text"
-                id="otp"
-                placeholder="Enter the OTP received"
-                required
-              />
-            </div>
-            <div class="btnDiv">
-              <button
-                id="genOtpBtn"
-                onclick="generateOTP()"
-                style="display: flex; justify-content: flex-start"
-              >
-                Generate OTP
-              </button>
-              <div class="re-otp">
-                <button
-                  id="resendOtp"
-                  onclick="resendOtp()"
-                  style="display: none"
-                >
-                  resend OTP
-                </button>
-              </div>
-            </div>
-
-            <button
-              onclick="bookAppointment()"
-              id="bookBtn"
-              style="display: none"
-            >
-              Book Appointment
-            </button>
-          </form>
-        </div>
-
-        <div
-          class="box_2"
-          style="display: flex; align-items: center; justify-content: center"
-        >
-          <img src="{% static 'home/img/13.jpg' %}" alt="" srcset="" />
-        </div>
-      </section>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Doubts & Query Sessions
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Real-Time Projects
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Interview Preparations
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Internships and
+              Trainings
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Mock and Assessments
+            </p>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <!-- Associations with partners -->
-    <section class="startups">
-      <div class="wrapper">
+  <!-- Tab Content 3 -->
+  <div id="tab-3-content" class="tab-content-item">
+    <div class="col-md-12 col-sm-12">
+      <h2 class="tabs-content-heading">
+        Perks <span class="underline">strengthen & reinforce</span> company
+        culture
+      </h2>
+      <p class="mt-4 mb-4 tabs-content-subheading">
+        Companies often provide various perks to their employees in order to
+        enhance their overall job satisfaction and wellbeing. Some of the most
+        common perks offered by companies include.
+      </p>
+    </div>
+    <div class="row col-md-12 col-sm-12">
+      <div class="col-md-4 col-sm-12">
+        <img
+          src="{% static 'home/img/tab1img.png' %}"
+          alt=""
+          style="border-radius: 10px"
+        />
+      </div>
+      <div class="list col-md-7 col-sm-12">
+        <ul style="list-style-type: none">
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>100% Academic and
+              Employment Opportunities
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Placement Assistance
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Group Discussion Rounds
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Personal Interaction
+              with top leaders
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Membership Access
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Hackathons and Contest
+              Entries
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Content 4 -->
+  <div id="tab-4-content" class="tab-content-item">
+    <div class="col-md-12 col-sm-12">
+      <h2 class="tabs-content-heading">
+        Result speak more <span class="underline">louder</span> than words
+      </h2>
+      <p class="mt-4 mb-4 tabs-content-subheading">
+        These are some of the top reviews of our company by our learners.
+      </p>
+    </div>
+    <div class="row col-md-12 col-sm-12">
+      <div class="col-md-4 col-sm-12">
+        <img
+          src="{% static 'home/img/tab4img.png' %}"
+          alt=""
+          style="border-radius: 10px"
+        />
+      </div>
+      <div class="list col-md-7 col-sm-12">
+        <ul style="list-style-type: none">
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Got placed in MNC's
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Highest Packages
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Contest Winners
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Skilled Proffesionals
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Get Investment
+            </p>
+          </li>
+          <li>
+            <p class="col-md-12">
+              <i class="fa-solid fa-check mr-2 mt-3"></i>Premium Members
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Carousel 2nd -->
+<div
+  class="home-section carousel slide carousel2"
+  id="carouselExampleSlidesOnly"
+  data-ride="carousel"
+  data-interval="5000"
+>
+  <section class="carousel-inner" style="padding-bottom: 0">
+    <div class="carousel-item active">
+      <div class="text-left d-block w-100">
         <div class="row">
-          <div class="col-lg-12 mt-5">
-            <h5>
-              We are associated with businesses and non-profits
-              <span>from startups to MNC's</span>
-            </h5>
+          <div class="col-md-6 col-sm-12 img-none">
+            <img src="{% static 'home/img/slide1.png' %}" alt="" />
           </div>
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="{% static 'home/img/HCL.jpeg' %}" alt="" />
+          <div class="col-md-6 col-sm-12 h2-dec">
+            <h2 class="heading2">
+              BAOIAM <br /><span class="heading2 heading2_underline"
+                >'IONS.</span
+              >
+            </h2>
+            <br />
+            <p>
+              Customer feedback is really a boost for improving the quality of
+              courses with time. Let's see how our learners transformed their
+              career jouney after learning with us.
+            </p>
+            <p class="quote">
+              <span class="special">❝</span>I am elated to share that I got
+              placed as a Risk Consultant at PWC with a package of 9 LPA. I
+              would like to thank the BAOIAM team for its immense support &
+              guidance. My mentor was very helpful & has been very particular
+              about my preparation throughout, even if I would miss out
+              something she would point it out which helped me in preparing
+              better.<span class="special">❞</span>
+            </p>
           </div>
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="{% static 'home/img/HelloIntern.jpeg' %}" alt="" />
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="{% static 'home/img/Hirect.jpeg' %}" alt="" />
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="{% static 'home/img/Internshala.jpeg' %}" alt="" />
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="{% static 'home/img/Lenskart.jpeg' %}" alt="" />
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-            <img src="{% static 'home/img/Entorsity.jpeg' %}" alt="" />
+          <div class="col-md-6 col-sm-12 row imginfo">
+            <div class="col-md-2 col-sm-4 col-6">
+              <img src="{% static 'home/img/slide1.png' %}" alt="" />
+            </div>
+            <div class="col-md-6 infoimg">
+              <h5>Apurva Kulpe</h5>
+              <p class="about-slide">Risk Consultant PwC</p>
+              <p class="about-slide">9 LPA CTC</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    {% endblock content %}
+    </div>
+    <div class="carousel-item">
+      <div class="text-left d-block w-100">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 img-none">
+            <img src="{% static 'home/img/slide2.png' %}" alt="" />
+          </div>
+          <div class="col-md-6 col-sm-12 h2-dec">
+            <h2 class="heading2">
+              BAOIAM <br /><span class="heading2 heading2_underline"
+                >'IONS.</span
+              >
+            </h2>
+            <br />
+            <p>
+              Customer feedback is really a boost for improving the quality of
+              courses with time. Let's see how our learners transformed their
+              career jouney after learning with us.
+            </p>
+            <p class="quote">
+              <span class="special">❝</span>I am elated to share that I got
+              placed as a Risk Consultant at PWC with a package of 9 LPA. I
+              would like to thank the BAOIAM team for its immense support &
+              guidance. My mentor was very helpful & has been very particular
+              about my preparation throughout, even if I would miss out
+              something she would point it out which helped me in preparing
+              better.<span class="special">❞</span>
+            </p>
+          </div>
+          <div class="col-md-6 col-sm-12 row imginfo">
+            <div class="col-md-2 col-sm-4 col-6 active">
+              <img src="{% static 'home/img/slide2.png' %}" alt="" />
+            </div>
+            <div class="col-md-6 infoimg">
+              <h5>Ritesh Rana</h5>
+              <p class="about-slide">Software Developer (Byjus)</p>
+              <p class="about-slide">9 LPA CTC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="text-left d-block w-100">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 img-none">
+            <img src="{% static 'home/img/slide2.png' %}" alt="" />
+          </div>
+          <div class="col-md-6 col-sm-12 h2-dec">
+            <h2 class="heading2">
+              BAOIAM <br /><span class="heading2 heading2_underline"
+                >'IONS.</span
+              >
+            </h2>
+            <br />
+            <p>
+              Customer feedback is really a boost for improving the quality of
+              courses with time. Let's see how our learners transformed their
+              career jouney after learning with us.
+            </p>
+            <p class="quote">
+              <span class="special">❝</span>I am elated to share that I got
+              placed as a Risk Consultant at PWC with a package of 9 LPA. I
+              would like to thank the BAOIAM team for its immense support &
+              guidance. My mentor was very helpful & has been very particular
+              about my preparation throughout, even if I would miss out
+              something she would point it out which helped me in preparing
+              better.<span class="special">❞</span>
+            </p>
+          </div>
+          <div class="col-md-6 col-sm-12 row imginfo">
+            <div class="col-md-2 col-sm-4 col-6">
+              <img src="{% static 'home/img/slide2.png' %}" alt="" />
+            </div>
+            <div class="col-md-6 infoimg">
+              <h5>Padi Akhil</h5>
+              <p class="about-slide">Associate Software Engineer EY</p>
+              <p class="about-slide">18 LPA CTC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="otp-section">
+  <section class="FormContainer" style="padding-bottom: 0.5rem">
+    <div class="box_1">
+      <form action="">
+        <h2>
+          Crack your <span class="underline">goal</span> with India’s
+          <span class="underline">top</span> educators
+        </h2>
+        <p class="firstp">
+          Over 10 crore learners trust us for their preparation
+        </p>
+        <br />
+
+        <input
+          type="number"
+          id="phone"
+          placeholder="Enter your mobile number"
+          required
+        />
+
+        <div class="otpAndDate">
+          <p class="otpParagraph" style="color: #5e5e5e; font-size: 14px">
+            We’ll send an OTP for verification
+          </p>
+
+          <label for="date"></label>
+          <input
+            type="text"
+            id="date"
+            placeholder="Select a date"
+            onfocus="this.type='date'"
+            .onblur="this.type='text'"
+            required
+          />
+        </div>
+        <div id="otp-section" style="display: none">
+          <label for="otp"></label>
+          <input
+            type="text"
+            id="otp"
+            placeholder="Enter the OTP received"
+            required
+          />
+        </div>
+        <div class="btnDiv">
+          <button
+            id="genOtpBtn"
+            onclick="generateOTP()"
+            style="display: flex; justify-content: flex-start"
+          >
+            Generate OTP
+          </button>
+          <div class="re-otp">
+            <button id="resendOtp" onclick="resendOtp()" style="display: none">
+              resend OTP
+            </button>
+          </div>
+        </div>
+
+        <button onclick="bookAppointment()" id="bookBtn" style="display: none">
+          Book Appointment
+        </button>
+      </form>
+    </div>
+
+    <div
+      class="box_2"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img src="{% static 'home/img/13.jpg' %}" alt="" srcset="" />
+    </div>
+  </section>
+</div>
+
+<!-- Associations with partners -->
+<section class="startups">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-lg-12 mt-5">
+        <h5>
+          We are associated with businesses and non-profits
+          <span>from startups to MNC's</span>
+        </h5>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+        <img src="{% static 'home/img/HCL.jpeg' %}" alt="" />
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+        <img src="{% static 'home/img/HelloIntern.jpeg' %}" alt="" />
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+        <img src="{% static 'home/img/Hirect.jpeg' %}" alt="" />
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+        <img src="{% static 'home/img/Internshala.jpeg' %}" alt="" />
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+        <img src="{% static 'home/img/Lenskart.jpeg' %}" alt="" />
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+        <img src="{% static 'home/img/Entorsity.jpeg' %}" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

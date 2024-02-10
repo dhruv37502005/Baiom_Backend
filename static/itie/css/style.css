@@ -57,6 +57,7 @@ body {
   /* background-image: url("../static/itie/img/img1.avif"); */
   height: 90vh;
   width: 80vw;
+  background-repeat: no-repeat;
 }
 .section-one div {
   display: flex;
