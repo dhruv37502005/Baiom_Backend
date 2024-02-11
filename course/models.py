@@ -10,6 +10,7 @@ import datetime
 
 class CourseCategory(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    file = models.FileField(null=True, upload_to='media/file/')
 
     def __str__(self):
         return self.name
