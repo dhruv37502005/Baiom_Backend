@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} 
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -454,9 +455,9 @@
         </div>
       </section>
 
-      <section class="section-eight">
+     <!-- <section class="section-eight">
         <div class="deal_section">
-          <h4>Amazing Carrer</h4>
+          <h4>Amazing Career</h4>
           <h5>Awaits!</h5>
           <p>Grab the exclusive offer available only once a year.</p>
           <div class="boxes">
@@ -499,7 +500,93 @@
           </div>
           <button>GRAB THE DEAL</button>
         </div>
+      </section> -->
+      <section class="section-eight">
+        <div class="deal_section">
+          <h4>Amazing Career</h4>
+          <h5>Awaits!</h5>
+          <p>Grab the exclusive offer available only once a year.</p>
+          <div class="boxes">
+            <div class="off">
+              <p>BUY 2 CORESES & GET</p>
+              <h6>OFF</h6>
+              <span>15%</span>
+            </div>
+            <div class="off">
+              <p>BUY 3 CORESES & GET</p>
+              <h6>OFF</h6>
+              <span>20%</span>
+            </div>
+            <div class="off">
+              <p>BUY 4 CORESES & GET</p>
+              <h6>OFF</h6>
+              <span>25%</span>
+            </div>
+          </div>
+          <div class="timer" id="countdown">
+            <div>
+              <p id="days">20</p>
+              <p>days</p>
+            </div>
+            <span>:</span>
+            <div>
+              <p id="hours">12</p>
+              <p>hours</p>
+            </div>
+            <span>:</span>
+            <div>
+              <p id="minutes">21</p>
+              <p>minutes</p>
+            </div>
+            <span>:</span>
+            <div>
+              <p id="seconds">54</p>
+              <p>seconds</p>
+            </div>
+          </div>
+          <button id="grabDeal" onclick="checkDealAvailability()">GRAB THE DEAL</button>
+        </div>
       </section>
+      
+      <script>
+        // Set the target date for the deal expiration
+        const targetDate = new Date("February 29, 2024 23:59:59").getTime();
+      
+        // Update the countdown every second
+        const countdown = setInterval(function() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+      
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+          document.getElementById("days").innerHTML = days;
+          document.getElementById("hours").innerHTML = hours;
+          document.getElementById("minutes").innerHTML = minutes;
+          document.getElementById("seconds").innerHTML = seconds;
+      
+          // Check if the deal has expired
+          if (distance < 0) {
+            clearInterval(countdown);
+            document.getElementById("countdown").innerHTML = "Deal Expired!";
+            document.getElementById("grabDeal").disabled = true;
+          }
+        }, 1000);
+      
+        // Function to check deal availability
+        function checkDealAvailability() {
+          const now = new Date().getTime();
+          if (now < targetDate) {
+            alert("Deal is still available. Grab it now!");
+          } else {
+            alert("Sorry, the deal has expired.");
+          }
+        }
+      </script>
+      
+
 
       <section class="section-nine">
         <div class="container-main faq">

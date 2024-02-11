@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 
 from course import views
+from .views import DownloadFileView
 
 
 app_name = 'course'
@@ -24,6 +25,7 @@ urlpatterns = [
     
     # path('categories/', views.categories, name='categories'),
     path('categories/<int:category_id>/', views.category_courses, name='category_courses'),
+    path('download_file/<int:file_id>/', DownloadFileView.as_view(), name='download_file'),
 
 
 
