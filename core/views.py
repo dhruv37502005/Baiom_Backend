@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 from core.forms import AccessForm
 from course.models import CourseCategory
 from django.contrib.auth import authenticate, login, logout
-
+from .models import GetInTouch
+from .forms import GetInTouchForm
 
 # def index(request):
 
@@ -76,3 +77,13 @@ def course(request):
     categories = CourseCategory.objects.all()
     # print(categories)
     return render(request, 'course.html', {'is_courses': True, 'categories': categories})
+
+def get_in_touch(request):
+    if request.method == 'POST':
+        form = GetInTouchForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')  # Redirect to a success page
+    else:
+        form = GetInTouchForm()
+    return render(request, 'index.html', {'form': form})
