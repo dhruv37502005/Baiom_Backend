@@ -11,8 +11,8 @@
   });
   
   
-  const tabItems = document.querySelectorAll('.tab-item');
-  const tabContentItems = document.querySelectorAll('.tab-content-item');
+  var tabItems = document.querySelectorAll('.tab-item');
+  var tabContentItems = document.querySelectorAll('.tab-content-item');
   
   // Select tab content item
   function selectItem(e) {
@@ -22,7 +22,7 @@
       // Add border to current tab item
       this.classList.add('current-tab');
       // Grab content item from DOM
-      const tabContentItem = document.querySelector(`#${this.id}-content`);
+      var tabContentItem = document.querySelector(`#${this.id}-content`);
       // Add show class
       tabContentItem.classList.add('show');
   }
@@ -72,8 +72,8 @@
       document.getElementById('virtues-tab-2-content').style.display="none";
   }
   
-  const progressCircle = document.querySelector(".autoplay-progress svg");
-  const progressContent = document.querySelector(".autoplay-progress span");
+  var progressCircle = document.querySelector(".autoplay-progress svg");
+  var progressContent = document.querySelector(".autoplay-progress span");
   var swiper = new Swiper(".mySwiperr", {
     
   

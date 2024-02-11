@@ -35,84 +35,9 @@
 }
 
 /* section one */
-.topsection1-container {
-  /* padding: 10px 60px 10px 60px; */
-  background-color: rgb(248, 226, 230);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-radius: 10px;
-  text-align: justify;
-  /* box-shadow: 2px 2px 4px 2px rgb(161, 160, 160); */
-  /* margin: 30px; */
-}
-.topsection1-content {
-  width: 60%;
-  display: flex;
-  padding: 80px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.topsection1-content > h1 {
-  font-size: 3.3rem;
-  font-weight: 700;
-  margin-bottom: 50px;
-}
-.topsection1-content > h1 > span {
-  color: orangered;
-  position: relative;
-}
-.topsection1-content > h1 > span:after {
-  content: "";
-  position: absolute;
-  top: 62px;
-  left: 5px;
-  height: 50px;
-  width: 100%;
-  border: solid 2px orangered;
-  border-color: orangered transparent transparent transparent;
-  border-radius: 50%;
-}
-
-.topsection1-content > p {
-  font-size: 19px;
-  line-height: 2rem;
-  margin-bottom: 50px;
-}
-
-.topsection1-input {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  border-radius: 40px;
-  width: 500px;
-  padding: 2px 16px 2px 16px;
-  border: 1px solid gray;
-  margin-bottom: 50px;
-}
-.topsection1-input > span {
-  color: gray;
-  font-size: 40px;
-}
-.topsection1-input > input {
-  outline: 0;
-  border: 0;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-}
-.topsection1-input > button {
-  width: 180px;
-  height: 60px;
-  border-radius: 40px;
-  color: white;
-  background-color: orangered;
-  border: none;
-  font-size: large;
+.topsection-head {
+  padding: 70px 30px 30px 30px;
+  margin: 40px 80px 20px 80px;
 }
 .topsection1-countpart {
   display: flex;
@@ -135,7 +60,103 @@
   font-size: 2.2rem;
   margin-bottom: 5px;
 }
+.topsection-head-content {
+  box-shadow: 2px 2px 4px 2px orangered;
+  padding: 40px;
+  /* margin-top: 50px; */
+}
 
+.topsection1-container {
+  background-color: rgb(248, 226, 230);
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  border-radius: 10px;
+  text-align: justify;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+.topsection1-content {
+  width: 70%;
+  display: flex;
+  padding: 40px 80px 40px 80px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.topsection-head-content > h1 {
+  font-size: 3.3rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+.topsection-head-content > h1 > span {
+  color: orangered;
+  position: relative;
+}
+.topsection-head-content > h1 > span:after {
+  content: "";
+  position: absolute;
+  top: 62px;
+  left: 5px;
+  height: 50px;
+  width: 100%;
+  border: solid 2px orangered;
+  border-color: orangered transparent transparent transparent;
+  border-radius: 50%;
+}
+
+.topsection-head-content > p {
+  font-size: 19px;
+  line-height: 2rem;
+  margin-bottom: 20px;
+}
+
+.topsection1-input > button {
+  width: 180px;
+  height: 60px;
+  border-radius: 40px;
+  color: white;
+  background-color: orangered;
+  border: none;
+  font-size: large;
+}
+
+.topsection1-content .info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.topsection1-content .info > .offer-section {
+  display: flex;
+  gap: 10px;
+}
+.topsection1-content .info > .offer-section button {
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 3px;
+}
+.topsection1-content .pic {
+  text-align: center;
+}
+.pic > img {
+  width: 200px;
+}
+.topsection1-content .plan {
+  display: flex;
+  gap: 10px;
+}
+.topsection1-content .plan button {
+  background-color: transparent;
+  border: 1px solid orangered;
+  padding: 3px;
+  font-size: 12px;
+  border-radius: 8px;
+}
 .topsection1-image {
   width: 40%;
   display: flex;
@@ -145,8 +166,8 @@
   padding: 20px 30px 20px 30px;
 }
 .topsection1-image > img {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   margin-bottom: 50px;
 }
@@ -240,7 +261,7 @@
 /* section two */
 
 .three {
-  margin-bottom: 0;
+  margin-bottom: 20px;
   /* padding-left: 100px ; */
 }
 
@@ -254,7 +275,23 @@
 #why-web-dev-heading-2 {
   display: none;
 }
-
+.why-web-dev > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.why-web-dev {
+  width: 50%;
+}
+.image {
+  width: 50%;
+  text-align: center;
+}
+.three .image > img {
+  width: 60%;
+  height: 30%;
+  border-radius: 10px;
+}
 .three h3 {
   font-size: clamp(1rem, -0.175rem + 6.333vw, 3rem);
   margin-bottom: 2rem;

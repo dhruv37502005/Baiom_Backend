@@ -1,12 +1,12 @@
 // FAQ's
 
-const accordionItemHeaders = document.querySelectorAll(
+var accordionItemHeaders3 = document.querySelectorAll(
     ".accordion-item-header"
   );
 
-  accordionItemHeaders.forEach((accordionItemHeader) => {
+  accordionItemHeaders3.forEach((accordionItemHeader) => {
     accordionItemHeader.addEventListener("click", (event) => {
-      const currentlyActiveAccordionItemHeader = document.querySelector(
+      var currentlyActiveAccordionItemHeader = document.querySelector(
         ".accordion-item-header.active"
       );
       if (
@@ -18,7 +18,7 @@ const accordionItemHeaders = document.querySelectorAll(
       }
 
       accordionItemHeader.classList.toggle("active");
-      const accordionItemBody = accordionItemHeader.nextElementSibling;
+      var accordionItemBody = accordionItemHeader.nextElementSibling;
       if (accordionItemHeader.classList.contains("active")) {
         accordionItemBody.style.maxHeight =
           accordionItemBody.scrollHeight + "px";
