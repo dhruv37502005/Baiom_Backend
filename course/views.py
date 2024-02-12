@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.shortcuts import render, get_object_or_404
-from subscription.models import SubscriptionPlanCourse
 from userauths.models import Dashboard_User
-from .models import Course, CourseCategory, Batch #, Purchase
+from .models import Course, CourseCategory, Purchase, Batch
 from django.db.models import Sum
 from django.db import models
 # import cv2
@@ -22,8 +21,6 @@ def category_courses(request, category_id):
     course = Course.objects.get(id=category_id)
     batches = Batch.objects.get(course=course)
     carriculum = course.curriculum.all()
-    subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
-    print(f"subscription_course_plans: {subscription_course_plans}")
     
     user = request.user
     if user.is_authenticated:
@@ -37,8 +34,7 @@ def category_courses(request, category_id):
             'carriculum':carriculum,
             'enrolled_courses': enrolled_courses,
             'categories': categories,
-            'batch':batches,
-            'subscription_course_plans':subscription_course_plans
+            'batch':batches
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})

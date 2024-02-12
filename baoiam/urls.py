@@ -23,8 +23,7 @@ urlpatterns = [
     # For social auth
 
     path('auth/', include('social_django.urls', namespace='social')),
-    path('itie/',include('itie.urls',namespace='itie') ),
-    path('subscription/',include('subscription.urls',namespace='subscription') )
+    path('itie/',include('itie.urls',namespace='itie') )
 ]
 
 

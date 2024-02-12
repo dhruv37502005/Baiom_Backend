@@ -51,8 +51,8 @@
                        <h1>{{course.title}}</h1>
                        <p>{{course.description}}</p>
                        <p>Instructor : <strong>{{course.instructor}}</strong></p>
-                       {% comment %} <button class="offer">
-                          ₹ {{course.price}}</button> {% endcomment %}
+                       <button class="offer">
+                          ₹ {{course.price}}</button>
                       {% if course in enrolled_courses %}
                           <button class="btn-enroll">
                             Already Enrolled</button>
@@ -68,7 +68,7 @@
 
                     <li>{{ batch.batch_name }} - Start Date: {{ batch.start_date }} - End Date: {{ batch.end_date }}</li>
                   </ul>
-                  {% comment %} <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button class="my-2 btn-enroll">
+                  <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button class="my-2 btn-enroll">
                       3 Month Plan  </button>
                   </a>
                   <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-6-27' %}"><button class="my-2 btn-enroll">
@@ -76,7 +76,7 @@
                   </a>
                    <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-9-27' %}"><button class="my-2 btn-enroll">
                     9 Month Plan  </button>
-                  </a> {% endcomment %}
+                  </a>
                  {% endif %}
       </div>
       <div class="pic">
@@ -112,16 +112,13 @@
         </div>
       </div>
       <div class="topsection1-image">
-        {% if course.image %}
-          <img src="{{ course.image.url }}" alt="image" />
-        {% else %}
-          <p>No image available</p>
-        {% endif %}
+        <img src="{{ course.image.url}}" alt="image" />
         <div class="topsection1-button">
           <button class="interested">I AM INTERESTED</button>
-          <button class="broucher">DOWNLOAD BROCHURE</button>
+          <button class="broucher">DOWNLOAD BROCHER</button>
         </div>
       </div>
+    </div>
  
     <!-- Program overview -->
     <section class="three">
@@ -133,11 +130,7 @@
           <p>{{course.description}}</p>
         </div>
         <div class="image">
-          {% if course.image %}
-          <img src="{{ course.image.url }}" alt="image" />
-        {% else %}
-          <p>No image available</p>
-        {% endif %}
+          <img src="{{ course.image.url}}" />
         </div>
       </div>
     </section>
@@ -355,29 +348,124 @@
         <div class="splide">
             <div class="splide__track">
                 <div class="splide__list">
-
-                  {% for subscription_course in subscription_course_plans %}
-    <div class="splide__slide">
-        <div class="content-box">
-            <div class="content">
-                <div class="name">{{ subscription_course.subscription_plan.name }}<br>
-                  {{ subscription_course.subscription_plan.price }}<span class="name-span">/Full course</span></div>
-                <ul class="course-content">
-                    <li>Live Classes</li>
-                    <li>Months: {{ subscription_course.subscription_plan.months }}</li>
-                    <li>Description: {{ subscription_course.subscription_plan.description }}</li>
-                    <li>Discount: {{ subscription_course.subscription_plan.discount }}</li>
-                    {% comment %} <li>Doubt Clearing Sessions</li>
-                    <li>Assessment & Case Study</li>
-                    <li>Mentorship</li> {% endcomment %}
-                </ul>
-                <button class="btn-1">Try Demo Class</button>
-            </div>
-        </div>
-    </div>
-{% endfor %}
+                  <div class="splide__slide">
+                    
+                        <div class="content-box">
+              
+                            <div class="content">
+                              <div class="name">Plus<br> 30,500<span class="name-span">/Full course</span></div>
+                                 <ul class="course-content"><li>Live Classes</li>
+                                   <li>Doubt Clearing Sessions</li>
+                                   <li>Assessment & Case Study</li>
+                                   <li>Mentorship</li></ul>
+                            
+                                 <button class="btn-1">Try Demo Class</button>
+                            
+                                </div>
+                          </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="content-box">
+                       <div class="content">
+               
+                        <div class="name">Plus Combo<br> 30,500<span class="name-span">/Full course</span></div>
+                        <ul class="course-content"><li>Live Classes</li>
+                          <li>Doubt Clearing Sessions</li>
+                          <li>Assessment & Case Study</li>
+                          <li>Mentorship</li>
+                          <li>Extra Course</li>
+                        </ul>
+                   
+                   <button class="btn-1">Try Demo Class</button>
+                       
+                     </div>
+                     </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="content-box">
+                         
+                         <div class="content">
+                             
+                           <div class="name">Premium<br>60,000/<span class="name-span">Full course</span> </div>
+                           <ul class="course-content"><li>Live Classes</li>
+                              <li>Doubt Clearing Sessions</li>
+                              <li>Assessment & Case Study</li>
+                              <li>Mentorship</li>
+                              <li>Webinar Access</li>
+                              <li>Placement Assistance</li>
+                              <li>Interview Preparation</li>
+                              <li>Resume Building</li></ul><br><br>
+              
+                        
+                         <button class="btn-1">Try Demo Class</button>
+                       </div> 
+                       </div> 
+                       
+                      </div>
+                     <div class="splide__slide">
+                       <div class="content-box">
+                        <div class="content">
+                        <div class="name">Premium Combo<br>60,000/<span class="name-span">Full course</span> </div>
+                        <ul class="course-content"><li>Live Classes</li>
+                           <li>Doubt Clearing Sessions</li>
+                           <li>Assessment & Case Study</li>
+                           <li>Mentorship</li>
+                           <li>Webinar Access</li>
+                           <li>Placement Assistance</li>
+                           <li>Interview Preparation</li>
+                           <li>Resume Building</li>
+                           <li>Extra Course</li>
+                          </ul>
+                           
+                        
+                        <button class="btn-1">Try Demo Class</button>
+                        
+                      </div>
+                     </div>
+                   </div>
+                   
+                     <!-- <div class="splide__slide">
+                        <div class="content-box">
+                           <div class="premium">
+                           <div class="content">
+                               
+                             <div class="premium_name">Premium<br>60,000/<span class="premium_name-span">Full course</span> </div>
+                             <ul class="premium_content"><li>Live Classes</li>
+                                <li>Doubt Clearing Sessions</li>
+                                <li>Assessment & Case Study</li>
+                                <li>Mentorship</li>
+                                <li>Webinar Access</li>
+                                <li>Placement Assistance</li>
+                                <li>Interview Preparation</li>
+                                <li>Resume Building</li></ul><br><br>
+                
+                          
+                           <button class="btn-2">Try Demo Class</button>
+                         </div> 
+                         </div> 
+                         </div>
+                        </div>
+                      
+                     <div class="splide__slide">
+                       <div class="content-box">
+                        <div class="content">
+                
+                         <div class="name">Premium Combo<br>30,500/<span class="name-span">Full course</span> </div>
+                         <ul class="course-content"><li>Live Classes</li>
+                            <li>Doubt Clearing Sessions</li>
+                            <li>Assessment & Case Study</li>
+                            <li>Mentorship</li>
+                            <li>Webinar Access</li>
+                            <li>Placement Assistance</li></ul>
+                            
+                         
+                         <button class="btn-1">Try Demo Class</button>
+                         
+                        
+                      </div>
+                     </div>
+                   </div> -->
                 </div>
-
             </div>
         </div>
         </div>
