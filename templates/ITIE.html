@@ -281,81 +281,27 @@
          </div>
        </section>
   
-
-      <section class="section-five">
+       <section class="section-five">
         <h2>Testimonials</h2>
         <div class="carousel">
-          <i id="left" class="fa-solid fa-angle-left"></i>
-          <i id="right" class="fa-solid fa-angle-right"></i>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+            <div class="testimonials">
+    
+                {% for testimonial in testimonials %}
+                <div class="details">
+                    <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" />
+                    <h4>{{ testimonial.name }}</h4>
+                    <h6>{{ testimonial.designation }}</h6>
+                </div>
+                <p>
+                    {{ testimonial.text }}
+                </p>
+                {% endfor %}
+    
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
         </div>
-      </section>
-
+    </section>
       <!-- <section class="section-six">
       <div>
         <h2>Program <span>Certification</span></h2>
