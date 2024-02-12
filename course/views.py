@@ -42,7 +42,8 @@ def category_courses(request, category_id):
     
 
 class DownloadFileView(View):
-    def get(self, file_id):
+    def get(self, category_id,file_id):
+        category_id = file_id
         category = get_object_or_404(CourseCategory, pk=file_id)
         file_content = category.file.read()
         file_name = category.file.name

@@ -87,6 +87,10 @@ def user_ui(request):
         education =request.POST.get("education")
         github = request.POST.get("github")
         linkedin = request.POST.get("linkedin")
+
+        if not education:
+            education = "No Education Provided"
+
       
 
         print(first_name, middle_name, last_name, college_name, education, graduation_year, mobile_number, github, linkedin, bio)
