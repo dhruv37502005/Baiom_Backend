@@ -58,9 +58,13 @@
           on your journey to success. As a launchpad for aspiring entrepreneurs,
           we empower you to learn, innovate, and achieve success.
         </p>
+        {% for bootcourse in courses %}
+        {% if bootcourse.is_wep_main %}
         <div class="topsection1-button">
           <button class="interested" id="button-one">I AM INTERESTED</button>
-         <a href="#"><button class="broucher">DOWNLOAD BROUCHER</button></a> 
+         <a href="{% url 'bootcamp:download_file' %}"><button class="broucher">DOWNLOAD BROUCHER</button></a> 
+         {% endif %}
+         {% endfor %}
         </div>
 
       </div>
