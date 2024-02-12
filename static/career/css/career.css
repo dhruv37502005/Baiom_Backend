@@ -693,7 +693,6 @@ article p {
   color: grey;
   font-size: 1.2rem;
   margin: 2rem auto 3rem;
-
 }
 
 .top-content-para h4 {
@@ -1244,7 +1243,6 @@ article p {
 
 /* changes start */
 
-
 /* Mobile View  */
 
 @media (max-width: 1380px) {
@@ -1473,7 +1471,7 @@ article p {
     width: 86%;
     margin: 7%;
   }
-/* 
+  /* 
   .container {
     width: 80%;
     display: block;
@@ -1812,7 +1810,6 @@ article p {
 }
 
 /* change 2 */
-
 
 .main-contact {
   width: 80vw;

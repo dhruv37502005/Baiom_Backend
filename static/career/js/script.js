@@ -1,5 +1,5 @@
 // Changing Svg position according to window width
-const svg = document.querySelector("svg")
+var svg = document.querySelector("svg")
 
 // window.addEventListener("resize",function (event){
 //     const windowWidth = event.target.innerWidth
@@ -11,8 +11,8 @@ const svg = document.querySelector("svg")
 // })
 
 // adding cross icon onclick in navbar
-const navBartoggler = document.querySelector(".navbar-toggler")
-const navIcon = document.querySelector(".navbar-toggler-icon")
+var navBartoggler = document.querySelector(".navbar-toggler")
+var navIcon = document.querySelector(".navbar-toggler-icon")
 
 navBartoggler.addEventListener('click',function(){
     navIcon.classList.toggle("navbar-toggler-icon")

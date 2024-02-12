@@ -33,6 +33,18 @@
     <title>Document</title>
   </head>
   <body>
+    <form class="popup-form" id="popup-form">
+      <div class="popup-form-content">
+        <div class="close" id="popup-close">&times;</div>
+        <lable for="name" id="name">Name</lable>
+        <input id="name" type="text" />
+        <lable for="email" id="email">Email</lable>
+        <input id="email" type="email" />
+        <lable for="mobile" id="mobile">Mobile</lable>
+        <input id="mobile" type="text" />
+        <button type="button" class="popup-submit">Submit</button>
+      </div>
+    </form>
     <section class="section-one">
       <div class="topsection1-container" style="background-image:url('{% static 'wep\Images\wep-backgroundimg.png' %}')">
         <div class="topsection1-image">
@@ -47,9 +59,10 @@
           we empower you to learn, innovate, and achieve success.
         </p>
         <div class="topsection1-button">
-          <button class="interested">I AM INTERESTED</button>
-          <button class="broucher">DOWNLOAD BROUCHER</button>
+          <button class="interested" id="button-one">I AM INTERESTED</button>
+         <a href="#"><button class="broucher">DOWNLOAD BROUCHER</button></a> 
         </div>
+
       </div>
     </section>
 
@@ -234,9 +247,10 @@
 
     <section class="section-five">
       <h2>Testimonials</h2>
+      <div class="temp">
+      <i id="left" class="fa-solid fa-angle-left left"></i>
+      <i id="right" class="fa-solid fa-angle-right right"></i>
       <div class="carousel">
-        <i id="left" class="fa-solid fa-angle-left"></i>
-        <i id="right" class="fa-solid fa-angle-right"></i>
         <div class="testimonials">
           <div class="details">
             <img
@@ -322,6 +336,7 @@
           </p>
         </div>
       </div>
+    </div>
     </section>
 
     <!-- <section class="section-six">
@@ -447,7 +462,7 @@
             <h6>OFF</h6>
             <span>15%</span>
           </div>
-          <div class="on">
+          <div class="off">
             <p>BUY 3 CORESES & GET</p>
             <h6>OFF</h6>
             <span>20%</span>

@@ -1,5 +1,4 @@
-{% extends 'base.html' %} {% load static %} 
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -163,7 +162,7 @@
         </div>
       </section>
 
-   <!--   <section class="section-four">
+      <!--   <section class="section-four">
         <h2>Courses</h2>
         <div class="cards_container">
           <div class="cards">
@@ -267,91 +266,92 @@
       <section class="section-four">
         <h2>Courses</h2>
         <div class="cards_container">
-            {% for course in courses %}
-            <div class="cards">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>{{ course.title }}</h4>
-                <h6>{{ course.description }}</h6>
-                <!-- Add other fields as needed -->
-                <div class="timing">
-                    <p><span>🕓</span> 3 months</p>
-                </div>
-             </div>
-            {% endfor %}
-         </div>
-       </section>
-  
+          {% for course in courses %}
+          <div class="cards">
+            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+            <h4>{{ course.title }}</h4>
+            <h6>{{ course.description }}</h6>
+            <!-- Add other fields as needed -->
+            <div class="timing">
+              <p><span>🕓</span> 3 months</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
 
       <section class="section-five">
         <h2>Testimonials</h2>
-        <div class="carousel">
+        <div class="temp">
           <i id="left" class="fa-solid fa-angle-left"></i>
           <i id="right" class="fa-solid fa-angle-right"></i>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
+          <div class="carousel">
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
-          </div>
-          <div class="testimonials">
-            <div class="details">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <h4>John Doe</h4>
-              <h6>Course Student</h6>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio nemo quaerat asperiores, esse quibusdam
-            </p>
           </div>
         </div>
       </section>
@@ -455,7 +455,7 @@
         </div>
       </section>
 
-     <!-- <section class="section-eight">
+      <!-- <section class="section-eight">
         <div class="deal_section">
           <h4>Amazing Career</h4>
           <h5>Awaits!</h5>
@@ -544,29 +544,35 @@
               <p>seconds</p>
             </div>
           </div>
-          <button id="grabDeal" onclick="checkDealAvailability()">GRAB THE DEAL</button>
+          <button id="grabDeal" onclick="checkDealAvailability()">
+            GRAB THE DEAL
+          </button>
         </div>
       </section>
-      
+
       <script>
         // Set the target date for the deal expiration
         const targetDate = new Date("February 29, 2024 23:59:59").getTime();
-      
+
         // Update the countdown every second
-        const countdown = setInterval(function() {
+        const countdown = setInterval(function () {
           const now = new Date().getTime();
           const distance = targetDate - now;
-      
+
           const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
           const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
+
           document.getElementById("days").innerHTML = days;
           document.getElementById("hours").innerHTML = hours;
           document.getElementById("minutes").innerHTML = minutes;
           document.getElementById("seconds").innerHTML = seconds;
-      
+
           // Check if the deal has expired
           if (distance < 0) {
             clearInterval(countdown);
@@ -574,7 +580,7 @@
             document.getElementById("grabDeal").disabled = true;
           }
         }, 1000);
-      
+
         // Function to check deal availability
         function checkDealAvailability() {
           const now = new Date().getTime();
@@ -585,8 +591,6 @@
           }
         }
       </script>
-      
-
 
       <section class="section-nine">
         <div class="container-main faq">

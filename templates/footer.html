@@ -11,7 +11,7 @@
     <div class="col-md-5 pt-3">
       <form method="post" action="{% url 'core:get_in_touch' %}">
         {% csrf_token %}
-      <div class="form">
+      <div class="form" style="margin-right: 30px;">
         <input
           type="text"
           name="phone_number"
