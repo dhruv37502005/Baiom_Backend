@@ -7,6 +7,49 @@ body {
   font-family: "Montserrat", "sans-serif", "Londrina Outline";
 }
 
+.popup-form {
+  position: fixed;
+  height: 400px;
+  width: 700px;
+  left: 20%;
+  top: 40%;
+  z-index: 3;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 2px 2px 4px 2px gray;
+  display: none;
+}
+
+.popup-form-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  gap: 10px;
+}
+.popup-form .close {
+  font-size: 40px;
+  display: flex;
+  margin-right: 30px;
+  justify-content: flex-end;
+}
+.popup-form .close:hover {
+  cursor: pointer;
+}
+.popup-form input {
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid gray;
+}
+.popup-submit {
+  width: 70px;
+  height: 30px;
+  margin-top: 10px;
+  padding: 3px;
+  border-radius: 10px;
+}
+
 /* --------------------------- SECTION ONE ------------------------------ */
 
 .section-one {
@@ -456,7 +499,6 @@ input[type="radio"] {
   margin: 0 auto;
   max-width: 1060px;
   width: 100%;
-  position: relative;
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
@@ -484,6 +526,7 @@ input[type="radio"] {
   align-items: center;
   height: 25rem;
   overflow: hidden;
+  /* position: relative; */
 }
 
 .section-five .testimonials {
@@ -533,7 +576,7 @@ input[type="radio"] {
   width: 50px;
   cursor: pointer;
   font-size: 1.25rem;
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
   line-height: 50px;
   color: #fff;
@@ -546,11 +589,20 @@ input[type="radio"] {
 .section-five i:active {
   transform: translateY(-50%) scale(0.85);
 }
-.section-five .carousel #right {
-  right: -5rem;
+.section-five .temp {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-.section-five .carousel #left {
-  left: -6rem;
+.section-five .temp #right {
+  top: 50%;
+  right: -3rem;
+  position: absolute;
+}
+.section-five .temp #left {
+  top: 50%;
+  left: -4rem;
+  position: absolute;
 }
 
 /* --------------------------- SECTION SIX ------------------------------ */
@@ -800,7 +852,7 @@ input[type="radio"] {
 }
 .section-eight .deal_section {
   margin: 0 auto;
-  height: 36rem;
+  height: 38rem;
   display: flex;
   flex-direction: column;
   align-items: center;

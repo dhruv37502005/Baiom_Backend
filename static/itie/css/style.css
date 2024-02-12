@@ -44,9 +44,11 @@ body {
   border: 1px solid gray;
 }
 .popup-submit {
-  width: 60px;
+  width: 70px;
   height: 30px;
   margin-top: 10px;
+  padding: 3px;
+  border-radius: 10px;
 }
 
 /* --------------------------- SECTION ONE ------------------------------ */
@@ -62,6 +64,7 @@ body {
 .section-one div {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   height: 90%;
   padding: 6rem 0 0 8rem;
 }
@@ -80,14 +83,15 @@ body {
 .section-one .line {
   position: absolute;
   left: 20rem;
-  top: 9.5rem;
+  top: 10rem;
   width: 260px;
   border: 4px solid gold;
   border-color: gold transparent transparent transparent;
   border-radius: 100%/100px 100px 0 0;
 }
 .section-one h4 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  width: 4rem;
   font-weight: 600;
   margin-bottom: 2rem;
   color: #404040;
@@ -406,11 +410,20 @@ body {
 .section-five i:active {
   transform: translateY(-50%) scale(0.85);
 }
-.section-five .carousel #right {
-  right: -5rem;
+.section-five .temp {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-.section-five .carousel #left {
-  left: -6rem;
+.section-five .temp #right {
+  top: 50%;
+  right: -3rem;
+  position: absolute;
+}
+.section-five .temp #left {
+  top: 50%;
+  left: -4rem;
+  position: absolute;
 }
 
 /* --------------------------- SECTION SIX ------------------------------ */
@@ -635,7 +648,7 @@ body {
 }
 .section-eight .deal_section {
   margin: 0 auto;
-  height: 36rem;
+  height: 38rem;
   display: flex;
   flex-direction: column;
   align-items: center;
