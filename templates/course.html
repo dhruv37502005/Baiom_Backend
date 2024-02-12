@@ -27,30 +27,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+  <form class="popup-form" id="popup-form">
+    <div class="popup-form-content">
+      <div class="close" id="popup-close">&times;</div>
+      <lable for="name" id="name">Name</lable>
+      <input id="name" type="text" />
+      <lable for="email" id="email">Email</lable>
+      <input id="email" type="email" />
+      <lable for="mobile" id="mobile">Mobile</lable>
+      <input id="mobile" type="text" />
+      <button type="button" class="popup-submit">Submit</button>
+    </div>
+  </form>
 <div class="containerr">
   <div>
+  <div class="topsection-head">
     <!-- I'm interested -->
 
-
+   <div class="topsection-head-content">
+    <h1>Learn a <span>New Skill</span> Everyday, Anytime, and Anywhere.</h1>
+    <p>
+      <b>1000+</b> Courses covering all tech domains for you to learn and
+      explore new opportunities. Learn from Industry Experts and land your
+      Dream Job.
+    </p>
+    <div class="topsection1-countpart">
+      <div>
+        <h1 class="first">1000+</h1>
+        <h3>Courses to choose from</h3>
+      </div>
+      <div>
+        <h1 class="second">5000+</h1>
+        <h3>Students Trained</h3>
+      </div>
+      <div>
+        <h1 class="third">200+</h1>
+        <h3>Professional Trainers</h3>
+      </div>
+    </div>
+    <div class="topsection1-button">
+      <button class="interested" id="button-one">I AM INTERESTED</button>
+   
+        <a href="#" class="broucher">
+          <button class="broucher">DOWNLOAD BROCHURE</button> </a>  
+          
+      </div> 
+    </div>
+  </div>
+  {% for course in courses %}
     <div class="topsection1-container">
       <div class="topsection1-content">
 
-
-        <h1>Learn a <span>New Skill</span> Everyday, Anytime, and Anywhere.</h1>
-        <p>
-          <b>1000+</b> Courses covering all tech domains for you to learn and
-          explore new opportunities. Learn from Industry Experts and land your
-          Dream Job.
-        </p>
-
-        
-        {% for course in courses %}
              <section class="one">
                 <div class="info">
                    {% comment %} <button id="certified">Certified Online Training</button> {% endcomment %}
                        <h1>{{course.title}}</h1>
                        <p>{{course.description}}</p>
                        <p>Instructor : <strong>{{course.instructor}}</strong></p>
+                       <div class="offer-section">
                        <button class="offer">
                           ₹ {{course.price}}</button>
                       {% if course in enrolled_courses %}
@@ -59,6 +93,7 @@
                       {% else %}
                       <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
                           Enroll Now  </button></a>
+                        </div>
                      <!-- <h4>{{course.title}} Carriculum</h4>
                      <h4>{{course.carriculum_title}}</h4>
                      <h4>{{course.carriculum_desc}}</h4> -->
@@ -68,6 +103,14 @@
 
                     <li>{{ batch.batch_name }} - Start Date: {{ batch.start_date }} - End Date: {{ batch.end_date }}</li>
                   </ul>
+                  <!-- <div class="pic">
+                    {% if course.image %}
+                            <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+                            {% else %}
+                            <p>No image available</p>
+                    {% endif %}
+                  </div> -->
+                  <div class="plan">
                   <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button class="my-2 btn-enroll">
                       3 Month Plan  </button>
                   </a>
@@ -77,55 +120,21 @@
                    <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-9-27' %}"><button class="my-2 btn-enroll">
                     9 Month Plan  </button>
                   </a>
+                </div>
                  {% endif %}
-      </div>
-      <div class="pic">
-       <!-- {% if course.image %}
-                <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
-                {% else %}
-                <p>No image available</p>
-        {% endif %}
-      </div>  -->
-    </section>
- 
-
-
-
-        <!-- <div class="topsection1-input">
-          <span class="material-symbols-outlined"> search </span>
-          <input type="text" placeholder="What to learn?" />
-          <button type="button">Explore</button>
-        </div> -->
-        <div class="topsection1-countpart">
-          <div>
-            <h1 class="first">1000+</h1>
-            <h3>Courses to choose from</h3>
-          </div>
-          <div>
-            <h1 class="second">5000+</h1>
-            <h3>Students Trained</h3>
-          </div>
-          <div>
-            <h1 class="third">200+</h1>
-            <h3>Professional Trainers</h3>
-          </div>
-        </div>
-      </div>
-      <div class="topsection1-image">
+                </section>
+               
+              </div>
+              <div class="topsection1-image">
          
-       <img src="{{ course.image.url}}" alt="image" />
-       <div class="topsection1-button">
-        <button class="interested">I AM INTERESTED</button>
-      {% for category in categories %}
-          {% if category.file and category == course.category %}
-          <a href="{% url 'course:download_file' file_id=category.id %}" class="broucher">
-            <button>DOWNLOAD BROCHURE</button> </a>  
-            {% endif %}
-        </div> 
-        {% endfor %}
-      </div>
+                <img src="{{ course.image.url}}" alt="image" />
+              
+               </div>
+             </div>
+     
     </div>
-
+ 
+   
  
     <!-- Program overview -->
     <section class="three">
