@@ -6,47 +6,60 @@ from django.contrib.auth.models import User
 from core.forms import AccessForm
 from course.models import CourseCategory
 from django.contrib.auth import authenticate, login, logout
+from .models import GetInTouch
+from .forms import GetInTouchForm
 
+# def index(request):
+
+#     try:
+#         existing_user = User.objects.filter(email=request.user.email).exclude(username=request.user.username).first()
+#         if existing_user:
+#             user = User.objects.get(id=request.user.id)
+#             user.delete()
+#             messages.error(request, f' Email already exists {existing_user.username}')
+#             return redirect('userauths:login')
+#     except:
+#         print("None")
+            
+#     return render(request, 'index.html',{'is_index_page': True})
 
 def index(request):
-
-    try:
-        existing_user = User.objects.filter(email=request.user.email).exclude(username=request.user.username).first()
-        if existing_user:
-            user = User.objects.get(id=request.user.id)
-            user.delete()
-            messages.error(request, f' Email already exists {existing_user.username}')
-            return redirect('userauths:login')
-    except:
-        print("None")
-            
-    return render(request, 'index.html',{'is_index_page': True})
+    categories = CourseCategory.objects.all()
+    return render(request, 'index.html',{'is_index_page': True, 'categories': categories})
 
 
 def career(request):
-    return render(request, 'career.html',{'is_career': True})
+    categories = CourseCategory.objects.all()
+    return render(request, 'career.html',{'is_career': True, 'categories': categories})
 
 def hire_from_us(request):
-    return render(request, 'hire_from_us.html',{'is_hire': True})
+    categories = CourseCategory.objects.all()
+    return render(request, 'hire_from_us.html',{'is_hire': True, 'categories': categories})
 
 def itie(request):
-    return render(request, 'ITIE.html',{'is_itie': True})
+    categories = CourseCategory.objects.all()
+    return render(request, 'ITIE.html',{'is_itie': True, 'categories': categories})
 
 def wep(request):
-    return render(request, 'wep.html',{'is_wep': True})
+    categories = CourseCategory.objects.all()
+    return render(request, 'wep.html',{'is_wep': True, 'categories': categories})
 
 def blog(request):
-    return render(request, 'blog.html',{'is_blog': True})
+    categories = CourseCategory.objects.all()
+    return render(request, 'blog.html',{'is_blog': True, 'categories': categories})
 
 def blog_details(request):
-    return render(request, 'blog_details.html', {'is_blog_details': True})
+    categories = CourseCategory.objects.all()
+    return render(request, 'blog_details.html', {'is_blog_details': True, 'categories': categories})
 
 
 def pap(request):
-    return render(request, 'pap.html',{'is_pap': True})
+    categories = CourseCategory.objects.all()
+    return render(request, 'pap.html',{'is_pap': True, 'categories': categories})
 
 def refer_earn(request):
-    return render(request, 'referEarn.html',{'is_refer': True})
+    categories = CourseCategory.objects.all()
+    return render(request, 'referEarn.html',{'is_refer': True, 'categories': categories})
 
 def maintenance_page(request):
     return render(request, 'maintenance_break.html')
@@ -64,3 +77,13 @@ def course(request):
     categories = CourseCategory.objects.all()
     # print(categories)
     return render(request, 'course.html', {'is_courses': True, 'categories': categories})
+
+def get_in_touch(request):
+    if request.method == 'POST':
+        form = GetInTouchForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')  # Redirect to a success page
+    else:
+        form = GetInTouchForm()
+    return render(request, 'index.html', {'form': form})

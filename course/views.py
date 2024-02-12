@@ -3,33 +3,54 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.shortcuts import render, get_object_or_404
 from userauths.models import Dashboard_User
-from .models import Course, CourseCategory
-from django.db.models import Sum
-from django.db import models
-# import cv2
+from .models import Course, CourseCategory, Purchase, Batch
+from wsgiref.util import FileWrapper
+from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponse
 from userauths.models import Dashboard_User
+from django.views import View
+from .models import CourseCategory
+
+from django.utils import timezone
 
 @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
     category = get_object_or_404(CourseCategory, id=category_id)
     courses = Course.objects.filter(category=category, status='active')
     categories = CourseCategory.objects.all()
-
+    course = Course.objects.get(id=category_id)
+    batches = Batch.objects.get(course=course)
+    carriculum = course.curriculum.all()
+    
     user = request.user
     if user.is_authenticated:
         dash_user, created = Dashboard_User.objects.get_or_create(user=user)
         enrolled_courses = dash_user.enrolled_courses.all()
+      
+        
         return render(request, 'course.html', {
             'is_category': True,
             'courses': courses,
+            'carriculum':carriculum,
             'enrolled_courses': enrolled_courses,
-            'categories': categories
+            'categories': categories,
+            'batch':batches
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
+    
 
+class DownloadFileView(View):
+    def get(self, category_id,file_id):
+        category_id = file_id
+        category = get_object_or_404(CourseCategory, pk=file_id)
+        file_content = category.file.read()
+        file_name = category.file.name
+        response = HttpResponse(file_content, content_type='application/octet-stream')
+        response['Content-Disposition'] = f'attachment; filename="{file_name}"'
+
+        return response
 # def categories(request):
 #     categories = CourseCategory.objects.all()
 #     print(categories)

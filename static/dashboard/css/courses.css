@@ -1,100 +1,94 @@
-.courseDiv{
+.courseDiv {
+  width: 100%;
+  margin-top: 30px;
   display: none;
+}
+.course-card-section {
+  margin-top: 20px;
+}
+.course-card-section .course-name {
   width: 100%;
-  height: fit-content;
-}
-.courseDiv h2{
-  padding-left: 10px;
-  margin:50px 0 10px 0 ;
-}
-#course-card-section{
+  height: 60px;
+  /* box-shadow: 2px 2px 6px gray; */
   display: flex;
-  width: 100%;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: row;
-  height: fit-content;
-  flex-wrap: wrap;
-  /* background-color: red; */
-  /* padding: 10px; */
-  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: orangered;
+  color: white;
+  font-size: 26px;
+  outline: none;
+  border: none;
 }
-.course-card{
-  width: 23%;
-  height: 350px;
-  /* background-color: skyblue; */
-  box-shadow: 4px 8px 8px rgba(128, 128, 128, 0.466);
-
-  margin: 10px;
-  padding: 10px;
-  border-radius: 12px;
-  overflow: hidden;
+.course-card-section .course-name:hover,
+.course-resume-btn:hover {
+  cursor: pointer;
 }
-.card-image-section{
-  width: 100%;
-  height: 150px;
-  background-color: red;
+.course-card-section .course-name:active,
+.course-resume-btn:active {
+  transform: scale(0.99);
+  transition: linear;
+}
+.course-content {
+  width: 85%;
+  box-shadow: 2px 2px 4px 1px gray;
+  display: none;
+  border-radius: 10px;
+}
+.course-card-content .inner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px 18px 20px;
+  font-size: 22px;
+  border: 1px solid gray;
+}
+.course-card-content .inner-content section {
   display: flex;
   align-items: center;
-  justify-content: center;  
-  overflow: hidden;
-  border-radius: 12px 12px 0 0;
-  
+  gap: 40px;
 }
-.card-image-section img{
-  width: 100%;
+.courseDiv a {
+  text-decoration: none;
+  color: black;
 }
-.card-content{
-  width: 100%;
-  height:100%;
-  padding: 5px;
-  /* background-color: green; */
+.courseDiv a:hover {
+  cursor: pointer;
+  color: blue;
 }
-.completed-percentage{
-  width: 100%;
-  height: 10px;
-  margin: 20px 0 10px 0;
-  background-color: white;
-  box-shadow: inset 2px 4px 4px rgba(128, 128, 128, 0.466);
-border: none;
-  border-radius: 12px;
-  overflow: hidden;
+.course-resume-btn {
+  background-color: rgb(220, 215, 215);
+  padding: 8px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  color: orangered;
+  border: none;
+  outline: none;
 }
-.inner{
-  height: 100%;
-  background-image:linear-gradient(45deg,orangered,orange);
+
+.course-resume-btn .material-symbols-outlined {
+  font-size: 30px;
 }
-.lectures-completed{
-width: 100%;
-margin: 10px 0;
-}
-.course-name{
-  width: 100%;
-  margin: 10px 0 0 0;
-}
-.card-content .resume-btn-element{
-width: 100%;
-height: 40px;
-background-image: linear-gradient(45deg,orange,orangered);
-border: none;
-color: rgb(255, 255, 255);
-font-size: 18px;
-font-weight: bold;
-outline: none;
-box-shadow: 2px 4px 4px rgba(128, 128, 128, 0.466);
-border-radius: 12px;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: 20px;
-transition: ease .5s;
-}
-.card-content .resume-btn-element:hover{
-  transform: scale(1.01);
-  box-shadow: 4px 8px 8px gray;
+
+@media screen and (max-width: 550px) {
+  .course-resume-btn {
+    padding: 0px;
+    background-color: white;
   }
-  .card-content .resume-btn-element span{
-    color: rgb(255, 255, 255);
-    font-size: 30px;
-    font-weight: bold;
+  .course-card-section .course-name {
+    width: 98%;
   }
+  .course-content {
+    width: 98%;
+  }
+  .course-card-content .inner-content section {
+    gap: 10px;
+  }
+  .course-card-content .inner-content {
+    font-size: 12px;
+  }
+}

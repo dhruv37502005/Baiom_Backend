@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import ArrayField
 
 from datetime import date
 
-from course.models import Course
+from course.models import Batch, Course
 
 # Create your models here.
 
@@ -14,21 +14,21 @@ from course.models import Course
 class Dashboard_User(models.Model):
     
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    
     is_user = models.BooleanField(default=True)
-    
     is_employee = models.BooleanField(default=False)
-
     bio = models.CharField(max_length=100, blank=True)
     fname = models.CharField(max_length=30, blank=True)
     lname = models.CharField(max_length=30, blank=True)
     mname = models.CharField(max_length=30, blank=True)
     mobilenumber = models.CharField(max_length=15, blank=True)
     photo = models.ImageField(upload_to='user_photos/', blank=True, null=True)
-    collegename = models.CharField(max_length=100, blank=True)
+    collegename = models.CharField(max_length=100, blank=True, null=True)
     graduation_year = models.PositiveIntegerField(blank=True, null=True)
-    current_designation = models.CharField(max_length=50, blank=True)
+    education = models.CharField(max_length=50, blank=True, null=True)
+    github = models.CharField(max_length=100, blank=True, null=True)
+    linkedin = models.CharField(max_length=100, blank=True, null=True)
     enrolled_courses = models.ManyToManyField(Course, related_name='enrolled_users', blank=True)
+    enrolled_batches = models.ManyToManyField(Batch, related_name='enrolled_batch', blank=True)
 
 
     def __str__(self):

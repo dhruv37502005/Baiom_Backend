@@ -1,596 +1,537 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+
+    <link rel="stylesheet" href="{% static 'courses\css\style3.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'courses\css\sidebar.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'courses\css\faq.css' %}">
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet"  type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
 <div class="containerr">
-  <nav class="sidebarrr">
-    <ul class="sidebarrr_ul">
-      {% for category in categories %}
-      <li><a href="{% url 'course:category_courses' category_id=category.id %}">{{ category.name }}</a></li>
-      </li>
-      {% endfor %}
-    </ul>
-  </nav>
   <div>
-    {% for course in courses %}
-    <section class="one">
-      <div class="info">
-        {% comment %} <button id="certified">Certified Online Training</button> {% endcomment %}
-        <!-- <div class="cards">
-          <div class="custom-card">
-            <div class="card-body">
-              <div class="custom-progress">
-                <div class="progress-bar"></div>
-                <span>55%</span>
-              </div>
-              <div>
-              
-              </div>
-              {% comment %} <div>{% if course.video %}
-                <video width="320" height="240" controls>
-                  <source src="{{ course.video.url }}" type="video/mp4">
-                  <source src="{{ course.video.url }}" type="video/webm">
-                  <source src="{{ course.video.url }}" type="video/ogg">
-                  Your browser does not support the video tag.
-                </video>
-                {% else %}
-                <p>No video available</p>
-                {% endif %}
-              </div> {% endcomment %}
-              <h4 style="color: black">Name: {{course.title}}</h4>
-              <h4 style="color: black">Description: {{course.description}}</h4>
-              <h4 style="color: black">Category: {{course.category}}</h4>
-              <h4 style="color: black">Price: {{course.price}}</h4>
-              <h4 style="color: black">Instructor: {{course.instructor}}</h4>
-              <h4 style="color: black">Discount Price: {{course.discount}}</h4>
-            </div>
-              {% if course in enrolled_courses %}
-              <button class="btn-enroll">
-                Already Enrolled
-              </button>
-              {% else %}
-              <a href="{% url 'dashboard:enroll_course' course_id=course.id %}" class="btn-enroll">
-                Enroll Now
-              </a>
-              {% endif %}
-          </div>
-        </div> -->
-        <h1>{{course.title}}</h1>
+    <!-- I'm interested -->
+
+
+    <div class="topsection1-container">
+      <div class="topsection1-content">
+
+
+        <h1>Learn a <span>New Skill</span> Everyday, Anytime, and Anywhere.</h1>
         <p>
-          {{course.description}}
+          <b>1000+</b> Courses covering all tech domains for you to learn and
+          explore new opportunities. Learn from Industry Experts and land your
+          Dream Job.
         </p>
-        <p>Instructor : <strong>{{course.instructor}}</strong></p>
-        <button class="offer">
-         ₹ {{course.price}}
-        </button>
-        {% if course in enrolled_courses %}
-        <button class="btn-enroll">
-          Already Enrolled
-        </button>
-        {% else %}
-        <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
-          Enroll Now  </button>
-        </a>
-        {% endif %}
+
+        
+        {% for course in courses %}
+             <section class="one">
+                <div class="info">
+                   {% comment %} <button id="certified">Certified Online Training</button> {% endcomment %}
+                       <h1>{{course.title}}</h1>
+                       <p>{{course.description}}</p>
+                       <p>Instructor : <strong>{{course.instructor}}</strong></p>
+                       <button class="offer">
+                          ₹ {{course.price}}</button>
+                      {% if course in enrolled_courses %}
+                          <button class="btn-enroll">
+                            Already Enrolled</button>
+                      {% else %}
+                      <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
+                          Enroll Now  </button></a>
+                     <!-- <h4>{{course.title}} Carriculum</h4>
+                     <h4>{{course.carriculum_title}}</h4>
+                     <h4>{{course.carriculum_desc}}</h4> -->
+                     <h4>{{course.batch}}</h4>
+                     <h4>Batches for {{ course.title }}</h4>
+                  <ul>
+
+                    <li>{{ batch.batch_name }} - Start Date: {{ batch.start_date }} - End Date: {{ batch.end_date }}</li>
+                  </ul>
+                  <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button class="my-2 btn-enroll">
+                      3 Month Plan  </button>
+                  </a>
+                  <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-6-27' %}"><button class="my-2 btn-enroll">
+                    6 Month Plan  </button>
+                  </a>
+                   <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-9-27' %}"><button class="my-2 btn-enroll">
+                    9 Month Plan  </button>
+                  </a>
+                 {% endif %}
       </div>
       <div class="pic">
-        {% if course.image %}
+       <!-- {% if course.image %}
                 <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
                 {% else %}
                 <p>No image available</p>
-                {% endif %}
-      </div>
+        {% endif %}
+      </div>  -->
     </section>
-    {% endfor %}
+ 
 
 
-    <section class="two">
-      <h1>Course <span class="underline">Highlights</span></h1>
-      <div class="features">
-        <ul>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div>
-              <p class="heading">Live Sessions</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-sharp fa-solid fa-certificate"></i>
-            <div>
-              <p class="heading">Personalised Mentorship</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-user-group"></i>
-            <div>
-              <p class="heading">Placement Assessment</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-phone"></i>
-            <div>
-              <p class="heading">Live Projects and Internship Opportunities</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-diagram-project"></i>
-            <div>
-              <p class="heading">Webinar and Seminar Access</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-calendar"></i>
-            <div>
-              <p class="heading">Doubt-clearing sessions</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-handshake-angle"></i>
-            <div>
-              <p class="heading">Certification</p>
-            </div>
-          </li>
-          <!-- <li>
-            <i class="fa-solid fa-lightbulb"></i>
-            <div>
-              <p class="heading">Doubt clearing</p>
-              <p>Through Q&A forum</p>
-            </div>
-          </li>
-          <li id="last">
-            <i class="fa-solid fa-business-time"></i>
-            <div>
-              <p class="heading">Downloadable content</p>
-              <p>With lifetime access</p>
-            </div>
-          </li> -->
-        </ul>
+
+        <!-- <div class="topsection1-input">
+          <span class="material-symbols-outlined"> search </span>
+          <input type="text" placeholder="What to learn?" />
+          <button type="button">Explore</button>
+        </div> -->
+        <div class="topsection1-countpart">
+          <div>
+            <h1 class="first">1000+</h1>
+            <h3>Courses to choose from</h3>
+          </div>
+          <div>
+            <h1 class="second">5000+</h1>
+            <h3>Students Trained</h3>
+          </div>
+          <div>
+            <h1 class="third">200+</h1>
+            <h3>Professional Trainers</h3>
+          </div>
+        </div>
       </div>
-    </section>
+      <div class="topsection1-image">
+         
+       <img src="{{ course.image.url}}" alt="image" />
+       <div class="topsection1-button">
+        <button class="interested">I AM INTERESTED</button>
+      {% for category in categories %}
+          {% if category.file and category == course.category %}
+          <a href="{% url 'course:download_file' file_id=category.id %}" class="broucher">
+            <button>DOWNLOAD BROCHURE</button> </a>  
+            {% endif %}
+        </div> 
+        {% endfor %}
+      </div>
+    </div>
 
-    <!-- <section class="three">
-      <h3 id="why-web-dev-heading-2">
-        <span>Why <span class="underline">learn</span> web development?</span>
-      </h3>
+ 
+    <!-- Program overview -->
+    <section class="three">
       <div class="why-web-dev-box">
         <div class="why-web-dev">
           <h3 id="why-web-dev-heading-1">
-            Why <span class="underline">learn</span> web development?
+            Program <span class="underline">Overview</span>
           </h3>
-          <p class="heading">High-Demand Skill</p>
-          <p>
-            With the world moving towards digitalisation, web development is one
-            skill that ranks high on the chart in terms of priority as well as
-            income.
-          </p>
-          <p class="heading">Explore your Creative side</p>
-          <p>
-            Web developers get to bring out their creative personality through
-            designing applications.
-          </p>
-          <p class="heading">Flexibility</p>
-          <p>
-            Freelancing, internships, part-time or full-time jobs, students can
-            choose the type of job that best suits them.
-          </p>
+          <p>{{course.description}}</p>
         </div>
         <div class="image">
-          <img src="{% static 'home/img/41.jpg' %}" />
-        </div>
-      </div>
-    </section> -->
-
-    <section class="five">
-      <h3 id="placement-info-heading-2">
-        <span
-          >What <span class="underline">placement assistance</span> will you
-          receive?</span
-        >
-      </h3>
-      <div class="placement-info">
-        <div class="why-web-dev">
-          <h3 id="placement-info-heading-1">
-            <span
-              >What <span class="underline">placement assistance</span> will you
-              receive?</span
-            >
-          </h3>
-          <p>
-            <span>•</span>
-            Baoiam promises to be by your side and guide you at every step till
-            you successfully get placed.
-          </p>
-          <p>
-            <span>•</span>
-            From helping you create your CV to assisting you in building a
-            strong LinkedIn profile, we have got your back all the way.
-          </p>
-          <p>
-            <span>•</span>
-            Our experts will mentor you at each stage of the placement process.
-          </p>
-          <!-- <p class="heading">Free Placement Prep Training</p>
-          <p>
-            Learn how to build your resume, make great applications, and ace
-            your interviews.
-          </p>
-          <p class="heading">Curated internships & jobs</p>
-          <p>
-            Get internships and fresher jobs as per your preference in your
-            inbox.
-          </p>
-          <p class="heading">Get highlighted on Internshala</p>
-          <p>
-            Top performers will be highlighted in their internship & job
-            applications on Internshala.
-          </p> -->
-        </div>
-        <div class="image">
-          <img src="{% static 'home/img/23.jpg' %}" />
+          <img src="{{ course.image.url}}" />
         </div>
       </div>
     </section>
-
-    <section class="six">
-      <h1>How will your <span class="underline">training</span> work?</h1>
-      <div class="features">
+    {% endfor %}
+    <!-- Course Highlights -->
+<section class="section-three">
+      <div>
+        <h2><span> Course </span> Highlights</h2>
         <ul>
           <li>
-            <i class="fa-solid fa-chalkboard-user"></i>
-            <div>
-              <p class="heading">Interactive Sessions</p>
-              <p>
-                Attend classes and get tutored by our highly qualified mentors.
-              </p>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Learn Online</h4>
+              <p>At your own schedule</p>
             </div>
           </li>
           <li>
-            <i class="fa-solid fa-check-double"></i>
-            <div>
-              <p class="heading">Doubt-clearing Sessions</p>
-              <p>
-                Do not hesitate to ask any questions, as we are always willing
-                to help you understand the concepts better.
-              </p>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Doubt Clearing</h4>
+              <p>Through Q&A forum</p>
             </div>
           </li>
           <li>
-            <i class="fa-solid fa-brain"></i>
-            <div>
-              <p class="heading">Case Studies</p>
-              <p>
-                Assignments and projects that will help you in the practical
-                application of concepts will be given.
-              </p>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Mobile Friendly</h4>
+              <p>No Laptop? No Problem</p>
             </div>
           </li>
           <li>
-            <i class="fa-solid fa-pen"></i>
-            <div>
-              <p class="heading">Tests and quizzes</p>
-              <p>
-                You will be tested after the completion of each module to know
-                how much you have learned.
-              </p>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Beginner Friendly</h4>
+              <p>No prior knowledge required</p>
             </div>
           </li>
           <li>
-            <i class="fa-solid fa-hands"></i>
-            <div>
-              <p class="heading">Certification</p>
-              <p>
-                You will then be awarded with the Certificate of Completion.
-              </p>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Placement Assessment</h4>
+              <p>To Build Your Career</p>
             </div>
           </li>
-          <!-- <li>
-            <i class="fa-solid fa-award"></i>
-            <div>
-              <p class="heading">Get certified</p>
-              <p>
-                Get certified in Web Development upon successful completion
-                of training
-              </p>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>8 Weeks Duration</h4>
+              <p>1 hr/day (flexible schedule)</p>
             </div>
-          </li> -->
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Certificate of Traning</h4>
+              <p>From Baoiam Tranings</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Downloadable Content</h4>
+              <p>With Lifetime Access</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Projects</h4>
+              <p>For hand-on practice</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Industry Experts</h4>
+              <p>Study From The Best Tutors</p>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
 
-    <!-- <section class="seven">
-      <h1>Web Development Syllabus</h1>
+    <!-- Curriculum -->
+    <section class="seven">
+      <h1>Course <span class="underline">Curriculum</span></h1>
       <div class="accordion" id="accordionExample">
+        {% for curr in carriculum %}
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
               class="accordion-button"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
+              data-bs-target="#{{curr.carriculum_title}}"
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Html
+            {{curr.carriculum_title}}
             </button>
           </h2>
           <div
-            id="collapseOne"
+            id="{{curr.carriculum_title}}"
             class="accordion-collapse collapse show"
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              {{curr.carriculum_desc}}
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-            >
-              CSS
-            </button>
-          </h2>
-          <div
-            id="collapseTwo"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
-              JavaScript
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
-              Design Patterns
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
-              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
-              Object Modelling
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
-              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
-              Applications
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
-              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
-              Computer Graphics
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
-              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="true"
-              aria-controls="collapseThree"
-            >
-              Bootstrap
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quia
-              nemo laboriosam porro temporibus. Nihil vero hic nobis sit unde!
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+
       </div>
     </section>
-    <section class="nine"> -->
-      <!-- <h1><span class="underline">Reviews</span> From Students</h1>
-      <h2>Average Rating : 4.5</h2> -->
-
-      <!-- Slider2 -->
-      <section class="slider2">
-        <div class="blog-slider">
-          <div class="blog-slider__wrp swiper-wrapper">
-            <div class="blog-slider__item swiper-slide">
-              <div class="blog-slider__img">
-                <img src="{% static 'home/img/9.jpg' %}" alt="" />
-              </div>
-              <div class="blog-slider__content">
-                <span class="blog-slider__code">26 December 2019</span>
-                <div class="blog-slider__title">REVIEW</div>
-                <div class="blog-slider__text">
-                  The platform's responsive customer support is a significant
-                  advantage. Baoiam's prompt assistance has consistently upheld
-                  my seamless learning journey, making them an indispensable
-                  part of my progress.
+    <!-- Testimonials -->
+    <section class="testimonial">
+      <h1 class="testimonial-heading"><span class="underline">Testimonials</span></h1>
+      <div class="slide-container swiper">
+        <div class="slide-content">
+          <div class="card-wrapper swiper-wrapper">
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+    
+                <div class="card-image">
+                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
                 </div>
-                <a href="#" class="blog-slider__button">READ MORE</a>
+              </div>
+    
+              <div class="card-content">
+                <h2 class="name">John</h2>
+                <p><span class="name" style="text-align: center;">Course Student</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id distinctio perferendis, soluta obcaecati!</p>
+                  </p>
               </div>
             </div>
-
-            <div class="blog-slider__item swiper-slide">
-              <div class="blog-slider__img">
-                <img src="{% static 'home/img/19.jpg' %}" alt="" />
-              </div>
-              <div class="blog-slider__content">
-                <span class="blog-slider__code">26 December 2019</span>
-                <div class="blog-slider__title">REVIEW</div>
-                <div class="blog-slider__text">
-                  Baoiam's interactive assignments and projects have
-                  significantly elevated my practical skills. The platform's
-                  unique approach enabled immediate application of knowledge,
-                  fostering my confidence. A crucial companion on my learning
-                  journey.
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+    
+                <div class="card-image">
+                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
                 </div>
-                <a href="#" class="blog-slider__button">READ MORE</a>
+              </div>
+    
+              <div class="card-content">
+                <h2 class="name">john</h2>
+                <p><span class="name">Course Student</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id distinctio perferendis, soluta obcaecati!</p>
+                  </p>
               </div>
             </div>
-
-            <div class="blog-slider__item swiper-slide">
-              <div class="blog-slider__img">
-                <img src="{% static 'home/img/14.jpg' %}" alt="" />
-              </div>
-              <div class="blog-slider__content">
-                <span class="blog-slider__code">26 December 2019</span>
-                <div class="blog-slider__title">REVIEW</div>
-                <div class="blog-slider__text">
-                  Baoiam revolutionized my learning journey! Its intuitive
-                  interface, interactive lessons, and fun quizzes turned
-                  studying into a delightful and fruitful experience. A true
-                  game-changer in my learning process.
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+    
+                <div class="card-image">
+                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
                 </div>
-                <a href="#" class="blog-slider__button">READ MORE</a>
+              </div>
+    
+              <div class="card-content">
+                <h2 class="name">John</h2>
+                <p><span class="name">Course Student</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id distinctio perferendis, soluta obcaecati!</p>
+                  </p>
               </div>
             </div>
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+    
+                <div class="card-image">
+                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
+                </div>
+              </div>
+    
+              <div class="card-content">
+                <h2 class="name">John</h2>
+                <p><span class="name">Course Student</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id distinctio perferendis, soluta obcaecati!</p>
+                  </p>
+              </div>
+            </div>
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+    
+                <div class="card-image">
+                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
+                </div>
+              </div>
+    
+              <div class="card-content">
+                <h2 class="name">John</h2>
+                  <p><span class="name">Course Student</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id distinctio perferendis, soluta obcaecati!</p>
+                  </p>
+              </div>
+            </div>
+    
           </div>
-          <div class="blog-slider__pagination"></div>
         </div>
-      </section>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+      </div>
     </section>
-
-    <!-- FAQ -->
-    <div class="container-main faq">
-      <div class="ac-main">
-        <h1>Frequently Asked <span>Questions</span></h1>
-        <div class="accordion">
-          <div class="accordion-item">
-            <div class="accordion-item-header">
-              Q1. I am not a student of BAOIAM. Can I still refer a friend?
+    
+    <!-- Right Course -->
+    <section class="Right-course">
+      <h1 class="join_us">Join With Us <br>Find The <span class="title_join_us">Right Course</span></h1>
+      <div class="slider_wrapper">
+        <div class="splide">
+            <div class="splide__track">
+                <div class="splide__list">
+                  <div class="splide__slide">
+                    
+                        <div class="content-box">
+              
+                            <div class="content">
+                              <div class="name">Plus<br> 30,500<span class="name-span">/Full course</span></div>
+                                 <ul class="course-content"><li>Live Classes</li>
+                                   <li>Doubt Clearing Sessions</li>
+                                   <li>Assessment & Case Study</li>
+                                   <li>Mentorship</li></ul>
+                            
+                                 <button class="btn-1">Try Demo Class</button>
+                            
+                                </div>
+                          </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="content-box">
+                       <div class="content">
+               
+                        <div class="name">Plus Combo<br> 30,500<span class="name-span">/Full course</span></div>
+                        <ul class="course-content"><li>Live Classes</li>
+                          <li>Doubt Clearing Sessions</li>
+                          <li>Assessment & Case Study</li>
+                          <li>Mentorship</li>
+                          <li>Extra Course</li>
+                        </ul>
+                   
+                   <button class="btn-1">Try Demo Class</button>
+                       
+                     </div>
+                     </div>
+                    </div>
+                    <div class="splide__slide">
+                      <div class="content-box">
+                         
+                         <div class="content">
+                             
+                           <div class="name">Premium<br>60,000/<span class="name-span">Full course</span> </div>
+                           <ul class="course-content"><li>Live Classes</li>
+                              <li>Doubt Clearing Sessions</li>
+                              <li>Assessment & Case Study</li>
+                              <li>Mentorship</li>
+                              <li>Webinar Access</li>
+                              <li>Placement Assistance</li>
+                              <li>Interview Preparation</li>
+                              <li>Resume Building</li></ul><br><br>
+              
+                        
+                         <button class="btn-1">Try Demo Class</button>
+                       </div> 
+                       </div> 
+                       
+                      </div>
+                     <div class="splide__slide">
+                       <div class="content-box">
+                        <div class="content">
+                        <div class="name">Premium Combo<br>60,000/<span class="name-span">Full course</span> </div>
+                        <ul class="course-content"><li>Live Classes</li>
+                           <li>Doubt Clearing Sessions</li>
+                           <li>Assessment & Case Study</li>
+                           <li>Mentorship</li>
+                           <li>Webinar Access</li>
+                           <li>Placement Assistance</li>
+                           <li>Interview Preparation</li>
+                           <li>Resume Building</li>
+                           <li>Extra Course</li>
+                          </ul>
+                           
+                        
+                        <button class="btn-1">Try Demo Class</button>
+                        
+                      </div>
+                     </div>
+                   </div>
+                   
+                     <!-- <div class="splide__slide">
+                        <div class="content-box">
+                           <div class="premium">
+                           <div class="content">
+                               
+                             <div class="premium_name">Premium<br>60,000/<span class="premium_name-span">Full course</span> </div>
+                             <ul class="premium_content"><li>Live Classes</li>
+                                <li>Doubt Clearing Sessions</li>
+                                <li>Assessment & Case Study</li>
+                                <li>Mentorship</li>
+                                <li>Webinar Access</li>
+                                <li>Placement Assistance</li>
+                                <li>Interview Preparation</li>
+                                <li>Resume Building</li></ul><br><br>
+                
+                          
+                           <button class="btn-2">Try Demo Class</button>
+                         </div> 
+                         </div> 
+                         </div>
+                        </div>
+                      
+                     <div class="splide__slide">
+                       <div class="content-box">
+                        <div class="content">
+                
+                         <div class="name">Premium Combo<br>30,500/<span class="name-span">Full course</span> </div>
+                         <ul class="course-content"><li>Live Classes</li>
+                            <li>Doubt Clearing Sessions</li>
+                            <li>Assessment & Case Study</li>
+                            <li>Mentorship</li>
+                            <li>Webinar Access</li>
+                            <li>Placement Assistance</li></ul>
+                            
+                         
+                         <button class="btn-1">Try Demo Class</button>
+                         
+                        
+                      </div>
+                     </div>
+                   </div> -->
+                </div>
             </div>
-            <!-- /.accordion-item-header -->
-            <div class="accordion-item-body">
-              <div class="accordion-item-body-content">
+        </div>
+        </div>
+    
+        <div class="emi-container">
+            <div class="emi_box">
+                <h2 class="emi">Easy EMI</h2>
+                <div class="key_features">key features of Easy EMI
+                    <ul class="emi_features">
+                        <li>No upfront payment required</li>
+                        <li>Fixed monthly installments</li>
+                        <li>Flexible repayment options</li></ul></div>
+            </div>
+            <div class="emi_box"><h2 class="emi">Pay After Placement</h2>
+                <div class="key_features">key features
+                    <ul class="emi_features">
+                        <li>With our Pay After Placement program, you invest in your career development now and pay us only when yoy land a job.</li></ul></div>
+            </div></div>
+    
+            <!-- Awaits amazing_career -->
+            <section class="amazing_career">
+                <h2 class="amazing_heading">Amazing Career</h2>
+                <div class="awaits">Awaits!</div>
+                <p class="grab_offer">Grab these exclusive offers available only once a year.</p>
+                <div class="buy_course_container">
+                    <div class="buy_course_box">
+                        <div class="buy_course">BUY 2 COURSES & GET MORE</div>
+                        <h4 class="off">OFF</h4>
+                        <div class="percentage">15%</div> 
+                           
+                    </div>
+                    <div class="buy_3course_box">
+                        <div class="buy_3course">BUY 3 COURSES & GET MORE </div>
+                        <h4 class="off_3">OFF</h4>
+                        <div class="percentage_3">20%</div>    
+                    </div>
+                    <div class="buy_course_box">
+                        <div class="buy_course">BUY 4 COURSES & GET MORE </div>
+                        <h4 class="off">OFF</h4>
+                        <div class="percentage">25%</div>    
+                    </div>
+                </div>
+                <button class="btn-3">GRAB THE DEAL</button>
+            
+            </section>
+    </section>      
+        
+        <!-- FAQ -->
+        <div class="container-main faq">
+          <div class="ac-main">
+            <h1>Frequently Asked <span>Questions</span></h1>
+            <div class="accordion">
+              <div class="accordion-item">
+                <div class="accordion-item-header">
+                  Q1. I am not a student of BAOIAM. Can I still refer a friend?
+                </div>
+                <!-- /.accordion-item-header -->
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
                 Yes, If you are aware of BAOIAM and believe in what we are
                 doing, then feel free to refer your friend.
               </div>
@@ -657,5 +598,9 @@
     </div>
   </div>
 </div>
-
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="{% static 'courses\js\index.js' %}"></script>
+</html>
 {% endblock content %}
