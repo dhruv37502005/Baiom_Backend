@@ -685,7 +685,7 @@
               </div>
             </li>
             <li class="nav-item">
-              {% url 'core:itie' as itie %}
+              {% url 'itie:Itie' as itie %}
               <a
                 href="{{itie}}"
                 class="nav-link {% if request.path == itie %}isactive{% endif %}"
@@ -740,7 +740,24 @@
                 >Contact Us</a
               >
             </li>
-
+            <li class="nav-item">
+              <a
+                class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
+                href="{% url 'dashboard:user_ui' %}"
+                style="font-size: 18px"
+                >DASHBOARD</a
+              >
+            </li><li class="nav-item">
+              {% url 'blog:categories' as urlblog %}
+              <a
+                class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
+                href="{% url 'userauths:logout' %}"
+                style="font-size: 18px"
+                >LOGOUT</a
+              >
+            </li>
+            
+            
             {% if user.username %}
             <li class="nav-item" id="profile">
               <button type="button" id="profile-btn" class="profile-btn">
