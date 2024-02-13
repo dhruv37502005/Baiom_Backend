@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from .models import Contact
 from .models import BootCourse, BootBatch
 from .models import testimonial
 class BootCourseAdmin(admin.ModelAdmin):
@@ -12,3 +12,4 @@ class BootBatcheAdmin(admin.ModelAdmin):
 admin.site.register(BootCourse, BootCourseAdmin)
 admin.site.register(BootBatch, BootBatcheAdmin)
 admin.site.register(testimonial)
+admin.site.register(Contact)

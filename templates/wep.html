@@ -33,16 +33,17 @@
     <title>Document</title>
   </head>
   <body>
-    <form class="popup-form" id="popup-form">
+    <form class="popup-form" id="popup-form" method="post">
+      {% csrf_token %}
       <div class="popup-form-content">
         <div class="close" id="popup-close">&times;</div>
-        <lable for="name" id="name">Name</lable>
-        <input id="name" type="text" />
-        <lable for="email" id="email">Email</lable>
-        <input id="email" type="email" />
-        <lable for="mobile" id="mobile">Mobile</lable>
-        <input id="mobile" type="text" />
-        <button type="button" class="popup-submit">Submit</button>
+        <label for="name" id="name">Name</label>
+        <input id="name" name="name" type="text" />
+        <label for="email" id="email">Email</label>
+        <input id="email" name="email" type="email" />
+        <label for="mobile" id="mobile">Mobile</label>
+        <input id="mobile" name="mobile" type="text" />
+        <button type="submit" class="popup-submit">Submit</button>
       </div>
     </form>
     <section class="section-one">
