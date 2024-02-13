@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ItieConfig(AppConfig):
+class BootcampConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'itie'
+    name = 'bootcamp'

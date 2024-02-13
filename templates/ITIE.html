@@ -31,16 +31,17 @@
     <title>Document</title>
   </head>
   <body>
-    <form class="popup-form" id="popup-form">
+    <form class="popup-form" id="popup-form" method="post">
+      {% csrf_token %}
       <div class="popup-form-content">
         <div class="close" id="popup-close">&times;</div>
-        <lable for="name" id="name">Name</lable>
-        <input id="name" type="text" />
-        <lable for="email" id="email">Email</lable>
-        <input id="email" type="email" />
-        <lable for="mobile" id="mobile">Mobile</lable>
-        <input id="mobile" type="text" />
-        <button type="button" class="popup-submit">Submit</button>
+        <label for="name" id="name">Name</label>
+        <input id="name" name="name" type="text" />
+        <label for="email" id="email">Email</label>
+        <input id="email" name="email" type="email" />
+        <label for="mobile" id="mobile">Mobile</label>
+        <input id="mobile" name="mobile" type="text" />
+        <button type="submit" class="popup-submit">Submit</button>
       </div>
     </form>
     <main class="containerr" id="container">
@@ -188,77 +189,23 @@
 
       <section class="section-five">
         <h2>Testimonials</h2>
-        <div class="temp">
-          <i id="left" class="fa-solid fa-angle-left"></i>
-          <i id="right" class="fa-solid fa-angle-right"></i>
-          <div class="carousel">
+        <div class="carousel">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <i id="right" class="fa-solid fa-angle-right"></i>
             <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
+    
+                {% for testimonial in testimonials %}
+                <div class="details">
+                    <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" />
+                    <h4>{{ testimonial.name }}</h4>
+                    <h6>{{ testimonial.designation }}</h6>
+                </div>
+                <p>
+                    {{ testimonial.text }}
+                </p>
+                {% endfor %}
+    
             </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-          </div>
         </div>
       </section>
       <!-- <section class="section-six">

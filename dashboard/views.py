@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render, redirect
-from course.models import Course,Purchase, Batch, Resource
+from course.models import Course, Batch, Resource #,Purchase
 from .forms import UserUpdateForm
 from userauths.models import Dashboard_User
 from django.contrib.auth.models import User, auth
@@ -11,6 +11,8 @@ from django.utils import timezone
 from datetime import datetime, timedelta
 from django.core.files.storage import FileSystemStorage
 from django.core.files.base import ContentFile
+from subscription.models import PurchaseCourse
+
 
 
 @login_required(login_url="/userauths/login/")
@@ -32,28 +34,43 @@ def user_ui(request):
                 dash_user = Dashboard_User.objects.get(user_id=user.id)
                 # get active courses if enrolled
                 # enrolled_courses = dash_user.enrolled_courses.filter(status="active")
-                purchase_courses = Purchase.objects.filter(user=request.user)
+                purchase_courses = PurchaseCourse.objects.filter(user=request.user)
                 todays_date = timezone.now().date()
                 print(todays_date)
 
-                ongoing_courses = [purchase.course  for purchase in purchase_courses
-                    if (purchase.purchase_end_date and purchase.additional_access_date) >todays_date]
-                print(f"ongoing_courses: {ongoing_courses}")
+                enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+                # purchase_courses = Purchase.objects.filter(user=request.user)
+                todays_date = timezone.now().date()
+                print(todays_date)
+                # TODO:  pass final purchase query to dashboard
+                # ongoing_courses = [purchase.course  for purchase in purchase_courses
+                #     if (purchase.purchase_end_date and purchase.additional_access_date) >todays_date]
+                # print(f"ongoing_courses: {ongoing_courses}")
+                years = list(range(1990, 2031))
+
+
+                # get active courses if enrolled
+                enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+                # purchase_courses = Purchase.objects.filter(user=request.user)
+                todays_date = timezone.now().date()
+                print(todays_date)
+                # TODO:  pass final purchase query to dashboard
+                # ongoing_courses = [purchase.course  for purchase in purchase_courses
+                #     if (purchase.purchase_end_date and purchase.additional_access_date) >todays_date]
+                # print(f"ongoing_courses: {ongoing_courses}")
                 years = list(range(1990, 2031))
 
                 # get batch of that course
-                batches = Batch.objects.filter(course__in=ongoing_courses)
+                batches = Batch.objects.filter(course__in=enrolled_courses)
                 print(f"batches: {batches}")
                 # get batch of that course
-                batches = Batch.objects.filter(course__in=ongoing_courses)
+                batches = Batch.objects.filter(course__in=enrolled_courses)
                 # get notes for that batch
                 batch_notes ={}
                 for batch in batches:
                     notes = Resource.objects.filter(batch=batch, notes__isnull=False)
                     batch_notes[batch] = notes
-#                 print(f"batch_notes: {batch_notes}")
-#                 print(f"Batch: {batch}")
-#                 print(f"Notes for Batch: {notes}")
+
 
                 return render(
                     request,
@@ -62,7 +79,8 @@ def user_ui(request):
                         'years': years,
                         "user": user,
                         "dash_user": dash_user,
-                        "enrolled_courses": ongoing_courses,
+                        # "enrolled_courses": ongoing_courses,
+                        "enrolled_courses": enrolled_courses,
                         "batches": batches,
                         "batch_notes": batch_notes,
                     },
@@ -159,18 +177,19 @@ def enroll_plan(request, date, course_id):
     start_date = timezone.now()
     end_date = datetime.strptime(date, "%Y-%m-%d")
     additional_access_date = (end_date + timedelta(days=30)).strftime("%Y-%m-%d")
-    purchase = Purchase.objects.create(
-        user=request.user,
-        Batch=batch,
-        course=course,
-        purchase_start_date=start_date,
-        purchase_end_date=end_date,
-        additional_access_date=additional_access_date
-    )
+    # purchase = Purchase.objects.create(
+    #     user=request.user,
+    #     Batch=batch,
+    #     course=course,
+    #     purchase_start_date=start_date,
+    #     purchase_end_date=end_date,
+    #     additional_access_date=additional_access_date
+    # )
     dashboard_user.enrolled_courses.add(course)
     dashboard_user.enrolled_batches.add(batch)
 
     return redirect("dashboard:user_ui")
+
 
 
 

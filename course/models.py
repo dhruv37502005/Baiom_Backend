@@ -34,6 +34,7 @@ class Course(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     duration_field = models.DurationField(default=timezone.timedelta)
     watch_percent = models.FloatField(blank=True,null=True)
+    is_wep_brochure = models.FileField
     status_choices = [
         ('active', 'Active'),
         ('inactive', 'Inactive'),
@@ -63,26 +64,26 @@ class Batch(models.Model):
 
 
 
-class Purchase(models.Model):
-    user = models.ForeignKey(Dashboard_User, on_delete=models.CASCADE)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    Batch = models.ForeignKey(Batch, on_delete=models.CASCADE, null=True, blank=True)
-    purchase_date = models.DateField(auto_now_add=True)
-    purchase_start_date = models.DateField()
-    purchase_end_date = models.DateField()
-    additional_access_date = models.DateField()
+# class Purchase(models.Model):
+#     user = models.ForeignKey(Dashboard_User, on_delete=models.CASCADE)
+#     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+#     Batch = models.ForeignKey(Batch, on_delete=models.CASCADE, null=True, blank=True)
+#     purchase_date = models.DateField(auto_now_add=True)
+#     purchase_start_date = models.DateField()
+#     purchase_end_date = models.DateField()
+#     additional_access_date = models.DateField()
 
     
-    def __str__(self):
-        return f"{self.course.title} - Course"
+#     def __str__(self):
+#         return f"{self.course.title} - Course"
 
-    def is_course_access_valid(self):
-        now = timezone.now()
-        return self.start_date <= now <= self.end_date
+#     def is_course_access_valid(self):
+#         now = timezone.now()
+#         return self.start_date <= now <= self.end_date
 
-    def can_access_recorded_videos(self):
-        now = timezone.now()
-        return self.end_date <= now <= self.additional_access_date
+#     def can_access_recorded_videos(self):
+#         now = timezone.now()
+#         return self.end_date <= now <= self.additional_access_date
 
 class Resource(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
