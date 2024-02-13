@@ -695,10 +695,10 @@
               <ul class="sub-courses-list"></ul>
             </li>
             <li class="nav-item">
-              {% url 'core:wep' as urlwep %}
+              {% url 'bootcamp:bootcamp' as bootcamp %}
               <a
                 class="nav-link {% if request.path == urlwep %}isactive{% endif %}"
-                href="{{urlwep}}"
+                href="{{bootcamp}}"
                 style="font-size: 18px"
                 >WEP</a
               >
