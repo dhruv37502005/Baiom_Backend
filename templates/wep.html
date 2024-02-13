@@ -47,12 +47,11 @@
       </div>
     </form>
     <section class="section-one">
-      <div class="topsection1-container" >
+      <div class="topsection1-container" style="background-image:url('{% static 'wep\Images\wep-backgroundimg.png' %}')">
         <div class="topsection1-image">
-          <img src="{% static 'wep\Images\wep-backgroundimg.png' %}" alt="image"  />
+          <!-- <img src="{% static 'wep/Images/img1.avif' %}" alt="image" /> -->
         </div>
       <div class="topsection1-content">
-        <div class="content">
         <h1><span>WOMEN</span> ENTREPRENEUR</h1>
         <p>
           Welcome to <b>BAOIAM,</b> the premier learning platform exclusively
@@ -68,7 +67,6 @@
          {% endif %}
          {% endfor %}
         </div>
-      </div>
 
       </div>
     </section>
@@ -441,45 +439,44 @@
         </div>
     
         <div class="emi-container">
-          <div class="emi_box">
-              <h2 class="emi">Easy EMI</h2>
-              <div class="key_features">key features of Easy EMI
-                  <ul class="emi_features">
-                      <li>No upfront payment required</li>
-                      <li>Fixed monthly installments</li>
-                      <li>Flexible repayment options</li></ul></div>
-          </div>
-          <div class="emi_box"><h2 class="emi">Pay After Placement</h2>
-              <div class="key_features">key features
-                  <ul class="emi_features">
-                      <li>With our Pay After Placement program, you invest in your career development now and pay us only when yoy land a job.</li></ul></div>
-    </div></div> 
+            <div class="emi_box">
+                <h2 class="emi">Easy EMI</h2>
+                <div class="key_features">key features of Easy EMI
+                    <ul class="emi_features">
+                        <li>No upfront payment required</li>
+                        <li>Fixed monthly installments</li>
+                        <li>Flexible repayment options</li></ul></div>
+            </div>
+            <div class="emi_box"><h2 class="emi">Pay After Placement</h2>
+                <div class="key_features">key features
+                    <ul class="emi_features">
+                        <li>With our Pay After Placement program, you <br>invest in your career development now and <br>pay us only when yoy land a job.</li></ul></div>
+            </div></div>
         <div class="circle_five"></div>
       </div>
     </section>
 
-    <section class="amazing_career">
-      <div class="amazing-container">
-        <h2 class="amazing_heading">Amazing Career</h2>
-        <div class="awaits">Awaits!</div>
-        <p class="grab_offer">
-          Grab these exclusive offers available only once a year.
-        </p>
-        <div class="buy_course_container">
-          <div class="buy_course_box">
-            <div class="buy_course">BUY 2 COURSES & GET MORE</div>
-            <h4 class="off">OFF</h4>
-            <div class="percentage">15%</div>
+    <section class="section-eight">
+      <div class="deal_section">
+        <h4>Amazing Career</h4>
+        <h5>Awaits!</h5>
+        <p>Grab the exclusive offer available only once a year.</p>
+        <div class="boxes">
+          <div class="off">
+            <p>BUY 2 COURSES & GET</p>
+            <h6>OFF</h6>
+            <span>15%</span>
           </div>
-          <div class="buy_course_box">
-            <div class="buy_course">BUY 3 COURSES & GET MORE</div>
-            <h4 class="off">OFF</h4>
-            <div class="percentage_3">20%</div>
+
+          <div class="off">
+            <p>BUY 3 CORESES & GET</p>
+            <h6>OFF</h6>
+            <span>20%</span>
           </div>
-          <div class="buy_course_box">
-            <div class="buy_course">BUY 4 COURSES & GET MORE</div>
-            <h4 class="off">OFF</h4>
-            <div class="percentage">25%</div>
+          <div class="off">
+            <p>BUY 4 COURSES & GET</p>
+            <h6>OFF</h6>
+            <span>25%</span>
           </div>
         </div>
         <div class="timer" id="countdown">
@@ -503,7 +500,7 @@
             <p>seconds</p>
           </div>
         </div>
-        <button class="btn-3">GRAB THE DEAL</button>
+        <button id="grabDeal" onclick="checkDealAvailability()">GRAB THE DEAL</button>
       </div>
     </section>
     
