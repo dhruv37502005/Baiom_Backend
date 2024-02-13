@@ -31,23 +31,25 @@
     <title>Document</title>
   </head>
   <body>
-    <form class="popup-form" id="popup-form" method="post">
-      {% csrf_token %}
+    <form class="popup-form" id="popup-form">
       <div class="popup-form-content">
         <div class="close" id="popup-close">&times;</div>
-        <label for="name" id="name">Name</label>
-        <input id="name" name="name" type="text" />
-        <label for="email" id="email">Email</label>
-        <input id="email" name="email" type="email" />
-        <label for="mobile" id="mobile">Mobile</label>
-        <input id="mobile" name="mobile" type="text" />
-        <button type="submit" class="popup-submit">Submit</button>
+        <lable for="name" id="name">Name</lable>
+        <input id="name" type="text" />
+        <lable for="email" id="email">Email</lable>
+        <input id="email" type="email" />
+        <lable for="mobile" id="mobile">Mobile</lable>
+        <input id="mobile" type="text" />
+        <button type="button" class="popup-submit">Submit</button>
       </div>
     </form>
-    <main class="container" id="container">
+    <main class="containerr" id="container">
       <section
         class="section-one"
-        style="background-image: url('{% static 'itie/img/girl.jpg' %}')"
+        style="
+          background-image: url('{% static 'itie/img/girl.jpg' %}');
+          background-size: cover;
+        "
       >
         <div>
           <h1>
@@ -61,9 +63,13 @@
             designed to help you gain knowledge, share yout experties with
             others, and earn rewards along the way.
           </p>
-          <button class="button-one" id="button-one">I AM INTRESTED</button>
-          <input type="text" placeholder="Want to learn?" />
-          <button class="button-two">Explore</button>
+          <div class="button-section">
+            <button class="button-one" id="button-one">I AM INTRESTED</button>
+            <div class="input-section">
+              <input type="text" placeholder="Want to learn?" />
+              <button class="button-two">Explore</button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -163,107 +169,6 @@
         </div>
       </section>
 
-      <!--   <section class="section-four">
-        <h2>Courses</h2>
-        <div class="cards_container">
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Marketing</h4>
-            <h6>(SEO,DM.Strategic Marketing)</h6>
-            <p>
-              Gain parctical insights into creating compelling campaigns,
-              optimizing digital channel ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Web developer</h4>
-            <h6>(Frontend & Backend)</h6>
-            <p>
-              Dive into the world of development with our comprehensive course
-              ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Human Resourse</h4>
-            <h6>Management</h6>
-            <p>
-              Deep dive into the strategic and talent acquisition and employee
-              relation to performance ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>UX/UI Designing</h4>
-            <h6>Design</h6>
-            <p>
-              Gain hand-on expertise in crafting seamless digital interaction,
-              mastering us ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Graphics Designing</h4>
-            <h6>Design</h6>
-            <p>
-              Master industry-standard software to honing your artistic
-              expression, this program p ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Data Analytics</h4>
-            <h6>Bussiness</h6>
-            <p>
-              Gain proficiency in statistical analysis, and machine learning,
-              empowerning yourself to ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Bussiness Communication</h4>
-            <h6>Bussiness</h6>
-            <p>
-              Hone your interpersonal skills to master written and verbal
-              communication strategies...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>Product Management</h4>
-            <h6>Management</h6>
-            <p>
-              Gain the skill to lead teams, manage resources efficiently, and
-              ensure projects are ...more
-            </p>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-          </div>
-        </div>
-      </section>  -->
       <section class="section-four">
         <h2>Courses</h2>
         <div class="cards_container">
@@ -283,25 +188,79 @@
 
       <section class="section-five">
         <h2>Testimonials</h2>
-        <div class="carousel">
-            <i id="left" class="fa-solid fa-angle-left"></i>
-            <i id="right" class="fa-solid fa-angle-right"></i>
+        <div class="temp">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+          <div class="carousel">
             <div class="testimonials">
-    
-                {% for testimonial in testimonials %}
-                <div class="details">
-                    <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" />
-                    <h4>{{ testimonial.name }}</h4>
-                    <h6>{{ testimonial.designation }}</h6>
-                </div>
-                <p>
-                    {{ testimonial.text }}
-                </p>
-                {% endfor %}
-    
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
             </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
       <!-- <section class="section-six">
       <div>
         <h2>Program <span>Certification</span></h2>
@@ -447,26 +406,29 @@
           <button>GRAB THE DEAL</button>
         </div>
       </section> -->
-      <section class="section-eight">
-        <div class="deal_section">
-          <h4>Amazing Career</h4>
-          <h5>Awaits!</h5>
-          <p>Grab the exclusive offer available only once a year.</p>
-          <div class="boxes">
-            <div class="off">
-              <p>BUY 2 CORESES & GET</p>
-              <h6>OFF</h6>
-              <span>15%</span>
+
+      <section class="amazing_career">
+        <div class="amazing-container">
+          <h2 class="amazing_heading">Amazing Career</h2>
+          <div class="awaits">Awaits!</div>
+          <p class="grab_offer">
+            Grab these exclusive offers available only once a year.
+          </p>
+          <div class="buy_course_container">
+            <div class="buy_course_box">
+              <div class="buy_course">BUY 2 COURSES & GET MORE</div>
+              <h4 class="off">OFF</h4>
+              <div class="percentage">15%</div>
             </div>
-            <div class="off">
-              <p>BUY 3 CORESES & GET</p>
-              <h6>OFF</h6>
-              <span>20%</span>
+            <div class="buy_course_box">
+              <div class="buy_course">BUY 3 COURSES & GET MORE</div>
+              <h4 class="off">OFF</h4>
+              <div class="percentage_3">20%</div>
             </div>
-            <div class="off">
-              <p>BUY 4 CORESES & GET</p>
-              <h6>OFF</h6>
-              <span>25%</span>
+            <div class="buy_course_box">
+              <div class="buy_course">BUY 4 COURSES & GET MORE</div>
+              <h4 class="off">OFF</h4>
+              <div class="percentage">25%</div>
             </div>
           </div>
           <div class="timer" id="countdown">
@@ -490,9 +452,7 @@
               <p>seconds</p>
             </div>
           </div>
-          <button id="grabDeal" onclick="checkDealAvailability()">
-            GRAB THE DEAL
-          </button>
+          <button class="btn-3">GRAB THE DEAL</button>
         </div>
       </section>
 

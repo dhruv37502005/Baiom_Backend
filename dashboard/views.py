@@ -35,6 +35,7 @@ def user_ui(request):
                 # get active courses if enrolled
                 # enrolled_courses = dash_user.enrolled_courses.filter(status="active")
                # purchase_courses = PurchaseCourse.objects.filter(user=request.user)
+                # purchase_courses = PurchaseCourse.objects.filter(user=request.user)
                 todays_date = timezone.now().date()
                 print(todays_date)
 
