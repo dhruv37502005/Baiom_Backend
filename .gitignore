@@ -61,3 +61,5 @@ subscription/__init__.py
 subscription/migrations/0001_initial.py
 subscription/migrations/__init__.py
 itie/migrations/0001_initial.py
+bootcamp/migrations/0001_initial.py
+itie/migrations/__init__.py

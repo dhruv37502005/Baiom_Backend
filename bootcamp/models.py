@@ -1,16 +1,8 @@
 from django.db import models
-from django.db import models
-from django.db import models 
-from django.utils.text import slugify
 from django.utils import timezone
-from django.contrib.auth.models import User
-from django.contrib.auth import get_user_model
-Dashboard_User = get_user_model()
+from django.utils.text import slugify
 
-
-
-
-class ICourse(models.Model):
+class BootCourse(models.Model):
     title = models.CharField(max_length=100)
     sub_title = models.CharField(max_length=100, blank=True,null=True)
     description = models.TextField()
@@ -31,7 +23,8 @@ class ICourse(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     carriculum_title = models.CharField(max_length=100, default=False)
     carriculum_desc =  models.TextField(default=False)
-    brochure = models.FileField(upload_to='icourse_brochure',null=True, blank=True)
+    brochure = models.FileField(upload_to='bootcamp_brochure',null=True, blank=True)
+    is_wep_main = models.BooleanField(default=False)
 
     def _str_(self):
         return f"{self.title}"
@@ -41,9 +34,9 @@ class ICourse(models.Model):
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
-class IBatch(models.Model):
+class BootBatch(models.Model):
     batch_name = models.CharField(max_length=100)
-    course = models.ForeignKey(ICourse, on_delete=models.CASCADE)
+    course = models.ForeignKey(BootCourse, on_delete=models.CASCADE , null=True)
     start_date = models.DateField()
     end_date = models.DateField()
 
