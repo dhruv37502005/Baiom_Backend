@@ -65,7 +65,7 @@
   /* FAQ */
   .container-main {
     flex-direction: column-reverse;
-    margin: 10px 50px;
+    margin: 10px 10px;
   }
 
   .img {
@@ -98,7 +98,7 @@
 
 @media screen and (max-width: 600px) {
   .ac-main h1 {
-    font-size: 3.5rem;
+    font-size: 2.3rem;
     margin-bottom: 3rem;
     margin-top: 0px;
     text-align: center;
@@ -107,7 +107,7 @@
   }
 
   .ac-main h1 span {
-    font-size: 3.5rem;
+    font-size: 2.3rem;
   }
 
   .accordion {
