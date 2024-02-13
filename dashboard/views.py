@@ -31,6 +31,23 @@ def user_ui(request):
                     dashboard_user.save()
                 dash_user = Dashboard_User.objects.get(user_id=user.id)
                 # get active courses if enrolled
+                # enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+                purchase_courses = Purchase.objects.filter(user=request.user)
+                todays_date = timezone.now().date()
+                print(todays_date)
+
+                enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+                # purchase_courses = Purchase.objects.filter(user=request.user)
+                todays_date = timezone.now().date()
+                print(todays_date)
+                # TODO:  pass final purchase query to dashboard
+                # ongoing_courses = [purchase.course  for purchase in purchase_courses
+                #     if (purchase.purchase_end_date and purchase.additional_access_date) >todays_date]
+                # print(f"ongoing_courses: {ongoing_courses}")
+                years = list(range(1990, 2031))
+
+
+                # get active courses if enrolled
                 enrolled_courses = dash_user.enrolled_courses.filter(status="active")
                 # purchase_courses = Purchase.objects.filter(user=request.user)
                 todays_date = timezone.now().date()
@@ -52,6 +69,7 @@ def user_ui(request):
                     notes = Resource.objects.filter(batch=batch, notes__isnull=False)
                     batch_notes[batch] = notes
 
+
                 return render(
                     request,
                     "dashboard.html",
@@ -59,6 +77,7 @@ def user_ui(request):
                         'years': years,
                         "user": user,
                         "dash_user": dash_user,
+                        # "enrolled_courses": ongoing_courses,
                         "enrolled_courses": enrolled_courses,
                         "batches": batches,
                         "batch_notes": batch_notes,
@@ -84,6 +103,10 @@ def user_ui(request):
         education =request.POST.get("education")
         github = request.POST.get("github")
         linkedin = request.POST.get("linkedin")
+
+        if not education:
+            education = "No Education Provided"
+
       
 
         print(first_name, middle_name, last_name, college_name, education, graduation_year, mobile_number, github, linkedin, bio)
@@ -164,6 +187,7 @@ def enroll_plan(request, date, course_id):
     dashboard_user.enrolled_batches.add(batch)
 
     return redirect("dashboard:user_ui")
+
 
 
 

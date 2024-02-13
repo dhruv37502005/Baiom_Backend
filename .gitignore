@@ -60,11 +60,4 @@ course/migrations/0003_remove_subscriptionplancourse_course_and_more.py
 subscription/__init__.py
 subscription/migrations/0001_initial.py
 subscription/migrations/__init__.py
-subscription/migrations/0006_rename_user_purchasecourse_dashboard_user_and_more.py
-subscription/migrations/0002_purchasecourse.py
-course/migrations/0002_delete_purchase.py
-subscription/migrations/0003_alter_purchasecourse_months.py
-itie/migrations/0001_initial.py
-subscription/migrations/0005_purchasecourse_months.py
-subscription/migrations/0004_remove_purchasecourse_months.py
 itie/migrations/0001_initial.py

@@ -542,6 +542,9 @@
       html {
         overflow-x: hidden;
       }
+      .navbar {
+        background-color: white;
+      }
       .relative {
         position: absolute;
         left: 277px;
@@ -595,7 +598,7 @@
     <header>
       <!-- navbar -->
       <nav
-        class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow p-2"
+        class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow p-2"
         id="navbar"
       >
         <a class="navbar-brand" href="{% url 'core:index' %}">
@@ -624,7 +627,6 @@
                 >Home</a
               >
             </li>
-
 
             <li class="nav-item dropdown">
               <!-- {% url 'core:career' as urlcareer %} {% url 'core:hire_from_us' as
@@ -657,9 +659,9 @@
               </div>
             </li>
 
-
             <li class="nav-item dropdown">
-              {% url 'core:course' as courses %}
+              <!---- {% url 'core:course' as courses %} -->
+
               <a
                 class="nav-link dropdown-toggle {% if request.path == courses %}isactive{% endif %}"
                 href="#"
@@ -669,22 +671,23 @@
                 aria-haspopup="true"
                 aria-expanded="false"
                 style="font-size: 18px"
-              >Courses</a>
+                >Courses</a
+              >
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for category in categories %}
                 <a
                   class="dropdown-item {% if request.path == urlcareer%}isactive{% endif %}"
                   href="{% url 'course:category_courses' category_id=category.id %}"
                   style="font-size: 18px"
-                  >{{ category.name }}</a>
-                  {% endfor %}
+                  >{{ category.name }}</a
+                >
+                {% endfor %}
               </div>
-
             </li>
             <li class="nav-item">
-              {% url 'core:itie' as itie %}
+              {% url 'itie:Itie' as Itie %}
               <a
-                href="{{itie}}"
+                href="{{Itie}}"
                 class="nav-link {% if request.path == itie %}isactive{% endif %}"
                 style="font-size: 18px"
                 >ITIE <span class="bar"></span
