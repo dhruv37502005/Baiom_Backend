@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'blog',
     'subscription',
     'itie',
-    'bootcamp',
 
     # For socialauth
     'social_django',
