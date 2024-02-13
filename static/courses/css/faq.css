@@ -200,7 +200,7 @@
 
 @media screen and (max-width: 600px) {
   .ac-main h1 {
-    font-size: 2.3rem;
+    font-size: 3.5rem;
     margin-bottom: 3rem;
     margin-top: 0px;
     text-align: center;
@@ -209,7 +209,7 @@
   }
 
   .ac-main h1 span {
-    font-size: 2.3rem;
+    font-size: 3.5rem;
   }
 
   .accordion {
