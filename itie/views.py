@@ -19,4 +19,4 @@ def itie(request):
     courses = ICourse.objects.all()
     testimonials = testimonial.objects.all()
     categories = CourseCategory.objects.all()
-    return render(request,'ITIE.html',{'courses':courses , 'testimonials':testimonials, 'categories':categories})
+    return render(request,'ITIE.html',{'is_itie': True, 'courses':courses , 'testimonials':testimonials, 'categories':categories})
