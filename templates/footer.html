@@ -7,11 +7,14 @@
       <h2 style="color: #fff">Get in Touch with us</h2>
       <p>Connect with our Experts in 60 seconds and clear your queries.</p>
     </div>
+
     <div class="col-md-5 pt-3">
-      <div class="form">
+      <form method="post" action="{% url 'core:get_in_touch' %}">
+        {% csrf_token %}
+      <div class="form" style="margin-right: 30px;">
         <input
-          type="email"
-          name="Email"
+          type="text"
+          name="phone_number"
           style="text-align: center"
           placeholder="Enter Phone Number"
           required
@@ -20,6 +23,7 @@
           Get In Touch
         </button>
       </div>
+    </form>
     </div>
   </div>
 </div>

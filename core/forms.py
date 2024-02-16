@@ -1,5 +1,5 @@
 from django import forms
-from .models import MaintenancePage
+from .models import MaintenancePage, GetInTouch
 
 class AccessForm(forms.Form):
     password = forms.CharField(
@@ -15,3 +15,10 @@ class MaintenancePageForm(forms.ModelForm):
         widgets = {
             'end_time': forms.TextInput(attrs={'type': 'datetime-local'}),
         }
+
+
+
+class GetInTouchForm(forms.ModelForm):
+    class Meta:
+        model = GetInTouch
+        fields = ['phone_number']
