@@ -9,15 +9,56 @@ from .models import Course, CourseCategory, Batch #, Purchase
 from wsgiref.util import FileWrapper
 from django.contrib import messages
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
 from .models import CourseCategory
 
 from django.utils import timezone
 
-@login_required(login_url='/userauths/login/')
+# @login_required(login_url='/userauths/login/')
+# def category_courses(request, category_id):
+#     category = get_object_or_404(CourseCategory, id=category_id)
+#     courses = Course.objects.filter(category=category, status='active')
+#     categories = CourseCategory.objects.all()
+#     course = Course.objects.get(id=category_id)
+#     batches = Batch.objects.get(course=course)
+#     carriculum = course.curriculum.all()
+#     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
+#     print(f"subscription_course_plans: {subscription_course_plans}")
+    
+#     user = request.user
+#     if user.is_authenticated:
+#         dash_user, created = Dashboard_User.objects.get_or_create(user=user)
+#         enrolled_courses = dash_user.enrolled_courses.all()
+      
+        
+#         return render(request, 'course.html', {
+#             'is_category': True,
+#             'courses': courses,
+#             'carriculum':carriculum,
+#             'enrolled_courses': enrolled_courses,
+#             'categories': categories,
+#             'batch':batches,
+#             'subscription_course_plans':subscription_course_plans
+#         })
+#     else:
+#         return render(request, 'course.html', {'is_course': True, 'courses': courses})
+
+
+
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from django.shortcuts import render, get_object_or_404
+from .models import Course, CourseCategory, Batch
+from .serializers import CourseSerializer, CourseCategorySerializer, BatchSerializer, CourseCarriculumSerializer
+
+from rest_framework.response import Response
+
+@api_view(['GET'])
 def category_courses(request, category_id):
+    # Retrieve data from database
     category = get_object_or_404(CourseCategory, id=category_id)
     courses = Course.objects.filter(category=category, status='active')
     categories = CourseCategory.objects.all()
@@ -27,23 +68,63 @@ def category_courses(request, category_id):
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
     print(f"subscription_course_plans: {subscription_course_plans}")
     
+    # Prepare data for response
     user = request.user
     if user.is_authenticated:
         dash_user, created = Dashboard_User.objects.get_or_create(user=user)
         enrolled_courses = dash_user.enrolled_courses.all()
-      
         
-        return render(request, 'course.html', {
+        course_serializer = CourseSerializer(courses, many=True)
+        categories_serializer = CourseCategorySerializer(categories, many=True)
+        batch_serializer = BatchSerializer(batches)
+        course_carriculum_serializer = CourseCarriculumSerializer(carriculum, many=True)
+
+        data = {
             'is_category': True,
-            'courses': courses,
-            'carriculum':carriculum,
-            'enrolled_courses': enrolled_courses,
-            'categories': categories,
-            'batch':batches,
-            'subscription_course_plans':subscription_course_plans
-        })
+            'courses': course_serializer.data,
+            'categories': categories_serializer.data,
+            'batch': batch_serializer.data,
+            'carriculum': course_carriculum_serializer.data,
+        }
     else:
-        return render(request, 'course.html', {'is_course': True, 'courses': courses})
+        course_serializer = CourseSerializer(courses, many=True)
+        batch_serializer = BatchSerializer(batches)
+        categories_serializer = CourseCategorySerializer(categories, many=True)
+        course_carriculum_serializer = CourseCarriculumSerializer(carriculum, many=True)
+
+        jsondata = {
+            'courses': course_serializer.data,
+            'batch': batch_serializer.data,
+            'categories': categories_serializer.data,
+            'carriculum': course_carriculum_serializer.data,
+        }
+    
+    # Check if the request wants JSON response
+    if request.accepted_renderer.format == 'json':
+        return JsonResponse(jsondata)
+    else:
+        # Render HTML template
+        template_data = data.copy()  # Copy the data to avoid modification of the original dictionary
+        return render(request, 'course.html', context=template_data)
+
+# @api_view(['GET'])
+# def category_courses_json(request, category_id):
+#     # Retrieve data from database
+#     category = get_object_or_404(CourseCategory, id=category_id)
+#     courses = Course.objects.filter(category=category, status='active')
+    
+#     # Serialize data
+#     course_serializer = CourseSerializer(courses, many=True)
+#     course_category_serializer = CourseCategorySerializer(CourseCategory, many=True)
+#     batch_serializer = BatchSerializer(Batch, many=True)
+#     data = {
+#         'courses': course_serializer.data,
+#         'category': course_category_serializer.data,
+#         'batch':batch_serializer.data,
+#     }
+    
+#     return Response(data)
+
 
 
 class DownloadFileView(View):
