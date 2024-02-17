@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from course.models import CourseCategory
 from .models import BootCourse, testimonial
 from django.views import View
 from .models import BootCourse
@@ -13,13 +15,13 @@ def BootCamp(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         mobile = request.POST.get('mobile')
-        
         contact_obj = Contact(name=name,email=email,mobile=mobile)
         contact_obj.save()
         messages.success(request,'thank you for contacting us')
     courses = BootCourse.objects.all()
     testimonials = testimonial.objects.all()
-    return render(request,'Wep.html',{'courses':courses , 'testimonials':testimonials})
+    categories = CourseCategory.objects.all()
+    return render(request,'Wep.html',{'courses':courses , 'testimonials':testimonials, 'categories':categories})
 
 
 class DownloadFileView(View):
