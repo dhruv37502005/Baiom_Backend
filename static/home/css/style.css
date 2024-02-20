@@ -31,7 +31,7 @@
 
 .underline {
   position: relative;
-  background: -webkit-linear-gradient(0deg, gray, yellow);
+  background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom: 2px solid rgb(245, 69, 0);
@@ -188,7 +188,7 @@ header img {
 .about-slide {
   padding: 0;
   margin: 0 0 0;
-  color: #fa2424;
+  color: black;
 }
 
 .imginfo {
@@ -220,14 +220,14 @@ header img {
 .heading2_underline::before {
   content: "";
   position: absolute;
-  bottom: 30px;
+  bottom: 10px;
   width: 100%;
   height: 2px;
   background: rgb(245, 69, 0);
 }
 
 .special {
-  background: linear-gradient(45deg, #fa2424, #fb8721);
+  background: linear-gradient(45deg, white, white);
   /* background: -webkit-linear-gradient(#eee, #333); */
   -webkit-background-clip: text;
   background-clip: text;
@@ -1701,6 +1701,7 @@ section div.wrapper {
 
 .section-4 {
   padding: 1rem 6%;
+  width: 100%;
 }
 
 .section-4 #tab-1-content,
@@ -1709,6 +1710,7 @@ section div.wrapper {
 .section-4 #tab-4-content {
   display: none;
   opacity: 0;
+  width: 100%;
 }
 
 .show {
@@ -1719,6 +1721,7 @@ section div.wrapper {
 
 .section-4 .current-tab {
   position: relative;
+  width: 100%;
   /* background-image: url('./images/line-triangle.png'); */
 }
 
@@ -1771,6 +1774,19 @@ content:none;
   color: #03003f;
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+.section-4 .tab-content-item .two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.section-4 .tab-content-item .two .col-md-7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 576px) {

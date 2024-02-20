@@ -64,3 +64,5 @@ itie/migrations/0001_initial.py
 bootcamp/migrations/0001_initial.py
 # itie/migrations/__init__.py
 course/serializers.py
+itie/migrations/__init__.py
+.gitignore
