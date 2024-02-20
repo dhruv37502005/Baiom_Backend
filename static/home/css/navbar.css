@@ -7,6 +7,9 @@ header {
   box-shadow: rgb(49, 49, 49);
   font-family: "Montserrat", sans-serif;
 }
+.navbar {
+  padding: 0px 6px 0px 6px;
+}
 a {
   text-decoration: none;
 }

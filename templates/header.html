@@ -598,7 +598,7 @@
     <header>
       <!-- navbar -->
       <nav
-        class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow p-2"
+        class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow p-2 h-8"
         id="navbar"
       >
         <a class="navbar-brand" href="{% url 'core:index' %}">
@@ -685,7 +685,7 @@
               </div>
             </li>
             <li class="nav-item">
-              {% url 'itie:Itie' as itie %}
+              {% url 'itie:itie' as itie %}
               <a
                 href="{{itie}}"
                 class="nav-link {% if request.path == itie %}isactive{% endif %}"
@@ -695,7 +695,7 @@
               <ul class="sub-courses-list"></ul>
             </li>
             <li class="nav-item">
-              {% url 'bootcamp:bootcamp' as bootcamp %}
+              {% url 'bootcamp:BootCamp' as bootcamp %}
               <a
                 class="nav-link {% if request.path == urlwep %}isactive{% endif %}"
                 href="{{bootcamp}}"
@@ -740,14 +740,15 @@
                 >Contact Us</a
               >
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a
                 class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
                 href="{% url 'dashboard:user_ui' %}"
                 style="font-size: 18px"
                 >DASHBOARD</a
               >
-            </li><li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
               {% url 'blog:categories' as urlblog %}
               <a
                 class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
@@ -755,9 +756,8 @@
                 style="font-size: 18px"
                 >LOGOUT</a
               >
-            </li>
-            
-            
+            </li> -->
+
             {% if user.username %}
             <li class="nav-item" id="profile">
               <button type="button" id="profile-btn" class="profile-btn">

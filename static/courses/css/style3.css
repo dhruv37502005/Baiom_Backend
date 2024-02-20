@@ -39,7 +39,7 @@
   height: 400px;
   width: 700px;
   left: 20%;
-  top: 40%;
+  top: 35%;
   z-index: 3;
   background-color: white;
   padding: 10px;
@@ -78,7 +78,7 @@
 
 /* section one */
 .topsection-head {
-  padding: 70px 30px 30px 30px;
+  padding: 60px 30px 30px 30px;
   margin: 4.3rem;
 }
 .topsection1-countpart {
