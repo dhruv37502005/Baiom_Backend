@@ -6,6 +6,6 @@ app_name = 'itie'
 
 
 urlpatterns = [
-    path('courses/',itie, name='Itie'),
+    path("itie/", itie, name="itie"),
 
 ]

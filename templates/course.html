@@ -127,7 +127,11 @@
               </div>
               <div class="topsection1-image">
          
-                <img src="{{ course.image.url}}" alt="image" />
+                {% if  course.image %}
+                <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
               
                </div>
              </div>
@@ -146,7 +150,11 @@
           <p>{{course.description}}</p>
         </div>
         <div class="image">
-          <img src="{{ course.image.url}}" />
+          {% if  course.image %}
+          <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+          {% else %}
+          <p>No image available</p>
+          {% endif %}
         </div>
       </div>
     </section>

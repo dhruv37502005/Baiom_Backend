@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from course.models import CourseCategory
 from .models import ICourse, testimonial
 from django.contrib import messages
 from .models import Contact
@@ -17,4 +18,5 @@ def itie(request):
         messages.success(request,'thank you for contacting us')
     courses = ICourse.objects.all()
     testimonials = testimonial.objects.all()
-    return render(request,'ITIE.html',{'courses':courses , 'testimonials':testimonials})
+    categories = CourseCategory.objects.all()
+    return render(request,'ITIE.html',{'is_itie': True, 'courses':courses , 'testimonials':testimonials, 'categories':categories})
