@@ -86,4 +86,4 @@ def get_in_touch(request):
             return redirect('/')  # Redirect to a success page
     else:
         form = GetInTouchForm()
-    return render(request, 'index.html','contact-us.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
