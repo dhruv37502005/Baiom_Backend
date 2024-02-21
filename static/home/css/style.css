@@ -66,6 +66,7 @@ margin-top: -60px;
 
 h1,
 h3,
+h2,
 h4,
 h5,
 h6 {
@@ -160,11 +161,11 @@ header img {
   font-weight: 600;
   padding: 0.8em 2em;
   background: transparent;
-  /* -webkit-text-fill-color: orangered; */
-  border-color: yellow;
-  color: white;
+  -webkit-text-fill-color: #03003f;
+  /* border-color: yellow; */
+  /* color: #03003f; */
   border-radius: 5px;
-  box-shadow: 1px 1px 2px 1px rgb(249, 249, 75);
+  /* box-shadow: 1px 1px 2px 1px rgb(249, 249, 75); */
   margin-top: 30px;
   outline: none;
 }
@@ -259,13 +260,13 @@ header img {
   margin-right: 1em;
 }
 .home-section .row {
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgba(170, 30, 54, 1) 0%,
     rgba(253, 29, 124, 1) 50%,
     rgba(252, 176, 69, 1) 100%
-  );
-  box-shadow: 3px 3px 12px 3px orangered;
+  ); */
+  /* box-shadow: 3px 3px 12px 3px orangered; */
   padding-left: 20px;
 }
 .home-section .row .col-md-6:not(.infoimg) {
@@ -280,16 +281,16 @@ header img {
 
 .home-section .row h2 {
   margin-top: 35px;
-  font-size: 70px;
+  font-size: 50px;
   font-weight: bold;
-  color: black;
+  /* color: blue; */
   padding-left: 10px;
 }
 .home-section .row p:not(.about-slide) {
   font-size: 1.1rem;
   font-weight: 500;
   padding: 1rem 0rem;
-  color: black;
+  /* color: black; */
   margin-right: 4rem;
   text-align: justify;
 }
