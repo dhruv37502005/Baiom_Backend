@@ -8,23 +8,29 @@
       <p>Connect with our Experts in 60 seconds and clear your queries.</p>
     </div>
 
-    <div class="col-md-5 pt-3">
+<div class="col-md-5 pt-3">
       <form method="post" action="{% url 'core:get_in_touch' %}">
         {% csrf_token %}
-      <div class="form" style="margin-right: 30px;">
-        <input
-          type="text"
-          name="phone_number"
-          style="text-align: center"
-          placeholder="Enter Phone Number"
-          required
-        />
-        <button type="Submit" class="btn-1" onclick="alertmessage()">
-          Get In Touch
-        </button>
-      </div>
-    </form>
+        <div class="form" style="margin-right: 30px;">
+          <input
+            type="text"
+            name="phone_number"
+            style="text-align: center"
+            placeholder="Enter Phone Number"
+            required
+            />
+            <button type="Submit" class="btn-1" onclick="alertmessage()">
+              Get In Touch
+            </button>     
+        </div>
+      </form>
     </div>
+      <script>
+      function alertMessage() {
+        alert("Button Clicked! Add your custom message or functionality here.");
+        // You can add additional JavaScript code or remove this function if not needed.
+      }
+    </script>
   </div>
 </div>
 <footer class="text-center text-white">
