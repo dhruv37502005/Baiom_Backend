@@ -526,9 +526,9 @@ footer p {
   right: 1rem;
 }
 
-.row div {
+/* .row div {
   margin: 20px 0;
-}
+} */
 
 @media (max-width: 920px) {
   .section-three ul {
