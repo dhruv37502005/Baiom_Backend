@@ -818,7 +818,7 @@ section.work .contents {
   margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  grid-gap: 8rem;
+  grid-gap: 7.3rem;
   overflow: hidden;
 }
 
@@ -827,7 +827,7 @@ section.work .contents .steps {
 }
 
 section.work .contents .steps:not(.last)::after {
-  content: url("../images/arrow.png");
+  content: url("../img/arrow.png");
   position: absolute;
   display: inline-block;
   top: -40px;
