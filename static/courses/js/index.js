@@ -1,3 +1,5 @@
+
+
 var popup_form = document.getElementById("popup-form");
 var I_am_interested = document.getElementById("button-one");
 var popup_close = document.getElementById("popup-close");
@@ -21,33 +23,59 @@ popup_close.addEventListener("click", () => {
 
 // FAQ's
 
-var accordionItemHeaders3 = document.querySelectorAll(
-    ".accordion-item-header"
-  );
+// var accordionItemHeaders3 = document.querySelectorAll(
+//     ".accordion-item-header"
+//   );
 
-  accordionItemHeaders3.forEach((accordionItemHeader) => {
-    accordionItemHeader.addEventListener("click", (event) => {
-      var currentlyActiveAccordionItemHeader = document.querySelector(
-        ".accordion-item-header.active"
-      );
-      if (
-        currentlyActiveAccordionItemHeader &&
-        currentlyActiveAccordionItemHeader !== accordionItemHeader
-      ) {
-        currentlyActiveAccordionItemHeader.classList.toggle("active");
-        currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-      }
+//   accordionItemHeaders3.forEach((accordionItemHeader) => {
+//     accordionItemHeader.addEventListener("click", (event) => {
+//       var currentlyActiveAccordionItemHeader = document.querySelector(
+//         ".accordion-item-header.active"
+//       );
+//       if (
+//         currentlyActiveAccordionItemHeader &&
+//         currentlyActiveAccordionItemHeader !== accordionItemHeader
+//       ) {
+//         currentlyActiveAccordionItemHeader.classList.toggle("active");
+//         currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+//       }
 
-      accordionItemHeader.classList.toggle("active");
-      var accordionItemBody = accordionItemHeader.nextElementSibling;
-      if (accordionItemHeader.classList.contains("active")) {
-        accordionItemBody.style.maxHeight =
-          accordionItemBody.scrollHeight + "px";
-      } else {
-        accordionItemBody.style.maxHeight = 0;
-      }
-    });
+//       accordionItemHeader.classList.toggle("active");
+//       var accordionItemBody = accordionItemHeader.nextElementSibling;
+//       if (accordionItemHeader.classList.contains("active")) {
+//         accordionItemBody.style.maxHeight =
+//           accordionItemBody.scrollHeight + "px";
+//       } else {
+//         accordionItemBody.style.maxHeight = 0;
+//       }
+//     });
+//   });
+
+
+var accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+accordionItemHeaders.forEach((accordionItemHeader) => {
+  accordionItemHeader.addEventListener("click", () => {
+    const isActive = accordionItemHeader.classList.contains("active");
+    
+    closeAllAccordionItems();
+
+    if (!isActive) {
+      accordionItemHeader.classList.add("active");
+      const accordionItemBody = accordionItemHeader.nextElementSibling;
+      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+    }
   });
+});
+
+function closeAllAccordionItems() {
+  const activeAccordionItemHeader = document.querySelector(".accordion-item-header.active");
+  if (activeAccordionItemHeader) {
+    activeAccordionItemHeader.classList.remove("active");
+    activeAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+  }
+}
+
 
 // Testimonials
 
@@ -81,31 +109,29 @@ var swiper = new Swiper(".slide-content",{
 });
 
 // right course 
-var splide = new Splide( '.splide', {
-  perPage: 3,
-  perMove: 1,
-  gap    : '7rem',
-  padding : '1rem',
-  autowidth: 'true',
-  type: 'loop',
-  drag: 'free',
-  snap: true,
-  pagination : true,
- 
-  breakpoints: {
-  640: {
-      perPage: 2,
-      gap    : '.7rem',
-      // height:'6rem',
-      
-  },
-  480: {
-      perPage: 1,
-      gap    : '.7rem',
-      // height:'6rem',
-     
-  },
-  },
-} );
+  var splide = new Splide('.splide', {
+    perPage: 3,
+    perMove: 1,
+    gap: '7rem',
+    padding: '1rem',
+    autowidth: true,
+    type: 'loop',
+    drag: 'free',
+    snap: true,
+    pagination: true,
+    arrows: true,
+    breakpoints: {
+      1200: {
+        perPage: 2,
+        gap: '.7rem',
+      },
+      480: {
+        perPage: 1,
+        gap: '.7rem',
+      },
+    },
+  }).mount();
 
-splide.mount();
+
+
+

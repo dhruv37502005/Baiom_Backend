@@ -109,8 +109,7 @@
 }
 
 .topsection1-container {
-  background-color: rgb(249, 177, 191);
-  box-shadow: -2px 2px 4px 2px rgb(234, 99, 121);
+  box-shadow: 2px 2px 4px 2px orangered;
   display: flex;
   /* flex-wrap: wrap; */
   justify-content: center;
@@ -127,16 +126,23 @@
   align-items: center;
 }
 
+.topsection1-content > .one > .info > h1 {
+  color: #040052;
+}
+
 .topsection-head-content > h1 {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 50px;
   text-align: center;
   line-height: 6rem;
-  color: rgb(184, 205, 50);
+  color: #040052;
 }
 .topsection-head-content > h1 > span {
-  color: orangered;
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: relative;
 }
 .topsection-head-content > h1 > span:after {
@@ -174,7 +180,6 @@
   align-items: center;
   text-align: center;
   padding: 10px;
-  box-shadow: 2px 2px 5px 2px rgb(238, 7, 45);
 }
 .topsection1-content .info > .offer-section {
   display: flex;
@@ -362,7 +367,7 @@
   padding-top: 20px;
   /* padding: 3rem 0 0 13rem; */
   text-align: center;
-  color: yellowgreen;
+  color: #040052;
 }
 .section-three span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -678,7 +683,7 @@ footer p {
   font-weight: bold;
   color: #040052;
   text-align: center;
-  margin: 2.5rem;
+  margin: 2.5rem 2.5rem 1rem 2.5rem;
   font-size: 3rem;
   line-height: 4.5rem;
 }
@@ -693,9 +698,21 @@ footer p {
   visibility: visible !important;
   width: 1400px !important;
 }
-.splide__slide {
-  width: 28% !important;
+.splide__track {
+  padding-left: 3rem !important;
+  padding-right: 5rem !important;
 }
+
+.splide__slide {
+  width: 30% !important;
+  margin: 2rem !important;
+}
+@media screen and (max-width: 1370px) {
+  .splide {
+    width: 1300;
+  }
+}
+
 .content-box {
   max-width: 90%;
   height: 97%;
@@ -711,6 +728,13 @@ footer p {
 
 .content {
   padding: 1rem 0 1.5rem 0.5rem;
+  /* margin: 1rem; */
+}
+.button-class {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 5px;
 }
 .btn-1 {
   font-size: 1.2rem;
@@ -726,7 +750,7 @@ footer p {
   bottom: 1.2rem;
   margin-top: auto;
   width: fit-content;
-  margin-left: 6.5rem;
+  /* margin-left: 6rem; */
 }
 .btn-2 {
   font-size: 1.2rem;
@@ -814,6 +838,14 @@ footer p {
   background-color: white !important ;
   border: #ff0000 solid 2px !important;
 }
+.splide__arrow--prev {
+  left: 2% !important;
+  /* top: 18rem !important; */
+}
+.splide__arrow--next {
+  left: 95% !important;
+  /* top: 16rem !important; */
+}
 
 .emi-container {
   display: grid;
@@ -887,6 +919,7 @@ footer p {
 .amazing_heading {
   text-align: center;
   margin: 1rem;
+  color: #040052;
 }
 .amazing-container {
   display: flex;
@@ -897,10 +930,17 @@ footer p {
 }
 
 .awaits {
-  color: #fbf5ef;
-  font-size: 60px;
-  text-shadow: -1px 1.5px 0 #ff0000, 1.5px 1.5px 0 #ff0000, 1.5px -1px 0 #ff0000,
-    -1px -1px 0 #ff0000;
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
+  /* font-size: 60px; */
+  /* color: white;  */
+  /* text-shadow: 1px 1px white; */
+  /* text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8; */
   text-align: center;
   /* width: fit-content; */
   margin-bottom: 40px;
@@ -948,17 +988,29 @@ footer p {
   text-align: center;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
 }
+
+.buy_course {
+  color: rgb(3, 3, 72);
+}
+
 .off {
   text-align: center;
-  color: #5e5e5ee8;
+  color: rgb(3, 3, 72);
   font-size: 1.5rem;
   margin: 1rem;
 }
 .percentage {
-  color: #5e5e5ee8;
+  /* color: #5e5e5ee8;
   font-size: 2.5rem;
   font-weight: 500;
-  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8;
+  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .buy_3course_box {
@@ -979,10 +1031,17 @@ footer p {
   margin: 1rem;
 }
 .percentage_3 {
-  color: white;
+  /* color: #5e5e5ee8;
   font-size: 2.5rem;
   font-weight: 500;
-  text-shadow: -1px -1px #5e5e5ee8, 0.1em 0.1em #ff0000, 0.13em 0.13em white;
+  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
 }
 .btn-3 {
   font-size: 1.1rem;
