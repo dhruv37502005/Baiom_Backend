@@ -49,3 +49,20 @@ class IBatch(models.Model):
 
     def _str_(self):
         return f"{self.course.title} - Batch {self.id}"
+    
+class testimonial(models.Model):
+    image = models.ImageField(upload_to='itie_testimonials',null=True,blank=True)
+    name = models.CharField(max_length=100, null =True)
+    designation = models.CharField(max_length =100 , null=True )
+    text = models.TextField(null = True)
+
+    def __str__(self):
+        return self.name
+    
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    mobile = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name

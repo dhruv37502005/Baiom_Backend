@@ -33,12 +33,25 @@
     <title>Document</title>
   </head>
   <body>
+    <form class="popup-form" id="popup-form">
+      <div class="popup-form-content">
+        <div class="close" id="popup-close">&times;</div>
+        <lable for="name" id="name">Name</lable>
+        <input id="name" type="text" />
+        <lable for="email" id="email">Email</lable>
+        <input id="email" type="email" />
+        <lable for="mobile" id="mobile">Mobile</lable>
+        <input id="mobile" type="text" />
+        <button type="button" class="popup-submit">Submit</button>
+      </div>
+    </form>
     <section class="section-one">
-      <div class="topsection1-container" style="background-image:url('{% static 'wep\Images\wep-backgroundimg.png' %}')">
+      <div class="topsection1-container" >
         <div class="topsection1-image">
-          <!-- <img src="{% static 'wep/Images/img1.avif' %}" alt="image" /> -->
+          <img src="{% static 'wep\Images\wep-backgroundimg.png' %}" alt="image"  />
         </div>
       <div class="topsection1-content">
+        <div class="content">
         <h1><span>WOMEN</span> ENTREPRENEUR</h1>
         <p>
           Welcome to <b>BAOIAM,</b> the premier learning platform exclusively
@@ -46,17 +59,23 @@
           on your journey to success. As a launchpad for aspiring entrepreneurs,
           we empower you to learn, innovate, and achieve success.
         </p>
+        {% for bootcourse in courses %}
+        {% if bootcourse.is_wep_main %}
         <div class="topsection1-button">
-          <button class="interested">I AM INTERESTED</button>
-          <button class="broucher">DOWNLOAD BROUCHER</button>
+          <button class="interested" id="button-one">I AM INTERESTED</button>
+         <a href="{% url 'bootcamp:download_file' %}"><button class="broucher">DOWNLOAD BROUCHER</button></a> 
+         {% endif %}
+         {% endfor %}
         </div>
+      </div>
+
       </div>
     </section>
 
     <section class="section-two">
       <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
       <div>
-        <h2>Program Overview</h2>
+        <h2><span>Program</span> Overview</h2>
         <p>
           Embark on a transformative learning journey with Baoiam Innovations,
           an esteemed E-learning platform since 2020. Dive into comprehensive
@@ -167,7 +186,7 @@
     </section>
 
     <div class="slider1">
-      <h1 class="importance"><span class="imp">Importance and </span>Oppurtunities</h1>
+      <h1 class="importance"><span class="imp">Importance and </span><span class="opp">Oppurtunities</span></h1>
     <div class="container">
       <input type="radio" name="dot" id="one">
       <input type="radio" name="dot" id="two">
@@ -234,9 +253,10 @@
 
     <section class="section-five">
       <h2>Testimonials</h2>
+      <div class="temp">
+      <i id="left" class="fa-solid fa-angle-left left"></i>
+      <i id="right" class="fa-solid fa-angle-right right"></i>
       <div class="carousel">
-        <i id="left" class="fa-solid fa-angle-left"></i>
-        <i id="right" class="fa-solid fa-angle-right"></i>
         <div class="testimonials">
           <div class="details">
             <img
@@ -322,6 +342,7 @@
           </p>
         </div>
       </div>
+    </div>
     </section>
 
     <!-- <section class="section-six">
@@ -419,69 +440,103 @@
         </div>
     
         <div class="emi-container">
-            <div class="emi_box">
-                <h2 class="emi">Easy EMI</h2>
-                <div class="key_features">key features of Easy EMI
-                    <ul class="emi_features">
-                        <li>No upfront payment required</li>
-                        <li>Fixed monthly installments</li>
-                        <li>Flexible repayment options</li></ul></div>
-            </div>
-            <div class="emi_box"><h2 class="emi">Pay After Placement</h2>
-                <div class="key_features">key features
-                    <ul class="emi_features">
-                        <li>With our Pay After Placement program, you <br>invest in your career development now and <br>pay us only when yoy land a job.</li></ul></div>
-            </div></div>
+          <div class="emi_box">
+              <h2 class="emi">Easy EMI</h2>
+              <div class="key_features">key features of Easy EMI
+                  <ul class="emi_features">
+                      <li>No upfront payment required</li>
+                      <li>Fixed monthly installments</li>
+                      <li>Flexible repayment options</li></ul></div>
+          </div>
+          <div class="emi_box"><h2 class="emi">Pay After Placement</h2>
+              <div class="key_features">key features
+                  <ul class="emi_features">
+                      <li>With our Pay After Placement program, you invest in your career development now and pay us only when yoy land a job.</li></ul></div>
+    </div></div> 
         <div class="circle_five"></div>
       </div>
     </section>
 
-    <section class="section-eight">
-      <div class="deal_section">
-        <h4>Amazing Carrer</h4>
-        <h5>Awaits!</h5>
-        <p>Grab the exclusive offer available only once a year.</p>
-        <div class="boxes">
-          <div class="off">
-            <p>BUY 2 CORESES & GET</p>
-            <h6>OFF</h6>
-            <span>15%</span>
+    <section class="amazing_career">
+      <div class="amazing-container">
+        <h2 class="amazing_heading">Amazing Career</h2>
+        <div class="awaits">Awaits!</div>
+        <p class="grab_offer">
+          Grab these exclusive offers available only once a year.
+        </p>
+        <div class="buy_course_container">
+          <div class="buy_course_box">
+            <div class="buy_course">BUY 2 COURSES & GET MORE</div>
+            <h4 class="off">OFF</h4>
+            <div class="percentage">15%</div>
           </div>
-          <div class="on">
-            <p>BUY 3 CORESES & GET</p>
-            <h6>OFF</h6>
-            <span>20%</span>
+          <div class="buy_course_box">
+            <div class="buy_course">BUY 3 COURSES & GET MORE</div>
+            <h4 class="off">OFF</h4>
+            <div class="percentage_3">20%</div>
           </div>
-          <div class="off">
-            <p>BUY 4 CORESES & GET</p>
-            <h6>OFF</h6>
-            <span>25%</span>
+          <div class="buy_course_box">
+            <div class="buy_course">BUY 4 COURSES & GET MORE</div>
+            <h4 class="off">OFF</h4>
+            <div class="percentage">25%</div>
           </div>
         </div>
-        <div class="timer">
+        <div class="timer" id="countdown">
           <div>
-            <p>20</p>
+            <p id="days">20</p>
             <p>days</p>
           </div>
           <span>:</span>
           <div>
-            <p>12</p>
+            <p id="hours">12</p>
             <p>hours</p>
           </div>
           <span>:</span>
           <div>
-            <p>21</p>
+            <p id="minutes">21</p>
             <p>minutes</p>
           </div>
           <span>:</span>
           <div>
-            <p>54</p>
+            <p id="seconds">54</p>
             <p>seconds</p>
           </div>
         </div>
-        <button>GRAB THE DEAL</button>
+        <button class="btn-3">GRAB THE DEAL</button>
       </div>
     </section>
+    
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Feb 29, 2024 00:00:00").getTime();
+    
+      // Update the countdown every 1 second
+      var x = setInterval(function() {
+        // Get the current date and time
+        var now = new Date().getTime();
+    
+        // Calculate the remaining time
+        var distance = countDownDate - now;
+    
+        // Calculate days, hours, minutes, and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+        // Update the HTML elements with the calculated values
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+    
+        // If the countdown is over, display a message
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
 
     <section class="section-nine">
       <div class="container-main faq">

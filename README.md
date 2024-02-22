@@ -53,14 +53,19 @@ pip install django-jazzmin
 pip install psycopg2-binary
 pip install pillow
 pip install social-auth-app-django
+pip install djangorestframework
 
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 
-admin  
-     id: admin@gmail.com
-     password: admin
+TO CREATE SUPERUSER:
+python manage.py createsuperuser
+
+
+user name -admin
+email : admin@gmail.com
+password: admin
 ```
     
 ## Feedback

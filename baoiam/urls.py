@@ -23,7 +23,10 @@ urlpatterns = [
     # For social auth
 
     path('auth/', include('social_django.urls', namespace='social')),
-    path('itie/',include('itie.urls',namespace='itie') )
+    path('itie/',include('itie.urls',namespace='itie') ),
+    path('bootcamp/',include('bootcamp.urls',namespace='bootcamp')),
+    path('api-auth/', include('rest_framework.urls')),
+    path('chatbot/',include('chatbot.urls',namespace='chatbot')),
 ]
 
 

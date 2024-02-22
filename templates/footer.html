@@ -2,16 +2,16 @@
 
 
 <div class="container subscribe" id="subscribe">
-  <div class="col-md-12 p-4 row">
+  <div class="col-md-12 col-xl-12 col-sm-12 p-4 row">
     <div class="col-md-7">
       <h2 style="color: #fff">Get in Touch with us</h2>
       <p>Connect with our Experts in 60 seconds and clear your queries.</p>
     </div>
 
-    <div class="col-md-5 pt-3">
+     <div class="col-md-5 pt-3">
       <form method="post" action="{% url 'core:get_in_touch' %}">
         {% csrf_token %}
-      <div class="form">
+      <div class="form" >
         <input
           type="text"
           name="phone_number"
@@ -19,11 +19,11 @@
           placeholder="Enter Phone Number"
           required
         />
-        <button type="Submit" class="btn-1" onclick="alertmessage()">
+        <button type="Submit" class="bg-class rounded text-white w-50 " onclick="alertmessage()">
           Get In Touch
         </button>
       </div>
-    </form>
+      </form>
     </div>
   </div>
 </div>
