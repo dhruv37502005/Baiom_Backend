@@ -1,3 +1,5 @@
+
+
 var popup_form = document.getElementById("popup-form");
 var I_am_interested = document.getElementById("button-one");
 var popup_close = document.getElementById("popup-close");
@@ -107,31 +109,29 @@ var swiper = new Swiper(".slide-content",{
 });
 
 // right course 
-var splide = new Splide( '.splide', {
-  perPage: 3,
-  perMove: 1,
-  gap    : '7rem',
-  padding : '1rem',
-  autowidth: 'true',
-  type: 'loop',
-  drag: 'free',
-  snap: true,
-  pagination : true,
- 
-  breakpoints: {
-  640: {
-      perPage: 2,
-      gap    : '.7rem',
-      // height:'6rem',
-      
-  },
-  480: {
-      perPage: 1,
-      gap    : '.7rem',
-      // height:'6rem',
-     
-  },
-  },
-} );
+  var splide = new Splide('.splide', {
+    perPage: 3,
+    perMove: 1,
+    gap: '7rem',
+    padding: '1rem',
+    autowidth: true,
+    type: 'loop',
+    drag: 'free',
+    snap: true,
+    pagination: true,
+    arrows: true,
+    breakpoints: {
+      1200: {
+        perPage: 2,
+        gap: '.7rem',
+      },
+      480: {
+        perPage: 1,
+        gap: '.7rem',
+      },
+    },
+  }).mount();
 
-splide.mount();
+
+
+
