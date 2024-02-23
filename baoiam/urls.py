@@ -26,7 +26,7 @@ urlpatterns = [
     path('itie/',include('itie.urls',namespace='itie') ),
     path('bootcamp/',include('bootcamp.urls',namespace='bootcamp')),
     path('api-auth/', include('rest_framework.urls')),
-    path('chatbot/',include('chatbot.urls',namespace='chatbot')),
+    # path('chatbot/',include('chatbot.urls',namespace='chatbot')),
 ]
 
 
