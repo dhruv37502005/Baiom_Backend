@@ -5,4 +5,5 @@ app_name = 'chatbot'
 
 urlpatterns = [
     path('', views.chatbot,name='chatbot'),
+    path('getResponse',views.getResponse,name='getResponse')
 ]
