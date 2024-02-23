@@ -114,7 +114,7 @@ var swiper = new Swiper(".slide-content",{
     perMove: 1,
     gap: '7rem',
     padding: '1rem',
-    autowidth: true,
+    autoWidth: true,
     type: 'loop',
     drag: 'free',
     snap: true,
