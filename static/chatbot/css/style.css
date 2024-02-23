@@ -2,7 +2,7 @@
   z-index: 40;
   position: fixed;
   top: 40%;
-  left: 80%;
+  left: 75%;
 }
 
 #expand_more:hover,
@@ -13,22 +13,25 @@
   width: 100%;
   background-color: transparent;
   border: none;
+  color: red;
 }
 .button-chatbot-less {
-  width: 100%;
+  /* width: 100%; */
   background-color: transparent;
   border: none;
   position: fixed;
-  left: 45%;
+  left: 90%;
   top: 80%;
 }
 .chatbot-content {
   display: none;
+  width: 300px;
 }
 .inner-content {
   padding: 10px;
   background-color: rgb(194, 186, 186);
-  height: 350px;
+  box-shadow: 2px 2px 4px 2px gray;
+  height: 300px;
   overflow-y: scroll;
   scrollbar-color: gray gray;
   scrollbar-width: thin;
@@ -36,7 +39,8 @@
 #chatbot {
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 90%;
+  height: 80px;
   margin-top: 50px;
   border-radius: 10px;
   border: 1px solid gray;
@@ -64,7 +68,7 @@
   border-bottom: 3px solid grey;
   font-family: monospace;
   font-size: 14px;
-  width: 60px;
+  width: 200px;
   padding: 16px;
   color: orange;
 }
@@ -79,10 +83,10 @@
   border-radius: 10px;
 }
 
-h1 {
+/* h1 {
   text-align: center;
   color: rgb(57, 72, 52);
-}
+} */
 
 .userText {
   text-align: right;
