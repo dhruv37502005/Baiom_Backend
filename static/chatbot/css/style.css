@@ -34,13 +34,13 @@
   height: 300px;
   overflow-y: scroll;
   scrollbar-color: gray gray;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
 #chatbot {
   margin-left: auto;
   margin-right: auto;
   width: 90%;
-  height: 80px;
+  height: 50%;
   margin-top: 50px;
   border-radius: 10px;
   border: 1px solid gray;

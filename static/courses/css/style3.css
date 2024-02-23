@@ -542,6 +542,7 @@ footer p {
     gap: 10px;
     justify-content: center;
     align-items: center;
+    font-size: 12px;
     padding: 0;
     width: 100%;
   }
@@ -549,7 +550,7 @@ footer p {
 
 @media (max-width: 360px) {
   .section-three li {
-    font-size: 12px;
+font-size: 12px;
     justify-content: center;
     width: 200px;
   }
@@ -678,6 +679,7 @@ footer p {
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
 
 .join_us {
   font-weight: bold;
