@@ -54,6 +54,12 @@
 
         $('#chatbot').append(userHTML);
 
+        $.get('/chatbot/getResponse',{userMessage:userText}).done(function(data){
+            var returnedMessage ="<p class='botText'>Chatbot:<span>"+ data +"</span></p>"
+            $('#chatbot').append(returnedMessage);  
+
+        })
+
     }
 
 $('#buttonInput').click(function(){
