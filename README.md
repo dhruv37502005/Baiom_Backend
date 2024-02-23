@@ -63,7 +63,7 @@ TO CREATE SUPERUSER:
 python manage.py createsuperuser
 
 
-user name -admin
+username -admin
 email : admin@gmail.com
 password: admin
 ```
