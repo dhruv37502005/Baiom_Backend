@@ -1688,6 +1688,44 @@ section.contact-us .right p {
   color: rgb(1, 1, 68);
 }
 
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.col-md-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+ul {
+  margin-top: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
 #downloads .nav-item {
   text-transform: uppercase;
   font-size: 1rem;
@@ -1722,7 +1760,7 @@ section div.wrapper {
 
 .section-4 .current-tab {
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   /* background-image: url('./images/line-triangle.png'); */
 }
 

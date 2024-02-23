@@ -194,7 +194,7 @@ body {
   font-weight: 700;
   margin-bottom: 2rem;
   margin-top: 3rem;
-} 
+}
 
 .section-two h2 > span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -206,8 +206,6 @@ body {
   margin-bottom: 2rem;
   margin-top: 3rem;
 }
-
-
 
 .section-two p {
   font-size: 1.2rem;
@@ -898,9 +896,9 @@ input[type="radio"] {
   color: #5e5e5e;
   width: fit-content;
 }
-.content :hover {
+/* .content :hover {
   color: white;
-}
+} */
 
 .slider-wrapper {
   padding: 50px 15px;

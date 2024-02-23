@@ -43,29 +43,28 @@ popup_close.addEventListener("click", () => {
 
 // FAQ's
 
-var accordionItemHeaders1 = document.querySelectorAll(
-  ".accordion-item-header"
-);
 
-accordionItemHeaders1.forEach((accordionItemHeader) => {
-  accordionItemHeader.addEventListener("click", (event) => {
-    var currentlyActiveAccordionItemHeader = document.querySelector(
-      ".accordion-item-header.active"
-    );
-    if (
-      currentlyActiveAccordionItemHeader &&
-      currentlyActiveAccordionItemHeader !== accordionItemHeader
-    ) {
-      currentlyActiveAccordionItemHeader.classList.toggle("active");
-      currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-    }
 
-    accordionItemHeader.classList.toggle("active");
-    var accordionItemBody = accordionItemHeader.nextElementSibling;
-    if (accordionItemHeader.classList.contains("active")) {
+var accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+accordionItemHeaders.forEach((accordionItemHeader) => {
+  accordionItemHeader.addEventListener("click", () => {
+    const isActive = accordionItemHeader.classList.contains("active");
+    
+    closeAllAccordionItems();
+
+    if (!isActive) {
+      accordionItemHeader.classList.add("active");
+      const accordionItemBody = accordionItemHeader.nextElementSibling;
       accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-    } else {
-      accordionItemBody.style.maxHeight = 0;
     }
   });
 });
+
+function closeAllAccordionItems() {
+  const activeAccordionItemHeader = document.querySelector(".accordion-item-header.active");
+  if (activeAccordionItemHeader) {
+    activeAccordionItemHeader.classList.remove("active");
+    activeAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+  }
+}

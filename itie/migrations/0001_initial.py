@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Batch",
+            name="Contact",
             fields=[
                 (
                     "id",
@@ -24,13 +24,13 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("batch_name", models.CharField(max_length=100)),
-                ("start_date", models.DateField()),
-                ("end_date", models.DateField()),
+                ("name", models.CharField(max_length=255)),
+                ("email", models.EmailField(max_length=254)),
+                ("mobile", models.CharField(max_length=20)),
             ],
         ),
         migrations.CreateModel(
-            name="Course",
+            name="ICourse",
             fields=[
                 (
                     "id",
@@ -42,17 +42,16 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("title", models.CharField(max_length=100)),
+                ("sub_title", models.CharField(blank=True, max_length=100, null=True)),
                 ("description", models.TextField()),
                 ("instructor", models.CharField(max_length=50)),
                 (
                     "image",
-                    models.ImageField(
-                        blank=True, null=True, upload_to="course_images/"
-                    ),
+                    models.ImageField(blank=True, null=True, upload_to="itie_img/"),
                 ),
                 (
                     "video",
-                    models.FileField(blank=True, null=True, upload_to="course_videos/"),
+                    models.FileField(blank=True, null=True, upload_to="itie_videos/"),
                 ),
                 ("price", models.FloatField(blank=True, null=True)),
                 (
@@ -77,96 +76,60 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
-            ],
-        ),
-        migrations.CreateModel(
-            name="CourseCarriculum",
-            fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
                 ("carriculum_title", models.CharField(default=False, max_length=100)),
                 ("carriculum_desc", models.TextField(default=False)),
-            ],
-        ),
-        migrations.CreateModel(
-            name="CourseCategory",
-            fields=[
                 (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                ("name", models.CharField(max_length=50, unique=True)),
-                ("file", models.FileField(null=True, upload_to="media/file/")),
-            ],
-        ),
-        migrations.CreateModel(
-            name="Resource",
-            fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                (
-                    "notes",
-                    models.FileField(blank=True, null=True, upload_to="course_notes/"),
-                ),
-                (
-                    "recorded_video_link",
+                    "brochure",
                     models.FileField(
-                        blank=True, null=True, upload_to="course_recorded_lectures/"
+                        blank=True, null=True, upload_to="icourse_brochure"
                     ),
                 ),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
+            ],
+        ),
+        migrations.CreateModel(
+            name="testimonial",
+            fields=[
                 (
-                    "batch",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="course.batch"
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
                     ),
                 ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="itie_testimonials"
+                    ),
+                ),
+                ("name", models.CharField(max_length=100, null=True)),
+                ("designation", models.CharField(max_length=100, null=True)),
+                ("text", models.TextField(null=True)),
+            ],
+        ),
+        migrations.CreateModel(
+            name="IBatch",
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("batch_name", models.CharField(max_length=100)),
+                ("start_date", models.DateField()),
+                ("end_date", models.DateField()),
                 (
                     "course",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="course.course"
+                        on_delete=django.db.models.deletion.CASCADE, to="itie.icourse"
                     ),
                 ),
             ],
-        ),
-        migrations.AddField(
-            model_name="course",
-            name="category",
-            field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="course.coursecategory"
-            ),
-        ),
-        migrations.AddField(
-            model_name="course",
-            name="curriculum",
-            field=models.ManyToManyField(
-                blank=True, related_name="carriculum", to="course.coursecarriculum"
-            ),
-        ),
-        migrations.AddField(
-            model_name="batch",
-            name="course",
-            field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="course.course"
-            ),
         ),
     ]

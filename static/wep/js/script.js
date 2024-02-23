@@ -70,9 +70,9 @@ popup_close.addEventListener("click", () => {
 // });
 
 
-var accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+var accordionItemHeaders2 = document.querySelectorAll(".accordion-item-header");
 
-accordionItemHeaders.forEach((accordionItemHeader) => {
+accordionItemHeaders2.forEach((accordionItemHeader) => {
   accordionItemHeader.addEventListener("click", () => {
     const isActive = accordionItemHeader.classList.contains("active");
     
