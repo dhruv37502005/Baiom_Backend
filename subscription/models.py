@@ -24,7 +24,7 @@ class SubscriptionPlan(models.Model):
 
 
 class SubscriptionPlanCourse(models.Model):
-    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE)
+    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE,default='none')
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     included_in_plan = models.BooleanField(default=True)
     start_date = models.DateField(null=True, blank=True)
@@ -55,9 +55,9 @@ class SubscriptionPlanCourse(models.Model):
         
         
 class PurchaseCourse(models.Model):
-    dashboard_user = models.ForeignKey(Dashboard_User, on_delete=models.CASCADE ,default='none')
-    purchased_course = models.ForeignKey(Course, on_delete=models.CASCADE,default='None')
-    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE,blank=True,default='none')
+    dashboard_user = models.ForeignKey(Dashboard_User, on_delete=models.CASCADE, null=True)
+    purchased_course = models.ForeignKey(Course, on_delete=models.CASCADE,default='None', null=True)
+    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE,blank=True,default='none', null=True)
     Batch = models.ForeignKey(Batch, on_delete=models.CASCADE, null=True, blank=True,default ='none')
     purchase_date = models.DateField(auto_now_add=True)
     plans_duration_months = models.PositiveIntegerField(editable=False)

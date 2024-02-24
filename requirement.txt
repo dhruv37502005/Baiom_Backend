@@ -11,5 +11,9 @@ python manage.py migrate
 python manage.py runserver
 
 admin  
+     username: admin
      id: admin@gmail.com
      password: admin
+test user 
+     login: user 
+     password: user@123
