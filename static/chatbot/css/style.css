@@ -15,6 +15,9 @@
   border: none;
   color: red;
 }
+.button-chatbot-more > span {
+  font-size: 40px;
+}
 .button-chatbot-less {
   /* width: 100%; */
   background-color: transparent;
@@ -63,12 +66,16 @@
   margin-right: auto;
   margin-top: 40px;
   width: 70%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 #textInput {
   border: 3px solid gray;
   border-bottom: 3px solid grey;
+  border-radius: 10px;
   font-family: monospace;
   font-size: 14px;
   width: 200px;
@@ -99,5 +106,55 @@
   font-family: monospace;
   font-size: 14px;
   line-height: 25px;
-  color: rgb(109, 111, 109);
+  color: rgb(3, 3, 72);
+}
+@media screen and (max-width: 1260px) {
+  .chatbot-container {
+    left: 65%;
+  }
+  .button-chatbot-less {
+    left: 85%;
+  }
+}
+@media screen and (max-width: 885px) {
+  .chatbot-container {
+    left: 55%;
+  }
+  .button-chatbot-less {
+    left: 80%;
+  }
+}
+@media screen and (max-width: 780px) {
+  .chatbot-container {
+    left: 50%;
+  }
+}
+@media screen and (max-width: 620px) {
+  .chatbot-container {
+    left: 40%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .chatbot-container {
+    left: 30%;
+  }
+  .button-chatbot-less {
+    left: 70%;
+  }
+}
+@media screen and (max-width: 440px) {
+  .chatbot-container {
+    left: 20%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .chatbot-container {
+    left: 10%;
+  }
+  .button-chatbot-less {
+    left: 60%;
+  }
+  .chatbot-content {
+    width: 250px;
+  }
 }
