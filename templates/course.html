@@ -97,9 +97,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
                     Enroll Now </button></a>
               </div>
-              <!-- <h4>{{course.title}} Carriculum</h4>
-                     <h4>{{course.carriculum_title}}</h4>
-                     <h4>{{course.carriculum_desc}}</h4> -->
+              {% endif %}<br>
               <h4>{{course.batch}}</h4>
               <h4>Batches for {{ course.title }}</h4>
               <ul>
@@ -113,21 +111,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                             <p>No image available</p>
                     {% endif %}
                   </div> -->
-              <div class="plan">
-                <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button
-                    class="my-2 btn-enroll">
-                    3 Month Plan </button>
-                </a>
-                <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-6-27' %}"><button
-                    class="my-2 btn-enroll">
-                    6 Month Plan </button>
-                </a>
-                <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-9-27' %}"><button
-                    class="my-2 btn-enroll">
-                    9 Month Plan </button>
-                </a>
-              </div>
-              {% endif %}
           </section>
 
         </div>
@@ -384,33 +367,44 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             <div class="splide__list">
               {% if subscription_course_plans %}
               {% for plan in subscription_course_plans %}
-              <div class="splide__slide">
-
-
-                <div class="content-box">
-
-                  <div class="content">
-                    <div class="name">{{ plan.subscription_plan.name }}<br> {{ plan.subscription_plan.price }}<span class="name-span">/Full course</span></div>
-                    <ul class="course-content">
-                      <li>Live Classes</li>
-                      <li>Doubt Clearing Sessions</li>
-                      <li>Assessment & Case Study</li>
-                      <li>Mentorship</li>
-                      <li>Start Date: {{ plan.start_date }}</li>
-                      <li>End Date: {{ plan.end_date }}</li>
-                      <li>Abailable Slots: {{ plan.available_slots }}</li>
-                    </ul><br><br><br>
-
-                    <button class="btn-1">Try Demo Class</button>
-
+                  <div class="splide__slide">
+                      <div class="content-box">
+                          <div class="content">
+                              <div class="name">{{ plan.subscription_plan.name }}<br> {{ plan.subscription_plan.price }}<span class="name-span">/Full course</span></div>
+                              <ul class="course-content">
+                                  <li>Live Classes</li>
+                                  <li>Doubt Clearing Sessions</li>
+                                  <li>Assessment & Case Study</li>
+                                  <li>Mentorship</li>
+                                  <li>Start Date: {{ plan.start_date }}</li>
+                                  <li>End Date: {{ plan.end_date }}</li>
+                                  <li>Available Slots: {{ plan.available_slots }}</li>
+                              </ul><br><br><br>
+          
+                              {% with "not_purchased" as purchase_status %}
+                                  {% for purchase in purchased_courses %}
+                                      {% if purchase.purchased_course.id == plan.course.id and purchase.subscription_plan.id == plan.subscription_plan.id %}
+                                          {% with "purchased" as purchase_status %}
+                                              <h3>You have already purchased this course.</h3>
+                                          {% endwith %}
+                                      {% endif %}
+                                  {% endfor %}
+          
+                                  {% if purchase_status == "not_purchased" %}
+                                      <form action="{% url 'subscription:create_purchase_record' course_id=plan.course.id plan_id=plan.subscription_plan.id %}" method="POST">
+                                          {% csrf_token %}
+                                          <button type="submit" class="btn-1 purchase-button">Purchase</button>
+                                      </form>
+                                  {% endif %}
+                              {% endwith %}
+                          </div>
+                      </div>
                   </div>
-                </div>
-              </div>
               {% endfor %}
-              {% else %}
+          {% else %}
               <p>No subscription plans available for this course.</p>
-              {% endif %}
-
+          {% endif %}
+          
             </div>
           </div>
         </div>
