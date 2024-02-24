@@ -550,7 +550,7 @@ footer p {
 
 @media (max-width: 360px) {
   .section-three li {
-font-size: 12px;
+    font-size: 12px;
     justify-content: center;
     width: 200px;
   }
@@ -669,24 +669,28 @@ font-size: 12px;
 }
 
 /* right_course */
-.Right-course {
-  display: grid;
-  place-items: center;
-  height: auto;
-  /* width: auto; */
-  /* overflow-x: hidden; */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.Right-course h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  color: rgb(3, 3, 72);
 }
-
+.Right-course h2 span {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 2rem;
+  -webkit-text-fill-color: transparent;
+}
 
 .join_us {
   font-weight: bold;
   color: #040052;
   text-align: center;
-  margin: 2.5rem 2.5rem 1rem 2.5rem;
-  font-size: 3rem;
+  margin: 1.5rem;
+  font-size: 3.5rem;
   line-height: 4.5rem;
 }
 .title_join_us {
@@ -698,25 +702,18 @@ font-size: 12px;
 
 .splide {
   visibility: visible !important;
-  width: 1400px !important;
+  /* width: 1400px !important; */
 }
-.splide__track {
-  padding-left: 3rem !important;
-  padding-right: 5rem !important;
-}
-
 .splide__slide {
-  width: 30% !important;
-  margin: 2rem !important;
-}
-@media screen and (max-width: 1370px) {
-  .splide {
-    width: 1300;
-  }
+  width: 31% !important;
+  margin: 20px !important;
+  display: flex;
+  justify-content: center;
 }
 
 .content-box {
-  max-width: 90%;
+  /* max-width: 90%; */
+  width: 90%;
   height: 97%;
   border-radius: 5%;
   background: #fff;
@@ -724,19 +721,16 @@ font-size: 12px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
   transition: all 0.4s ease;
 }
+
 .content-box:hover {
   transform: translateY(-15px);
+  background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
 }
 
 .content {
-  padding: 1rem 0 1.5rem 0.5rem;
-  /* margin: 1rem; */
-}
-.button-class {
+  padding: 1.5rem 0;
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  padding-right: 5px;
+  flex-direction: column;
 }
 .btn-1 {
   font-size: 1.2rem;
@@ -746,30 +740,18 @@ font-size: 12px;
   -webkit-text-fill-color: #ffffff;
   border: none;
   border-radius: 25px;
-  transition: 3s;
+  transition: 0.75s;
   cursor: pointer;
-  position: absolute;
-  bottom: 1.2rem;
   margin-top: auto;
   width: fit-content;
-  /* margin-left: 6rem; */
+  /* margin-left: 6.5rem; */
+  align-self: center;
 }
-.btn-2 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  padding: 0.7em 1.5em;
+.btn-1:hover {
   background: #ffffff;
-  -webkit-text-fill-color: #ff0000;
-  border: none;
-  border-radius: 20px;
-  transition: 3s;
-  cursor: pointer;
-  position: absolute;
-  bottom: 2rem;
-  margin-top: auto;
-  width: fit-content;
-  margin-left: 6.5rem;
+  -webkit-text-fill-color: orangered;
 }
+
 .name {
   font-size: 1.8rem;
   font-weight: bold;
@@ -781,30 +763,16 @@ font-size: 12px;
 .course-content {
   font-size: 1rem;
   font-weight: bold;
-  line-height: 1.5rem;
+  line-height: 2.5rem;
   list-style: none;
   margin-top: 0;
   color: #5e5e5e;
   width: fit-content;
-  height: 220px;
 }
+/* .content :hover {
+  color: white;
+} */
 
-.premium_name {
-  font-size: 1.8rem;
-  font-weight: bold;
-  line-height: 2.5rem;
-  padding-left: 2rem;
-  color: white;
-}
-.premium_name-span,
-.premium_content {
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 2.2rem;
-  list-style: none;
-  margin-top: 0;
-  color: white;
-}
 .slider-wrapper {
   padding: 50px 15px;
   height: 100%;
@@ -839,14 +807,6 @@ font-size: 12px;
   height: 2.5rem;
   background-color: white !important ;
   border: #ff0000 solid 2px !important;
-}
-.splide__arrow--prev {
-  left: 2% !important;
-  /* top: 18rem !important; */
-}
-.splide__arrow--next {
-  left: 95% !important;
-  /* top: 16rem !important; */
 }
 
 .emi-container {
