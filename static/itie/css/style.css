@@ -877,6 +877,7 @@ body {
 .amazing_heading {
   text-align: center;
   margin: 1rem;
+  color: #040052;
 }
 .amazing-container {
   display: flex;
@@ -887,10 +888,17 @@ body {
 }
 
 .awaits {
-  color: #fbf5ef;
+  /* color: #fbf5ef;
   font-size: 60px;
   text-shadow: -1px 1.5px 0 #ff0000, 1.5px 1.5px 0 #ff0000, 1.5px -1px 0 #ff0000,
-    -1px -1px 0 #ff0000;
+    -1px -1px 0 #ff0000; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
   text-align: center;
   /* width: fit-content; */
   margin-bottom: 40px;
@@ -945,17 +953,29 @@ body {
   text-align: center;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
 }
+
+.buy_course {
+  color: rgb(3, 3, 72);
+}
+
 .off {
   text-align: center;
-  color: #5e5e5ee8;
+  color: rgb(3, 3, 72);
   font-size: 1.5rem;
   margin: 1rem;
 }
 .percentage {
-  color: #5e5e5ee8;
+  /* color: #5e5e5ee8;
   font-size: 2.5rem;
   font-weight: 500;
-  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8;
+  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .buy_3course_box {
@@ -976,10 +996,17 @@ body {
   margin: 1rem;
 }
 .percentage_3 {
-  color: white;
+  /* color: white;
   font-size: 2.5rem;
   font-weight: 500;
-  text-shadow: -1px -1px #5e5e5ee8, 0.1em 0.1em #ff0000, 0.13em 0.13em white;
+  text-shadow: -1px -1px #5e5e5ee8, 0.1em 0.1em #ff0000, 0.13em 0.13em white; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
 }
 .btn-3 {
   font-size: 1.1rem;

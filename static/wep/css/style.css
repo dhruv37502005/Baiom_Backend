@@ -187,7 +187,16 @@ body {
   background-color: #fff;
   gap: 10px;
 }
+
 .section-two h2 {
+  color: rgb(3, 3, 72);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.section-two h2 > span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
   background-clip: text;
@@ -197,6 +206,7 @@ body {
   margin-bottom: 2rem;
   margin-top: 3rem;
 }
+
 .section-two p {
   font-size: 1.2rem;
   color: #777;
@@ -264,7 +274,9 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  padding: 3rem 0 0 13rem;
+  padding-top: 3rem;
+  color: rgb(3, 3, 72);
+  text-align: center;
 }
 .section-three span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -343,11 +355,13 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  padding: 3rem 0 0 8rem;
+  padding-top: 3rem;
   color: orangered;
+  text-align: center;
 }
 .section-four p {
-  padding-left: 8rem;
+  /* padding-left: 8rem; */
+  text-align: center;
   font-size: 1.3rem;
 }
 .curriculum_container {
@@ -409,10 +423,16 @@ body {
   line-height: 5.5rem;
   /* margin-left: 4rem; */
 }
+
+.importance > .opp {
+  color: rgb(3, 3, 72);
+}
+
 .imp {
   color: orangered;
   position: relative;
 }
+
 .slider1 .container .main-card {
   display: flex;
   justify-content: center;
@@ -791,6 +811,7 @@ input[type="radio"] {
   margin-bottom: 1rem;
   text-align: center;
   padding-top: 1.5rem;
+  color: rgb(3, 3, 72);
 }
 .section-seven h2 span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -822,10 +843,13 @@ input[type="radio"] {
 .splide__slide {
   width: 30% !important;
   margin: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .content-box {
-  max-width: 90%;
+  /* max-width: 90%; */
+  width: 90%;
   height: 97%;
   border-radius: 5%;
   background: #fff;
@@ -833,13 +857,16 @@ input[type="radio"] {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
   transition: all 0.4s ease;
 }
+
 .content-box:hover {
   transform: translateY(-15px);
   background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
 }
 
 .content {
-  padding: 1rem 0 1.5rem 0.5rem;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
 }
 .btn-1 {
   font-size: 1.2rem;
@@ -849,12 +876,12 @@ input[type="radio"] {
   -webkit-text-fill-color: #ffffff;
   border: none;
   border-radius: 25px;
-  transition: 3s;
+  transition: 0.75s;
   cursor: pointer;
-
   margin-top: auto;
   width: fit-content;
-  margin-left: 6.5rem;
+  /* margin-left: 6.5rem; */
+  align-self: center;
 }
 .btn-1:hover {
   background: #ffffff;
@@ -878,9 +905,9 @@ input[type="radio"] {
   color: #5e5e5e;
   width: fit-content;
 }
-.content :hover {
+/* .content :hover {
   color: white;
-}
+} */
 
 .slider-wrapper {
   padding: 50px 15px;
@@ -1009,6 +1036,7 @@ input[type="radio"] {
 .amazing_heading {
   text-align: center;
   margin: 1rem;
+  color: rgb(3, 3, 72);
 }
 .amazing-container {
   display: flex;
@@ -1019,10 +1047,17 @@ input[type="radio"] {
 }
 
 .awaits {
-  color: #fbf5ef;
-  font-size: 60px;
-  text-shadow: -1px 1.5px 0 #ff0000, 1.5px 1.5px 0 #ff0000, 1.5px -1px 0 #ff0000,
-    -1px -1px 0 #ff0000;
+  /* color: #fbf5ef;
+  font-size: 60px; */
+  /* text-shadow: -1px 1.5px 0 gray; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: white -1px -1px; */
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
   text-align: center;
   /* width: fit-content; */
   margin-bottom: 40px;
@@ -1080,17 +1115,30 @@ input[type="radio"] {
   text-align: center;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
 }
+
+.buy_course {
+  color: rgb(3, 3, 72);
+  font-weight: 600;
+}
+
 .off {
   text-align: center;
-  color: #5e5e5ee8;
+  color: rgb(3, 3, 72);
   font-size: 1.5rem;
   margin: 1rem;
 }
 .percentage {
-  color: #5e5e5ee8;
+  /* color: #5e5e5ee8;
   font-size: 2.5rem;
   font-weight: 500;
-  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8;
+  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .buy_3course_box {
@@ -1111,10 +1159,17 @@ input[type="radio"] {
   margin: 1rem;
 }
 .percentage_3 {
-  color: white;
+  /* color: white;
   font-size: 2.5rem;
   font-weight: 500;
-  text-shadow: -1px -1px #5e5e5ee8, 0.1em 0.1em #ff0000, 0.13em 0.13em white;
+  text-shadow: -1px -1px #5e5e5ee8, 0.1em 0.1em #ff0000, 0.13em 0.13em white; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
 }
 .btn-3 {
   font-size: 1.1rem;

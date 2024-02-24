@@ -1,4 +1,3 @@
-  
   $('.carousel').carousel({
     interval: 7000
   })
@@ -11,8 +10,8 @@
   });
   
   
-  const tabItems = document.querySelectorAll('.tab-item');
-  const tabContentItems = document.querySelectorAll('.tab-content-item');
+  let tabItems1 = document.querySelectorAll('.tab-item');
+  let tabContentItems = document.querySelectorAll('.tab-content-item');
   
   // Select tab content item
   function selectItem(e) {
@@ -29,7 +28,7 @@
   
   // Remove bottom borders from all tab items
   function removecurrent() {
-      tabItems.forEach(item => {
+      tabItems1.forEach(item => {
           item.classList.remove('current-tab');
           
       });
@@ -43,7 +42,7 @@
   }
   
   // Listen for tab item click
-  tabItems.forEach(item => {
+  tabItems1.forEach(item => {
       item.addEventListener('click', selectItem);
   });
   

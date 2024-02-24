@@ -179,6 +179,16 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 1090px) {
+  .splide__slide {
+    width: 46% !important;
+    margin: 20px !important;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .container-main {
     grid-template-columns: 1fr;
@@ -195,6 +205,15 @@
   }
   .accordion-item-body-content {
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 621px) {
+  .splide__slide {
+    width: 90% !important;
+    margin: 25px !important;
+    display: flex;
+    justify-content: center;
   }
 }
 

@@ -39,7 +39,7 @@
   height: 400px;
   width: 700px;
   left: 20%;
-  top: 40%;
+  top: 35%;
   z-index: 3;
   background-color: white;
   padding: 10px;
@@ -78,7 +78,7 @@
 
 /* section one */
 .topsection-head {
-  padding: 70px 30px 30px 30px;
+  padding: 60px 30px 30px 30px;
   margin: 4.3rem;
 }
 .topsection1-countpart {
@@ -109,8 +109,7 @@
 }
 
 .topsection1-container {
-  background-color: rgb(249, 177, 191);
-  box-shadow: -2px 2px 4px 2px rgb(234, 99, 121);
+  box-shadow: 2px 2px 4px 2px orangered;
   display: flex;
   /* flex-wrap: wrap; */
   justify-content: center;
@@ -127,16 +126,23 @@
   align-items: center;
 }
 
+.topsection1-content > .one > .info > h1 {
+  color: #040052;
+}
+
 .topsection-head-content > h1 {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 50px;
   text-align: center;
   line-height: 6rem;
-  color: rgb(184, 205, 50);
+  color: #040052;
 }
 .topsection-head-content > h1 > span {
-  color: orangered;
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: relative;
 }
 .topsection-head-content > h1 > span:after {
@@ -174,7 +180,6 @@
   align-items: center;
   text-align: center;
   padding: 10px;
-  box-shadow: 2px 2px 5px 2px rgb(238, 7, 45);
 }
 .topsection1-content .info > .offer-section {
   display: flex;
@@ -362,7 +367,7 @@
   padding-top: 20px;
   /* padding: 3rem 0 0 13rem; */
   text-align: center;
-  color: yellowgreen;
+  color: #040052;
 }
 .section-three span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -537,6 +542,7 @@ footer p {
     gap: 10px;
     justify-content: center;
     align-items: center;
+    font-size: 12px;
     padding: 0;
     width: 100%;
   }
@@ -663,23 +669,28 @@ footer p {
 }
 
 /* right_course */
-.Right-course {
-  display: grid;
-  place-items: center;
-  height: auto;
-  /* width: auto; */
-  /* overflow-x: hidden; */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.Right-course h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  color: rgb(3, 3, 72);
+}
+.Right-course h2 span {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 2rem;
+  -webkit-text-fill-color: transparent;
 }
 
 .join_us {
   font-weight: bold;
   color: #040052;
   text-align: center;
-  margin: 2.5rem;
-  font-size: 3rem;
+  margin: 1.5rem;
+  font-size: 3.5rem;
   line-height: 4.5rem;
 }
 .title_join_us {
@@ -691,13 +702,18 @@ footer p {
 
 .splide {
   visibility: visible !important;
-  width: 1400px !important;
+  /* width: 1400px !important; */
 }
 .splide__slide {
-  width: 28% !important;
+  width: 31% !important;
+  margin: 20px !important;
+  display: flex;
+  justify-content: center;
 }
+
 .content-box {
-  max-width: 90%;
+  /* max-width: 90%; */
+  width: 90%;
   height: 97%;
   border-radius: 5%;
   background: #fff;
@@ -705,12 +721,16 @@ footer p {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
   transition: all 0.4s ease;
 }
+
 .content-box:hover {
   transform: translateY(-15px);
+  background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
 }
 
 .content {
-  padding: 1rem 0 1.5rem 0.5rem;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
 }
 .btn-1 {
   font-size: 1.2rem;
@@ -720,30 +740,18 @@ footer p {
   -webkit-text-fill-color: #ffffff;
   border: none;
   border-radius: 25px;
-  transition: 3s;
+  transition: 0.75s;
   cursor: pointer;
-  position: absolute;
-  bottom: 1.2rem;
   margin-top: auto;
   width: fit-content;
-  margin-left: 6.5rem;
+  /* margin-left: 6.5rem; */
+  align-self: center;
 }
-.btn-2 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  padding: 0.7em 1.5em;
+.btn-1:hover {
   background: #ffffff;
-  -webkit-text-fill-color: #ff0000;
-  border: none;
-  border-radius: 20px;
-  transition: 3s;
-  cursor: pointer;
-  position: absolute;
-  bottom: 2rem;
-  margin-top: auto;
-  width: fit-content;
-  margin-left: 6.5rem;
+  -webkit-text-fill-color: orangered;
 }
+
 .name {
   font-size: 1.8rem;
   font-weight: bold;
@@ -755,30 +763,16 @@ footer p {
 .course-content {
   font-size: 1rem;
   font-weight: bold;
-  line-height: 1.5rem;
+  line-height: 2.5rem;
   list-style: none;
   margin-top: 0;
   color: #5e5e5e;
   width: fit-content;
-  height: 220px;
 }
+/* .content :hover {
+  color: white;
+} */
 
-.premium_name {
-  font-size: 1.8rem;
-  font-weight: bold;
-  line-height: 2.5rem;
-  padding-left: 2rem;
-  color: white;
-}
-.premium_name-span,
-.premium_content {
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 2.2rem;
-  list-style: none;
-  margin-top: 0;
-  color: white;
-}
 .slider-wrapper {
   padding: 50px 15px;
   height: 100%;
@@ -887,6 +881,7 @@ footer p {
 .amazing_heading {
   text-align: center;
   margin: 1rem;
+  color: #040052;
 }
 .amazing-container {
   display: flex;
@@ -897,10 +892,17 @@ footer p {
 }
 
 .awaits {
-  color: #fbf5ef;
-  font-size: 60px;
-  text-shadow: -1px 1.5px 0 #ff0000, 1.5px 1.5px 0 #ff0000, 1.5px -1px 0 #ff0000,
-    -1px -1px 0 #ff0000;
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
+  /* font-size: 60px; */
+  /* color: white;  */
+  /* text-shadow: 1px 1px white; */
+  /* text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8; */
   text-align: center;
   /* width: fit-content; */
   margin-bottom: 40px;
@@ -948,17 +950,29 @@ footer p {
   text-align: center;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
 }
+
+.buy_course {
+  color: rgb(3, 3, 72);
+}
+
 .off {
   text-align: center;
-  color: #5e5e5ee8;
+  color: rgb(3, 3, 72);
   font-size: 1.5rem;
   margin: 1rem;
 }
 .percentage {
-  color: #5e5e5ee8;
+  /* color: #5e5e5ee8;
   font-size: 2.5rem;
   font-weight: 500;
-  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8;
+  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .buy_3course_box {
@@ -979,10 +993,17 @@ footer p {
   margin: 1rem;
 }
 .percentage_3 {
-  color: white;
+  /* color: #5e5e5ee8;
   font-size: 2.5rem;
   font-weight: 500;
-  text-shadow: -1px -1px #5e5e5ee8, 0.1em 0.1em #ff0000, 0.13em 0.13em white;
+  text-shadow: -1px -1px #5e5e5ee8, 0.05em 0.05em white, 0.12em 0.12em #767373e8; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #5e5e5ee8; */
+  font-size: 3rem;
+  font-weight: 700;
 }
 .btn-3 {
   font-size: 1.1rem;
