@@ -146,7 +146,16 @@ def user_ui_json(request, username):
             enrolled_courses_data.append(course_serializer.data)
     user_serializer = UserSerializer(user)
     dashuser_serializer = Dash_userSerializer(dash_user)
-    return JsonResponse({'User': user_serializer.data,"DashUserDetails":dashuser_serializer.data, "CoursesEnrolled":enrolled_courses_data, 'Batches':batches_data, 'Resources':batch_notes})
+
+    jsondata = {
+            'User': user_serializer.data,
+            'DashUserDetails': dashuser_serializer.data,
+            'CoursesEnrolled': enrolled_courses_data,
+            'Batches': batches_data,
+            'Resources':batch_notes,
+        }
+    
+    return JsonResponse(jsondata)
     
     
     
