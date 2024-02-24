@@ -11,3 +11,5 @@ course/__pycache__
 db.sqlite3
 db.sqlite3
 *db.sqlite3
+userauths/migrations/0002_alter_dashboard_user_bio.py
+userauths/migrations/0003_alter_dashboard_user_fname_and_more.py
