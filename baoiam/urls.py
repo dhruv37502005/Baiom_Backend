@@ -27,6 +27,7 @@ urlpatterns = [
     path('bootcamp/',include('bootcamp.urls',namespace='bootcamp')),
     path('api-auth/', include('rest_framework.urls')),
     # path('chatbot/',include('chatbot.urls',namespace='chatbot')),
+    path('subscription/', include('subscription.urls', namespace='subscription')),
 ]
 
 
