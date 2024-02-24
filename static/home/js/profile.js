@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
- document.getElementById("profile-content").style.display = "none";
+ document.getElementById("profile-dropdown").style.display = "none";
    function profileButton() {
-     if (document.getElementById("profile-content").style.display != "none") {
-       document.getElementById("profile-content").style.display = "none";
+     if (document.getElementById("profile-dropdown").style.display != "none") {
+       document.getElementById("profile-dropdown").style.display = "none";
      } else {
-       document.getElementById("profile-content").style.display = "revert";
+       document.getElementById("profile-dropdown").style.display = "revert";
      }
    }
    document
