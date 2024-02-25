@@ -64,7 +64,10 @@ body {
   width: 100%;
   background-repeat: no-repeat;
   margin-top: 3rem;
+  background-size: cover;
+  background-position: center top;
 }
+
 .section-one div {
   display: flex;
   flex-direction: column;
