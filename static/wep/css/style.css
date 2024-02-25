@@ -819,7 +819,7 @@ input[type="radio"] {
 .section-seven h2 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   text-align: center;
   padding-top: 1.5rem;
   color: rgb(3, 3, 72);
@@ -861,7 +861,7 @@ input[type="radio"] {
 .content-box {
   /* max-width: 90%; */
   width: 90%;
-  height: 97%;
+  height: 100%;
   border-radius: 5%;
   background: #fff;
   border-radius: 30px;
@@ -875,10 +875,17 @@ input[type="radio"] {
 }
 
 .content {
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 1rem 0;
   display: flex;
   flex-direction: column;
+  color: rgb(1, 1, 68);
+  height: 100%;
 }
+
+.content:hover{
+  color: white !important;
+}
+
 .btn-1 {
   font-size: 1.2rem;
   font-weight: 800;
@@ -899,12 +906,12 @@ input[type="radio"] {
   -webkit-text-fill-color: orangered;
 }
 
-.name {
+.slide-name {
   font-size: 1.8rem;
   font-weight: bold;
   line-height: 2.5rem;
   padding-left: 2rem;
-  color: #5e5e5e;
+  /* color: #5e5e5e; */
 }
 .name-span,
 .course-content {
@@ -913,12 +920,13 @@ input[type="radio"] {
   line-height: 2.5rem;
   list-style: none;
   margin-top: 0;
-  color: #5e5e5e;
+  /* color: #5e5e5e; */
   width: fit-content;
 }
-/* .content :hover {
-  color: white;
-} */
+
+.course-content {
+  color: #5e5e5e;
+}
 
 .slider-wrapper {
   padding: 50px 15px;
