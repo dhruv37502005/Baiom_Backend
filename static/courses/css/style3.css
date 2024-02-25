@@ -550,7 +550,7 @@ footer p {
 
 @media (max-width: 360px) {
   .section-three li {
-font-size: 12px;
+    font-size: 12px;
     justify-content: center;
     width: 200px;
   }
@@ -714,7 +714,7 @@ font-size: 12px;
 .content-box {
   /* max-width: 90%; */
   width: 90%;
-  height: 100%;
+  height: 97%;
   border-radius: 5%;
   background: #fff;
   border-radius: 30px;
@@ -728,17 +728,10 @@ font-size: 12px;
 }
 
 .content {
-  padding: 1.5rem 0 1rem 0;
+  padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  color: rgb(1, 1, 68);
 }
-
-.content:hover {
-  color: white !important;
-}
-
 .btn-1 {
   font-size: 1.2rem;
   font-weight: 800;
@@ -759,12 +752,12 @@ font-size: 12px;
   -webkit-text-fill-color: orangered;
 }
 
-.slide-name {
+.name {
   font-size: 1.8rem;
   font-weight: bold;
   line-height: 2.5rem;
   padding-left: 2rem;
-  /* color: #5e5e5e; */
+  color: #5e5e5e;
 }
 .name-span,
 .course-content {
@@ -773,16 +766,12 @@ font-size: 12px;
   line-height: 2.5rem;
   list-style: none;
   margin-top: 0;
+  color: #5e5e5e;
   width: fit-content;
 }
-
-.course-content {
-  color: #5e5e5e;
-}
-
-.content:hover {
-  color: white !important;
-}
+/* .content :hover {
+  color: white;
+} */
 
 .slider-wrapper {
   padding: 50px 15px;

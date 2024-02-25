@@ -359,7 +359,6 @@ p {
 
 .slider1 .bold {
   font-weight: 800;
-  text-align: center !important;
 }
 
 .slider2 {
@@ -748,6 +747,5 @@ footer .contact-us p div i {
 }
 .slider1 .content p {
   color: #031864;
-  text-align: left;
-  line-height: 2rem;
+  text-align: justify;
 }

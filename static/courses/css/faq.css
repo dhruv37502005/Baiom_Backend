@@ -208,7 +208,7 @@
   }
 }
 
-@media screen and (max-width: 621px){
+@media screen and (max-width: 621px) {
   .splide__slide {
     width: 90% !important;
     margin: 25px !important;
