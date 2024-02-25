@@ -434,141 +434,115 @@ body {
 
 /* --------------------------- SECTION FIVE ------------------------------ */
 
-.section-five {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  /* max-width: 1060px; */
-  width: 100%;
-  position: relative;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-}
-.section-five h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  padding-top: 3rem;
-  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: translateX(-120px);
+.testimonial {
   text-align: center;
 }
-.section-five .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(100% / 3);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  border-radius: 8px;
-  gap: 10px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  align-items: center;
-  /* height: 25rem; */
+.slide-container {
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+.slide-content {
+  margin: 0 40px;
   overflow: hidden;
+  border-radius: 25px;
 }
-
-.section-five .testimonials {
-  scroll-snap-align: start;
+.card {
+  border: 2px solid orangered;
+  border-radius: 25px;
+  background-color: #f9f8f6;
+  box-shadow: 2px 2px 6px 2px rgb(181, 179, 179);
+}
+.card:hover {
+  transition: all 1s ease-in-out;
+}
+.image-content {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  /* height: 21rem; */
-  list-style: none;
-  background: #fff;
-  justify-content: space-around;
-  border-radius: 15px;
-  padding: 1rem 2rem;
-  border: 1px solid orangered;
-  box-shadow: 0px 7px 10px 0px rgba(100, 100, 111, 0.2);
-  justify-items: center;
-}
-
-@media screen and (max-width: 830px) {
-  .section-five .carousel {
-    grid-auto-columns: 50%;
-  }
-}
-
-@media (max-width: 620px) {
-  .section-five .carousel {
-    grid-auto-columns: 100%;
-    margin-left: 30px;
-  }
-  .section-five .temp #left {
-    left: 2rem;
-  }
-  .section-five .temp #right {
-    right: 0px;
-  }
-  .section-five h2 {
-    margin-right: 20px;
-  }
-}
-
-.section-five .details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.section-five img {
-  height: 110px;
-  width: 130px;
-  border-radius: 50%;
-  margin-bottom: 0.8rem;
-}
-.section-five h4 {
-  color: #606060;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-.section-five h6 {
-  font-size: 1rem;
-  color: #999;
-  font-weight: 600;
-}
-.section-five p {
-  color: #999;
-  font-weight: 500;
-}
-.section-five i {
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  font-size: 1.25rem;
-  position: absolute;
-  text-align: center;
-  line-height: 50px;
-  color: #fff;
-  background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-  transform: translateY(-50%);
-  transition: transform 0.1s linear;
-}
-.section-five i:active {
-  transform: translateY(-50%) scale(0.85);
-}
-.section-five .temp {
-  width: 100%;
-  height: 100%;
   position: relative;
+  align-items: center;
+  padding: 20px 20px;
+  /* padding: 10px 14px; */
 }
-.section-five .temp #right {
-  top: 50%;
-  right: -3rem;
-  position: absolute;
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  padding: 15px 10px;
 }
-.section-five .temp #left {
-  top: 50%;
-  left: -4rem;
+.overlay {
   position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  /* background-color: orangered; */
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 25px;
+  /* background-color: orangered; */
+}
+.overlay::after {
+  border-radius: 0 0 0 0;
+  /* background-color: white; */
+}
+.card-image {
+  position: relative;
+  height: 150px;
+  width: 300px;
+  border-radius: 10px;
+  /* background: orangered; */
+  padding: 1px;
+}
+.card-image .card-img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* border: 4px solid orangered; */
+}
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: darkorange;
+  text-align: center;
+}
+.description {
+  font-size: 14px;
+  color: black;
+  text-align: justify;
+}
+
+.swiper-navBtn {
+  color: orangered;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover {
+  color: orange;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 40px;
+}
+.swiper-button-next {
+  right: 0;
+}
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-pagination-bullet {
+  background-color: orangered;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: orangered;
 }
 
 /* --------------------------- SECTION SIX ------------------------------ */
