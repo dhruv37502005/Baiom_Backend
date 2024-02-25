@@ -91,6 +91,7 @@ body {
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 5.5rem;
+  margin-left: 35px;
 }
 .topsection1-content .content > h1 > span {
   color: orangered;
@@ -114,6 +115,7 @@ body {
   margin-bottom: 50px;
   font-weight: 500;
   color: rgb(62, 2, 2);
+  margin-left: 35px;
 }
 .topsection1-button {
   display: flex;
@@ -186,6 +188,7 @@ body {
   align-items: center;
   background-color: #fff;
   gap: 10px;
+  padding-bottom: 4rem;
 }
 
 .section-two h2 {
@@ -352,10 +355,10 @@ body {
 /* --------------------------- SECTION FOUR ------------------------------ */
 
 .section-four h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  padding-top: 3rem;
+  padding-top: 6rem;
   color: orangered;
   text-align: center;
 }
@@ -370,6 +373,7 @@ body {
   align-items: center;
   gap: 4rem;
   padding: 40px;
+  padding-bottom: 8rem;
 }
 .curriculum_box {
   padding: 1rem 3rem;
@@ -466,13 +470,20 @@ body {
   font-weight: bold;
   text-align: center;
   background: -webkit-linear-gradient(45deg, #fa2424, #fb8721);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  width: 6rem;
+  border-radius: 50%;
+  padding: 1rem;
+  color: white;
+  margin: auto;
 }
+  
 .slider1 .content .bold {
   color: #5a5959;
   font-weight: 600;
   text-align: center;
+  padding-top: 2rem;
 }
 .slider1 .content p {
   color: orangered;
@@ -657,14 +668,14 @@ input[type="radio"] {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   border-radius: 8px;
-  gap: 10px;
+  gap: 0px;
   scroll-behavior: smooth;
   scrollbar-width: none;
   align-items: center;
   /* height: 25rem; */
   overflow: hidden;
-  /* margin-left: 20px; */
-  margin-right: 100px;
+   margin-left: 77px;
+  margin-right: 120px;
   /* position: relative; */
 }
 

@@ -26,7 +26,7 @@ body {
   padding: 3rem;
   margin-top: 3rem;
   justify-content: space-evenly;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 
 .first-half .text-div {
@@ -110,7 +110,7 @@ body {
 }
 
 .second-half h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   /* font-weight: bold; */
   font-weight: 700;
@@ -195,7 +195,7 @@ p {
 }
 
 .second .text-div p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: grey;
   margin: 2rem auto 3rem;
 }
@@ -230,7 +230,7 @@ p {
 }
 
 .second ul p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-left: 0.5rem;
   color: #031864;
   font-weight: bold;
@@ -265,7 +265,7 @@ p {
 
 .third .text-div p,
 .slider1 .textp {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: gray;
   margin-bottom: 2rem;
   text-align: center;
@@ -347,7 +347,7 @@ p {
   /* font-weight: bold; */
   font-weight: 700;
   text-align: center;
-  margin-top: 3rem;
+  /* margin-top: 11rem; */
 }
 
 .slider1 h1 span {
@@ -748,6 +748,5 @@ footer .contact-us p div i {
 }
 .slider1 .content p {
   color: #031864;
-  text-align: left;
-  line-height: 2rem;
+  text-align: webkit-center;
 }
