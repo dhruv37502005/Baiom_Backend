@@ -1,4 +1,3 @@
-from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render, redirect
 from course.models import Course, Batch, Resource #,Purchase
@@ -13,66 +12,84 @@ from datetime import datetime, timedelta
 from django.core.files.storage import FileSystemStorage
 from django.core.files.base import ContentFile
 from subscription.models import PurchaseCourse
-from course.serializers import *
-from .serializers import *
 
 
 
 @login_required(login_url="/userauths/login/")
 @transaction.atomic
-def user_ui(request, username):
+# FIXME: this function is handling multiple API's calls need to make sub-fuctions to pass context
+# TODO: seperate POST and GET API from this function
+def user_ui(request):
     if request.method == "GET":
-        auser = User.objects.get(username=username)
-        # if request.user.is_authenticated:
-        if auser.is_staff == True:
-            return redirect("/admin")
+        auser = request.user
+        if request.user.is_authenticated:
+            if auser.is_staff == True:
+                return redirect("/admin")
+            else:
+                # username = request.session['username']
+                user = User.objects.get(username=request.user.username)
+                if not Dashboard_User.objects.filter(user_id=user.id).exists():
+                    dashboard_user, created = Dashboard_User.objects.get_or_create(user=auser)
+                    dashboard_user.save()
+                dash_user = Dashboard_User.objects.get(user_id=user.id)
+                # get active courses if enrolled
+                # enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+               # purchase_courses = PurchaseCourse.objects.filter(user=request.user)
+                # purchase_courses = PurchaseCourse.objects.filter(user=request.user)
+                todays_date = timezone.now().date()
+                print(todays_date)
+
+                enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+                # purchase_courses = Purchase.objects.filter(user=request.user)
+                todays_date = timezone.now().date()
+                print(todays_date)
+                # TODO:  pass final purchase query to dashboard
+                # ongoing_courses = [purchase.course  for purchase in purchase_courses
+                #     if (purchase.purchase_end_date and purchase.additional_access_date) >todays_date]
+                # print(f"ongoing_courses: {ongoing_courses}")
+                years = list(range(1990, 2031))
+
+
+                # get active courses if enrolled
+                enrolled_courses = dash_user.enrolled_courses.filter(status="active")
+                # purchase_courses = Purchase.objects.filter(user=request.user)
+                todays_date = timezone.now().date()
+                print(todays_date)
+                # TODO:  pass final purchase query to dashboard
+                # ongoing_courses = [purchase.course  for purchase in purchase_courses
+                #     if (purchase.purchase_end_date and purchase.additional_access_date) >todays_date]
+                # print(f"ongoing_courses: {ongoing_courses}")
+                years = list(range(1990, 2031))
+
+                # get batch of that course
+                batches = Batch.objects.filter(course__in=enrolled_courses)
+                print(f"batches: {batches}")
+                # get batch of that course
+                batches = Batch.objects.filter(course__in=enrolled_courses)
+                # get notes for that batch
+                batch_notes ={}
+                for batch in batches:
+                    notes = Resource.objects.filter(batch=batch, notes__isnull=False)
+                    batch_notes[batch] = notes
+
+
+                return render(
+                    request,
+                    "dashboard.html",
+                    {
+                        'years': years,
+                        "user": user,
+                        "dash_user": dash_user,
+                        # "enrolled_courses": ongoing_courses,
+                        "enrolled_courses": enrolled_courses,
+                        "batches": batches,
+                        "batch_notes": batch_notes,
+                    },
+                )
+        # FIXME handling POST request  
         else:
-            user = User.objects.get(username=auser.username)
-            if not Dashboard_User.objects.filter(user_id=user.id).exists():
-                dashboard_user, created = Dashboard_User.objects.get_or_create(user=auser)
-                dashboard_user.save()
-            dash_user = Dashboard_User.objects.get(user_id=user.id)
-
-            todays_date = timezone.now().date()
-            print(todays_date)
-
-            enrolled_courses = dash_user.enrolled_courses.filter(status="active")
-            todays_date = timezone.now().date()
-            print(todays_date)
-
-            years = list(range(1990, 2031))
-
-
-            enrolled_courses = dash_user.enrolled_courses.filter(status="active")
-            todays_date = timezone.now().date()
-            print(todays_date)
-
-            years = list(range(1990, 2031))
-
-            batches = Batch.objects.filter(course__in=enrolled_courses)
-            print(f"batches: {batches}")
-            batches = Batch.objects.filter(course__in=enrolled_courses)
-            batch_notes ={}
-            for batch in batches:
-                notes = Resource.objects.filter(batch=batch, notes__isnull=False)
-                batch_notes[batch] = notes
-
-
-            return render(
-                request,
-                "dashboard.html",
-                {
-                    'years': years,
-                    "user": user,
-                    "dash_user": dash_user,
-                    "enrolled_courses": enrolled_courses,
-                    "batches": batches,
-                    "batch_notes": batch_notes,
-                },
-            )
-        # else:
-        #     return redirect("userauths:login")
-        
+            # TODO: NEED TO CREATE A NE POST API FOR USER UPDATE
+            return redirect("userauths:login")
     if request.method == "POST":
         user_profile = Dashboard_User.objects.get(user=request.user)
 
@@ -123,42 +140,6 @@ def user_ui(request, username):
         return redirect("dashboard:user_ui")
     return render(request, "dashboard.html", {"user": request.user})
 
-
-def user_ui_json(request, username):
-    user = User.objects.get(username=username)
-    dash_user = Dashboard_User.objects.get(user_id=user.id)
-    enrolled_courses = dash_user.enrolled_courses.filter(status="active")
-    batches = Batch.objects.filter(course__in=enrolled_courses)
-    batch_notes = []
-    for batch in batches:
-        notes = Resource.objects.filter(batch=batch, notes__isnull=False)
-        resource_serializer = ResourceSerializer(notes, many=True)
-        batch_notes.append(resource_serializer.data)
-    if batches:
-        batches_data = [] 
-        for batch in batches:
-            batch_serializer = BatchSerializer(batch)
-            batches_data.append(batch_serializer.data)
-    if enrolled_courses:
-        enrolled_courses_data = [] 
-        for course in enrolled_courses:
-            course_serializer = CourseSerializer(course)
-            enrolled_courses_data.append(course_serializer.data)
-    user_serializer = UserSerializer(user)
-    dashuser_serializer = Dash_userSerializer(dash_user)
-
-    jsondata = {
-            'User': user_serializer.data,
-            'DashUserDetails': dashuser_serializer.data,
-            'CoursesEnrolled': enrolled_courses_data,
-            'Batches': batches_data,
-            'Resources':batch_notes,
-        }
-    
-    return JsonResponse(jsondata)
-    
-    
-    
 
 def admin_ui(request):
     if request.method == "GET":

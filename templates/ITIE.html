@@ -44,7 +44,13 @@
       </div>
     </form>
     <main class="containerr" id="container">
-      <section class="section-one" style="background-image: url('{% static 'itie/img/girl.jpg' %}');">
+      <section
+        class="section-one"
+        style="
+          background-image: url('{% static 'itie/img/girl.jpg' %}');
+          background-size: cover;
+        "
+      >
         <div>
           <h1>
             LEARN <span>TEACH</span> <br />
@@ -58,7 +64,9 @@
             others, and earn rewards along the way.
           </p>
           <div class="button-section">
-            <button class="button-one" id="button-one">I AM INTRESTED</button>
+            <button class="button-one" id="button-one" onclick="openForm()">
+              I AM INTRESTED
+            </button>
             <div class="input-section">
               <input type="text" placeholder="Want to learn?" />
               <button class="button-two">Explore</button>
@@ -572,6 +580,22 @@
         </div>
       </section>
     </main>
+
+    <script>
+      function openForm() {
+        document.getElementById("popup-form").style.display = "block";
+      }
+
+      document
+        .getElementById("popup-close")
+        .addEventListener("click", function () {
+          document.getElementById("popup-form").style.display = "none";
+        });
+
+      function closeForm() {
+        document.getElementById("popup-form").style.display = "none";
+      }
+    </script>
   </body>
 </html>
 {% endblock content %}
