@@ -1072,6 +1072,7 @@ footer p {
   }
   .image {
     width: 100%;
+    /* font: optional;t */
   }
   .three .image > img {
     width: 200px;
