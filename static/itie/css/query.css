@@ -78,17 +78,6 @@
   }
 }
 @media screen and (max-width: 800px) {
-  .section-one {
-    /* margin: 0 auto; */
-    position: relative;
-    /* background-image: url("../static/itie/img/img1.avif"); */
-    height: auto;
-    width: 100%;
-    background-repeat: no-repeat;
-    margin-top: 3rem;
-    background-size: unset;
-    background-position: unset;
-  }
   .container-main {
     grid-template-columns: 1fr;
   }
