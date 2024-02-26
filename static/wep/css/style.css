@@ -468,13 +468,19 @@ body {
   font-weight: bold;
   text-align: center;
   background: -webkit-linear-gradient(45deg, #fa2424, #fb8721);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  width: 5rem;
+  border-radius: 50%;
+  padding: 0rem;
+  color: white;
+  margin-left: 6rem;
+  margin-bottom: 2rem;
 }
 .slider1 .content .bold {
-  color: #5a5959;
-  font-weight: 600;
+  color: #031864;
   text-align: center;
+  font-weight: 800;
 }
 .slider1 .content p {
   color: orangered;
@@ -808,7 +814,7 @@ input[type="radio"] {
   border-radius: 50px;
 }
 .section-seven h2 {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 700;
   margin-bottom: 1rem;
   text-align: center;
@@ -819,7 +825,7 @@ input[type="radio"] {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 2rem;
+  font-size: 4rem;
   -webkit-text-fill-color: transparent;
 }
 
