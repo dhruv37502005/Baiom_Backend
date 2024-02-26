@@ -1,18 +1,18 @@
 
 
-var popup_form = document.getElementById("popup-form");
-var I_am_interested = document.getElementById("button-one");
-var popup_close = document.getElementById("popup-close");
-//popup form
+// var popup_form = document.getElementById("popup-form");
+// var I_am_interested = document.getElementById("button-one");
+// var popup_close = document.getElementById("popup-close");
+// //popup form
 
-I_am_interested.addEventListener("click", () => {
-  popup_form.style.display = "revert";
-  // document.getElementById("container").style.opacity = "0.7";
-})
+// I_am_interested.addEventListener("click", () => {
+//   popup_form.style.display = "revert";
+//   // document.getElementById("container").style.opacity = "0.7";
+// })
 
-popup_close.addEventListener("click", () => {
-  popup_form.style.display = "none";
-})
+// popup_close.addEventListener("click", () => {
+//   popup_form.style.display = "none";
+// })
 
 // popup_form.addEventListener("submit", (e) => {
 //   e.preventDefault();
