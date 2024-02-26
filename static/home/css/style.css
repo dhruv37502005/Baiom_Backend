@@ -451,7 +451,7 @@ header img {
 /* Courses */
 
 .courses {
-  margin-bottom: 5rem;
+  margin-bottom: 5rem !important;
 }
 
 .courses h1 {
@@ -629,6 +629,7 @@ header img {
 /* Enhance skill section */
 .section-3 {
   padding-inline: 4rem;
+  margin-bottom: 5rem !important;
 }
 .section-3 .horizon h2 {
   font-size: 50px;
@@ -809,7 +810,7 @@ section.work h1 {
 }
 
 section.work p.sub-heading {
-  margin-top: 1.5rem;
+  margin: 4rem auto;
   width: 70%;
   color: #5e5e5e;
 }
@@ -1826,6 +1827,10 @@ content:none;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.section-4 h2 {
+  margin: 2rem 0;
 }
 
 @media (max-width: 576px) {
