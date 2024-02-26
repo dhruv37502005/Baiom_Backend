@@ -489,7 +489,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   /* text-align: center; */
 }
@@ -852,7 +852,7 @@ input[type="radio"] {
 .content-box {
   /* max-width: 90%; */
   width: 90%;
-  height: 97%;
+  height: 100%;
   border-radius: 5%;
   background: #fff;
   border-radius: 30px;
@@ -868,8 +868,11 @@ input[type="radio"] {
 .content {
   padding: 1.5rem 0;
   display: flex;
+  height: 100%;
   flex-direction: column;
+  color: rgb(1, 1, 68);
 }
+
 .btn-1 {
   font-size: 1.2rem;
   font-weight: 800;
@@ -895,7 +898,7 @@ input[type="radio"] {
   font-weight: bold;
   line-height: 2.5rem;
   padding-left: 2rem;
-  color: #5e5e5e;
+  /* color: #5e5e5e; */
 }
 .name-span,
 .course-content {
@@ -904,12 +907,13 @@ input[type="radio"] {
   line-height: 2.5rem;
   list-style: none;
   margin-top: 0;
-  color: #5e5e5e;
+  /* color: #5e5e5e; */
   width: fit-content;
 }
-/* .content :hover {
-  color: white;
-} */
+
+.content:hover {
+  color: white !important;
+}
 
 .slider-wrapper {
   padding: 50px 15px;
