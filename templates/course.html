@@ -44,19 +44,22 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   </form>
   <div class="containerr">
     <div>
-      <div class="topsection-head">
-        <!-- I'm interested -->
-
-        <div class="topsection-head-content">
+      <div class="topsection1-container">
+        <div class="topsection1-content">
           <h1>Learn a <span>New Skill</span> Everyday, Anytime, and Anywhere.</h1>
           <p>
-            <b>1000+</b> Courses covering all tech domains for you to learn and
+            <b>100+</b> Courses covering all tech domains for you to learn and
             explore new opportunities. Learn from Industry Experts and land your
             Dream Job.
           </p>
+          <!-- <div class="topsection1-input">
+            <span class="material-symbols-outlined"> search </span>
+            <input type="text" placeholder="What to learn?" />
+            <button type="button">Explore</button>
+          </div> -->
           <div class="topsection1-countpart">
             <div>
-              <h1 class="first">1000+</h1>
+              <h1 class="first">100+</h1>
               <h3>Courses to choose from</h3>
             </div>
             <div>
@@ -64,22 +67,23 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               <h3>Students Trained</h3>
             </div>
             <div>
-              <h1 class="third">200+</h1>
+              <h1 class="third">100+</h1>
               <h3>Professional Trainers</h3>
             </div>
           </div>
+        </div>
+        <div class="topsection1-image">
+          <img src="{% static 'courses\img\asset.jpg' %}" alt="image" />
           <div class="topsection1-button">
-            <button class="interested" id="button-one">I AM INTERESTED</button>
-
-            <a href="#" class="broucher">
-              <button class="broucher">DOWNLOAD BROCHURE</button> </a>
-
+            <button class="interested button-one">I AM INTERESTED</button>
+            <button class="broucher">DOWNLOAD BROCHER</button>
           </div>
         </div>
       </div>
       {% for course in courses %}
       <div class="topsection1-container">
-        <div class="topsection1-content">
+        <!-- <div class="topsection1-content">
+
 
           <section class="one">
             <div class="info">
@@ -97,23 +101,23 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
                     Enroll Now </button></a>
               </div>
-              <!-- <h4>{{course.title}} Carriculum</h4>
+               <h4>{{course.title}} Carriculum</h4>
                      <h4>{{course.carriculum_title}}</h4>
                      <h4>{{course.carriculum_desc}}</h4> -->
-              <h4>{{course.batch}}</h4>
+        <!--<h4>{{course.batch}}</h4>
               <h4>Batches for {{ course.title }}</h4>
               <ul>
 
                 <li>{{ batch.batch_name }} - Start Date: {{ batch.start_date }} - End Date: {{ batch.end_date }}</li>
-              </ul>
-              <!-- <div class="pic">
+              </ul> -->
+        <!-- <div class="pic">
                     {% if course.image %}
                             <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
                             {% else %}
                             <p>No image available</p>
                     {% endif %}
                   </div> -->
-              <div class="plan">
+        <!-- <div class="plan">
                 <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button
                     class="my-2 btn-enroll">
                     3 Month Plan </button>
@@ -140,6 +144,27 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           {% endif %}
 
         </div>
+      </div> -->
+
+        <div class="second-section-container">
+          <div class="second-section-div1">
+            <img src="{% static 'courses\img\Image 2.jpg' %}" alt="" />
+          </div>
+
+          <div class="second-section-div2">
+            <div>
+              <h1>ADVANCE WEB DEVELOPMENT COURSE</h1>
+              <p>Advance web development course including html, css, bootcamp,
+                javascript, react and tailwind.</p>
+              <h3>Instructor: Dhruv</h3>
+              <div class="flex-row">
+                <button class="btn-33">Enroll Now</button>
+                <button class="btn-33 btn-332">Download Syllabus</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -382,23 +407,17 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <div class="splide">
           <div class="splide__track">
             <div class="splide__list">
-              {% if subscription_course_plans %}
-              {% for plan in subscription_course_plans %}
               <div class="splide__slide">
-
 
                 <div class="content-box">
 
                   <div class="content">
-                    <div class="name">{{ plan.subscription_plan.name }}<br> {{ plan.subscription_plan.price }}<span class="name-span">/Full course</span></div>
+                    <div class="slide-name">Plus<br> 30,500<span class="name-span">/Full course</span></div>
                     <ul class="course-content">
                       <li>Live Classes</li>
                       <li>Doubt Clearing Sessions</li>
                       <li>Assessment & Case Study</li>
                       <li>Mentorship</li>
-                      <li>Start Date: {{ plan.start_date }}</li>
-                      <li>End Date: {{ plan.end_date }}</li>
-                      <li>Abailable Slots: {{ plan.available_slots }}</li>
                     </ul><br><br><br>
 
                     <button class="btn-1">Try Demo Class</button>
@@ -406,10 +425,67 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                   </div>
                 </div>
               </div>
-              {% endfor %}
-              {% else %}
-              <p>No subscription plans available for this course.</p>
-              {% endif %}
+              <div class="splide__slide">
+                <div class="content-box">
+
+                  <div class="content">
+
+                    <div class="slide-name">Premium<br>60,000/<span class="name-span">Full course</span> </div>
+                    <ul class="course-content">
+                      <li>Live Classes</li>
+                      <li>Doubt Clearing Sessions</li>
+                      <li>Assessment & Case Study</li>
+                      <li>Mentorship</li>
+                      <li>Webinar Access</li>
+                      <li>Placement Assistance</li>
+                      <li>Interview Preparation</li>
+                      <li>Resume Building</li>
+                    </ul>
+
+
+                    <button class="btn-1">Try Demo Class</button>
+                  </div>
+
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div class="content-box">
+                  <div class="content">
+                    <div class="slide-name">Premium Combo<br>30,500/<span class="name-span">Full course</span> </div>
+                    <ul class="course-content">
+                      <li>Live Classes</li>
+                      <li>Doubt Clearing Sessions</li>
+                      <li>Assessment & Case Study</li>
+                      <li>Mentorship</li>
+                      <li>Webinar Access</li>
+                      <li>Placement Assistance</li>
+                    </ul>
+
+
+                    <button class="btn-1">Try Demo Class</button>
+
+                  </div>
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div class="content-box">
+                  <div class="content">
+
+                    <div class="slide-name">Plus Combo<br> 30,500<span class="name-span">/Full course</span></div>
+                    <ul class="course-content">
+                      <li>Live Classes</li>
+                      <li>Doubt Clearing Sessions</li>
+                      <li>Assessment & Case Study</li>
+                      <li>Mentorship</li>
+                      <li>Extra Course</li>
+                    </ul>
+                    <br><br>
+
+                    <button class="btn-1">Try Demo Class</button>
+
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>
