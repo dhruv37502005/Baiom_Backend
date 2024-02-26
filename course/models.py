@@ -95,6 +95,14 @@ class Resource(models.Model):
     def __str__(self):
         return f"{self.course.title} - {self.created_at}"
 
+class Testimonial(models.Model):
+    name = models.CharField(max_length=255)
+    profession = models.CharField(max_length=255)
+    content = models.TextField()
+    image = models.ImageField(upload_to='course_testimonial/',null=True,blank=True)  # Assuming you want to store testimonial images
+
+    def __str__(self):
+        return self.name
 
 
   

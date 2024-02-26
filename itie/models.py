@@ -52,9 +52,9 @@ class IBatch(models.Model):
     
 class testimonial(models.Model):
     image = models.ImageField(upload_to='itie_testimonials',null=True,blank=True)
-    name = models.CharField(max_length=100, null =True)
-    designation = models.CharField(max_length =100 , null=True )
-    text = models.TextField(null = True)
+    name = models.CharField(max_length=100, null =True,blank=True)
+    designation = models.CharField(max_length =100 , null=True,blank=True )
+    text = models.TextField(null = True,blank=True)
 
     def __str__(self):
         return self.name

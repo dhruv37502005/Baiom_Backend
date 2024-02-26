@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Course, CourseCategory, Batch, Resource, CourseCarriculum #, Purchase
-from .models import Course
+from .models import Course , Testimonial
 
 # Register your models here.
 
@@ -28,3 +28,5 @@ class ResourceAdmin(admin.ModelAdmin):
     get_course_title.short_description = 'Course Title'
 
 admin.site.register(Resource, ResourceAdmin)
+
+admin.site.register(Testimonial)

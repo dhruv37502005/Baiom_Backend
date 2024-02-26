@@ -11,3 +11,7 @@ course/__pycache__
 db.sqlite3
 db.sqlite3
 *db.sqlite3
+course/migrations/0002_testimonial.py
+course/migrations/0003_alter_testimonial_image.py
+itie/migrations/0002_alter_testimonial_designation_alter_testimonial_name_and_more.py
+static/wep/css/style.css

@@ -252,75 +252,23 @@
       <i id="left" class="fa-solid fa-angle-left left"></i>
       <i id="right" class="fa-solid fa-angle-right right"></i>
       <div class="carousel">
+        {% for testimonial in testimonials %}
         <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
+            <div class="details">
+                {% if testimonial.image.url %}
+                    <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" />
+                {% endif %}
+                <h4>{{ testimonial.name }}</h4>
+                <h6>{{ testimonial.designation }}</h6>
+            </div>
+            <p>
+                {{ testimonial.text }}
+            </p>
         </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
+    {% endfor %}
       </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <!-- <section class="section-six">
       <div>

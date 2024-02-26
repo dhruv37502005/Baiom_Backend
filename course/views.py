@@ -13,6 +13,7 @@ from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
 from .models import CourseCategory
+from .models import Testimonial
 
 from django.utils import timezone
 
@@ -26,6 +27,7 @@ from rest_framework.response import Response
 
 @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
+    testimonials = Testimonial.objects.all()
     category = get_object_or_404(CourseCategory, id=category_id)
     courses = Course.objects.filter(category=category, status='active')
     categories = CourseCategory.objects.all()
@@ -48,7 +50,8 @@ def category_courses(request, category_id):
             'enrolled_courses': enrolled_courses,
             'categories': categories,
             'batch':batches,
-            'subscription_course_plans':subscription_course_plans
+            'subscription_course_plans':subscription_course_plans,
+            'testimonials': testimonials,
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
@@ -75,6 +78,10 @@ def category_courses_json(request, category_id):
         }
     return JsonResponse(jsondata)
 
+
+def testimonial_view(request):
+    testimonials = Testimonial.objects.all()
+    return render(request, 'course.html', {'testimonials': testimonials})
 
 
 # @api_view(['GET'])
