@@ -39,12 +39,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       <input id="email" type="email" />
       <lable for="mobile" id="mobile">Mobile</lable>
       <input id="mobile" type="text" />
-      <label for="professionSelect" id="professionLabel">Profession</label>
-      <select id="professionSelect">
-       <option value="student">Student</option>
-        <option value="teacher">Teacher</option>
-        <option value="engineer">Engineer</option>      
-      </select>
       <button type="button" class="popup-submit">Submit</button>
     </div>
   </form>
@@ -81,13 +75,13 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <div class="topsection1-image">
           <img src="{% static 'courses\img\asset.jpg' %}" alt="image" />
           <div class="topsection1-button">
-            <button class="interested button-one" onclick="openForm()">I AM INTERESTED</button>
-            <button class="broucher">DOWNLOAD BROCHURE</button>
+            <button class="interested button-one">I AM INTERESTED</button>
+            <button class="broucher">DOWNLOAD BROCHER</button>
           </div>
         </div>
       </div>
-      <!-- {% for course in courses %} -->
-      <!-- <div class="topsection1-container"> -->
+      {% for course in courses %}
+      <div class="topsection1-container">
         <!-- <div class="topsection1-content">
 
 
@@ -151,7 +145,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
         </div>
       </div> -->
-      {% for course in courses %}
+
         <div class="second-section-container">
           <div class="second-section-div1">
             <img src="{% static 'courses\img\Image 2.jpg' %}" alt="" />
@@ -159,17 +153,18 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
           <div class="second-section-div2">
             <div>
-              <h1>{{course.title}}</h1>
-              <p>{{course.description}}</p>
-              <h3>Instructor: <strong>{{course.instructor}}</strong></h3>
+              <h1>ADVANCE WEB DEVELOPMENT COURSE</h1>
+              <p>Advance web development course including html, css, bootcamp,
+                javascript, react and tailwind.</p>
+              <h3>Instructor: Dhruv</h3>
               <div class="flex-row">
                 <button class="btn-33">Enroll Now</button>
-                <button class=" btn-332">Connect with our Expert</button>
+                <button class="btn-33 btn-332">Download Syllabus</button>
               </div>
             </div>
           </div>
         </div>
-{% endfor %}
+
       </div>
 
     </div>
@@ -331,7 +326,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               </div>
 
               <div class="card-content">
-                <h2 class="name">John</h2>
+                <h2 class="name">john</h2>
                 <p><span class="name">Course Student</span>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid
                   optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id
@@ -425,7 +420,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                       <li>Mentorship</li>
                     </ul><br><br><br>
 
-                    <button class="btn-1">Enroll Now</button>
+                    <button class="btn-1">Try Demo Class</button>
 
                   </div>
                 </div>
@@ -448,7 +443,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                     </ul>
 
 
-                    <button class="btn-1">Enroll Now</button>
+                    <button class="btn-1">Try Demo Class</button>
                   </div>
 
                 </div>
@@ -467,7 +462,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                     </ul>
 
 
-                    <button class="btn-1">Enroll Now</button>
+                    <button class="btn-1">Try Demo Class</button>
 
                   </div>
                 </div>
@@ -486,7 +481,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                     </ul>
                     <br><br>
 
-                    <button class="btn-1">Enroll Now</button>
+                    <button class="btn-1">Try Demo Class</button>
 
                   </div>
                 </div>
@@ -523,249 +518,111 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <!-- Awaits amazing_career -->
     <section class="amazing_career">
       <div class="amazing-container">
-        <h2 class="amazing_heading">Amazing Offers</h2>
-        <!-- <div class="awaits">Awaits!</div> -->
+        <h2 class="amazing_heading">Amazing Career</h2>
+        <div class="awaits">Awaits!</div>
         <p class="grab_offer">Grab these exclusive offers available only once a year.</p>
         <div class="buy_course_container">
           <div class="buy_course_box">
-            <div class="buy_course">BUY 2 COURSES & GET</div>
+            <div class="buy_course">BUY 2 COURSES & GET MORE</div>
             <h4 class="off">OFF</h4>
             <div class="percentage">15%</div>
 
           </div>
           <div class="buy_course_box">
-            <div class="buy_course">BUY 3 COURSES & GET</div>
+            <div class="buy_course">BUY 3 COURSES & GET MORE </div>
             <h4 class="off">OFF</h4>
             <div class="percentage_3">20%</div>
           </div>
           <div class="buy_course_box">
-            <div class="buy_course">BUY 4 COURSES & GET</div>
+            <div class="buy_course">BUY 4 COURSES & GET MORE </div>
             <h4 class="off">OFF</h4>
             <div class="percentage">25%</div>
           </div>
         </div>
-        <!-- <button class="btn-3">GRAB THE DEAL</button> -->
+        <button class="btn-3">GRAB THE DEAL</button>
       </div>
 
     </section>
 
 
     <!-- FAQ -->
-
-    <!-- <section class="section-nine">
-    <div class="container-main faq"> -->
-    <div class="ac-main">
-      <h1>Frequently Asked <span>Questions</span></h1>
-      </div>
-    <div class="accordion">
-      <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q1. What is the procedure for signing up on the website?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          The sign-up procedure for our website consists of 4 simple steps:<br>
-             <br>->Go to our website and click on the Login button and then the Signup button or just click this link 👉🏻http://www.baoiam.com/Login/index.html
-             <br>->Enter a Username of your choice.
-             <br>->Enter your Email ID.
-             <br>->Create a strong password with uppercase, lowercase, numbers, and special characters.
-             <br>->Click on Sign up and there you go, you are now a part of the Baoiam family!
-
+    <div class="container-main faq">
+      <div class="ac-main">
+        <h1>Frequently Asked <span>Questions</span></h1>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q1. I am not a student of BAOIAM. Can I still refer a friend?
+            </div>
+            <!-- /.accordion-item-header -->
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Yes, If you are aware of BAOIAM and believe in what we are
+                doing, then feel free to refer your friend.
+              </div>
+            </div>
+            <!-- /.accordion-item-body -->
+          </div>
+          <!-- /.accordion-item -->
         </div>
-      </div>
-    </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q2. How do I enroll or register, if I am interested in an online course?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          The enrollment process is as easy as the sign-up process.<br>
-           <br>-> Take a Dashboard tour and head to the Courses section.
-           <br>-> You will find a wide range of specially curated courses.
-           <br>-> Explore them and choose the one you like.
-           <br>-> Click on Enroll Now
-
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q2. How can I track the status of my referrals?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                You will be informed by email once BAOIAM receives your referral
+                details.
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q3. What kind of skill-based courses do you offer?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          We offer a wide range of courses like Web Development, Data Analytics, Graphic Designing, UI/UX, 
-          Product Management, Human Resources, Android Development, Digital Marketing, SEO, and Entrepreneurship.
-           Head to the Courses section to explore many such skills-centric courses
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q3. How will my friends be informed that I referred them?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Your friends will receive an email confirmation from BAOIAM
+                informing them that they have been referred by you. They will be
+                asked to confirm.
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q4. Can I opt for more than one course at a time?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          Yes, we at Baoiam do not limit your potential and therefore give you the option to choose multiple courses at a time.
-          <br>We also provide with options where you can get various discounts by buying multiple courses together.
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q4. Will I get a referral reward if a friend/connection already
+              exists in the BAOIAM database?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                No, there is no reward if your friend is connected with BAOIAM
+                or its infromation exists in BAOIAM database
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q5. How long does each course take?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          Each course is timed differently depending on the lessons, modules and degree of difficulty.
-          The duration of each course is mentioned on their respective course pages
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">Q5. Who all can I refer to?</div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Anyone who meets the eligibility criteria for our courses can be
+                referred. They should be between 18 - 28 years of age. They
+                should know the basics of the English language, have a laptop,
+                and a good internet connection.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q6. Do you provide any study material?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          Yes, we do provide study material that can be downloaded and accessed by you at any time
-        </div>
-      </div>
-    </div>
   </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q7. Are the classes live or recorded?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          We have live classes as it involves interaction and engagement
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q8. Will I gain access to the recorded sessions if I’m unable to attend the live classes?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          Yes, we understand that juggling your college studies or work and course studies might be hard, 
-          so you will be able to access the recorded sessions
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q9. Will there be regular doubt-clearing sessions?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          Yes, the doubt-clearing session is one of the key features of Baoiam, as we don't want our students to have half-baked knowledge
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q10. Will I get a ‘Certificate of Completion’ after completing the course?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          Yes, you will get a Certificate of Completion only after you attend all classes, 
-          complete the assignments and projects and get good scores on the tests.
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q11. How helpful will the Certificate be in future?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          This Certificate can pave the way to your desired career, as you will be trained and highly skilled in your respective field
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q12. How can I earn through the ‘Refer and Earn’ program?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          ->Create an account on Baoiam and then go to the Refer and Earn page.
-          <br>->Enter your Email ID and generate the referral code.
-          <br>->Share this code with your friends.
-          <br>->If they get enrolled using your code, you earn exciting cash prizes.
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        Q13. Is my placement guaranteed if I enroll in one of the ‘Payment after Placement’ courses?
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          Yes, the placements are guaranteed as you will be equipped with skills that are high in demand and have large scope
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-item-header">Q14. How do I contact Customer Care for technical or payment issues?</div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          ->Send us an email: tutors@baoiam.com
-          <br>->Give us a ring: +91-8062179867
-
-        </div>
-      </div>
-    </div>
-  </div>
- 
-</div>
-  </div>
-  </div>
-  <script>
-    function openForm() {
-      document.getElementById("popup-form").style.display = "block";
-    }
-
-    document
-      .getElementById("popup-close")
-      .addEventListener("click", function () {
-        document.getElementById("popup-form").style.display = "none";
-      });
-
-    function closeForm() {
-      document.getElementById("popup-form").style.display = "none";
-    }
-  </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
