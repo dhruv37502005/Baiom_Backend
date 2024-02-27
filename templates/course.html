@@ -78,14 +78,17 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             </div>
           </div>
         </div>
+        {% for category in categories %}
         <div class="topsection1-image">
-          <img src="{% static 'courses\img\asset.jpg' %}" alt="image" />
-          <div class="topsection1-button">
-            <button class="interested button-one" onclick="openForm()">I AM INTERESTED</button>
-            <button class="broucher">DOWNLOAD BROCHURE</button>
-          </div>
+            <img src="{% static 'courses/img/asset.jpg' %}" alt="image" />
+            {% if category.file %}
+                <div class="topsection1-button">
+                    <button class="interested button-one" onclick="openForm()">I AM INTERESTED</button>
+                    <a href="{% url 'course:download_file' file_id=category.id %}" class="broucher">DOWNLOAD BROCHURE</a>
+                </div>
+            {% endif %}
         </div>
-      </div>
+    {% endfor %}
       <!-- {% for course in courses %} -->
       <!-- <div class="topsection1-container"> -->
         <!-- <div class="topsection1-content">

@@ -11,3 +11,4 @@ course/__pycache__
 # Database stuff
 *.sqlite3
 db.sqlite3
+db.sqlite3
