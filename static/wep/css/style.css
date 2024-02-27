@@ -330,7 +330,7 @@ body {
   width: 80rem;
   row-gap: 1.8rem;
   column-gap: 6rem;
-  text-align: center;
+  text-align: left;
   padding-left: 6rem;
   justify-items: center;
 }
@@ -339,9 +339,10 @@ body {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
-  width: 24rem;
+  width: 30rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #999;
+  text-align: left;
 }
 
 .section-three .divide {
@@ -362,12 +363,14 @@ body {
   font-size: 1.4rem;
   font-weight: 700;
   color: rgb(3, 3, 72);
+  text-align: left;
 }
 
 .section-three p {
   color: #777;
   font-weight: 500;
   font-size: 1.1rem;
+  text-align: left;
 }
 
 @media (max-width: 920px) {
