@@ -64,7 +64,10 @@ body {
   width: 100%;
   background-repeat: no-repeat;
   margin-top: 3rem;
+  background-size: cover;
+  background-position: center top;
 }
+
 .section-one div {
   display: flex;
   flex-direction: column;
@@ -76,6 +79,7 @@ body {
 .section-one h1 {
   font-size: 3.5rem;
   font-weight: 700;
+  color: rgb(1, 1, 68);
   /* margin-bottom: 1rem; */
 }
 .section-one span {
@@ -240,19 +244,23 @@ body {
   background-color: #fff;
 }
 .section-two h2 {
-  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: rgb(1, 1, 68);
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
 }
+
+.section-two span {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .section-two p {
   font-size: 1.2rem;
   color: #777;
-  width: 100%;
+  width: 95%;
   font-weight: 500;
   line-height: 1.8;
   text-align: left;
@@ -313,9 +321,10 @@ body {
 .section-three h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
-  padding: 3rem 0 0 0;
+  margin-bottom: 3rem;
+  padding: 3rem 0 2.5rem 0;
   text-align: center;
+  color: rgb(1, 1, 68);
 }
 .section-three span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -328,17 +337,18 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   list-style: none;
-  width: 60rem;
+  width: 80rem;
   row-gap: 1.8rem;
   column-gap: 6rem;
   text-align: center;
   /* padding-left: 6rem; */
+  justify-items: center;
 }
 .section-three li {
   display: flex;
   gap: 2rem;
-  align-items: center;
-  width: 20rem;
+  align-items: flex-start;
+  width: 30rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #999;
 }
@@ -347,21 +357,38 @@ body {
   flex-direction: column;
   gap: 0.2rem;
   width: auto;
+  align-items: flex-start;
 }
 .section-three .fa-solid {
   color: orangered;
-  font-size: 1.4rem;
+  font-size: 2.5rem;
+  padding-top: 0.2rem;
 }
 .section-three h4 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 700;
+  color: rgb(3, 3, 72) !important;
 }
 .section-three p {
   color: #777;
   font-weight: 500;
+  font-size: 1.1rem;
 }
+/* @media (max-width: 1290px) { 
+  .section-three ul {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    width: 60rem;
+    row-gap: 1.8rem;
+    column-gap: 6rem;
+    text-align: center;
+    justify-items: center;
+  }
+}*/
 
-@media (max-width: 990px) {
+@media (max-width: 1024px) {
   .section-three ul {
     display: flex;
     flex-direction: column;
@@ -381,13 +408,20 @@ body {
   }
 }
 /* --------------------------- SECTION FOUR ------------------------------ */
-
 .section-four h2 {
+  color: rgb(1, 1, 68);
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
   padding: 3rem 0 0 0;
   text-align: center;
+}
+
+.section-four span {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .section-four .cards_container {
   display: grid;
@@ -444,18 +478,18 @@ body {
   width: 100%;
   position: relative;
   margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 .section-five h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   padding-top: 3rem;
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: translateX(-120px);
+  /* transform: translateX(-120px); */
   text-align: center;
 }
 .section-five .carousel {
@@ -471,6 +505,7 @@ body {
   align-items: center;
   /* height: 25rem; */
   overflow: hidden;
+  margin-bottom: 3rem;
 }
 
 .section-five .testimonials {
@@ -618,9 +653,10 @@ body {
 .section-seven h2 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   text-align: center;
   padding-top: 1.5rem;
+  color: rgb(1, 1, 68);
 }
 .section-seven h2 span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -635,11 +671,13 @@ body {
   /* height: 24rem; */
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 70px;
+  margin-bottom: 6rem;
+}
 
-  /* FOR CAROUSERL */
+/* FOR CAROUSERL */
 
-  /* display: grid;
+/* display: grid;
     grid-auto-flow: column;
     grid-auto-columns: calc((100% / 3) - 30px);
     overflow-x: auto;
@@ -652,14 +690,13 @@ body {
     height: 24rem;
     overflow: hidden;
     justify-items: center; */
-}
 
 .section-seven .plans {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  width: 18rem;
-  height: 20rem;
+  width: 22rem;
+  height: 22rem;
   list-style: none;
   background: #fff;
   cursor: pointer;
@@ -687,7 +724,7 @@ body {
 }
 
 .section-seven div h4 {
-  color: #777;
+  color: rgb(1, 1, 68);
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -700,7 +737,7 @@ body {
 .section-seven div h6 span {
   letter-spacing: 0.1rem;
   font-size: 1.4rem;
-  color: #777;
+  color: rgb(1, 1, 68);
   font-weight: 600;
 }
 .section-seven ul {
@@ -711,6 +748,7 @@ body {
   color: #555;
   font-weight: 600;
 }
+
 .section-seven button {
   width: 15rem;
   padding: 0.8rem 1.5rem;
@@ -724,6 +762,7 @@ body {
   bottom: -1.4rem;
   letter-spacing: 1px;
   cursor: pointer;
+  align-self: center;
 }
 
 /* FOR CAROUSERL */
@@ -756,11 +795,11 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 1.5rem 0 4rem 0;
+  margin: 1.5rem 0 6rem 0;
 }
 .section-seven .easyEMI,
 .payAP {
-  width: 25rem;
+  width: 29rem;
   border: 1px solid rgba(255, 68, 0, 0.459);
   border-radius: 10px;
   padding: 0.5rem 1rem;
@@ -878,6 +917,8 @@ body {
   text-align: center;
   margin: 1rem;
   color: #040052;
+  font-size: 3rem;
+  font-weight: 700;
 }
 .amazing-container {
   display: flex;

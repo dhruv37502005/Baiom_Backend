@@ -276,6 +276,7 @@ p {
   display: flex;
   justify-content: center;
   /* margin-top: 3rem;   */
+  margin-bottom: 7rem;
 }
 
 .third .program-text {
@@ -347,7 +348,7 @@ p {
   /* font-weight: bold; */
   font-weight: 700;
   text-align: center;
-  margin-top: 3rem;
+  /* margin-top: 7rem; */
 }
 
 .slider1 h1 span {

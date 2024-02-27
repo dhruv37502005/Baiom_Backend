@@ -113,7 +113,7 @@ body {
   line-height: 2rem;
   margin-bottom: 50px;
   font-weight: 500;
-  color: rgb(62, 2, 2);
+  color: #383636;
 }
 .topsection1-button {
   display: flex;
@@ -187,6 +187,9 @@ body {
   background-color: #fff;
   gap: 10px;
 }
+.section-two div {
+  padding-left: 20px;
+}
 
 .section-two h2 {
   color: rgb(3, 3, 72);
@@ -194,6 +197,7 @@ body {
   font-weight: 700;
   margin-bottom: 2rem;
   margin-top: 3rem;
+  text-align: center;
 }
 
 .section-two h2 > span {
@@ -213,13 +217,14 @@ body {
   /* width: 36rem; */
   font-weight: 500;
   line-height: 1.8;
-  text-align: left;
-  padding: 5px;
+  text-align: justify;
+  padding: 5px 8px;
 }
 .section-two h6 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-top: 1.5rem;
+  text-align: center;
 }
 .section-two img {
   height: 350px;
@@ -236,6 +241,7 @@ body {
   width: 80px;
   background-color: #ff910b73;
   border-radius: 50px;
+  margin-left: 25px;
 }
 .section-two .circle_two {
   position: absolute;
@@ -245,6 +251,7 @@ body {
   width: 40px;
   background-color: #ff910b73;
   border-radius: 50px;
+  text-align: center;
 }
 @media (max-width: 980px) {
   .section-two {
@@ -470,13 +477,13 @@ body {
   -webkit-text-fill-color: transparent;
 }
 .slider1 .content .bold {
-  color: #5a5959;
-  font-weight: 600;
+  color: rgb(1, 1, 68);
+  font-weight: 700;
   text-align: center;
 }
 .slider1 .content p {
-  color: orangered;
-  text-align: justify;
+  color: #777;
+  text-align: center;
   font-weight: 500;
   margin-top: 10px;
   border-top: orangered solid 2px;
@@ -487,7 +494,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   /* text-align: center; */
 }
@@ -850,7 +857,7 @@ input[type="radio"] {
 .content-box {
   /* max-width: 90%; */
   width: 90%;
-  height: 97%;
+  height: 100%;
   border-radius: 5%;
   background: #fff;
   border-radius: 30px;
@@ -858,16 +865,19 @@ input[type="radio"] {
   transition: all 0.4s ease;
 }
 
-.content-box:hover {
+/* .content-box:hover {
   transform: translateY(-15px);
   background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
-}
+} */
 
 .content {
-  padding: 1.5rem 0;
+  padding: 10.5rem 0 !important;
   display: flex;
+  height: 100%;
   flex-direction: column;
+  color: rgb(1, 1, 68);
 }
+
 .btn-1 {
   font-size: 1.2rem;
   font-weight: 800;
@@ -893,7 +903,7 @@ input[type="radio"] {
   font-weight: bold;
   line-height: 2.5rem;
   padding-left: 2rem;
-  color: #5e5e5e;
+  /* color: #5e5e5e; */
 }
 .name-span,
 .course-content {
@@ -902,11 +912,12 @@ input[type="radio"] {
   line-height: 2.5rem;
   list-style: none;
   margin-top: 0;
-  color: #5e5e5e;
+  /* color: #5e5e5e; */
   width: fit-content;
 }
-/* .content :hover {
-  color: white;
+
+/* .content:hover {
+  color: white !important;
 } */
 
 .slider-wrapper {
