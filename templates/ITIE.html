@@ -40,6 +40,12 @@
         <input id="email" type="email" />
         <lable for="mobile" id="mobile">Mobile</lable>
         <input id="mobile" type="text" />
+        <label for="professionSelect" id="professionLabel">Profession</label>
+        <select id="professionSelect">
+          <option value="student">Student</option>
+           <option value="teacher">Teacher</option>
+           <option value="engineer">Engineer</option>      
+         </select>
         <button type="button" class="popup-submit">Submit</button>
       </div>
     </form>
@@ -178,18 +184,18 @@
           <div class="cards">
             <img src="{% static 'itie/img/img1.avif' %}" alt="" />
             <h4>{{ course.title }}</h4>
-            <h6>{{ course.description }}</h6>
-            <!-- Add other fields as needed -->
             <div class="timing">
               <p><span>🕓</span> 3 months</p>
             </div>
+            <h6>{{ course.description }}</h6>
+            <!-- Add other fields as needed -->
           </div>
           {% endfor %}
         </div>
       </section>
 
       <section class="section-five">
-        <h2>Testimonials</h2>
+        <h2>Our <span>Testimonials</span></h2>
         <div class="temp">
           <i id="left" class="fa-solid fa-angle-left"></i>
           <i id="right" class="fa-solid fa-angle-right"></i>
@@ -337,8 +343,8 @@
             <button>Try Demo Class</button>
           </div>
         </div> -->
-        </div>
-        <div class="schemes">
+        <!-- </div>
+        <div class="schemes"> -->
           <!-- <div class="easyEMI">
           <h2>Easy EMI</h2>
           <h6>key features of easy EMI</h6>
@@ -356,8 +362,8 @@
               your carrer development now and pay us only when you land a job
             </p>
           </div> -->
-          <div class="circle_five"></div>
-        </div>
+          <!-- <div class="circle_five"></div>
+        </div> -->
       </section>
 
       <!-- <section class="section-eight">
@@ -417,18 +423,18 @@
           <div class="buy_course_container">
             <div class="buy_course_box">
               <div class="buy_course">BUY 2 COURSES & GET MORE</div>
-              <h4 class="off">OFF</h4>
               <div class="percentage">15%</div>
+              <h4 class="off">OFF</h4>
             </div>
             <div class="buy_course_box">
               <div class="buy_course">BUY 3 COURSES & GET MORE</div>
-              <h4 class="off">OFF</h4>
               <div class="percentage_3">20%</div>
+              <h4 class="off">OFF</h4>
             </div>
             <div class="buy_course_box">
               <div class="buy_course">BUY 4 COURSES & GET MORE</div>
-              <h4 class="off">OFF</h4>
               <div class="percentage">25%</div>
+              <h4 class="off">OFF</h4>
             </div>
           </div>
           <div class="timer" id="countdown">

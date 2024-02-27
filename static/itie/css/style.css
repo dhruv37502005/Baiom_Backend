@@ -13,13 +13,13 @@ body {
 }
 .popup-form {
   position: fixed;
-  height: 400px;
-  width: 700px;
+  height: 450px;
+  width: 400px;
   left: 20%;
-  top: 40%;
+  top: 23%;
   z-index: 3;
   background-color: white;
-  padding: 10px;
+  padding: 5px;
   box-shadow: 2px 2px 4px 2px gray;
   display: none;
 }
@@ -28,30 +28,55 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: 30px;
-  gap: 10px;
+  gap: 6px;
 }
+
 .popup-form .close {
   font-size: 40px;
   display: flex;
   margin-right: 30px;
   justify-content: flex-end;
 }
+
 .popup-form .close:hover {
   cursor: pointer;
 }
-.popup-form input {
-  width: 70%;
+
+.popup-form input,
+.popup-form option,
+.popup-form select {
+  width: 80%;
   height: 40px;
   border-radius: 10px;
   outline: none;
   border: 1px solid gray;
 }
+
 .popup-submit {
   width: 70px;
   height: 30px;
   margin-top: 10px;
-  padding: 3px;
-  border-radius: 10px;
+  padding: 2px;
+  border: 1px 1px solid orangered !important;
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 680px) {
+  .popup-form {
+    left: 20%;
+  }
+}
+@media screen and (max-width: 520px) {
+  .popup-form {
+    left: 10%;
+    width: 250px;
+  }
+  .popup-form input,
+  .popup-form option,
+  .popup-form select {
+    width: 90%;
+  }
 }
 
 /* --------------------------- SECTION ONE ------------------------------ */
@@ -460,7 +485,7 @@ body {
   font-weight: 500;
 }
 .section-four .timing p {
-  text-align: right;
+  text-align: left;
   color: orangered;
   font-size: 1rem;
   font-weight: 600;
@@ -482,16 +507,21 @@ body {
 }
 .section-five h2 {
   font-size: 2.5rem;
+  text-align: center;
   font-weight: 700;
-  margin-bottom: 3rem;
-  padding-top: 3rem;
+  margin-bottom: 2rem;
+  padding-top: 4rem;
+  /* transform: translateX(-120px); */
+  color: rgb(1, 1, 68) !important;
+}
+
+.section-five h2 span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* transform: translateX(-120px); */
-  text-align: center;
 }
+
 .section-five .carousel {
   display: grid;
   grid-auto-flow: column;
