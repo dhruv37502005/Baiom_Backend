@@ -186,6 +186,8 @@ body {
   align-items: center;
   background-color: #fff;
   gap: 10px;
+  margin-bottom: 9rem;
+  margin-top: 7rem;
 }
 
 .section-two h2 {
@@ -194,6 +196,7 @@ body {
   font-weight: 700;
   margin-bottom: 2rem;
   margin-top: 3rem;
+  text-align: center;
 }
 
 .section-two h2 > span {
@@ -220,6 +223,7 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   margin-top: 1.5rem;
+  text-align: center;
 }
 .section-two img {
   height: 350px;
@@ -275,7 +279,7 @@ body {
 .section-three h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   padding-top: 3rem;
   color: rgb(3, 3, 72);
   text-align: center;
@@ -357,7 +361,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  padding-top: 3rem;
+  padding-top: 6rem;
   color: orangered;
   text-align: center;
 }
@@ -372,6 +376,7 @@ body {
   align-items: center;
   gap: 4rem;
   padding: 40px;
+  padding-bottom: 6rem;
 }
 .curriculum_box {
   padding: 1rem 3rem;
@@ -472,7 +477,7 @@ body {
   /* -webkit-text-fill-color: transparent; */
   width: 5rem;
   border-radius: 50%;
-  padding: 0rem;
+  padding: .5rem;
   color: white;
   margin-left: 6rem;
   margin-bottom: 2rem;
@@ -648,10 +653,11 @@ input[type="radio"] {
   margin-right: 80px;
 }
 .section-five h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  padding-top: 3rem;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
   background-clip: text;
@@ -814,18 +820,18 @@ input[type="radio"] {
   border-radius: 50px;
 }
 .section-seven h2 {
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   text-align: center;
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   color: rgb(3, 3, 72);
 }
 .section-seven h2 span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 4rem;
+  font-size: 3.2rem;
   -webkit-text-fill-color: transparent;
 }
 
