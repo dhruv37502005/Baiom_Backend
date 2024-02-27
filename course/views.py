@@ -165,11 +165,10 @@ def testimonial_view(request):
 
 class DownloadFileView(View):
     def get(self, category_id,file_id):
-        category_id = file_id
         category = get_object_or_404(CourseCategory, pk=file_id)
+        category_id = file_id
         file_content = category.file.read()
         file_name = category.file.name
         response = HttpResponse(file_content, content_type='application/octet-stream')
         response['Content-Disposition'] = f'attachment; filename="{file_name}"'
-
         return response

@@ -22,10 +22,10 @@ from .forms import GetInTouchForm
 #         print("None")
             
 #     return render(request, 'index.html',{'is_index_page': True})
-
 def index(request):
     categories = CourseCategory.objects.all()
-    return render(request, 'index.html',{'is_index_page': True, 'categories': categories})
+    user = request.user
+    return render(request, 'index.html',{'is_index_page': True, 'categories': categories, 'user':user})
 
 
 def career(request):

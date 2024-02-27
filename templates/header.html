@@ -664,7 +664,7 @@
 
               <a
                 class="nav-link dropdown-toggle {% if request.path == courses %}isactive{% endif %}"
-                href="#"
+                href="###"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -741,12 +741,12 @@
               >
             </li>
             <!-- <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
-                href="{% url 'dashboard:user_ui' %}"
-                style="font-size: 18px"
-                >DASHBOARD</a
-              >
+             <a
+                    id="profile-dropdown-item"
+                    href="{% url 'dashboard:user_ui' username=user %}"
+                    style="font-size: 18px"
+                    >Dashboard</a
+                  >
             </li> -->
             <!-- <li class="nav-item">
               {% url 'blog:categories' as urlblog %}
@@ -764,11 +764,11 @@
                 <div class="profile-dropdown" id="profile-dropdown">
                   <div id="profile-content">
                     <a
-                      id="profile-dropdown-item"
-                      href="{% url 'dashboard:user_ui' %}"
-                      style="font-size: 18px"
-                      >Dashboard</a
-                    >
+                    id="profile-dropdown-item"
+                    href="{% url 'dashboard:user_ui' username=user %}"
+                    style="font-size: 18px"
+                    >Dashboard</a
+                  > 
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'userauths:logout' %}"
