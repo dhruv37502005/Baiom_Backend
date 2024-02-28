@@ -15,7 +15,7 @@ from django.views import View
 from .models import CourseCategory
 
 from django.utils import timezone
-
+from .models import Testimonial
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.shortcuts import render, get_object_or_404
@@ -31,6 +31,7 @@ def category_courses(request, category_id):
     categories = CourseCategory.objects.all()
     course = Course.objects.get(id=category_id)
     batches = Batch.objects.get(course=course)
+    testimonials = Testimonial.objects.all()
     carriculum = course.curriculum.all()
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
     print(f"subscription_course_plans: {subscription_course_plans}")
@@ -48,7 +49,8 @@ def category_courses(request, category_id):
             'enrolled_courses': enrolled_courses,
             'categories': categories,
             'batch':batches,
-            'subscription_course_plans':subscription_course_plans
+            'subscription_course_plans':subscription_course_plans,
+            'testimonials': testimonials,
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
