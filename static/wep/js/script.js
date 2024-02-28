@@ -1,9 +1,9 @@
-var carousel = document.querySelector(".carousel");
+var carousel = document.getElementById("testi");
 var firstCardWidth = carousel.querySelector(".testimonials").offsetWidth;
 var arrowBtns = document.querySelectorAll(".temp i");
-var popup_form = document.getElementById("popup-form");
-var I_am_interested = document.getElementById("button-one");
-var popup_close = document.getElementById("popup-close");
+// var popup_form = document.getElementById("popup-form");
+// var I_am_interested = document.getElementById("button-one");
+// var popup_close = document.getElementById("popup-close");
 
 arrowBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -25,14 +25,14 @@ arrowBtns.forEach((btn) => {
 
 //popup form
 
-I_am_interested.addEventListener("click", () => {
-  popup_form.style.display = "revert";
-  // document.getElementById("container").style.opacity = "0.7";
-})
+// I_am_interested.addEventListener("click", () => {
+//   popup_form.style.display = "revert";
+//   // document.getElementById("container").style.opacity = "0.7";
+// })
 
-popup_close.addEventListener("click", () => {
-  popup_form.style.display = "none";
-})
+// popup_close.addEventListener("click", () => {
+//   popup_form.style.display = "none";
+// })
 
 // popup_form.addEventListener("submit", (e) => {
 //   e.preventDefault();
@@ -40,33 +40,32 @@ popup_close.addEventListener("click", () => {
 // })
 
 
-// FAQ's
+var splide = new Splide('.splide', {
+  perPage: 3,
+  perMove: 1,
+  gap: '2rem',
+  padding: '1rem',
+  autowidth: 'true',
+  type: 'loop',
+  drag: 'free',
+  snap: true,
+  pagination: true,
 
-var accordionItemHeaders2 = document.querySelectorAll(
-  ".accordion-item-header"
-);
+  breakpoints: {
+    640: {
+      perPage: 2,
+      gap: '.7rem',
+      // height:'6rem',
 
-accordionItemHeaders2.forEach((accordionItemHeader) => {
-  accordionItemHeader.addEventListener("click", (event) => {
-    var currentlyActiveAccordionItemHeader = document.querySelector(
-      ".accordion-item-header.active"
-    );
-    if (
-      currentlyActiveAccordionItemHeader &&
-      currentlyActiveAccordionItemHeader !== accordionItemHeader
-    ) {
-      currentlyActiveAccordionItemHeader.classList.toggle("active");
-      currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-    }
+    },
+    480: {
+      perPage: 1,
+      gap: '.7rem',
+      // height:'6rem',
 
-    accordionItemHeader.classList.toggle("active");
-    var accordionItemBody = accordionItemHeader.nextElementSibling;
-    if (accordionItemHeader.classList.contains("active")) {
-      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-    } else {
-      accordionItemBody.style.maxHeight = 0;
-    }
-  });
+    },
+  },
 });
 
+splide.mount();
 

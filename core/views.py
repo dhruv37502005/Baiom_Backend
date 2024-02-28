@@ -22,10 +22,10 @@ from .forms import GetInTouchForm
 #         print("None")
             
 #     return render(request, 'index.html',{'is_index_page': True})
-
 def index(request):
     categories = CourseCategory.objects.all()
-    return render(request, 'index.html',{'is_index_page': True, 'categories': categories})
+    user = request.user
+    return render(request, 'index.html',{'is_index_page': True, 'categories': categories, 'user':user})
 
 
 def career(request):
@@ -82,8 +82,10 @@ def get_in_touch(request):
     if request.method == 'POST':
         form = GetInTouchForm(request.POST)
         if form.is_valid():
-            form.save()
+            phone_number = form.cleaned_data['phone_number']
+            # Save the data to the GetInTouch model
+            GetInTouch.objects.create(phone_number=phone_number)
             return redirect('/')  # Redirect to a success page
     else:
         form = GetInTouchForm()
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'footer.html', {'form': form})

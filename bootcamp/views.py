@@ -21,7 +21,7 @@ def BootCamp(request):
     courses = BootCourse.objects.all()
     testimonials = testimonial.objects.all()
     categories = CourseCategory.objects.all()
-    return render(request,'Wep.html',{'courses':courses , 'testimonials':testimonials, 'categories':categories})
+    return render(request,'wep.html',{'courses':courses , 'testimonials':testimonials, 'categories':categories})
 
 
 class DownloadFileView(View):

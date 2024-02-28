@@ -5,7 +5,7 @@ app_name = 'bootcamp'
 
 
 urlpatterns = [
-    path('courses/',BootCamp, name='bootcamp'),
+    path('',BootCamp, name='bootcamp'),
     path('download_file/', DownloadFileView.as_view(), name='download_file'),
 
 ]

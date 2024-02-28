@@ -150,9 +150,9 @@ img {
 form {
   border-radius: 15px;
   padding: 8px 15px;
-  background: #ffffff;
+  /* background: #ffffff; */
   width: fit-content;
-  box-shadow: 5px 5px 10px rgb(180, 174, 174);
+  /* box-shadow: 5px 5px 10px rgb(180, 174, 174); */
   margin-top: 20px;
 }
 form input {

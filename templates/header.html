@@ -598,7 +598,7 @@
     <header>
       <!-- navbar -->
       <nav
-        class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow p-2"
+        class="navbar fixed-top navbar-expand-xl navbar-light bg-white shadow p-2 h-8"
         id="navbar"
       >
         <a class="navbar-brand" href="{% url 'core:index' %}">
@@ -664,7 +664,7 @@
 
               <a
                 class="nav-link dropdown-toggle {% if request.path == courses %}isactive{% endif %}"
-                href="#"
+                href="###"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -692,10 +692,10 @@
                 style="font-size: 18px"
                 >ITIE <span class="bar"></span
               ></a>
-              <ul class="sub-courses-list"></ul>
+              <!-- <ul class="sub-courses-list"></ul> -->
             </li>
             <li class="nav-item">
-              {% url 'bootcamp:BootCamp' as bootcamp %}
+              {% url 'bootcamp:bootcamp' as bootcamp %}
               <a
                 class="nav-link {% if request.path == urlwep %}isactive{% endif %}"
                 href="{{bootcamp}}"
@@ -740,14 +740,15 @@
                 >Contact Us</a
               >
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
-                href="{% url 'dashboard:user_ui' %}"
-                style="font-size: 18px"
-                >DASHBOARD</a
-              >
-            </li><li class="nav-item">
+            <!-- <li class="nav-item">
+             <a
+                    id="profile-dropdown-item"
+                    href="{% url 'dashboard:user_ui' username=user %}"
+                    style="font-size: 18px"
+                    >Dashboard</a
+                  >
+            </li> -->
+            <!-- <li class="nav-item">
               {% url 'blog:categories' as urlblog %}
               <a
                 class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
@@ -755,20 +756,19 @@
                 style="font-size: 18px"
                 >LOGOUT</a
               >
-            </li>
-            
-            
+            </li> -->
+
             {% if user.username %}
             <li class="nav-item" id="profile">
               <button type="button" id="profile-btn" class="profile-btn">
                 <div class="profile-dropdown" id="profile-dropdown">
                   <div id="profile-content">
                     <a
-                      id="profile-dropdown-item"
-                      href="{% url 'dashboard:user_ui' %}"
-                      style="font-size: 18px"
-                      >Dashboard</a
-                    >
+                    id="profile-dropdown-item"
+                    href="{% url 'dashboard:user_ui' username=user %}"
+                    style="font-size: 18px"
+                    >Dashboard</a
+                  > 
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'userauths:logout' %}"
