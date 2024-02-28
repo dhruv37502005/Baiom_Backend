@@ -304,24 +304,25 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     </section>
     <!-- Testimonials -->
     <section class="testimonial">
-      <h1 class="testimonial-heading"><span class="underline">Testimonials for {{ category.name }}</span></h1>
+      {% for course in courses %}
+      <h1 class="testimonial-heading"><span class="underline">Testimonials for {{ course.category.name }}</span></h1>
       <div class="slide-container swiper">
           <div class="slide-content">
               <div class="card-wrapper swiper-wrapper">
-                  {% for testimonial in testimonials %}
-                      <div class="card swiper-slide">
-                          <div class="image-content">
-                              <span class="overlay"></span>
-                              <div class="card-image">
-                                  <img src="{{ testimonial.image.url }}" alt="#" class="card-img">
-                              </div>
-                          </div>
-                          <div class="card-content">
-                              <h2 class="name">{{ testimonial.name }}</h2>
-                              <p><span class="name">{{ testimonial.role }}</span></p>
-                              <p>{{ testimonial.content }}</p>
+                  {% for testimonial in course.category.testimonials.all %}
+                  <div class="card swiper-slide">
+                      <div class="image-content">
+                          <span class="overlay"></span>
+                          <div class="card-image">
+                              <img src="{{ testimonial.image.url }}" alt="#" class="card-img">
                           </div>
                       </div>
+                      <div class="card-content">
+                          <h2 class="name">{{ testimonial.name }}</h2>
+                          <p><span class="role">{{ testimonial.role }}</span></p>
+                          <p>{{ testimonial.content }}</p>
+                      </div>
+                  </div>
                   {% endfor %}
               </div>
           </div>
@@ -329,6 +330,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           <div class="swiper-button-prev swiper-navBtn"></div>
           <div class="swiper-pagination"></div>
       </div>
+      {% endfor %}
   </section>
     <!-- Right Course -->
     <section class="Right-course">

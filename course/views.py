@@ -13,6 +13,7 @@ from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
 from .models import CourseCategory
+from .models import Testimonial
 
 from django.utils import timezone
 
@@ -30,6 +31,7 @@ def category_courses(request, category_id):
     courses = Course.objects.filter(category=category, status='active')
     categories = CourseCategory.objects.all()
     course = Course.objects.get(id=category_id)
+    testimonials = Testimonial.objects.all()
     batches = Batch.objects.get(course=course)
     carriculum = course.curriculum.all()
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
@@ -48,7 +50,8 @@ def category_courses(request, category_id):
             'enrolled_courses': enrolled_courses,
             'categories': categories,
             'batch':batches,
-            'subscription_course_plans':subscription_course_plans
+            'subscription_course_plans':subscription_course_plans,
+            'testimonials':testimonials,
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
