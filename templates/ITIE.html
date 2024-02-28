@@ -31,22 +31,23 @@
     <title>Document</title>
   </head>
   <body>
-    <form class="popup-form" id="popup-form">
+    <form class="popup-form" id="popup-form" action="{% url 'itie:itie' %}" method="post">
+      {% csrf_token %}
       <div class="popup-form-content">
         <div class="close" id="popup-close">&times;</div>
         <lable for="name" id="name">Name</lable>
-        <input id="name" type="text" />
+        <input id="name" type="text" name="name_"/>
         <lable for="email" id="email">Email</lable>
-        <input id="email" type="email" />
+        <input id="email" type="email" name="email_" />
         <lable for="mobile" id="mobile">Mobile</lable>
-        <input id="mobile" type="text" />
+        <input id="mobile" type="text" name="mobile_" />
         <label for="professionSelect" id="professionLabel">Profession</label>
-        <select id="professionSelect">
+        <select id="professionSelect" name="profession_">
           <option value="student">Student</option>
            <option value="teacher">Teacher</option>
            <option value="engineer">Engineer</option>      
          </select>
-        <button type="button" class="popup-submit">Submit</button>
+        <button type="submit" class="popup-submit">Submit</button>
       </div>
     </form>
     <main class="containerr" id="container">
