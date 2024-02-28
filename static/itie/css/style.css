@@ -726,8 +726,8 @@ body {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  width: 30rem;
-  height: 42rem;
+  width: 22rem;
+  height: 38rem;
   list-style: none;
   background: #fff;
   cursor: pointer;
@@ -950,11 +950,19 @@ body {
 }
 .amazing_heading {
   text-align: center;
-  margin: 1rem;
+  margin: 3rem 1rem;
   color: #040052;
   font-size: 3rem;
   font-weight: 700;
 }
+.amazing_heading span {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* font-size: 2rem; */
+  -webkit-text-fill-color: transparent;
+}
+
 .amazing-container {
   display: flex;
   flex-direction: column;
