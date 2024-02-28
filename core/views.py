@@ -25,7 +25,8 @@ from .forms import GetInTouchForm
 
 def index(request):
     categories = CourseCategory.objects.all()
-    return render(request, 'index.html',{'is_index_page': True, 'categories': categories})
+    user = request.user
+    return render(request, 'index.html',{'is_index_page': True, 'categories': categories, 'user':user})
 
 
 def career(request):
