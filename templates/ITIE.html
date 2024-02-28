@@ -43,8 +43,8 @@
         <label for="professionSelect" id="professionLabel">Profession</label>
         <select id="professionSelect">
           <option value="student">Student</option>
-           <option value="teacher">Teacher</option>
-           <option value="engineer">Engineer</option>      
+           <option value="teacher">Passed out</option>
+           <option value="engineer">Working Professional</option>      
          </select>
         <button type="button" class="popup-submit">Submit</button>
       </div>
@@ -56,8 +56,8 @@
       >
         <div>
           <h1>
-            Interns <span>TEACH</span> <br />
-            Interns EARN
+            Intern <span>TEACH</span> <br />
+            Intern Earn Program
           </h1>
           <div class="line"></div>
           <h4>ITIE Revolutionizes Internships</h4>
@@ -82,15 +82,7 @@
         <div>
           <h2><span>Program</span> Overview</h2>
           <p>
-            ITIE is a program that has been formulated by our team and leading
-            experts for young enthusiasts to build a strong and powerful career
-            path. Through this program not only do the interns get the chance to
-            learn and hone their skills, but also to monetise their skill by
-            cascading the knowledge they have gained so far into others. Hence,
-            after learning a skill they will be tested on it and if they clear
-            the tests, they get the opportunity to teach a new intern who wishes
-            to learn the same skill as them. The ‘Teacher Interns’ will then
-            earn exciting compensation offers and incentives.
+            ITIE is a program that has been formulated by our team and leading experts for young enthusiasts to build a strong and powerful career path. Through this program not only do the interns get the chance to learn and hone their skills, but also to monetise their skill by cascading the knowledge they have gained so far into others. Hence, after learning a skill they will be tested on it and if they clear the tests, they get the opportunity to teach a new intern who wishes to learn the same skill as them. The ‘Teacher Interns’ will then earn exciting compensation offers and incentives.
           </p>
           <h6>⏳ Enrollment Deadline Approching Soon!</h6>
         </div>
@@ -120,14 +112,14 @@
             <li>
               <i class="fa-solid fa-graduation-cap"></i>
               <div class="divide">
-                <h4>Mobile Friendly</h4>
+                <h4>Mentorship sessions</h4>
                 <p>No Laptop? No Problem</p>
               </div>
             </li>
             <li>
               <i class="fa-solid fa-graduation-cap"></i>
               <div class="divide">
-                <h4>Beginner Friendly</h4>
+                <h4>Letter of recommendation</h4>
                 <p>No prior knowledge required</p>
               </div>
             </li>
@@ -195,26 +187,80 @@
       </section>
 
       <section class="section-five">
-        <h2>Testimonials</h2>
+        <h2>Our <span>Testimonials</span></h2>
         <div class="temp">
-            <i id="left" class="fa-solid fa-angle-left"></i>
-            <i id="right" class="fa-solid fa-angle-right"></i>
-            <div class="carousel">
-                {% for testimonial  in testimonials %}
-                    <div class="testimonials">
-                        <div class="details">
-                            {% if testimonial.image %}
-                                <img src="{{ testimonial.image.url }}" alt="" />
-                            {% endif %}
-                            <h4>{{ testimonial.name }}</h4>
-                            <h6>{{ testimonial.designation }}</h6>
-                        </div>
-                        <p>{{ testimonial.text }}</p>
-                    </div>
-                {% endfor %}
+          <i id="left" class="fa-solid fa-angle-left"></i>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+          <div class="carousel">
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
             </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+            <div class="testimonials">
+              <div class="details">
+                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+                <h4>John Doe</h4>
+                <h6>Course Student</h6>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio nemo quaerat asperiores, esse quibusdam
+              </p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
       <!-- <section class="section-six">
       <div>
         <h2>Program <span>Certification</span></h2>
@@ -235,13 +281,16 @@
             <div>
               <h4>Plus</h4>
               <h6><span>₹ 2999</span>/ Full course</h6>
+              <ul>
+                <li>Live Sessions</li>
+                <li>Course Duration</li>
+                <li>Classes</li>
+                <li>Mentorship</li>
+                <li>Internship Duration</li>
+                <li>Live Projects</li>
+                <li>Tutor Opportunities</li>
+              </ul>
             </div>
-            <ul>
-              <li>Live Master classes</li>
-              <li>industrial Traning</li>
-              <li>Mentorship Support</li>
-              <li>Live corporate projects</li>
-            </ul>
 
             <button>Enroll Now</button>
           </div>
@@ -249,13 +298,18 @@
             <div>
               <h4>Premium</h4>
               <h6><span>₹ 11999</span>/ Full course</h6>
-            </div>
-            <ul>
-              <li>Live Master classes</li>
-              <li>industrial Traning</li>
-              <li>Mentorship Support</li>
-              <li>Live corporate projects</li>
+              <ul>
+              <li>Live Sessions</li>
+              <li>Course Duration</li>
+              <li>Clases</li>
+              <li>Doubt Sessions</li>
+              <li>Mentorship</li>
+              <li>Internship Duration</li>
+              <li>Live Projects</li>
+              <li>Tutor Opportunities</li>
+              <li>Paid Internship Opportunities</li>
             </ul>
+          </div>
 
             <button>Enroll Now</button>
           </div>
@@ -361,7 +415,7 @@
 
       <section class="amazing_career">
         <div class="amazing-container">
-          <h2 class="amazing_heading">Amazing Career</h2>
+          <h2 class="amazing_heading">Amazing <span>Career</span></h2>
           <!-- <div class="awaits">Awaits!</div> -->
           <p class="grab_offer">
             Grab these exclusive offers available only once a year.

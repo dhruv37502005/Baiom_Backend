@@ -105,6 +105,7 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   color: rgb(1, 1, 68);
+  line-height: 5rem;
   /* margin-bottom: 1rem; */
 }
 .section-one span {
@@ -116,8 +117,8 @@ body {
 }
 .section-one .line {
   position: absolute;
-  left: 16rem;
-  top: 8rem;
+  left: 15rem;
+  top: 9rem;
   width: 260px;
   border: 4px solid gold;
   border-color: gold transparent transparent transparent;
@@ -683,7 +684,7 @@ body {
 .section-seven h2 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   text-align: center;
   padding-top: 1.5rem;
   color: rgb(1, 1, 68);
@@ -726,7 +727,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 22rem;
-  height: 22rem;
+  height: 38rem;
   list-style: none;
   background: #fff;
   cursor: pointer;
@@ -735,6 +736,7 @@ body {
   border: 1px solid rgba(128, 128, 128, 0.493);
   box-shadow: 0px 0px 10px 0px rgba(100, 100, 111, 0.2);
   justify-content: space-between;
+  /* gap: 20px; */
 }
 
 @media screen and (max-width: 630px) {
@@ -755,14 +757,17 @@ body {
 
 .section-seven div h4 {
   color: rgb(1, 1, 68);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
+  line-height: 3rem;
+  margin-bottom: 1rem;
 }
 .section-seven div h6 {
   font-size: 0.9rem;
   color: #777;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
 .section-seven div h6 span {
   letter-spacing: 0.1rem;
@@ -774,7 +779,7 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   color: #555;
   font-weight: 600;
 }
@@ -945,11 +950,19 @@ body {
 }
 .amazing_heading {
   text-align: center;
-  margin: 1rem;
+  margin: 3rem 1rem;
   color: #040052;
   font-size: 3rem;
   font-weight: 700;
 }
+.amazing_heading span {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* font-size: 2rem; */
+  -webkit-text-fill-color: transparent;
+}
+
 .amazing-container {
   display: flex;
   flex-direction: column;
@@ -1155,7 +1168,8 @@ body {
   text-align: center;
   color: #031864;
   font-weight: bold;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .ac-main h1 span {
