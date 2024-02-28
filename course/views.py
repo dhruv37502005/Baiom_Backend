@@ -16,7 +16,7 @@ from .models import CourseCategory
 from .models import Testimonial
 
 from django.utils import timezone
-
+from .models import Testimonial
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.shortcuts import render, get_object_or_404
@@ -33,6 +33,7 @@ def category_courses(request, category_id):
     categories = CourseCategory.objects.all()
     course = Course.objects.get(id=category_id)
     batches = Batch.objects.get(course=course)
+    testimonials = Testimonial.objects.all()
     carriculum = course.curriculum.all()
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
     print(f"subscription_course_plans: {subscription_course_plans}")
@@ -165,10 +166,11 @@ def testimonial_view(request):
 
 class DownloadFileView(View):
     def get(self, category_id,file_id):
-        category = get_object_or_404(CourseCategory, pk=file_id)
         category_id = file_id
+        category = get_object_or_404(CourseCategory, pk=file_id)
         file_content = category.file.read()
         file_name = category.file.name
         response = HttpResponse(file_content, content_type='application/octet-stream')
         response['Content-Disposition'] = f'attachment; filename="{file_name}"'
+
         return response

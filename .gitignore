@@ -13,3 +13,6 @@ course/__pycache__
 db.sqlite3
 db.sqlite3
 db.sqlite3
+course/migrations/0002_testimonial.py
+course/migrations/0003_testimonial_category_alter_testimonial_image.py
+db.sqlite3
