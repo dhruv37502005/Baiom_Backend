@@ -39,8 +39,8 @@
       <label for="professionSelect" id="professionLabel">Profession</label>
       <select id="professionSelect">
         <option value="student">Student</option>
-         <option value="teacher">Passed out</option>
-         <option value="engineer">Working Professional</option>      
+         <option value="teacher">Teacher</option>
+         <option value="engineer">Engineer</option>      
        </select>
       <button type="button" class="popup-submit">Submit</button>
     </div>
@@ -52,7 +52,7 @@
       </div>
       <div class="topsection1-content">
         <div class="content">
-          <h1><span>ENTREPRENEURSHIP</span> Course</h1>
+          <h1><span>WOMEN</span> ENTREPRENEUR</h1>
           <p>
             Welcome to <b>BAOIAM,</b> the premier learning platform exclusively
             for women entrepreneurs! Ignite your entrepreneurial spirit and embark
@@ -64,6 +64,8 @@
           <div class="topsection1-button">
             <button class="interested" id="button-one" onclick="openForm()">I AM INTERESTED</button>
             <a href="{% url 'bootcamp:download_file' %}"><button class="broucher">DOWNLOAD BROUCHER</button></a>
+            {% else %}
+            <h1> No brochure</h1>
             {% endif %}
             {% endfor %}
           </div>
@@ -77,7 +79,12 @@
     <div>
       <h2><span>Program</span> Overview</h2>
       <p>
-        Our Entrepreneurship Courses are formulated in a way that can be easily studied and comprehended. We offer a plethora of courses that are skill-centric and are purely based on practical applications. Students can learn new skills or even hone their existing skills. This gives them a chance to build a strong skillset that can propel them to a new level in their professional lives. 
+        Embark on a transformative learning journey with Baoiam Innovations,
+        an esteemed E-learning platform since 2020. Dive into comprehensive
+        skill development across various disciplines.Revolutionize your
+        learning experience with 12,500+ hours of content, 500+ projects, and
+        collaborations with 350+ industrial experts. Join us for a
+        transformative journey towards accessible education and self-growth.
       </p>
       <h6>⏳ Enrollment Deadline Approching Soon!</h6>
     </div>
@@ -93,79 +100,78 @@
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Live online classes </h4>
-            <p>learn from our experts live</p>
+            <h4>Learn Online</h4>
+            <p>At your own schedule</p>
           </div>
         </li>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Doubt clearing sessions </h4>
-            <p>get all your doubts cleared by your experts</p>
+            <h4>Doubt Clearing</h4>
+            <p>Through Q&A forum</p>
           </div>
         </li>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Investment support </h4>
-            <p>get investment support for your startups</p>
+            <h4>Mobile Friendly</h4>
+            <p>No Laptop? No Problem</p>
           </div>
         </li>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Internships</h4>
-            <p>get hands – on experience by working in several firms</p>
+            <h4>Beginner Friendly</h4>
+            <p>No prior knowledge required</p>
           </div>
         </li>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Certificate of Completion </h4>
-            <p>validated your skills with a recognized certification</p>
+            <h4>Placement Assessment</h4>
+            <p>To Build Your Career</p>
           </div>
         </li>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Letter of recommendation </h4>
-            <p>enhance your credibility with endorsements from professionals</p>
+            <h4>8 Weeks Duration</h4>
+            <p>1 hr/day (flexible schedule)</p>
           </div>
         </li>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Mentorship sessions</h4>
-            <p>Guidance from industry experts</p>
+            <h4>Certificate of Traning</h4>
+            <p>From Baoiam Tranings</p>
           </div>
         </li>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Live projects</h4>
-            <p>Hands on live project with expert guidance
-            </p>
+            <h4>Downloadable Content</h4>
+            <p>With Lifetime Access</p>
           </div>
         </li>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Digital resource hub</h4>
-            <p>Best digital materials for learning and exploration</p>
+            <h4>Projects</h4>
+            <p>For hand-on practice</p>
           </div>
         </li>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
           <div class="divide">
-            <h4>Beginner friendly</h4>
-            <p>Best suitable for freshers</p>
+            <h4>Industry Experts</h4>
+            <p>Study From The Best Tutors</p>
           </div>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- <section class="section-four">
+  <section class="section-four">
     <h2>Curriculum</h2>
     <p>A Structured Plan Outlining the Educational Components And Learning Objectives For A <br>Specific Course Or
       Program.</p>
@@ -180,169 +186,99 @@
         <h4 class="rate">7,999</h4>
         <div class="duration">5 Months</div>
       </div>
-  </section> -->
+  </section>
 
-  <section class="section-four">
-    <div class="slider1">
-      <h1 class="importance"><span class="imp">Importance </span><span class="opp">and Opportunities</span></h1>
-      <div class="container">
-        <input type="radio" name="dot" id="one">
-        <input type="radio" name="dot" id="two">
-  
-        <div class="main-card">
-          <div class="cards">
-            <div class="card">
-              <div class="content">
-                <div>
-                  <h1>01</h1>
-                  <div class="bold">
-                    Importance of Entrepreneurship Programs for Women
-                  </div>
-                  <p>
-                    Provide a platform for women to explore and pursue their
-                    passions. Equip women with essential skills and knowledge
-                    for navigating the business world. Foster financial
-                    independence, allowing women to control their futures
-                    autonomously.
-                  </p>
+  <div class="slider1">
+    <h1 class="importance"><span class="imp">Importance and </span><span class="opp">Oppurtunities</span></h1>
+    <div class="container">
+      <input type="radio" name="dot" id="one">
+      <input type="radio" name="dot" id="two">
+
+      <div class="main-card">
+        <div class="cards">
+          <div class="card">
+            <div class="content">
+              <div>
+                <h1>01</h1>
+                <div class="bold">
+                  Importance of Entrepreneurship Programs for Women:
                 </div>
+                <p>
+                  Provide a platform for women to explore and pursue their
+                  passions. Equip women with essential skills and knowledge
+                  for navigating the business world. Foster financial
+                  independence, allowing women to control their futures
+                  autonomously.
+                </p>
               </div>
             </div>
-            <div class="card">
-              <div class="content">
-                <div>
-                  <h1>02</h1>
-                  <div class="bold">
-                    Future Outlook for Women in Entrepreneurship Programs
-                  </div>
-                  <p>
-                    Continued growth in women-owned businesses, contributing
-                    significantly to the economy. Increased opportunities and
-                    support for women entrepreneurs. Focus on digitalization as
-                    a facilitator for women-owned start-ups.
-                  </p>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div>
+                <h1>02</h1>
+                <div class="bold">
+                  Future Outlook for Women in Entrepreneurship Programs:
                 </div>
+                <p>
+                  Continued growth in women-owned businesses, contributing
+                  significantly to the economy. Increased opportunities and
+                  support for women entrepreneurs. Focus on digitalization as
+                  a facilitator for women-owned start-ups.
+                </p>
               </div>
             </div>
-            <div class="card">
-              <div class="content">
-                <div>
-                  <h1>03</h1>
-                  <div class="bold">
-                    Opportunities Created by Entrepreneurship Programs
-                  </div>
-                  <p>
-                    Building a trustworthy and talented team is key to success.
-                    Emphasizing communication, collaboration, and mutual
-                    elevation within the team. Acknowledging that teamwork is
-                    essential, and setting achievable goals consistently leads
-                    to success. Entrepreneurship programs open doors for women
-                    to establish their brands and contribute to various
-                    industries. Learning and adapting from experiences, building
-                    on smaller successes to achieve larger goals.
-                  </p>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div>
+                <h1>03</h1>
+                <div class="bold">
+                  Opportunities Created by Entrepreneurship Programs:
                 </div>
+                <p>
+                  Building a trustworthy and talented team is key to success.
+                  Emphasizing communication, collaboration, and mutual
+                  elevation within the team. Acknowledging that teamwork is
+                  essential, and setting achievable goals consistently leads
+                  to success. Entrepreneurship programs open doors for women
+                  to establish their brands and contribute to various
+                  industries. Learning and adapting from experiences, building
+                  on smaller successes to achieve larger goals.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <section class="section-entrepreneur">
-    <div class="content">
-      <h2><span>Women</span> Entrepreneurship Program</h2>
-      <p>
-        Our Women Entrepreneurship Program aims to support and empower women in starting and growing their businesses. This program is specially pieced together by our experts to guide our women entrepreneurs and to teach them to build their strong business empires. It typically includes mentorship, training, and resources to enhance skills, foster networking, and overcome challenges women may face in the business world. The goal is to promote economic independence and gender equality. </p>
-      <h6>⏳ Enrollment Deadline Approching Soon!</h6>
-    </div>
-    <div class="image">
-    <img src="{% static 'wep\Images\img2.jpg' %}" alt="" />
-    </div>
-    
-    <div class="circle_one"></div>
-    <div class="circle_two"></div>
-  </section>
-
-
-  
   <section class="section-five">
-    <h2>Our <span>Testimonials</span></h2>
+    <h2>Testimonials</h2>
     <div class="temp">
       <i id="left" class="fa-solid fa-angle-left left"></i>
       <i id="right" class="fa-solid fa-angle-right right"></i>
       <div class="carousel" id="testi">
+          {% for testimonial in testimonials %}
         <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
+            <div class="details">
+                {% if testimonial.image.url %}
+                    <img src="{{ testimonial.image.url }}"/>
+                {% endif %}
+                <h4>{{ testimonial.name }}</h4>
+                <h6>{{ testimonial.designation }}</h6>
+            </div>
+            <p>
+                {{ testimonial.text }}
+            </p>
         </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
-        <div class="testimonials">
-          <div class="details">
-            <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
-            <h4>John Doe</h4>
-            <h6>Course Student</h6>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nemo quaerat asperiores, esse quibusdam
-          </p>
-        </div>
+    {% endfor %}
       </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <!-- <section class="section-six">
       <div>
@@ -449,7 +385,7 @@
     <div class="emi-container">
       <div class="emi_box">
         <h2 class="emi">Easy EMI</h2>
-        <div class="key_features">easy monthly payment options with our emi facilities
+        <div class="key_features">key features of Easy EMI
           <ul class="emi_features">
             <li>No upfront payment required</li>
             <li>Fixed monthly installments</li>
@@ -457,7 +393,7 @@
           </ul>
         </div>
       </div>
-      <!-- <div class="emi_box">
+      <div class="emi_box">
         <h2 class="emi">Pay After Placement</h2>
         <div class="key_features">key features
           <ul class="emi_features">
@@ -465,7 +401,7 @@
               land a job.</li>
           </ul>
         </div>
-      </div> -->
+      </div>
     </div>
     <div class="circle_five"></div>
     </div>
@@ -473,26 +409,26 @@
 
   <section class="amazing_career">
     <div class="amazing-container">
-      <h2 class="amazing_heading">Amazing <span>Career</span></h2>
-      <!-- <div class="awaits">Awaits!</div> -->
+      <h2 class="amazing_heading">Amazing Career</h2>
+      <div class="awaits">Awaits!</div>
       <p class="grab_offer">
         Grab these exclusive offers available only once a year.
       </p>
       <div class="buy_course_container">
         <div class="buy_course_box">
-          <div class="buy_course">BUY 2 COURSES & GET</div>
+          <div class="buy_course">BUY 2 COURSES & GET MORE</div>
+          <h4 class="off">OFF</h4>
           <div class="percentage">15%</div>
-          <h4 class="off">OFF</h4>
         </div>
         <div class="buy_course_box">
-          <div class="buy_course">BUY 3 COURSES & GET</div>
+          <div class="buy_course">BUY 3 COURSES & GET MORE</div>
+          <h4 class="off">OFF</h4>
           <div class="percentage_3">20%</div>
-          <h4 class="off">OFF</h4>
         </div>
         <div class="buy_course_box">
-          <div class="buy_course">BUY 4 COURSES & GET</div>
-          <div class="percentage">25%</div>
+          <div class="buy_course">BUY 4 COURSES & GET MORE</div>
           <h4 class="off">OFF</h4>
+          <div class="percentage">25%</div>
         </div>
       </div>
       <div class="timer" id="countdown">
@@ -516,7 +452,7 @@
           <p>seconds</p>
         </div>
       </div>
-      <!-- <button class="btn-3">GRAB THE DEAL</button> -->
+      <button class="btn-3">GRAB THE DEAL</button>
     </div>
   </section>
 
@@ -552,229 +488,116 @@
     }, 1000);
   </script>
 
-  <div class="section-nine">
-
-    <div class="ac-main">
-      <h1>Frequently Asked <span>Questions</span></h1>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q1. How does the Entrepreneurship program work?
+  <section class="section-nine">
+    <div class="container-main faq">
+      <div class="ac-main">
+        <h1>Frequently Asked <span>Questions</span></h1>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q1. I am not a student of BAOIAM. Can I still refer a friend?
+            </div>
+            <!-- /.accordion-item-header -->
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Yes, If you are aware of BAOIAM and believe in what we are
+                doing, then feel free to refer your friend.
+              </div>
+            </div>
+            <!-- /.accordion-item-body -->
+          </div>
+          <!-- /.accordion-item -->
         </div>
-        <!-- /.accordion-item-header -->
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            Our Entrepreneurship Courses are formulated in a way that can be easily studied and comprehended. We offer a
-            plethora of courses that are skill-centric and are purely based on practical applications.
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q2. How can I track the status of my referrals?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                You will be informed by email once BAOIAM receives your
+                referral details.
+              </div>
+            </div>
           </div>
         </div>
-        <!-- /.accordion-item-body -->
-      </div>
-      <!-- /.accordion-item -->
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q2. How does the 'Women Entrepreneurship Program' work?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            The WEP is specifically formulated for our Women Entrepreneurs who wish to build their own startup. Head over
-            to the WEP section to know more.
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q3. How will my friends be informed that I referred them?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Your friends will receive an email confirmation from BAOIAM
+                informing them that they have been referred by you. They will
+                be asked to confirm.
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q3. What is the procedure for signing up on the website?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            The sign-up procedure for our website consists of 4 simple steps:
-            <ul>
-              <li>Go to our website and click on the Login button and then the Signup button or just click this link <a
-                  href="http://www.baoiam.com/Login/index.html">http://www.baoiam.com/Login/index.html</a></li>
-              <li>Enter a Username of your choice.</li>
-              <li>Enter your Email ID.</li>
-              <li>Create a strong password with uppercase, lowercase, numbers, and special characters.</li>
-              <li>Click on Sign up and there you go, you are now a part of the Baoiam family.</li>
-            </ul>
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q4. Will I get a referral reward if a friend/connection already
+              exists in the BAOIAM database?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                No, there is no reward if your friend is connected with BAOIAM
+                or its infromation exists in BAOIAM database
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q4. How do I enroll or register, if I am interested in an online course?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            The enrollment process is as easy as the sign-up process.
-            <ul>
-              <li>Take a Dashboard tour and head to the Courses section.</li>
-              <li>You will find a wide range of specially curated courses.</li>
-              <li>Explore them and choose the one you like.</li>
-              <li>Click on Enroll Now.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q5. What kind of skill-based courses do you offer?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            We offer a wide range of courses like Web Development, Data Analytics, Graphic Designing, Content Writing,
-            UI/UX and many more. Head to the Courses section to explore many such skills-centric courses
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-item-header">
+              Q5. Who all can I refer to?
+            </div>
+            <div class="accordion-item-body">
+              <div class="accordion-item-body-content">
+                Anyone who meets the eligibility criteria for our courses can
+                be referred. They should be between 18 - 28 years of age. They
+                should know the basics of the English language, have a laptop,
+                and a good internet connection.
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q6. Can I opt for more than one course at a time?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            Yes, we at Baoiam do not limit your potential and therefore give you the option to choose multiple courses at
-            a time. <br>
-            We also provide with options where you can get various discounts by buying multiple courses together.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q7. How long does each course take?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            Each course is timed differently depending on the lessons, modules and degree of difficulty. The duration of
-            each course is mentioned on their respective course pages.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q8. Do you provide any study material?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            Yes, we do provide study material that can be downloaded and accessed by you at any time
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q9. Are the classes live or recorded?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            We have live classes as it involves interaction and engagement.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q10. Will I gain access to the recorded sessions if I'm unable to attend the live classes?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            Yes, we understand that juggling your college studies or work and course studies might be hard, so you will be
-            able to access the recorded sessions.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q11. Will there be regular doubt-clearing sessions?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            Yes, the doubt-clearing session is one of the key features of Baoiam, as we don't want our students to have
-            half-baked knowledge
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q12. Will I get a 'Certificate of Completion' after completing the course?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            Yes, you will get a Certificate of Completion only after you attend all classes, complete the assignments and
-            projects and get good scores on the tests.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q13. How helpful will the Certificate be in future?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            This Certificate can pave the way to your desired career, as you will be trained and highly skilled in your
-            respective field.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q14. How can I earn through the 'Refer and Earn' program?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            Create an account on Baoiam and then go to the Refer and Earn page.
-            <ul>
-              <li>Enter your Email ID and generate the referral code.</li>
-              <li>Share this code with your friends.</li>
-              <li>If they get enrolled using your code, you earn exciting cash prizes.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item-header">
-          Q15. How do I contact Customer Care for technical or payment issues?
-        </div>
-        <div class="accordion-item-body">
-          <div class="accordion-item-body-content">
-            Send us an email: <a href="mailto:tutors@baoiam.com">tutors@baoiam.com</a> <br>
-            Give us a ring: <a href="tel:+91-8062179867">+91-8062179867</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
   <script>
+    var splide = new Splide('.splide', {
+      perPage: 3,
+      perMove: 1,
+      gap: '2rem',
+      padding: '1rem',
+      autowidth: 'true',
+      type: 'loop',
+      drag: 'free',
+      snap: true,
+      pagination: true,
 
+      breakpoints: {
+        640: {
+          perPage: 2,
+          gap: '.7rem',
+          // height:'6rem',
+
+        },
+        480: {
+          perPage: 1,
+          gap: '.7rem',
+          // height:'6rem',
+
+        },
+      },
+    });
+
+    splide.mount();
 
     function openForm() {
       document.getElementById("popup-form").style.display = "block";
@@ -787,33 +610,6 @@
     function closeForm() {
       document.getElementById("popup-form").style.display = "none";
     }
-
-
-    var accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
-
-    accordionItemHeaders.forEach((accordionItemHeader) => {
-      accordionItemHeader.addEventListener("click", () => {
-        const isActive = accordionItemHeader.classList.contains("active");
-
-        closeAllAccordionItems();
-
-        if (!isActive) {
-          accordionItemHeader.classList.add("active");
-          const accordionItemBody = accordionItemHeader.nextElementSibling;
-          accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-        }
-      });
-    });
-
-    function closeAllAccordionItems() {
-      const activeAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-      if (activeAccordionItemHeader) {
-        activeAccordionItemHeader.classList.remove("active");
-        activeAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-      }
-    }
-
-
   </script>
 </body>
 

@@ -33,7 +33,6 @@
   -webkit-text-fill-color: transparent;
   border-bottom: 2px solid rgb(245, 69, 0);
   margin-bottom: 3rem;
-  font-weight: bold;
 }
 
 .popup-form {
@@ -92,13 +91,11 @@
     left: 20%;
   }
 }
-
 @media screen and (max-width: 520px) {
   .popup-form {
     left: 10%;
     width: 250px;
   }
-
   .popup-form input,
   .popup-form option,
   .popup-form select {
@@ -279,7 +276,6 @@
   padding: 60px 30px 30px 30px;
   margin: 4.3rem;
 }
-
 .second-section-container {
   box-shadow: 5px 5px 5px 4px rgb(180, 179, 179);
   /* flex-wrap: wrap; */
@@ -328,13 +324,11 @@
   font-weight: 600;
   /* color: orangered; */
 }
-
 .second-section-div2 h1 {
   text-align: left;
   font-weight: 700;
   color: rgb(1, 1, 68);
 }
-
 .btn-33 {
   font-size: 1.1rem;
   font-weight: 700;
@@ -350,7 +344,6 @@
   margin-top: 30px;
   margin-bottom: 20px;
 }
-
 .btn-332 {
   margin-left: 5%;
   background-color: transparent !important;
@@ -376,14 +369,12 @@
     /* position: relative;
     right: 8%; */
   }
-
   .flex-row {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
   .second-section-container {
     flex-direction: column;
     justify-content: center;
@@ -398,26 +389,21 @@
   .btn-33 {
     width: 200px;
   }
-
   .second-section-div2 h3 {
     font-weight: 600;
     font-size: 1rem;
   }
-
   .second-section-div2 h1 {
     font-weight: 700;
     font-size: 1.5rem;
   }
-
   .second-section-div1 img {
     width: 40%;
   }
-
   .second-section-container {
     margin-bottom: 5%;
   }
 }
-
 @media screen and (max-width: 390px) {
   .second-section-container {
     margin-left: 2rem;
@@ -668,7 +654,7 @@
   width: 80rem;
   row-gap: 1.8rem;
   column-gap: 6rem;
-  text-align: left;
+  text-align: center;
   padding-left: 6rem;
   justify-items: center;
 }
@@ -680,7 +666,6 @@
   width: 24rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #999;
-  text-align: left;
 }
 
 .section-three .divide {
@@ -800,41 +785,6 @@
   color: #040052;
 }
 
-.curriculum {
-  width: 100%;
-  max-width: 1000px;
-}
-
-.curriculum h2 {
-  padding: 0.6rem;
-  border-radius: 10px 10px 0 0px;
-  font-size: 20px;
-  font-weight: 600;
-  box-shadow: 1px 0px 2px grey;
-  cursor: pointer;
-  margin-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0 !important;
-}
-.curriculum h2.active {
-  background-color: orangered;
-  /* background-color: rgb(1, 1, 68) !important; */
-  color: white;
-}
-
-.curriculum-item-body {
-  padding: 12px 18px;
-  padding-top: 20px;
-  font-weight: 500;
-  box-shadow: 1px 2px 5px rgb(172, 170, 170);
-  display: none;
-  overflow: hidden;
-}
-.curriculum-item-body-content {
-  font-size: 16px;
-}
-
 .accordion {
   width: 100%;
   max-width: 1000px;
@@ -842,6 +792,13 @@
 
 .accordion-body {
   font-size: 16px;
+}
+
+.accordion button {
+  color: #040052;
+  font-size: 20px;
+  font-weight: 500;
+  font-weight: 600;
 }
 
 footer i {
@@ -861,10 +818,6 @@ footer p {
 }
 
 .accordion-item-header::after {
-  right: 1rem;
-}
-
-.curriculum-item-header::after {
   right: 1rem;
 }
 
@@ -897,11 +850,9 @@ footer p {
 .testimonial {
   text-align: center;
 }
-
 .testimonial-heading {
   font-size: 3rem;
 }
-
 .slide-container {
   max-width: 1120px;
   width: 100%;
@@ -1015,7 +966,6 @@ footer p {
 .swiper-button-next {
   right: 0;
 }
-
 .swiper-slide {
   gap: 40px !important;
 }
@@ -1023,12 +973,10 @@ footer p {
 .swiper-button-prev {
   left: 0;
 }
-
 .swiper-wrapper {
   width: 30% !important;
   /* gap: 40px !important; */
 }
-
 .swiper-pagination-bullet {
   background-color: orangered;
   opacity: 1;
@@ -1151,11 +1099,9 @@ footer p {
 .content:hover * {
   color: white !important;
 }
-
 .swiper {
   margin-bottom: 6rem;
 }
-
 .slider-wrapper {
   padding: 50px 15px;
   height: 100%;
@@ -1218,15 +1164,15 @@ footer p {
 }
 
 .emi {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   line-height: 2.5rem;
   /* margin: 5px; */
   color: rgb(1, 1, 68);
 }
 
 .key_features {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   text-wrap: wrap;
   line-height: 1.8rem;
@@ -1271,19 +1217,14 @@ footer p {
   margin: 2rem;
   padding-bottom: 1rem;
 }
+
 .amazing_heading {
   text-align: center;
-  margin: 3rem 1rem;
+  margin: 1rem;
   color: #040052;
   font-size: 3rem;
   font-weight: 700;
-}
-.amazing_heading span {
-  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
-  -webkit-background-clip: text;
-  background-clip: text;
-  /* font-size: 2rem; */
-  -webkit-text-fill-color: transparent;
+  padding: 1rem 0;
 }
 
 .amazing-container {
