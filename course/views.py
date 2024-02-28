@@ -13,10 +13,9 @@ from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
 from .models import CourseCategory
-from .models import Testimonial
 
 from django.utils import timezone
-
+from .models import Testimonial
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.shortcuts import render, get_object_or_404
@@ -31,8 +30,8 @@ def category_courses(request, category_id):
     courses = Course.objects.filter(category=category, status='active')
     categories = CourseCategory.objects.all()
     course = Course.objects.get(id=category_id)
-    testimonials = Testimonial.objects.all()
     batches = Batch.objects.get(course=course)
+    testimonials = Testimonial.objects.all()
     carriculum = course.curriculum.all()
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
     print(f"subscription_course_plans: {subscription_course_plans}")
@@ -51,7 +50,7 @@ def category_courses(request, category_id):
             'categories': categories,
             'batch':batches,
             'subscription_course_plans':subscription_course_plans,
-            'testimonials':testimonials,
+            'testimonials': testimonials,
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
@@ -161,10 +160,11 @@ def category_courses_json(request, category_id):
 
 class DownloadFileView(View):
     def get(self, category_id,file_id):
-        category = get_object_or_404(CourseCategory, pk=file_id)
         category_id = file_id
+        category = get_object_or_404(CourseCategory, pk=file_id)
         file_content = category.file.read()
         file_name = category.file.name
         response = HttpResponse(file_content, content_type='application/octet-stream')
         response['Content-Disposition'] = f'attachment; filename="{file_name}"'
+
         return response
