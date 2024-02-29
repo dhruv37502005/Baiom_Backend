@@ -12,7 +12,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
-from .models import CourseCategory
+from .models import CourseCategory, Contact
 
 from django.utils import timezone
 from .models import Testimonial
@@ -168,3 +168,15 @@ class DownloadFileView(View):
         response['Content-Disposition'] = f'attachment; filename="{file_name}"'
 
         return response
+
+login_required(login_url='/userauths/login/')
+def course_contact(request):
+    if request.method == 'POST':
+        name_ = request.POST.get('name_')
+        email_ = request.POST.get('email_')
+        mobile_ = request.POST.get('mobile_')
+        profession_ = request.POST.get('profession_')
+        contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_)
+        contact_obj.save()
+        messages.success(request,'thank you for contacting us')
+        return render(request, 'course.html')

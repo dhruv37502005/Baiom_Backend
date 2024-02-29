@@ -107,13 +107,12 @@ class Testimonial(models.Model):
         return self.name
 
 
-class Testimonial(models.Model):
+class Contact(models.Model):
     name = models.CharField(max_length=255)
-    role = models.CharField(max_length=255)
-    content = models.TextField()
-    image = models.ImageField(upload_to='CourseTestimonial_images/') 
-    category = models.ForeignKey(CourseCategory,blank=True, on_delete=models.CASCADE, related_name='testimonials') 
-
+    email = models.EmailField()
+    mobile = models.CharField(max_length=20)
+    profession = models.CharField(max_length=20, null=True, blank=True)
+    
     def __str__(self):
         return self.name
 
