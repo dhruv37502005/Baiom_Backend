@@ -19,7 +19,7 @@ from subscription.models import PurchaseCourse
 @transaction.atomic
 # FIXME: this function is handling multiple API's calls need to make sub-fuctions to pass context
 # TODO: seperate POST and GET API from this function
-def user_ui(request):
+def user_ui(request,username):
     if request.method == "GET":
         auser = request.user
         if request.user.is_authenticated:
