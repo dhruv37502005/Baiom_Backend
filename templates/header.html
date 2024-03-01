@@ -591,7 +591,131 @@
       ::-webkit-scrollbar-thumb:hover {
         background-color: orangered;
       }
+      * Boring button styles */ a.button {
+        /* Frame */
+        display: inline-block;
+        padding: 20px 28px;
+        border-radius: 50px;
+        box-sizing: border-box;
+
+        /* Style */
+        border: none;
+        background: var(--button-background);
+        color: var(--button-color);
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      a.button:active {
+        filter: brightness(75%);
+      }
+
+      /* Dropdown styles */
+      .dropdown {
+        position: relative;
+        padding: 0;
+        margin-right: 1em;
+
+        border: none;
+      }
+      .dropdown:visited {
+        text-decoration: none;
+      }
+
+      .dropdown summary {
+        list-style: none;
+        list-style-type: none;
+      }
+
+      .dropdown > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* .dropdown summary:focus {
+        outline: none;
+      } */
+
+      /* .dropdown summary:focus a.button {
+        border: 2px solid white;
+      } */
+
+      /* .dropdown summary:focus {
+        outline: none;
+      } */
+
+      .dropdown ul {
+        position: absolute;
+        /* margin: 20px 0 0 12px; */
+        padding: 10px 0px;
+        width: auto;
+        /* left: 50%; */
+        margin-left: -20px;
+        margin-top: 24px;
+        box-sizing: border-box;
+        z-index: 2;
+
+        background-color: white;
+        border-radius: 6px;
+        list-style: none;
+        box-shadow: 2px 2px 4px 1px rgb(145, 144, 144);
+      }
+
+      .dropdown ul li {
+        padding: 0;
+        margin: 0;
+        width: 300px;
+      }
+      .dropdown ul:visited{
+        text-decoration: none;
+      }
+
+      .dropdown ul li a:link,
+      .dropdown ul li a:visited {
+        display: inline-block;
+        padding: 10px 0.8rem;
+        width: 100%;
+        box-sizing: border-box;
+        color: gray;
+        text-decoration: none;
+      }
+
+      .dropdown ul li a:hover {
+        background-color: rgb(218, 217, 217);
+        color: black;
+      }
+
+      /* Dropdown triangle */
+      /* .dropdown ul::before {
+        content: " ";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: -10px;
+        left: 50%;
+        margin-left: -10px;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent var(--dropdown-background)
+          transparent;
+      } */
+
+      /* Close the dropdown with outside clicks */
+      .dropdown > summary::before {
+        display: none;
+      }
+
+      .dropdown[open] > summary::before {
+        content: " ";
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+      }
     </style>
+
   </head>
 
   <body>
@@ -628,61 +752,48 @@
               >
             </li>
 
-            <li class="nav-item dropdown">
-              <!-- {% url 'core:career' as urlcareer %} {% url 'core:hire_from_us' as
-              urlhirefrom %} -->
-              <a
-                class="nav-link dropdown-toggle {% if request.path == urlcareer or request.path == urlhirefrom %}isactive{% endif %}"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                style="font-size: 18px"
-              >
-                Company
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a
+            <li class="nav-item">
+              <details class="dropdown">
+                <summary role="button">
+                  <a class="button">Company</a>
+                </summary>
+                <ul>
+              
+                  <li>
+                    <a
                   class="dropdown-item {% if request.path == urlcareer%}isactive{% endif %}"
-                  href="{{urlcareer}}"
+                  href="{% url 'core:career' %}"
                   style="font-size: 18px"
                   >Career</a
                 >
-                <a
-                  class="dropdown-item {% if request.path == urlhirefrom %}isactive{% endif %}"
-                  href="{{urlhirefrom}}"
-                  style="font-size: 18px"
-                  >Hire from us</a
-                >
-              </div>
-            </li>
-
-            <li class="nav-item dropdown">
-              <!---- {% url 'core:course' as courses %} -->
-
-              <a
-                class="nav-link dropdown-toggle {% if request.path == courses %}isactive{% endif %}"
-                href="###"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                style="font-size: 18px"
-                >Courses</a
-              >
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% for category in categories %}
-                <a
-                  class="dropdown-item {% if request.path == urlcareer%}isactive{% endif %}"
-                  href="{% url 'course:category_courses' category_id=category.id %}"
-                  style="font-size: 18px"
-                  >{{ category.name }}</a
-                >
-                {% endfor %}
-              </div>
+                  </li>
+                  <li>
+                    <a
+                    class="dropdown-item {% if request.path == urlhirefrom %}isactive{% endif %}"
+                    href="{% url 'core:hire_from_us' %} "
+                    style="font-size: 18px"
+                    >Hire from us</a
+                  >
+                  </li>
+                </ul>
+              </li>
+            <li class="nav-item">
+              <details class="dropdown">
+                <summary role="button">
+                  <a class="button">Courses</a>
+                </summary>
+                <ul>
+                  {% for category in categories %}
+                  <li>
+                    <a
+                      href="{% url 'course:category_courses' category_id=category.id %}"
+                      >{{ category.name }}</a
+                    >
+                  </li>
+                  {% endfor %}
+                </ul>
+              </details>
+              <!-- <ul class="sub-courses-list"></ul> -->
             </li>
             <li class="nav-item">
               {% url 'itie:itie' as itie %}
@@ -700,7 +811,7 @@
                 class="nav-link {% if request.path == urlwep %}isactive{% endif %}"
                 href="{{bootcamp}}"
                 style="font-size: 18px"
-                >Bootcamp</a
+                >Entrepreneurship</a
               >
             </li>
             <li class="nav-item">
@@ -740,23 +851,6 @@
                 >Contact Us</a
               >
             </li>
-            <!-- <li class="nav-item">
-             <a
-                    id="profile-dropdown-item"
-                    href="{% url 'dashboard:user_ui' username=user %}"
-                    style="font-size: 18px"
-                    >Dashboard</a
-                  >
-            </li> -->
-            <!-- <li class="nav-item">
-              {% url 'blog:categories' as urlblog %}
-              <a
-                class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
-                href="{% url 'userauths:logout' %}"
-                style="font-size: 18px"
-                >LOGOUT</a
-              >
-            </li> -->
 
             {% if user.username %}
             <li class="nav-item" id="profile">
@@ -764,11 +858,11 @@
                 <div class="profile-dropdown" id="profile-dropdown">
                   <div id="profile-content">
                     <a
-                    id="profile-dropdown-item"
-                    href="{% url 'dashboard:user_ui' username=user %}"
-                    style="font-size: 18px"
-                    >Dashboard</a
-                  > 
+                      id="profile-dropdown-item"
+                      href="{% url 'dashboard:user_ui' username=user %}"
+                      style="font-size: 18px"
+                      >Dashboard</a
+                    >
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'userauths:logout' %}"
