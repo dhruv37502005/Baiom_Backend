@@ -22,7 +22,6 @@ from .forms import GetInTouchForm
 #         print("None")
             
 #     return render(request, 'index.html',{'is_index_page': True})
-
 def index(request):
     categories = CourseCategory.objects.all()
     user = request.user

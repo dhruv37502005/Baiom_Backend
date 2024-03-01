@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Course, CourseCategory, Batch, Resource, CourseCarriculum #, Purchase
-from .models import Course ,Testimonial , Contact
+from .models import Course ,Testimonial, Contact
 
 # Register your models here.
 

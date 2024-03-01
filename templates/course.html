@@ -30,7 +30,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 </head>
 
 <body>
-  <form class="popup-form" id="popup-form" method="post" >
+  <form class="popup-form" id="popup-form" action="{% url 'course:course_contact' %}" method="post" >
     {% csrf_token %}
     <div class="popup-form-content">
       <div class="close" id="popup-close">&times;</div>
@@ -190,7 +190,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <h3 id="why-web-dev-heading-1">
           Program <span class="underline">Overview</span>
         </h3>
-        <p>{{course.description}}</p>
+        <p>{{course.program_overview}}</p>
       </div>
       <div class="image">
         {% if course.image %}
@@ -306,7 +306,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   <!-- Testimonials -->
   <section class="testimonial">
     {% for course in courses %}
-    <h1 class="testimonial-heading"><span class="underline">Testimonials for<Span> {{ course.category.name }}</span></h1>
+    <h1 class="testimonial-heading"><span class="underline">Testimonials for {{ course.category.name }}</span></h1>
     <div class="slide-container swiper">
         <div class="slide-content">
             <div class="card-wrapper swiper-wrapper">

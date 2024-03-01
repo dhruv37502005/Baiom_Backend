@@ -12,7 +12,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
-from .models import CourseCategory ,Contact
+from .models import CourseCategory, Contact
 
 from django.utils import timezone
 from .models import Testimonial
@@ -24,7 +24,7 @@ from .serializers import CourseSerializer, CourseCategorySerializer, BatchSerial
 
 from rest_framework.response import Response
 
-@login_required(login_url='/userauths/login/')
+# @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
     category = get_object_or_404(CourseCategory, id=category_id)
     courses = Course.objects.filter(category=category, status='active')
