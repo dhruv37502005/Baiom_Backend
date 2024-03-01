@@ -566,7 +566,7 @@
       .nav-link {
         width: fit-content;
         height: 30px;
-        display: flex;
+        display: flex !important;
         align-items: center;
       }
       .isactive {
@@ -642,7 +642,7 @@
       /* .dropdown summary:focus {
         outline: none;
       } */
-
+      
       .dropdown ul {
         position: absolute;
         /* margin: 20px 0 0 12px; */
@@ -661,12 +661,16 @@
       }
 
       .dropdown ul li {
+        margin-top: 30px;
         padding: 0;
         margin: 0;
         width: 300px;
       }
-      .dropdown ul:visited{
-        text-decoration: none;
+      .dropdown ul a:hover{
+        text-decoration: none !important;
+      }
+      a{
+        text-decoration: none !important;
       }
 
       .dropdown ul li a:link,
@@ -700,7 +704,7 @@
       } */
 
       /* Close the dropdown with outside clicks */
-      .dropdown > summary::before {
+      /* .dropdown > summary::before {
         display: none;
       }
 
@@ -713,7 +717,7 @@
         left: 0;
         bottom: 0;
         z-index: 1;
-      }
+      } */
     </style>
 
   </head>
@@ -786,7 +790,7 @@
                   {% for category in categories %}
                   <li>
                     <a
-                      href="{% url 'course:category_courses' category_id=category.id %}"
+                      href="{% url 'course:category_courses' category_id=category.id %}" style="font-size: 18px"
                       >{{ category.name }}</a
                     >
                   </li>
