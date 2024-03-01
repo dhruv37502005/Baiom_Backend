@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Header */
+header {
+  background: var(--color-white);
+  z-index: 1;
+  box-shadow: rgb(49, 49, 49);
+  font-family: "Montserrat", sans-serif;
+}
+.navbar {
+  padding: 0px 6px 0px 6px;
+}
+a {
+  text-decoration: none;
+}
+header .nav-item {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+@media screen and (max-width: 1250px) {
+  header .nav-item {
+    padding: 0;
+  }
+}
+header .nav-item a {
+  padding-top: 0.7rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#profile-content a {
+  border-bottom: none;
+}
+
+@media (max-width: 1054px) {
+  #nav-courses-one {
+    display: block;
+  }
+
+  #nav-courses-two {
+    display: none;
+  }
+
+  header .nav-item a,
+  header button {
+    font-size: 0.9rem;
+  }
+
+  #nav-courses-one .dropdown-toggle + .dropdown-menu > .nav-link {
+    padding-left: 1.5rem;
+    padding-top: 0;
+  }
+
+  .dropdown-menu[aria-labelledby="navbarDropdown-subcourses"] {
+    border-radius: 0;
+  }
+}
+
+header .navbar-brand {
+  padding-left: 4rem;
+}
+
+header .navbar-nav {
+  padding-right: 4rem;
+}
+
+header img {
+  width: 120px;
+}
+
+/* header .nav-item a:hover {
+  color: #ec4f01 ;
+} */
+
+.btn-1 {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8em 2em;
+  background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
+  -webkit-text-fill-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  transition: 3s;
+  /* border: 5px solid red; */
+}
+
+.btn-1:hover {
+  background: -webkit-linear-gradient(45deg, #ff8000, #ff0000);
+}
+
+.btn-2:hover {
+  background: #03003f;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.btn-2 {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8em 2em;
+  background: transparent;
+  -webkit-text-fill-color: #03003f;
+  border-color: #03003f;
+  border-radius: 5px;
+}
+header .navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 1000px) {
+  .btn-1,
+  .btn-2 {
+    padding: 0.6em 1em;
+  }
+  header .navbar-nav {
+    background-color: #fff;
+    padding-right: 0;
+  }
+}
+@media (max-width: 900px) {
+  .btn-1,
+  .btn-2 {
+    padding: 0.4em 0.7em;
+  }
+}
+
+header .navbar-nav {
+  color: rgba(0, 0, 0, 0.5) !important;
+  font-size: 18px !important;
+}
