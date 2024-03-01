@@ -110,7 +110,7 @@ body {
 }
 
 .second-half h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-bottom: 3rem;
   /* font-weight: bold; */
   font-weight: 700;
@@ -342,7 +342,7 @@ p {
   /* margin: 2rem auto 2rem; */
 }
 .slider1 h1 {
-  font-size: 50px;
+  font-size: 3rem;
   margin: auto;
   margin-bottom: 1.5rem;
   color: #031864;
@@ -370,7 +370,7 @@ p {
 }
 
 .slider2 h1 {
-  font-size: 50px;
+  font-size: 3rem;
   margin-bottom: 2.5rem;
   color: #031864;
   /* font-weight: bold; */
@@ -736,13 +736,13 @@ footer .contact-us p div i {
 }
 
 .slider1 .content h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   text-align: center;
   background: -webkit-linear-gradient(45deg, #fa2424, #fb8721);
   /* -webkit-background-clip: text; */
   /* -webkit-text-fill-color: transparent; */
-  width: 5rem;
+  width: 6rem;
   border-radius: 50%;
   padding: 1rem;
   color: white;

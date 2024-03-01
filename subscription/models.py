@@ -24,8 +24,8 @@ class SubscriptionPlan(models.Model):
 
 
 class SubscriptionPlanCourse(models.Model):
-    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE,default='none')
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE, blank=True,null=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, blank=True, null=True)
     included_in_plan = models.BooleanField(default=True)
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
@@ -40,11 +40,11 @@ class SubscriptionPlanCourse(models.Model):
             return self.active and self.start_date <= timezone.now().date() <= self.end_date
         return self.active
 
-    # def is_available(self):
-    #     if self.available_slots == -1:
-    #         return True
-    #     subscribed_count = Purchase.objects.filter(course=self.course, subscription_plan=self.subscription_plan).count()
-    #     return subscribed_count < self.available_slots
+    def is_available(self):
+        if self.available_slots == -1:
+            return True
+        subscribed_count = Purchase.objects.filter(course=self.course, subscription_plan=self.subscription_plan).count()
+        return subscribed_count < self.available_slots
 
     def save(self, *args, **kwargs):
         if self.start_date and self.subscription_plan.months:
@@ -55,10 +55,10 @@ class SubscriptionPlanCourse(models.Model):
         
         
 class PurchaseCourse(models.Model):
-    dashboard_user = models.ForeignKey(Dashboard_User, on_delete=models.CASCADE, null=True)
-    purchased_course = models.ForeignKey(Course, on_delete=models.CASCADE,default='None', null=True)
-    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE,blank=True,default='none', null=True)
-    Batch = models.ForeignKey(Batch, on_delete=models.CASCADE, null=True, blank=True,default ='none')
+    dashboard_user = models.ForeignKey(Dashboard_User, on_delete=models.CASCADE, null=True, blank=True)
+    purchased_course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True, blank=True)
+    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE,blank=True, null=True)
+    Batch = models.ForeignKey(Batch, on_delete=models.CASCADE, null=True, blank=True)
     purchase_date = models.DateField(auto_now_add=True)
     plans_duration_months = models.PositiveIntegerField(editable=False)
     purchase_start_date = models.DateField()

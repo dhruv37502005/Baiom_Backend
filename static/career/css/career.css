@@ -3,7 +3,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
-
+   
 * {
   margin: 0px;
   padding: 0px;
@@ -775,6 +775,7 @@ article p {
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .section {
