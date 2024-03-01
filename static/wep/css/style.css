@@ -75,6 +75,16 @@ body {
   }
 }
 
+.underline {
+  position: relative;
+  background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid rgb(245, 69, 0);
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
 /* --------------------------- SECTION ONE ------------------------------ */
 
 .section-one {
@@ -119,7 +129,10 @@ body {
   text-align: center;
 }
 .topsection1-content .content > h1 > span {
-  color: orangered;
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: relative;
 }
 .topsection1-content .content > h1 > span:after {
@@ -460,6 +473,7 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: #fff7ed;
+  padding-bottom: 30px;
   /* padding: 20px; */
 }
 .slider1 .container {
@@ -470,7 +484,8 @@ body {
 .importance {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   line-height: 5.5rem;
   /* margin-left: 4rem; */
 }
@@ -935,7 +950,7 @@ input[type="radio"] {
 .section-seven h2 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   text-align: center;
   padding-top: 1.5rem;
   color: rgb(3, 3, 72);
@@ -1023,6 +1038,7 @@ input[type="radio"] {
   font-weight: bold;
   line-height: 2.5rem;
   padding-left: 2rem;
+  display: block;
   /* color: #5e5e5e; */
 }
 .section-seven .name-span,

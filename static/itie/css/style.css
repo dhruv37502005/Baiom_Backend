@@ -7,6 +7,17 @@
 body {
   font-family: "Montserrat", "sans-serif", "Londrina Outline";
 }
+
+.underline {
+  position: relative;
+  background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid rgb(245, 69, 0);
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
 .containerr {
   margin-left: 60px;
   margin-right: 60px;

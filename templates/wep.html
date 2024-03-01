@@ -27,23 +27,22 @@
 </head>
 
 <body>
-  <form class="popup-form" id="popup-form" action="{% url 'bootcamp:bootcamp' %}" method="post">
-    {% csrf_token %}
+  <form class="popup-form" id="popup-form">
     <div class="popup-form-content">
       <div class="close" id="popup-close">&times;</div>
       <lable for="name" id="name">Name</lable>
-      <input id="name" type="text" name="name_" />
+      <input id="name" type="text" />
       <lable for="email" id="email">Email</lable>
-      <input id="email" type="email" name="email_" />
+      <input id="email" type="email" />
       <lable for="mobile" id="mobile">Mobile</lable>
-      <input id="mobile" type="text" name="mobile_" />
+      <input id="mobile" type="text" />
       <label for="professionSelect" id="professionLabel">Profession</label>
-      <select id="professionSelect" name="profession_">
+      <select id="professionSelect">
         <option value="student">Student</option>
          <option value="teacher">Passed out</option>
          <option value="engineer">Working Professional</option>      
        </select>
-      <button type="submit" class="popup-submit">Submit</button>
+      <button type="button" class="popup-submit">Submit</button>
     </div>
   </form>
   <section class="section-one">
@@ -76,7 +75,7 @@
   <section class="section-two">
     <img src="{% static 'wep\Images\wep_section2.png' %}" alt="" />
     <div>
-      <h2><span>Program</span> Overview</h2>
+      <h2><span class="underline">Program</span> Overview</h2>
       <p>
         Our Entrepreneurship Courses are formulated in a way that can be easily studied and comprehended. We offer a plethora of courses that are skill-centric and are purely based on practical applications. Students can learn new skills or even hone their existing skills. This gives them a chance to build a strong skillset that can propel them to a new level in their professional lives. 
       </p>
@@ -89,7 +88,7 @@
 
   <section class="section-three">
     <div>
-      <h2><span> Course </span> Highlights</h2>
+      <h2><span class="underline"> Course </span> Highlights</h2>
       <ul>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
@@ -185,7 +184,7 @@
 
   <section class="section-four">
     <div class="slider1">
-      <h1 class="importance"><span class="imp">Importance </span><span class="opp">and Opportunities</span></h1>
+      <h1 class="importance"><span class="imp underline">Importance </span><span class="opp">and Opportunities</span></h1>
       <div class="container">
         <input type="radio" name="dot" id="one">
         <input type="radio" name="dot" id="two">
@@ -254,7 +253,7 @@
 
   <section class="section-entrepreneur">
     <div class="content">
-      <h2><span>Women</span> Entrepreneurship Program</h2>
+      <h2><span class="underline">Women</span> Entrepreneurship Program</h2>
       <p>
         Our Women Entrepreneurship Program aims to support and empower women in starting and growing their businesses. This program is specially pieced together by our experts to guide our women entrepreneurs and to teach them to build their strong business empires. It typically includes mentorship, training, and resources to enhance skills, foster networking, and overcome challenges women may face in the business world. The goal is to promote economic independence and gender equality. </p>
       <h6>⏳ Enrollment Deadline Approching Soon!</h6>
@@ -302,7 +301,7 @@
     <div class="circle_four"></div>
     <h2>
       Join With Us <br />
-      Find the <span>Right Course</span>
+      Find the <span class="underline">Right Course</span>
     </h2>
     <div class="slider_wrapper">
       <div class="splide">
@@ -313,7 +312,7 @@
               <div class="content-box">
 
                 <div class="content">
-                  <div class="name">Plus<br> 30,500<span class="name-span">/Full course</span></div>
+                  <div class="name">Plus<br> 30,500/<span class="name-span">Full course</span></div>
                   <ul class="course-content">
                     <li>Live Classes</li>
                     <li>Doubt Clearing Sessions</li>
@@ -420,7 +419,7 @@
 
   <section class="amazing_career">
     <div class="amazing-container">
-      <h2 class="amazing_heading">Amazing <span>Career</span></h2>
+      <h2 class="amazing_heading">Amazing <span class="underline">Career</span></h2>
       <!-- <div class="awaits">Awaits!</div> -->
       <p class="grab_offer">
         Grab these exclusive offers available only once a year.
@@ -469,7 +468,7 @@
 
   <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("Feb 29, 2024 00:00:00").getTime();
+    var countDownDate = new Date("April 4, 2024 00:00:00").getTime();
 
     // Update the countdown every 1 second
     var x = setInterval(function () {
@@ -502,7 +501,7 @@
   <div class="section-nine">
 
     <div class="ac-main">
-      <h1>Frequently Asked <span>Questions</span></h1>
+      <h1>Frequently Asked <span class="underline">Questions</span></h1>
     </div>
     <div class="accordion">
       <div class="accordion-item">
