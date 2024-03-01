@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  border-radius: 12px;
+
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.just {
+  width: 320px;
+  height: 100%;
+}
+.main {
+  /* width: 100%; */
+  width: calc(100% - 340px);
+  /* background-color: rgb(154, 148, 148); */
+  background-color: white;
+  border-radius: 12px;
+  /* box-shadow: 8px 12px 12px gray; */
+  height: 100%vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+.main .down {
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.links .down {
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.main .down button,
+.links .down button {
+  cursor: pointer;
+  width: 80px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: white;
+  border: none;
+  box-shadow: 4px 8px 8px gray;
+  overflow: hidden;
+}
+/* .main .down button:hover {
+  transform: scale(1.01);
+  box-shadow: 8px 12px 12px gray;
+} */
+.main .down button span,
+.links .down button span {
+  font-size: 30px;
+  font-weight: bold;
+  color: orangered;
+  animation: bounce 2s infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+}
+
+.head-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 10px;
+}
+.name-section {
+  width: 50%;
+}
+.name-section h2 {
+  font-size: 40px;
+  /* background-color: red; */
+}
+
+.searchbar-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.search-bar {
+  height: 40px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  /* background-color: rgba(128, 128, 128, 0.329); */
+  padding: 12px;
+  box-shadow: 4px 8px 8px rgba(128, 128, 128, 0.466);
+  font-size: large;
+  margin-right: 20px;
+  color: black;
+}
+
+.searchbar-section span {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 4px 8px 8px gray;
+  padding: 5px;
+  color: orangered;
+  font-size: 30px;
+  transition: ease 0.5s;
+}
+.searchbar-section span:hover {
+  transform: scale(1.01);
+  box-shadow: 8px 12px 12px gray;
+}
+
+.blackshadow {
+  position: absolute;
+  display: none;
+  width: 200%;
+  height: 200%;
+  background-color: rgba(0, 0, 0, 0.411);
+  z-index: 1;
+}
+
+.form-section {
+  position: fixed;
+  width: 70%;
+  height: fit-content;
+  overflow: hidden;
+  background-color: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 0px 0px 22px rgb(0, 0, 0);
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+}
+.close-details-section {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.close-details {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 4px 8px 8px gray;
+  font-size: 40px;
+  color: orangered;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+.close-details:hover {
+  transform: scale(1.01);
+  box-shadow: 8px 12px 12px gray;
+}
+.form-content {
+  width: 100%;
+  /* display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row; */
+}
+.form .profile-image-section {
+  display: flex;
+  justify-content: flex-start;
+  /* margin-left: 10px; */
+}
+.form input,
+.form select {
+  width: 300px;
+  height: 40px;
+  margin-top: 20px;
+  display: flex;
+  border-radius: 8px;
+  padding: 7px;
+  border: none;
+  outline: none;
+  color: black;
+  box-shadow: 4px 8px 8px rgba(128, 128, 128, 0.466);
+}
+form select:hover,
+.cross-btn,
+.add-icon {
+  cursor: pointer;
+}
+option:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+.form textarea {
+  width: 90%;
+  height: 80px;
+  margin-top: 20px;
+  /* margin-left: 10px; */
+  /* display: flex;
+  justify-content: center; */
+  border-radius: 8px;
+  padding: 7px;
+  border: none;
+  outline: none;
+  color: black;
+  box-shadow: 4px 8px 8px rgba(128, 128, 128, 0.466);
+}
+
+.form input[type="file"] {
+  width: 400px;
+  padding: 10px;
+  margin-bottom: -30px;
+  background-color: white;
+}
+.form input[type="file"]:hover {
+  cursor: pointer;
+}
+.form-content > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* gap: 10px; */
+}
+
+.form .socialmedia-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* margin-left: 20px; */
+  /* gap: 10px; */
+}
+.socialmedia-section input {
+  width: 350px;
+}
+.socialmedia-icon,
+.cross-btn {
+  border: none;
+  margin-top: 20px;
+  padding: 7px;
+  background-color: white;
+}
+.socialmedia-section .add-icon,
+.socialmedia-section .cross-btn {
+  font-size: 25px;
+  color: orangered;
+}
+
+.socialmedia-section > div {
+  display: flex;
+}
+
+#submit-btn-section {
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.submit-btn {
+  width: 120px;
+  height: 40px;
+  margin: 20px 0;
+  background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: 4px 8px 8px gray;
+  transition: ease 0.5s;
+}
+.submit-btn:hover {
+  cursor: pointer;
+}
+.submit-btn:active {
+  transform: scale(0.93);
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+/* @media only screen and (max-width: 1600px) {
+  .form textarea,
+  .profile-image-section {
+    margin-left: 20px;
+  }
+} */
+
+@media only screen and (max-width: 1290px) {
+  .form-section {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  .form-section {
+    width: 98%;
+  }
+  form input,
+  form select {
+    width: 250x;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .main {
+    width: 100%;
+  }
+  .main .down,
+  .links .down {
+    display: flex;
+  }
+
+  .form-section {
+    width: 60%;
+  }
+  .form input,
+  .form select {
+    width: 300x;
+  }
+  .form-content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form textarea {
+    width: 300px;
+    height: 80px;
+    overflow: scroll;
+  }
+  .socialmedia-section input {
+    width: 260px;
+  }
+  .form .socialmedia-section {
+    align-items: center;
+  }
+  .form input[type="file"] {
+    width: 300px;
+  }
+  .profile-image-section {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 820px) {
+  /* .form textarea {
+    margin-left: 0;
+    width: 70%;
+  } */
+  .profile-image-section {
+    margin-left: 0;
+  }
+}
+/* @media only screen and (max-width: 770px) {
+  .form textarea {
+    width: 80%;
+  }
+} */
+@media only screen and (max-width: 650px) {
+  .main {
+    padding: 10px;
+  }
+  .form-section {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .head-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .name-section {
+    width: 100%;
+  }
+  .searchbar-section {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .search-bar {
+    box-shadow: 0px 0px 2px 2px rgb(163, 160, 160);
+  }
+  .form-section {
+    width: 90%;
+  }
+
+  .socialmedia-section input {
+    width: 250px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .form-section {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .container,
+  .main {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .form input,
+  .form select {
+    width: 250px;
+  }
+  .socialmedia-section input {
+    width: 180px;
+  }
+  .form textarea {
+    width: 250px;
+  }
+}
