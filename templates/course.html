@@ -30,23 +30,22 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 </head>
 
 <body>
-  <form class="popup-form" id="popup-form" method="post" >
-    {% csrf_token %}
+  <form class="popup-form" id="popup-form">
     <div class="popup-form-content">
       <div class="close" id="popup-close">&times;</div>
       <lable for="name" id="name">Name</lable>
-      <input id="name" type="text" name="name_" />
+      <input id="name" type="text" />
       <lable for="email" id="email">Email</lable>
-      <input id="email" type="email" name="email_"/>
+      <input id="email" type="email" />
       <lable for="mobile" id="mobile">Mobile</lable>
-      <input id="mobile" type="text" name="mobile_"/>
+      <input id="mobile" type="text" />
       <label for="professionSelect" id="professionLabel">Profession</label>
-      <select id="professionSelect" name="profession_">
+      <select id="professionSelect">
         <option value="student">Student</option>
         <option value="teacher">Passed out</option>
         <option value="engineer">Working Professional</option>
       </select>
-      <button type="submit" class="popup-submit">Submit</button>
+      <button type="button" class="popup-submit">Submit</button>
     </div>
   </form>
   <div class="containerr">
@@ -205,7 +204,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   <!-- Course Highlights -->
   <section class="section-three">
     <div>
-      <h2><span> Course </span> Highlights</h2>
+      <h2><span class="underline"> Course </span> Highlights</h2>
       <ul>
         <li>
           <i class="fa-solid fa-graduation-cap"></i>
@@ -306,7 +305,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   <!-- Testimonials -->
   <section class="testimonial">
     {% for course in courses %}
-    <h1 class="testimonial-heading"><span class="underline">Testimonials for<Span> {{ course.category.name }}</span></h1>
+    <h1 class="testimonial-heading">Testimonials for<span class="underline"> {{ course.category.name }}</span></h1>
     <div class="slide-container swiper">
         <div class="slide-content">
             <div class="card-wrapper swiper-wrapper">
@@ -338,7 +337,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   <section class="Right-course">
     <h2>
       Join With Us <br />
-      Find the <span>Right Course</span>
+      Find the <span class="underline">Right Course</span>
     </h2>
     <div class="slider_wrapper">
       <div class="splide">
@@ -455,7 +454,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <!-- Awaits amazing_career -->
     <section class="amazing_career">
       <div class="amazing-container">
-        <h2 class="amazing_heading">Amazing <span>Career</span></h2>
+        <h2 class="amazing_heading">Amazing <span class="underline">Career</span></h2>
         <!-- <div class="awaits">Awaits!</div> -->
         <p class="grab_offer">Grab these exclusive offers available only once a year.</p>
         <div class="buy_course_container">
