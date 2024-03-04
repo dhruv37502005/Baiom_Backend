@@ -109,7 +109,7 @@ header .nav-item a {
 
   header .nav-item a,
   header button {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   #nav-courses-one .dropdown-toggle + .dropdown-menu > .nav-link {
@@ -325,7 +325,7 @@ header img {
   }
 
   .laptop {
-    display: none;
+    display: none !important;
   }
 
   .home-section .row p:not(.about-slide) {

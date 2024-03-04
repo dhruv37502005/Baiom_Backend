@@ -405,27 +405,38 @@ body {
   font-size: 1.4rem;
   font-weight: 700;
   color: rgb(3, 3, 72) !important;
+  text-align: left;
 }
 .section-three p {
   color: #777;
   font-weight: 500;
   font-size: 1.1rem;
 }
-/* @media (max-width: 1290px) { 
-  .section-three ul {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    list-style: none;
-    width: 60rem;
-    row-gap: 1.8rem;
-    column-gap: 6rem;
-    text-align: center;
-    justify-items: center;
-  }
-}*/
 
-@media (max-width: 1024px) {
+@media (max-width: 1360px) {
+  .section-three ul {
+    width: 60rem;
+    column-gap: 2rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .section-three ul {
+    width: 60rem;
+    column-gap: 1.5rem;
+    padding-left: 2rem;
+    grid-template-columns: 0.8fr 0.8fr;
+  }
+
+  .section-three li {
+    font-size: 8px;
+    gap: 1.5rem;
+    width: 25rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 1060px) {
   .section-three ul {
     display: flex;
     flex-direction: column;
@@ -436,14 +447,38 @@ body {
     width: 100%;
   }
 }
-
-@media (max-width: 360px) {
+@media (max-width: 560px) {
+  .section-three h2 {
+    padding: 40px;
+  }
+  .section-three li {
+    width: 350px;
+  }
+}
+@media (max-width: 480px) {
   .section-three li {
     font-size: 12px;
     justify-content: center;
-    width: 200px;
+    text-align: left;
+    width: 250px;
+  }
+  .section-three h2 {
+    padding: 20px;
   }
 }
+
+@media (max-width: 380px) {
+  .section-three ul {
+    font-size: 1rem;
+  }
+  .section-three .fa-solid {
+    font-size: 1.5rem;
+  }
+  .section-three {
+    margin: 0 -60px;
+  }
+}
+
 /* --------------------------- SECTION FOUR ------------------------------ */
 .section-four h2 {
   color: rgb(1, 1, 68);
