@@ -10,10 +10,11 @@ from .models import Contact
 login_required(login_url='/userauths/login/')
 def itie(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        mobile = request.POST.get('mobile')
-        contact_obj = Contact(name=name,email=email,mobile=mobile)
+        name_ = request.POST.get('name_')
+        email_ = request.POST.get('email_')
+        mobile_ = request.POST.get('mobile_')
+        profession_ = request.POST.get('profession_')
+        contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_)
         contact_obj.save()
         messages.success(request,'thank you for contacting us')
     courses = ICourse.objects.all()

@@ -1,3 +1,4 @@
+
 // adding cross icon onclick in navbar
 const navBartoggler = document.querySelector(".navbar-toggler")
 const navIcon = document.querySelector(".navbar-toggler-icon")
@@ -69,7 +70,7 @@ document.querySelectorAll(".nav-courses-list>li").forEach((listItem)=>{
 const navbarCoursesDropdownMenu = document.querySelector("#navbarDropdown-subcourses")
 const navbarDropdown = document.querySelector("#nav-courses-one")
 
-navbarDropdown.onclick = ()=>{
+navbarDropdown.addEventListener("click", ()=>{
   const navbarCoursesDropdownMenu = document.querySelector("#nav-courses-one .dropdown-menu")
 
   if(navbarCoursesDropdownMenu.style.display !== "block"){
@@ -78,7 +79,7 @@ navbarDropdown.onclick = ()=>{
     navbarCoursesDropdownMenu.style.display = "none";
   }
 
-}
+})
 
 navbarCoursesDropdownMenu.onclick = ()=>{
   const navbarCoursesDropdownMenu = document.querySelector("#nav-courses-one .dropdown-menu")
