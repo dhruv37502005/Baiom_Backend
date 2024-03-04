@@ -1,3 +1,5 @@
+
+
 var carousel = document.getElementById("testi");
 var firstCardWidth = carousel.querySelector(".testimonials").offsetWidth;
 var arrowBtns = document.querySelectorAll(".temp i");
@@ -45,7 +47,8 @@ var splide = new Splide('.splide', {
   perMove: 1,
   gap: '2rem',
   padding: '1rem',
-  autowidth: 'true',
+  // autowidth: 'true',
+  fixedWidth:'30%',
   type: 'loop',
   drag: 'free',
   snap: true,

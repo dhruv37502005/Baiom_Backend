@@ -257,7 +257,8 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 30rem;
+  gap: 1.5rem;
 }
 
 .contact-more-info h3 {
@@ -498,6 +499,7 @@ img {
 
   .hiring-sec {
     flex-direction: column;
+    align-items: center;
   }
 
   .hiring-sec-box {
@@ -572,7 +574,7 @@ img {
   /* FAQ */
   .container-main {
     flex-direction: column;
-    margin: 10px 50px;
+    margin: 5rem 50px;
   }
 
   .img {

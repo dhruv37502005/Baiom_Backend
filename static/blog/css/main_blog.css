@@ -149,6 +149,12 @@ section {
 
 /* swiper */
 
+.swiper-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust as needed: space-around, , etc. */
+}
+
 .swipe {
   /* background-color: #6221fb; */
   padding: 150px 5%;
@@ -201,7 +207,7 @@ section {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .swipe {
     padding-top: 70px;
     padding-bottom: 40px;
@@ -240,6 +246,14 @@ section {
 
   #courses {
     padding: 0 50px !important;
+
+    /* flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    transition: transform 0.3s ease-in-out; */
   }
 }
 

@@ -148,11 +148,12 @@ body {
 }
 
 .topsection1-content .content > p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 2rem;
   margin-bottom: 50px;
   font-weight: 500;
   color: #383636;
+  text-align: center;
 }
 .topsection1-button {
   display: flex;
@@ -164,7 +165,8 @@ body {
   height: 70px;
   width: 300px;
   margin-bottom: 40px;
-  background-color: orangered;
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+
   border-radius: 20px;
   color: white;
   font-size: 1rem;
@@ -387,6 +389,22 @@ body {
   text-align: left;
 }
 
+@media (max-width: 1250px) {
+  .section-three ul {
+    width: 60rem;
+    column-gap: 1.5rem;
+    padding-left: 2rem;
+    grid-template-columns: 0.8fr 0.8fr;
+  }
+
+  .section-three li {
+    font-size: 8px;
+    gap: 1.5rem;
+    width: 25rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
 @media (max-width: 920px) {
   .section-three ul {
     display: flex;
@@ -403,11 +421,11 @@ body {
     padding: 40px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 420px) {
   .section-three li {
     font-size: 12px;
     justify-content: center;
-    width: 200px;
+    width: 250px;
   }
   .section-three h2 {
     padding: 20px;
@@ -756,6 +774,45 @@ input[type="radio"] {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 980px) {
+  .section-entrepreneur {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .section-entrepreneur .content {
+    width: 70%;
+  }
+  .section-entrepreneur .image {
+    margin-left: 50% 50%;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+  }
+  .section-entrepreneur h2 {
+    padding: 15px;
+  }
+  .section-entrepreneur p {
+    padding: 15px;
+    line-height: 1.7rem;
+  }
+  .section-entrepreneur h6 {
+    text-align: center;
+    padding: 15px;
+    margin-left: 10px;
+  }
+
+  .section-entrepreneur img {
+    height: 70%;
+    width: 70%;
+  }
+}
+@media (max-width: 560px) {
+  .section-entrepreneur img {
+    height: 90%;
+    width: 90%;
+  }
+}
 
 /* --------------------------- SECTION FIVE ------------------------------ */
 .section-five {
@@ -983,7 +1040,8 @@ input[type="radio"] {
   /* width: 1400px !important; */
 }
 .section-seven .splide__slide {
-  width: 30% !important;
+  /* width: 30%; */
+  /* margin-right: 1rem !important; */
   margin: 20px;
   display: flex;
   justify-content: center;
