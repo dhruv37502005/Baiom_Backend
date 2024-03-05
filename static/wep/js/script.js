@@ -1,4 +1,6 @@
-var carousel = document.querySelector(".carousel");
+
+
+var carousel = document.getElementById("testi");
 var firstCardWidth = carousel.querySelector(".testimonials").offsetWidth;
 var arrowBtns = document.querySelectorAll(".temp i");
 // var popup_form = document.getElementById("popup-form");
@@ -40,29 +42,33 @@ arrowBtns.forEach((btn) => {
 // })
 
 
+var splide = new Splide('.splide', {
+  perPage: 3,
+  perMove: 1,
+  gap: '2rem',
+  padding: '1rem',
+  // autowidth: 'true',
+  fixedWidth:'30%',
+  type: 'loop',
+  drag: 'free',
+  snap: true,
+  pagination: true,
 
+  breakpoints: {
+    640: {
+      perPage: 2,
+      gap: '.7rem',
+      // height:'6rem',
 
-var accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+    },
+    480: {
+      perPage: 1,
+      gap: '.7rem',
+      // height:'6rem',
 
-accordionItemHeaders.forEach((accordionItemHeader) => {
-  accordionItemHeader.addEventListener("click", () => {
-    const isActive = accordionItemHeader.classList.contains("active");
-    
-    closeAllAccordionItems();
-
-    if (!isActive) {
-      accordionItemHeader.classList.add("active");
-      const accordionItemBody = accordionItemHeader.nextElementSibling;
-      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-    }
-  });
+    },
+  },
 });
 
-function closeAllAccordionItems() {
-  const activeAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-  if (activeAccordionItemHeader) {
-    activeAccordionItemHeader.classList.remove("active");
-    activeAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-  }
-}
+splide.mount();
 

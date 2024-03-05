@@ -26,7 +26,7 @@ body {
   padding: 3rem;
   margin-top: 3rem;
   justify-content: space-evenly;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .first-half .text-div {
@@ -111,7 +111,7 @@ body {
 
 .second-half h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   /* font-weight: bold; */
   font-weight: 700;
 }
@@ -126,6 +126,7 @@ body {
 .second-half p {
   font-size: 1.1rem;
   color: gray;
+  margin-bottom: 4rem;
 }
 
 .second-half img {
@@ -168,7 +169,7 @@ p {
   /* background-color: blanchedalmond; */
   background-color: white;
   /* padding-top: 4rem; */
-  padding-bottom: 3rem;
+  padding-bottom: 6rem;
 }
 
 .second .text-div {
@@ -195,7 +196,7 @@ p {
 }
 
 .second .text-div p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: grey;
   margin: 2rem auto 3rem;
 }
@@ -230,7 +231,7 @@ p {
 }
 
 .second ul p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-left: 0.5rem;
   color: #031864;
   font-weight: bold;
@@ -239,7 +240,7 @@ p {
 /* Third */
 .third {
   /* padding-top: 5rem; */
-  padding-bottom: 0.5rem;
+  padding-bottom: 4rem;
 }
 
 .third .text-div {
@@ -265,17 +266,18 @@ p {
 
 .third .text-div p,
 .slider1 .textp {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: gray;
   margin-bottom: 2rem;
   text-align: center;
-  margin: 2rem auto 2rem;
+  margin: 2rem auto 4rem;
 }
 
 .third .program {
   display: flex;
   justify-content: center;
   /* margin-top: 3rem;   */
+  margin-bottom: 7rem;
 }
 
 .third .program-text {
@@ -340,14 +342,14 @@ p {
   /* margin: 2rem auto 2rem; */
 }
 .slider1 h1 {
-  font-size: 50px;
+  font-size: 3rem;
   margin: auto;
   margin-bottom: 1.5rem;
   color: #031864;
   /* font-weight: bold; */
   font-weight: 700;
   text-align: center;
-  /* margin-top: 11rem; */
+  /* margin-top: 7rem; */
 }
 
 .slider1 h1 span {
@@ -368,7 +370,7 @@ p {
 }
 
 .slider2 h1 {
-  font-size: 50px;
+  font-size: 3rem;
   margin-bottom: 2.5rem;
   color: #031864;
   /* font-weight: bold; */
@@ -734,18 +736,18 @@ footer .contact-us p div i {
 }
 
 .slider1 .content h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   text-align: center;
   background: -webkit-linear-gradient(45deg, #fa2424, #fb8721);
   /* -webkit-background-clip: text; */
   /* -webkit-text-fill-color: transparent; */
-  width: 5rem;
+  width: 6rem;
   border-radius: 50%;
   padding: 1rem;
   color: white;
 }
 .slider1 .content p {
   color: #031864;
-  text-align: justify;
+  text-align: center;
 }
