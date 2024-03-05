@@ -616,8 +616,7 @@
       .dropdown {
         position: relative;
         padding: 0;
-        margin-right: 1em;
-
+        margin: 0 0.5em;
         border: none;
       }
       .dropdown:visited {
@@ -767,7 +766,9 @@
             <li class="nav-item">
               <details class="dropdown">
                 <summary role="button">
-                  <a class="button nav-link">Company</a>
+                  {% url 'core:career' as urlcareer %}
+                  {% url 'core:hire_from_us' as urlhirefrom %}
+                  <a class="button {% if request.path == urlcareer or request.path == urlhirefrom %}isactive{% endif %} ">Company</a>
                 </summary>
                 <ul>
               
@@ -791,6 +792,7 @@
               </li>
               <li class="nav-item">
                 <details class="dropdown">
+                  {% url 'core:course' as course %}
                   <summary role="button">
                     <a class="button {% if request.path == course %}isactive{% endif %}">Courses</a>
                   </summary>
@@ -803,6 +805,13 @@
                       >
                     </li>
                     {% endfor %}
+                    <li>
+                      <a
+                        href="{% url 'core:course' %}" style="font-size: 18px;text-decoration: underline;" 
+                        class="button {% if request.path == course %}isactive{% endif %}"
+                        >Explore All Courses</a
+                      >
+                    </li>
                   </ul>
                 </details>
                 <!-- <ul class="sub-courses-list"></ul> -->
