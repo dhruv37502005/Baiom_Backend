@@ -40,19 +40,20 @@
   <div class="main-blog">
     <div class="blog-left">
       <div class="blog-left1">
-        <img src="../images/blog1.jpg" alt="" />
+        <img src="{{ post.category.image.url }}" alt="" />
 
         <div class="blog-left-icon">
           <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
-            {{post.created_by.username}}</span>
-          
+            {{ post.created_by.username }}</span>
+            <i class="fa fa-calendar" aria-hidden="true"> </i>{{ post.pub_date }}</span>
+            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments({{comments_count}})</a></span>
           <br />
           <br />
           
         </div>
 
         <div class="blog-content">
-          <h2>{{post.title}}</h2>
+          <h2>{{ post.title }}</h2>
           <br>
           
           <p>{{ post.content|linebreaks }}</p>
