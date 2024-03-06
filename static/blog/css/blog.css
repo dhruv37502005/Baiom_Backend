@@ -9,7 +9,7 @@
 }
 
 section {
-  padding: 130px 6%;
+  padding: 6% 6%;
   transition: all 0.4s ease;
 }
 
@@ -324,6 +324,7 @@ section {
 
 .blog-right {
   /* background-color: darkolivegreen; */
+  /* display: none; */
 }
 
 .blog-right .main-search {
@@ -483,6 +484,15 @@ section {
 .post1 .post-content span .fa {
   color: #e81212;
   padding-right: 10px;
+}
+
+.swiper-button-next {
+  right: -5px;
+}
+
+.comment-meta {
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 /* Media Query  */
