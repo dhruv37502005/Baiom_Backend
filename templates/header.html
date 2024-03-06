@@ -795,7 +795,7 @@
                     <a class="button {% if request.path == course %}isactive{% endif %}">Courses</a>
                   </summary>
                   <ul>
-                    {% for category in categories %}
+                    {% for category in cFs %}
                     <li>
                       <a
                         href="{% url 'course:category_courses' category_id=category.id %}" style="font-size: 18px" 
