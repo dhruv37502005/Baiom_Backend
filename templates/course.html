@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Development</title>
+  <!-- <title>Web Development</title> -->
 
   <link rel="stylesheet" href="{% static 'courses\css\style3.css' %}">
   <!-- <link rel="stylesheet" href="{% static 'courses\css\sidebar.css' %}"> -->
@@ -53,7 +53,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <div>
       <div class="topsection1-container">
         <div class="topsection1-content">
-          <h1>Earn upto 40LPA Package by becoming a <span>WEB DEVELOPER</span></h1>
+          {% for course in courses %}
+          <h1>Earn upto 40LPA Package by becoming a <span>{{course.title}}</span></h1>
+          {% endfor %}
           <p>
             <b>100+</b> Courses covering all tech domains for you to learn and
             explore new opportunities. Learn from Industry Experts and land your
