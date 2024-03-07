@@ -29,26 +29,26 @@
 
 
 
-<section>
+<section class="margin-top:40px">
   <div class="main-blog">
     <div class="blog-left">
       <div class="blog-left1">
         {% if category.image %}
-                    <img src="{{ category.image.url }}" alt="{{ category.name }}">
-                    {% endif %}
+
+            <img src="{{ category.image.url }}" alt="{{ category.name }}">
+        {% endif %}
+
 
         <div class="blog-left-icon">
           <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
-            BAOIAM</span>
+          {{ post.created_by.username }}</span>
           <span>
-            <i class="fa fa-calendar" aria-hidden="true"> </i>Feb,2023</span>
+            <i class="fa fa-calendar" aria-hidden="true"> </i>{{ post.pub_date }}</span>
           <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments(6)</a></span>
           <br />
           <br />
           <span class="icon-tag"><i class="fa fa-tag"></i>{{ category.name }}</span>
         </div>
-
-        {% for post in posts %}
         <div class="blog-content">
           <h2>{{post.title}}</h2>
           <br>
