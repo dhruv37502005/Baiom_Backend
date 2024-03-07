@@ -25,7 +25,8 @@ class CourseCarriculum(models.Model):
 class Course(models.Model):
     category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
+    program_overview = models.TextField(null=True, blank=True)
     instructor = models.CharField(max_length=50)
     image = models.ImageField(upload_to='course_images/', null=True, blank=True)
     video = models.FileField(upload_to='course_videos/',null=True, blank=True)
@@ -100,7 +101,7 @@ class Testimonial(models.Model):
     name = models.CharField(max_length=255)
     role = models.CharField(max_length=255)
     content = models.TextField()
-    image = models.ImageField(upload_to='CourseTestimonial_images/') 
+    image = models.ImageField(upload_to='CourseTestimonial_images/', null=True, blank=True) 
     category = models.ForeignKey(CourseCategory,blank=True, on_delete=models.CASCADE, related_name='testimonials') 
 
     def __str__(self):
@@ -115,13 +116,12 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.name
 
-class Testimonial(models.Model):
+class Contact(models.Model):
     name = models.CharField(max_length=255)
-    role = models.CharField(max_length=255)
-    content = models.TextField()
-    image = models.ImageField(upload_to='CourseTestimonial_images/') 
-    category = models.ForeignKey(CourseCategory,blank=True, on_delete=models.CASCADE, related_name='testimonials') 
-
+    email = models.EmailField()
+    mobile = models.CharField(max_length=20)
+    profession = models.CharField(max_length=20, null=True, blank=True)
+    
     def __str__(self):
         return self.name
 

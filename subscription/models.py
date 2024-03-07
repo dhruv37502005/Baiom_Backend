@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from bootcamp.models import BootCourse
 from course.models import Course, Batch
 import datetime
+from itie.models import ICourse
 from userauths.models import Dashboard_User
 
 # Create your models here.
@@ -24,8 +26,8 @@ class SubscriptionPlan(models.Model):
 
 
 class SubscriptionPlanCourse(models.Model):
-    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE,default='none')
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE, blank=True,null=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, blank=True, null=True)
     included_in_plan = models.BooleanField(default=True)
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
@@ -55,10 +57,10 @@ class SubscriptionPlanCourse(models.Model):
         
         
 class PurchaseCourse(models.Model):
-    dashboard_user = models.ForeignKey(Dashboard_User, on_delete=models.CASCADE, null=True)
-    purchased_course = models.ForeignKey(Course, on_delete=models.CASCADE,default='None', null=True)
-    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE,blank=True,default='none', null=True)
-    Batch = models.ForeignKey(Batch, on_delete=models.CASCADE, null=True, blank=True,default ='none')
+    dashboard_user = models.ForeignKey(Dashboard_User, on_delete=models.CASCADE, null=True, blank=True)
+    purchased_course = models.ForeignKey(Course, on_delete=models.CASCADE, null=True, blank=True)
+    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE,blank=True, null=True)
+    Batch = models.ForeignKey(Batch, on_delete=models.CASCADE, null=True, blank=True)
     purchase_date = models.DateField(auto_now_add=True)
     plans_duration_months = models.PositiveIntegerField(editable=False)
     purchase_start_date = models.DateField()
@@ -84,3 +86,28 @@ class PurchaseCourse(models.Model):
             # Calculate purchase_end_date based on purchase_start_date and plans_duration_months
             self.purchase_end_date = self.purchase_start_date + datetime.timedelta(days=30 * self.plans_duration_months)
         super().save(*args, **kwargs)
+
+
+class SubscriptionPlanItie(models.Model):
+    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE, blank=True,null=True)
+    itie_course = models.ForeignKey(ICourse, on_delete=models.CASCADE, blank=True, null=True)
+    included_in_plan = models.BooleanField(default=True)
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
+    active = models.BooleanField(default=True)
+    available_slots = models.IntegerField(default=-1)  # -1 for unlimited
+
+    def __str__(self):
+        return f"{self.subscription_plan.name} - {self.itie_course.title}"
+    
+class SubscriptionPlanBootcamp(models.Model):
+    subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE, blank=True,null=True)
+    bootcamp_course = models.ForeignKey(BootCourse, on_delete=models.CASCADE, blank=True, null=True)
+    included_in_plan = models.BooleanField(default=True)
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
+    active = models.BooleanField(default=True)
+    available_slots = models.IntegerField(default=-1)  # -1 for unlimited
+
+    def __str__(self):
+        return f"{self.subscription_plan.name} - {self.bootcamp_course.title}"

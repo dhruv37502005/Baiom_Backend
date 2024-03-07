@@ -12,8 +12,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
-from .models import CourseCategory
-from .models import Testimonial
+from .models import CourseCategory, Contact
 
 from django.utils import timezone
 from .models import Testimonial
@@ -25,10 +24,11 @@ from .serializers import CourseSerializer, CourseCategorySerializer, BatchSerial
 
 from rest_framework.response import Response
 
-@login_required(login_url='/userauths/login/')
+# @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
     testimonials = Testimonial.objects.all()
     category = get_object_or_404(CourseCategory, id=category_id)
+    request.session['category_ID'] = category.id
     courses = Course.objects.filter(category=category, status='active')
     categories = CourseCategory.objects.all()
     course = Course.objects.get(id=category_id)
@@ -174,3 +174,15 @@ class DownloadFileView(View):
         response['Content-Disposition'] = f'attachment; filename="{file_name}"'
 
         return response
+
+login_required(login_url='/userauths/login/')
+def course_contact(request):
+    if request.method == 'POST':
+        name_ = request.POST.get('name_')
+        email_ = request.POST.get('email_')
+        mobile_ = request.POST.get('mobile_')
+        profession_ = request.POST.get('profession_')
+        contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_)
+        contact_obj.save()
+        messages.success(request,'thank you for contacting us')
+        return redirect('course:category_courses', category_id=request.session['category_ID'])
