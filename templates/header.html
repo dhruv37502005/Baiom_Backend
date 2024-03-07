@@ -30,6 +30,7 @@
       type="image/icon type"
       style="background-color: wheat"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <meta
       name="description"
       content="Baoiam is a fully-certified platform since 2020, helping millions of students through the entire world to achieve their personal and professional goals."
@@ -795,7 +796,7 @@
                     <a class="button {% if request.path == course %}isactive{% endif %}">Courses</a>
                   </summary>
                   <ul>
-                    {% for category in cFs %}
+                    {% for category in categories %}
                     <li>
                       <a
                         href="{% url 'course:category_courses' category_id=category.id %}" style="font-size: 18px" 
