@@ -1,6 +1,5 @@
-
-
 {% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -564,6 +563,7 @@
       .isactive {
         display: flex;
         align-items: center;
+        justify-content: center;
       }
       .nav-link {
         width: fit-content;
@@ -767,7 +767,9 @@
             <li class="nav-item">
               <details class="dropdown">
                 <summary role="button">
-                  <a class="button nav-link">Company</a>
+                  {% url 'core:career' as urlcareer %}
+                  {% url 'core:hire_from_us' as urlhire %}
+                  <a class="button nav-link {% if request.path == urlcareer or request.path == urlhire %}isactive{% endif %}">Company</a>
                 </summary>
                 <ul>
               
@@ -781,7 +783,7 @@
                   </li>
                   <li>
                     <a
-                    class="dropdown-item {% if request.path == urlhirefrom %}isactive{% endif %}"
+                    class="dropdown-item {% if request.path == urlhire %}isactive{% endif %}"
                     href="{% url 'core:hire_from_us' %} "
                     style="font-size: 18px"
                     >Hire from us</a
@@ -789,10 +791,11 @@
                   </li>
                 </ul>
               </li>
+              <!-- random -->
               <li class="nav-item">
                 <details class="dropdown">
                   <summary role="button">
-                    <a class="button {% if request.path == course %}isactive{% endif %}">Courses</a>
+                    <a class="button {% if '/course/categories/' in request.path %}isactive{% endif %}">Courses</a>
                   </summary>
                   <ul>
                     {% for category in categories %}

@@ -120,6 +120,12 @@ body {
   z-index: 1;
   margin-top: 70px;
 }
+/* @media (max-width: 420px) {
+  .ac-main h1 {
+    font-size:2rem;
+    padding-bottom: 4rem;
+  }
+} */
 
 .topsection1-content .content > h1 {
   font-size: 3rem;
@@ -128,6 +134,27 @@ body {
   line-height: 5.5rem;
   text-align: center;
 }
+
+@media (max-width: 320px) {
+  .topsection1-content .content > h1{
+    font-size: 25px;
+    margin-bottom:36px;
+    line-height: 2.5rem;
+  }
+  .topsection1-content .content > h1 > span:after{
+    /* content: "";
+    position: absolute;
+    top: 62px;
+    left: 5px;
+    height: 50px;
+    width: 100%;
+    border: solid 2px orangered;
+    border-color: orangered transparent transparent transparent;
+    border-radius: 0%; */
+    display:none;
+  }
+}
+
 .topsection1-content .content > h1 > span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
@@ -154,6 +181,12 @@ body {
   font-weight: 500;
   color: #383636;
   text-align: center;
+}
+
+@media (max-width: 320px){
+  .topsection1-content .content > p {
+    font-size: 18px;
+  }
 }
 .topsection1-button {
   display: flex;
@@ -303,11 +336,28 @@ body {
   }
   .section-two p {
     padding: 20px;
+    text-align: center;
   }
   .section-two h6 {
     padding: 20px;
   }
 }
+@media (max-width: 320px) {
+  .section-two h2 {
+    font-size: 38px;
+    margin-bottom:36px;
+    line-height: 2.5rem;
+  }
+  .section-two h2 span{
+     font-size: 51px;
+    margin-bottom:36px;
+    line-height: 8rem;
+  }
+
+  .section-two h6{
+    padding:71px;
+  }
+  }
 
 /* --------------------------- SECTION THREE ------------------------------ */
 
@@ -590,11 +640,13 @@ body {
 }
 @media (max-width: 440px) {
   .cards .card .content p {
-    font-size: 20px;
+    font-size: 16px;
     text-wrap: wrap;
+    margin-left: -2px;
+    text-align: left;
   }
   .main-card .cards .card {
-    padding: 2px;
+    padding: 15px;
     margin: 0;
   }
   .slider1 .container .main-card {
@@ -686,6 +738,8 @@ input[type="radio"] {
   .slider1 h1 {
     margin-top: 5rem;
     padding: 0 2rem;
+    text-align:center;
+    font-size:2rem;
   }
   .slider1 .textp {
     font-size: 1.3rem;
@@ -714,7 +768,7 @@ input[type="radio"] {
     padding: 2rem;
   }
   .slider1 .content .bold {
-    font-size: 2.2rem;
+    font-size: 1.2rem;
   }
   .slider1 .content p {
     font-size: 1.6rem;
@@ -812,6 +866,21 @@ input[type="radio"] {
     height: 90%;
     width: 90%;
   }
+  
+.section-entrepreneur h2 {
+  padding: 15px;
+  font-size: 2rem;
+  margin-left: -23px;
+}
+.section-entrepreneur p{
+  margin-left:-29px;
+  text-align:center;
+}
+.section-entrepreneur h6{
+  margin-left:-33px;
+  padding:35px;
+
+}
 }
 
 /* --------------------------- SECTION FIVE ------------------------------ */
@@ -902,6 +971,13 @@ input[type="radio"] {
   }
   .section-five h2 {
     margin-right: 20px;
+  }
+}
+@media (max-width: 420px) {
+  .section-five h2{
+    font-size:2rem;
+    padding-right:23rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -1421,6 +1497,13 @@ input[type="radio"] {
   align-items: center;
   height: 5rem;
   gap: 2rem;
+}
+
+@media(max-width:320px){
+  .amazing_career .timer{
+    width:auto;
+    gap:1rem;
+  }
 }
 .amazing_career .timer span {
   color: brown;
