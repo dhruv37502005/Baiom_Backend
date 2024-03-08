@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from subscription.models import SubscriptionPlan, SubscriptionPlanCourse, PurchaseCourse
+from subscription.models import *
 
 # Register your models here.
 
@@ -23,3 +23,23 @@ class PurchaseCourseAdmin(admin.ModelAdmin):
 
 admin.site.register(PurchaseCourse, PurchaseCourseAdmin)
 # admin.site.register(PurchaseCourse)
+
+class SubscriptionPlanItieAdmin(admin.ModelAdmin):
+    list_display = ('subscription_plan_name', 'itie_course_name', 'active')
+
+    def subscription_plan_name(self, obj):
+        return obj.subscription_plan.name
+
+    def itie_course_name(self, obj):
+        return obj.itie_course.title
+admin.site.register(SubscriptionPlanItie,SubscriptionPlanItieAdmin)
+
+class SubscriptionPlanBootcampAdmin(admin.ModelAdmin):
+    list_display = ('subscription_plan_name', 'bootcamp_course_name', 'active')
+
+    def subscription_plan_name(self, obj):
+        return obj.subscription_plan.name
+
+    def bootcamp_course_name(self, obj):
+        return obj.bootcamp_course.title
+admin.site.register(SubscriptionPlanBootcamp,SubscriptionPlanBootcampAdmin)

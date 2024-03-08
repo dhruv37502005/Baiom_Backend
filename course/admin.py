@@ -32,3 +32,5 @@ admin.site.register(Resource, ResourceAdmin)
 admin.site.register(Testimonial)
 
 admin.site.register(Contact)
+
+#dhruv
