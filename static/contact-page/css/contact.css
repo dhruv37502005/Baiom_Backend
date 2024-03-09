@@ -113,6 +113,7 @@ section {
   -webkit-text-fill-color: transparent;
   border-bottom: 1px solid red;
   font-size: 43px;
+  
 }
 
 .contact-left-1 p {
@@ -120,7 +121,8 @@ section {
   padding: 15px 0px;
   font-size: 1.3rem;
   font-weight: 500;
-  color: #9a9bb2;
+  color: #696969;
+  padding-bottom:3rem;
 }
 
 .contact-left-1 .contact-item {
@@ -169,6 +171,7 @@ section {
   padding-top: 5px;
   padding-bottom: 0;
   width: 100%;
+  color:#696969;
 }
 
 .contact-item .contact-menu h4 {
@@ -273,6 +276,14 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-bottom: 30px;
   border-radius: 10px;
   background-color: rgb(247, 249, 249);
+}
+
+@media(max-width:320px)
+{
+  .input-icons span{
+    padding:10px;
+    inline-size: 212px;
+  }
 }
 
 .input-icons span input {

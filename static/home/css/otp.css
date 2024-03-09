@@ -336,6 +336,7 @@ input[type="number"]::-webkit-outer-spin-button {
 @media screen and (max-width: 540px) {
   form {
     margin: 0;
+    padding-top: 6rem;
   }
 
   .box_1 h2 {
@@ -423,6 +424,7 @@ input[type="number"]::-webkit-outer-spin-button {
 @media (max-width: 776px) {
   form {
     margin-left: 0;
+    padding-top:6rem;
   }
 }
 
