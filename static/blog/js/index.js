@@ -37,8 +37,8 @@ var swiper = new Swiper(".mySwiper", {
       });
 
       // adding cross icon onclick in navbar
-const navBartoggler = document.querySelector(".navbar-toggler")
-const navIcon = document.querySelector(".navbar-toggler-icon")
+//const navBartoggler = document.querySelector(".navbar-toggler")
+//const navIcon = document.querySelector(".navbar-toggler-icon")
 
 navBartoggler.addEventListener('click',function(){
     // if(navIcon.classList.contains("navbar-toggler-icon")){
