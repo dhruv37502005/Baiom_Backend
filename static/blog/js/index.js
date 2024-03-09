@@ -39,6 +39,7 @@ var swiper = new Swiper(".mySwiper", {
     });
 
       // adding cross icon onclick in navbar
+
 // var navBartoggler = document.querySelector(".navbar-toggler")
 // var navIcon = document.querySelector(".navbar-toggler-icon")
 

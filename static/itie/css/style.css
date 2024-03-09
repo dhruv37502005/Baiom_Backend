@@ -119,6 +119,34 @@ body {
   line-height: 5rem;
   /* margin-bottom: 1rem; */
 }
+
+@media (max-width: 320px){
+  .section-one h1{
+    font-size: 2.5rem;
+    text-align:left;
+    line-height: 3rem;
+  }
+
+  .section-one h4{
+    font-size: 1.4rem !important;
+  }
+
+  .section-one p{
+    text-align: center;
+    margin-top: -4px;
+  }
+
+  .section-two p{
+    text-align: center !important;
+  }
+
+  .section-two h6{
+    margin-bottom: 5rem;
+    padding-top: 2rem;
+    text-align: center;
+  }
+
+}
 .section-one span {
   /* color: orangered; */
   background: -webkit-linear-gradient(90deg, #fb8721, #fa2424);
@@ -1075,8 +1103,8 @@ body {
 
 @media (max-width: 540px) {
   .amazing_career {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: -25px;
+    margin-right: -25px;
   }
 }
 
