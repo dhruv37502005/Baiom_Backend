@@ -10,6 +10,7 @@
 
 section {
   padding: 6% 6%;
+  margin-left: -30px !important;
   transition: all 0.4s ease;
 }
 

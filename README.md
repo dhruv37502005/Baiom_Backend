@@ -56,6 +56,7 @@ pip install social-auth-app-django
 pip install djangorestframework
 pip install -U chatterbot==1.0.4
 pip install pathlib --upgrade
+pip install django-import-export
 
 python manage.py makemigrations
 python manage.py migrate

@@ -37,7 +37,9 @@
 
             <img src="{{ category.image.url }}" alt="{{ category.name }}">
         {% endif %}
-        {% for post in posts %}
+
+
+       {% for post in posts %}
 
         <div class="blog-left-icon">
           <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
@@ -47,7 +49,7 @@
           <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments(6)</a></span>
           <br />
           <br />
-          <span class="icon-tag"><i class="fa fa-tag"></i>{{ category.name }}</span>
+          <!-- <span class="icon-tag"><i class="fa fa-tag"></i>{{ category.name }}</span> -->
         </div>
         <div class="blog-content">
           <h2>{{post.title}}</h2>
