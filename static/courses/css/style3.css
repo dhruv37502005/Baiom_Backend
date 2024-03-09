@@ -1232,6 +1232,10 @@ footer p {
   color: white !important;
 }
 
+.content:hover .temp {
+  -webkit-text-fill-color: #fff;
+}
+
 .swiper {
   margin-bottom: 6rem;
 }
@@ -1551,6 +1555,7 @@ footer p {
 
   .image {
     width: 100%;
+    /* font: optional;t */
   }
 
   .three .image > img {

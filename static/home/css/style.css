@@ -771,6 +771,24 @@ border-right: 1.5px solid #949494;
   margin-bottom: 1rem;
 }
 
+@media (max-width: 320px){
+.section-3 .horizon h2 {
+    margin-left:20px;
+}
+.section-3 .horizon .horizon-sub-heading {
+  margin-left:20px;
+}
+
+.section-3 .horizon .check{
+  padding-left:20px;
+  padding-bottom:3rem;
+}
+
+
+}
+
+
+
 @media (max-width: 576px) {
   .section-3 .horizon h2 {
     font-size: 25px;
