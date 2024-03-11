@@ -35,73 +35,61 @@
 <link rel="stylesheet" href="{% static 'blog\css\main_blog.css' %}">
 
 
-    <!--refer and earn SECTION-->
-    <div class="swipe">
-      <!-- Swiper -->
-      <div class="swiper mySwiper new" style="padding: 35px, 55px">
-        <div class="swiper-wrapper">
-          <!-- swiper1 -->
+<!--refer and earn SECTION-->
+<div class="swipe">
+  <!-- Swiper -->
+  <div class="swiper mySwiper new" style="padding: 35px, 55px">
+    <div class="swiper-wrapper">
+      <!-- swiper1 -->
 
-          {% for category in categories %}
-          
-          <div class="swiper-slide">
-            <section id="courses">
-              <div class="we__offer">
-                <div class="we__offer_card">
-                  <div class="course_img">
-                    {% if category.image %}
-                    <img src="{{ category.image.url }}" alt="{{ category.name }}">
-                    {% endif %}
+      {% for category in categories %}
 
-                    <div class="img-text">
-                      <div class="text" id="main_head">
-                        <i class="fa-regular fa-folder-closed">
-                          <span>{{category.name}} </span>
-                        </i>
-                      </div>
-                    </div>
-                  </div>
+      <div class="swiper-slide">
+        <section id="courses">
+          <div class="we__offer">
+            <div class="we__offer_card">
+              <div class="course_img">
+                {% if category.image %}
+                <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                {% endif %}
 
-                  <div class="we__offer_content">
-                    <div class="blog-icon">
-                      <span>
-                        <i class="fa fa-calendar" aria-hidden="true"></i
-                        >March,30 2023</span
-                      >
-                      <span class="blog-comment">
-                        <a href="#"
-                          ><i class="fa-regular fa-comment"></i>Comments(3)</a
-                        ></span
-                      >
-                    </div>
-                    <h2>
-                        {% if category.description %}
-                        <p>{{ category.description }}</p>
-                    {% endif %}
-                    </h2>
-
-                    <div class="subcontent">
-                      
-                        
-                      
-                      <br />
-                    </div>
-
-                    <a
-                    href="{% url 'blog:post_list_by_category' category.id %}"
-                      class="course_btn"
-                    >
-                      <span>Read</span> More</a
-                    >
+                <div class="img-text">
+                  <div class="text" id="main_head">
+                    <i class="fa-regular fa-folder-closed">
+                      <span style="font-weight: 700;">{{category.name}} </span>
+                    </i>
                   </div>
                 </div>
               </div>
-            </section>
-          </div>
-        </a>
-                  {% endfor %}
 
-          <!--
+              <div class="we__offer_content">
+                <div class="blog-icon" style="font-size: 0.97rem;">
+                  <span>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>Mar 30, 2023</span>
+                  <span class="blog-comment">
+                    <a href="#"><i class="fa-regular fa-comment"></i>Comments(3)</a></span>
+                </div>
+                <h2>
+                  {% if category.description %}
+                  {{ category.description }}
+                  {% endif %}
+                </h2>
+
+                <!-- <div class="subcontent">
+                  <br />
+                </div> -->
+
+                <a href="{% url 'blog:post_list_by_category' category.id %}" class="course_btn">
+                  <span>Read More</span></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      </a>
+      {% endfor %}
+
+      <!--
 
           <div class="swiper-slide">
             <section id="courses">
@@ -203,12 +191,11 @@
             </section>
           </div>
         -->
-        </div>
-        <div class="swiper-button-next nav-btn"></div>
-        <div class="swiper-button-prev nav-btn"></div>
-        <div class="swiper-pagination"></div>
-      </div>
     </div>
-    
-{% endblock content %}
+    <div class="swiper-button-next nav-btn"></div>
+    <div class="swiper-button-prev nav-btn"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
 
+{% endblock content %}
