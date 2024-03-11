@@ -21,6 +21,7 @@ def post_list_by_category(request, category_id):
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     comments = Comment.objects.filter(post=post)
+    comments_count = Comment.objects.filter(post=post).count()
     user=request.user
     categories=Category.objects.all()
     recent_posts = Post.objects.order_by('-pub_date')[:5]
@@ -36,4 +37,4 @@ def post_detail(request, post_id):
     else:
         form = CommentForm()
 
-    return render(request, 'post_detail.html', {'categories': categories,'post': post, 'comments': comments, 'form': form,'is_blog_details':True, 'user':user, 'recent_posts': recent_posts})
+    return render(request, 'post_detail.html', {'categories': categories,'post': post, 'comments': comments, 'form': form,'is_blog_details':True, 'user':user, 'recent_posts': recent_posts, 'comments_count':comments_count})

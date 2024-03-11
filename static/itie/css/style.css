@@ -7,19 +7,30 @@
 body {
   font-family: "Montserrat", "sans-serif", "Londrina Outline";
 }
+
+.underline {
+  position: relative;
+  background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid rgb(245, 69, 0);
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
 .containerr {
   margin-left: 60px;
   margin-right: 60px;
 }
 .popup-form {
   position: fixed;
-  height: 400px;
-  width: 700px;
+  height: 450px;
+  width: 400px;
   left: 20%;
-  top: 40%;
+  top: 23%;
   z-index: 3;
   background-color: white;
-  padding: 10px;
+  padding: 5px;
   box-shadow: 2px 2px 4px 2px gray;
   display: none;
 }
@@ -28,30 +39,55 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: 30px;
-  gap: 10px;
+  gap: 6px;
 }
+
 .popup-form .close {
   font-size: 40px;
   display: flex;
   margin-right: 30px;
   justify-content: flex-end;
 }
+
 .popup-form .close:hover {
   cursor: pointer;
 }
-.popup-form input {
-  width: 70%;
+
+.popup-form input,
+.popup-form option,
+.popup-form select {
+  width: 80%;
   height: 40px;
   border-radius: 10px;
   outline: none;
   border: 1px solid gray;
 }
+
 .popup-submit {
   width: 70px;
   height: 30px;
   margin-top: 10px;
-  padding: 3px;
-  border-radius: 10px;
+  padding: 2px;
+  border: 1px 1px solid orangered !important;
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 680px) {
+  .popup-form {
+    left: 20%;
+  }
+}
+@media screen and (max-width: 520px) {
+  .popup-form {
+    left: 10%;
+    width: 250px;
+  }
+  .popup-form input,
+  .popup-form option,
+  .popup-form select {
+    width: 90%;
+  }
 }
 
 /* --------------------------- SECTION ONE ------------------------------ */
@@ -64,7 +100,10 @@ body {
   width: 100%;
   background-repeat: no-repeat;
   margin-top: 3rem;
+  background-size: cover;
+  background-position: center top;
 }
+
 .section-one div {
   display: flex;
   flex-direction: column;
@@ -76,7 +115,37 @@ body {
 .section-one h1 {
   font-size: 3.5rem;
   font-weight: 700;
+  color: rgb(1, 1, 68);
+  line-height: 5rem;
   /* margin-bottom: 1rem; */
+}
+
+@media (max-width: 320px){
+  .section-one h1{
+    font-size: 2.5rem;
+    text-align:left;
+    line-height: 3rem;
+  }
+
+  .section-one h4{
+    font-size: 1.4rem !important;
+  }
+
+  .section-one p{
+    text-align: center;
+    margin-top: -4px;
+  }
+
+  .section-two p{
+    text-align: center !important;
+  }
+
+  .section-two h6{
+    margin-bottom: 5rem;
+    padding-top: 2rem;
+    text-align: center;
+  }
+
 }
 .section-one span {
   /* color: orangered; */
@@ -87,8 +156,8 @@ body {
 }
 .section-one .line {
   position: absolute;
-  left: 16rem;
-  top: 8rem;
+  left: 15rem;
+  top: 9rem;
   width: 260px;
   border: 4px solid gold;
   border-color: gold transparent transparent transparent;
@@ -240,19 +309,23 @@ body {
   background-color: #fff;
 }
 .section-two h2 {
-  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: rgb(1, 1, 68);
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
 }
+
+.section-two span {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .section-two p {
   font-size: 1.2rem;
   color: #777;
-  width: 100%;
+  width: 95%;
   font-weight: 500;
   line-height: 1.8;
   text-align: left;
@@ -313,9 +386,10 @@ body {
 .section-three h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
-  padding: 3rem 0 0 0;
+  margin-bottom: 3rem;
+  padding: 3rem 0 2.5rem 0;
   text-align: center;
+  color: rgb(1, 1, 68);
 }
 .section-three span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -328,17 +402,18 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   list-style: none;
-  width: 60rem;
+  width: 80rem;
   row-gap: 1.8rem;
   column-gap: 6rem;
   text-align: center;
   /* padding-left: 6rem; */
+  justify-items: center;
 }
 .section-three li {
   display: flex;
   gap: 2rem;
-  align-items: center;
-  width: 20rem;
+  align-items: flex-start;
+  width: 30rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #999;
 }
@@ -347,21 +422,49 @@ body {
   flex-direction: column;
   gap: 0.2rem;
   width: auto;
+  align-items: flex-start;
 }
 .section-three .fa-solid {
   color: orangered;
-  font-size: 1.4rem;
+  font-size: 2.5rem;
+  padding-top: 0.2rem;
 }
 .section-three h4 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 700;
+  color: rgb(3, 3, 72) !important;
+  text-align: left;
 }
 .section-three p {
   color: #777;
   font-weight: 500;
+  font-size: 1.1rem;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1360px) {
+  .section-three ul {
+    width: 60rem;
+    column-gap: 2rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .section-three ul {
+    width: 60rem;
+    column-gap: 1.5rem;
+    padding-left: 2rem;
+    grid-template-columns: 0.8fr 0.8fr;
+  }
+
+  .section-three li {
+    font-size: 8px;
+    gap: 1.5rem;
+    width: 25rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 1060px) {
   .section-three ul {
     display: flex;
     flex-direction: column;
@@ -372,22 +475,53 @@ body {
     width: 100%;
   }
 }
-
-@media (max-width: 360px) {
+@media (max-width: 560px) {
+  .section-three h2 {
+    padding: 40px;
+  }
+  .section-three li {
+    width: 350px;
+  }
+}
+@media (max-width: 480px) {
   .section-three li {
     font-size: 12px;
     justify-content: center;
-    width: 200px;
+    text-align: left;
+    width: 250px;
+  }
+  .section-three h2 {
+    padding: 20px;
   }
 }
-/* --------------------------- SECTION FOUR ------------------------------ */
 
+@media (max-width: 380px) {
+  .section-three ul {
+    font-size: 1rem;
+  }
+  .section-three .fa-solid {
+    font-size: 1.5rem;
+  }
+  .section-three {
+    margin: 0 -60px;
+  }
+}
+
+/* --------------------------- SECTION FOUR ------------------------------ */
 .section-four h2 {
+  color: rgb(1, 1, 68);
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
   padding: 3rem 0 0 0;
   text-align: center;
+}
+
+.section-four span {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .section-four .cards_container {
   display: grid;
@@ -395,13 +529,14 @@ body {
   gap: 2rem;
   margin: 0 auto;
   margin-top: 3rem;
-  width: 80rem;
+  width: 100%;
 }
 .section-four .cards {
   display: flex;
   flex-direction: column;
-  height: 26rem;
-  width: 19rem;
+  /* height: 26rem; */
+  width: 100%;
+  gap: 1rem;
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 1px 1px 8px 0px rgb(100, 100, 111);
@@ -409,7 +544,8 @@ body {
   cursor: pointer;
 }
 .section-four img {
-  height: 180px;
+  /* height: 180px; */
+  width: 100%;
   border-radius: 10px;
 }
 .section-four h4 {
@@ -426,7 +562,7 @@ body {
   font-weight: 500;
 }
 .section-four .timing p {
-  text-align: right;
+  text-align: left;
   color: orangered;
   font-size: 1rem;
   font-weight: 600;
@@ -444,20 +580,25 @@ body {
   width: 100%;
   position: relative;
   margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 .section-five h2 {
   font-size: 2.5rem;
+  text-align: center;
   font-weight: 700;
-  margin-bottom: 1rem;
-  padding-top: 3rem;
+  margin-bottom: 2rem;
+  padding-top: 4rem;
+  /* transform: translateX(-120px); */
+  color: rgb(1, 1, 68) !important;
+}
+
+.section-five h2 span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: translateX(-120px);
-  text-align: center;
 }
+
 .section-five .carousel {
   display: grid;
   grid-auto-flow: column;
@@ -471,6 +612,7 @@ body {
   align-items: center;
   /* height: 25rem; */
   overflow: hidden;
+  margin-bottom: 3rem;
 }
 
 .section-five .testimonials {
@@ -616,17 +758,18 @@ body {
   border-radius: 50px;
 }
 .section-seven h2 {
-  font-size: 2rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   text-align: center;
   padding-top: 1.5rem;
+  color: rgb(1, 1, 68);
 }
 .section-seven h2 span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 2rem;
+  font-size: 2.6rem;
   -webkit-text-fill-color: transparent;
 }
 
@@ -635,11 +778,13 @@ body {
   /* height: 24rem; */
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 70px;
+  margin-bottom: 6rem;
+}
 
-  /* FOR CAROUSERL */
+/* FOR CAROUSERL */
 
-  /* display: grid;
+/* display: grid;
     grid-auto-flow: column;
     grid-auto-columns: calc((100% / 3) - 30px);
     overflow-x: auto;
@@ -652,14 +797,13 @@ body {
     height: 24rem;
     overflow: hidden;
     justify-items: center; */
-}
 
 .section-seven .plans {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  width: 18rem;
-  height: 20rem;
+  width: 22rem;
+  height: 35rem;
   list-style: none;
   background: #fff;
   cursor: pointer;
@@ -668,6 +812,7 @@ body {
   border: 1px solid rgba(128, 128, 128, 0.493);
   box-shadow: 0px 0px 10px 0px rgba(100, 100, 111, 0.2);
   justify-content: space-between;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 630px) {
@@ -687,30 +832,44 @@ body {
 }
 
 .section-seven div h4 {
-  color: #777;
-  font-size: 1.5rem;
-  font-weight: 600;
+  color: rgb(1, 1, 68);
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 3rem;
+  margin-bottom: 1rem;
 }
+
+.section-seven .temp {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
 .section-seven div h6 {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: #777;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0.5rem;
+  /* margin-bottom: 2rem; */
 }
 .section-seven div h6 span {
   letter-spacing: 0.1rem;
   font-size: 1.4rem;
-  color: #777;
+  color: rgb(1, 1, 68);
   font-weight: 600;
 }
 .section-seven ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   color: #555;
   font-weight: 600;
 }
+
 .section-seven button {
   width: 15rem;
   padding: 0.8rem 1.5rem;
@@ -724,6 +883,7 @@ body {
   bottom: -1.4rem;
   letter-spacing: 1px;
   cursor: pointer;
+  align-self: center;
 }
 
 /* FOR CAROUSERL */
@@ -756,11 +916,11 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 1.5rem 0 4rem 0;
+  margin: 1.5rem 0 6rem 0;
 }
 .section-seven .easyEMI,
 .payAP {
-  width: 25rem;
+  width: 29rem;
   border: 1px solid rgba(255, 68, 0, 0.459);
   border-radius: 10px;
   padding: 0.5rem 1rem;
@@ -876,9 +1036,19 @@ body {
 }
 .amazing_heading {
   text-align: center;
-  margin: 1rem;
+  margin: 3rem 1rem;
   color: #040052;
+  font-size: 3rem;
+  font-weight: 700;
 }
+.amazing_heading span {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* font-size: 2rem; */
+  -webkit-text-fill-color: transparent;
+}
+
 .amazing-container {
   display: flex;
   flex-direction: column;
@@ -933,8 +1103,8 @@ body {
 
 @media (max-width: 540px) {
   .amazing_career {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: -25px;
+    margin-right: -25px;
   }
 }
 
@@ -1025,13 +1195,13 @@ body {
 }
 
 .amazing_career .timer {
-  margin-top: 1rem;
-  width: 40rem;
+  margin: 2rem auto;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 5rem;
-  gap: 2rem;
+  gap: 4%;
 }
 .amazing_career .timer span {
   color: brown;
@@ -1084,7 +1254,8 @@ body {
   text-align: center;
   color: #031864;
   font-weight: bold;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .ac-main h1 span {

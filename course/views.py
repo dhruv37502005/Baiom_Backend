@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.shortcuts import render, get_object_or_404
 from userauths.models import Dashboard_User
-from subscription.models import *
+from subscription.models import SubscriptionPlanCourse
 from userauths.models import Dashboard_User
 from .models import Course, CourseCategory, Batch #, Purchase
 from wsgiref.util import FileWrapper
@@ -12,10 +12,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
-from .models import CourseCategory
+from .models import CourseCategory, Contact
 
 from django.utils import timezone
-
+from .models import Testimonial
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.shortcuts import render, get_object_or_404
@@ -24,23 +24,26 @@ from .serializers import CourseSerializer, CourseCategorySerializer, BatchSerial
 
 from rest_framework.response import Response
 
-@login_required(login_url='/userauths/login/')
+# @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
     category = get_object_or_404(CourseCategory, id=category_id)
+    request.session['category_ID'] = category.id
     courses = Course.objects.filter(category=category, status='active')
     categories = CourseCategory.objects.all()
     course = Course.objects.get(id=category_id)
     batches = Batch.objects.get(course=course)
+    testimonials = Testimonial.objects.all()
     carriculum = course.curriculum.all()
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
+    program_overview = course.program_overview.split('\n') if course.program_overview else []
+
     print(f"subscription_course_plans: {subscription_course_plans}")
     
     user = request.user
     if user.is_authenticated:
         dash_user, created = Dashboard_User.objects.get_or_create(user=user)
         enrolled_courses = dash_user.enrolled_courses.all()
-        purchased_courses = PurchaseCourse.objects.filter(dashboard_user=dash_user)     
-        print(f"purchased_plans: {purchased_courses}") 
+      
         
         return render(request, 'course.html', {
             'is_category': True,
@@ -50,7 +53,8 @@ def category_courses(request, category_id):
             'categories': categories,
             'batch':batches,
             'subscription_course_plans':subscription_course_plans,
-            'purchased_courses':purchased_courses
+            'testimonials': testimonials,
+            'program_overview':program_overview,
         })
     else:
         return render(request, 'course.html', {'is_course': True, 'courses': courses})
@@ -168,3 +172,15 @@ class DownloadFileView(View):
         response['Content-Disposition'] = f'attachment; filename="{file_name}"'
 
         return response
+
+login_required(login_url='/userauths/login/')
+def course_contact(request):
+    if request.method == 'POST':
+        name_ = request.POST.get('name_')
+        email_ = request.POST.get('email_')
+        mobile_ = request.POST.get('mobile_')
+        profession_ = request.POST.get('profession_')
+        contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_)
+        contact_obj.save()
+        messages.success(request,'thank you for contacting us')
+        return redirect('course:category_courses', category_id=request.session['category_ID'])

@@ -9,6 +9,7 @@
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 /* section2 */
@@ -28,7 +29,7 @@ section {
   overflow: hidden;
   box-shadow: 0 0 25px 0 rgba(71, 69, 69, 0.4);
   transition: all 0.3s ease;
-  width: auto;
+  /* width: 500px; */
   margin-bottom: 30px;
   /* height: auto; */
   height: 620px;
@@ -148,9 +149,15 @@ section {
 
 /* swiper */
 
+.swiper-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust as needed: space-around, , etc. */
+}
+
 .swipe {
   /* background-color: #6221fb; */
-  padding: 150px 5%;
+  padding: 80px 5%;
 }
 
 .new {
@@ -173,6 +180,13 @@ section {
 .fa-xmark {
   font-size: 2rem;
 }
+
+.swiper-slide {
+  width: 33% !important;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 /* Resonsive */
 
 @media (max-width: 1300px) {
@@ -200,7 +214,7 @@ section {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .swipe {
     padding-top: 70px;
     padding-bottom: 40px;
@@ -239,6 +253,14 @@ section {
 
   #courses {
     padding: 0 50px !important;
+
+    /* flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    transition: transform 0.3s ease-in-out; */
   }
 }
 

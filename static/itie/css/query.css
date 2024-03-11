@@ -77,7 +77,25 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .section-four .cards_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media screen and (max-width: 800px) {
+  .section-one {
+    /* margin: 0 auto; */
+    position: relative;
+    /* background-image: url("../static/itie/img/img1.avif"); */
+    height: auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    margin-top: 3rem;
+    background-size: unset;
+    background-position: unset;
+  }
   .container-main {
     grid-template-columns: 1fr;
   }
@@ -94,13 +112,21 @@
   .accordion-item-body-content {
     font-size: 1rem;
   }
+
+  .section-four .cards_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+/* .ac-main h1 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+} */
 @media screen and (max-width: 600px) {
   .ac-main h1 {
     font-size: 2.3rem;
-    margin-bottom: 3rem;
-    margin-top: 0px;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
     text-align: center;
     color: #031864;
     font-weight: bold;
@@ -131,5 +157,11 @@
   }
   .accordion-item-header:hover {
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .section-four .cards_container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

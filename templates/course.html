@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Development</title>
+  <!-- <title>Web Development</title> -->
 
   <link rel="stylesheet" href="{% static 'courses\css\style3.css' %}">
   <!-- <link rel="stylesheet" href="{% static 'courses\css\sidebar.css' %}"> -->
@@ -30,33 +30,45 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 </head>
 
 <body>
-  <form class="popup-form" id="popup-form">
+  <form class="popup-form" id="popup-form" method="post" >
+    {% csrf_token %}
     <div class="popup-form-content">
       <div class="close" id="popup-close">&times;</div>
       <lable for="name" id="name">Name</lable>
-      <input id="name" type="text" />
+      <input id="name" type="text" name="name_" />
       <lable for="email" id="email">Email</lable>
-      <input id="email" type="email" />
+      <input id="email" type="email" name="email_"/>
       <lable for="mobile" id="mobile">Mobile</lable>
-      <input id="mobile" type="text" />
-      <button type="button" class="popup-submit">Submit</button>
+      <input id="mobile" type="text" name="mobile_"/>
+      <label for="professionSelect" id="professionLabel">Profession</label>
+      <select id="professionSelect" name="profession_">
+        <option value="student">Student</option>
+        <option value="teacher">Passed out</option>
+        <option value="engineer">Working Professional</option>
+      </select>
+      <button type="submit" class="popup-submit">Submit</button>
     </div>
   </form>
   <div class="containerr">
     <div>
-      <div class="topsection-head">
-        <!-- I'm interested -->
-
-        <div class="topsection-head-content">
-          <h1>Learn a <span>New Skill</span> Everyday, Anytime, and Anywhere.</h1>
+      <div class="topsection1-container">
+        <div class="topsection1-content">
+          {% for course in courses %}
+          <h1>Earn upto 40LPA Package by becoming a <span>{{course.title}}</span></h1>
+          {% endfor %}
           <p>
-            <b>1000+</b> Courses covering all tech domains for you to learn and
+            <b>100+</b> Courses covering all tech domains for you to learn and
             explore new opportunities. Learn from Industry Experts and land your
             Dream Job.
           </p>
+          <!-- <div class="topsection1-input">
+            <span class="material-symbols-outlined"> search </span>
+            <input type="text" placeholder="What to learn?" />
+            <button type="button">Explore</button>
+          </div> -->
           <div class="topsection1-countpart">
             <div>
-              <h1 class="first">1000+</h1>
+              <h1 class="first">50+</h1>
               <h3>Courses to choose from</h3>
             </div>
             <div>
@@ -64,22 +76,28 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               <h3>Students Trained</h3>
             </div>
             <div>
-              <h1 class="third">200+</h1>
+              <h1 class="third">150+</h1>
               <h3>Professional Trainers</h3>
             </div>
           </div>
-          <div class="topsection1-button">
-            <button class="interested" id="button-one">I AM INTERESTED</button>
-
-            <a href="#" class="broucher">
-              <button class="broucher">DOWNLOAD BROCHURE</button> </a>
-
-          </div>
         </div>
-      </div>
-      {% for course in courses %}
-      <div class="topsection1-container">
-        <div class="topsection1-content">
+        {% for course in courses %}
+        <div class="topsection1-image">
+            <img src="{% static 'courses/img/asset.jpg' %}" alt="image" />
+            {% for category in categories %}
+                {% if category.file and category.id == course.category.id %}
+                    <div class="topsection1-button">
+                        <button class="interested button-one" onclick="openForm()">I AM INTERESTED</button>
+                        <a href="{% url 'course:download_file' file_id=category.id %}" class="broucher">DOWNLOAD BROCHURE</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+      <!-- {% for course in courses %} -->
+      <!-- <div class="topsection1-container"> -->
+      <!-- <div class="topsection1-content">
+
 
           <section class="one">
             <div class="info">
@@ -97,20 +115,37 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <a href="{% url 'dashboard:enroll_course' course_id=course.id %}"><button class="btn-enroll">
                     Enroll Now </button></a>
               </div>
-              {% endif %}<br>
-              <h4>{{course.batch}}</h4>
+               <h4>{{course.title}} Carriculum</h4>
+                     <h4>{{course.carriculum_title}}</h4>
+                     <h4>{{course.carriculum_desc}}</h4> -->
+      <!--<h4>{{course.batch}}</h4>
               <h4>Batches for {{ course.title }}</h4>
               <ul>
 
                 <li>{{ batch.batch_name }} - Start Date: {{ batch.start_date }} - End Date: {{ batch.end_date }}</li>
-              </ul>
-              <!-- <div class="pic">
+              </ul> -->
+      <!-- <div class="pic">
                     {% if course.image %}
                             <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
                             {% else %}
                             <p>No image available</p>
                     {% endif %}
                   </div> -->
+      <!-- <div class="plan">
+                <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-3-27' %}"><button
+                    class="my-2 btn-enroll">
+                    3 Month Plan </button>
+                </a>
+                <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-6-27' %}"><button
+                    class="my-2 btn-enroll">
+                    6 Month Plan </button>
+                </a>
+                <a href="{% url 'dashboard:enroll_plan' course_id=course.id date='2024-9-27' %}"><button
+                    class="my-2 btn-enroll">
+                    9 Month Plan </button>
+                </a>
+              </div>
+              {% endif %}
           </section>
 
         </div>
@@ -123,424 +158,574 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           {% endif %}
 
         </div>
-      </div>
+      </div> -->
+      {% for course in courses %}
+      <div class="second-section-container">
+        <div class="second-section-div1">
+          <img src="{% static 'courses\img\Image 2.jpg' %}" alt="" />
+        </div>
 
+          <div class="second-section-div2">
+            <div>
+              <h1>{{course.title}}</h1>
+              <p>{{course.description}}</p>
+              <h3>Instructor: <b>{{course.instructor}}</b></h3>
+              <div class="flex-row">
+                <button class="btn-33">Enroll Now</button>
+                <button class=" btn-332">Connect with our Expert</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
 
+  </div>
 
 
-    <!-- Program overview -->
-    <section class="three">
-      <div class="why-web-dev-box">
-        <div class="why-web-dev">
-          <h3 id="why-web-dev-heading-1">
-            Program <span class="underline">Overview</span>
-          </h3>
-          <p>{{course.description}}</p>
-        </div>
-        <div class="image">
-          {% if course.image %}
+
+  <!-- Program overview -->
+  <section class="three">
+    <div class="why-web-dev-box">
+      <div class="why-web-dev">
+        <h3 id="why-web-dev-heading-1">
+          Program <span class="underline">Overview</span>
+        </h3>
+        {% if program_overview %}
+          <!-- Split the program overview into separate chapters -->
+          {% for chapter in program_overview %}
+            <h5>{{ chapter }}</h5>
+          
+            <hr> <!-- Example of a horizontal divider -->
+          {% endfor %}
+        {% else %}
+          <p>No program overview available</p>
+        {% endif %}
+      </div>
+      <div class="image">
+        {% if course.image %}
           <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
-          {% else %}
+        {% else %}
           <p>No image available</p>
-          {% endif %}
-        </div>
+        {% endif %}
       </div>
-    </section>
-    {% endfor %}
-    <!-- Course Highlights -->
-    <section class="section-three">
-      <div>
-        <h2><span> Course </span> Highlights</h2>
-        <ul>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>Learn Online</h4>
-              <p>At your own schedule</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>Doubt Clearing</h4>
-              <p>Through Q&A forum</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>Mobile Friendly</h4>
-              <p>No Laptop? No Problem</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>Beginner Friendly</h4>
-              <p>No prior knowledge required</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>Placement Assessment</h4>
-              <p>To Build Your Career</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>8 Weeks Duration</h4>
-              <p>1 hr/day (flexible schedule)</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>Certificate of Traning</h4>
-              <p>From Baoiam Tranings</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>Downloadable Content</h4>
-              <p>With Lifetime Access</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>Projects</h4>
-              <p>For hand-on practice</p>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="divide">
-              <h4>Industry Experts</h4>
-              <p>Study From The Best Tutors</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
+    </div>
+  </section>
+  {% endfor %}
+  <!-- Course Highlights -->
+  <section class="section-three">
+    <div>
+      <h2><span class="underline"> Course </span> Highlights</h2>
+      <ul>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Live online classes</h4>
+            <p>learn from our experts live</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Doubt clearing sessions</h4>
+            <p>get all your doubts cleared by your experts</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Placement assistance</h4>
+            <p>Access support for securing better jobs</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Placement assessment</h4>
+            <p>Evaluate your readiness for job opportunities</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Internships get hands</h4>
+            <p>on experience by working in several firms</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Certificate of completion</h4>
+            <p>validated your skills with a recognized certification</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Letter of recommendation</h4>
+            <p>enhance your credibility with endorsements from professionals
+            </p>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Mentorship sessions</h4>
+            <p>Guidance from industry experts</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Live projects</h4>
+            <p>Hands on live project with expert guidance</p>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-graduation-cap"></i>
+          <div class="divide">
+            <h4>Digital resource hub</h4>
+            <p> Best digital materials for learning and exploration</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Curriculum -->
-    <section class="seven">
-      <h1>Course <span class="underline">Curriculum</span></h1>
-      <div class="accordion" id="accordionExample">
-        {% for curr in carriculum %}
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-              data-bs-target="#{{curr.carriculum_title}}" aria-expanded="true" aria-controls="collapseOne">
-              {{curr.carriculum_title}}
-            </button>
-          </h2>
-          <div id="{{curr.carriculum_title}}" class="accordion-collapse collapse show"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              {{curr.carriculum_desc}}
-            </div>
+  <!-- Curriculum -->
+  <section class="seven">
+    <h1>Course <span class="underline">Curriculum</span></h1>
+    <div class="curriculum">
+      {% for curr in carriculum %}
+      <div class="curriculum-item">
+        <h2 class="curriculum-item-header">
+            {{curr.carriculum_title}}
+            <span class="material-symbols-outlined">
+              expand_more
+              </span>
+        </h2>
+        <div class="curriculum-item-body">
+          <div class="curriculum-item-body-content">
+            {{curr.carriculum_desc}}
           </div>
         </div>
-        {% endfor %}
-
       </div>
-    </section>
-    <!-- Testimonials -->
-    <section class="testimonial">
-      <h1 class="testimonial-heading"><span class="underline">Testimonials</span></h1>
-      <div class="slide-container swiper">
+      {% endfor %}
+    </div>
+  </section>
+  <!-- Testimonials -->
+  <section class="testimonial">
+    {% for course in courses %}
+    <h1 class="testimonial-heading">Testimonials for <span class="underline">{{ course.category.name }}</span></h1>
+    <div class="slide-container swiper">
         <div class="slide-content">
-          <div class="card-wrapper swiper-wrapper">
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-
-                <div class="card-image">
-                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
+            <div class="card-wrapper swiper-wrapper">
+                {% for testimonial in course.category.testimonials.all %}
+                <div class="card swiper-slide">
+                    <div class="image-content">
+                        <span class="overlay"></span>
+                        <div class="card-image">
+                            <img src="{{ testimonial.image.url }}" alt="#" class="card-img">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="name">{{ testimonial.name }}</h2>
+                        <p><span class="role">{{ testimonial.role }}</span></p>
+                        <p>{{ testimonial.content }}</p>
+                    </div>
                 </div>
-              </div>
-
-              <div class="card-content">
-                <h2 class="name">John</h2>
-                <p><span class="name" style="text-align: center;">Course Student</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid
-                  optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id
-                  distinctio perferendis, soluta obcaecati!</p>
-                </p>
-              </div>
+                {% endfor %}
             </div>
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-
-                <div class="card-image">
-                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
-                </div>
-              </div>
-
-              <div class="card-content">
-                <h2 class="name">john</h2>
-                <p><span class="name">Course Student</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid
-                  optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id
-                  distinctio perferendis, soluta obcaecati!</p>
-                </p>
-              </div>
-            </div>
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-
-                <div class="card-image">
-                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
-                </div>
-              </div>
-
-              <div class="card-content">
-                <h2 class="name">John</h2>
-                <p><span class="name">Course Student</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid
-                  optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id
-                  distinctio perferendis, soluta obcaecati!</p>
-                </p>
-              </div>
-            </div>
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-
-                <div class="card-image">
-                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
-                </div>
-              </div>
-
-              <div class="card-content">
-                <h2 class="name">John</h2>
-                <p><span class="name">Course Student</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid
-                  optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id
-                  distinctio perferendis, soluta obcaecati!</p>
-                </p>
-              </div>
-            </div>
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-
-                <div class="card-image">
-                  <img src="{% static 'courses/img/img1.avif' %}" alt="#" class="card-img">
-                </div>
-              </div>
-
-              <div class="card-content">
-                <h2 class="name">John</h2>
-                <p><span class="name">Course Student</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, eveniet voluptas dicta aliquid
-                  optio cum neque. Error debitis minima ex sapiente asperiores molestiae recusandae, magni, id
-                  distinctio perferendis, soluta obcaecati!</p>
-                </p>
-              </div>
-            </div>
-
-          </div>
         </div>
         <div class="swiper-button-next swiper-navBtn"></div>
         <div class="swiper-button-prev swiper-navBtn"></div>
         <div class="swiper-pagination"></div>
-      </div>
-    </section>
+    </div>
+    {% endfor %}
+</section>
 
-    <!-- Right Course -->
-    <section class="Right-course">
-      <h2>
-        Join With Us <br />
-        Find the <span>Right Course</span>
-      </h2>
-      <div class="slider_wrapper">
-        <div class="splide">
-          <div class="splide__track">
-            <div class="splide__list">
-              {% if subscription_course_plans %}
-              {% for plan in subscription_course_plans %}
-                  <div class="splide__slide">
-                      <div class="content-box">
-                          <div class="content">
-                              <div class="name">{{ plan.subscription_plan.name }}<br> {{ plan.subscription_plan.price }}<span class="name-span">/Full course</span></div>
-                              <ul class="course-content">
-                                  <li>Live Classes</li>
-                                  <li>Doubt Clearing Sessions</li>
-                                  <li>Assessment & Case Study</li>
-                                  <li>Mentorship</li>
-                                  <li>Start Date: {{ plan.start_date }}</li>
-                                  <li>End Date: {{ plan.end_date }}</li>
-                                  <li>Available Slots: {{ plan.available_slots }}</li>
-                              </ul><br><br><br>
-          
-                              {% with "not_purchased" as purchase_status %}
-                                  {% for purchase in purchased_courses %}
-                                      {% if purchase.purchased_course.id == plan.course.id and purchase.subscription_plan.id == plan.subscription_plan.id %}
-                                          {% with "purchased" as purchase_status %}
-                                              <h3>You have already purchased this course.</h3>
-                                          {% endwith %}
-                                      {% endif %}
-                                  {% endfor %}
-          
-                                  {% if purchase_status == "not_purchased" %}
-                                      <form action="{% url 'subscription:create_purchase_record' course_id=plan.course.id plan_id=plan.subscription_plan.id %}" method="POST">
-                                          {% csrf_token %}
-                                          <button type="submit" class="btn-1 purchase-button">Purchase</button>
-                                      </form>
-                                  {% endif %}
-                              {% endwith %}
-                          </div>
-                      </div>
-                  </div>
-              {% endfor %}
-          {% else %}
-              <p>No subscription plans available for this course.</p>
-          {% endif %}
-          
+  <!-- Right Course -->
+  <section class="Right-course">
+    <h2>
+      Join With Us <br />
+      Find the <span class="underline">Right Course</span>
+    </h2>
+    <div class="slider_wrapper">
+      <div class="splide">
+        <div class="splide__track">
+          <div class="splide__list">
+            <div class="splide__slide">
+
+              <div class="content-box">
+
+                <div class="content">
+                  <div class="slide-name">Plus</div>
+                  <div class="temp">Web Development</div>
+                    <div class="price"> 30,500<span class="name-span">/Full course</span></div>
+                  <ul class="course-content">
+                    <li>Live Classes</li>
+                    <li>Doubt Clearing Sessions</li>
+                    <li>Assessment & Case Study</li>
+                    <li>Mentorship</li>
+                  </ul><br><br><br>
+
+                  <button class="btn-1">Enroll Now</button>
+
+                </div>
+              </div>
             </div>
+            <div class="splide__slide">
+              <div class="content-box">
+
+                <div class="content">
+
+                  <div class="slide-name">Premium</div>
+                  <div class="temp">Web Development + AWS</div>
+                    <div class="price">60,000/<span class="name-span">Full course</span> </div>
+                  <ul class="course-content">
+                    <li>Live Classes</li>
+                    <li>Doubt Clearing Sessions</li>
+                    <li>Assessment & Case Study</li>
+                    <li>Mentorship</li>
+                    <li>Webinar Access</li>
+                    <li>Placement Assistance</li>
+                    <li>Interview Preparation</li>
+                    <li>Resume Building</li>
+                  </ul>
+
+
+                  <button class="btn-1">Enroll Now</button>
+                </div>
+
+              </div>
+            </div>
+            <div class="splide__slide">
+              <div class="content-box">
+                <div class="content">
+                <div class="slide-name">Premium Combo</div>
+                <div class="temp">Web Development + Cloud/AWS</div>
+                  <div class="price">30,500/<span class="name-span">Full course</span> </div>
+                  <ul class="course-content">
+                    <li>Live Classes</li>
+                    <li>Doubt Clearing Sessions</li>
+                    <li>Assessment & Case Study</li>
+                    <li>Mentorship</li>
+                    <li>Webinar Access</li>
+                    <li>Placement Assistance</li>
+                  </ul>
+
+
+                  <button class="btn-1">Enroll Now</button>
+
+                </div>
+              </div>
+            </div>
+            <div class="splide__slide">
+              <div class="content-box">
+                <div class="content">
+
+                  <div class="slide-name">Plus Combo<br> 30,500<span class="name-span">/Full course</span></div>
+                  <ul class="course-content">
+                    <li>Live Classes</li>
+                    <li>Doubt Clearing Sessions</li>
+                    <li>Assessment & Case Study</li>
+                    <li>Mentorship</li>
+                    <li>Extra Course</li>
+                  </ul>
+                  <br><br>
+
+                  <button class="btn-1">Enroll Now</button>
+
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="emi-container">
-      <div class="emi_box">
-        <h2 class="emi">Easy EMI</h2>
-        <div class="key_features">key features of Easy EMI
-          <ul class="emi_features">
-            <li>No upfront payment required</li>
-            <li>Fixed monthly installments</li>
-            <li>Flexible repayment options</li>
-          </ul>
-        </div>
-      </div>
-      <div class="emi_box">
-        <h2 class="emi">Pay After Placement</h2>
-        <div class="key_features">key features
-          <ul class="emi_features">
-            <li>With our Pay After Placement program, you invest in your career development now and pay us only when yoy
-              land a job.</li>
-          </ul>
-        </div>
+  <div class="emi-container">
+    <div class="emi_box">
+      <h2 class="emi">Easy EMI</h2>
+      <div class="key_features">easy monthly payment options with our emi facilities
+        <ul class="emi_features">
+          <li>No upfront payment required</li>
+          <li>Fixed monthly installments</li>
+          <li>Flexible repayment options</li>
+        </ul>
       </div>
     </div>
+    <div class="emi_box">
+      <h2 class="emi">Pay After Placement</h2>
+      <div class="key_features">pay only when you get placed with our Pay After Placement support
+        <ul class="emi_features">
+          <li>With our Pay After Placement program, you invest in your career development now and pay us only when yoy
+            land a job.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
     <!-- Awaits amazing_career -->
     <section class="amazing_career">
       <div class="amazing-container">
-        <h2 class="amazing_heading">Amazing Career</h2>
-        <div class="awaits">Awaits!</div>
+        <h2 class="amazing_heading">Amazing <span class="underline">Career</span></h2>
+        <!-- <div class="awaits">Awaits!</div> -->
         <p class="grab_offer">Grab these exclusive offers available only once a year.</p>
         <div class="buy_course_container">
           <div class="buy_course_box">
-            <div class="buy_course">BUY 2 COURSES & GET MORE</div>
-            <h4 class="off">OFF</h4>
+            <div class="buy_course">BUY 2 COURSES & GET</div>
             <div class="percentage">15%</div>
+            <h4 class="off">OFF</h4>
 
           </div>
           <div class="buy_course_box">
-            <div class="buy_course">BUY 3 COURSES & GET MORE </div>
-            <h4 class="off">OFF</h4>
+            <div class="buy_course">BUY 3 COURSES & GET</div>
             <div class="percentage_3">20%</div>
+            <h4 class="off">OFF</h4>
           </div>
           <div class="buy_course_box">
-            <div class="buy_course">BUY 4 COURSES & GET MORE </div>
-            <h4 class="off">OFF</h4>
+            <div class="buy_course">BUY 4 COURSES & GET</div>
             <div class="percentage">25%</div>
+            <h4 class="off">OFF</h4>
           </div>
         </div>
-        <button class="btn-3">GRAB THE DEAL</button>
+        
       </div>
-
-    </section>
-
-
-    <!-- FAQ -->
-    <div class="container-main faq">
-      <div class="ac-main">
-        <h1>Frequently Asked <span>Questions</span></h1>
-        <div class="accordion">
-          <div class="accordion-item">
-            <div class="accordion-item-header">
-              Q1. I am not a student of BAOIAM. Can I still refer a friend?
-            </div>
-            <!-- /.accordion-item-header -->
-            <div class="accordion-item-body">
-              <div class="accordion-item-body-content">
-                Yes, If you are aware of BAOIAM and believe in what we are
-                doing, then feel free to refer your friend.
-              </div>
-            </div>
-            <!-- /.accordion-item-body -->
-          </div>
-          <!-- /.accordion-item -->
-        </div>
-        <div class="accordion">
-          <div class="accordion-item">
-            <div class="accordion-item-header">
-              Q2. How can I track the status of my referrals?
-            </div>
-            <div class="accordion-item-body">
-              <div class="accordion-item-body-content">
-                You will be informed by email once BAOIAM receives your referral
-                details.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion">
-          <div class="accordion-item">
-            <div class="accordion-item-header">
-              Q3. How will my friends be informed that I referred them?
-            </div>
-            <div class="accordion-item-body">
-              <div class="accordion-item-body-content">
-                Your friends will receive an email confirmation from BAOIAM
-                informing them that they have been referred by you. They will be
-                asked to confirm.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion">
-          <div class="accordion-item">
-            <div class="accordion-item-header">
-              Q4. Will I get a referral reward if a friend/connection already
-              exists in the BAOIAM database?
-            </div>
-            <div class="accordion-item-body">
-              <div class="accordion-item-body-content">
-                No, there is no reward if your friend is connected with BAOIAM
-                or its infromation exists in BAOIAM database
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion">
-          <div class="accordion-item">
-            <div class="accordion-item-header">Q5. Who all can I refer to?</div>
-            <div class="accordion-item-body">
-              <div class="accordion-item-body-content">
-                Anyone who meets the eligibility criteria for our courses can be
-                referred. They should be between 18 - 28 years of age. They
-                should know the basics of the English language, have a laptop,
-                and a good internet connection.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- <button class="btn-3">GRAB THE DEAL</button> -->
     </div>
+
+  </section>
+
+  <!-- testing -->
+  <!-- FAQ -->
+
+  <!-- <section class="section-nine">
+    <div class="container-main faq"> -->
+    <div class="ac-main">
+      <h1>Frequently Asked <span>Questions</span></h1>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q1. What is the procedure for signing up on the website?
+          </div>
+          <!-- /.accordion-item-header -->
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              The sign-up procedure for our website consists of 4 simple steps:<br>
+              <ul style="list-style-type:disk">
+                 <li>Go to our website and click on the Login button and then the Signup button or just click this link <a href="http://www.baoiam.com/Login/index.html">http://www.baoiam.com/Login/index.html</a></li>
+                 <li>Enter a Username of your choice.</li>
+                 <li>Enter your Email ID.</li>
+                 <li>Create a strong password with uppercase, lowercase, numbers, and special characters.</li>
+                 <li>Click on Sign up and there you go, you are now a part of the Baoiam family!</li>
+                 </ul>
+            </div>
+          </div>
+          <!-- /.accordion-item-body -->
+        </div>
+        <!-- /.accordion-item -->
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q2. How do I enroll or register, if I am interested in an online course?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              The enrollment process is as easy as the sign-up process.<br>
+              <ul style="list-style-type:disk">
+               <li>Take a Dashboard tour and head to the Courses section.</li>
+               <li>You will find a wide range of specially curated courses.</li>
+               <li>Explore them and choose the one you like.</li>
+               <li>Click on Enroll Now</li>
+               </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q3. What kind of skill-based courses do you offer?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              We offer a wide range of courses like Web Development, Data Analytics, Graphic Designing, UI/UX, 
+              Product Management, Human Resources, Android Development, Digital Marketing, SEO, and Entrepreneurship.
+               Head to the Courses section to explore many such skills-centric courses
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q4. Can I opt for more than one course at a time?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, we at Baoiam do not limit your potential and therefore give you the option to choose multiple courses at a time.
+              <br>We also provide with options where you can get various discounts by buying multiple courses together.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q5. How long does each course take?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Each course is timed differently depending on the lessons, modules and degree of difficulty.
+              The duration of each course is mentioned on their respective course pages
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q6. Do you provide any study material?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, we do provide study material that can be downloaded and accessed by you at any time
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q7. Are the classes live or recorded?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              We have live classes as it involves interaction and engagement
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q8. Will I gain access to the recorded sessions if I’m unable to attend the live classes?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, we understand that juggling your college studies or work and course studies might be hard, 
+              so you will be able to access the recorded sessions
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q9. Will there be regular doubt-clearing sessions?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, the doubt-clearing session is one of the key features of Baoiam, as we don't want our students to have half-baked knowledge
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q10. Will I get a 'Certificate of Completion' after completing the course?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, you will get a Certificate of Completion only after you attend all classes, 
+              complete the assignments and projects and get good scores on the tests.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q11. How helpful will the Certificate be in future?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              This Certificate can pave the way to your desired career, as you will be trained and highly skilled in your respective field
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q12. How can I earn through the ‘Refer and Earn’ program?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              <ul style="list-style-type:disk">
+                 <li>Create an account on Baoiam and then go to the Refer and Earn page.</li>
+                 <li>Enter your Email ID and generate the referral code.</li>
+                 <li>Share this code with your friends.</li>
+                 <li>If they get enrolled using your code, you earn exciting cash prizes.</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            Q13. Is my placement guaranteed if I enroll in one of the ‘Payment after Placement’ courses?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, the placements are guaranteed as you will be equipped with skills that are high in demand and have large scope
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header">Q14. How do I contact Customer Care for technical or payment issues?</div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              <ul>
+                <li>Send us an email: tutors@baoiam.com</li>
+                <li>Give us a ring: +91-8062179867</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+ 
+</div>
   </div>
   </div>
+  <script>
+    function openForm() {
+      document.getElementById("popup-form").style.display = "block";
+    }
+
+    document
+      .getElementById("popup-close")
+      .addEventListener("click", function () {
+        document.getElementById("popup-form").style.display = "none";
+      });
+
+    function closeForm() {
+      document.getElementById("popup-form").style.display = "none";
+    }
+  </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
