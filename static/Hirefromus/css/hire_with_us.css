@@ -29,6 +29,7 @@ body {
 
 a {
   text-decoration: none !important;
+  text-align: center;
 }
 
 img {
@@ -339,6 +340,7 @@ img {
   font-weight: bold;
   color: rgb(1, 1, 68);
   text-align: center;
+  line-height: 33px;
 }
 
 .ac-main h1 span {

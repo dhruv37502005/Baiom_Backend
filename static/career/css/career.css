@@ -1114,6 +1114,7 @@ article p {
   .social a {
     width: 10px;
     height: 10px;
+    margin: 6px 7px;
   }
 }
 
@@ -1726,7 +1727,7 @@ article p {
   }
 
   .member img {
-    width: 70%;
+    width: 50%;
     height: 300px !important;
   }
 
