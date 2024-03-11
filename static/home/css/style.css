@@ -2341,6 +2341,7 @@ content:none;
 
   .section-3 .horizon h2 {
     left: 5%;
+    margin-right: 5%;
   }
 
   .section-3 .horizon h2.h22 {
@@ -2351,6 +2352,7 @@ content:none;
   .section-3 .horizon .horizon-sub-heading {
     position: relative;
     left: 5%;
+    margin-right: 2%;
   }
 
   .section-3 .horizon .check {
