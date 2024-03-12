@@ -36,30 +36,27 @@
 
 
 
-<section style="margin-top: 40px;">
+<section>
   <div class="main-blog" style="display: flex;justify-content: center;align-items: center; ">
-    <div class="blog-left" style="width:60%">
+    <div class="blog-left" style="width: 80%;">
       <div class="blog-left1">
 
-          <img src="{{ post.category.image.url }}" alt="{{ category.name }}"
+        <img src="{{ post.category.image.url }}" alt="{{ category.name }}" />
 
-
-        <div class="blog-left-icon">
-          <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
-            {{ post.created_by.username }}</span>
-            <i class="fa fa-calendar" aria-hidden="true"> </i>{{ post.pub_date }}</span>
-            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments({{comments_count}})</a></span>
-          <br />
-          <br />
-          
-        </div>
-
-        <div class="blog-content">
-          <h2>{{ post.title }}</h2>
-          <br>
-          
-          <p>{{ post.content|linebreaks }}</p>
-
+        <div class="content" style="align-items: center;">
+          <div class="blog-left-icon">
+            <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
+              {{ post.created_by.username }}</span>
+            <span><i class="fa fa-calendar" aria-hidden="true"> </i>{{ post.pub_date }}</span>
+            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments(6)</a></span>
+            <!-- <span class="icon-tag"><i class="fa fa-tag"></i>{{ category.name }}</span> -->
+          </div>
+          <div 
+          class="blog-content" 
+          style="display: flex;flex-direction: column;align-items: center;">
+            <h2 style="text-align: center;">{{post.title}}</h2>
+            {{ post.content|linebreaks }}
+          </div>
         </div>
 
 
@@ -88,93 +85,93 @@
             </span>
           </div>
 
-        </div>
+        </div>-->
 
-      </div>-->
+      </div>
 
 
       <!-- Comment Section -->
       <!-- <section> -->
-        
-        <div class="blog-left2">
-            <h2>Comments</h2>
-            <div class="comments-section">
-                {% for comment in comments %}
-                    <div class="comment">
-                        <p>{{ comment.text }}</p>
-                        <div class="comment-meta">
-                            <i class="fa fa-regular fa-user" aria-hidden="true"></i> By {{ comment.user.username }}
-                        </div>
-                    </div>
-                {% endfor %}
+
+      <div class="blog-left2">
+        <h2>Comments</h2>
+        <div class="comments-section">
+          {% for comment in comments %}
+          <div class="comment">
+            <p>{{ comment.text }}</p>
+            <div class="comment-meta">
+              <i class="fa fa-regular fa-user" aria-hidden="true"></i> By {{ comment.user.username }}
             </div>
-        
-            {% if user.username %}
-                <div class="comment-form-section">
-                    <h3>Add a Comment</h3>
-                    <form method="post" action="{% url 'blog:post_detail' post_id=post.id %}">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            
-            {% endif %}
+          </div>
+          {% endfor %}
         </div>
-        
+
+        {% if user.username %}
+        <div class="comment-form-section">
+          <h3>Add a Comment</h3>
+          <form method="post" action="{% url 'blog:post_detail' post_id=post.id %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+
+        {% endif %}
+      </div>
+
+      <!-- </div> -->
 
 
-
-    <!-- </div> -->
-
-
-    <!-- Right section -->
-    <div class="blog-right">
+      <!-- Right section -->
+      <div class="blog-right">
         <div class="main-search">
           <div class="search">
             <input type="text" name="search" id="search" placeholder=" Search .." />
             <li class="fas fa-search"></li>
           </div>
         </div>
-  
+
         <div class="categoery">
           <h3>Categories</h3>
-  
+
           {% for category in categories %}
-          <a href="{% url 'blog:post_list_by_category' category.id %}" class="course_btn" >
+          <a href="{% url 'blog:post_list_by_category' category.id %}" class="course_btn">
             <div class="categoery1">
               <span><i class="fa fa-play"></i>{{category.name}}</span>
             </div>
           </a>
-  
-            {% endfor %}
-            
-          </div>
-  
-  
-          
-  
+
+          {% endfor %}
+
+        </div>
+
         <div class="posts">
+
           <h3>Recent Posts</h3>
-  
-          {% for post in recent_posts %}
+
           <div class="post1">
-            <!--<img src="../images/blog2.jpg" alt="" />-->
+            {% for post in recent_posts %}
+
             <div class="post-content">
-              <h4><a href="{% url 'blog:post_detail' post_id=post.id %}">
-                  {{post.title}}</a>
+              <h4>
+                <a href="{% url 'blog:post_detail' post_id=post.id %}">
+                  {{post.title}}
+                </a>
               </h4>
-              <span><i class="fa fa-calendar" aria-hidden="true"> </i>{{post.pub_date}}</span>
+              <span>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                {{post.pub_date}}
+              </span>
             </div>
-  
+
             {% endfor%}
+
           </div>
-  
-          
-  
-  
+
         </div>
       </div>
+    </div>
+  </div>
 </section>
 
 {% endblock content %}
