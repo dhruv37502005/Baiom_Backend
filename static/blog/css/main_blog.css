@@ -161,7 +161,7 @@ section {
 }
 
 .new {
-  padding: 40px;
+  padding: 70px 20px;
 }
 
 .nav-btn::after,
@@ -182,9 +182,8 @@ section {
 }
 
 .swiper-slide {
-  /* width: 33% !important; */
-  margin-left: 8px;
-  margin-right: 8px;
+  /* width: 29% !important; */
+  margin-right:0;
 }
 
 /* Resonsive */
