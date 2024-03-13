@@ -54,7 +54,7 @@ def category_courses(request, category_id):
             'testimonials': testimonials,
         })
     else:
-        return render(request, 'course.html', {'is_course': True, 'courses': courses})
+        return render(request, 'course.html', {'is_course': True, 'courses': courses,'categories': categories})
 
 @api_view(['GET'])
 def category_courses_json(request, category_id):
