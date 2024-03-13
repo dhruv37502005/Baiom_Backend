@@ -83,6 +83,12 @@ section {
   gap: 2em;
   justify-content: space-evenly;
 }
+.blog-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
 .blog-left .blog-content h2 {
   font-size: 1.7rem;
   font-weight: 700;
@@ -394,7 +400,7 @@ section {
 }
 
 .blog-right .categoery {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   background-color: #f2efef;
   border-radius: 10px;
   /* background-color: #fb21b2; */
