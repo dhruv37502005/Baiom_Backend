@@ -5,8 +5,5 @@ dashboard/__pycache__
 userauths/__pycache__
 course/__pycache__
 *.pyc
-/db.sqlite3
 .gitignore
-/media
-db.sqlite3
-*.sqlite3
+.gitignore

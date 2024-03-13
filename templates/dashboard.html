@@ -431,8 +431,8 @@
           style="background-color: red"
         ></section>
 
+        {% for batch in batches %}
         <section id="liveClasses-section">
-          {% for batch in batches %}
           <button type="button" class="live-card" id="live-card">
             {{ batch.course.title }}
           </button>
@@ -455,9 +455,8 @@
               </div>
             </div>
           </div>
-          <br>
-          {% endfor %}
         </section>
+        {% endfor %}
       </main>
     </section>
   </body>

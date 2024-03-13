@@ -170,7 +170,7 @@ class DownloadFileView(View):
 
         return response
 
-# login_required(login_url='/userauths/login/')
+login_required(login_url='/userauths/login/')
 def course_contact(request):
     if request.method == 'POST':
         name_ = request.POST.get('name_')
