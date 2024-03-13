@@ -49,9 +49,9 @@ def user_ui(request, username):
 
             years = list(range(1990, 2031))
 
+
             batches = Batch.objects.filter(course__in=enrolled_courses)
             print(f"batches: {batches}")
-            batches = Batch.objects.filter(course__in=enrolled_courses)
             batch_notes ={}
             for batch in batches:
                 notes = Resource.objects.filter(batch=batch, notes__isnull=False)
