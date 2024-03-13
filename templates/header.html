@@ -188,6 +188,7 @@
     {% endcomment %}
 
     <script src="{% static 'courses/js/slider2.js' %}" defer></script>
+
     {% endif %} {% if is_category %}
     <link rel="stylesheet" href="{% static 'courses/css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'courses/css/faq.css' %}" />
@@ -232,6 +233,7 @@
       crossorigin="anonymous"
       defer
     ></script>
+
     <script src="{% static 'courses/js/slider2.js' %}" defer></script>
     {% endif %} {% if is_itie %}
     <link rel="stylesheet" href="{% static 'itie/css/styles.css' %}" />
@@ -286,7 +288,6 @@
     ></script> -->
 
     {% endif %} {% if is_career %}
-
     <link rel="stylesheet" href="{% static 'career/css/career.css' %}" />
     <link rel="stylesheet" href="{% static 'career/css/style.css' %}" />
     <link
@@ -312,7 +313,6 @@
     <script src="{% static 'career/js/script.js' %}" defer></script>
 
     {% endif %} {% if is_blog %}
-
     <link rel="stylesheet" href="{% static 'blog/css/Header-footer.css' %}" />
     <link rel="stylesheet" href="{% static 'blog/css/main_blog.css' %}" />
     <link
@@ -345,7 +345,6 @@
     ></script>
     <script src="{% static 'blog/js/index.js' %}" defer></script>
     {% endif %} {% if is_hire %}
-
     <link
       rel="stylesheet"
       href="{% static 'Hirefromus/css/hire_with_us.css' %}"
@@ -378,9 +377,9 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+
     <script src="{% static 'Hirefromus/js/style.js' %}" defer></script>
     {% endif %} {% if is_wep %}
-
     <link rel="stylesheet" href="{% static 'wep/css/faq.css' %}" />
     <link rel="stylesheet" href="{% static 'wep/css/slider1.css' %}" />
     <link rel="stylesheet" href="{% static 'wep/css/slider2.css' %}" />
@@ -434,6 +433,7 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -515,12 +515,6 @@
 
     {% endif %} {% if is_blog_details %}
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-      defer
-    ></script>
 
     {% endif %}
 
@@ -545,8 +539,6 @@
     {% if is_index_page %}
     <script src="{% static 'home/js/script.js' %}" defer></script>
     {% endif %}
-
-    <!-- ------Styles ------------------>
     <style>
       body,
       html {
@@ -589,13 +581,16 @@
       ::-webkit-scrollbar {
         display: none;
       }
+
       /* ::-webkit-scrollbar-track {
         background-color: transparent;
       }
+
       ::-webkit-scrollbar-thumb {
         background-color: orange;
         border-radius: 6px;
       }
+
       ::-webkit-scrollbar-thumb:hover {
         background-color: orangered;
       } */
@@ -613,19 +608,23 @@
         font-size: 24px;
         cursor: pointer;
       }
+
       a.button:active {
         filter: brightness(75%);
       }
+
       /* Dropdown styles */
       .dropdown {
         position: relative;
         padding: 0;
-        margin: 0 0.3em;
+        margin-right: 1em;
+
         border: none;
       }
       .dropdown:visited {
         text-decoration: none;
       }
+
       .dropdown summary {
         list-style: none;
         list-style-type: none;
@@ -646,7 +645,7 @@
       /* .dropdown summary:focus {
         outline: none;
       } */
-
+      
       .dropdown ul {
         position: absolute;
         /* margin: 20px 0 0 12px; */
@@ -670,12 +669,10 @@
         margin: 0;
         width: 300px;
       }
-
-      .dropdown ul a:hover {
+      .dropdown ul a:hover{
         text-decoration: none !important;
       }
-
-      a {
+      a{
         text-decoration: none !important;
       }
 
@@ -694,10 +691,9 @@
         color: black;
       }
 
-      .nav-item .a:active {
+      .nav-item .a:active{
         color: blue !important;
       }
-
       /* Dropdown triangle */
       /* .dropdown ul::before {
         content: " ";
@@ -728,10 +724,11 @@
         bottom: 0;
         z-index: 1;
       } */
-      #nav-courses-one {
+      #nav-courses-one{
         display: block;
       }
     </style>
+
   </head>
 
   <body>
@@ -741,12 +738,9 @@
         class="navbar fixed-top navbar-expand-xl navbar-light bg-white shadow h-8"
         id="navbar"
       >
-        <!-- ------Brand Logo------- -->
         <a class="navbar-brand" href="{% url 'core:index' %}">
           <img src="{% static 'home/img/brand.png' %}" style="width: 100px" />
         </a>
-
-        <!-- ----Navbar Toggler for small screen sizes--- -->
         <button
           class="navbar-toggler"
           type="button"
@@ -758,8 +752,6 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- ----Navbar Items---- -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
@@ -769,123 +761,102 @@
                 class="nav-link {% if request.path == urlhome %}isactive{% endif %}"
                 href="{{urlhome}}"
                 style="font-size: 18px"
-                >Home
-              </a>
+                >Home</a
+              >
             </li>
 
-            <!-- ---Company NavItem-- -->
             <li class="nav-item">
               <details class="dropdown">
                 <summary role="button">
-                  {% url 'core:career' as urlcareer %} 
+                  {% url 'core:career' as urlcareer %}
                   {% url 'core:hire_from_us' as urlhire %}
-                  <a
-                    class="button nav-link {% if request.path == urlcareer or request.path == urlhire %}isactive{% endif %}"
-                    >Company
-                  </a>
+                  <a class="button nav-link {% if request.path == urlcareer or request.path == urlhire %}isactive{% endif %}">Company</a>
                 </summary>
                 <ul>
+              
                   <li>
                     <a
-                      class="dropdown-item {% if request.path == urlcareer%}isactive{% endif %}"
-                      href="{% url 'core:career' %}"
-                      style="font-size: 18px"
-                      >Career
-                    </a>
+                  class="dropdown-item {% if request.path == urlcareer%}isactive{% endif %}"
+                  href="{% url 'core:career' %}"
+                  style="font-size: 18px"
+                  >Career</a
+                >
                   </li>
                   <li>
                     <a
-                      class="dropdown-item {% if request.path == urlhire %}isactive{% endif %}"
-                      href="{% url 'core:hire_from_us' %} "
-                      style="font-size: 18px"
-                      >Hire from us
-                    </a>
+                    class="dropdown-item {% if request.path == urlhire %}isactive{% endif %}"
+                    href="{% url 'core:hire_from_us' %} "
+                    style="font-size: 18px"
+                    >Hire from us</a
+                  >
                   </li>
                 </ul>
-              </details>
-            </li>
-
-            <!-- -Courses NavItem -->
-            <li class="nav-item">
-              <details class="dropdown">
-                <summary role="button">
-                  <a
-                    class="button {% if '/course/categories/' in request.path %}isactive{% endif %}"
-                    >Courses
-                  </a>
-                </summary>
-                <ul>
-                  {% for category in categories %}
-                  <li>
-                    <a
-                      href="{% url 'course:category_courses' category_id=category.id %}"
-                      style="font-size: 18px"
-                      >{{category.name }}
-                    </a>
-                  </li>
-                  {% endfor %}
-                </ul>
-              </details>
-              <!-- <ul class="sub-courses-list"></ul> -->
-            </li>
-
-            <!-- ITIE -->
+              </li>
+              <!-- random -->
+              <li class="nav-item">
+                <details class="dropdown">
+                  <summary role="button">
+                    <a class="button {% if '/course/categories/' in request.path %}isactive{% endif %}">Courses</a>
+                  </summary>
+                  <ul>
+                    {% for category in categories %}
+                    <li>
+                      <a
+                        href="{% url 'course:category_courses' category_id=category.id %}" style="font-size: 18px" 
+                        >{{ category.name }}</a
+                      >
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </details>
+                <!-- <ul class="sub-courses-list"></ul> -->
+              </li>
             <li class="nav-item">
               {% url 'itie:itie' as itie %}
               <a
                 href="{{itie}}"
                 class="nav-link {% if request.path == itie %}isactive{% endif %}"
                 style="font-size: 18px"
-                >ITIE <span class="bar"></span>
-              </a>
+                >ITIE <span class="bar"></span
+              ></a>
               <!-- <ul class="sub-courses-list"></ul> -->
             </li>
-
-            <!-- Bootcamp -->
             <li class="nav-item">
               {% url 'bootcamp:bootcamp' as bootcamp %}
               <a
                 class="nav-link {% if request.path == bootcamp %}isactive{% endif %}"
                 href="{{bootcamp}}"
                 style="font-size: 18px"
-                >Entrepreneurship
-              </a>
+                >Entrepreneurship</a
+              >
             </li>
-
-            <!-- Blogs -->
             <li class="nav-item">
               {% url 'blog:categories' as urlblog %}
               <a
                 class="nav-link {% if 'blog' in request.path %}isactive{% endif %}"
                 href="{{urlblog}}"
                 style="font-size: 18px"
-                >Blog
-              </a>
+                >Blog</a
+              >
             </li>
-
-            <!-- PAP -->
             <li class="nav-item">
               {% url 'core:pap' as urlpap %}
               <a
                 class="nav-link {% if request.path == urlpap %}isactive{% endif %}"
                 href="{{urlpap}}"
                 style="font-size: 18px"
-                >PAP
-              </a>
+                >PAP</a
+              >
             </li>
-
-            <!-- Refer&Earn -->
             <li class="nav-item">
               {% url 'core:refer_earn' as refer_earn %}
               <a
                 class="nav-link {% if request.path == refer_earn %}isactive{% endif %}"
                 href="{{refer_earn}}"
                 style="font-size: 18px"
-                >Refer & Earn
-              </a>
+                >Refer & Earn</a
+              >
             </li>
-
-            <!-- ContactUs -->
             <li class="nav-item">
               {% url 'contactapp:contactus' as urlContactus %}
               <a
@@ -893,11 +864,9 @@
                 id="active"
                 href="{{urlContactus}}"
                 style="font-size: 18px"
-                >Contact Us
-              </a>
+                >Contact Us</a
+              >
             </li>
-
-            <!-- Login/Profile -->
             {% if user.username %}
             <li class="nav-item" id="profile">
               <button type="button" id="profile-btn" class="profile-btn">
@@ -907,14 +876,14 @@
                       id="profile-dropdown-item"
                       href="{% url 'dashboard:user_ui' username=user %}"
                       style="font-size: 18px"
-                      >Dashboard
-                    </a>
+                      >Dashboard</a
+                    >
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'userauths:logout' %}"
                       style="font-size: 18px"
-                      >Logout
-                    </a>
+                      >Logout</a
+                    >
                   </div>
                 </div>
               </button>
@@ -922,8 +891,8 @@
             {% else %}
             <li class="nav-item">
               <a href="{% url 'userauths:login' %}">
-                <button class="btn-1">Login</button>
-              </a>
+                <button class="btn-1">Login</button></a
+              >
             </li>
             {% endif %}
           </ul>

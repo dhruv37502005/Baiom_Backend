@@ -192,22 +192,13 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <h3 id="why-web-dev-heading-1">
           Program <span class="underline">Overview</span>
         </h3>
-        {% if program_overview %}
-          <!-- Split the program overview into separate chapters -->
-          {% for chapter in program_overview %}
-            <h5>{{ chapter }}</h5>
-          
-            <hr> <!-- Example of a horizontal divider -->
-          {% endfor %}
-        {% else %}
-          <p>No program overview available</p>
-        {% endif %}
+        <p>{{course.program_overview}}</p>
       </div>
       <div class="image">
         {% if course.image %}
-          <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+        <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
         {% else %}
-          <p>No image available</p>
+        <p>No image available</p>
         {% endif %}
       </div>
     </div>

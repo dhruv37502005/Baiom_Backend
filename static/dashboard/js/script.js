@@ -52,9 +52,7 @@ profile.addEventListener('click' , () => {
     profileDetails.style.display = "block";
     CourseDetails.style.display = "none";
     certi_section.style.display = "none";
-    if(live_section) {
-        live_section.style.display = "none";
-    }
+    live_section.style.display = "none";
     profile.classList.add("activeHai");
     course.classList.remove("activeHai");
     certificate.classList.remove("activeHai");
@@ -66,9 +64,7 @@ course.addEventListener('click' , () => {
     profileDetails.style.display = "none";
     CourseDetails.style.display = "block";
     certi_section.style.display = "none";
-    if(live_section) {
-        live_section.style.display = "none";
-    }
+    live_section.style.display = "none";
     profile.classList.remove("activeHai");
     course.classList.add("activeHai");
     certificate.classList.remove("activeHai");
@@ -79,9 +75,7 @@ certificate.addEventListener('click' , () => {
     profileDetails.style.display = "none";
     CourseDetails.style.display = "none";
     certi_section.style.display = "block";
-    if(live_section) {
-        live_section.style.display = "none";
-    }
+    live_section.style.display = "none";
     profile.classList.remove("activeHai");
     course.classList.remove("activeHai");
     certificate.classList.add("activeHai");
@@ -92,13 +86,13 @@ liveClasses.addEventListener('click' , () => {
     profileDetails.style.display = "none";
     CourseDetails.style.display = "none";
     certi_section.style.display = "none";
-    if(live_section) {
-        live_section.style.display = "block";
-    }
+    live_section.style.display = "block";
     profile.classList.remove("activeHai");
     course.classList.remove("activeHai");
     certificate.classList.remove("activeHai");
     liveClasses.classList.add("activeHai");
+    
+
 });
 
 
@@ -138,18 +132,16 @@ upArrow.addEventListener("click", () => {
     downArrow.style.display = "revert";
 });
 
-if(live_card) {
-    live_card.addEventListener("click", () => {
-        if (live_content.style.display == "block") {
-    
-            live_content.style.display = "none";
-        }
-        else {
-            live_content.style.display = "block";
-            
-        }
-    })
-}
+live_card.addEventListener("click", () => {
+    if (live_content.style.display == "block") {
+
+        live_content.style.display = "none";
+    }
+    else {
+        live_content.style.display = "block";
+        
+    }
+})
 
 course_name.forEach(function(button) {
   button.addEventListener("click", function() {
