@@ -856,7 +856,7 @@
             <li class="nav-item">
               {% url 'blog:categories' as urlblog %}
               <a
-                class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
+                class="nav-link {% if 'blog' in request.path %}isactive{% endif %}"
                 href="{{urlblog}}"
                 style="font-size: 18px"
                 >Blog
