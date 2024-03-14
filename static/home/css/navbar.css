@@ -137,3 +137,6 @@ header .navbar-nav {
   color: rgba(0, 0, 0, 0.5) !important;
   font-size: 18px !important;
 }
+#company-items, #course-items{
+  display:none;
+}
