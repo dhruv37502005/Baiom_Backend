@@ -93,7 +93,32 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 {% endif %}
             {% endfor %}
         </div>
-    {% endfor %}
+        {% endfor %}
+      </div>
+
+    </div>
+
+        {% for course in courses %}
+        <div class="second-section-container">
+          <div class="second-section-div1">
+            <img src="{% static 'courses\img\Image 2.jpg' %}" alt="" />
+          </div>
+  
+            <div class="second-section-div2">
+              <div>
+                <h1>{{course.title}}</h1>
+                <p>{{course.description}}</p>
+                <h3>Instructor: <b>{{course.instructor}}</b></h3>
+                <div class="flex-row">
+                  <button class="btn-33">Enroll Now</button>
+                  <button class=" btn-332">Connect with our Expert</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    
       <!-- {% for course in courses %} -->
       <!-- <div class="topsection1-container"> -->
       <!-- <div class="topsection1-content">
@@ -159,29 +184,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
         </div>
       </div> -->
-      {% for course in courses %}
-      <div class="second-section-container">
-        <div class="second-section-div1">
-          <img src="{% static 'courses\img\Image 2.jpg' %}" alt="" />
-        </div>
-
-          <div class="second-section-div2">
-            <div>
-              <h1>{{course.title}}</h1>
-              <p>{{course.description}}</p>
-              <h3>Instructor: <b>{{course.instructor}}</b></h3>
-              <div class="flex-row">
-                <button class="btn-33">Enroll Now</button>
-                <button class=" btn-332">Connect with our Expert</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
-  </div>
+      
+      
+    
 
 
 
