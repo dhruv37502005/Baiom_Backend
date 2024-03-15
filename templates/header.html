@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="{% static 'home/css/profile.css' %}" />
     <link rel="stylesheet" href="{% static 'home/css/navbar.css' %}" />
     <script src="{% static 'home/js/navbar.js' %}" defer></script>
+    
 
     <!-- bootstrap -->
     <link
@@ -616,8 +617,8 @@
       a.button:active {
         filter: brightness(75%);
       }
-      /* Dropdown styles */
-      .dropdown {
+      /* dropdown1 styles */
+      .dropdown1 {
         position: relative;
         padding: 0;
         margin: 0 0.3em;
@@ -626,32 +627,32 @@
       .dropdown:visited {
         text-decoration: none;
       }
-      .dropdown summary {
+      .dropdown1 summary {
         list-style: none;
         list-style-type: none;
       }
 
-      .dropdown > summary::-webkit-details-marker {
+      .dropdown1 > summary::-webkit-details-marker {
         display: none;
       }
 
-      /* .dropdown summary:focus {
+      /* .dropdown1 summary:focus {
         outline: none;
       } */
 
-      /* .dropdown summary:focus a.button {
+      /* .dropdown1 summary:focus a.button {
         border: 2px solid white;
       } */
 
-      /* .dropdown summary:focus {
+      /* .dropdown1 summary:focus {
         outline: none;
       } */
 
-      .dropdown ul {
+      .dropdown1 ul {
         position: absolute;
         /* margin: 20px 0 0 12px; */
         padding: 10px 0px;
-        width: auto;
+        width: max-content;
         /* left: 50%; */
         margin-left: -20px;
         margin-top: 24px;
@@ -664,14 +665,14 @@
         box-shadow: 2px 2px 4px 1px rgb(145, 144, 144);
       }
 
-      .dropdown ul li {
+      .dropdown1 ul li {
         margin-top: 30px;
         padding: 0;
         margin: 0;
-        width: 300px;
+        width: 100%;
       }
 
-      .dropdown ul a:hover {
+      .dropdown1 ul a:hover {
         text-decoration: none !important;
       }
 
@@ -679,17 +680,17 @@
         text-decoration: none !important;
       }
 
-      .dropdown ul li a:link,
-      .dropdown ul li a:visited {
+      .dropdown1 ul li a:link,
+      .dropdown1 ul li a:visited {
         display: inline-block;
-        padding: 10px 0.8rem;
+        padding: 10px 40px 10px 20px;
         width: 100%;
         box-sizing: border-box;
         color: gray;
         text-decoration: none;
       }
 
-      .dropdown ul li a:hover {
+      .dropdown1 ul li a:hover {
         background-color: rgb(218, 217, 217);
         color: black;
       }
@@ -698,8 +699,8 @@
         color: blue !important;
       }
 
-      /* Dropdown triangle */
-      /* .dropdown ul::before {
+      /* dropdown1 triangle */
+      /* .dropdown1 ul::before {
         content: " ";
         position: absolute;
         width: 0;
@@ -713,8 +714,8 @@
           transparent;
       } */
 
-      /* Close the dropdown with outside clicks */
-      /* .dropdown > summary::before {
+      /* Close the dropdown1 with outside clicks */
+      /* .dropdown1 > summary::before {
         display: none;
       }
 
@@ -775,19 +776,21 @@
 
             <!-- ---Company NavItem-- -->
             <li class="nav-item">
-              <details class="dropdown">
-                <summary role="button">
+              <div class="dropdown1">
+                <div >
                   {% url 'core:career' as urlcareer %} 
                   {% url 'core:hire_from_us' as urlhire %}
                   <a
-                    class="button nav-link {% if request.path == urlcareer or request.path == urlhire %}isactive{% endif %}"
+
+                  id="company"
+                    class="button {% if request.path == urlcareer or request.path == urlhire %}isactive{% endif %}"
                     >Company
                   </a>
-                </summary>
-                <ul>
+                </div>
+                <ul id="company-items">
                   <li>
                     <a
-                      class="dropdown-item {% if request.path == urlcareer%}isactive{% endif %}"
+                      class="{% if request.path == urlcareer%}isactive{% endif %}"
                       href="{% url 'core:career' %}"
                       style="font-size: 18px"
                       >Career
@@ -795,26 +798,27 @@
                   </li>
                   <li>
                     <a
-                      class="dropdown-item {% if request.path == urlhire %}isactive{% endif %}"
+                      class=" {% if request.path == urlhire %}isactive{% endif %}"
                       href="{% url 'core:hire_from_us' %} "
                       style="font-size: 18px"
                       >Hire from us
                     </a>
                   </li>
                 </ul>
-              </details>
+              </div>
             </li>
 
             <!-- -Courses NavItem -->
             <li class="nav-item">
-              <details class="dropdown">
-                <summary role="button">
+              <div class="dropdown1">
+                <div>
                   <a
+                  id="courseDropdown"
                     class="button {% if '/course/categories/' in request.path %}isactive{% endif %}"
                     >Courses
                   </a>
-                </summary>
-                <ul>
+                </div>
+                <ul id="course-items">
                   {% for category in categories %}
                   <li>
                     <a
@@ -825,7 +829,7 @@
                   </li>
                   {% endfor %}
                 </ul>
-              </details>
+              </div>
               <!-- <ul class="sub-courses-list"></ul> -->
             </li>
 
@@ -856,7 +860,7 @@
             <li class="nav-item">
               {% url 'blog:categories' as urlblog %}
               <a
-                class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
+                class="nav-link {% if 'blog' in request.path %}isactive{% endif %}"
                 href="{{urlblog}}"
                 style="font-size: 18px"
                 >Blog
@@ -930,5 +934,12 @@
         </div>
       </nav>
     </header>
+
+    <script>
+       $('.carousel').carousel({
+    interval: 7000
+  })
+  
+    </script>
   </body>
 </html>
