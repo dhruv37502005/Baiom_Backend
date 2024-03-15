@@ -36,6 +36,8 @@ def category_courses(request, category_id):
     testimonials = Testimonial.objects.all()
     carriculum = course.curriculum.all()
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
+    program_overview = course.program_overview.split('\n') if course.program_overview else []
+
     print(f"subscription_course_plans: {subscription_course_plans}")
     
     user = request.user
@@ -53,9 +55,10 @@ def category_courses(request, category_id):
             'batch':batches,
             'subscription_course_plans':subscription_course_plans,
             'testimonials': testimonials,
+            'program_overview':program_overview,
         })
     else:
-        return render(request, 'course.html', {'is_course': True, 'courses': courses})
+        return render(request, 'course.html', {'is_course': True, 'courses': courses,'categories': categories})
 
 @api_view(['GET'])
 def category_courses_json(request, category_id):
@@ -175,7 +178,7 @@ class DownloadFileView(View):
 
         return response
 
-login_required(login_url='/userauths/login/')
+# login_required(login_url='/userauths/login/')
 def course_contact(request):
     if request.method == 'POST':
         name_ = request.POST.get('name_')

@@ -93,7 +93,32 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 {% endif %}
             {% endfor %}
         </div>
-    {% endfor %}
+        {% endfor %}
+      </div>
+
+    </div>
+
+        {% for course in courses %}
+        <div class="second-section-container">
+          <div class="second-section-div1">
+            <img src="{% static 'courses\img\Image 2.jpg' %}" alt="" />
+          </div>
+  
+            <div class="second-section-div2">
+              <div>
+                <h1>{{course.title}}</h1>
+                <p>{{course.description}}</p>
+                <h3>Instructor: <b>{{course.instructor}}</b></h3>
+                <div class="flex-row">
+                  <button class="btn-33">Enroll Now</button>
+                  <button class=" btn-332">Connect with our Expert</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    
       <!-- {% for course in courses %} -->
       <!-- <div class="topsection1-container"> -->
       <!-- <div class="topsection1-content">
@@ -159,29 +184,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
         </div>
       </div> -->
-      {% for course in courses %}
-      <div class="second-section-container">
-        <div class="second-section-div1">
-          <img src="{% static 'courses\img\Image 2.jpg' %}" alt="" />
-        </div>
-
-          <div class="second-section-div2">
-            <div>
-              <h1>{{course.title}}</h1>
-              <p>{{course.description}}</p>
-              <h3>Instructor: <b>{{course.instructor}}</b></h3>
-              <div class="flex-row">
-                <button class="btn-33">Enroll Now</button>
-                <button class=" btn-332">Connect with our Expert</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
-  </div>
+      
+      
+    
 
 
 
@@ -192,13 +197,22 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <h3 id="why-web-dev-heading-1">
           Program <span class="underline">Overview</span>
         </h3>
-        <p>{{course.program_overview}}</p>
+        {% if program_overview %}
+          <!-- Split the program overview into separate chapters -->
+          {% for chapter in program_overview %}
+            <h5>{{ chapter }}</h5>
+          
+            <hr> <!-- Example of a horizontal divider -->
+          {% endfor %}
+        {% else %}
+          <p>No program overview available</p>
+        {% endif %}
       </div>
       <div class="image">
         {% if course.image %}
-        <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
+          <img src="{{ course.image.url }}" alt="{{ course.title }} Image" />
         {% else %}
-        <p>No image available</p>
+          <p>No image available</p>
         {% endif %}
       </div>
     </div>
@@ -339,104 +353,55 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   <!-- Right Course -->
   <section class="Right-course">
     <h2>
-      Join With Us <br />
-      Find the <span class="underline">Right Course</span>
+        Join With Us <br />
+        Find the <span class="underline">Right Course</span>
     </h2>
     <div class="slider_wrapper">
-      <div class="splide">
-        <div class="splide__track">
-          <div class="splide__list">
-            <div class="splide__slide">
-
-              <div class="content-box">
-
-                <div class="content">
-                  <div class="slide-name">Plus</div>
-                  <div class="temp">Web Development</div>
-                    <div class="price"> 30,500<span class="name-span">/Full course</span></div>
-                  <ul class="course-content">
-                    <li>Live Classes</li>
-                    <li>Doubt Clearing Sessions</li>
-                    <li>Assessment & Case Study</li>
-                    <li>Mentorship</li>
-                  </ul><br><br><br>
-
-                  <button class="btn-1">Enroll Now</button>
-
+        <div class="splide">
+            <div class="splide__track">
+                <div class="splide__list">
+                    {% for plan in subscription_course_plans %}
+                        <div class="splide__slide">
+                            <div class="content-box">
+                                <div class="content">
+                                    <div class="slide-name">{{ plan.subscription_plan.name }}</div>
+                                    <div class="temp">{{ plan.course.title }}</div>
+                                    <div class="price">{{ plan.subscription_plan.price }}/Full course</div>
+                                    {% if plan.subscription_plan.name == "Plus" %}
+                                        <ul class="course-content">
+                                            <li>Live Classes</li>
+                                        </ul>
+                                    
+                                    {% elif plan.subscription_plan.name == "Plus Combo" %}
+                                        <ul class="course-content">
+                                            <li>Live Classes</li>
+                                            <li>Plus Combo Features</li>
+                                        </ul>
+                                    {% elif plan.subscription_plan.name == "Premium" %}
+                                        <ul class="course-content">
+                                            <li>Live Classes</li>
+                                            <li>Doubt Clearing Sessions</li>
+                                            <li>Assessment & Case Study</li>
+                                            <!-- Add more features specific to Premium course -->
+                                        </ul>
+                                    {% endif %}
+                                    <form id="enroll-form" method="post" action="/subscription/create_purchase_record/">
+                                      {% csrf_token %}
+                                      <input type="hidden" name="course_id" id="course_id" value="{{ plan.course.id }}">
+                                      <input type="hidden" name="plan_id" id="plan_id" value="{{ plan.subscription_plan.id }}">
+                                      <input type="hidden" name="username" id="username" value="{{ request.user.username }}">
+                                      <button type="submit" class="btn-1 enroll-btn">Enroll Now</button>
+                                  </form>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-              </div>
             </div>
-            <div class="splide__slide">
-              <div class="content-box">
-
-                <div class="content">
-
-                  <div class="slide-name">Premium</div>
-                  <div class="temp">Web Development + AWS</div>
-                    <div class="price">60,000/<span class="name-span">Full course</span> </div>
-                  <ul class="course-content">
-                    <li>Live Classes</li>
-                    <li>Doubt Clearing Sessions</li>
-                    <li>Assessment & Case Study</li>
-                    <li>Mentorship</li>
-                    <li>Webinar Access</li>
-                    <li>Placement Assistance</li>
-                    <li>Interview Preparation</li>
-                    <li>Resume Building</li>
-                  </ul>
-
-
-                  <button class="btn-1">Enroll Now</button>
-                </div>
-
-              </div>
-            </div>
-            <div class="splide__slide">
-              <div class="content-box">
-                <div class="content">
-                <div class="slide-name">Premium Combo</div>
-                <div class="temp">Web Development + Cloud/AWS</div>
-                  <div class="price">30,500/<span class="name-span">Full course</span> </div>
-                  <ul class="course-content">
-                    <li>Live Classes</li>
-                    <li>Doubt Clearing Sessions</li>
-                    <li>Assessment & Case Study</li>
-                    <li>Mentorship</li>
-                    <li>Webinar Access</li>
-                    <li>Placement Assistance</li>
-                  </ul>
-
-
-                  <button class="btn-1">Enroll Now</button>
-
-                </div>
-              </div>
-            </div>
-            <div class="splide__slide">
-              <div class="content-box">
-                <div class="content">
-
-                  <div class="slide-name">Plus Combo<br> 30,500<span class="name-span">/Full course</span></div>
-                  <ul class="course-content">
-                    <li>Live Classes</li>
-                    <li>Doubt Clearing Sessions</li>
-                    <li>Assessment & Case Study</li>
-                    <li>Mentorship</li>
-                    <li>Extra Course</li>
-                  </ul>
-                  <br><br>
-
-                  <button class="btn-1">Enroll Now</button>
-
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
+
 
   <div class="emi-container">
     <div class="emi_box">

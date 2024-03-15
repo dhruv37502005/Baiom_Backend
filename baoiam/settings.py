@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     # For socialauth
     'social_django',
     'rest_framework',
-    'import_export'
+    'import_export',
 ]
 
 
