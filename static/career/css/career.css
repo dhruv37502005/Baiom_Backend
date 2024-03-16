@@ -1469,6 +1469,7 @@ article p {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 0.5em;
+    padding-top: 4rem;
   }
 
   .top-content {
@@ -1691,7 +1692,7 @@ article p {
   }
 
   .smallheading {
-    font-size: 1.7rem !important;
+    font-size: 2rem !important;
   }
 
   .outer {
