@@ -128,7 +128,7 @@
 }
 
 .topsection1-content > h1 {
-  font-size: 3rem;
+  font-size: 2.7rem;
   font-weight: 700;
   margin-bottom: 50px;
   line-height: 4.4rem;
@@ -137,8 +137,12 @@
 }
 
 .topsection1-content > h1 > span {
-  color: orangered;
-  position: relative;
+  /* color: orangered;
+  position: relative; */
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .topsection1-content > h1 > span:after {
@@ -252,7 +256,7 @@
   height: 70px;
   width: 300px;
   margin-bottom: 40px;
-  background-color: orangered;
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   border-radius: 20px;
   color: white;
   font-size: 1.2rem;
@@ -291,7 +295,7 @@
   border-radius: 10px;
   margin: 4rem 4rem 6rem 4rem;
   display: flex;
-  padding: 5px;
+  padding: 2rem;
 }
 
 /* .second-section-container {
@@ -327,6 +331,9 @@
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+.second-section-div2 > div {
+  padding-right: 40px;
 }
 
 .second-section-div2 h3 {
@@ -384,7 +391,7 @@
 
   .flex-row {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     justify-content: center;
     align-items: center;
   }
@@ -393,6 +400,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 35px;
   }
 
   /* .second-section-div2 {
@@ -423,12 +431,12 @@
   }
 }
 
-@media screen and (max-width: 390px) {
+/* @media screen and (max-width: 390px) {
   .second-section-container {
     margin-left: 2rem;
     margin-right: 2rem;
   }
-}
+} */
 
 /* @media screen and (max-width: 768px) {
   .second-section-div1 {
@@ -598,6 +606,9 @@
     align-items: center;
     gap: 10px;
   }
+  .flex-row {
+    flex-direction: column !important;
+  }
 }
 
 @media (max-width: 576px) {
@@ -613,6 +624,9 @@
     width: 250px;
     height: 250px;
   }
+  /* .second-section-container {
+    margin: 3rem 0rem 6rem 0rem;
+  } */
 }
 
 @media (max-width: 460px) {
@@ -632,6 +646,7 @@
   .topsection1-button .broucher {
     width: 250px;
   }
+  .section;
 }
 
 /* # section three */
@@ -714,6 +729,57 @@
   font-size: 1.1rem;
 }
 
+@media (max-width: 1250px) {
+  .section-three ul {
+    width: 60rem;
+    column-gap: 1.5rem;
+    padding-left: 2rem;
+    grid-template-columns: 0.8fr 0.8fr;
+  }
+
+  .section-three li {
+    font-size: 8px;
+    gap: 1.5rem;
+    width: 25rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 1060px) {
+  .section-three ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .section-three h2 {
+    padding: 40px;
+  }
+}
+@media (max-width: 420px) {
+  .section-three li {
+    font-size: 12px;
+    justify-content: center;
+    width: 250px;
+    text-align: left;
+  }
+  .section-three h2 {
+    padding: 20px;
+  }
+}
+@media (max-width: 370px) {
+  .section-three ul {
+    font-size: 0.6rem;
+  }
+  .section-three .fa-solid {
+    font-size: 1.5rem;
+  }
+}
 /* section two */
 
 .three {
@@ -1071,6 +1137,24 @@ footer p {
   font-size: 3.5rem;
   line-height: 4.5rem;
 }
+.content .temp {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  /* padding-bottom: 1rem; */
+}
+
+.content .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  padding-left: 2rem;
+}
 
 .title_join_us {
   position: relative;
@@ -1137,7 +1221,7 @@ footer p {
 }
 
 .slide-name {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
   line-height: 2.5rem;
   padding-left: 2rem;
@@ -1150,13 +1234,17 @@ footer p {
   font-weight: bold;
   line-height: 2.5rem;
   list-style: none;
-  margin-top: 0;
+  margin-top: 2rem;
   width: fit-content;
   color: #777;
 }
 
 .content:hover * {
   color: white !important;
+}
+
+.content:hover .temp {
+  -webkit-text-fill-color: #fff;
 }
 
 .swiper {
@@ -1458,6 +1546,9 @@ footer p {
     flex-direction: column;
     align-items: center;
   }
+  .topsection1-content {
+    width: 70%;
+  }
 
   .three h3 {
     text-align: center;
@@ -1478,6 +1569,7 @@ footer p {
 
   .image {
     width: 100%;
+    /* font: optional;t */
   }
 
   .three .image > img {

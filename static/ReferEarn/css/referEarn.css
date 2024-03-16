@@ -335,7 +335,7 @@ form input {
 }
 .why_content_data {
   display: flex;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .icons {
   margin-top: 38px;

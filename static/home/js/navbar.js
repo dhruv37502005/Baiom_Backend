@@ -1,3 +1,4 @@
+
 // adding cross icon onclick in navbar
 const navBartoggler = document.querySelector(".navbar-toggler")
 const navIcon = document.querySelector(".navbar-toggler-icon")
@@ -21,17 +22,17 @@ const navCourses = document.querySelector("#nav-courses-two")
 const navCoursesList = document.querySelector(".nav-courses-list")
 // const navCoursesAll = document.querySelector('.nav-courses-all')
 
-function AddHoveringDisplayEffectOnLinks(parent,child,display){
-  parent.addEventListener('mouseenter',()=>{
-    child.style.display = display;
-  })
+// function AddHoveringDisplayEffectOnLinks(parent,child,display){
+//   parent.addEventListener('mouseenter',()=>{
+//     child.style.display = display;
+//   })
   
-  parent.addEventListener('mouseleave',()=>{
-    child.style.display = 'none';
-  })  
-}
+//   parent.addEventListener('mouseleave',()=>{
+//     child.style.display = 'none';
+//   })  
+// }
 
-AddHoveringDisplayEffectOnLinks(navCourses,navCoursesList,"block")
+// AddHoveringDisplayEffectOnLinks(navCourses,navCoursesList,"block")
 
 
 document.querySelectorAll(".nav-courses-list>li").forEach((listItem)=>{
@@ -65,25 +66,51 @@ document.querySelectorAll(".nav-courses-list>li").forEach((listItem)=>{
 })
 
 
-// Adding subdropdown of courses dropdown
-const navbarCoursesDropdownMenu = document.querySelector("#navbarDropdown-subcourses")
-const navbarDropdown = document.querySelector("#nav-courses-one")
+// Adding subdropdown of company dropdown
+const companyDropdownMenu = document.querySelector("#company")
+const companyItemsDropdown = document.querySelector("#company-items")
+const courseDropdown = document.querySelector("#courseDropdown")
+const courseItems = document.querySelector("#course-items")
 
-navbarDropdown.onclick = ()=>{
-  const navbarCoursesDropdownMenu = document.querySelector("#nav-courses-one .dropdown-menu")
+companyDropdownMenu.addEventListener("click", ()=>{
+  console.log("hello hi bye bye")
 
-  if(navbarCoursesDropdownMenu.style.display !== "block"){
-    navbarCoursesDropdownMenu.style.display = "block";
+  if(companyItemsDropdown.style.display !== "block"){
+    courseItems.style.display = "none";
+    companyItemsDropdown.style.display = "block";
   }else{
-    navbarCoursesDropdownMenu.style.display = "none";
+    companyItemsDropdown.style.display = "none";
   }
 
-}
+})
 
-navbarCoursesDropdownMenu.onclick = ()=>{
-  const navbarCoursesDropdownMenu = document.querySelector("#nav-courses-one .dropdown-menu")
+// Course dropdown
 
-  if(navbarCoursesDropdownMenu.style.display !== "block")
-    navbarCoursesDropdownMenu.style.display = "block";
+courseDropdown.addEventListener("click", ()=>{
+  if(courseItems.style.display !== "block"){
+    companyItemsDropdown.style.display = "none";
+    courseItems.style.display = "block";
+  }else{
+    courseItems.style.display = "none";
+  }
+
+})
+
+
+// navbarCoursesDropdownMenu.onclick = ()=>{
+//   const navbarCoursesDropdownMenu = document.querySelector("#nav-courses-one .dropdown-menu")
+
+//   if(navbarCoursesDropdownMenu.style.display !== "block")
+//     navbarCoursesDropdownMenu.style.display = "block";
     
-}
+// }
+
+// navbar functionality
+
+//  const company = document.querySelector('#company');
+//  const companyItems = document.querySelector('#company-items');
+
+//  company.addEventListener('click', ()=>{
+
+
+//  })

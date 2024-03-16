@@ -263,6 +263,14 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;
     justify-content: center;
   }
+  .row > * {
+    padding-right: 0 !important;
+    padding-left: 18px !important;
+  }
+  .form {
+    padding: 0;
+    margin-right: 0px !important;
+  }
 }
 @media screen and (max-width: 854px) {
   .box_1 {
@@ -328,6 +336,7 @@ input[type="number"]::-webkit-outer-spin-button {
 @media screen and (max-width: 540px) {
   form {
     margin: 0;
+
   }
 
   .box_1 h2 {
@@ -385,6 +394,9 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 15px;
     margin-bottom: 10px;
   }
+  .form {
+    padding: 0;
+  }
 }
 @media (max-width: 1010px) {
   .box_1 h2 {
@@ -405,13 +417,14 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media (min-width: 854px) and (max-width: 1010px) {
   form {
-    margin-left: 7.5rem;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 776px) {
   form {
     margin-left: 0;
+    
   }
 }
 
