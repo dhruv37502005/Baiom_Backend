@@ -1200,6 +1200,7 @@ footer p {
 }
 
 .btn-1 {
+  position: absolute;
   font-size: 1.2rem;
   font-weight: 800;
   padding: 1em 1.5em;
@@ -1213,6 +1214,7 @@ footer p {
   width: fit-content;
   /* margin-left: 6.5rem; */
   align-self: center;
+  bottom: 20px;
 }
 
 .btn-1:hover {
@@ -1237,6 +1239,7 @@ footer p {
   margin-top: 2rem;
   width: fit-content;
   color: #777;
+  margin-bottom: 5rem;
 }
 
 .content:hover * {
