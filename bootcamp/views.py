@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from course.models import CourseCategory
 from .models import BootCourse, testimonial
 from django.views import View
@@ -9,6 +8,10 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.contrib import messages
 from .models import Contact
+from .serializers import BootCourseSerializer, TestimonialSerializer
+from rest_framework import generics
+
+
 # Create your views here.
 def BootCamp(request):
     if request.method == 'POST':
@@ -25,6 +28,27 @@ def BootCamp(request):
     return render(request,'wep.html',{'courses':courses , 'testimonials':testimonials, 'categories':categories})
 
 
+
+
+class bootcamp_course_list(generics.ListCreateAPIView):
+    queryset = BootCourse.objects.all()
+    serializer_class = BootCourseSerializer
+
+class bootcamp_course_detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = BootCourse.objects.all()
+    serializer_class = BootCourseSerializer
+    lookup_field = 'id'
+
+class testimonial_list(generics.ListCreateAPIView):
+    queryset = testimonial.objects.all()
+    serializer_class = TestimonialSerializer
+
+class testimonial_detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = testimonial.objects.all()
+    serializer_class = TestimonialSerializer
+    lookup_field = 'id'
+
+    
 class DownloadFileView(View):
     def get(self,request, *args, **kwargs):
         bootcamp = get_object_or_404(BootCourse,is_wep_main =True)

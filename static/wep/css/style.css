@@ -135,25 +135,16 @@ body {
   text-align: center;
 }
 
-@media (max-width: 320px) {
+ /* @media (max-width: 320px) {
   .topsection1-content .content > h1 {
     font-size: 25px;
     margin-bottom: 36px;
     line-height: 2.5rem;
   }
   .topsection1-content .content > h1 > span:after {
-    /* content: "";
-    position: absolute;
-    top: 62px;
-    left: 5px;
-    height: 50px;
-    width: 100%;
-    border: solid 2px orangered;
-    border-color: orangered transparent transparent transparent;
-    border-radius: 0%; */
     display: none;
   }
-}
+} */
 
 .topsection1-content .content > h1 > span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -981,6 +972,77 @@ input[type="radio"] {
   }
 }
 
+@media (min-width: 320px) and (max-width:375px) {
+  .section-five h2 {
+    font-size: 2rem;
+    padding-right: 22rem;
+    display: grid;
+    line-height: 47px;
+  }
+
+  .section-seven h2{
+    font-size: 2rem !important;
+  }
+
+  .emi_box {
+    width: 99% !important;
+  }
+
+  .topsection1-content .content > h1 {
+    font-size: 25px;
+    margin-bottom: 36px;
+    line-height: 2.5rem;
+  }
+
+  .topsection1-content .content > h1 > span:after{
+    display: none;
+  }
+
+  .amazing_career .timer {
+    width: auto !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (min-width:425px) and (max-width:426px) {
+  .topsection1-content .content > h1 {
+    font-size: 33px;
+    margin-bottom: 36px;
+    line-height: 3.5rem;
+  }
+
+  .topsection1-content .content > h1 > span:after{
+    display: none;
+  }
+
+  .section-five h2{
+    font-size: 39px;
+    margin-right: 147px;
+  }
+
+  .section-seven h2{
+    font-size: 39px !important;
+  }
+
+  .section-seven h2 span{
+    font-size: 39px !important;
+  }
+
+  .emi_box{
+    width:101% !important;
+  }
+
+  .amazing_career .timer {
+    width: auto !important;
+    gap: 1rem !important;
+  }
+
+  .ac-main h1{
+    font-size: 39px !important;
+    padding-top: 50px;
+  }
+}
+
 .section-five .details {
   display: flex;
   flex-direction: column;
@@ -1532,12 +1594,12 @@ input[type="radio"] {
   gap: 2rem;
 }
 
-@media (max-width: 320px) {
+/* @media (max-width: 320px) {
   .amazing_career .timer {
     width: auto;
     gap: 1rem;
   }
-}
+} */
 .amazing_career .timer span {
   color: brown;
   font-size: 1.2rem;
