@@ -646,7 +646,7 @@
   .topsection1-button .broucher {
     width: 250px;
   }
-  .section;
+  /* .section; */
 }
 
 /* # section three */
@@ -1091,6 +1091,7 @@ footer p {
 
 .swiper-slide {
   gap: 40px !important;
+  height: unset !important;
 }
 
 .swiper-button-prev {
@@ -1199,8 +1200,7 @@ footer p {
   color: rgb(1, 1, 68);
 }
 
-.btn-1 {
-  position: absolute;
+.enroll-btn {
   font-size: 1.2rem;
   font-weight: 800;
   padding: 1em 1.5em;
@@ -1214,10 +1214,9 @@ footer p {
   width: fit-content;
   /* margin-left: 6.5rem; */
   align-self: center;
-  bottom: 20px;
 }
 
-.btn-1:hover {
+.enroll-btn:hover {
   background: #ffffff;
   -webkit-text-fill-color: orangered;
 }
@@ -1239,7 +1238,6 @@ footer p {
   margin-top: 2rem;
   width: fit-content;
   color: #777;
-  margin-bottom: 5rem;
 }
 
 .content:hover * {

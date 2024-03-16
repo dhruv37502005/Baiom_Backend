@@ -140,3 +140,7 @@ header .navbar-nav {
 #company-items, #course-items{
   display:none;
 }
+
+#company, #courseDropdown{
+  cursor: pointer;
+}
