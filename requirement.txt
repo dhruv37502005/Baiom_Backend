@@ -4,5 +4,6 @@ psycopg2-binary
 pillow
 social-auth-app-django
 chatterbot==1.0.4
-pathlib 
+pathlib
+PyYaml
 
