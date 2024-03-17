@@ -1,19 +1,21 @@
 # blog/views.py
 
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Category, Post, Comment
+
+from course.models import CourseCategory
+from .models import *
 from .forms import CommentForm
 
 
 def category_list(request):
-    categories = Category.objects.all()
-    print(categories)
-    return render(request, 'blog.html', {'is_blog': True, 'categories': categories})
+    blogcategories = BlogCategory.objects.all()
+    categories = CourseCategory.objects.all()
+    return render(request, 'blog.html', {'is_blog': True, 'blogcategories': blogcategories, 'categories': categories})
 
 def post_list_by_category(request, category_id):
-    category = get_object_or_404(Category, pk=category_id)
+    category = get_object_or_404(BlogCategory, pk=category_id)
     posts = Post.objects.filter(category=category)
-    categories=Category.objects.all()
+    categories=BlogCategory.objects.all()
     recent_posts = Post.objects.order_by('-pub_date')[:5]
     return render(request, 'posts.html', {'categories': categories,'category': category, 'posts': posts, 'is_blog_details':True, 'recent_posts': recent_posts})
 
@@ -21,8 +23,9 @@ def post_list_by_category(request, category_id):
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     comments = Comment.objects.filter(post=post)
+    comments_count = Comment.objects.filter(post=post).count()
     user=request.user
-    categories=Category.objects.all()
+    categories=BlogCategory.objects.all()
     recent_posts = Post.objects.order_by('-pub_date')[:5]
 
     if request.method == 'POST':
@@ -36,4 +39,4 @@ def post_detail(request, post_id):
     else:
         form = CommentForm()
 
-    return render(request, 'post_detail.html', {'categories': categories,'post': post, 'comments': comments, 'form': form,'is_blog_details':True, 'user':user, 'recent_posts': recent_posts})
+    return render(request, 'post_detail.html', {'categories': categories,'post': post, 'comments': comments, 'form': form,'is_blog_details':True, 'user':user, 'recent_posts': recent_posts, 'comments_count':comments_count})

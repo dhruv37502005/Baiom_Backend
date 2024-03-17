@@ -26,7 +26,7 @@ class BootCourse(models.Model):
     brochure = models.FileField(upload_to='bootcamp_brochure',null=True, blank=True)
     is_wep_main = models.BooleanField(default=False)
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.title}"
 
     def save(self, *args, **kwargs):
@@ -40,7 +40,7 @@ class BootBatch(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.course.title} - Batch {self.id}"
     
 class testimonial(models.Model):

@@ -5,14 +5,5 @@ dashboard/__pycache__
 userauths/__pycache__
 course/__pycache__
 *.pyc
-/db.sqlite3
 .gitignore
-/media
-# Database stuff
-*.sqlite3
-db.sqlite3
-db.sqlite3
-db.sqlite3
-course/migrations/0002_testimonial.py
-course/migrations/0003_testimonial_category_alter_testimonial_image.py
-db.sqlite3
+.gitignore

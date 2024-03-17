@@ -17,7 +17,7 @@ section {
   transition: all 0.4s ease;
 }
 .we__offer {
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -29,7 +29,7 @@ section {
   overflow: hidden;
   box-shadow: 0 0 25px 0 rgba(71, 69, 69, 0.4);
   transition: all 0.3s ease;
-  width: auto;
+  /* width: 500px; */
   margin-bottom: 30px;
   /* height: auto; */
   height: 620px;
@@ -72,7 +72,7 @@ section {
   width: 100%;
   height: 260px;
   object-position: center;
-  object-position: cover;
+  object-fit: cover;
 }
 
 .we__offer_content {
@@ -80,14 +80,14 @@ section {
 }
 
 .we__offer_content .blog-icon {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #9a9bb2;
   line-height: 1.6;
   gap: 1rem;
 }
 .we__offer_content .blog-icon span {
-  margin-right: 10px;
+  margin-right: 7px;
 }
 .we__offer_content .blog-icon i {
   color: orangered;
@@ -98,9 +98,9 @@ section {
 }
 
 .we__offer_content .blog-icon .fa-regular {
-  padding-right: 10px;
+  padding-right: 7px;
   border-left: 1.5px solid #9a9bb2;
-  padding-left: 20px;
+  padding-left: 7px;
 }
 .we__offer_content h1 {
   display: inline;
@@ -149,13 +149,19 @@ section {
 
 /* swiper */
 
+/* .swiper-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+} */
+
 .swipe {
   /* background-color: #6221fb; */
-  padding: 150px 5%;
+  padding: 80px 5%;
 }
 
 .new {
-  padding: 40px;
+  padding: 70px 20px;
 }
 
 .nav-btn::after,
@@ -174,6 +180,12 @@ section {
 .fa-xmark {
   font-size: 2rem;
 }
+
+.swiper-slide {
+  /* width: 29% !important; */
+  margin-right:0;
+}
+
 /* Resonsive */
 
 @media (max-width: 1300px) {
@@ -201,7 +213,7 @@ section {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .swipe {
     padding-top: 70px;
     padding-bottom: 40px;
@@ -240,6 +252,14 @@ section {
 
   #courses {
     padding: 0 50px !important;
+
+    /* flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    transition: transform 0.3s ease-in-out; */
   }
 }
 

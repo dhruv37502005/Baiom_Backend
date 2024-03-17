@@ -68,7 +68,7 @@
             others, and earn rewards along the way.
           </p>
           <div class="button-section">
-            <button class="button-one" id="button-one" onclick="openForm()">
+            <button type="button" style="z-index: 1;" class="button-one" id="button-one" onclick="openForm()">
               I AM INTERESTED
             </button>
             <!-- <div class="input-section">
@@ -81,7 +81,7 @@
 
       <section class="section-two">
         <div>
-          <h2><span>Program</span> Overview</h2>
+          <h2><span class="underline">Program</span> Overview</h2>
           <p>
             ITIE is a program that has been formulated by our team and leading
             experts for young enthusiasts to build a strong and powerful career
@@ -90,7 +90,7 @@
             cascading the knowledge they have gained so far into others. Hence,
             after learning a skill they will be tested on it and if they clear
             the tests, they get the opportunity to teach a new intern who wishes
-            to learn the same skill as them. The ‘Teacher Interns’ will then
+            to learn the same skill as them. The 'Teacher Interns' will then
             earn exciting compensation offers and incentives.
           </p>
           <h6>⏳ Enrollment Deadline Approching Soon!</h6>
@@ -102,7 +102,7 @@
 
       <section class="section-three">
         <div>
-          <h2><span> Course </span> Highlights</h2>
+          <h2><span class="underline"> Course </span> Highlights</h2>
           <ul>
             <li>
               <i class="fa-solid fa-graduation-cap"></i>
@@ -179,7 +179,7 @@
       </section>
 
       <section class="section-four">
-        <h2>Our <span>Courses</span></h2>
+        <h2>Our <span class="underline">Courses</span></h2>
         <div class="cards_container">
           {% for course in courses %}
           <div class="cards">
@@ -196,7 +196,7 @@
       </section>
 
       <section class="section-five">
-        <h2>Testimonials</h2>
+        <h2>Our <span  class="underline">Testimonials</span></h2>
         <div class="temp">
             <i id="left" class="fa-solid fa-angle-left"></i>
             <i id="right" class="fa-solid fa-angle-right"></i>
@@ -227,7 +227,7 @@
         <div class="circle_four"></div>
         <h2>
           Join With Us <br />
-          Find the <span>Right Course</span>
+          Find the <span class="underline">Right Course</span>
         </h2>
         <div class="carousel-two">
           <!-- <i id="left" class="fa-solid fa-angle-left"></i>
@@ -235,6 +235,7 @@
           <div class="plans">
             <div>
               <h4>Plus</h4>
+              <div class="temp">Web Development</div>
               <h6><span>₹ 2999</span>/ Full course</h6>
             </div>
             <ul>
@@ -249,6 +250,7 @@
           <div class="plans">
             <div>
               <h4>Premium</h4>
+              <div class="temp">Web Development + AWS</div>
               <h6><span>₹ 11999</span>/ Full course</h6>
             </div>
             <ul>
@@ -362,7 +364,7 @@
 
       <section class="amazing_career">
         <div class="amazing-container">
-          <h2 class="amazing_heading">Amazing Career</h2>
+          <h2 class="amazing_heading">Amazing <span  class="underline">Career</span></h2>
           <!-- <div class="awaits">Awaits!</div> -->
           <p class="grab_offer">
             Grab these exclusive offers available only once a year.
@@ -411,7 +413,7 @@
 
       <script>
         // Set the target date for the deal expiration
-        const targetDate = new Date("February 29, 2024 23:59:59").getTime();
+        const targetDate = new Date("April 5, 2024 23:59:59").getTime();
 
         // Update the countdown every second
         const countdown = setInterval(function () {
@@ -454,7 +456,7 @@
       <section class="section-nine">
         <div class="container-main faq">
           <div class="ac-main">
-            <h1>Frequently Asked <span>Questions</span></h1>
+            <h1>Frequently Asked <span  class="underline">Questions</span></h1>
             <div class="accordion">
               <div class="accordion-item">
                 <div class="accordion-item-header">

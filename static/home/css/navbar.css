@@ -10,6 +10,7 @@ header {
 .navbar {
   padding: 0px 6px 0px 6px;
 }
+
 a {
   text-decoration: none;
 }
@@ -22,11 +23,11 @@ header .nav-item {
 }
 @media screen and (max-width: 1250px) {
   header .nav-item {
-    padding: 0;
+    padding: 0.5rem;
   }
 }
 header .nav-item a {
-  padding-top: 0.7rem;
+  /* padding-top: 0.5rem; */
   color: rgba(0, 0, 0, 0.5);
   font-size: 1.1rem;
   font-weight: 600;
@@ -36,7 +37,7 @@ header .nav-item a {
   border-bottom: none;
 }
 
-@media (max-width: 1054px) {
+@media (max-width: 1250px) {
   #nav-courses-one {
     display: block;
   }
@@ -47,7 +48,7 @@ header .nav-item a {
 
   header .nav-item a,
   header button {
-    font-size: 0.9rem;
+    font-size: 1rem !important;
   }
 
   #nav-courses-one .dropdown-toggle + .dropdown-menu > .nav-link {
@@ -72,8 +73,8 @@ header img {
   width: 120px;
 }
 
-/* header .nav-item a:hover {
-  color: #ec4f01 ;
+/* header .nav-item a: {
+  color: #ec4f01;
 } */
 
 .btn-1 {
@@ -114,7 +115,8 @@ header .navbar-nav {
   padding: 0;
   margin: 0;
 }
-@media (max-width: 1000px) {
+
+@media (max-width: 1200px) {
   .btn-1,
   .btn-2 {
     padding: 0.6em 1em;
@@ -134,4 +136,11 @@ header .navbar-nav {
 header .navbar-nav {
   color: rgba(0, 0, 0, 0.5) !important;
   font-size: 18px !important;
+}
+#company-items, #course-items{
+  display:none;
+}
+
+#company, #courseDropdown{
+  cursor: pointer;
 }

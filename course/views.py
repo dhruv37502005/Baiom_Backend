@@ -24,9 +24,10 @@ from .serializers import CourseSerializer, CourseCategorySerializer, BatchSerial
 
 from rest_framework.response import Response
 
-@login_required(login_url='/userauths/login/')
+# @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
     category = get_object_or_404(CourseCategory, id=category_id)
+    request.session['category_ID'] = category.id
     courses = Course.objects.filter(category=category, status='active')
     categories = CourseCategory.objects.all()
     course = Course.objects.get(id=category_id)
@@ -34,6 +35,8 @@ def category_courses(request, category_id):
     testimonials = Testimonial.objects.all()
     carriculum = course.curriculum.all()
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
+    program_overview = course.program_overview.split('\n') if course.program_overview else []
+
     print(f"subscription_course_plans: {subscription_course_plans}")
     
     user = request.user
@@ -51,9 +54,10 @@ def category_courses(request, category_id):
             'batch':batches,
             'subscription_course_plans':subscription_course_plans,
             'testimonials': testimonials,
+            'program_overview':program_overview,
         })
     else:
-        return render(request, 'course.html', {'is_course': True, 'courses': courses})
+        return render(request, 'course.html', {'is_course': True, 'courses': courses,'categories': categories})
 
 @api_view(['GET'])
 def category_courses_json(request, category_id):
@@ -169,7 +173,7 @@ class DownloadFileView(View):
 
         return response
 
-login_required(login_url='/userauths/login/')
+# login_required(login_url='/userauths/login/')
 def course_contact(request):
     if request.method == 'POST':
         name_ = request.POST.get('name_')
@@ -179,4 +183,4 @@ def course_contact(request):
         contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_)
         contact_obj.save()
         messages.success(request,'thank you for contacting us')
-        return render(request, 'course.html')
+        return redirect('course:category_courses', category_id=request.session['category_ID'])

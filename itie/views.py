@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from course.models import CourseCategory
+from subscription.models import SubscriptionPlanItie
 from .models import ICourse, testimonial
 from django.contrib import messages
 from .models import Contact
@@ -20,4 +21,11 @@ def itie(request):
     courses = ICourse.objects.all()
     testimonials = testimonial.objects.all()
     categories = CourseCategory.objects.all()
-    return render(request,'ITIE.html',{'is_itie': True, 'courses':courses , 'testimonials':testimonials, 'categories':categories})
+    itie_plans = SubscriptionPlanItie.objects.filter(active=True)
+    return render(request,'ITIE.html',
+                  {'is_itie': True, 
+                   'courses':courses , 
+                   'testimonials':testimonials, 
+                   'categories':categories,
+                   'itie_plans':itie_plans
+                   })
