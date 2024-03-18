@@ -63,12 +63,13 @@
               </div>
 
               <div class="we__offer_content">
-                <div class="blog-icon" style="font-size: 0.97rem;">
-                  <span>
-                    <i class="fa fa-calendar" aria-hidden="true"></i>Mar 30, 2023</span>
-                  <span class="blog-comment">
-                    <a href="#"><i class="fa-regular fa-comment"></i>Comments(3)</a></span>
-                </div>
+                {% comment %} <div class="blog-icon" style="font-size: 0.97rem;"> {% endcomment %}
+                  {% comment %} <span>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>Mar 30, 2023
+                    </span> {% endcomment %}
+                  {% comment %} <span class="blog-comment">
+                    <a href="#"><i class="fa-regular fa-comment"></i>Comments(3)</a></span> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
                 <h2>
                   {% if category.description %}
                   {{ category.description }}
