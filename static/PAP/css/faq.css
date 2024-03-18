@@ -15,7 +15,7 @@
 }
 
 .ac-main h1 {
-  margin-top: 131px;
+  margin-top: 142px;
   font-size: 45px;
   /* font-size: 50px; */
   text-align: center;
@@ -177,6 +177,7 @@
 
   .img img {
     width: 100%;
+    padding-top: 5rem;
   }
 }
 @media screen and (max-width: 800px) {

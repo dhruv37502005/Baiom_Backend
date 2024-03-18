@@ -1,6 +1,5 @@
-
-
 {% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,6 +29,7 @@
       type="image/icon type"
       style="background-color: wheat"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <meta
       name="description"
       content="Baoiam is a fully-certified platform since 2020, helping millions of students through the entire world to achieve their personal and professional goals."
@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="{% static 'home/css/profile.css' %}" />
     <link rel="stylesheet" href="{% static 'home/css/navbar.css' %}" />
     <script src="{% static 'home/js/navbar.js' %}" defer></script>
+    
 
     <!-- bootstrap -->
     <link
@@ -188,7 +189,6 @@
     {% endcomment %}
 
     <script src="{% static 'courses/js/slider2.js' %}" defer></script>
-
     {% endif %} {% if is_category %}
     <link rel="stylesheet" href="{% static 'courses/css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'courses/css/faq.css' %}" />
@@ -233,7 +233,6 @@
       crossorigin="anonymous"
       defer
     ></script>
-
     <script src="{% static 'courses/js/slider2.js' %}" defer></script>
     {% endif %} {% if is_itie %}
     <link rel="stylesheet" href="{% static 'itie/css/styles.css' %}" />
@@ -288,6 +287,7 @@
     ></script> -->
 
     {% endif %} {% if is_career %}
+
     <link rel="stylesheet" href="{% static 'career/css/career.css' %}" />
     <link rel="stylesheet" href="{% static 'career/css/style.css' %}" />
     <link
@@ -313,6 +313,7 @@
     <script src="{% static 'career/js/script.js' %}" defer></script>
 
     {% endif %} {% if is_blog %}
+
     <link rel="stylesheet" href="{% static 'blog/css/Header-footer.css' %}" />
     <link rel="stylesheet" href="{% static 'blog/css/main_blog.css' %}" />
     <link
@@ -345,6 +346,7 @@
     ></script>
     <script src="{% static 'blog/js/index.js' %}" defer></script>
     {% endif %} {% if is_hire %}
+
     <link
       rel="stylesheet"
       href="{% static 'Hirefromus/css/hire_with_us.css' %}"
@@ -377,9 +379,9 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-
     <script src="{% static 'Hirefromus/js/style.js' %}" defer></script>
     {% endif %} {% if is_wep %}
+
     <link rel="stylesheet" href="{% static 'wep/css/faq.css' %}" />
     <link rel="stylesheet" href="{% static 'wep/css/slider1.css' %}" />
     <link rel="stylesheet" href="{% static 'wep/css/slider2.css' %}" />
@@ -433,7 +435,6 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -515,6 +516,12 @@
 
     {% endif %} {% if is_blog_details %}
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+      defer
+    ></script>
 
     {% endif %}
 
@@ -539,6 +546,8 @@
     {% if is_index_page %}
     <script src="{% static 'home/js/script.js' %}" defer></script>
     {% endif %}
+
+    <!-- ------Styles ------------------>
     <style>
       body,
       html {
@@ -564,6 +573,7 @@
       .isactive {
         display: flex;
         align-items: center;
+        justify-content: center;
       }
       .nav-link {
         width: fit-content;
@@ -572,24 +582,21 @@
         align-items: center;
       }
       .isactive {
-        font-size: 18px;
+        font-size: 16px;
         background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
       ::-webkit-scrollbar {
-        display: none;
+        /* display: none; */
       }
-
       /* ::-webkit-scrollbar-track {
         background-color: transparent;
       }
-
       ::-webkit-scrollbar-thumb {
         background-color: orange;
         border-radius: 6px;
       }
-
       ::-webkit-scrollbar-thumb:hover {
         background-color: orangered;
       } */
@@ -607,49 +614,45 @@
         font-size: 24px;
         cursor: pointer;
       }
-
       a.button:active {
         filter: brightness(75%);
       }
-
-      /* Dropdown styles */
-      .dropdown {
+      /* dropdown1 styles */
+      .dropdown1 {
         position: relative;
         padding: 0;
-        margin-right: 1em;
-
+        /* margin: 0 0.3em; */
         border: none;
       }
       .dropdown:visited {
         text-decoration: none;
       }
-
-      .dropdown summary {
+      .dropdown1 summary {
         list-style: none;
         list-style-type: none;
       }
 
-      .dropdown > summary::-webkit-details-marker {
+      .dropdown1 > summary::-webkit-details-marker {
         display: none;
       }
 
-      /* .dropdown summary:focus {
+      /* .dropdown1 summary:focus {
         outline: none;
       } */
 
-      /* .dropdown summary:focus a.button {
+      /* .dropdown1 summary:focus a.button {
         border: 2px solid white;
       } */
 
-      /* .dropdown summary:focus {
+      /* .dropdown1 summary:focus {
         outline: none;
       } */
-      
-      .dropdown ul {
+
+      .dropdown1 ul {
         position: absolute;
         /* margin: 20px 0 0 12px; */
         padding: 10px 0px;
-        width: auto;
+        width: max-content;
         /* left: 50%; */
         margin-left: -20px;
         margin-top: 24px;
@@ -662,39 +665,42 @@
         box-shadow: 2px 2px 4px 1px rgb(145, 144, 144);
       }
 
-      .dropdown ul li {
+      .dropdown1 ul li {
         margin-top: 30px;
         padding: 0;
         margin: 0;
-        width: 300px;
+        width: 100%;
       }
-      .dropdown ul a:hover{
-        text-decoration: none !important;
-      }
-      a{
+
+      .dropdown1 ul a:hover {
         text-decoration: none !important;
       }
 
-      .dropdown ul li a:link,
-      .dropdown ul li a:visited {
+      a {
+        text-decoration: none !important;
+      }
+
+      .dropdown1 ul li a:link,
+      .dropdown1 ul li a:visited {
         display: inline-block;
-        padding: 10px 0.8rem;
+        padding: 10px 40px 10px 20px;
         width: 100%;
         box-sizing: border-box;
         color: gray;
         text-decoration: none;
       }
 
-      .dropdown ul li a:hover {
+      .dropdown1 ul li a:hover {
         background-color: rgb(218, 217, 217);
         color: black;
       }
 
-      .nav-item .a:active{
+      .nav-item .a:active {
         color: blue !important;
       }
-      /* Dropdown triangle */
-      /* .dropdown ul::before {
+
+      /* dropdown1 triangle */
+      /* .dropdown1 ul::before {
         content: " ";
         position: absolute;
         width: 0;
@@ -708,8 +714,8 @@
           transparent;
       } */
 
-      /* Close the dropdown with outside clicks */
-      /* .dropdown > summary::before {
+      /* Close the dropdown1 with outside clicks */
+      /* .dropdown1 > summary::before {
         display: none;
       }
 
@@ -723,11 +729,10 @@
         bottom: 0;
         z-index: 1;
       } */
-      #nav-courses-one{
+      #nav-courses-one {
         display: block;
       }
     </style>
-
   </head>
 
   <body>
@@ -737,9 +742,12 @@
         class="navbar fixed-top navbar-expand-xl navbar-light bg-white shadow h-8"
         id="navbar"
       >
+        <!-- ------Brand Logo------- -->
         <a class="navbar-brand" href="{% url 'core:index' %}">
           <img src="{% static 'home/img/brand.png' %}" style="width: 100px" />
         </a>
+
+        <!-- ----Navbar Toggler for small screen sizes--- -->
         <button
           class="navbar-toggler"
           type="button"
@@ -751,6 +759,8 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- ----Navbar Items---- -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
@@ -759,110 +769,140 @@
               <a
                 class="nav-link {% if request.path == urlhome %}isactive{% endif %}"
                 href="{{urlhome}}"
-                style="font-size: 18px"
-                >Home</a
-              >
+                style="font-size: 16px"
+                >Home
+              </a>
             </li>
 
+            <!-- ---Company NavItem-- -->
             <li class="nav-item">
-              <details class="dropdown">
-                <summary role="button">
-                  <a class="button nav-link">Company</a>
-                </summary>
-                <ul>
-              
+              <div class="dropdown1">
+                <div class="nav-link">
+                  {% url 'core:career' as urlcareer %} 
+                  {% url 'core:hire_from_us' as urlhire %}
+                  <a
+                  id="company"
+                  style="font-size: 16px"
+                    class="button {% if request.path == urlcareer or request.path == urlhire %}isactive{% endif %}"
+                    >Company ⏷
+                  </a>
+                </div>
+                <ul id="company-items">
                   <li>
                     <a
-                  class="dropdown-item {% if request.path == urlcareer%}isactive{% endif %}"
-                  href="{% url 'core:career' %}"
-                  style="font-size: 18px"
-                  >Career</a
-                >
+                      class="{% if request.path == urlcareer%}isactive{% endif %}"
+                      href="{% url 'core:career' %}"
+                      style="font-size: 16px"
+                      >Career
+                    </a>
                   </li>
                   <li>
                     <a
-                    class="dropdown-item {% if request.path == urlhirefrom %}isactive{% endif %}"
-                    href="{% url 'core:hire_from_us' %} "
-                    style="font-size: 18px"
-                    >Hire from us</a
-                  >
+                      class=" {% if request.path == urlhire %}isactive{% endif %}"
+                      href="{% url 'core:hire_from_us' %} "
+                      style="font-size: 16px"
+                      >Hire from us
+                    </a>
                   </li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <details class="dropdown">
-                  <summary role="button">
-                    <a class="button {% if request.path == course %}isactive{% endif %}">Courses</a>
-                  </summary>
-                  <ul>
-                    {% for category in categories %}
-                    <li>
-                      <a
-                        href="{% url 'course:category_courses' category_id=category.id %}" style="font-size: 18px" 
-                        >{{ category.name }}</a
-                      >
-                    </li>
-                    {% endfor %}
-                  </ul>
-                </details>
-                <!-- <ul class="sub-courses-list"></ul> -->
-              </li>
+              </div>
+            </li>
+
+            <!-- -Courses NavItem -->
+            <li class="nav-item">
+              <div class="dropdown1">
+                <div class="nav-link">
+                  <a
+                  id="courseDropdown"
+                  style="font-size: 16px"
+                    class="button {% if '/course/categories/' in request.path %}isactive{% endif %}"
+                    >Courses ⏷
+                  </a>
+                </div>
+                <ul id="course-items">
+                  {% for category in categories %}
+                  <li>
+                    <a
+                      href="{% url 'course:category_courses' category_id=category.id %}"
+                      style="font-size: 16px"
+                      >{{category.name }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <!-- <ul class="sub-courses-list"></ul> -->
+            </li>
+
+            <!-- ITIE -->
             <li class="nav-item">
               {% url 'itie:itie' as itie %}
               <a
                 href="{{itie}}"
                 class="nav-link {% if request.path == itie %}isactive{% endif %}"
-                style="font-size: 18px"
-                >ITIE <span class="bar"></span
-              ></a>
+                style="font-size: 16px"
+                >ITIE <span class="bar"></span>
+              </a>
               <!-- <ul class="sub-courses-list"></ul> -->
             </li>
+
+            <!-- Bootcamp -->
             <li class="nav-item">
               {% url 'bootcamp:bootcamp' as bootcamp %}
               <a
                 class="nav-link {% if request.path == bootcamp %}isactive{% endif %}"
                 href="{{bootcamp}}"
-                style="font-size: 18px"
-                >Entrepreneurship</a
-              >
+                style="font-size: 16px"
+                >Entrepreneurship
+              </a>
             </li>
+
+            <!-- Blogs -->
             <li class="nav-item">
               {% url 'blog:categories' as urlblog %}
               <a
-                class="nav-link {% if request.path == urlblog %}isactive{% endif %}"
+                class="nav-link {% if 'blog' in request.path %}isactive{% endif %}"
                 href="{{urlblog}}"
-                style="font-size: 18px"
-                >Blog</a
-              >
+                style="font-size: 16px"
+                >Blog
+              </a>
             </li>
+
+            <!-- PAP -->
             <li class="nav-item">
               {% url 'core:pap' as urlpap %}
               <a
                 class="nav-link {% if request.path == urlpap %}isactive{% endif %}"
                 href="{{urlpap}}"
-                style="font-size: 18px"
-                >PAP</a
-              >
+                style="font-size: 16px"
+                >PAP
+              </a>
             </li>
+
+            <!-- Refer&Earn -->
             <li class="nav-item">
               {% url 'core:refer_earn' as refer_earn %}
               <a
                 class="nav-link {% if request.path == refer_earn %}isactive{% endif %}"
                 href="{{refer_earn}}"
-                style="font-size: 18px"
-                >Refer & Earn</a
-              >
+                style="font-size: 16px"
+                >Refer & Earn
+              </a>
             </li>
+
+            <!-- ContactUs -->
             <li class="nav-item">
               {% url 'contactapp:contactus' as urlContactus %}
               <a
                 class="nav-link {% if request.path == urlContactus %}isactive{% endif %}"
                 id="active"
                 href="{{urlContactus}}"
-                style="font-size: 18px"
-                >Contact Us</a
-              >
+                style="font-size: 16px"
+                >Contact Us
+              </a>
             </li>
+
+            <!-- Login/Profile -->
             {% if user.username %}
             <li class="nav-item" id="profile">
               <button type="button" id="profile-btn" class="profile-btn">
@@ -871,15 +911,15 @@
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'dashboard:user_ui' username=user %}"
-                      style="font-size: 18px"
-                      >Dashboard</a
-                    >
+                      style="font-size: 16px"
+                      >Dashboard
+                    </a>
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'userauths:logout' %}"
-                      style="font-size: 18px"
-                      >Logout</a
-                    >
+                      style="font-size: 16px"
+                      >Logout
+                    </a>
                   </div>
                 </div>
               </button>
@@ -887,13 +927,20 @@
             {% else %}
             <li class="nav-item">
               <a href="{% url 'userauths:login' %}">
-                <button class="btn-1">Login</button></a
-              >
+                <button class="btn-1">Login</button>
+              </a>
             </li>
             {% endif %}
           </ul>
         </div>
       </nav>
     </header>
+
+    <script>
+       $('.carousel').carousel({
+    interval: 7000
+  })
+  
+    </script>
   </body>
 </html>

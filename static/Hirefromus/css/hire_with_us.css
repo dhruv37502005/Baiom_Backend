@@ -29,6 +29,7 @@ body {
 
 a {
   text-decoration: none !important;
+  /* text-align: center; */
 }
 
 img {
@@ -314,7 +315,7 @@ img {
 .container-main {
   display: flex;
   justify-content: center;
-  margin: 150px 0px;
+  margin: 6rem 0px;
   margin-bottom: 50px;
 }
 
@@ -339,6 +340,8 @@ img {
   font-weight: bold;
   color: rgb(1, 1, 68);
   text-align: center;
+  line-height: 33px;
+  margin-bottom: 4rem;
 }
 
 .ac-main h1 span {
