@@ -91,7 +91,7 @@ header .nav-item {
 }
 
 header .nav-item a {
-  padding-top: 0.7rem;
+  /* padding-top: 0.7rem; */
   /* color: rgb(6, 0, 56); */
   /* color: black; */
   font-size: 1.1rem;
@@ -771,12 +771,17 @@ border-right: 1.5px solid #949494;
   margin-bottom: 1rem;
 }
 
-@media (max-width: 320px){
+@media (min-width: 320px) and (max-width: 321px){
+  .section-3 .horizon h2.h22{
+    left: -25% !important;
+  }
 .section-3 .horizon h2 {
     margin-left:20px;
+    font-size: 25px !important;
 }
 .section-3 .horizon .horizon-sub-heading {
-  margin-left:20px;
+  margin-left:-48px;
+  font-size: 25px;
 }
 
 .section-3 .horizon .check{
@@ -784,6 +789,20 @@ border-right: 1.5px solid #949494;
   padding-bottom:3rem;
 }
 
+.virtues-heading {
+  font-size: 20px !important;
+}
+
+.user-image-medium-small {
+  width: 348px;
+  position: relative !important;
+  right: 30% !important;
+  padding-top: 8% !important;
+}
+
+.home-section .row .col-md-6:not(.infoimg) {
+  padding: 3.5rem 1rem 1rem !important;
+}
 
 }
 
@@ -2309,8 +2328,8 @@ content:none;
   .user-image-medium-small {
     width: 348px;
     position: relative !important;
-    right: 17% !important;
-    padding-top: 8% !important;
+    right: 17% ;
+    padding-top: 8% ;
   }
 
   .home-section .row .col-sm-12.h2-dec {
@@ -2336,7 +2355,7 @@ content:none;
 
   .carousel-inner {
     position: relative;
-    right: 4% !important;
+    right: 4%;
   }
 
   .section-3 .horizon h2 {
