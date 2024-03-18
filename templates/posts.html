@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load blog_filters %}{% block content %}
 <!-- blog/templates/blog/post_list_by_category.html -->
 
 <!--<!DOCTYPE html>
@@ -40,13 +40,13 @@
         {% endif %}
 
 
-        {% for post in posts %}
+        {% for post, comment_count in posts|zip:comments_count %}
         <div class="content">
           <div class="blog-left-icon">
             <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
               {{ post.created_by.username }}</span>
             <span><i class="fa fa-calendar" aria-hidden="true"> </i>{{ post.pub_date }}</span>
-            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments(6)</a></span>
+            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments({{ comment_count }})</a></span>
             <!-- <span class="icon-tag"><i class="fa fa-tag"></i>{{ category.name }}</span> -->
           </div>
           <div class="blog-content">

@@ -48,7 +48,7 @@
             <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
               {{ post.created_by.username }}</span>
             <span><i class="fa fa-calendar" aria-hidden="true"> </i>{{ post.pub_date }}</span>
-            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments(6)</a></span>
+            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments({{ comments_count}})</a></span>
             <!-- <span class="icon-tag"><i class="fa fa-tag"></i>{{ category.name }}</span> -->
           </div>
           <div 
