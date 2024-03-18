@@ -78,9 +78,9 @@
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1200px) {
   .section-four .cards_container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -114,8 +114,10 @@
   }
 
   .section-four .cards_container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: unset;
   }
+  
 }
 
 /* .ac-main h1 {
@@ -161,7 +163,7 @@
 }
 
 @media screen and (max-width: 450px) {
-  .section-four .cards_container {
+  /* .section-four .cards_container {
     grid-template-columns: repeat(1, 1fr);
-  }
+  } */
 }

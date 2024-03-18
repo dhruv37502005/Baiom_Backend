@@ -582,13 +582,13 @@
         align-items: center;
       }
       .isactive {
-        font-size: 18px;
+        font-size: 16px;
         background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
       ::-webkit-scrollbar {
-        display: none;
+        /* display: none; */
       }
       /* ::-webkit-scrollbar-track {
         background-color: transparent;
@@ -621,7 +621,7 @@
       .dropdown1 {
         position: relative;
         padding: 0;
-        margin: 0 0.3em;
+        /* margin: 0 0.3em; */
         border: none;
       }
       .dropdown:visited {
@@ -769,7 +769,7 @@
               <a
                 class="nav-link {% if request.path == urlhome %}isactive{% endif %}"
                 href="{{urlhome}}"
-                style="font-size: 18px"
+                style="font-size: 16px"
                 >Home
               </a>
             </li>
@@ -777,14 +777,14 @@
             <!-- ---Company NavItem-- -->
             <li class="nav-item">
               <div class="dropdown1">
-                <div >
+                <div class="nav-link">
                   {% url 'core:career' as urlcareer %} 
                   {% url 'core:hire_from_us' as urlhire %}
                   <a
-
                   id="company"
+                  style="font-size: 16px"
                     class="button {% if request.path == urlcareer or request.path == urlhire %}isactive{% endif %}"
-                    >Company
+                    >Company ⏷
                   </a>
                 </div>
                 <ul id="company-items">
@@ -792,7 +792,7 @@
                     <a
                       class="{% if request.path == urlcareer%}isactive{% endif %}"
                       href="{% url 'core:career' %}"
-                      style="font-size: 18px"
+                      style="font-size: 16px"
                       >Career
                     </a>
                   </li>
@@ -800,7 +800,7 @@
                     <a
                       class=" {% if request.path == urlhire %}isactive{% endif %}"
                       href="{% url 'core:hire_from_us' %} "
-                      style="font-size: 18px"
+                      style="font-size: 16px"
                       >Hire from us
                     </a>
                   </li>
@@ -811,11 +811,12 @@
             <!-- -Courses NavItem -->
             <li class="nav-item">
               <div class="dropdown1">
-                <div>
+                <div class="nav-link">
                   <a
                   id="courseDropdown"
+                  style="font-size: 16px"
                     class="button {% if '/course/categories/' in request.path %}isactive{% endif %}"
-                    >Courses
+                    >Courses ⏷
                   </a>
                 </div>
                 <ul id="course-items">
@@ -823,7 +824,7 @@
                   <li>
                     <a
                       href="{% url 'course:category_courses' category_id=category.id %}"
-                      style="font-size: 18px"
+                      style="font-size: 16px"
                       >{{category.name }}
                     </a>
                   </li>
@@ -839,7 +840,7 @@
               <a
                 href="{{itie}}"
                 class="nav-link {% if request.path == itie %}isactive{% endif %}"
-                style="font-size: 18px"
+                style="font-size: 16px"
                 >ITIE <span class="bar"></span>
               </a>
               <!-- <ul class="sub-courses-list"></ul> -->
@@ -851,7 +852,7 @@
               <a
                 class="nav-link {% if request.path == bootcamp %}isactive{% endif %}"
                 href="{{bootcamp}}"
-                style="font-size: 18px"
+                style="font-size: 16px"
                 >Entrepreneurship
               </a>
             </li>
@@ -862,7 +863,7 @@
               <a
                 class="nav-link {% if 'blog' in request.path %}isactive{% endif %}"
                 href="{{urlblog}}"
-                style="font-size: 18px"
+                style="font-size: 16px"
                 >Blog
               </a>
             </li>
@@ -873,7 +874,7 @@
               <a
                 class="nav-link {% if request.path == urlpap %}isactive{% endif %}"
                 href="{{urlpap}}"
-                style="font-size: 18px"
+                style="font-size: 16px"
                 >PAP
               </a>
             </li>
@@ -884,7 +885,7 @@
               <a
                 class="nav-link {% if request.path == refer_earn %}isactive{% endif %}"
                 href="{{refer_earn}}"
-                style="font-size: 18px"
+                style="font-size: 16px"
                 >Refer & Earn
               </a>
             </li>
@@ -896,7 +897,7 @@
                 class="nav-link {% if request.path == urlContactus %}isactive{% endif %}"
                 id="active"
                 href="{{urlContactus}}"
-                style="font-size: 18px"
+                style="font-size: 16px"
                 >Contact Us
               </a>
             </li>
@@ -910,13 +911,13 @@
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'dashboard:user_ui' username=user %}"
-                      style="font-size: 18px"
+                      style="font-size: 16px"
                       >Dashboard
                     </a>
                     <a
                       id="profile-dropdown-item"
                       href="{% url 'userauths:logout' %}"
-                      style="font-size: 18px"
+                      style="font-size: 16px"
                       >Logout
                     </a>
                   </div>

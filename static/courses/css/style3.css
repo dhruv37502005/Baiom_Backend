@@ -330,7 +330,7 @@
 .second-section-div2 > div {
   padding-left: 20px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 .second-section-div2 > div {
   padding-right: 40px;
@@ -380,6 +380,10 @@
     width: 300px;
     padding: 8px 8px;
   }
+
+  .btn-332{
+    margin-left: 12px;
+  }
 }
 
 @media screen and (max-width: 967px) {
@@ -389,7 +393,7 @@
     right: 8%; */
   }
 
-  .flex-row {
+  .flex-row-1 {
     display: flex;
     flex-direction: column !important;
     justify-content: center;
@@ -412,6 +416,10 @@
     width: 200px;
   }
 
+  .btn-332{
+    margin-left: 1px;
+  }
+
   .second-section-div2 h3 {
     font-weight: 600;
     font-size: 1rem;
@@ -428,6 +436,7 @@
 
   .second-section-container {
     margin-bottom: 5%;
+    padding: 0;
   }
 }
 
@@ -606,7 +615,8 @@
     align-items: center;
     gap: 10px;
   }
-  .flex-row {
+  .flex-row-1{
+    display: flex;
     flex-direction: column !important;
   }
 }
@@ -620,9 +630,19 @@
     font-size: 14px;
   }
 
+
   .topsection1-image > img {
     width: 250px;
     height: 250px;
+  }
+
+  .flex-row-1{
+    display:flex;
+    flex-direction: column !important;
+  }
+
+  .btn-332{
+    font-size: 18px;
   }
   /* .second-section-container {
     margin: 3rem 0rem 6rem 0rem;
@@ -647,6 +667,49 @@
     width: 250px;
   }
   /* .section; */
+}
+
+@media (max-width: 320px){
+
+  .btn-33{
+    width:95% !important;
+    font-size: 14px;
+    /* margin-left: 16px; */
+  }
+  .second-section-div2 > div{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .flex-row-1{
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .btn-332{
+    font-size: 13px;
+    /* margin-left:12px; */
+    padding: 5px;
+  }
+
+  .second-section-div2{
+    width:70%;
+  }
+
+  .three h3 {
+    font-size: 29px !important;
+    padding-top: 6rem;
+  }
+
+  .why-web-dev-box .why-web-dev{
+    width:95% !important;
+  }
+
+  .three .image > img {
+    width: 271px !important;
+    height: 307px !important;
+    /* padding-top: 4rem; */
+}
 }
 
 /* # section three */
@@ -816,23 +879,25 @@
 }
 
 .three .image > img {
-  width: 50%;
-  height: 20%;
+  width: 70%;
+  height: 70%;
   border-radius: 10px;
 }
 
 .three h3 {
-  font-size: clamp(1rem, -0.175rem + 6.333vw, 3rem);
-  margin-bottom: 2rem;
+  font-size: 3rem;
+  margin-bottom: 4rem;
   font-weight: bold;
   color: #040052;
+  text-align: center;
 }
 
 .why-web-dev-box .why-web-dev {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30em;
+  width: 50%;
+  align-items: center;
 }
 
 .why-web-dev-box p {
@@ -866,13 +931,13 @@
 .seven h1 {
   text-align: center;
   margin: 2rem;
-  font-size: clamp(1rem, -0.175rem + 7.3vw, 3rem);
+  font-size: 3rem;
   font-weight: bold;
   color: #040052;
 }
 
 .curriculum {
-  width: 100%;
+  width: 97%;
   max-width: 1000px;
 }
 
@@ -972,7 +1037,7 @@ footer p {
 .testimonial-heading {
   font-size: 3rem;
   color: rgb(1, 1, 68);
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .slide-container {
@@ -1201,6 +1266,7 @@ footer p {
 }
 
 .enroll-btn {
+  position: absolute;
   font-size: 1.2rem;
   font-weight: 800;
   padding: 1em 1.5em;
@@ -1214,6 +1280,7 @@ footer p {
   width: fit-content;
   /* margin-left: 6.5rem; */
   align-self: center;
+  bottom: 20px;
 }
 
 .enroll-btn:hover {
@@ -1238,6 +1305,7 @@ footer p {
   margin-top: 2rem;
   width: fit-content;
   color: #777;
+  margin-bottom: 81px;
 }
 
 .content:hover * {
@@ -1546,26 +1614,52 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
   }
   .topsection1-content {
     width: 70%;
   }
+  .why-web-dev-box .why-web-dev {
+  width: 100%;
+  }
+  .three .image{
+    width: 100%;
+  }
+  .three .image > img {
+    width:40%;
+    height: 40%;
+    /* margin-bottom: 20px; */
+  }
+}
 
   .three h3 {
     text-align: center;
   }
 
+
   .why-web-dev-box p {
     text-align: justify;
     margin-left: 2.5rem;
   }
-}
+
 
 @media screen and (max-width: 768px) {
   .why-web-dev-box {
     padding: 0;
     margin: 10px;
-    box-shadow: none;
+    margin-top: 8rem;
+    padding: 2rem 0;
+    /* box-shadow: none; */
+  }
+
+  .three h3{
+    /* padding-top: 5rem; */
+    font-size: 43px;
+    /* padding-bottom: 2rem; */
+  }
+
+  .why-web-dev-box .why-web-dev{
+    width: 90%;
   }
 
   .image {
@@ -1574,13 +1668,74 @@ footer p {
   }
 
   .three .image > img {
-    width: 200px;
-    height: 200px;
+    width: 70%;
+    height: 70%;
+    /* padding-top: 6rem; */
+    /* margin-bottom: 4rem; */
   }
 
   .two ul {
     display: flex;
     flex-direction: column;
     align-items: baseline;
+  }
+  .curriculum{
+    width:92%
+  }
+
+  .testimonial-heading{
+    padding-bottom: 3rem;
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width:474px){
+
+  .why-web-dev-box {
+    width: 90% !important;
+    /* margin-left: 28px !important; */
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    box-shadow: none;
+  }
+
+  .why-web-dev-box .why-web-dev{
+    width:80%;
+  }
+  .why-web-dev-box .why-web-dev h5{
+    font-size: 13px;
+  } 
+
+  /* .three .image > img{
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+  } */
+
+  .second-section-container{
+    width:90%;
+    margin-left: 19px;
+
+  }
+}
+
+@media (min-width:770px) and (max-width:918px){
+  .three .image > img {
+    width: 340px;
+    height: 378px;
+    padding-bottom: 2rem;
+  }
+
+  .why-web-dev-box .why-web-dev {
+    padding-bottom: 3rem;
+  }
+}
+
+
+@media (min-width:380px){
+
+  .three h3, .section-three h2, .seven h1, .testimonial-heading, .Right-course h2 ,
+  .amazing_heading,.ac-main h1  {
+    font-size: 2.2rem;
   }
 }
