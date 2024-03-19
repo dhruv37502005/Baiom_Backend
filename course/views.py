@@ -57,7 +57,16 @@ def category_courses(request, category_id):
             'program_overview':program_overview,
         })
     else:
-        return render(request, 'course.html', {'is_course': True, 'courses': courses,'categories': categories})
+        return render(request, 'course.html', {
+            'is_course': True, 
+            'courses': courses,
+            'categories': categories,
+            'carriculum':carriculum,
+            'categories': categories,
+            'batch':batches,
+            'subscription_course_plans':subscription_course_plans,
+            'testimonials': testimonials,
+            'program_overview':program_overview,})
 
 @api_view(['GET'])
 @csrf_exempt
