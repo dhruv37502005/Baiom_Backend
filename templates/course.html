@@ -116,7 +116,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <p>{{course.description}}</p>
                 <h3>Instructor: <b>{{course.instructor}}</b></h3>
                 <div class="flex-row-1">
-                  <button class="btn-33">Enroll Now</button>
+                  <a href="#Right-course"><button class="btn-33">Enroll Now</button></a>
                   <button class=" btn-332">Connect with our Expert</button>
                 </div>
               </div>
@@ -359,7 +359,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 </section>
 
   <!-- Right Course -->
-  <section class="Right-course">
+  <section class="Right-course" id="Right-course">
     <h2>
         Join With Us <br />
         Find the <span class="underline">Right Course</span>
@@ -409,7 +409,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         </div>
     </div>
 </section>
-
 
   <div class="emi-container">
     <div class="emi_box">
@@ -695,5 +694,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script src="{% static 'courses\js\index.js' %}"></script>
 
+
+  
 </html>
 {% endblock content %}
