@@ -13,7 +13,6 @@ from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
 from .models import CourseCategory, Contact
-
 from django.utils import timezone
 from .models import Testimonial
 from rest_framework.decorators import api_view
@@ -21,8 +20,9 @@ from rest_framework.response import Response
 from django.shortcuts import render, get_object_or_404
 from .models import Course, CourseCategory, Batch
 from .serializers import CourseSerializer, CourseCategorySerializer, BatchSerializer, CourseCarriculumSerializer
+from django.views.decorators.csrf import csrf_exempt
 
-from rest_framework.response import Response
+
 
 # @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
@@ -60,6 +60,7 @@ def category_courses(request, category_id):
         return render(request, 'course.html', {'is_course': True, 'courses': courses,'categories': categories})
 
 @api_view(['GET'])
+@csrf_exempt
 def category_courses_json(request, category_id):
     category = get_object_or_404(CourseCategory, id=category_id)
     courses = Course.objects.filter(category=category, status='active')
@@ -79,7 +80,7 @@ def category_courses_json(request, category_id):
             'categories': categories_serializer.data,
             'carriculum': course_carriculum_serializer.data,
         }
-    return JsonResponse(jsondata)
+    return Response(jsondata)
 
 
 
