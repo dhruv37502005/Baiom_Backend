@@ -21,8 +21,14 @@ admin.site.register(SubscriptionPlanCourse,SubscriptionPlanCourseAdmin)
 class PurchaseCourseAdmin(admin.ModelAdmin):
     list_display = ('purchased_course', 'subscription_plan', 'dashboard_user', 'purchase_date', 'plans_duration_months')
 
-admin.site.register(PurchaseCourse, PurchaseCourseAdmin)
+admin.site.register(PurchaseCourse ,PurchaseCourseAdmin)
 # admin.site.register(PurchaseCourse)
+
+class PurchaseBootCampAdmin(admin.ModelAdmin):
+    list_display = ('purchased_course', 'subscription_plan', 'dashboard_user', 'purchase_date', 'plans_duration_months')
+
+admin.site.register(PurchaseBootcamp, PurchaseBootCampAdmin)
+
 
 class SubscriptionPlanItieAdmin(admin.ModelAdmin):
     list_display = ('subscription_plan_name', 'itie_course_name', 'active')
