@@ -4,6 +4,7 @@ psycopg2-binary
 pillow
 social-auth-app-django
 djangorestframework
+django-import-export
 chatterbot==1.0.4
 pathlib
 PyYaml
