@@ -10,14 +10,14 @@ time.clock = time.time
 bot = ChatBot('chatbot',read_only=False,logic_adapters=['chatterbot.logic.BestMatch'])
 
 
-list_to_train = [
-     "hi",
-     "hi,there",
-     "what is your name?",
-     "I'm just a chatbot",
-     "what is fav food",
-     "cheese",
- ]
+# list_to_train = [
+#      "hi",
+#      "hi,there",
+#      "what is your name?",
+#      "I'm just a chatbot",
+#      "what is fav food",
+#      "cheese",
+#  ]
 
 list_trainer = ListTrainer(bot)
 list_trainer.train(list_to_train)

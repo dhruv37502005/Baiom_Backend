@@ -120,11 +120,8 @@ class Contact(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
     mobile = models.CharField(max_length=20)
+    course_category = models.ForeignKey(CourseCategory, null=True, on_delete=models.CASCADE)
     profession = models.CharField(max_length=20, null=True, blank=True)
     
     def __str__(self):
         return self.name
-
-  
-
-

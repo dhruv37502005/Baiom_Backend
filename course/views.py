@@ -58,7 +58,16 @@ def category_courses(request, category_id):
             'program_overview':program_overview,
         })
     else:
-        return render(request, 'course.html', {'is_course': True, 'courses': courses,'categories': categories})
+        return render(request, 'course.html', {
+            'is_course': True, 
+            'courses': courses,
+            'categories': categories,
+            'carriculum':carriculum,
+            'categories': categories,
+            'batch':batches,
+            'subscription_course_plans':subscription_course_plans,
+            'testimonials': testimonials,
+            'program_overview':program_overview,})
 
 @api_view(['GET'])
 def category_courses_json(request, category_id):
@@ -185,7 +194,9 @@ def course_contact(request):
         email_ = request.POST.get('email_')
         mobile_ = request.POST.get('mobile_')
         profession_ = request.POST.get('profession_')
-        contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_)
+        category_id = request.session['category_ID']
+        category = get_object_or_404(CourseCategory, id=category_id)
+        contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_, course_category=category)
         contact_obj.save()
         messages.success(request,'thank you for contacting us')
         return redirect('course:category_courses', category_id=request.session['category_ID'])

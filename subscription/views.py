@@ -15,7 +15,6 @@ from .models import  Dashboard_User, Course, SubscriptionPlan, Batch, PurchaseCo
 
 def get_subscription_plans_by_course_id(request, course_id):
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course_id=course_id)
-    print(f"subscription_course_plans: {subscription_course_plans}")
     return render(request, 'subscription_plans_by_course.html', {'subscription_course_plans': subscription_course_plans})
 
 def get_subscription_plans_by_course_id_json(request, course_id):
@@ -84,7 +83,6 @@ def create_purchase_record_json(request, course_id, plan_id, username):
     purchase_course = PurchaseCourse.objects.filter(dashboard_user=dashboard_user, purchased_course=course, subscription_plan=subscription_plan, Batch=batch)
  
     if purchase_course.exists():
-        print(purchase_course)
         return JsonResponse({"result": "Course is already enrolled."})
 
     # Calculate purchase dates and duration based on the subscription plan

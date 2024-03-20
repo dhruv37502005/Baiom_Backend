@@ -27,10 +27,16 @@
 https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 " rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+      defer
+    ></script>
 </head>
 
 <body>
-  <form class="popup-form" id="popup-form" method="post" >
+  <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
     {% csrf_token %}
     <div class="popup-form-content">
       <div class="close" id="popup-close">&times;</div>
@@ -109,8 +115,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <h1>{{course.title}}</h1>
                 <p>{{course.description}}</p>
                 <h3>Instructor: <b>{{course.instructor}}</b></h3>
-                <div class="flex-row">
-                  <button class="btn-33">Enroll Now</button>
+                <div class="flex-row-1">
+                  <a href="#Right-course"><button class="btn-33">Enroll Now</button></a>
                   <button class=" btn-332">Connect with our Expert</button>
                 </div>
               </div>
@@ -199,11 +205,13 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         </h3>
         {% if program_overview %}
           <!-- Split the program overview into separate chapters -->
+          <div>
           {% for chapter in program_overview %}
             <h5>{{ chapter }}</h5>
           
             <hr> <!-- Example of a horizontal divider -->
-          {% endfor %}
+            {% endfor %}
+          </div>
         {% else %}
           <p>No program overview available</p>
         {% endif %}
@@ -351,7 +359,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 </section>
 
   <!-- Right Course -->
-  <section class="Right-course">
+  <section class="Right-course" id="Right-course">
     <h2>
         Join With Us <br />
         Find the <span class="underline">Right Course</span>
@@ -390,7 +398,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                                       <input type="hidden" name="course_id" id="course_id" value="{{ plan.course.id }}">
                                       <input type="hidden" name="plan_id" id="plan_id" value="{{ plan.subscription_plan.id }}">
                                       <input type="hidden" name="username" id="username" value="{{ request.user.username }}">
-                                      <button type="submit" class="btn-1 enroll-btn">Enroll Now</button>
+                                      <button type="submit" class="enroll-btn">Enroll Now</button>
                                   </form>
                                 </div>
                             </div>
@@ -401,7 +409,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         </div>
     </div>
 </section>
-
 
   <div class="emi-container">
     <div class="emi_box">
@@ -687,5 +694,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script src="{% static 'courses\js\index.js' %}"></script>
 
+
+  
 </html>
 {% endblock content %}

@@ -109,10 +109,10 @@ header img {
 }
 header .navbar-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding: 0;
+  padding: 0 4rem 0 0;
   margin: 0;
 }
 
@@ -139,4 +139,9 @@ header .navbar-nav {
 }
 #company-items, #course-items{
   display:none;
+}
+
+#company, #courseDropdown, .nav-link{
+  cursor: pointer;
+  text-wrap: nowrap;
 }

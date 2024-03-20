@@ -35,7 +35,6 @@
 </html>-->
 
 
-
 <section>
   <div class="main-blog" style="display: flex;justify-content: center;align-items: center; ">
     <div class="blog-left" style="width: 80%;">
@@ -48,12 +47,12 @@
             <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
               {{ post.created_by.username }}</span>
             <span><i class="fa fa-calendar" aria-hidden="true"> </i>{{ post.pub_date }}</span>
-            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments(6)</a></span>
+            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments({{ comments_count}})</a></span>
             <!-- <span class="icon-tag"><i class="fa fa-tag"></i>{{ category.name }}</span> -->
           </div>
           <div 
           class="blog-content">
-            <h2 style="text-align: center;">{{post.title}}</h2>
+            <h2>{{post.title}}</h2>
             {{ post.content|linebreaks }}
           </div>
         </div>
@@ -92,25 +91,27 @@
       <!-- Comment Section -->
       <!-- <section> -->
 
-      <div class="blog-left2">
+      <div class="blog-left2" id="commentDiv">
         <h2>Comments</h2>
         <div class="comments-section">
           {% for comment in comments %}
           <div class="comment">
-            <p>{{ comment.text }}</p>
             <div class="comment-meta">
-              <i class="fa fa-regular fa-user" aria-hidden="true"></i> By {{ comment.user.username }}
+              <p class="author"><i class="fa fa-regular fa-user" aria-hidden="true"></i> {{ comment.user.username }}:</p>
             </div>
+            <p class="commentText">{{ comment.text }}</p>
+            
           </div>
+          <p>{{ comment.created_at }}</p>
           {% endfor %}
         </div>
 
         {% if user.username %}
         <div class="comment-form-section">
           <h3>Add a Comment</h3>
-          <form method="post" action="{% url 'blog:post_detail' post_id=post.id %}">
+          <form class="commentForm" method="post" action="{% url 'blog:post_detail' post_id=post.id %}">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form }}
             <button type="submit">Submit</button>
           </form>
         </div>

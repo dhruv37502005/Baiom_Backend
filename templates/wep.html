@@ -33,22 +33,23 @@
 </head>
 
 <body>
-  <form class="popup-form" id="popup-form">
+  <form class="popup-form" id="popup-form" action="{% url 'bootcamp:bootcamp' %}", method="post">
+    {% csrf_token %}
     <div class="popup-form-content">
       <div class="close" id="popup-close">&times;</div>
       <lable for="name" id="name">Name</lable>
-      <input id="name" type="text" />
+      <input id="name" type="text" name="name_"/>
       <lable for="email" id="email">Email</lable>
-      <input id="email" type="email" />
+      <input id="email" type="email" name="email_"/>
       <lable for="mobile" id="mobile">Mobile</lable>
-      <input id="mobile" type="text" />
+      <input id="mobile" type="text" name="mobile_"/>
       <label for="professionSelect" id="professionLabel">Profession</label>
-      <select id="professionSelect">
+      <select id="professionSelect" name="profession_">
         <option value="student">Student</option>
-         <option value="teacher">Passed out</option>
-         <option value="engineer">Working Professional</option>      
-       </select>
-      <button type="button" class="popup-submit">Submit</button>
+        <option value="teacher">Passed out</option>
+        <option value="engineer">Working Professional</option>      
+      </select>
+      <button type="submit" class="popup-submit">Submit</button>
     </div>
   </form>
   <section class="section-one">
@@ -273,7 +274,8 @@
   </section>
 
   <section class="section-five">
-    <h2>our <span class="underline">Testimonials</span></h2>
+    <h2> Our 
+    <span class="underline">Testimonials</span></h2>
     <div class="temp">
       <i id="left" class="fa-solid fa-angle-left left"></i>
       <i id="right" class="fa-solid fa-angle-right right"></i>
@@ -302,109 +304,92 @@
       </div>
     </section> -->
 
-  <section class="section-seven">
-    <div class="circle_three"></div>
-    <div class="circle_four"></div>
-    <h2>
-      Join With Us <br />
-      Find the <span class="underline">Right Course</span>
-    </h2>
-    <div class="slider_wrapper">
-      <div class="splide">
-        <div class="splide__track">
-          <div class="splide__list">
-            <div class="splide__slide">
+    <section class="section-seven">
+      <div class="circle_three"></div>
+      <div class="circle_four"></div>
+      <h2>
+        Join With Us <br />
+        Find the <span class="underline">Right Course</span>
+      </h2>
+      <div class="slider_wrapper">
+          <div class="splide">
+              <div class="splide__track">
+                  <div class="splide__list">
+                      {% for subscription_plan_bootcamp in subscription_plans_bootcamp %}
+                      <div class="splide__slide">
+                          <div class="content-box">
+                              <div class="content">
+                                  <div class="slide-name">{{ subscription_plan_bootcamp.subscription_plan.name }}</div>
+                                  <div class="temp">{{ subscription_plan_bootcamp.bootcamp_course.title }}</div>
+                                  <div class="price">{{ subscription_plan_bootcamp.subscription_plan.price}}/-<span class="name-span">Full course</span></div>
+                                  <ul class="course-content">
+                                      {% if subscription_plan_bootcamp.subscription_plan.name == "Plus" %}
+                                        <li>Live Classes</li>
+                                        <li>Doubt clearing sessions</li>
+                                        <li>Structured courses & PDFs</li>
+                                        <li>Assessment & case study</li>
+                                        <li>Live projects - 20+</li>
+                                        <li>Internship Opportunities</li>
+                                        <li>Mentorship</li>
+                                        <li>Resume building</li>
+                                        <li>Interview preparation</li>
+                                      {% elif subscription_plan_bootcamp.subscription_plan.name == "Plus Combo" %}
+                                        <li>Live Classes</li>
+                                        <li>Doubt clearing sessions</li>
+                                        <li>Structured courses & PDFs</li>
+                                        <li>Assessment & case study</li>
+                                        <li>Live projects - 20+</li>
+                                        <li>Internship Opportunities</li>
+                                        <li>Mentorship</li>
+                                        <li>Resume building</li>
+                                        <li>Interview preparation</li>
 
-              <div class="content-box">
+                                      {% elif subscription_plan_bootcamp.subscription_plan.name == "Premium" %}
+                                        <li>Live Classes</li>
+                                        <li>Doubt clearing sessions</li>
+                                        <li>Structured courses & PDFs</li>
+                                        <li>Assessment & case study</li>
+                                        <li>Live projects - 20+</li>
+                                        <li>Internship Opportunities</li>
+                                        <li>Mentorship</li>
+                                        <li>Resume building</li>
+                                        <li>Interview preparation</li>
+                                        <li>Network of Top MNC industries & angels investors</li>
+                                        <li>Webinar and seminar access</li>
+                                        <li>Resource Hub</li>
 
-                <div class="content">
-                  <div class="slide-name">Premium</div>
-                  <div class="temp">Web Development + AWS</div>
-                    <div class="price">60,000/<span class="name-span">Full course</span> </div>
-                  <ul class="course-content">
-                    <li>Live Classes</li>
-                    <li>Doubt Clearing Sessions</li>
-                    <li>Assessment & Case Study</li>
-                    <li>Mentorship</li>
-                  </ul><br><br><br>
-
-                  <button class="btn-1">Try Demo Class</button>
-
-                </div>
+                                      {% elif subscription_plan_bootcamp.subscription_plan.name == "Premium Combo" %}
+                                        <li>Live Classes</li>
+                                        <li>Doubt clearing sessions</li>
+                                        <li>Structured courses & PDFs</li>
+                                        <li>Assessment & case study</li>
+                                        <li>Live projects - 20+</li>
+                                        <li>Internship Opportunities</li>
+                                        <li>Mentorship</li>
+                                        <li>Resume building</li>
+                                        <li>Interview preparation</li>
+                                        <li>Network of Top MNC industries & angels investors</li>
+                                        <li>Webinar and seminar access</li>
+                                        <li>Resource Hub</li>
+                                      <!-- Add more features specific to Premium course -->
+                                      {% endif %}
+                                  </ul>
+                                  <form id="enroll-form" method="POST" action="">
+                                      {% csrf_token %}
+                                      <input type="hidden" name="course_id" id="course_id" value="{{ subscription_plan_bootcamp.bootcamp_course.id }}">
+                                      <input type="hidden" name="plan_id" id="plan_id" value="{{ subscription_plan_bootcamp.subscription_plan.id }}">
+                                      <input type="hidden" name="username" id="username" value="{{ request.user.username }}">
+                                      <button type="submit" class="btn-1">Enroll Now</button>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                      {% endfor %}
+                  </div>
               </div>
-            </div>
-            <div class="splide__slide">
-              <div class="content-box">
-
-                <div class="content">
-
-                  <div class="slide-name">Premium</div>
-                  <div class="temp">Web Development + AWS</div>
-                    <div class="price">60,000/<span class="name-span">Full course</span> </div>
-                  <ul class="course-content">
-                    <li>Live Classes</li>
-                    <li>Doubt Clearing Sessions</li>
-                    <li>Assessment & Case Study</li>
-                    <li>Mentorship</li>
-                    <li>Webinar Access</li>
-                    <li>Placement Assistance</li>
-                    <li>Interview Preparation</li>
-                    <li>Resume Building</li>
-                  </ul>
-
-
-                  <button class="btn-1">Try Demo Class</button>
-                </div>
-
-              </div>
-            </div>
-            <div class="splide__slide">
-              <div class="content-box">
-                <div class="content">
-                  <div class="slide-name">Premium</div>
-                  <div class="temp">Web Development + AWS</div>
-                    <div class="price">60,000/<span class="name-span">Full course</span> </div>
-                  <ul class="course-content">
-                    <li>Live Classes</li>
-                    <li>Doubt Clearing Sessions</li>
-                    <li>Assessment & Case Study</li>
-                    <li>Mentorship</li>
-                    <li>Webinar Access</li>
-                    <li>Placement Assistance</li>
-                  </ul>
-
-
-                  <button class="btn-1">Try Demo Class</button>
-
-                </div>
-              </div>
-            </div>
-            <div class="splide__slide">
-              <div class="content-box">
-                <div class="content">
-
-                  <div class="slide-name">Premium</div>
-                  <div class="temp">Web Development + AWS</div>
-                    <div class="price">60,000/<span class="name-span">Full course</span> </div>
-                  <ul class="course-content">
-                    <li>Live Classes</li>
-                    <li>Doubt Clearing Sessions</li>
-                    <li>Assessment & Case Study</li>
-                    <li>Mentorship</li>
-                    <li>Extra Course</li>
-                  </ul>
-                  <br><br>
-
-                  <button class="btn-1">Try Demo Class</button>
-
-                </div>
-              </div>
-            </div>
-
           </div>
-        </div>
       </div>
-    </div>
+  </section>
 
     <div class="emi-container">
       <div class="emi_box">

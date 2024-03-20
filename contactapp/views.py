@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from course.models import CourseCategory
 from .models import Contact
 
 def contactus(request):
+    categories = CourseCategory.objects.all()
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
@@ -20,4 +22,4 @@ def contactus(request):
             messages.error(request, "All fields are required")
             return redirect("contactapp:contactus")
 
-    return render(request, 'contact-us.html', {'is_contactus_page': True})
+    return render(request, 'contact-us.html', {'is_contactus_page': True,'categories':categories})
