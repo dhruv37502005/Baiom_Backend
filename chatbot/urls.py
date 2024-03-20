@@ -1,9 +1,9 @@
-from django.urls import path
+#from django.urls import path
 # from .import views 
 
-app_name = 'chatbot'
+#app_name = 'chatbot'
 
-urlpatterns = [
+#urlpatterns = [
     # path('', views.chatbot,name='chatbot'),
     # path('getResponse',views.getResponse,name='getResponse')
- ]
+ #]

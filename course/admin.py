@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Course, CourseCategory, Batch, Resource, CourseCarriculum
 from .models import Course ,Testimonial, Contact
-
+from import_export.admin import ImportExportModelAdmin
 # Register your models here.
 
 class CourseAdmin(ImportExportModelAdmin,admin.ModelAdmin):
@@ -13,9 +13,6 @@ class CourseCategoryAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 admin.site.register(CourseCategory,CourseCategoryAdmin)
 
 # admin.site.register(Purchase)
-class CourseCarriculumAdmin(ImportExportModelAdmin,admin.ModelAdmin):
-    ...
-admin.site.register(CourseCarriculum,CourseCarriculumAdmin)
 class CourseCarriculumAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     ...
 admin.site.register(CourseCarriculum,CourseCarriculumAdmin)
@@ -37,13 +34,8 @@ admin.site.register(Resource, ResourceAdmin)
 class CourseTestimonialAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     ...
 admin.site.register(Testimonial,CourseTestimonialAdmin)
-class CourseTestimonialAdmin(ImportExportModelAdmin,admin.ModelAdmin):
-    ...
-admin.site.register(Testimonial,CourseTestimonialAdmin)
 
-class CourseContactAdmin(ImportExportModelAdmin,admin.ModelAdmin):
-    ...
-admin.site.register(Contact,CourseContactAdmin)
+
 class CourseContactAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     ...
 admin.site.register(Contact,CourseContactAdmin)

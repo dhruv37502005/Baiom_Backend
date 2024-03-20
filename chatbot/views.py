@@ -19,13 +19,13 @@ bot = ChatBot('chatbot',read_only=False,logic_adapters=['chatterbot.logic.BestMa
 #      "cheese",
 #  ]
 
-list_trainer = ListTrainer(bot)
-list_trainer.train(list_to_train)
+#list_trainer = ListTrainer(bot)
+#list_trainer.train(list_to_train)
 
-def chatbot(request):
-     return render(request,'chatbot.html')
+#def chatbot(request):
+#     return render(request,'chatbot.html')
 
-def getResponse(request):
-     userMessage = request.GET.get('userMessage')
-     chatResponse = str(bot.get_response(userMessage))
-     return HttpResponse(chatResponse)
+#def getResponse(request):
+ #    userMessage = request.GET.get('userMessage')
+  #   chatResponse = str(bot.get_response(userMessage))
+   #  return HttpResponse(chatResponse)
