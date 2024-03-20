@@ -10,6 +10,8 @@ from django.contrib import messages
 from .models import Contact
 from .serializers import BootCourseSerializer, TestimonialSerializer, BootBatchSerializer
 from rest_framework import generics
+from subscription.models import SubscriptionPlanBootcamp
+from .models import BootCourse , BootBatch 
 
 
 # Create your views here.
@@ -23,10 +25,12 @@ def BootCamp(request):
         contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_)
         contact_obj.save()
         messages.success(request,'thank you for contacting us')
+
+    subscription_plans_bootcamp = SubscriptionPlanBootcamp.objects.filter(active = True)
     courses = BootCourse.objects.all()
     testimonials = testimonial.objects.all()
     categories = CourseCategory.objects.all()
-    return render(request,'wep.html',{'courses':courses , 'testimonials':testimonials, 'categories':categories})
+    return render(request,'wep.html',{'courses':courses , 'testimonials':testimonials, 'categories':categories,'subscription_plans_bootcamp':subscription_plans_bootcamp})
 
 class DownloadFileView(View):
     def get(self,request, *args, **kwargs):
