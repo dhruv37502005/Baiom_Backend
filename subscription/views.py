@@ -15,7 +15,6 @@ from .models import  Dashboard_User, Course, SubscriptionPlan, Batch, PurchaseCo
 
 def get_subscription_plans_by_course_id(request, course_id):
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course_id=course_id)
-    print(f"subscription_course_plans: {subscription_course_plans}")
     return render(request, 'subscription_plans_by_course.html', {'subscription_course_plans': subscription_course_plans})
 
 def get_subscription_plans_by_course_id_json(request, course_id):
@@ -84,7 +83,6 @@ def create_purchase_record_json(request, course_id, plan_id, username):
     purchase_course = PurchaseCourse.objects.filter(dashboard_user=dashboard_user, purchased_course=course, subscription_plan=subscription_plan, Batch=batch)
  
     if purchase_course.exists():
-        print(purchase_course)
         return JsonResponse({"result": "Course is already enrolled."})
 
     # Calculate purchase dates and duration based on the subscription plan
@@ -108,3 +106,48 @@ def create_purchase_record_json(request, course_id, plan_id, username):
     purchase_course_serializer = PurchaseCourseSerializer(purchase_course)
 
     return JsonResponse({"PurchaseCourses":purchase_course_serializer.data})
+
+
+@login_required(login_url='/userauths/login/')
+def purchase_bootcourse_record(request):
+    if request.method == 'POST':
+        course_id = request.POST.get('course_id')
+        plan_id = request.POST.get('plan_id')
+        print(plan_id)
+        username = request.POST.get('username')
+        
+        user = User.objects.get(username=username)
+        dashboard_user = Dashboard_User.objects.get(user=user)
+        course = BootCourse.objects.get(id=course_id)
+        subscription_plan = SubscriptionPlan.objects.get(id=plan_id)
+        batch = BootBatch.objects.get(course=course)
+        if course in dashboard_user.enrolled_bootcourses.all():
+            messages.error(request, "Course is already enrolled.")
+            return redirect("core:index")
+        purchase_date = timezone.now().date()
+        purchase_start_date = purchase_date
+        plans_duration_months = subscription_plan.months
+        purchase_end_date = purchase_start_date + timedelta(days=30 * plans_duration_months)
+        additional_access_date = purchase_end_date  # Additional access date if needed
+
+        # Create PurchaseCourse record
+        purchase_course = PurchaseBootcamp.objects.create(
+            dashboard_user=dashboard_user,
+            purchased_course=course,
+            subscription_plan=subscription_plan,
+            Batch=batch,
+            purchase_date=purchase_date,
+            plans_duration_months=plans_duration_months,
+            purchase_start_date=purchase_start_date,
+            purchase_end_date=purchase_end_date,
+            additional_access_date=additional_access_date
+        )
+        dashboard_user.enrolled_bootcourses.add(course)
+        dashboard_user.enrolled_bootbatches.add(batch)
+
+        messages.success(request, "Bootcamp Course successfully purchased. Check your dashboard.")
+        return redirect("core:index")
+
+    else:
+        # Handle if the request method is not POST
+        return redirect("core:index")  # Redirect to some appropriate page if needed
