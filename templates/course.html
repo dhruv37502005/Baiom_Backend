@@ -377,20 +377,20 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                                     <div class="price">{{ plan.subscription_plan.price }}/Full course</div>
                                     {% if plan.subscription_plan.name == "Plus" %}
                                         <ul class="course-content">
-                                            <li>Live Classes</li>
+                                            <li>{{ plan.course_features|linebreaks }}</li>
                                         </ul>
                                     
                                     {% elif plan.subscription_plan.name == "Plus Combo" %}
                                         <ul class="course-content">
-                                            <li>Live Classes</li>
-                                            <li>Plus Combo Features</li>
+                                          <li>{{ plan.course_features|linebreaks }}</li>
                                         </ul>
                                     {% elif plan.subscription_plan.name == "Premium" %}
                                         <ul class="course-content">
-                                            <li>Live Classes</li>
-                                            <li>Doubt Clearing Sessions</li>
-                                            <li>Assessment & Case Study</li>
-                                            <!-- Add more features specific to Premium course -->
+                                          <li>{{ plan.course_features|linebreaks }}</li>
+                                        </ul>
+                                    {% elif plan.subscription_plan.name == "Premium Combo" %}
+                                        <ul class="course-content">
+                                          <li>{{ plan.course_features|linebreaks }}</li>
                                         </ul>
                                     {% endif %}
                                     <form id="enroll-form" method="post" action="/subscription/create_purchase_record/">
