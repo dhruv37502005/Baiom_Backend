@@ -11,6 +11,8 @@ Dashboard_User = get_user_model()
 
 
 class ICourse(models.Model):
+    plus = models.BooleanField(default = False)
+    premium = models.BooleanField(default = False)
     title = models.CharField(max_length=100)
     sub_title = models.CharField(max_length=100, blank=True,null=True)
     description = models.TextField()

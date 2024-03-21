@@ -172,31 +172,58 @@
     <section class="section-four">
       <h2>Our <span class="underline">Courses</span></h2>
       <div class="planBtns">
-        <button>Plus +</button>
-        <button>Premium ★</button>
+          <button id="plusBtn">Plus +</button>
+          <button id="premiumBtn">Premium ★</button>
       </div>
       <div class="cards_container">
-
-        {% for course in courses %}
-        <div class="cards">
-
-          <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-          <div class="card-content">
-
-            <h4>{{ course.title }}</h4>
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
-            <h6>{{ course.description }}</h6>
-            <!-- Add other fields as needed -->
-            <div class="planBtns">
-              <button>Download Brochure</button>
-            </div>
+          {% for course in courses %}
+          <div class="cards {% if course.plus %}plus{% endif %} {% if course.premium %}premium{% endif %}">
+              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+              <div class="card-content">
+                  <h4>{{ course.title }}</h4>
+                  <div class="timing">
+                      <p><span>🕓</span> 3 months</p>
+                  </div>
+                  <h6>{{ course.description }}</h6>
+                  <!-- Add other fields as needed -->
+                  <div class="planBtns">
+                      <button>Download Brochure</button>
+                  </div>
+              </div>
           </div>
-        </div>
-        {% endfor %}
+          {% endfor %}
       </div>
-    </section>
+  </section>
+  
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          var plusBtn = document.getElementById("plusBtn");
+          var premiumBtn = document.getElementById("premiumBtn");
+          var plusCourses = document.querySelectorAll(".cards.plus");
+          var premiumCourses = document.querySelectorAll(".cards.premium");
+          premiumCourses.forEach(function (course) {
+                  course.style.display = "none";
+              });
+  
+          plusBtn.addEventListener("click", function () {
+              plusCourses.forEach(function (course) {
+                  course.style.display = "";
+              });
+              premiumCourses.forEach(function (course) {
+                  course.style.display = "none";
+              });
+          });
+  
+          premiumBtn.addEventListener("click", function () {
+              plusCourses.forEach(function (course) {
+                  course.style.display = "none";
+              });
+              premiumCourses.forEach(function (course) {
+                  course.style.display = "";
+              });
+          });
+      });
+  </script>
 
     <!-- Mounika ma'am said to move this join_us here after courses -->
     <section class="section-seven">
