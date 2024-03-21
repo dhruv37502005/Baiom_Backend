@@ -4,12 +4,17 @@ from django.contrib import admin
 from .models import ICourse, IBatch
 from .models import testimonial
 from .models import Contact
-class ICourseAdmin(admin.ModelAdmin):
+from import_export.admin import ImportExportModelAdmin
+
+
+class ICourseAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display = ('title', 'instructor', 'status', 'brochure')
 
-class IBatchAdmin(admin.ModelAdmin):
+class IBatchAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display = ('batch_name', 'course', 'start_date', 'end_date')
 
+class testimonialAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    pass
 
 admin.site.register(ICourse, ICourseAdmin)
 admin.site.register(IBatch, IBatchAdmin)
