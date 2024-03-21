@@ -171,6 +171,10 @@
     <!-- Course Card Content -->
     <section class="section-four">
       <h2>Our <span class="underline">Courses</span></h2>
+      <div class="planBtns">
+        <button>Plus +</button>
+        <button>Premium ★</button>
+      </div>
       <div class="cards_container">
 
         {% for course in courses %}
@@ -186,8 +190,7 @@
             <h6>{{ course.description }}</h6>
             <!-- Add other fields as needed -->
             <div class="planBtns">
-              <button>Plus +</button>
-              <button>Premium ★</button>
+              <button>Download Brochure</button>
             </div>
           </div>
         </div>
@@ -219,7 +222,7 @@
             <li>Live corporate projects</li>
           </ul>
 
-          <!-- <button>Enroll Now</button> -->
+          <button>Enroll Now</button>
         </div>
         <div class="plans">
           <div>
@@ -234,7 +237,7 @@
             <li>Live corporate projects</li>
           </ul>
 
-          <!-- <button>Enroll Now</button> -->
+          <button>Enroll Now</button>
         </div>
         <!-- <div class="plans">
           <div>

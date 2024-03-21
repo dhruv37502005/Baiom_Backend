@@ -1262,7 +1262,25 @@ footer p {
   display: flex;
   flex-direction: column;
   height: 100%;
-  color: rgb(1, 1, 68);
+  color:
+  rgb(1, 1, 68);
+}
+.courses-enroll-btn {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+
+}
+
+
+
+.courses-enroll-btn input{
+  display: none;
+  width: 0px;
 }
 
 .enroll-btn {
@@ -1384,6 +1402,7 @@ footer p {
 .emi {
   font-size: 1.6rem;
   font-weight: 700;
+  text-align: center;
   line-height: 2.5rem;
   /* margin: 5px; */
   color: rgb(1, 1, 68);
