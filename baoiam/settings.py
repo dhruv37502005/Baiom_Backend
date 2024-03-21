@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 
     
     # Custom Apps
@@ -61,6 +62,8 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -70,6 +73,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'core.middleware.maintenance_middleware'
 ]
+
 
 ROOT_URLCONF = 'baoiam.urls'
 
@@ -200,3 +204,4 @@ EMAIL_HOST_PASSWORD ='rxebqwkrssrtikpu'
 
 STAGING = True
 ALLOWED_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True

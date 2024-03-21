@@ -34,9 +34,9 @@
     <!-- Left section of Blog -->
     <div class="blog-left">
       <div class="blog-left1">
-        {% if postlistCategory.image %}
+        {% if category.image %}
 
-        <img src="{{ postlistCategory.image.url }}" alt="{{ postlistCategory.name }}" />
+        <img src="{{ category.image.url }}" alt="{{ category.name }}" />
         {% endif %}
 
 
@@ -146,7 +146,7 @@
       <div class="categoery">
         <h3>Categories</h3>
 
-        {% for category in categories %}
+        {% for category in postCategories %}
         <a href="{% url 'blog:post_list_by_category' category.id %}" class="course_btn">
           <div class="categoery1">
             <span><i class="fa fa-play"></i>{{category.name}}</span>

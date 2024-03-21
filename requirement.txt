@@ -8,4 +8,4 @@ django-import-export
 chatterbot==1.0.4
 pathlib
 PyYaml
-
+django-cors-headers
