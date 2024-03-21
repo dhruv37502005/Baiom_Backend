@@ -1,13 +1,15 @@
 from django.contrib import admin
 from blog.models import *
+from import_export.admin import ImportExportModelAdmin
 
-class BlogCategoryAdmin(admin.ModelAdmin):
-    pass
 
-class PostAdmin(admin.ModelAdmin):
-    pass
+class BlogCategoryAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('name',)
 
-class CommentAdmin(admin.ModelAdmin):
+class PostAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('title',)
+
+class CommentAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     pass
 
 admin.site.register(BlogCategory, BlogCategoryAdmin)
