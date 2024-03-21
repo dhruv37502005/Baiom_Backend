@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "Java",
+      "description": "Java Blogs descriptions",
+      "image": "category_images/advanced-java-training-in-bangalore-tib_NGILdkm.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Python",
+      "description": "Python Blogs descriptions",
+      "image": "category_images/python-programming-language.jpg"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "description": "JavaScript Blogs descriptions",
+      "image": "category_images/javascript-tutorial.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Data Science",
+      "description": "Data Science Blogs descriptions",
+      "image": "category_images/data-science.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Machine Learning",
+      "description": "Machine Learning Blogs descriptions",
+      "image": "category_images/machine-learning.jpg"
+    }
+  ]
+  

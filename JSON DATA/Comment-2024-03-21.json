@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "post": 2,
+      "user": 1,
+      "text": "Great explanation! Looking forward to more posts like this.",
+      "created_at": "2024-03-21 06:13:25"
+    },
+    {
+      "id": 2,
+      "post": 2,
+      "user": 1,
+      "text": "Very informative. Thank you for sharing!",
+      "created_at": "2024-03-22 08:30:45"
+    },
+    {
+      "id": 3,
+      "post": 4,
+      "user": 1,
+      "text": "I've been looking for resources on this topic. This is helpful!",
+      "created_at": "2024-03-24 12:40:10"
+    },
+    {
+      "id": 4,
+      "post": 7,
+      "user": 1,
+      "text": "Excellent tutorial! Spring Boot is amazing.",
+      "created_at": "2024-03-27 11:50:55"
+    },
+    {
+      "id": 5,
+      "post": 10,
+      "user": 1,
+      "text": "JUnit is a lifesaver for testing. Thanks for the guide!",
+      "created_at": "2024-03-30 18:20:30"
+    }
+  ]
+  
