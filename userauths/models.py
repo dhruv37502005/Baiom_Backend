@@ -5,6 +5,7 @@ from django.contrib.postgres.fields import ArrayField
 from datetime import date
 
 from course.models import Batch, Course
+from bootcamp.models import BootBatch, BootCourse
 
 # Create your models here.
 
@@ -29,6 +30,8 @@ class Dashboard_User(models.Model):
     linkedin = models.CharField(max_length=100, blank=True, null=True)
     enrolled_courses = models.ManyToManyField(Course, related_name='enrolled_users', blank=True)
     enrolled_batches = models.ManyToManyField(Batch, related_name='enrolled_batch', blank=True)
+    enrolled_bootcourses = models.ManyToManyField(BootCourse, related_name='enrolled_users', blank=True)
+    enrolled_bootbatches = models.ManyToManyField(BootBatch, related_name='enrolled_batch', blank=True)
 
 
     def __str__(self):
