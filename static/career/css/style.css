@@ -6,12 +6,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  scrollbar-width: none !important;
 }
 
 body {
   overflow-x: hidden;
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
 }
 :root {
   --color-orange: linear-gradient(45deg, #fa2424, #ed7e1e);
