@@ -18,5 +18,5 @@ class testimonialAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 
 admin.site.register(ICourse, ICourseAdmin)
 admin.site.register(IBatch, IBatchAdmin)
-admin.site.register(testimonial)
+admin.site.register(testimonial,testimonialAdmin)
 admin.site.register(Contact)
