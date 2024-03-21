@@ -20,6 +20,9 @@ def post_list_by_category(request, category_id):
     recent_posts = Post.objects.order_by('-pub_date')[:5]
     return render(request, 'posts.html', {'categories': categories,'postCategories':postCategories,'category': category, 'posts': posts, 'is_blog_details':True, 'recent_posts': recent_posts})
 
+#     comments_count = [Comment.objects.filter(post=post).count() for post in posts]
+#     return render(request, 'posts.html', {'categories': categories,'category': category, 'posts': posts, 'is_blog_details':True, 'recent_posts': recent_posts, 'comments_count' : comments_count})
+
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)

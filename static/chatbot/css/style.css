@@ -38,7 +38,7 @@
   height: 300px;
   overflow-y: scroll;
   scrollbar-color: gray gray;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 #chatbot {
   margin-left: auto;
