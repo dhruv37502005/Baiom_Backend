@@ -374,7 +374,7 @@
                                       <!-- Add more features specific to Premium course -->
                                       {% endif %}
                                   </ul>
-                                  <form id="enroll-form" method="POST" action="">
+                                  <form id="enroll-form" method="POST" action="/subscription/purchase_bootcourse_record/">
                                       {% csrf_token %}
                                       <input type="hidden" name="course_id" id="course_id" value="{{ subscription_plan_bootcamp.bootcamp_course.id }}">
                                       <input type="hidden" name="plan_id" id="plan_id" value="{{ subscription_plan_bootcamp.subscription_plan.id }}">

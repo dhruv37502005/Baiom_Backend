@@ -134,7 +134,7 @@
         <div class="categoery">
           <h3>Categories</h3>
 
-          {% for category in categories %}
+          {% for category in detailCategories %}
           <a href="{% url 'blog:post_list_by_category' category.id %}" class="course_btn">
             <div class="categoery1">
               <span><i class="fa fa-play"></i>{{category.name}}</span>

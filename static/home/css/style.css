@@ -8,8 +8,6 @@
   font-family: "Montserrat", sans-serif;
   list-style: none;
   text-decoration: none;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
 }
 
 :root {
@@ -81,8 +79,6 @@ img {
 /* Header */
 header {
   background: var(--color-white);
-  z-index: 1;
-  box-shadow: rgb(49, 49, 49);
 }
 
 header .nav-item {
