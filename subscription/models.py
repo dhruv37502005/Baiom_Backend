@@ -38,6 +38,7 @@ class SubscriptionPlan(models.Model):
 class SubscriptionPlanCourse(models.Model):
     subscription_plan = models.ForeignKey(SubscriptionPlan, on_delete=models.CASCADE, blank=True,null=True )
     course = models.ForeignKey(Course, on_delete=models.CASCADE, blank=True, null=True)
+    course_features=models.TextField(default=False)
     included_in_plan = models.BooleanField(default=True)
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)

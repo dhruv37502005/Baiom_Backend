@@ -9,7 +9,7 @@ class SubscriptionPlanAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 admin.site.register(SubscriptionPlan,SubscriptionPlanAdmin)
 
 class SubscriptionPlanCourseAdmin(ImportExportModelAdmin,admin.ModelAdmin):
-    list_display = ('subscription_plan_name', 'course_name', 'active')
+    list_display = ('subscription_plan_name', 'course_name', 'course_features','active')
 
     def subscription_plan_name(self, obj):
         return obj.subscription_plan.name
