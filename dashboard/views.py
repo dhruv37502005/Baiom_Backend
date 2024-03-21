@@ -15,7 +15,7 @@ from django.core.files.base import ContentFile
 from subscription.models import PurchaseCourse
 from course.serializers import *
 from .serializers import *
-
+from rest_framework import generics
 
 
 @login_required(login_url="/userauths/login/")
@@ -155,7 +155,7 @@ def user_ui_json(request, username):
             'Resources':batch_notes,
         }
     
-    return JsonResponse(jsondata)
+    return Response(jsondata)
     
     
     
@@ -241,3 +241,13 @@ def enroll_plan(request, date, course_id):
         # dashboard_user.enrolled_batches.add(batch)
     
     # return redirect("dashboard:user_ui")
+
+# RestAPI views Here
+class dash_user_api(generics.ListCreateAPIView):
+    queryset = Dashboard_User.objects.all()
+    serializer_class = Dash_userSerializer
+
+class dash_user_detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Dashboard_User.objects.all()
+    serializer_class = Dash_userSerializer
+    lookup_field = 'user__username'

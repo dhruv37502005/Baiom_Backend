@@ -36,7 +36,7 @@ class BootCourse(models.Model):
 
 class BootBatch(models.Model):
     batch_name = models.CharField(max_length=100)
-    course = models.ForeignKey(BootCourse, on_delete=models.CASCADE , null=True)
+    course = models.ForeignKey(BootCourse, on_delete=models.CASCADE , null=True, related_name='batches')
     start_date = models.DateField()
     end_date = models.DateField()
 
