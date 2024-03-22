@@ -179,7 +179,7 @@ def purchase_itiecourse_record(request):
         additional_access_date = purchase_end_date  # Additional access date if needed
 
         # Create PurchaseCourse record
-        purchase_course = PurchaseBootcamp.objects.create(
+        purchase_course = PurchaseItie.objects.create(
             dashboard_user=dashboard_user,
             purchased_course=course,
             subscription_plan=subscription_plan,
