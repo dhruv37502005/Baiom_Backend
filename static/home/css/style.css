@@ -772,9 +772,9 @@ border-right: 1.5px solid #949494;
 }
 
 @media (min-width: 320px) and (max-width: 321px){
-  .section-3 .horizon h2.h22{
+  /* .section-3 .horizon h2.h22{
     left: -25% !important;
-  }
+  } */
 .section-3 .horizon h2 {
     margin-left:20px;
     font-size: 25px !important;
@@ -2454,4 +2454,64 @@ content:none;
     width: 92%;
     left: 4%;
    } 
+}
+
+
+@media (min-width:0px) and (max-width:320px){
+  .section-3 .horizon .horizon-sub-heading{
+    font-size: 13px;
+    margin-left: -29px;
+    margin-top: 24px;
+  }
+
+  .section-3 .horizon h2.h22 {
+    margin-left: -48px !important;
+    margin-right: 12px !important;
+  }
+
+  .section-3 .horizon h2{
+    margin-left: -35px !important;
+    margin-right: 12px !important;
+  }
+
+  .section-4 .tab-content-item .two .col-md-7 {
+    margin-left: -44px;
+  }
+
+  .box_1 form{
+    margin-left: -41px !important;
+  }
+  
+  .box_1 h2{
+    margin-left: 44px;
+  }
+
+  .box_1 .firstp {
+    margin-left: 15px !important;
+  }
+
+  .boxes .row_first{
+    margin-left: -14px;
+  }
+
+  #virtues-carousel{
+    width: 77%;
+    margin-left: -42px;
+  }
+
+  .infoimg {
+    padding-top: 8%;
+    margin-left: -23%;
+  }
+
+  .infoimg h5{
+    font-size: 18px;
+    padding-left: 20px;
+  }
+
+  .infoimg p{
+    font-size: 15px;
+    padding-right: 43px;
+    margin-left: 62px;
+  }
 }
