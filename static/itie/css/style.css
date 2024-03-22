@@ -526,7 +526,7 @@ body {
 .section-four .cards_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 4rem;
+  margin-top: 3rem;
   width: 100%;
   padding: 0 7%;
 }
@@ -545,18 +545,31 @@ body {
   display:flex;
   flex-direction: column;
 }
-.section-four .card-content button{
+.section-four .card-content button,.section-four .planBtns button{
   background: linear-gradient(180deg, #fb8721, #fa2424);
   border:none;
-  padding: 8px 16px;
+  padding: 8px 6px;
   color:#fff;
   border-radius:8px;
   font-weight: 600;
   font-size: 0.9em;
-  width:45%;
+  /* width:45%; */
   text-align: center;
   text-wrap: nowrap;
 }
+.section-four .planBtns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4rem;
+}
+
+.section-four .planBtns button{
+  padding: 1rem 1.3rem;
+  width: 180px;
+}
+
 .section-four .card-content button:hover{
   background: linear-gradient(40deg, #fb8721 10%, #fa2424 40%);  
   box-shadow: 0px 7px 10px 0px rgb(154 154 175 / 88%)
@@ -564,7 +577,7 @@ body {
 
 .section-four .card-content .planBtns{
   display: flex;
-  justify-content:space-between;
+  justify-content:center;
 }
 .section-four img {
   /* height: 180px; */

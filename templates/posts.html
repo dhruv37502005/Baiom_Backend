@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load blog_filters %}{% block content %}
 <!-- blog/templates/blog/post_list_by_category.html -->
 
 <!--<!DOCTYPE html>
@@ -34,9 +34,9 @@
     <!-- Left section of Blog -->
     <div class="blog-left">
       <div class="blog-left1">
-        {% if postlistCategory.image %}
+        {% if category.image %}
 
-        <img src="{{ postlistCategory.image.url }}" alt="{{ postlistCategory.name }}" />
+        <img src="{{ category.image.url }}" alt="{{ category.name }}" />
         {% endif %}
 
 
@@ -46,7 +46,7 @@
             <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
               {{ post.created_by.username }}</span>
             <span><i class="fa fa-calendar" aria-hidden="true"> </i>{{ post.pub_date }}</span>
-            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments(6)</a></span>
+            <!-- <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments({{ comment_count }})</a></span> -->
             <!-- <span class="icon-tag"><i class="fa fa-tag"></i>{{ category.name }}</span> -->
           </div>
           <div class="blog-content">
@@ -146,7 +146,7 @@
       <div class="categoery">
         <h3>Categories</h3>
 
-        {% for category in categories %}
+        {% for category in postCategories %}
         <a href="{% url 'blog:post_list_by_category' category.id %}" class="course_btn">
           <div class="categoery1">
             <span><i class="fa fa-play"></i>{{category.name}}</span>
