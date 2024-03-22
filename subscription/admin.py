@@ -29,6 +29,11 @@ class PurchaseBootCampAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 
 admin.site.register(PurchaseBootcamp, PurchaseBootCampAdmin)
 
+class PurchaseItieAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('purchased_course', 'subscription_plan', 'dashboard_user', 'purchase_date', 'plans_duration_months')
+
+admin.site.register(PurchaseItie, PurchaseItieAdmin)
+
 
 class SubscriptionPlanItieAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display = ('subscription_plan_name', 'itie_course_name', 'active')

@@ -248,11 +248,16 @@
                   <li>Live Master classes</li>
                   <li>Industrial Training</li>
                   <li>Mentorship Support</li>
-                  <li>Live corporate projects</li>
-                  
+                  <li>Live corporate projects</li> 
               </ul>
-              <button>Enroll Now</button>
-          </div>
+              <form id="enroll-form" class="wep-enroll-btn" method="POST" action="/subscription/purchase_itiecourse_record/">
+                {% csrf_token %}
+                <input type="hidden" name="course_id" id="course_id" value="{{ i_plan.itie_course.id }}">
+                <input type="hidden" name="plan_id" id="plan_id" value="{{ i_plan.subscription_plan.id }}">
+                <input type="hidden" name="username" id="username" value="{{ request.user.username }}">
+                <button type="submit" class="btn-1">Enroll Now</button>
+              </form>
+          </div>   
           {% endfor %}
       </div>
   </section>
