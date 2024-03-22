@@ -8,8 +8,6 @@
   font-family: "Montserrat", sans-serif;
   list-style: none;
   text-decoration: none;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
 }
 
 /* section2 */
@@ -29,10 +27,9 @@ section {
   overflow: hidden;
   box-shadow: 0 0 25px 0 rgba(71, 69, 69, 0.4);
   transition: all 0.3s ease;
-  /* width: 500px; */
-  margin-bottom: 30px;
-  /* height: auto; */
-  height: 620px;
+  margin-bottom: 10px;
+  padding-bottom: 30px;
+  height: 100%;
 }
 
 .we__offer_card .course_img {
@@ -56,6 +53,14 @@ section {
   font-size: 1.1rem;
   font-weight: 700;
   padding-right: 5px;
+}
+.swiper-button-prev{
+  left: -9px !important;
+  top: 60% !important;
+}
+.swiper-button-next{
+  right: -9px !important;
+  top: 60% !important;
 }
 
 .blog-icon a {
@@ -160,9 +165,9 @@ section {
   padding: 80px 5%;
 }
 
-.new {
+/* .new {
   padding: 70px 20px;
-}
+} */
 
 .nav-btn::after,
 .nav-btn::before {

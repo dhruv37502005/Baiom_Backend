@@ -35,7 +35,6 @@
 </html>-->
 
 
-
 <section>
   <div class="main-blog" style="display: flex;justify-content: center;align-items: center; ">
     <div class="blog-left" style="width: 80%;">
@@ -48,7 +47,7 @@
             <span><i class="fa fa-regular fa-user" aria-hidden="true"> </i>By
               {{ post.created_by.username }}</span>
             <span><i class="fa fa-calendar" aria-hidden="true"> </i>{{ post.pub_date }}</span>
-            <span class="blog-comment"> <a href="#"><i class="fa-regular fa-comments"></i>Comments({{ comments_count}})</a></span>
+            <span class="blog-comment"> <a href="#commentDiv"><i class="fa-regular fa-comments"></i>Comments({{ comments_count}})</a></span>
             <!-- <span class="icon-tag"><i class="fa fa-tag"></i>{{ category.name }}</span> -->
           </div>
           <div 
@@ -100,13 +99,17 @@
             <div class="comment-meta">
               <p class="author"><i class="fa fa-regular fa-user" aria-hidden="true"></i> {{ comment.user.username }}:</p>
             </div>
+            <div class="comment-data-time">
             <p class="commentText">{{ comment.text }}</p>
+            
+            <p class="comment-date">{{ comment.created_at }}</p>
+             </div>
           </div>
           {% endfor %}
         </div>
 
         {% if user.username %}
-        <div class="comment-form-section">
+        <div class="comment-form-section" id="comment-form-section">
           <h3>Add a Comment</h3>
           <form class="commentForm" method="post" action="{% url 'blog:post_detail' post_id=post.id %}">
             {% csrf_token %}
@@ -133,7 +136,7 @@
         <div class="categoery">
           <h3>Categories</h3>
 
-          {% for category in categories %}
+          {% for category in detailCategories %}
           <a href="{% url 'blog:post_list_by_category' category.id %}" class="course_btn">
             <div class="categoery1">
               <span><i class="fa fa-play"></i>{{category.name}}</span>

@@ -5,6 +5,10 @@ from subscription.models import SubscriptionPlanItie
 from .models import ICourse, testimonial
 from django.contrib import messages
 from .models import Contact
+from django.http import HttpResponse
+from django.views import View
+from django.shortcuts import  get_object_or_404
+from subscription.models import SubscriptionPlanItie
 
 # Create your views here.
 
@@ -21,11 +25,20 @@ def itie(request):
     courses = ICourse.objects.all()
     testimonials = testimonial.objects.all()
     categories = CourseCategory.objects.all()
-    itie_plans = SubscriptionPlanItie.objects.filter(active=True)
+    i_plans = SubscriptionPlanItie.objects.filter(active=True)
     return render(request,'ITIE.html',
                   {'is_itie': True, 
                    'courses':courses , 
                    'testimonials':testimonials, 
                    'categories':categories,
-                   'itie_plans':itie_plans
+                   'i_plans':i_plans
                    })
+
+class DownloadFileView(View):
+    def get(self,request,pk):
+        itie = get_object_or_404(ICourse, pk = pk)
+        file_content = itie.brochure.read()
+        file_name = itie.brochure.name
+        response = HttpResponse(file_content, content_type='application/octet-stream')
+        response['Content-Disposition'] = f'attachment; filename="{file_name}"'
+        return response

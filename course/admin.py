@@ -21,7 +21,7 @@ class BatchAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display = ('batch_name',)
 admin.site.register(Batch,BatchAdmin)
 
-class ResourceAdmin(admin.ModelAdmin):
+class ResourceAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display = ('created_at', 'get_course_title')
 
     def get_course_title(self, obj):
