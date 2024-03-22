@@ -11,13 +11,13 @@
 
 
 # list_to_train = [
-#     "hi",
-#     "hi,there",
-#     "what is your name?",
-#     "I'm just a chatbot",
-#     "what is fav food",
-#     "cheese",
-# ]
+#      "hi",
+#      "hi,there",
+#      "what is your name?",
+#      "I'm just a chatbot",
+#      "what is fav food",
+#      "cheese",
+#  ]
 
 # list_trainer = ListTrainer(bot)
 # list_trainer.train(list_to_train)

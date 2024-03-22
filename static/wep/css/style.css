@@ -135,25 +135,16 @@ body {
   text-align: center;
 }
 
-@media (max-width: 320px) {
-  .topsection1-content .content > h1{
+ /* @media (max-width: 320px) {
+  .topsection1-content .content > h1 {
     font-size: 25px;
-    margin-bottom:36px;
+    margin-bottom: 36px;
     line-height: 2.5rem;
   }
-  .topsection1-content .content > h1 > span:after{
-    /* content: "";
-    position: absolute;
-    top: 62px;
-    left: 5px;
-    height: 50px;
-    width: 100%;
-    border: solid 2px orangered;
-    border-color: orangered transparent transparent transparent;
-    border-radius: 0%; */
-    display:none;
+  .topsection1-content .content > h1 > span:after {
+    display: none;
   }
-}
+} */
 
 .topsection1-content .content > h1 > span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
@@ -183,7 +174,7 @@ body {
   text-align: center;
 }
 
-@media (max-width: 320px){
+@media (max-width: 320px) {
   .topsection1-content .content > p {
     font-size: 18px;
   }
@@ -345,19 +336,19 @@ body {
 @media (max-width: 320px) {
   .section-two h2 {
     font-size: 38px;
-    margin-bottom:36px;
+    margin-bottom: 36px;
     line-height: 2.5rem;
   }
-  .section-two h2 span{
-     font-size: 51px;
-    margin-bottom:36px;
+  .section-two h2 span {
+    font-size: 51px;
+    margin-bottom: 36px;
     line-height: 8rem;
   }
 
-  .section-two h6{
-    padding:71px;
+  .section-two h6 {
+    padding: 71px;
   }
-  }
+}
 
 /* --------------------------- SECTION THREE ------------------------------ */
 
@@ -372,7 +363,7 @@ body {
 }
 
 .section-three h2 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 5rem;
   padding-top: 20px;
@@ -541,7 +532,7 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: #fff7ed;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   /* padding: 20px; */
 }
 .slider1 .container {
@@ -550,10 +541,10 @@ body {
   margin-right: 4rem;
 }
 .importance {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   line-height: 5.5rem;
   /* margin-left: 4rem; */
 }
@@ -738,8 +729,8 @@ input[type="radio"] {
   .slider1 h1 {
     margin-top: 5rem;
     padding: 0 2rem;
-    text-align:center;
-    font-size:2rem;
+    text-align: center;
+    font-size: 2rem;
   }
   .slider1 .textp {
     font-size: 1.3rem;
@@ -809,7 +800,7 @@ input[type="radio"] {
   padding-left: 50px;
 }
 .section-entrepreneur h2 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 2rem;
   /* padding-top: 20px; */
@@ -866,22 +857,21 @@ input[type="radio"] {
     height: 90%;
     width: 90%;
   }
-  
-.section-entrepreneur h2 {
-  padding: 15px;
-  font-size: 2rem;
-  margin-left: -23px;
-  line-height:45px;
-}
-.section-entrepreneur p{
-  margin-left:-29px;
-  text-align:center;
-}
-.section-entrepreneur h6{
-  margin-left:-33px;
-  padding:35px;
 
-}
+  .section-entrepreneur h2 {
+    padding: 15px;
+    font-size: 2rem;
+    margin-left: -23px;
+    line-height: 45px;
+  }
+  .section-entrepreneur p {
+    margin-left: -29px;
+    text-align: center;
+  }
+  .section-entrepreneur h6 {
+    margin-left: -33px;
+    padding: 35px;
+  }
 }
 
 /* --------------------------- SECTION FIVE ------------------------------ */
@@ -901,9 +891,9 @@ input[type="radio"] {
 }
 
 .section-five h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   padding-top: 3rem;
   color: rgb(1, 1, 68);
   width: 100%;
@@ -922,11 +912,11 @@ input[type="radio"] {
 .section-five .carousel {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc(100% / 3);
+  grid-auto-columns: calc(91.4% / 3);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   border-radius: 8px;
-  gap: 10px;
+  gap: 3%;
   scroll-behavior: smooth;
   scrollbar-width: none;
   align-items: center;
@@ -941,16 +931,16 @@ input[type="radio"] {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  width: 70%;
-  /* height: 21rem; */
-  list-style: none;
-  background: #fff;
-  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  /* list-style: none; */
+  /* background: #fff; */
+  /* justify-content: space-around; */
   border-radius: 15px;
-  padding: 1rem 1rem;
+  padding: 1rem 2rem;
   border: 1px solid orangered;
   box-shadow: 0px 7px 10px 0px rgba(100, 100, 111, 0.2);
-  justify-items: center;
+  /* justify-items: center; */
 }
 
 @media screen and (max-width: 830px) {
@@ -975,10 +965,81 @@ input[type="radio"] {
   }
 }
 @media (max-width: 420px) {
-  .section-five h2{
-    font-size:2rem;
-    padding-right:23rem;
+  .section-five h2 {
+    font-size: 2rem;
+    padding-right: 23rem;
     padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width:375px) {
+  .section-five h2 {
+    font-size: 2rem;
+    padding-right: 22rem;
+    display: grid;
+    line-height: 47px;
+  }
+
+  .section-seven h2{
+    font-size: 2rem !important;
+  }
+
+  .emi_box {
+    width: 99% !important;
+  }
+
+  .topsection1-content .content > h1 {
+    font-size: 25px;
+    margin-bottom: 36px;
+    line-height: 2.5rem;
+  }
+
+  .topsection1-content .content > h1 > span:after{
+    display: none;
+  }
+
+  .amazing_career .timer {
+    width: auto !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (min-width:425px) and (max-width:426px) {
+  .topsection1-content .content > h1 {
+    font-size: 33px;
+    margin-bottom: 36px;
+    line-height: 3.5rem;
+  }
+
+  .topsection1-content .content > h1 > span:after{
+    display: none;
+  }
+
+  .section-five h2{
+    font-size: 39px;
+    margin-right: 147px;
+  }
+
+  .section-seven h2{
+    font-size: 39px !important;
+  }
+
+  .section-seven h2 span{
+    font-size: 39px !important;
+  }
+
+  .emi_box{
+    width:101% !important;
+  }
+
+  .amazing_career .timer {
+    width: auto !important;
+    gap: 1rem !important;
+  }
+
+  .ac-main h1{
+    font-size: 39px !important;
+    padding-top: 50px;
   }
 }
 
@@ -1007,6 +1068,8 @@ input[type="radio"] {
 .section-five p {
   color: #999;
   font-weight: 500;
+  text-align: center;
+  padding: 7px 5px 0 5px;
 }
 .section-five i {
   height: 50px;
@@ -1082,7 +1145,7 @@ input[type="radio"] {
   border-radius: 50px;
 }
 .section-seven h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
@@ -1093,7 +1156,7 @@ input[type="radio"] {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 2rem;
+  font-size: 3rem;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1144,8 +1207,40 @@ input[type="radio"] {
   padding: 1.5rem 0 1rem 0 !important;
   display: flex;
   height: 100%;
+  justify-content: space-between;
   flex-direction: column;
   color: rgb(1, 1, 68);
+}
+
+.slide-name {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  padding-left: 2rem;
+  /* color: #5e5e5e; */
+}
+
+.content .temp {
+  background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  /* padding-bottom: 1rem; */
+}
+
+.content .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  padding-left: 2rem;
+}
+
+.content:hover .temp {
+  -webkit-text-fill-color: #fff;
 }
 
 .section-seven .btn-1 {
@@ -1183,6 +1278,7 @@ input[type="radio"] {
   line-height: 2.5rem;
   list-style: none;
   margin-top: 0;
+  padding-top: 20px;
   color: #777;
   width: fit-content;
 }
@@ -1193,6 +1289,12 @@ input[type="radio"] {
 
 .section-seven .swiper {
   margin-bottom: 6rem;
+}
+.wep-enroll-btn{
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
 }
 
 .section-seven .slider-wrapper {
@@ -1255,6 +1357,7 @@ input[type="radio"] {
   font-size: 1.3rem;
   font-weight: bold;
   line-height: 2.5rem;
+  text-align: center;
   /* margin: 5px; */
   color: rgb(1, 1, 68);
 }
@@ -1500,12 +1603,12 @@ input[type="radio"] {
   gap: 2rem;
 }
 
-@media(max-width:320px){
-  .amazing_career .timer{
-    width:auto;
-    gap:1rem;
+/* @media (max-width: 320px) {
+  .amazing_career .timer {
+    width: auto;
+    gap: 1rem;
   }
-}
+} */
 .amazing_career .timer span {
   color: brown;
   font-size: 1.2rem;
@@ -1549,7 +1652,7 @@ input[type="radio"] {
 }
 
 .ac-main h1 {
-  font-size: 45px;
+  font-size: 3rem;
   text-align: center;
   color: #031864;
   font-weight: bold;

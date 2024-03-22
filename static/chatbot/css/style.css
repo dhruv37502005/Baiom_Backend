@@ -37,8 +37,8 @@
   box-shadow: 2px 2px 4px 2px gray;
   height: 300px;
   overflow-y: scroll;
-  scrollbar-color: gray gray;
-  scrollbar-width: none;
+  /* scrollbar-color: gray gray; */
+  /* scrollbar-width:thin; */
 }
 #chatbot {
   margin-left: auto;

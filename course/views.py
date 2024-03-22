@@ -13,7 +13,6 @@ from django.http import HttpResponse, JsonResponse
 from userauths.models import Dashboard_User
 from django.views import View
 from .models import CourseCategory, Contact
-
 from django.utils import timezone
 from .models import Testimonial
 from rest_framework.decorators import api_view
@@ -21,8 +20,9 @@ from rest_framework.response import Response
 from django.shortcuts import render, get_object_or_404
 from .models import Course, CourseCategory, Batch
 from .serializers import CourseSerializer, CourseCategorySerializer, BatchSerializer, CourseCarriculumSerializer
+from django.views.decorators.csrf import csrf_exempt
 
-from rest_framework.response import Response
+
 
 # @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
@@ -35,6 +35,8 @@ def category_courses(request, category_id):
     testimonials = Testimonial.objects.all()
     carriculum = course.curriculum.all()
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
+    program_overview = course.program_overview.split('\n') if course.program_overview else []
+
     print(f"subscription_course_plans: {subscription_course_plans}")
     
     user = request.user
@@ -52,11 +54,22 @@ def category_courses(request, category_id):
             'batch':batches,
             'subscription_course_plans':subscription_course_plans,
             'testimonials': testimonials,
+            'program_overview':program_overview,
         })
     else:
-        return render(request, 'course.html', {'is_course': True, 'courses': courses})
+        return render(request, 'course.html', {
+            'is_course': True, 
+            'courses': courses,
+            'categories': categories,
+            'carriculum':carriculum,
+            'categories': categories,
+            'batch':batches,
+            'subscription_course_plans':subscription_course_plans,
+            'testimonials': testimonials,
+            'program_overview':program_overview,})
 
 @api_view(['GET'])
+@csrf_exempt
 def category_courses_json(request, category_id):
     category = get_object_or_404(CourseCategory, id=category_id)
     courses = Course.objects.filter(category=category, status='active')
@@ -76,7 +89,7 @@ def category_courses_json(request, category_id):
             'categories': categories_serializer.data,
             'carriculum': course_carriculum_serializer.data,
         }
-    return JsonResponse(jsondata)
+    return Response(jsondata)
 
 
 
@@ -170,14 +183,16 @@ class DownloadFileView(View):
 
         return response
 
-login_required(login_url='/userauths/login/')
+# login_required(login_url='/userauths/login/')
 def course_contact(request):
     if request.method == 'POST':
         name_ = request.POST.get('name_')
         email_ = request.POST.get('email_')
         mobile_ = request.POST.get('mobile_')
         profession_ = request.POST.get('profession_')
-        contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_)
+        category_id = request.session['category_ID']
+        category = get_object_or_404(CourseCategory, id=category_id)
+        contact_obj = Contact(name=name_,email=email_,mobile=mobile_,profession=profession_, course_category=category)
         contact_obj.save()
         messages.success(request,'thank you for contacting us')
         return redirect('course:category_courses', category_id=request.session['category_ID'])

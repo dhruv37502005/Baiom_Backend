@@ -3,8 +3,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Category(models.Model):
+class BlogCategory(models.Model):
     name = models.CharField(max_length=100)
+    heading = models.CharField(max_length = 150, blank = True)
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True,upload_to='category_images/')
 
@@ -14,7 +15,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
 
