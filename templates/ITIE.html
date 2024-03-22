@@ -245,10 +245,25 @@
               </div>
               <ul>
                   <!-- List any other features or details you want to display -->
-                  <li>Live Master classes</li>
-                  <li>Industrial Training</li>
+                  {% if i_plan.subscription_plan.name == "ITIE" %}
+                  <li>Live classes</li>
+                  <li>Course Duration - 3 months</li>
+                  <li>Classes - 24</li>
                   <li>Mentorship Support</li>
-                  <li>Live corporate projects</li> 
+                  <li>Internship Duration - 3 months</li>
+                  <li>Live Projects - 1</li>
+                  <li>Tutor Opportunities </li> 
+                  {% elif i_plan.subscription_plan.name == "ITIE Premium" %}
+                  <li>Live classes</li>
+                  <li>Course Duration - 5 months</li>
+                  <li>Classes - 24</li>
+                  <li> Doubt sessions</li>
+                  <li>Mentorship Support</li>
+                  <li>Internship Duration - 5 months</li>
+                  <li>Live Projects - 1</li>
+                  <li>Tutor Opportunities </li> 
+                  <li>Paid Internship Opportunities</li>
+                  {% endif %}
               </ul>
               <form id="enroll-form" class="wep-enroll-btn" method="POST" action="/subscription/purchase_itiecourse_record/">
                 {% csrf_token %}
