@@ -697,8 +697,8 @@
   }
 
   .three h3 {
-    font-size: 29px !important;
-    padding-top: 6rem;
+    font-size: 30px !important;
+    /* padding-top: 6rem; */
   }
 
   .why-web-dev-box .why-web-dev{
@@ -857,6 +857,7 @@
   justify-content: center;
   box-shadow: 3px 3px 4px 2px orangered;
   padding: 20px;
+  padding-top: 40px;
 }
 
 #why-web-dev-heading-2 {
@@ -1756,5 +1757,70 @@ footer p {
   .three h3, .section-three h2, .seven h1, .testimonial-heading, .Right-course h2 ,
   .amazing_heading,.ac-main h1  {
     font-size: 2.2rem;
+  }
+}
+
+@media (min-width:0px) and (max-width:320px){
+  .topsection1-content > h1{
+    font-size: 30px;
+    line-height: 46px;
+    padding-top: 2rem;
+    }
+
+  .seven h1{
+    font-size: 30px;
+  }
+
+  .topsection1-button .broucher {
+    font-size: 1rem;
+  }
+
+  .testimonial-heading{
+    font-size: 30px;
+  }
+
+  .Right-course h2{
+    font-size: 30px;
+  }
+
+  .Right-course h2 span{
+    font-size: 30px;
+  }
+
+  .amazing_heading{
+    font-size: 30px;
+  }
+
+  .grab_offer{
+    font-size: 16px;
+  }
+
+  .ac-main h1{
+    font-size: 30px !important;
+    margin-top: 121px !important;
+  }
+
+  .ac-main h1 span{
+    font-size: 30px !important;
+  }
+
+  .splide__arrow{
+    right: -2px !important;
+  }
+
+  .section-three h2{
+    font-size: 30px;
+  }
+
+  .section-three h4{
+    font-size: 1.3rem;
+  }
+
+  .curriculum h2{
+    font-size: 15px;
+  }
+
+  .accordion-item{
+    width:93%;
   }
 }
