@@ -766,12 +766,13 @@ border-right: 1.5px solid #949494;
   margin-bottom: 1rem;
 }
 
-@media (min-width: 320px) and (max-width: 321px) {
-  .section-3 .horizon h2.h22 {
+@media (min-width: 320px) and (max-width: 321px){
+  /* .section-3 .horizon h2.h22{
     left: -25% !important;
-  }
-  .section-3 .horizon h2 {
-    margin-left: 20px;
+  } */
+.section-3 .horizon h2 {
+    margin-left:20px;
+
     font-size: 25px !important;
   }
   .section-3 .horizon .horizon-sub-heading {
@@ -860,7 +861,7 @@ section.work p.sub-heading {
 section.work .contents {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   grid-gap: 7.3rem;
   overflow: hidden;
 }
@@ -1704,7 +1705,8 @@ section.startups .wrapper {
 section.startups h5 {
   font-weight: 700;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 section.startups h5 span,
@@ -1777,7 +1779,10 @@ ul {
 
 section div.wrapper {
   width: 95%;
-  margin: 3rem auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 3rem;
   padding: 2.5rem 1.5rem;
 }
 
@@ -2450,5 +2455,66 @@ content:none;
     bottom: 10px;
     width: 92%;
     left: 4%;
+   } 
+}
+
+
+@media (min-width:0px) and (max-width:320px){
+  .section-3 .horizon .horizon-sub-heading{
+    font-size: 13px;
+    margin-left: -29px;
+    margin-top: 24px;
+  }
+
+  .section-3 .horizon h2.h22 {
+    margin-left: -48px !important;
+    margin-right: 12px !important;
+  }
+
+  .section-3 .horizon h2{
+    margin-left: -35px !important;
+    margin-right: 12px !important;
+  }
+
+  .section-4 .tab-content-item .two .col-md-7 {
+    margin-left: -44px;
+  }
+
+  .box_1 form{
+    margin-left: -41px !important;
+  }
+  
+  .box_1 h2{
+    margin-left: 44px;
+  }
+
+  .box_1 .firstp {
+    margin-left: 15px !important;
+  }
+
+  .boxes .row_first{
+    margin-left: -14px;
+  }
+
+  #virtues-carousel{
+    width: 77%;
+    margin-left: -42px;
+  }
+
+  .infoimg {
+    padding-top: 8%;
+    margin-left: -23%;
+  }
+
+  .infoimg h5{
+    font-size: 18px;
+    padding-left: 20px;
+  }
+
+  .infoimg p{
+    font-size: 15px;
+    padding-right: 43px;
+    margin-left: 62px;
   }
 }
+
