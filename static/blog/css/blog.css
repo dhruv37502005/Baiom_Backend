@@ -136,6 +136,8 @@ section {
   font-weight: 650;
 }
 
+
+
 /* subcontent  */
 
 .sub-content1 {
@@ -530,6 +532,7 @@ section {
 .comment-meta {
  text-wrap: nowrap;
  padding: 1%;
+ width: 30%;
 }
 .comment-meta .author{
   padding: unset;
@@ -539,7 +542,7 @@ section {
   text-transform: capitalize;
 }
 .comments-section{
-  padding: 4% 2%;
+  padding: 4% 6%;
 }
 .comments-section::after{
   content: "";
@@ -551,9 +554,9 @@ section {
 }
 .comment{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 4%;
-  gap: 2%;
+  /* gap: 6%; */
 }
 .comment .commentText{
   border-radius: 7px;
@@ -561,9 +564,23 @@ section {
   margin: 0 0 0;
   background-color:#e7e5e599;
   color:#57595b;
-  width: 80%;
+  width: 100%;
   box-shadow: 0px 2px 4px 0px rgb(154 154 175 / 88%)
 }
+
+.comment-data-time{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  }
+  
+  .comment-date{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px !important;
+    padding: 0.4rem 0px !important;
+  }
+
 .author i{
   font-size: 1.3rem;
   margin: 0 4%;
@@ -616,9 +633,21 @@ section {
   background: linear-gradient(40deg, #fb8721 10%, #fa2424 40%);
     box-shadow: 0px 7px 10px 0px rgb(154 154 175 / 88%);
 }
+
+@media screen and (max-width:786px) {
+  .comment .commentText{
+    font-size: 14px;
+  }
+  .blog-left .blog-left2{
+    margin: 0;
+    padding: 0;
+  }
+}
+
 @media screen and (max-width:600px) {
   .comment{
     flex-direction: column;
+    gap: 10px;
   }
   .comment .commentText{
     align-self: flex-end;
@@ -636,6 +665,10 @@ section {
   .commentForm button{
     width:90%;
   }
+  .comment-meta .author {
+    font-size: 1rem;
+  }
+  
   
 }
 /* Responsive Media Query  */
@@ -740,6 +773,8 @@ section {
   .blog-left h2 {
     font-size: 1.2rem;
     font-weight: 600;
+    padding-left: 20px;
+    padding-top: 20px;
   }
 
   #courses {

@@ -60,7 +60,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       <div class="topsection1-container">
         <div class="topsection1-content">
           {% for course in courses %}
-          <h1>Earn upto 40LPA Package by becoming a <span>{{course.title}}</span></h1>
+          <h1>Earn upto 40LPA Package by enrolling <span>{{course.title}}</span></h1>
           {% endfor %}
           <p>
             <b>100+</b> Courses covering all tech domains for you to learn and
@@ -117,7 +117,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <h3>Instructor: <b>{{course.instructor}}</b></h3>
                 <div class="flex-row-1">
                   <a href="#Right-course"><button class="btn-33">Enroll Now</button></a>
-                  <button class=" btn-332">Connect with our Expert</button>
+                  <!-- <button class=" btn-332">Connect with our Expert</button> -->
                 </div>
               </div>
             </div>
@@ -393,13 +393,15 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                                           <li>{{ plan.course_features|linebreaks }}</li>
                                         </ul>
                                     {% endif %}
-                                    <form id="enroll-form" method="post" action="/subscription/create_purchase_record/">
+                                    <div  >
+                                    <form id="enroll-form" class="courses-enroll-btn" method="post" action="/subscription/create_purchase_record/">
                                       {% csrf_token %}
-                                      <input type="hidden" name="course_id" id="course_id" value="{{ plan.course.id }}">
-                                      <input type="hidden" name="plan_id" id="plan_id" value="{{ plan.subscription_plan.id }}">
-                                      <input type="hidden" name="username" id="username" value="{{ request.user.username }}">
+                                      <input type="text" name="course_id" id="course_id" value="{{ plan.course.id }}">
+                                      <input type="text" name="plan_id" id="plan_id" value="{{ plan.subscription_plan.id }}">
+                                      <input type="text" name="username" id="username" value="{{ request.user.username }}">
                                       <button type="submit" class="enroll-btn">Enroll Now</button>
-                                  </form>
+                                    </form>
+                                  </div>
                                 </div>
                             </div>
                         </div>

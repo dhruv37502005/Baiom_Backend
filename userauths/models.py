@@ -6,6 +6,7 @@ from datetime import date
 
 from course.models import Batch, Course
 from bootcamp.models import BootBatch, BootCourse
+from itie.models import IBatch, ICourse
 
 # Create your models here.
 
@@ -32,6 +33,9 @@ class Dashboard_User(models.Model):
     enrolled_batches = models.ManyToManyField(Batch, related_name='enrolled_batch', blank=True)
     enrolled_bootcourses = models.ManyToManyField(BootCourse, related_name='enrolled_users', blank=True)
     enrolled_bootbatches = models.ManyToManyField(BootBatch, related_name='enrolled_batch', blank=True)
+    enrolled_itiecourses = models.ManyToManyField(ICourse, related_name='enrolled_users', blank=True)
+    enrolled_itiebatches = models.ManyToManyField(IBatch, related_name='enrolled_batch', blank=True)
+
 
 
     def __str__(self):
