@@ -1,7 +1,7 @@
-{% load static %}
-{% include 'header.html' %}
+{% extends 'base.html' %}  {% load static %}  {% block content %}
 
- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script>
         // Display Django messages using SweetAlert2
         {% if messages %}
@@ -35,7 +35,7 @@
                   <span><i class="fa fa-phone"></i></span>
                   <div id="font">
                     <h3>Call now:</h3>
-                    <h4>+91 806 217 9867</h4>
+                    <h4>08069640635</h4>
                   </div>
                 </div>
                 <div class="space"></div>
@@ -100,14 +100,28 @@
                     <!-- <label for="course" class="label"> courses</label> -->
                     <select id="cars" name="course" >
                       <option value="Courses">Select Course</option>
-                      <option value="Product Development" }>
+                      <option value="Web Development">Web Development</option>
+                      <option value="Product Development" >
                         Product Management
                       </option>
-                      <option value=" Enterpreneurship">
-                        Entrepreneurship
-                      </optio n>
-                      <option value="Internship">Internship</option>
-                      <option value="Internship">SAP FICO</option></select
+                      <option value="Andriod Development" >
+                        Andriod Development
+                      </option>
+                      <option value="Digital Marketing" >
+                        Digital Marketing
+                      </option>
+                      <option value="SEO" >
+                        SEO
+                      </option>
+                      <option value="Graphic Design" >
+                        Graphic Design
+                      </option>
+                      <option value="Data Analytics">
+                        Data Analytics
+                      </option>
+                      <option value="Human Resource">Human Resource</option>
+                      <option value="Entrepreneurship">Entrepreneurship</option>
+                     </select
                     ><i
                       class="fa fa-sharp fa-regular fa-bookmark icon"
                       aria-hidden="true"
@@ -138,238 +152,4 @@
       </form>
       </div>
     </section>
-
-    <!-- *********************** -->
-
-    <!-- <div class="container subscribe" id="subscribe">
-    <div class="col-md-12 p-4 row" id="subb2">
-      <div class="col-md-7" id="subb">
-        <h2>Subscribe us for latest newsletter</h2>
-        <p>Expand your knowledge and skills by choosing the right mentor!</p>
-      </div>
-      <div class="col-md-5 pt-3">
-        <div class="form">
-          <input type="email" name="Email" placeholder="Enter Email" required>
-          <button type="Submit" class="btn-3">Subscribe</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-    <!-- Subscribe -->
-    <div class="container subscribe" id="subscribe">
-      <div class="col-md-12 p-4 row">
-        <div class="col-md-7">
-          <h2 style="color: #fff">Get in Touch with us</h2>
-          <p>Connect with our Experts in 60 seconds and clear your queries.</p>
-        </div>
-        <div class="col-md-5 pt-3">
-          <div class="form">
-            <input
-              type="email"
-              name="Email"
-              style="text-align: center; width: 100%"
-              placeholder="Enter Phone Number"
-              required
-            />
-            <button
-              type="Submit"
-              style="text-align: center; width: 100%"
-              class="btn-1"
-              onclick="alertmessage()"
-            >
-              Get In Touch
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="text-center text-white">
-      <div class="footer-container text-left text-md-start mt-4">
-        <div class="row mr-3">
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6>Quick Links</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-            <p>
-              <a
-                href=""
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>Home</a
-              >
-            </p>
-            <p>
-              <a
-                href="../career/career.html"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>Career</a
-              >
-            </p>
-            <p>
-              <a
-                href="../Hire-From-Us/index.html"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>Hire From Us</a
-              >
-            </p>
-            <p>
-              <a
-                href="../Comming-Soon/Coming_soon.html"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>BTH - Talent Hunt
-                Exam</a
-              >
-            </p>
-            <p>
-              <a
-                href="../Baoiam-refer-page-main/index.html"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>Refer and Earn</a
-              >
-            </p>
-          </div>
-
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6>Other Links</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-            <p>
-              <a
-                href="../Blog-Section-main/main-blog.html"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>Blog</a
-              >
-            </p>
-            <p>
-              <a
-                href="../Comming-Soon/Coming_soon.html"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>Events and
-                Contest</a
-              >
-            </p>
-            <p>
-              <a
-                href="#"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>Contact Us</a
-              >
-            </p>
-          </div>
-          <!-- Grid column -->
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6>Courses</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-            <p>
-              <a
-                href="../Blog-Section-main/blogs/Entrepreneurship.html"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>Entrepreneurship</a
-              >
-            </p>
-            <p>
-              <a
-                href="../Blog-Section-main/blogs/Product_Development.html"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>Product
-                Management</a
-              >
-            </p>
-            <p>
-              <a
-                href="../Comming-Soon/Coming_soon.html"
-                class="text-white"
-                style="font-size: 0.9rem"
-                ><i class="fa-solid fa-angle-right mr-2"></i>SAP FICO</a
-              >
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div
-            class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-3 contact-us"
-          >
-            <!-- Links -->
-            <h6>Contact Us</h6>
-            <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-            <p style="font-size: 0.9rem">
-              <i class="fas fa-home mr-1 p-2 rounded"></i> B Block Noida Sector
-              15 Uttar Pradesh
-            </p>
-            <p style="font-size: 0.9rem">
-              <i class="fas fa-envelope mr-1 p-2 rounded"></i> tutors@baoiam.com
-            </p>
-            <p style="font-size: 0.9rem">
-              <i class="fas fa-phone mr-1 p-2 rounded"></i> +91-806 217 9867
-            </p>
-            <div class="social">
-              <a href="https://www.facebook.com/profile.php?id=100064896061625"
-                ><i class="bx bxl-facebook"></i
-              ></a>
-              <a href="https://www.instagram.com/beaoneinamillion/"
-                ><i class="bx bxl-instagram-alt"></i
-              ></a>
-              <a href="https://twitter.com/BAOIAM1"
-                ><i class="bx bxl-twitter"></i
-              ></a>
-              <!--             <a href="#"><i class='bx bxl-youtube'></i></a> -->
-              <a
-                href="https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/"
-                ><i class="bx bxl-linkedin"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-end text-left p-2">
-        <div class="footer-end-container">
-          Copyright © 2023
-          <a class="text-white" href="https://mdbootstrap.com/">BAOIAM. </a>All
-          Rights Reserved
-        </div>
-      </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      var lastScrollTop = 0;
-      navbar = document.getElementById("navbar");
-      window.addEventListener("scroll", function () {
-        var scrollTop =
-          window.pageXOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-          navbar.style.top = "-100px";
-        } else {
-          navbar.style.top = "0";
-        }
-        lastScrollTop = scrollTop;
-      });
-    </script>
-    <script src="{% static 'contact-page/js/script.js' %}"></script>
-  </body>
-</html>
+{% endblock %}

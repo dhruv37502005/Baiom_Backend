@@ -42,9 +42,8 @@
             </p>
             <div class="home-btn">
               <!-- <button class="btn-1">Get Started</button> -->
-              <a href="{% url 'core:course' %}"
-                ><button class="btn-2">Explore Our Courses</button></a
-              >
+              {% comment %} {% endcomment %}
+              <a><button class="btn-2">Explore Our Courses</button></a>
             </div>
           </div>
 
@@ -263,7 +262,7 @@
           </p>
         </div>
       </div>
-      <a href="#" class="btn-1 btn0001" style="border-radius: 50px">
+      <a href="{% url 'bootcamp:bootcamp' %}"  class="btn-1 btn0001" style="border-radius: 50px">
         <span>Read More</span></a
       >
     </div>
@@ -355,7 +354,7 @@
   <div class="row" id="virtues-row">
     <div class="col-md-7 col-sm-12 text-left">
       <div class="horizon" style="border-bottom: 0">
-        <h2 class="heading mb-4 decrease-font-size-bigger">
+        <h2 class="heading mb-4 decrease-font-size-bigger h22">
           Virtues and protocols <span class="underline">BAOIAM</span> works on
         </h2>
         <!-- <div class="row mx-1">
@@ -589,9 +588,9 @@
 
 <!-- Tabs -->
 <section class="section-4">
-  <div id="downloads" class="">
+  <div id="downloads">
     <ul class="nav nav-pills">
-      <li id="tab-1" class="nav-item tab-item">
+      <li id="tab-1" class="nav-item tab-item current-tab">
         <p>Our Services</p>
       </li>
       <li id="tab-2" class="nav-item tab-item">
@@ -612,9 +611,9 @@
     <div class="col-md-12 col-sm-12">
       <h2 class="tabs-content-heading">
         Expand your <span class="underline">knowledge</span>, boost up your
-        <span class="underline">career</span>.
+        <span class="underline">career</span>
       </h2>
-      <p class="mt-4 mb-4 tabs-content-subheading">
+      <p class="mt-5 mb-5 tabs-content-subheading">
         Baoiam provides various services, including personalized career
         counselling, resume and cover letter writing, interview preparation, and
         networking oppurtunities to ensure students' career growth is
@@ -673,7 +672,7 @@
         Accelerate your career, unleash your
         <span class="underline">potential</span>
       </h2>
-      <p class="mt-4 mb-4 tabs-content-subheading">
+      <p class="mt-5 mb-5 tabs-content-subheading">
         Baoiam provides various features like live expert classes, mock tests,
         and real-time projects to make sure students' career growth is
         accelerated. These interactive sessions provide students with the
@@ -734,7 +733,7 @@
         Perks <span class="underline">strengthen & reinforce</span> company
         culture
       </h2>
-      <p class="mt-4 mb-4 tabs-content-subheading">
+      <p class="mt-5 mb-5 tabs-content-subheading">
         Companies often provide various perks to their employees in order to
         enhance their overall job satisfaction and wellbeing. Some of the most
         common perks offered by companies include.
@@ -794,7 +793,7 @@
       <h2 class="tabs-content-heading">
         Result speak more <span class="underline">louder</span> than words
       </h2>
-      <p class="mt-4 mb-4 tabs-content-subheading">
+      <p class="mt-5 mb-5 tabs-content-subheading">
         These are some of the top reviews of our company by our learners.
       </p>
     </div>
@@ -860,12 +859,10 @@
           </div>
           <div class="col-md-6 col-sm-12 h2-dec">
             <h2 class="heading2">
-              BAOIAM <br /><span class="heading2 heading2_underline"
-                >'IONS.</span
-              >
+              BAOIAM <span class="heading2 heading2_underline">'IONS.</span>
             </h2>
             <br />
-            <p>
+            <p class="above-quote">
               Customer feedback is really a boost for improving the quality of
               courses with time. Let's see how our learners transformed their
               career jouney after learning with us.
@@ -901,9 +898,7 @@
           </div>
           <div class="col-md-6 col-sm-12 h2-dec">
             <h2 class="heading2">
-              BAOIAM <br /><span class="heading2 heading2_underline"
-                >'IONS.</span
-              >
+              BAOIAM <span class="heading2 heading2_underline">'IONS.</span>
             </h2>
             <br />
             <p>
@@ -942,9 +937,7 @@
           </div>
           <div class="col-md-6 col-sm-12 h2-dec">
             <h2 class="heading2">
-              BAOIAM <br /><span class="heading2 heading2_underline"
-                >'IONS.</span
-              >
+              BAOIAM <span class="heading2 heading2_underline">'IONS.</span>
             </h2>
             <br />
             <p>
@@ -978,7 +971,7 @@
   </section>
 </div>
 
-<div class="otp-section">
+<!-- <div class="otp-section">
   <section class="FormContainer" style="padding-bottom: 0.5rem">
     <div class="box_1">
       <form action="">
@@ -1050,7 +1043,7 @@
       <img src="{% static 'home/img/13.jpg' %}" alt="" srcset="" />
     </div>
   </section>
-</div>
+</div> -->
 
 <!-- Associations with partners -->
 <section class="startups">

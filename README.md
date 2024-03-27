@@ -54,6 +54,10 @@ pip install psycopg2-binary
 pip install pillow
 pip install social-auth-app-django
 pip install djangorestframework
+pip install -U chatterbot==1.0.4
+pip install pathlib --upgrade
+pip install django-import-export
+pip install --upgrade PyYaml
 
 python manage.py makemigrations
 python manage.py migrate
@@ -63,7 +67,7 @@ TO CREATE SUPERUSER:
 python manage.py createsuperuser
 
 
-user name -admin
+username -admin
 email : admin@gmail.com
 password: admin
 ```

@@ -2,312 +2,264 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
 
-    <link rel="stylesheet" href="{% static 'itie\css\style.css' %}" />
-    <link rel="stylesheet" href="{% static 'itie\css\query.css' %}" />
-    <script defer src="{% static 'itie\js\script.js' %}"></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <form class="popup-form" id="popup-form">
-      <div class="popup-form-content">
-        <div class="close" id="popup-close">&times;</div>
-        <lable for="name" id="name">Name</lable>
-        <input id="name" type="text" />
-        <lable for="email" id="email">Email</lable>
-        <input id="email" type="email" />
-        <lable for="mobile" id="mobile">Mobile</lable>
-        <input id="mobile" type="text" />
-        <button type="button" class="popup-submit">Submit</button>
-      </div>
-    </form>
-    <main class="containerr" id="container">
-      <section
-        class="section-one"
-        style="
-          background-image: url('{% static 'itie/img/girl.jpg' %}');
-          background-size: cover;
-        "
-      >
-        <div>
-          <h1>
-            LEARN <span>TEACH</span> <br />
-            EARN
-          </h1>
-          <div class="line"></div>
-          <h4>ITIE Revolutionizes Internships</h4>
-          <p>
-            Our mission is all about learning and sharing Our platform is
-            designed to help you gain knowledge, share yout experties with
-            others, and earn rewards along the way.
-          </p>
-          <div class="button-section">
-            <button class="button-one" id="button-one">I AM INTRESTED</button>
-            <div class="input-section">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="{% static 'itie\css\style.css' %}" />
+  <link rel="stylesheet" href="{% static 'itie\css\query.css' %}" />
+  <script defer src="{% static 'itie\js\script.js' %}"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <form class="popup-form" id="popup-form" action="{% url 'itie:itie' %}" method="post">
+    {% csrf_token %}
+    <div class="popup-form-content">
+      <div class="close" id="popup-close">&times;</div>
+      <lable for="name" id="name">Name</lable>
+      <input id="name" type="text" name="name_" />
+      <lable for="email" id="email">Email</lable>
+      <input id="email" type="email" name="email_" />
+      <lable for="mobile" id="mobile">Mobile</lable>
+      <input id="mobile" type="text" name="mobile_" />
+      <label for="professionSelect" id="professionLabel">Profession</label>
+      <select id="professionSelect" name="profession_">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+        <option value="engineer">Engineer</option>
+      </select>
+      <button type="submit" class="popup-submit">Submit</button>
+    </div>
+  </form>
+  <main class="containerr" id="container">
+    <section class="section-one" style="background-image: url('{% static 'itie/img/girl.jpg' %}')">
+      <div>
+        <h1>
+          Interns <span>TEACH</span> <br />
+          Interns EARN
+        </h1>
+        <div class="line"></div>
+        <h4>ITIE Revolutionizes Internships</h4>
+        <p>
+          Our mission is all about learning and sharing Our platform is
+          designed to help you gain knowledge, share yout experties with
+          others, and earn rewards along the way.
+        </p>
+        <div class="button-section">
+          <button type="button" style="z-index: 1;" class="button-one" id="button-one" onclick="openForm()">
+            I AM INTERESTED
+          </button>
+          <!-- <div class="input-section">
               <input type="text" placeholder="Want to learn?" />
               <button class="button-two">Explore</button>
+            </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section-two">
+      <div>
+        <h2><span class="underline">Program</span> Overview</h2>
+        <p>
+          ITIE is a program that has been formulated by our team and leading
+          experts for young enthusiasts to build a strong and powerful career
+          path. Through this program not only do the interns get the chance to
+          learn and hone their skills, but also to monetise their skill by
+          cascading the knowledge they have gained so far into others. Hence,
+          after learning a skill they will be tested on it and if they clear
+          the tests, they get the opportunity to teach a new intern who wishes
+          to learn the same skill as them. The 'Teacher Interns' will then
+          earn exciting compensation offers and incentives.
+        </p>
+        <h6>⏳ Enrollment Deadline Approching Soon!</h6>
+      </div>
+      <img src="{% static 'itie/img/intern6.jpg' %}" alt="" />
+      <div class="circle_one"></div>
+      <div class="circle_two"></div>
+    </section>
+
+    <section class="section-three">
+      <div>
+        <h2><span class="underline"> Course </span> Highlights</h2>
+        <ul>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Live Online Classes</h4>
+              <p>At your own schedule</p>
             </div>
-          </div>
-        </div>
-      </section>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Doubt Clearing</h4>
+              <p>Through Q&A forum</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Mobile Friendly</h4>
+              <p>No Laptop? No Problem</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Beginner Friendly</h4>
+              <p>No prior knowledge required</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Paid Internship Opportunities</h4>
+              <p>To Build Your Career</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>12-20 Weeks Duration</h4>
+              <p>2 hours/week (flexible schedule)</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Certificate of Completion</h4>
+              <p>From Baoiam Tranings</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Downloadable Resource</h4>
+              <p>With Lifetime Access</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Live Projects</h4>
+              <p>For hand-on practice</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="divide">
+              <h4>Professional trainer accreditation</h4>
+              <p>Study From The Best Tutors</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-      <section class="section-two">
-        <div>
-          <h2>Program Overview</h2>
-          <p>
-            Embark on a transformative learning journey with Baoiam Innovations,
-            an esteemed E-learning platform since 2020. Dive into comprehensive
-            skill development across various disciplines.Revolutionize your
-            learning experience with 12,500+ hours of content, 500+ projects,
-            and collaborations with 350+ industrial experts. Join us for a
-            transformative journey towards accessible education and self-growth.
-          </p>
-          <h6>⏳ Enrollment Deadline Approching Soon!</h6>
-        </div>
-        <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-        <div class="circle_one"></div>
-        <div class="circle_two"></div>
-      </section>
-
-      <section class="section-three">
-        <div>
-          <h2><span> Course </span> Highlights</h2>
-          <ul>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>Learn Online</h4>
-                <p>At your own schedule</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>Doubt Clearing</h4>
-                <p>Through Q&A forum</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>Mobile Friendly</h4>
-                <p>No Laptop? No Problem</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>Beginner Friendly</h4>
-                <p>No prior knowledge required</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>Placement Assessment</h4>
-                <p>To Build Your Career</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>8 Weeks Duration</h4>
-                <p>1 hr/day (flexible schedule)</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>Certificate of Traning</h4>
-                <p>From Baoiam Tranings</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>Downloadable Content</h4>
-                <p>With Lifetime Access</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>Projects</h4>
-                <p>For hand-on practice</p>
-              </div>
-            </li>
-            <li>
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div class="divide">
-                <h4>Industry Experts</h4>
-                <p>Study From The Best Tutors</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section-four">
-        <h2>Courses</h2>
-        <div class="cards_container">
+    <!-- Course Card Content -->
+    <section class="section-four">
+      <h2>Our <span class="underline">Courses</span></h2>
+      <div class="planBtns">
+          <button id="plusBtn">Plus +</button>
+          <button id="premiumBtn">Premium ★</button>
+      </div>
+      <div class="cards_container">
           {% for course in courses %}
-          <div class="cards">
-            <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-            <h4>{{ course.title }}</h4>
-            <h6>{{ course.description }}</h6>
-            <!-- Add other fields as needed -->
-            <div class="timing">
-              <p><span>🕓</span> 3 months</p>
-            </div>
+          <div class="cards {% if course.plus %}plus{% endif %} {% if course.premium %}premium{% endif %}">
+              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+              <div class="card-content">
+                  <h4>{{ course.title }}</h4>
+                  <div class="timing">
+                      <p><span>🕓</span> 3 months</p>
+                  </div>
+                  <h6>{{ course.description }}</h6>
+                  <!-- Add other fields as needed -->
+                  {% if course.brochure %}
+                  <div class="planBtns">
+                    <a href="{% url 'itie:download_file' pk=course.id %}" download> <button>Download Brochure</button></a>
+                  </div>
+                  {% endif %}
+              </div>
           </div>
           {% endfor %}
-        </div>
-      </section>
-
-      <section class="section-five">
-        <h2>Testimonials</h2>
-        <div class="temp">
-          <i id="left" class="fa-solid fa-angle-left"></i>
-          <i id="right" class="fa-solid fa-angle-right"></i>
-          <div class="carousel">
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-            <div class="testimonials">
-              <div class="details">
-                <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-                <h4>John Doe</h4>
-                <h6>Course Student</h6>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Distinctio nemo quaerat asperiores, esse quibusdam
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- <section class="section-six">
-      <div>
-        <h2>Program <span>Certification</span></h2>
       </div>
-    </section> -->
+  </section>
+  
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          var plusBtn = document.getElementById("plusBtn");
+          var premiumBtn = document.getElementById("premiumBtn");
+          var plusCourses = document.querySelectorAll(".cards.plus");
+          var premiumCourses = document.querySelectorAll(".cards.premium");
+          premiumCourses.forEach(function (course) {
+                  course.style.display = "none";
+              });
+  
+          plusBtn.addEventListener("click", function () {
+              plusCourses.forEach(function (course) {
+                  course.style.display = "";
+              });
+              premiumCourses.forEach(function (course) {
+                  course.style.display = "none";
+              });
+          });
+  
+          premiumBtn.addEventListener("click", function () {
+              plusCourses.forEach(function (course) {
+                  course.style.display = "none";
+              });
+              premiumCourses.forEach(function (course) {
+                  course.style.display = "";
+              });
+          });
+      });
+  </script>
 
-      <section class="section-seven">
-        <div class="circle_three"></div>
-        <div class="circle_four"></div>
-        <h2>
+  
+    <section class="section-seven">
+      <div class="circle_three"></div>
+      <div class="circle_four"></div>
+      <h2>
           Join With Us <br />
-          Find the <span>Right Course</span>
-        </h2>
-        <div class="carousel-two">
-          <!-- <i id="left" class="fa-solid fa-angle-left"></i>
-        <i id="right" class="fa-solid fa-angle-right"></i> -->
+          Find the <span class="underline">Right Course</span>
+      </h2>
+      <div class="carousel-two">
+          {% for i_plan in i_plans %}
           <div class="plans">
-            <div>
-              <h4>Plus</h4>
-              <h6><span>₹ 1999</span>/ Full course</h6>
-            </div>
-            <ul>
-              <li>Live Master classes</li>
-              <li>industrial Traning</li>
-              <li>Mentorship Support</li>
-              <li>Live corporate projects</li>
-            </ul>
-            <div>
-              <button>Try Demo Class</button>
-            </div>
-          </div>
-          <div class="plans">
-            <div>
-              <h4>Premium</h4>
-              <h6><span>₹ 7999</span>/ Full course</h6>
-            </div>
-            <ul>
-              <li>Live Master classes</li>
-              <li>industrial Traning</li>
-              <li>Mentorship Support</li>
-              <li>Live corporate projects</li>
-            </ul>
-            <div>
-              <button>Try Demo Class</button>
-            </div>
-          </div>
-          <!-- <div class="plans">
+              <div>
+                  <h4>{{ i_plan.subscription_plan.name }}</h4>
+                  <div class="temp">{{ i_plan.subscription_plan.itie_course }}</div>
+                  <h6><span>₹ {{ i_plan.subscription_plan.price }}</span>/ Full course</h6>
+              </div>
+              
+                    <p>
+                      {{ i_plan.subscription_plan.description|linebreaks }}
+                  </p>
+
+              <form id="enroll-form" class="wep-enroll-btn" method="POST" action="/subscription/purchase_itiecourse_record/">
+                {% csrf_token %}
+                <input type="hidden" name="course_id" id="course_id" value="{{ i_plan.itie_course.id }}">
+                <input type="hidden" name="plan_id" id="plan_id" value="{{ i_plan.subscription_plan.id }}">
+                <input type="hidden" name="username" id="username" value="{{ request.user.username }}">
+                <button type="submit" class="btn-1">Enroll Now</button>
+              </form>
+          </div>   
+          {% endfor %}
+      </div>
+  </section>
+        <!-- <div class="plans">
           <div>
             <h4>Premium Combo</h4>
             <h6><span>₹ 30,500</span>/ Full course</h6>
@@ -337,9 +289,9 @@
             <button>Try Demo Class</button>
           </div>
         </div> -->
-        </div>
-        <div class="schemes">
-          <!-- <div class="easyEMI">
+        <!-- </div>
+        <div class="schemes"> -->
+        <!-- <div class="easyEMI">
           <h2>Easy EMI</h2>
           <h6>key features of easy EMI</h6>
           <ul>
@@ -348,19 +300,48 @@
             <li><span>✔</span> Flexible repayment options</li>
           </ul>
         </div> -->
-          <div class="payAP">
+        <!-- <div class="payAP">
             <h2>Pay After Placement</h2>
             <h6>key features</h6>
             <p>
               <span>✔</span> With our Pay After Placement program you invest in
               your carrer development now and pay us only when you land a job
             </p>
-          </div>
-          <div class="circle_five"></div>
-        </div>
-      </section>
+          </div> -->
+        <!-- <div class="circle_five"></div>
+        </div> -->
+    </section>
 
-      <!-- <section class="section-eight">
+    <section class="section-five">
+      <h2>Our <span class="underline">Testimonials</span></h2>
+      <div class="temp">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+        <div class="carousel">
+          {% for testimonial in testimonials %}
+          <div class="testimonials">
+            <div class="details">
+              {% if testimonial.image %}
+              <img src="{{ testimonial.image.url }}" alt="" />
+              {% endif %}
+              <h4>{{ testimonial.name }}</h4>
+              <h6>{{ testimonial.designation }}</h6>
+            </div>
+            <p>{{ testimonial.text }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- <section class="section-six">
+      <div>
+        <h2>Program <span>Certification</span></h2>
+      </div>
+    </section> -->
+
+    
+
+    <!-- <section class="section-eight">
         <div class="deal_section">
           <h4>Amazing Career</h4>
           <h5>Awaits!</h5>
@@ -407,177 +388,386 @@
         </div>
       </section> -->
 
-      <section class="amazing_career">
-        <div class="amazing-container">
-          <h2 class="amazing_heading">Amazing Career</h2>
-          <div class="awaits">Awaits!</div>
-          <p class="grab_offer">
-            Grab these exclusive offers available only once a year.
-          </p>
-          <div class="buy_course_container">
-            <div class="buy_course_box">
-              <div class="buy_course">BUY 2 COURSES & GET MORE</div>
-              <h4 class="off">OFF</h4>
-              <div class="percentage">15%</div>
-            </div>
-            <div class="buy_course_box">
-              <div class="buy_course">BUY 3 COURSES & GET MORE</div>
-              <h4 class="off">OFF</h4>
-              <div class="percentage_3">20%</div>
-            </div>
-            <div class="buy_course_box">
-              <div class="buy_course">BUY 4 COURSES & GET MORE</div>
-              <h4 class="off">OFF</h4>
-              <div class="percentage">25%</div>
-            </div>
+    <section class="amazing_career">
+      <div class="amazing-container">
+        <h2 class="amazing_heading">Amazing <span class="underline">Career</span></h2>
+        <!-- <div class="awaits">Awaits!</div> -->
+        <p class="grab_offer">
+          Grab these exclusive offers available only once a year.
+        </p>
+        <div class="buy_course_container">
+          <div class="buy_course_box">
+            <div class="buy_course">BUY 2 COURSES & GET MORE</div>
+            <div class="percentage">15%</div>
+            <h4 class="off">OFF</h4>
           </div>
-          <div class="timer" id="countdown">
-            <div>
-              <p id="days">20</p>
-              <p>days</p>
-            </div>
-            <span>:</span>
-            <div>
-              <p id="hours">12</p>
-              <p>hours</p>
-            </div>
-            <span>:</span>
-            <div>
-              <p id="minutes">21</p>
-              <p>minutes</p>
-            </div>
-            <span>:</span>
-            <div>
-              <p id="seconds">54</p>
-              <p>seconds</p>
-            </div>
+          <div class="buy_course_box">
+            <div class="buy_course">BUY 3 COURSES & GET MORE</div>
+            <div class="percentage_3">20%</div>
+            <h4 class="off">OFF</h4>
           </div>
-          <button class="btn-3">GRAB THE DEAL</button>
+          <div class="buy_course_box">
+            <div class="buy_course">BUY 4 COURSES & GET MORE</div>
+            <div class="percentage">25%</div>
+            <h4 class="off">OFF</h4>
+          </div>
         </div>
-      </section>
+        <div class="timer" id="countdown">
+          <div>
+            <p id="days">20</p>
+            <p>days</p>
+          </div>
+          <span>:</span>
+          <div>
+            <p id="hours">12</p>
+            <p>hours</p>
+          </div>
+          <span>:</span>
+          <div>
+            <p id="minutes">21</p>
+            <p>minutes</p>
+          </div>
+          <span>:</span>
+          <div>
+            <p id="seconds">54</p>
+            <p>seconds</p>
+          </div>
+        </div>
+        <!-- <button class="btn-3">GRAB THE DEAL</button> -->
+      </div>
+    </section>
 
-      <script>
-        // Set the target date for the deal expiration
-        const targetDate = new Date("February 29, 2024 23:59:59").getTime();
+    <script>
+      // Set the target date for the deal expiration
+      const targetDate = new Date("April 5, 2024 23:59:59").getTime();
 
-        // Update the countdown every second
-        const countdown = setInterval(function () {
-          const now = new Date().getTime();
-          const distance = targetDate - now;
+      // Update the countdown every second
+      const countdown = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
 
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-          );
-          const minutes = Math.floor(
-            (distance % (1000 * 60 * 60)) / (1000 * 60)
-          );
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (distance % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-          document.getElementById("days").innerHTML = days;
-          document.getElementById("hours").innerHTML = hours;
-          document.getElementById("minutes").innerHTML = minutes;
-          document.getElementById("seconds").innerHTML = seconds;
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
 
-          // Check if the deal has expired
-          if (distance < 0) {
-            clearInterval(countdown);
-            document.getElementById("countdown").innerHTML = "Deal Expired!";
-            document.getElementById("grabDeal").disabled = true;
-          }
-        }, 1000);
-
-        // Function to check deal availability
-        function checkDealAvailability() {
-          const now = new Date().getTime();
-          if (now < targetDate) {
-            alert("Deal is still available. Grab it now!");
-          } else {
-            alert("Sorry, the deal has expired.");
-          }
+        // Check if the deal has expired
+        if (distance < 0) {
+          clearInterval(countdown);
+          document.getElementById("countdown").innerHTML = "Deal Expired!";
+          document.getElementById("grabDeal").disabled = true;
         }
-      </script>
+      }, 1000);
 
-      <section class="section-nine">
-        <div class="container-main faq">
-          <div class="ac-main">
-            <h1>Frequently Asked <span>Questions</span></h1>
-            <div class="accordion">
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  Q1. I am not a student of BAOIAM. Can I still refer a friend?
-                </div>
-                <!-- /.accordion-item-header -->
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    Yes, If you are aware of BAOIAM and believe in what we are
-                    doing, then feel free to refer your friend.
-                  </div>
-                </div>
-                <!-- /.accordion-item-body -->
+      // Function to check deal availability
+      function checkDealAvailability() {
+        const now = new Date().getTime();
+        if (now < targetDate) {
+          alert("Deal is still available. Grab it now!");
+        } else {
+          alert("Sorry, the deal has expired.");
+        }
+      }
+    </script>
+
+    <section class="section-nine">
+      <div class="container-main faq">
+        <div class="ac-main">
+          <h1>Frequently Asked <span class="underline">Questions</span></h1>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q1. How does the 'Intern Teach Intern Earn' program work?
               </div>
-              <!-- /.accordion-item -->
-            </div>
-            <div class="accordion">
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  Q2. How can I track the status of my referrals?
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    You will be informed by email once BAOIAM receives your
-                    referral details.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="accordion">
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  Q3. How will my friends be informed that I referred them?
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    Your friends will receive an email confirmation from BAOIAM
-                    informing them that they have been referred by you. They
-                    will be asked to confirm.
-                  </div>
+              <!-- /.accordion-item-header -->
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  After completing the course, Interns can opt for teaching.
+                  <ul>
+                    <li>
+                      You will first be tested on your skills and expertise.
+                    </li>
+                    <li>If you clear the tests, go to the ITIE section.</li>
+                    <li>
+                      Enter your Email ID and click on Become a Trainer.
+                    </li>
+                    <li>
+                      We will match you with an Intern who is looking to study
+                      the same course as you.
+                    </li>
+                    <li>
+                      After completing the teaching session, Interns will earn
+                      compensation and incentives.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="accordion">
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  Q4. Will I get a referral reward if a friend/connection
-                  already exists in the BAOIAM database?
-                </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    No, there is no reward if your friend is connected with
-                    BAOIAM or its infromation exists in BAOIAM database
-                  </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q2. What is the procedure for signing up on the website?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  The sign-up procedure for our website consists of 4 simple
+                  steps:
+                  <ul>
+                    <li>
+                      Go to our website and click on the Login button and then
+                      the Signup button or just click this link
+                      <a href="http://www.baoiam.com/Login/index.html">http://www.baoiam.com/Login/index.html</a>
+                    </li>
+                    <li>Enter a Username of your choice.</li>
+                    <li>Enter your Email ID.</li>
+                    <li>
+                      Create a strong password with uppercase, lowercase,
+                      numbers, and special characters.
+                    </li>
+                    <li>
+                      Click on Sign up and there you go, you are now a part of
+                      the Baoiam family!
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="accordion">
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  Q5. Who all can I refer to?
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q3. How do I enroll or register, if I am interested in an
+                online course?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  The enrollment process is as easy as the sign-up process.
+                  <ul>
+                    <li>
+                      Take a Dashboard tour and head to the Courses section.
+                    </li>
+                    <li>
+                      You will find a wide range of specially curated courses.
+                    </li>
+                    <li>Explore them and choose the one you like.</li>
+                    <li>Click on Enroll Now.</li>
+                  </ul>
                 </div>
-                <div class="accordion-item-body">
-                  <div class="accordion-item-body-content">
-                    Anyone who meets the eligibility criteria for our courses
-                    can be referred. They should be between 18 - 28 years of
-                    age. They should know the basics of the English language,
-                    have a laptop, and a good internet connection.
-                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q4.What kind of skill-based courses do you offer?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  We offer a wide range of courses like Web Development, Data
+                  Analytics, Graphic Designing, Human Resources, Product
+                  Management, Strategic Marketing, SEO, Business
+                  Communication, and UI/UX. Head to the Courses section to
+                  explore many such skills-centric courses.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q5. Can I opt for more than one course at a time?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  Yes, we at Baoiam do not limit your potential and therefore
+                  give you the option to choose multiple courses at a time.
+                  <br />
+                  We also provide with options where you can get various
+                  discounts by buying multiple courses together.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q6. How long does each course take?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  Each course is timed differently depending on the lessons,
+                  modules and degree of difficulty. The duration of each
+                  course is mentioned on their respective course pages.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q7. Do you provide any study material?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  Yes, we do provide study material that can be downloaded and
+                  accessed by you at any time.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q8. Are the classes live or recorded?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  We have live classes as it involves interaction and
+                  engagement.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q9. Will I gain access to the recorded sessions if I’m unable
+                to attend the live classes?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  Yes, we understand that juggling your college studies or
+                  work and course studies might be hard, so you will be able
+                  to access the recorded sessions.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q10. Will there be regular doubt-clearing sessions?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  Yes, the doubt-clearing session is one of the key features
+                  of Baoiam, as we don't want our students to have half-baked
+                  knowledge.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q11. Will I get a 'Certificate of Completion' after completing
+                the course?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  Yes, you will get a Certificate of Completion only after you
+                  attend all classes, complete the assignments and projects
+                  and get good scores on the tests.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q12. How helpful will the Certificate be in future?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  This Certificate can pave the way to your desired career, as
+                  you will be trained and highly skilled in your respective
+                  field.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Q13. How do I contact Customer Care for technical or payment
+                issues?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  <ul>
+                    <li>
+                      Send us an email:
+                      <a href="mailto:tutors@baoiam.com">tutors@baoiam.com</a>
+                    </li>
+                    <li>
+                      Give us a ring:
+                      <a href="tel:+91-8062179867">+91-8062179867</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-  </body>
+      </div>
+    </section>
+  </main>
+  <script>
+    function openForm() {
+      document.getElementById("popup-form").style.display = "block";
+    }
+
+    document
+      .getElementById("popup-close")
+      .addEventListener("click", function () {
+        document.getElementById("popup-form").style.display = "none";
+      });
+
+    function closeForm() {
+      document.getElementById("popup-form").style.display = "none";
+    }
+
+    var accordionItemHeaders = document.querySelectorAll(
+      ".accordion-item-header"
+    );
+
+    accordionItemHeaders.forEach((accordionItemHeader) => {
+      accordionItemHeader.addEventListener("click", () => {
+        const isActive = accordionItemHeader.classList.contains("active");
+
+        closeAllAccordionItems();
+
+        if (!isActive) {
+          accordionItemHeader.classList.add("active");
+          const accordionItemBody = accordionItemHeader.nextElementSibling;
+          accordionItemBody.style.maxHeight =
+            accordionItemBody.scrollHeight + "px";
+        }
+      });
+    });
+
+    function closeAllAccordionItems() {
+      const activeAccordionItemHeader = document.querySelector(
+        ".accordion-item-header.active"
+      );
+      if (activeAccordionItemHeader) {
+        activeAccordionItemHeader.classList.remove("active");
+        activeAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+      }
+    }
+  </script>
+</body>
+
 </html>
 {% endblock content %}
+

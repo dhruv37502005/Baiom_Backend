@@ -29,6 +29,7 @@ body {
 
 a {
   text-decoration: none !important;
+  /* text-align: center; */
 }
 
 img {
@@ -257,7 +258,8 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 30rem;
+  gap: 1.5rem;
 }
 
 .contact-more-info h3 {
@@ -313,7 +315,7 @@ img {
 .container-main {
   display: flex;
   justify-content: center;
-  margin: 150px 0px;
+  margin: 6rem 0px;
   margin-bottom: 50px;
 }
 
@@ -338,6 +340,8 @@ img {
   font-weight: bold;
   color: rgb(1, 1, 68);
   text-align: center;
+  line-height: 33px;
+  margin-bottom: 4rem;
 }
 
 .ac-main h1 span {
@@ -498,6 +502,7 @@ img {
 
   .hiring-sec {
     flex-direction: column;
+    align-items: center;
   }
 
   .hiring-sec-box {
@@ -572,7 +577,7 @@ img {
   /* FAQ */
   .container-main {
     flex-direction: column;
-    margin: 10px 50px;
+    margin: 5rem 50px;
   }
 
   .img {

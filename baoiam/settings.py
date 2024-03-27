@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 
     
     # Custom Apps
@@ -51,14 +52,18 @@ INSTALLED_APPS = [
     'subscription',
     'itie',
     'bootcamp',
+    'chatbot',
 
     # For socialauth
     'social_django',
     'rest_framework',
+    'import_export',
 ]
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -68,6 +73,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'core.middleware.maintenance_middleware'
 ]
+
 
 ROOT_URLCONF = 'baoiam.urls'
 
@@ -193,8 +199,9 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER ='niruranjan2001@gmail.com '
-EMAIL_HOST_PASSWORD ='pktz pdbd ndtx zpng'
+EMAIL_HOST_USER ='baoiaminnovation@gmail.com'
+EMAIL_HOST_PASSWORD ='rxebqwkrssrtikpu'
 
 STAGING = True
 ALLOWED_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True

@@ -51,7 +51,7 @@ footer .contact-us p div i {
 .social a {
   height: 37px;
   width: 37px;
-  background: #fa2424;
+  background: #fa2424 !important;
   color: #fff;
   display: inline-flex;
   align-items: center;
@@ -101,7 +101,7 @@ footer .contact-us p div i {
   border-style: none;
   color: rgb(29, 29, 29);
   background-color: white;
-  padding: 9px 2.5rem;
+  padding: 9px 0.5rem;
   outline: none;
   width: 100%;
 }
@@ -137,5 +137,5 @@ footer .contact-us p div i {
   background: -webkit-linear-gradient(45deg, #ff8000, #ff0000);
 }
 .bg-class {
-  background-color: orangered;
+  background: -webkit-linear-gradient(45deg, #ff8000, #ff0000);
 }

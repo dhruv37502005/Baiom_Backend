@@ -10,7 +10,7 @@
 
 body {
   overflow-x: hidden;
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
 }
 :root {
   --color-orange: linear-gradient(45deg, #fa2424, #ed7e1e);
@@ -280,7 +280,7 @@ body {
 
 .caption {
   text-align: center;
-  transform: translateY(-90px);
+  transform: translateY(-121px);
   opacity: 0;
   transition: 0.6s;
 }
@@ -296,8 +296,8 @@ body {
 }
 
 .caption p {
-  font-size: 16px;
-  color: #919191;
+  font-size: 14px;
+  color: #696969;
   margin: 2px 0 9px 0;
 }
 
@@ -352,7 +352,7 @@ body {
     font-size: 14px;
   }
   .caption p {
-    font-size: 13px;
+    font-size: 7px;
   }
   .community {
     margin-top: 10px;
@@ -429,7 +429,7 @@ body {
     font-size: 14px;
   }
   .caption p {
-    font-size: 13px;
+    font-size: 11px;
   }
   .profile-card {
     width: 200px;

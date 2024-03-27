@@ -8,10 +8,10 @@
       <p>Connect with our Experts in 60 seconds and clear your queries.</p>
     </div>
 
-    <div class="col-md-5 pt-3">
-      <form method="post" action="{% url 'core:get_in_touch' %}">
+     <div class="col-md-5 pt-3">
+      <form method="post" action="{% url 'core:get_in_touch' %}" >
         {% csrf_token %}
-      <div class="form" >
+      <div class="form" style="margin-right: 20px;display: flex;justify-content: center;align-items: center;" >
         <input
           type="text"
           name="phone_number"
@@ -19,11 +19,11 @@
           placeholder="Enter Phone Number"
           required
         />
-        <button type="Submit" class="bg-class rounded text-white w-50 " onclick="alertmessage()">
+        <button type="Submit" class="bg-class rounded text-white w-50 mb-2" onclick="alertmessage()">
           Get In Touch
         </button>
       </div>
-    </form>
+      </form>
     </div>
   </div>
 </div>
