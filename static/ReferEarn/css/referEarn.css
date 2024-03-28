@@ -309,8 +309,9 @@ form input {
 }
 .list2 img {
   /* border: 1px solid blue; */
-  margin-top: 120px;
-  width: 450px;
+  margin-top: 60px;
+  width: 600px;
+  height: 500px;
   float: right;
 }
 .why_head {
@@ -569,7 +570,7 @@ form input {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .homepage {
     /* border: 2px solid red; */
     margin: 50px 50px;
