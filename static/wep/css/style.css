@@ -1052,9 +1052,11 @@ input[type="radio"] {
   width: 100%;
   text-align: center;
   margin-right: 200px;
+  position: relative;
+  left: 4vh !important;
   /* transform: translateX(-120px); */
 }
-
+ 
 .section-five h2 span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
@@ -1084,7 +1086,7 @@ input[type="radio"] {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   height: 100%;
   /* list-style: none; */
   /* background: #fff; */
@@ -1113,9 +1115,7 @@ input[type="radio"] {
   .section-five .temp #right {
     right: 0px;
   }
-  .section-five h2 {
-    margin-right: 20px;
-  }
+  
 }
 @media (min-width: 321px) and (max-width: 440px) {
   .section-five h2 {
