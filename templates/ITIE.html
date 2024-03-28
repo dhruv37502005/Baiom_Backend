@@ -172,60 +172,60 @@
     <section class="section-four">
       <h2>Our <span class="underline">Courses</span></h2>
       <div class="planBtns">
-          <button id="plusBtn">Plus +</button>
-          <button id="premiumBtn">Premium ★</button>
+        <button id="plusBtn">Plus +</button>
+        <button id="premiumBtn">Premium ★</button>
       </div>
       <div class="cards_container">
-          {% for course in courses %}
-          <div class="cards {% if course.plus %}plus{% endif %} {% if course.premium %}premium{% endif %}">
-              <img src="{% static 'itie/img/img1.avif' %}" alt="" />
-              <div class="card-content">
-                  <h4>{{ course.title }}</h4>
-                  <div class="timing">
-                      <p><span>🕓</span> 3 months</p>
-                  </div>
-                  <h6>{{ course.description }}</h6>
-                  <!-- Add other fields as needed -->
-                  {% if course.brochure %}
-                  <div class="planBtns">
-                    <a href="{% url 'itie:download_file' pk=course.id %}" download> <button>Download Brochure</button></a>
-                  </div>
-                  {% endif %}
-              </div>
+        {% for course in courses %}
+        <div class="cards {% if course.plus %}plus{% endif %} {% if course.premium %}premium{% endif %}">
+          <img src="{% static 'itie/img/img1.avif' %}" alt="" />
+          <div class="card-content">
+            <h4>{{ course.title }}</h4>
+            <div class="timing">
+              <p><span>🕓</span> 3 months</p>
+            </div>
+            <h6>{{ course.description }}</h6>
+            <!-- Add other fields as needed -->
+            {% if course.brochure %}
+            <div class="planBtns">
+              <a href="{% url 'itie:download_file' pk=course.id %}" download> <button>Download Brochure</button></a>
+            </div>
+            {% endif %}
           </div>
-          {% endfor %}
+        </div>
+        {% endfor %}
       </div>
-  </section>
-  
-  <script>
+    </section>
+
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
-          var plusBtn = document.getElementById("plusBtn");
-          var premiumBtn = document.getElementById("premiumBtn");
-          var plusCourses = document.querySelectorAll(".cards.plus");
-          var premiumCourses = document.querySelectorAll(".cards.premium");
+        var plusBtn = document.getElementById("plusBtn");
+        var premiumBtn = document.getElementById("premiumBtn");
+        var plusCourses = document.querySelectorAll(".cards.plus");
+        var premiumCourses = document.querySelectorAll(".cards.premium");
+        premiumCourses.forEach(function (course) {
+          course.style.display = "none";
+        });
+
+        plusBtn.addEventListener("click", function () {
+          plusCourses.forEach(function (course) {
+            course.style.display = "";
+          });
           premiumCourses.forEach(function (course) {
-                  course.style.display = "none";
-              });
-  
-          plusBtn.addEventListener("click", function () {
-              plusCourses.forEach(function (course) {
-                  course.style.display = "";
-              });
-              premiumCourses.forEach(function (course) {
-                  course.style.display = "none";
-              });
+            course.style.display = "none";
           });
-  
-          premiumBtn.addEventListener("click", function () {
-              plusCourses.forEach(function (course) {
-                  course.style.display = "none";
-              });
-              premiumCourses.forEach(function (course) {
-                  course.style.display = "";
-              });
+        });
+
+        premiumBtn.addEventListener("click", function () {
+          plusCourses.forEach(function (course) {
+            course.style.display = "none";
           });
+          premiumCourses.forEach(function (course) {
+            course.style.display = "";
+          });
+        });
       });
-  </script>
+    </script>
 
   
     <section class="section-seven">
@@ -236,30 +236,32 @@
           Find the <span class="underline">Right Course</span>
       </h2>
       <div class="carousel-two">
-          {% for i_plan in i_plans %}
-          <div class="plans">
-              <div>
-                  <h4>{{ i_plan.subscription_plan.name }}</h4>
-                  <div class="temp">{{ i_plan.subscription_plan.itie_course }}</div>
-                  <h6><span>₹ {{ i_plan.subscription_plan.price }}</span>/ Full course</h6>
-              </div>
-              
-                    <p>
-                      {{ i_plan.subscription_plan.description|linebreaks }}
-                  </p>
+        {% for i_plan in i_plans %}
+        <div class="plans">
+          <div class="section-seven-content">
+            <div>
+              <h4>{{ i_plan.subscription_plan.name }}</h4>
+              <!-- <div class="temp">{{ i_plan.subscription_plan.itie_course }}</div> -->
+              <h6>₹ {{ i_plan.subscription_plan.price }}<span>/ Full course</span></h6>
+            </div>
+            <div class="description">
+              {{ i_plan.subscription_plan.description|linebreaks }}
+            </div>
+          </div>
 
-              <form id="enroll-form" class="wep-enroll-btn" method="POST" action="/subscription/purchase_itiecourse_record/">
-                {% csrf_token %}
-                <input type="hidden" name="course_id" id="course_id" value="{{ i_plan.itie_course.id }}">
-                <input type="hidden" name="plan_id" id="plan_id" value="{{ i_plan.subscription_plan.id }}">
-                <input type="hidden" name="username" id="username" value="{{ request.user.username }}">
-                <button type="submit" class="btn-1">Enroll Now</button>
-              </form>
-          </div>   
-          {% endfor %}
+          <form id="enroll-form" class="wep-enroll-btn" method="POST"
+            action="/subscription/purchase_itiecourse_record/">
+            {% csrf_token %}
+            <input type="hidden" name="course_id" id="course_id" value="{{ i_plan.itie_course.id }}">
+            <input type="hidden" name="plan_id" id="plan_id" value="{{ i_plan.subscription_plan.id }}">
+            <input type="hidden" name="username" id="username" value="{{ request.user.username }}">
+            <button type="submit" class="btn-1">Enroll Now</button>
+          </form>
+        </div>
+        {% endfor %}
       </div>
-  </section>
-        <!-- <div class="plans">
+    </section>
+    <!-- <div class="plans">
           <div>
             <h4>Premium Combo</h4>
             <h6><span>₹ 30,500</span>/ Full course</h6>
@@ -289,9 +291,9 @@
             <button>Try Demo Class</button>
           </div>
         </div> -->
-        <!-- </div>
+    <!-- </div>
         <div class="schemes"> -->
-        <!-- <div class="easyEMI">
+    <!-- <div class="easyEMI">
           <h2>Easy EMI</h2>
           <h6>key features of easy EMI</h6>
           <ul>
@@ -300,7 +302,7 @@
             <li><span>✔</span> Flexible repayment options</li>
           </ul>
         </div> -->
-        <!-- <div class="payAP">
+    <!-- <div class="payAP">
             <h2>Pay After Placement</h2>
             <h6>key features</h6>
             <p>
@@ -308,7 +310,7 @@
               your carrer development now and pay us only when you land a job
             </p>
           </div> -->
-        <!-- <div class="circle_five"></div>
+    <!-- <div class="circle_five"></div>
         </div> -->
     </section>
 
@@ -339,7 +341,7 @@
       </div>
     </section> -->
 
-    
+
 
     <!-- <section class="section-eight">
         <div class="deal_section">
@@ -770,4 +772,3 @@
 
 </html>
 {% endblock content %}
-
