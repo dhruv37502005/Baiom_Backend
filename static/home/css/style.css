@@ -220,10 +220,11 @@ header img {
 .heading2_underline::before {
   content: "";
   position: absolute;
-  bottom: 10px;
+  bottom: -2px;
   width: 100%;
   height: 2px;
   background: rgb(245, 69, 0);
+
 }
 
 .special {
@@ -352,9 +353,10 @@ header img {
   }
 }
 
-@media (max-width: 390px) {
+@media (min-width: 321px) and (max-width: 390px) {
   .home-section .row h2 {
     font-size: 28px;
+    margin-top: 7rem;
   }
 
   .heading2_underline::before {
@@ -365,6 +367,83 @@ header img {
     height: 2px;
     background: orangered;
   }
+
+  .row_first{
+    width:76% !important;
+    height: 76% !important;
+  }
+
+  .icons i{
+    width: 45% !important;
+    /* height: 146%; */
+    font-size: 31px !important;
+    /* text-align: center; */
+    padding-left: 21px !important;
+  }
+
+  .div_text h2 {
+    font-size: 17px !important;
+    padding-top: 17px !important;
+  }
+
+  .row_first p{
+    font-size: 11px !important;
+  }
+
+  .section-3 .horizon h2{
+    left: -4% !important;
+    text-align: center;
+    font-size: 28px !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .section-3 .horizon .horizon-sub-heading{
+    left: -1% !important;
+    text-align: center;
+  }
+
+  .section-3 .horizon .check{
+    text-align: start;
+    left: 19%;
+  }
+
+  .mentors-outer-div{
+    margin-right: 38px;
+  }
+
+  .section-3 .horizon h2.h22{
+    left:-18% !important;
+  }
+
+  #virtues-carousel{
+    width: 100%;
+    margin-left: -31px;
+  }
+
+  section.work h1{
+    font-size: 28px !important;
+  }
+
+  ul{
+    padding-right: 28px !important;
+  }
+
+  section.startups h5{
+    font-size: 28px !important;
+    padding-top: 8rem;
+  }
+
+  .infoimg h5{
+    margin-left: -17% !important;
+    text-align: center;
+  }
+  .infoimg p{
+    margin-left: -17% !important;
+    text-align: center;
+  }
+
+  
 }
 
 /* Boxes(Descriptions) */
@@ -861,7 +940,7 @@ section.work p.sub-heading {
 section.work .contents {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   grid-gap: 7.3rem;
   overflow: hidden;
 }
@@ -1600,24 +1679,24 @@ p.virtues-sub-heading {
 
 /* changes */
 @media (min-width: 768px) and (max-width: 1210px) {
-  footer .row {
+  /* footer .row {
     display: grid;
     grid-template-columns: repeat(2, auto);
-  }
+  } */
 
-  footer .row .col-md-3 {
+  /* footer .row .col-md-3 {
     max-width: 32vw;
-  }
+  } */
 
-  .footer-container {
+  /* .footer-container {
     padding-bottom: 2rem;
     padding-left: 5rem;
-  }
+  } */
 }
 
-footer h6 {
+/* footer h6 {
   color: #fff;
-}
+} */
 
 /* cnange end */
 
@@ -1769,7 +1848,8 @@ ul {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
-}
+  padding-left: 322px;
+  }
 
 #downloads .nav-item {
   text-transform: uppercase;
@@ -1870,11 +1950,13 @@ content:none;
   width: 100%;
 }
 
-.section-4 .tab-content-item .two .col-md-7 {
+.section-4 .tab-content-item .two .col-md-7 .col-sm-12 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+list 
 
 .section-4 h2 {
   margin: 2rem 0;
@@ -2442,10 +2524,10 @@ content:none;
     padding: 0% 4%;
   }
 
-  #subscribe {
+  /* #subscribe {
     position: relative !important;
     bottom: 4vh !important;
-  }
+  } */
 
   .expertImage .about p {
     margin-bottom: -10px;
@@ -2516,5 +2598,132 @@ content:none;
     padding-right: 43px;
     margin-left: 62px;
   }
+}
+
+@media (min-width: 391px) and (max-width: 430px){
+  .section-3 .horizon h2{
+    font-size: 28px !important;
+    left: 3%;
+  }
+
+  .section-3 .horizon .horizon-sub-heading{
+    left: 0%;
+  }
+
+  .section-3 .horizon .check{
+    padding-left: 72px;
+  }
+
+  .mentors-outer-div {
+    padding-right: 50px;
+  }
+
+  ul{
+    padding-right:39px;
+  }
+
+  section.startups h5{
+    padding-top: 3rem;
+    font-size: 28px;
+  }
+
+  .infoimg p {
+    margin-left: 13px;
+  }
+
+  .infoimg h5 {
+    margin-left: 13px;
+  }
+
+
+  .home-section .row .col-md-6:not(.infoimg){
+    margin-left: 13px;
+  }
+
+  .home-section .row .col-sm-12.h2-dec p{
+    margin-left: -8px;
+    padding-right: 31px;
+  }
+
+  .courses h1{
+    font-size: 28px;
+  }
+
+  .section-3 .horizon h2.h22{
+    font-size: 28px !important;
+  }
+
+  section.work h1{
+    font-size: 28px;
+    margin-top: -60px;
+  }
+
+  section.work p.sub-heading{
+    margin-top: 30px;
+  }
+
+  /* section.work .contents p{
+    margin-bottom: -80px;
+  } */
+
+  /* section.work .contents{
+    grid-gap: 7rem 7rem;
+  } */
+
+  section.expert h1{
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .section-4 .tab-content-item .tabs-content-heading{
+    font-size: 28px;
+  }
+
+  .home-section .row h2{
+    /* text-align: center; */
+    padding-right: 33px;
+    font-size: 28px;
+    padding-bottom: 3rem;
+  }
+
+  section.startups h5{
+    font-size: 28px;
+  }
+
+  section.startups h5{
+    padding-right: 28px;
+    font-size: 19px;
+    padding-top: 80px;
+  }
+
+  /* .wrapper img{
+    width:80%
+  } */
+
+  img{
+    width: 80%;
+    /* margin-left: 32px; */
+  }
+
+  .row_first{
+    width: 90%;
+    height: 90%;
+  }
+
+  .div_text h2{
+    font-size: 19px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .row_first p{
+    font-size: 15px;
+  }
+
+  .icons i {
+    font-size: 30px;
+  }
+
+
 }
 

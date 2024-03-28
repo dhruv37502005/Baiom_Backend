@@ -308,7 +308,7 @@
       <div class="circle_three"></div>
       <div class="circle_four"></div>
       <h2>
-        Join With Us <br />
+        Join With Us
         Find the <span class="underline">Right Course</span>
       </h2>
       <div class="slider_wrapper">
@@ -323,58 +323,28 @@
                                   <div class="slide-name">{{ subscription_plan_bootcamp.subscription_plan.name }}</div>
                                   <div class="temp">{{ subscription_plan_bootcamp.bootcamp_course.title }}</div>
                                   <div class="price">{{ subscription_plan_bootcamp.subscription_plan.price}}/-<span class="name-span">Full course</span></div>
-                                  <ul class="course-content">
-                                      {% if subscription_plan_bootcamp.subscription_plan.name == "Plus" %}
-                                        <li>Live Classes</li>
-                                        <li>Doubt clearing sessions</li>
-                                        <li>Structured courses & PDFs</li>
-                                        <li>Assessment & case study</li>
-                                        <li>Live projects - 20+</li>
-                                        <li>Internship Opportunities</li>
-                                        <li>Mentorship</li>
-                                        <li>Resume building</li>
-                                        <li>Interview preparation</li>
+                                     {% if subscription_plan_bootcamp.subscription_plan.name == "Plus" %}
+                                     <ul class="course-content">
+                                      <li>{{ subscription_plan_bootcamp.subscription_plan.description|linebreaks }}</li>
+                                     </ul>
+                                        
                                       {% elif subscription_plan_bootcamp.subscription_plan.name == "Plus Combo" %}
-                                        <li>Live Classes</li>
-                                        <li>Doubt clearing sessions</li>
-                                        <li>Structured courses & PDFs</li>
-                                        <li>Assessment & case study</li>
-                                        <li>Live projects - 20+</li>
-                                        <li>Internship Opportunities</li>
-                                        <li>Mentorship</li>
-                                        <li>Resume building</li>
-                                        <li>Interview preparation</li>
+                                      <ul class="course-content">
+                                        <li>{{ subscription_plan_bootcamp.subscription_plan.description|linebreaks }}</li>
+                                       </ul>
 
                                       {% elif subscription_plan_bootcamp.subscription_plan.name == "Premium" %}
-                                        <li>Live Classes</li>
-                                        <li>Doubt clearing sessions</li>
-                                        <li>Structured courses & PDFs</li>
-                                        <li>Assessment & case study</li>
-                                        <li>Live projects - 20+</li>
-                                        <li>Internship Opportunities</li>
-                                        <li>Mentorship</li>
-                                        <li>Resume building</li>
-                                        <li>Interview preparation</li>
-                                        <li>Network of Top MNC industries & angels investors</li>
-                                        <li>Webinar and seminar access</li>
-                                        <li>Resource Hub</li>
+                                      <ul class="course-content">
+                                        <li>{{ subscription_plan_bootcamp.subscription_plan.description|linebreaks }}</li>
+                                       </ul>
 
                                       {% elif subscription_plan_bootcamp.subscription_plan.name == "Premium Combo" %}
-                                        <li>Live Classes</li>
-                                        <li>Doubt clearing sessions</li>
-                                        <li>Structured courses & PDFs</li>
-                                        <li>Assessment & case study</li>
-                                        <li>Live projects - 20+</li>
-                                        <li>Internship Opportunities</li>
-                                        <li>Mentorship</li>
-                                        <li>Resume building</li>
-                                        <li>Interview preparation</li>
-                                        <li>Network of Top MNC industries & angels investors</li>
-                                        <li>Webinar and seminar access</li>
-                                        <li>Resource Hub</li>
-                                      <!-- Add more features specific to Premium course -->
+                                      <ul class="course-content">
+                                        <li>{{ subscription_plan_bootcamp.subscription_plan.description|linebreaks }}</li>
+                                       </ul>
+                                       
                                       {% endif %}
-                                  </ul>
+                                 
                                 </div>
                                   
                                   <form id="enroll-form" class="wep-enroll-btn" method="POST" action="/subscription/purchase_bootcourse_record/">
