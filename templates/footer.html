@@ -1,318 +1,251 @@
 {% load static %}
 
 
-<div class="container subscribe" id="subscribe">
-  <div class="col-md-12 col-xl-12 col-sm-12 p-4 row">
-    <div class="col-md-7">
-      <h2 style="color: #fff">Get in Touch with us</h2>
+<div class="subscribe" id="subscribe">
+  <!-- <div class="col-md-12 col-xl-12 col-sm-12 p-4 row"> -->
+    <div class="subContent">
+      <h2>Get in Touch with us</h2>
       <p>Connect with our Experts in 60 seconds and clear your queries.</p>
     </div>
-
-     <div class="col-md-5 pt-3">
-      <form method="post" action="{% url 'core:get_in_touch' %}" >
+    <form method="post" action="{% url 'core:get_in_touch' %}">
         {% csrf_token %}
-      <div class="form" style="margin-right: 20px;display: flex;justify-content: center;align-items: center;" >
-        <input
-          type="text"
-          name="phone_number"
-          style="text-align: center"
-          placeholder="Enter Phone Number"
-          required
-        />
-        <button type="Submit" class="bg-class rounded text-white w-50 mb-2" onclick="alertmessage()">
-          Get In Touch
-        </button>
-      </div>
-      </form>
-    </div>
-  </div>
+        <div class="form">
+          <!-- input should be changed to number type -->
+          <input type="text" name="phone_number" placeholder="Enter Phone Number" required />
+          <button type="Submit" onclick="alertmessage()">
+            Get In Touch
+          </button>
+        </div>
+    </form>
+    
+  <!-- </div> -->
 </div>
 <footer class="text-center text-white">
-  <div class="footer-container text-left text-md-start mt-4">
-    <div class="row mr-3">
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+  <div class="footer-container text-left text-md-start">
+    <div class="footerContent">
+      <div class="footerItem">
         <!-- Links -->
-        <h6 style="color: #fff">Quick Links</h6>
-        <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-        <p>
-          <a
-            href="{% url 'core:index' %}"
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>Home</a
-          >
-        </p>
-        <p>
-          <a
-            href="{% url 'core:career' %}"
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>Career</a
-          >
-        </p>
-        <p>
-          <a
-            href="{% url 'core:hire_from_us' %}"
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>Hire From Us</a
-          >
-        </p>
-        <p>
-          <a
-            href="{% url 'core:coming_soon' %}"
-            class="text-white"
-            style="font-size: 0.8rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>BTH - Talent Hunt
-            Exam</a
-          >
-        </p>
-        <p>
-          <a
-            href="{% url 'core:refer_earn' %}"
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>Refer and Earn</a
-          >
-        </p>
+        <p>Quick Links</p>
+        <!-- <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-li"> -->
+        <ul>
+          <li>
+            <a href="{% url 'core:index' %}">
+              <i class="fa-solid fa-angle-right mr-2"></i>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'core:career' %}">
+              <i class="fa-solid fa-angle-right mr-2"></i>
+              Care
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'core:hire_from_us' %}">
+              <i class="fa-solid fa-angle-right mr-2"></i>
+              Hire From Us
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'core:coming_soon' %}">
+              <i class="fa-solid fa-angle-right mr-2"></i>
+              BTH - Talent Hunt Exam
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'core:refer_earn' %}">
+              <i class="fa-solid fa-angle-right mr-2"></i>
+              Refer and Earn
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+      <div class="footerItem">
         <!-- Links -->
-        <h6 style="color: #fff">Other Links</h6>
-        <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-        <p>
-          <a
-            href="{% url 'blog:categories' %} "
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>Blog</a
-          >
-        </p>
-        <p>
-          <a
-            href="{% url 'core:coming_soon' %}"
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>Events and
-            Contest</a
-          >
-        </p>
-        <p>
-          <a
-            href="{% url 'contactapp:contactus' %}"
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>Contact Us</a
-          >
-        </p>
+        <p>Other Links</p>
+        <!-- <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" /> -->
+          <ul>
+            <li>
+              <a href="{% url 'blog:categories' %} ">
+                <i class="fa-solid fa-angle-right mr-2"></i>
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'core:coming_soon' %}">
+                <i class="fa-solid fa-angle-right mr-2"></i>
+                  Events and Contest
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'contactapp:contactus' %}" >
+                <i class="fa-solid fa-angle-right mr-2"></i>
+                  Contact Us
+              </a>
+            </li>
+          </ul>
       </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+     
+      <div class="footerItem">
         <!-- Links -->
-        <h6 style="color: #fff">Courses</h6>
-        <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-        <p>
-          <a
-            href="{% url 'core:coming_soon' %}"
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>Entrepreneurship</a
-          >
-        </p>
-        <p>
-          <a
-            href="{% url 'core:coming_soon' %}"
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>Product
-            Management</a
-          >
-        </p>
-        <p>
-          <a
-            href="{% url 'core:coming_soon' %}"
-            class="text-white"
-            style="font-size: 0.9rem"
-            ><i class="fa-solid fa-angle-right mr-2"></i>SAP FICO</a
-          >
-        </p>
+        <p>Courses</p>
+        <!-- <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" /> -->
+        
+          <ul>
+            <li>
+              <a href="{% url 'core:coming_soon' %}" >
+                <i class="fa-solid fa-angle-right mr-2"></i>
+                  Entrepreneurship
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'core:coming_soon' %}" >
+                <i class="fa-solid fa-angle-right mr-2"></i>
+                  Product Management
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'core:coming_soon' %}" >
+                <i class="fa-solid fa-angle-right mr-2"></i>SAP FICO
+              </a>
+            </li>
+          </ul>
+        
       </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div
-        class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-3 contact-us"
-        style="padding-left: 15px"
-      >
+   
+      <div class="footerItem">
         <!-- Links -->
-        <h6 style="color: #fff">Contact Us</h6>
-        <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" />
-        <p style="font-size: 0.8rem">
-          <i class="fas fa-home mr-1 p-2 rounded"></i> B Block Noida Sector
-          15 Uttar Pradesh
-        </p>
-        <p style="font-size: 0.9rem">
-          <i class="fas fa-envelope mr-1 p-2 rounded"></i> tutors@baoiam.com
-        </p>
-        <p style="font-size: 0.9rem">
-          <i class="fas fa-phone mr-1 p-2 rounded"></i> 08069640635
-        </p>
-        <div class="social">
-          <a href="https://www.facebook.com/profile.php?id=100064896061625"
-            ><i class="bx bxl-facebook"></i
-          ></a>
-          <a href="https://www.instagram.com/beaoneinamillion/"
-            ><i class="bx bxl-instagram-alt"></i
-          ></a>
-          <a href="https://twitter.com/BAOIAM1"
-            ><i class="bx bxl-twitter"></i
-          ></a>
-          <!--             <a href="https://youtube.com/@baoiam9043"><i class='bx bxl-youtube'></i></a> -->
-          <a
-            href="https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/"
-            ><i class="bx bxl-linkedin"></i
-          ></a>
-        </div>
+        <p>Contact Us</p>
+        <!-- <hr class="mb-4 mt-0 d-inline-block mx-auto" id="hr-line" /> -->
+        <ul>
+          <li>
+              <i class="fas fa-home mr-1 p-2 rounded"></i>
+              B Block Noida Sector 15 Uttar Pradesh
+          </li>
+          <li>
+              <i class="fas fa-envelope mr-1 p-2 rounded"></i> tutors@baoiam.com
+          </li>
+          <li>
+              <i class="fas fa-phone mr-1 p-2 rounded"></i> 08069640635
+          </li>
+          <li class="social">
+            <a href="https://www.facebook.com/profile.php?id=100064896061625"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.instagram.com/beaoneinamillion/"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="https://twitter.com/BAOIAM1"><i class="bx bxl-twitter"></i></a>
+            <!-- <a href="https://youtube.com/@baoiam9043"><i class='bx bxl-youtube'></i></a> -->
+            <a href="https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/"><i
+                class="bx bxl-linkedin"></i></a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <div class="footer-end text-left p-2">
-    <div class="footer-end-container">
-      Copyright © 2023
-      <a class="text-white" href="https://mdbootstrap.com/">BAOIAM. </a>All
-      Rights Reserved
-    </div>
+  <div class="footer-end-container">
+      <p>Copyright © 2023 BAOIAM. All Rights Reserved</p>
   </div>
+  
 </footer>
- 
-  {% if is_index_page %}
-  <script
-  src="https://kit.fontawesome.com/aa16f6569f.js"
-  crossorigin="anonymous"
-></script>
+
+{% if is_index_page %}
+<script src="https://kit.fontawesome.com/aa16f6569f.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    {% comment %} <script src="JS/script.js"></script> ------------------------------ {% endcomment %}
-    <script>
-      function alertmessage() {
-        alert("You will receive a call within 60 seconds from our executive");
-      }
-    </script>
-  {% endif %}
-
-
-  {% if is_career %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script
-  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-  crossorigin="anonymous"
-></script>
-<script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      var lastScrollTop = 0;
-      navbar = document.getElementById("navbar");
-      window.addEventListener("scroll", function () {
-        var scrollTop =
-          window.pageXOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-          navbar.style.top = "-100px";
-        } else {
-          navbar.style.top = "0";
-        }
-        lastScrollTop = scrollTop;
-      });
-    </script>
-    <script>
-      function alertmessage() {
-        alert("You will receive a call within 60 seconds from our executive");
-      }
-    </script>
-  {% endif %}
-
-
-  {% if is_hire %}
-  <script
-      src="https://kit.fontawesome.com/aa16f6569f.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
+{% comment %}
+<script src="JS/script.js"></script> ------------------------------ {% endcomment %}
 <script>
-var lastScrollTop = 0;
-navbar = document.getElementById("navbar");
-window.addEventListener("scroll", function () {
-var scrollTop =
-window.pageXOffset || document.documentElement.scrollTop;
+  function alertmessage() {
+    alert("You will receive a call within 60 seconds from our executive");
+  }
+</script>
+{% endif %}
 
-if (scrollTop > lastScrollTop) {
-navbar.style.top = "-100px";
-} else {
-navbar.style.top = "0";
-}
-lastScrollTop = scrollTop;
-});
 
-const accordionItemHeaders = document.querySelectorAll(
-".accordion-item-header"
-);
+{% if is_career %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script>
+  var lastScrollTop = 0;
+  navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", function () {
+    var scrollTop =
+      window.pageXOffset || document.documentElement.scrollTop;
 
-accordionItemHeaders.forEach((accordionItemHeader) => {
-accordionItemHeader.addEventListener("click", (event) => {
-const currentlyActiveAccordionItemHeader = document.querySelector(
-".accordion-item-header.active"
-);
-if (
-currentlyActiveAccordionItemHeader &&
-currentlyActiveAccordionItemHeader !== accordionItemHeader
-) {
-currentlyActiveAccordionItemHeader.classList.toggle("active");
-currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-}
+    if (scrollTop > lastScrollTop) {
+      navbar.style.top = "-100px";
+    } else {
+      navbar.style.top = "0";
+    }
+    lastScrollTop = scrollTop;
+  });
+</script>
+<script>
+  function alertmessage() {
+    alert("You will receive a call within 60 seconds from our executive");
+  }
+</script>
+{% endif %}
 
-accordionItemHeader.classList.toggle("active");
-const accordionItemBody = accordionItemHeader.nextElementSibling;
-if (accordionItemHeader.classList.contains("active")) {
-accordionItemBody.style.maxHeight =
-accordionItemBody.scrollHeight + "px";
-} else {
-accordionItemBody.style.maxHeight = 0;
-}
-});
-});
+
+{% if is_hire %}
+<script src="https://kit.fontawesome.com/aa16f6569f.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script>
+  var lastScrollTop = 0;
+  navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", function () {
+    var scrollTop =
+      window.pageXOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      navbar.style.top = "-100px";
+    } else {
+      navbar.style.top = "0";
+    }
+    lastScrollTop = scrollTop;
+  });
+
+  var accordionItemHeaders = document.querySelectorAll(
+    ".accordion-item-header"
+  );
+
+  accordionItemHeaders.forEach((accordionItemHeader) => {
+    accordionItemHeader.addEventListener("click", (event) => {
+      const currentlyActiveAccordionItemHeader = document.querySelector(
+        ".accordion-item-header.active"
+      );
+      if (
+        currentlyActiveAccordionItemHeader &&
+        currentlyActiveAccordionItemHeader !== accordionItemHeader
+      ) {
+        currentlyActiveAccordionItemHeader.classList.toggle("active");
+        currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+      }
+
+      accordionItemHeader.classList.toggle("active");
+      const accordionItemBody = accordionItemHeader.nextElementSibling;
+      if (accordionItemHeader.classList.contains("active")) {
+        accordionItemBody.style.maxHeight =
+          accordionItemBody.scrollHeight + "px";
+      } else {
+        accordionItemBody.style.maxHeight = 0;
+      }
+    });
+  });
 </script>
 <script>
   function alertmessage() {
@@ -320,176 +253,132 @@ accordionItemBody.style.maxHeight = 0;
   }
 </script>
 
-  {% endif %} 
+{% endif %}
 
 
-  {% if is_courses %}
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+{% if is_courses %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-  {% endif %} 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+{% endif %}
 
-  {% if is_wep %}
-  <script src="../JS/navbar.js" defer></script>
-<script
-      src="https://kit.fontawesome.com/aa16f6569f.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
-  ></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+{% if is_wep %}
+<script src="../JS/navbar.js" defer></script>
+<script src="https://kit.fontawesome.com/aa16f6569f.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-  {% endif %} 
+{% endif %}
 
-  {% if is_blog %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+{% if is_blog %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-  <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  {% endif %} 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+{% endif %}
 
-  {% if is_pap %}
-  <script
-      src="https://kit.fontawesome.com/aa16f6569f.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
-  ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
-  ></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script>
+{% if is_pap %}
+<script src="https://kit.fontawesome.com/aa16f6569f.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!-- <script> -->
 
-  {% endif %} 
+  {% endif %}
   {% if is_refer %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-  <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-    ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 
 
-  {% endif %} 
+{% endif %}
 
-  {% if is_contactus_page %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-<script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-    ></script>
-  {% endif %} 
+{% if is_contactus_page %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+{% endif %}
 
-  {% if is_itie %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script
-  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-  crossorigin="anonymous"
-></script>
+{% if is_itie %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
 
-<script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-      crossorigin="anonymous"
-    ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+  integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
+  </script>
 
-  {% endif %} 
+{% endif %}
 
-  {% if is_category %}
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+{% if is_category %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-  {% endif %} 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+{% endif %}
 
 
 <script>
-  var lastScrollTop = 0;
-  navbar = document.getElementById("navbar");
-  window.addEventListener("scroll", function () {
+    var lastScrollTop = 0;
+    navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", function () {
   var scrollTop =
-  window.pageXOffset || document.documentElement.scrollTop;
+    window.pageXOffset || document.documentElement.scrollTop;
   
   if (scrollTop > lastScrollTop) {
-  navbar.style.top = "-100px";
+      navbar.style.top = "-100px";
   } else {
-  navbar.style.top = "0";
+      navbar.style.top = "0";
   }
-  lastScrollTop = scrollTop;
+    lastScrollTop = scrollTop;
   });
-  
-  const accordionItemHeaders = document.querySelectorAll(
-  ".accordion-item-header"
-  );
+
+    const accordionItemHeaders = document.querySelectorAll(
+    ".accordion-item-header"
+    );
   
   accordionItemHeaders.forEach((accordionItemHeader) => {
-  accordionItemHeader.addEventListener("click", (event) => {
-  const currentlyActiveAccordionItemHeader = document.querySelector(
-  ".accordion-item-header.active"
-  );
-  if (
-  currentlyActiveAccordionItemHeader &&
-  currentlyActiveAccordionItemHeader !== accordionItemHeader
-  ) {
-  currentlyActiveAccordionItemHeader.classList.toggle("active");
-  currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-  }
-  
-  accordionItemHeader.classList.toggle("active");
-  const accordionItemBody = accordionItemHeader.nextElementSibling;
-  if (accordionItemHeader.classList.contains("active")) {
-  accordionItemBody.style.maxHeight =
-  accordionItemBody.scrollHeight + "px";
-  } else {
-  accordionItemBody.style.maxHeight = 0;
-  }
+      accordionItemHeader.addEventListener("click", (event) => {
+        const currentlyActiveAccordionItemHeader = document.querySelector(
+          ".accordion-item-header.active"
+        );
+        if (
+          currentlyActiveAccordionItemHeader &&
+          currentlyActiveAccordionItemHeader !== accordionItemHeader
+        ) {
+          currentlyActiveAccordionItemHeader.classList.toggle("active");
+          currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+        }
+
+        accordionItemHeader.classList.toggle("active");
+        const accordionItemBody = accordionItemHeader.nextElementSibling;
+        if (accordionItemHeader.classList.contains("active")) {
+          accordionItemBody.style.maxHeight =
+            accordionItemBody.scrollHeight + "px";
+        } else {
+          accordionItemBody.style.maxHeight = 0;
+        }
+      });
   });
-  });</script>
-  
-    </body>
-  </html>
+</script>
+
+</body>
+
+</html>
