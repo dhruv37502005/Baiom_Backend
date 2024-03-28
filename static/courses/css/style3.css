@@ -764,7 +764,6 @@
 .section-three li {
   display: flex;
   gap: 2rem;
-  justify-content: space-around;
   align-items: flex-start;
   width: 24rem;
   padding-bottom: 0.5rem;
@@ -791,7 +790,12 @@
   font-weight: 700;
   color: rgb(3, 3, 72);
 }
-
+.swiper-pagination.swiper-pagination-clickable{
+  width: 80px;
+  position: relative;
+  bottom: 0%;
+  padding-top: 2%;
+}
 .section-three p {
   color: #777;
   font-weight: 500;
@@ -1653,7 +1657,7 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 0px;
   }
 
   .topsection1-image>img {
@@ -1705,6 +1709,7 @@ footer p {
   .topsection1-content>h1 {
     width: 160%;
     text-align: center;
+    line-height: 50px;
   }
 
   .topsection1-content>p {
@@ -1808,6 +1813,10 @@ footer p {
 
   }
 }
+  .why-web-dev-box .why-web-dev h5 {
+    color: #777;
+  }
+
 
 @media (min-width:770px) and (max-width:918px) {
   .three .image>img {
@@ -1846,6 +1855,65 @@ footer p {
     font-size: 1.8rem;
   }
 }
+.popup-form-content input,
+.popup-form-content select{
+  box-shadow: 1.2px 1.5px 0.7px #777 !important;
+  
+}
+.popup-submit{
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100px;
+  height: 40px;
+  background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
+  -webkit-text-fill-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  transition: 3s;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width:451px) and (max-width:1140px){
+   .first-h3{
+    width: 160%;
+    margin-right: 20px;
+   }
+   .class-1st .first{
+    margin-left: 50%;
+   }
+   .class-1st{
+    position: relative;
+    right:15%;
+   }
+
+   .section-three {
+    margin: 3rem auto;
+   } 
+   .testimonial-heading {
+    padding-top: 0rem;
+  }
+  .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+     bottom: 0px !important;
+  }  
+  .slide-container.swiper{
+    margin-bottom: 3rem !important;
+  }
+  .Right-course h2, .Right-course .underline{
+    font-size: 2rem !important;
+  }
+  .three .image>img {
+    padding-top: 3rem;
+  }
+  .second-section-div2 h3 {
+    font-size: 1.5rem;
+  }
+  .section-three {
+    margin: 6rem auto;
+  }
+  .content-box {
+    width: 100%;
+  }  
+}
 
 @media (max-width:450px) {
   .topsection1-content>h1 {
@@ -1877,7 +1945,10 @@ footer p {
   .topsection1-countpart .third {
     font-size: 22px !important;
   }
-  
+  .topsection1-button .interested {
+    margin-bottom: 20px;
+  }
+
   .first-h3{
     width:130%;
     padding-right: 52px;
@@ -1894,10 +1965,13 @@ footer p {
   }
   .topsection1-button .interested,
   .topsection1-button .broucher  {
-    width: 200px;
-    font-size: 14px;
-    height: 55px;
+    width: 160px;
+    font-size: 13px;
+    height: 50px;
     text-align: center;
+  }
+  .topsection1-container {
+    padding-bottom: 8px;
   }
   .topsection1-button .broucher {
     font-size: 13px !important;
@@ -1915,9 +1989,11 @@ footer p {
   }
 
   .topsection1-button .broucher {
-    font-size: 17px;
+    font-size: 10px !important;
   }
-
+  .three .image>img {
+    margin-top: 1rem;
+  }  
   .second-section-div2 div p {
     text-align: center;
     font-size: 11px;
@@ -1925,24 +2001,31 @@ footer p {
 
   .second-section-div2 div h1 {
     text-align: center;
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .second-section-div2 div h3 {
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
+    margin-bottom: 0px !important;
+  }
+  .btn-33 {
+    width: 120px;
+    font-size: 14px !important;
   }
 
   .second-section-div2 div {
-    padding-bottom: 10px !important;
+    padding-bottom: 5px !important;
   }
 
   .second-section-container {
     margin-top: 10px;
+    gap: 5px;
   }
 
   .why-web-dev-box {
     margin-top: 0px !important;
+    margin-bottom: -30px !important;
   }
 
   .why-web-dev-box h3 {
@@ -1953,6 +2036,7 @@ footer p {
 
   .why-web-dev-box .why-web-dev h5 {
     font-size: 14px;
+    color: #777;
   }
 
   .section-three {
@@ -1960,12 +2044,12 @@ footer p {
   }
 
   .section-three h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-bottom: 4px !important;
   }
 
   .section-three .fa-solid {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .section-three h4 {
@@ -1973,15 +2057,20 @@ footer p {
     width: 140%;
     margin-top: 7px;
   }
-
+  .enroll-btn {
+    font-size: 1rem;
+  }
+  .emi_box {
+    width:90% !important;
+    position: relative;
+    left:5%;
+  }
+  .buy_course {
+    margin-bottom: 10px;
+   }
   .section-three .divide {
     position: relative;
     right: 4%;
-  }
-
-  .section-three li {
-    position: relative;
-    right: 2%;
   }
 
   .section-three p {
@@ -1993,7 +2082,9 @@ footer p {
     width: 120%;
     font-size: 24px;
   }
-
+  .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0px !important;
+  }  
   .curriculum-item-header {
     font-size: 2px;
     height: 6vh !important;
@@ -2001,14 +2092,17 @@ footer p {
 
   .curriculum h2 {
     padding: 0.6rem;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 12px;
   }
-
+  .curriculum-item-body-content {
+    font-size: 12px;
+  }
   .testimonial-heading {
     margin: -10px !important;
     width: 100%;
     font-size: 24px;
+    padding-top: 4rem;
   }
 
   .testimonial {
@@ -2056,9 +2150,13 @@ footer p {
   .Right-course h2,
   .Right-course h2 span {
     width: 100%;
-    font-size: 20px;
+    font-size: 26px;
+    padding-top: 0px;
   }
-
+  .splide__track--draggable {
+    position: relative;
+    bottom: 4vh !important;
+  }
   .Right-course {
     margin-top: -10%;
   }
@@ -2108,7 +2206,7 @@ footer p {
 
   .buy_course_box {
     padding: 0.8rem 1.2rem;
-    height: 18vh !important;
+    height: 14vh !important;
   }
 
   .percentage,
@@ -2134,10 +2232,18 @@ footer p {
     position: relative;
     left: 3%;
   }
-
-  .accordion-item-header {
-    font-size: 15px !important;
+  .accordion {
+    margin: 1.2rem 10px !important;
   }
+  .accordion-item-header {
+    font-size: 13px !important;
+  }
+  .accordion-item-body-content {
+    font-size: 12px !important;
+  }
+  .ac-main h1 {
+    margin-bottom: 0rem !important;
+  }    
 }
 
 
