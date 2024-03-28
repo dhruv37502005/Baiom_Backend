@@ -1679,24 +1679,24 @@ p.virtues-sub-heading {
 
 /* changes */
 @media (min-width: 768px) and (max-width: 1210px) {
-  footer .row {
+  /* footer .row {
     display: grid;
     grid-template-columns: repeat(2, auto);
-  }
+  } */
 
-  footer .row .col-md-3 {
+  /* footer .row .col-md-3 {
     max-width: 32vw;
-  }
+  } */
 
-  .footer-container {
+  /* .footer-container {
     padding-bottom: 2rem;
     padding-left: 5rem;
-  }
+  } */
 }
 
-footer h6 {
+/* footer h6 {
   color: #fff;
-}
+} */
 
 /* cnange end */
 
@@ -2524,10 +2524,10 @@ list
     padding: 0% 4%;
   }
 
-  #subscribe {
+  /* #subscribe {
     position: relative !important;
     bottom: 4vh !important;
-  }
+  } */
 
   .expertImage .about p {
     margin-bottom: -10px;
