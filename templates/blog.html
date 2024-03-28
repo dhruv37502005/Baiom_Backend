@@ -70,15 +70,16 @@
                   {% comment %} <span class="blog-comment">
                     <a href="#"><i class="fa-regular fa-comment"></i>Comments(3)</a></span> {% endcomment %}
                   {% comment %} </div> {% endcomment %}
+                  {% if category.description or category.heading %}
                 <h2>
-                  {% if category.description %}
-                  {{ category.description }}
-                  {% endif %}
+                  {{ category.heading }}
                 </h2>
-
+                
                 <p class="description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur totam, possimus amet sunt repudiandae quas itaque inventore eaque hic libero?
+                  {{ category.description }}
+                  
                 </p>
+                {% endif %}
 
                 <!-- <div class="subcontent">
                   <br />
