@@ -1052,9 +1052,11 @@ input[type="radio"] {
   width: 100%;
   text-align: center;
   margin-right: 200px;
+  position: relative;
+  left: 4vh !important;
   /* transform: translateX(-120px); */
 }
-
+ 
 .section-five h2 span {
   background: -webkit-linear-gradient(30deg, #fb8721, #fa2424);
   -webkit-background-clip: text;
@@ -1084,7 +1086,7 @@ input[type="radio"] {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   height: 100%;
   /* list-style: none; */
   /* background: #fff; */
@@ -1113,9 +1115,7 @@ input[type="radio"] {
   .section-five .temp #right {
     right: 0px;
   }
-  .section-five h2 {
-    margin-right: 20px;
-  }
+  
 }
 @media (min-width: 321px) and (max-width: 440px) {
   .section-five h2 {
@@ -2055,6 +2055,600 @@ input[type="radio"] {
 
 
 
+@media(min-width: 0px) and (max-width: 320px){
+  .topsection1-content .content{
+    box-shadow: none;
+    width: 125%;
+  }
 
+  .topsection1-content .content > h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+    line-height: 2.5rem;
+}
+
+  .topsection1-content .content > p{
+    font-size: 15px;
+  }
+
+  .section-two img{
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .topsection1-content .content > h1 > span:after {
+    display: none;
+  }
+
+  .section-two h2{
+    font-size: 28px;
+    margin-left: -54px;
+    margin-right: -45px;
+    margin-bottom: -38px;
+  }
+
+  .section-two h6{
+    font-size: 12px;
+    margin-top: -52px;
+    margin-bottom: -100px;
+  }
+
+  .section-two h2 span{
+    font-size: 28px;
+  }
+
+  .section-two p {
+    margin-left: 43px !important;
+    width: 77%;
+    font-size: 14px;
+  }
+
+  .section-three h2{
+    font-size: 25px;
+    margin-bottom: 49px;
+  }
+
+  .section-three .fa-solid{
+    font-size: 31px;
+  }
+
+  .slider1 h1{
+    font-size: 28px;
+  }
+
+  .slider1 .content h1{
+    margin-top: 14px;
+  }
+
+  .slider1 .content .bold{
+    font-size: 15px;
+  }
+
+  .slider1 .content p {
+    font-size: 14px;
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  .section-entrepreneur h2 {
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 5px;
+  }
+
+  .section-entrepreneur .content {
+    width: 105% !important;
+  }
+
+  .section-seven h2{
+    width: 100%;
+    font-size: 23px !important;
+  }
+
+  .section-seven h2 span{
+    font-size: 23px;
+  }
+
+  .slide-name{
+    font-size: 20px;
+  }
+
+  .content .temp{
+    font-size: 20px;
+  }
+
+  .content .price{
+    font-size: 17px;
+  }
+
+  .section-seven .name-span, .section-seven .course-content{
+    font-size: 15px;
+  }
+
+  .section-seven .btn-1 {
+    width:89%;
+    font-size: 15px;
+  }
+
+  .key_features{
+    font-size: 15px;
+  }
+
+  .emi_features{
+    font-size: 15px;
+  }
+
+  .amazing_heading {
+    font-size: 28px;
+  }
+
+  .grab_offer{
+    font-size: 15px;
+  }
+
+  /* .percentage {
+    font-size: 30px;
+  } */
+
+  .ac-main h1{
+    font-size: 25px !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .ac-main h1 span{
+    font-size: 25px !important;
+  }
+
+  .accordion-item-header{
+    font-size: 11px !important;
+  }
+
+  .accordion-item{
+    width: 93%;
+  }
+
+  .section-two div{
+    margin-left: -158px;
+    margin-right: -141px;
+  }
+
+  .section-entrepreneur h6 {
+    margin-left: -63px;
+    font-size: 13px;
+    margin-bottom: 29px;
+    margin-right: -27px;
+}
+}
+
+
+@media(min-width: 441px) and (max-width: 570px){
+  .topsection1-content .content{
+    width: 112%;
+  }
+
+  .topsection1-content .content > h1{
+    font-size: 32px;
+  }
+
+  .topsection1-content .content > p {
+    font-size: 18px;
+    margin-top: 34px;
+  }
+
+  .section-two div {
+    margin-left: -116px !important;
+    margin-right: -89px;
+  }
+
+  .section-two h2{
+    font-size: 30px;
+  }
+
+  .section-two h2 > span{
+    font-size: 30px;
+  }
+
+  .section-two p{
+    font-size: 16px;
+    margin-top: -25px;
+  }
+
+  .section-two h6{
+    font-size: 15px;
+  }
+
+  .section-three h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .section-three h4 {
+    font-size: 20px;
+  }
+
+  .section-three p{
+    font-size: 15px;
+  }
+
+  .section-three .fa-solid{
+    font-size: 30px;
+  }
+
+  .slider1 h1 {
+    font-size: 30px;
+    line-height: 50px;
+  }
+
+  .slider1 .content h1{
+    margin-top: 5px;
+  }
+
+  .slider1 .content p{
+    font-size: 16px;
+    margin-left: -4px;
+    margin-right: 14px;
+    padding-left: 0px;
+
+  }
+
+  .section-entrepreneur p {
+    margin-left: -108px;
+    margin-right: -83px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .section-entrepreneur h2 {
+    padding: 15px;
+    font-size: 2rem;
+    margin-left: -23px;
+    line-height: 45px;
+  }
+
+  .section-entrepreneur h6 {
+    margin-left: -107px;
+    padding: 35px;
+    font-size: 15px;
+    margin-right: -67px;
+  }
+
+  .section-seven h2{
+    font-size: 30px;
+  }
+
+  .section-seven h2 span{
+    font-size: 30px;
+  }
+
+  .slide-name{
+    font-size: 26px;
+  }
+
+  .content .temp{
+    font-size: 25px;
+  }
+
+  .content .price{
+    font-size: 21px;
+  }
+
+  .section-seven .course-content {
+    font-size: 18px;
+  }
+
+  .emi_box{
+    width: 98%;
+  }
+
+  .amazing_heading{
+    font-size: 30px;
+  }
+
+  .grab_offer{
+    font-size: 15px;
+  }
+
+  .percentage{
+    font-size: 26px;
+  }
+
+  .off{
+    font-size: 20px;
+  }
+
+  .percentage_3{
+    font-size: 26px;
+  }
+
+  .amazing_career .timer{
+    gap: 1rem;
+    align-items: center;
+    width: 29rem;
+  }
+
+  .ac-main h1 {
+    font-size: 30px !important;
+  }
+
+  .ac-main h1 span {
+    font-size: 30px !important;
+  }
+
+  .accordion-item{
+    width: 95%;
+  }
+
+  .accordion-item-body-content {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+}
+
+
+@media (min-width: 571px) and (max-width: 980px){
+  .topsection1-content .content > h1 > span{
+    font-size: 42px;
+  }
+
+  .topsection1-content .content > h1{
+    font-size: 42px;
+  }
+
+  .topsection1-content .content > p{
+    font-size: 16px;
+  }
+
+  .section-two h2{
+    font-size: 42px;
+    margin-left: -40px;
+    margin-right: -40px;
+    margin-bottom: 2px;
+    margin-top: 105px;
+  }
+
+  .section-two p {
+    margin-left: -40px;
+    margin-right: -40px;
+    font-size: 16px;
+  }
+
+  .section-two h6{
+    font-size: 15px;
+  }
+
+  .section-three h2{
+    font-size: 40px;
+  }
+
+  .section-three h4{
+    font-size: 20px;
+  }
+
+  .section-three p{
+    font-size: 15px;
+  }
+
+  .section-three .fa-solid{
+    font-size: 32px;
+  }
+
+  .imp{
+    font-size: 30px;
+  }
+
+  .importance > .opp{
+    font-size: 30px;
+  }
+
+  .slider1 .content h1{
+    margin-top: 20px;
+  }
+
+  .slider1 .content p{
+    font-size: 18px;
+  }
+
+  .main-card .cards .card{
+    width: 80%;
+    margin-left: 53px;
+
+  }
+
+  .section-entrepreneur h2{
+    font-size: 30px;
+  }
+
+  .section-entrepreneur p {
+    padding: 15px;
+    line-height: 1.7rem;
+    margin-left: -70px;
+    margin-right: -51px;
+    text-align: center;
+  }
+
+  .section-entrepreneur h6{
+    margin-left: -25px;
+    font-size: 15px;
+  }
+
+  .section-seven h2{
+    font-size: 30px;
+  }
+
+  .section-seven h2 span{
+    font-size: 30px;
+  }
+
+  .slide-name{
+    font-size: 25px;
+  }
+
+  .content .temp{
+    font-size: 20px;
+  }
+
+  .content .price{
+    font-size: 20PX;
+  }
+
+  .emi_box{
+    width: 78%;
+  }
+
+  .key_features{
+    font-size: 17px;
+  }
+
+  .emi_features {
+    font-size: 17px;
+  }
+
+  .amazing_heading{
+    font-size: 30px;
+  }
+
+  .grab_offer{
+    font-size: 17px;
+  }
+
+  .buy_course_box {
+    width: 81%;
+  }
+
+  .buy_course_container {
+    align-items: center;
+  }
+
+  .ac-main h1{
+    font-size: 30px !important;
+  }
+
+  .ac-main h1 span{
+    font-size: 30px !important;
+  }
+
+  .accordion-item{
+    width: 96%;
+  }
+}
+.emi_features{
+  font-family: "Montserrat", "sans-serif", "Londrina Outline";
+}
+
+@media (min-width: 280px) and (max-width:450px){
+  .topsection1-content .content {
+      margin-top: 20px;
+  }
+  .topsection1-content .content > h1 {
+    line-height: 2rem;
+  }
+  .topsection1-content .content > p {
+    font-size: 12px !important;
+    line-height: 1.2rem !important;
+    margin-bottom: 5px !important;
+  }
+  .section-two img {
+    height: 110% !important;
+    width: 130% !important;
+  }
+  .section-two h2 {
+    margin-top: 0.5rem !important;
+    padding-bottom: 10px !important;
+    text-align: center !important;
+  }
+  .section-two p {
+    font-size: 12px;
+    line-height: 1.2rem;
+    margin-left: -5% !important;
+    width: 105%;
+    padding: 0 0% !important;
+  }  
+  .section-three {
+    margin: 3rem auto !important;
+    margin-bottom: 2rem !important;
+  }  
+  .section-three h2 {
+    font-size: 24px;
+    padding-top: 20px;
+    margin-bottom: -0.5rem;
+  }  
+  .section-three .fa-solid {
+    font-size: 1.5rem;
+  }
+  .slider1 h1:first-child {
+    font-size: 24px;
+    line-height: 34px;
+  }  
+  .section-entrepreneur h2 {
+    line-height: 35px;
+  }
+  .section-entrepreneur p {
+    margin-top: -35px;
+    width: 130%;
+    line-height: 22px;
+  }
+  .section-entrepreneur h6 {
+    width: 200%;
+  }
+  .section-entrepreneur img {
+    width: 95%;
+  } 
+  .section-five h2 {
+    margin-right: 50%;
+    font-size: 30px;
+    margin-bottom: 1rem;
+    margin-top: -2rem;
+  }   
+  .section-five .testimonials {
+    height: max-content;
+    width:125%;
+    padding: 1rem 0rem;
+    font-size: 12px;
+    width:100%;
+    margin-top: -10px;
+  }
+  .section-seven h2 {
+    padding-top: 0rem;
+    font-size: 28px;
+    margin-top: -50px;
+    margin-bottom: 1rem;
+  }    
+  .section-seven h2 .underline {
+    font-size: 28px !important; 
+  }
+  .section-seven .course-content {
+    line-height: 2rem;
+  }  
+  .emi_features{
+    font-family: "Montserrat", "sans-serif", "Londrina Outline";
+  }
+  
+  .ac-main h1,
+  .ac-main span {
+    width: 100% !important;
+    font-size: 22px !important;
+  }
+
+  .accordion-item {
+    width: 90%;
+    position: relative;
+    left: 3%;
+  }
+  .accordion {
+    margin: 1.2rem 10px !important;
+  }
+  .accordion-item-header {
+    font-size: 13px !important;
+  }
+  .accordion-item-body-content {
+    font-size: 12px !important;
+  }
+  .ac-main h1 {
+    margin-bottom: 0rem !important;
+    padding-bottom: 1rem !important;
+    margin-top: -20px !important;
+  }    
+}
 
 

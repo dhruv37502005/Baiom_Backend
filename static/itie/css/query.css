@@ -145,14 +145,14 @@
   }
 
   .accordion-item-header {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     text-align: left;
   }
   .accordion-item-body-content {
-    font-size: 15px;
+    font-size: 12px;
     line-height: 1.5;
-    text-align: justify;
+    text-align: left;
   }
   .img img {
     display: none;

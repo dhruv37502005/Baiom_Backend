@@ -45,7 +45,7 @@
       {% for category in blogcategories %}
 
       <div class="swiper-slide">
-        <section >
+        <section>
           <div class="we__offer">
             <div class="we__offer_card">
               <div class="course_img">
@@ -66,15 +66,20 @@
                 {% comment %} <div class="blog-icon" style="font-size: 0.97rem;"> {% endcomment %}
                   {% comment %} <span>
                     <i class="fa fa-calendar" aria-hidden="true"></i>Mar 30, 2023
-                    </span> {% endcomment %}
+                  </span> {% endcomment %}
                   {% comment %} <span class="blog-comment">
                     <a href="#"><i class="fa-regular fa-comment"></i>Comments(3)</a></span> {% endcomment %}
-                {% comment %} </div> {% endcomment %}
+                  {% comment %} </div> {% endcomment %}
+                  {% if category.description or category.heading %}
                 <h2>
-                  {% if category.description %}
-                  {{ category.description }}
-                  {% endif %}
+                  {{ category.heading }}
                 </h2>
+                
+                <p class="description">
+                  {{ category.description }}
+                  
+                </p>
+                {% endif %}
 
                 <!-- <div class="subcontent">
                   <br />
