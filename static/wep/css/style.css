@@ -2532,8 +2532,123 @@ input[type="radio"] {
     width: 96%;
   }
 }
+.emi_features{
+  font-family: "Montserrat", "sans-serif", "Londrina Outline";
+}
 
+@media (min-width: 280px) and (max-width:450px){
+  .topsection1-content .content {
+      margin-top: 20px;
+  }
+  .topsection1-content .content > h1 {
+    line-height: 2rem;
+  }
+  .topsection1-content .content > p {
+    font-size: 12px !important;
+    line-height: 1.2rem !important;
+    margin-bottom: 5px !important;
+  }
+  .section-two img {
+    height: 110% !important;
+    width: 130% !important;
+  }
+  .section-two h2 {
+    margin-top: 0.5rem !important;
+    padding-bottom: 10px !important;
+    text-align: center !important;
+  }
+  .section-two p {
+    font-size: 12px;
+    line-height: 1.2rem;
+    margin-left: -5% !important;
+    width: 105%;
+    padding: 0 0% !important;
+  }  
+  .section-three {
+    margin: 3rem auto !important;
+    margin-bottom: 2rem !important;
+  }  
+  .section-three h2 {
+    font-size: 24px;
+    padding-top: 20px;
+    margin-bottom: -0.5rem;
+  }  
+  .section-three .fa-solid {
+    font-size: 1.5rem;
+  }
+  .slider1 h1:first-child {
+    font-size: 24px;
+    line-height: 34px;
+  }  
+  .section-entrepreneur h2 {
+    line-height: 35px;
+  }
+  .section-entrepreneur p {
+    margin-top: -35px;
+    width: 130%;
+    line-height: 22px;
+  }
+  .section-entrepreneur h6 {
+    width: 200%;
+  }
+  .section-entrepreneur img {
+    width: 95%;
+  } 
+  .section-five h2 {
+    margin-right: 50%;
+    font-size: 30px;
+    margin-bottom: 1rem;
+    margin-top: -2rem;
+  }   
+  .section-five .testimonials {
+    height: max-content;
+    width:125%;
+    padding: 1rem 0rem;
+    font-size: 12px;
+    width:100%;
+    margin-top: -10px;
+  }
+  .section-seven h2 {
+    padding-top: 0rem;
+    font-size: 28px;
+    margin-top: -50px;
+    margin-bottom: 1rem;
+  }    
+  .section-seven h2 .underline {
+    font-size: 28px !important; 
+  }
+  .section-seven .course-content {
+    line-height: 2rem;
+  }  
+  .emi_features{
+    font-family: "Montserrat", "sans-serif", "Londrina Outline";
+  }
+  
+  .ac-main h1,
+  .ac-main span {
+    width: 100% !important;
+    font-size: 22px !important;
+  }
 
-
+  .accordion-item {
+    width: 90%;
+    position: relative;
+    left: 3%;
+  }
+  .accordion {
+    margin: 1.2rem 10px !important;
+  }
+  .accordion-item-header {
+    font-size: 13px !important;
+  }
+  .accordion-item-body-content {
+    font-size: 12px !important;
+  }
+  .ac-main h1 {
+    margin-bottom: 0rem !important;
+    padding-bottom: 1rem !important;
+    margin-top: -20px !important;
+  }    
+}
 
 

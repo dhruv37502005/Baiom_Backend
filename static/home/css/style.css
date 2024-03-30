@@ -315,10 +315,10 @@ header img {
 }
 
 @media (max-width: 600px) {
-  .home-section .row h2 {
+  /* .home-section .row h2 {
     font-size: 3.3rem;
     margin-top: 5rem;
-  }
+  } */
 
   .home-section .row h2 br {
     display: none;
@@ -332,13 +332,13 @@ header img {
     display: none !important;
   }
 
-  .home-section .row p:not(.about-slide) {
+  /* .home-section .row p:not(.about-slide) {
     margin-right: 0;
     text-align: justify;
-  }
+  } */
 }
 
-@media (max-width: 474px) {
+/* @media (max-width: 474px) {
   .home-section .row h2 {
     font-size: 2.8rem;
   }
@@ -351,7 +351,7 @@ header img {
   .btn-2 {
     font-size: 18px;
   }
-}
+} */
 
 @media (min-width: 321px) and (max-width: 390px) {
   .home-section .row h2 {
@@ -368,18 +368,18 @@ header img {
     background: orangered;
   }
 
-  .row_first{
+  /* .row_first{
     width:76% !important;
     height: 76% !important;
-  }
+  } */
 
-  .icons i{
-    width: 45% !important;
+   /* .icons i{ */
+    /* width: 45% !important; */
     /* height: 146%; */
-    font-size: 31px !important;
+    /* font-size: 31px !important; */
     /* text-align: center; */
-    padding-left: 21px !important;
-  }
+    /* padding-left: 21px !important; */
+  /* } */
 
   .div_text h2 {
     font-size: 17px !important;
@@ -698,18 +698,18 @@ header img {
     padding-right: 15px;
   }
 
-  .courses h1 {
+  /* .courses h1 {
     font-size: 28px;
     position: relative;
     top: 20px;
-  }
+  } */
 
-  .courses p.sub-heading {
+  /* .courses p.sub-heading {
     font-size: 16px;
     text-align: justify;
     width: 100%;
     margin-bottom: 2rem;
-  }
+  } */
 }
 
 /* Enhance skill section */
@@ -849,20 +849,20 @@ border-right: 1.5px solid #949494;
   /* .section-3 .horizon h2.h22{
     left: -25% !important;
   } */
-.section-3 .horizon h2 {
+/* .section-3 .horizon h2 {
     margin-left:20px;
 
     font-size: 25px !important;
-  }
-  .section-3 .horizon .horizon-sub-heading {
+  } */
+  /* .section-3 .horizon .horizon-sub-heading {
     margin-left: -48px;
     font-size: 25px;
-  }
+  } */
 
-  .section-3 .horizon .check {
+  /* .section-3 .horizon .check {
     padding-left: 20px;
     padding-bottom: 3rem;
-  }
+  } */
 
   .virtues-heading {
     font-size: 20px !important;
@@ -881,15 +881,15 @@ border-right: 1.5px solid #949494;
 }
 
 @media (max-width: 576px) {
-  .section-3 .horizon h2 {
+  /* .section-3 .horizon h2 {
     font-size: 25px;
     margin-top: 35px;
-  }
+  } */
 
-  .section-3 .horizon .horizon-sub-heading {
+  /* .section-3 .horizon .horizon-sub-heading {
     font-size: 15px;
     text-align: justify;
-  }
+  } */
 
   .horizon .row p {
     padding-left: 0;
@@ -2385,12 +2385,12 @@ list
     margin-left: 0px !important;
   }
 
-  .section-3 .horizon h2 {
+  /* .section-3 .horizon h2 {
     font-size: 18px;
     margin-top: 25px;
     position: relative;
     right: 10%;
-  }
+  } */
 
   .row.align-center .col img {
     width: 70%;
@@ -2413,7 +2413,7 @@ list
   .user-image-medium-small {
     width: 348px;
     position: relative !important;
-    right: 17%;
+    right: 10%;
     padding-top: 8%;
   }
 
@@ -2423,8 +2423,8 @@ list
   }
 
   .home-section .row .col-sm-12.h2-dec p {
-    font-size: 15px !important;
-    margin-left: 3%;
+    font-size: 13px !important;
+    /* margin-left: 3%; */
   }
 
   .quote {
@@ -2443,23 +2443,23 @@ list
     right: 4%;
   }
 
-  .section-3 .horizon h2 {
+  /* .section-3 .horizon h2 {
     left: 5%;
-  }
+  } */
 
   .section-3 .horizon h2.h22 {
     left: -4%;
   }
 
-  .section-3 .horizon .horizon-sub-heading {
+  /* .section-3 .horizon .horizon-sub-heading {
     position: relative;
     left: 5%;
-  }
+  } */
 
-  .section-3 .horizon .check {
+  /* .section-3 .horizon .check {
     position: relative;
     left: 3%;
-  }
+  } */
 
   .section-4 .tab-content-item .tabs-content-heading {
     font-weight: 700;
@@ -2542,6 +2542,23 @@ list
 
 
 @media (min-width:0px) and (max-width:320px){
+  .home-section .row h2{
+    font-size: 25px;
+    margin-top: 3rem;
+  }
+
+  .home-section .row p:not(.about-slide){
+    font-size: 15px !important;
+    text-align: center !important;
+    margin-left: -2px;
+    margin-right: -5px;
+  }
+
+  .btn-1, .btn-2 {
+    font-size: 17px;
+  }
+
+
   .section-3 .horizon .horizon-sub-heading{
     font-size: 13px;
     margin-left: -29px;
@@ -2556,10 +2573,61 @@ list
   .section-3 .horizon h2{
     margin-left: -35px !important;
     margin-right: 12px !important;
+    font-size: 25px;
+  }
+
+  .section-3 .horizon .check {
+    padding-left: 20px;
+    padding-bottom: 3rem;
+    border-bottom: none;
+  }
+
+  .section-3 .horizon .mentors h4 {
+    border-top: 1px solid #949494;
+    margin-left: -35px;
+  }
+
+  .section-3 .horizon{
+    border-bottom: none;
+  }
+
+  .horizon .queries{
+    margin-left: -32px;
+    border-bottom: 1px solid #949494;
+    padding-bottom: 12px;
+  }
+
+  .courses h1{
+    font-size: 25px;
+  }
+
+  .courses p.sub-heading {
+    font-size: 15px;
+    text-align: justify;
+    width: 94%;
+    margin-bottom: 2rem;
+  }
+
+  .section-4 .tab-content-item .tabs-content-heading{
+    font-size: 25px !important;
+  }
+
+  .home-section .row img{
+    padding-top: -20px;
+  }
+
+  ul {
+    padding-left: 58px;
+    /* padding-right: -10px; */
   }
 
   .section-4 .tab-content-item .two .col-md-7 {
     margin-left: -44px;
+  }
+
+  section.startups h5{
+    font-size: 25px;
+    padding-top: 20px;
   }
 
   .box_1 form{
@@ -2576,6 +2644,23 @@ list
 
   .boxes .row_first{
     margin-left: -14px;
+    width: 97%;
+    height: 80%;
+  }
+
+  .icons i {
+    font-size: 15px;
+  }
+
+  .div_text h2 {
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row_first p{
+    font-size: 11px;
   }
 
   #virtues-carousel{
@@ -2600,26 +2685,79 @@ list
   }
 }
 
-@media (min-width: 391px) and (max-width: 430px){
+@media (min-width: 321px) and (max-width: 430px){
   .section-3 .horizon h2{
-    font-size: 28px !important;
-    left: 3%;
+    font-size: 26px !important;
+    margin-left: -3px !important; 
+    margin-right: 5px;
+    text-align: left;
+    margin-top: 28px;
+
   }
 
   .section-3 .horizon .horizon-sub-heading{
     left: 0%;
+    font-size: 15px;
+    text-align: justify;
   }
 
   .section-3 .horizon .check{
-    padding-left: 72px;
+    padding-left: 82px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-bottom: none;
+  }
+
+  .section-3 .horizon .mentors h4{
+    border-top: 1.5px solid #949494;
+    margin-left: -43px;
+    margin-right: -86px;
+    padding-top: 11px;
+  }
+
+  .section-3 .horizon h2.h22{
+    font-size: 26px !important;
+    margin-left: -61px !important; 
+    text-align: center;
+    margin-top: -39px;
+  }
+
+  .horizon .queries{
+    text-align: center;
+    border-bottom: 1.5px solid #949494;
+    padding-bottom: 11px;
+    /* margin-left: -18px; */
+  }
+
+  .section-3 .horizon{
+    border-bottom: none;
+  }
+
+  #virtues-tab-1-content.virtues-tab-content-item .row{
+    position: relative;
+    right: 3%;
+  }
+
+  .user-image-medium-small {
+    width: 336px;
+    /* position: relative !important;
+    right: 10%; */
+    padding-top: 8%;
+    display: flex;
+    align-items: center !important;
   }
 
   .mentors-outer-div {
     padding-right: 50px;
   }
 
-  ul{
-    padding-right:39px;
+  #expand_list{
+    /* padding-right:39px !important; */
+    margin-left: -265px;
+  }
+
+  #virtue_protocols{
+    margin-left: 16px;
   }
 
   section.startups h5{
@@ -2629,29 +2767,40 @@ list
 
   .infoimg p {
     margin-left: 13px;
+    font-size: 15px;
   }
 
   .infoimg h5 {
     margin-left: 13px;
+    font-size: 19px;
   }
 
 
   .home-section .row .col-md-6:not(.infoimg){
     margin-left: 13px;
+    /* margin-left: 3%; */
+    margin-right: 60px;
   }
-
+/* 
   .home-section .row .col-sm-12.h2-dec p{
     margin-left: -8px;
-    padding-right: 31px;
-  }
+    margin-right: 20px;
+
+  } */
 
   .courses h1{
-    font-size: 28px;
+    font-size: 26px;
+    margin-top: -100px;
   }
 
-  .section-3 .horizon h2.h22{
-    font-size: 28px !important;
+  .courses p.sub-heading{
+    width: 98%;
+    font-size: 15px;
   }
+
+  /* .section-3 .horizon h2.h22{
+    font-size: 28px !important;
+  } */
 
   section.work h1{
     font-size: 28px;
@@ -2666,24 +2815,77 @@ list
     margin-bottom: -80px;
   } */
 
-  /* section.work .contents{
-    grid-gap: 7rem 7rem;
-  } */
+  section.work .contents{
+    grid-gap: 1rem 11rem;
+  }
+
+  .boxes{
+    margin-top: -4rem;
+  }
 
   section.expert h1{
     font-size: 28px;
     text-align: center;
   }
+  .quote{
+    margin: 0px;
+    font-size: 15px !important;
+  }
+ .row-heading p{
+  margin: 0px;
+  padding: 0px;
+  text-align:left;
+}
+  #expand_list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin:20px 0px;
+  }
+
+  .list li {
+  width: 150px;
+  text-align: left;
+
+}
+  .list p {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #baoiam-info.section-3.mb-5 .user-image{
+    margin-top: -61px;
+  }
 
   .section-4 .tab-content-item .tabs-content-heading{
-    font-size: 28px;
+    font-size: 27px;
+    margin-bottom: -24px;
+  }
+
+  #downloads p {
+    font-size: 12px;
   }
 
   .home-section .row h2{
     /* text-align: center; */
-    padding-right: 33px;
-    font-size: 28px;
-    padding-bottom: 3rem;
+    padding-right: 10px;
+    font-size: 26px;
+    padding-top: 4rem;
+    /* padding-bottom: 3rem; */
+  }
+
+  .home-section .row p:not(.about-slide){
+    font-size: 18px;
+    /* margin-right: 3rem; */
+    text-align: center;
+  }
+
+  .btn-1, .btn-2 {
+    margin-left: -36px;
+    font-size: 15px;
   }
 
   section.startups h5{
@@ -2700,14 +2902,31 @@ list
     width:80%
   } */
 
-  img{
-    width: 80%;
-    /* margin-left: 32px; */
+  /* img{
+    width: 100%;
+    margin-left: 32px;
+    margin-bottom: -111px;
+  } */
+
+  .home-section .row p:not(.about-slide) {
+    font-size: 13px !important;
+    /* text-align: center !important; */
+  }
+
+  .home-section .row p:not(.about-slide) {
+    font-size: 13px !important;
+    /* margin-left: 3%; */
+    display: flex;
+    padding: 12px;
+    margin: 20px;
+    text-align: center;
+    margin-left: -1rem;
   }
 
   .row_first{
-    width: 90%;
+    width: 82%;
     height: 90%;
+    margin-left: -11px;
   }
 
   .div_text h2{
@@ -2724,6 +2943,300 @@ list
     font-size: 30px;
   }
 
+
+  /* #baoiam_ions{
+    display: flex;
+    align-items: center;
+    right: 21%;
+  } */
+
+  #ions_info{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+
+  }
+
+  .wrapper img {
+    width: 100%;
+  }
+
+  #company_img{
+    width: 70% ;
+  }
+
+}
+
+
+@media (min-width: 431px) and (max-width: 500px){
+  .home-section .row h2{
+    font-size: 30px;
+    padding-top: 4rem;
+  }
+
+
+  .home-section .row p:not(.about-slide){
+    font-size: 18px;
+    margin-right: 1rem;
+
+  }
+
+  .btn-1, .btn-2{
+    font-size: 18px;
+  }
+
+  .section-3 .horizon h2{
+    font-size: 30px;
+    text-align: justify;
+    margin-right: 2rem;
+  }
+
+  .section-3 .horizon .horizon-sub-heading{
+    font-size: 17px;
+    /* margin-right: 2rem; */
+  }
+
+  .section-3 .horizon .check{
+    text-align: center;
+  }
+
+  .courses h1{
+    font-size: 30px;
+  }
+
+  .blog-card-deck{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-3 .horizon h2.h22{
+    font-size: 30px;
+    text-align: center;
+    margin-right: 0rem;
+  }
+
+  .user-image-medium-small{
+    right: 0%;
+  }
+
+  section.work h1{
+    font-size: 30px;
+  }
+
+  section.work .contents{
+    display: flex;
+    flex-direction: column;
+  }
+
+  section.expert h1{
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .section-4 .tab-content-item .tabs-content-heading{
+    font-size: 30px;
+    padding-top: 1rem;
+  }
+
+  ul{
+    padding-left: 136px;
+  }
+
+  section.startups h5{
+    font-size: 30px;
+    padding-top: 3rem;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px){
+  .home-section .row h2{
+    font-size: 32px
+  }
+
+  /* .home-section .row img{
+    width: 67%;
+    margin-left: 3rem;
+  } */
+
+  .section-3 .horizon h2{
+    font-size: 30px;
+    margin-top: 0rem;
+  }
+
+  #baoiam-info.section-3.mb-5 .user-image{
+    margin-left: 2rem;
+  }
+
+  .section-3 .horizon .check{
+    padding-left: 10rem;
+  }
+
+  .courses h1{
+    font-size: 32px;
+  }
+
+  .blog-card-deck{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 6rem;
+  }
+
+  .section-3 .horizon h2.h22{
+    text-align: center;
+    margin-left: 1rem;
+    font-size: 32px;
+  }
+
+  section.work h1{
+    font-size: 32px;
+  }
+
+  section.work p.sub-heading{
+    margin-left: -4rem;
+    width: 134%;
+    margin-top: 1rem;
+    /* margin: 0%; */
+  }
+
+  section.work .contents .steps img{
+    width: 40%;
+    /* margin-top: -4rem; */
+  }
+
+  section.expert h1{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .section-4 .tab-content-item .tabs-content-heading{
+    font-size: 32px;
+  }
+
+  #downloads p{
+    font-size: 15px;
+  } 
+
+  ul{
+    padding-left: 175px;
+  }
+
+  section.startups h5{
+    font-size: 32px;
+    margin-top: 4rem;
+  }
+
+  #baoiam_ions{
+    width:100%;
+    margin-left: -7rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+
+  }
+}
+
+
+@media (min-width:601px) and (max-width: 766px) {
+  .home-section .row h2{
+    font-size: 34px;
+  }
+
+  .home-section .row img{
+    width: 73%;
+    margin-top: -36px;
+    margin-bottom: 28px;
+    margin-left: -14rem;
+  }
+
+  .section-3 .horizon h2 {
+    font-size: 34px;
+  }
+
+  .section-3 .horizon .check {
+    text-align: center;
+  }
+
+  .blog-card-deck {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin-left: 8rem;
+  }
+
+  .user-image-medium-small{
+    width: 20em;
+  }
+
+  section.work h1{
+    font-size: 34px;
+  }
+
+  section.work p.sub-heading{
+    margin-left: -5rem;
+    width: 131%;
+    margin-top: 1rem;
+  }
+
+  section.work .contents{
+    display: flex;
+    flex-direction: column;
+  }
+  section.work .contents .steps img{
+    width: 27%;
+  }
+
+  section.work .contents .steps:not(.last)::after{
+    display: none;
+  }
+
+  section.expert h1 {
+    font-size: 34px;
+    text-align: center;
+  }
+
+  .section-4 .tab-content-item .tabs-content-heading{
+    font-size: 34px;
+  }
+
+  #downloads p{
+    font-size: 14px;
+  }
+
+  #tab_img {
+    width: 50%;
+    margin-left: 10rem;
+  }
+
+  #expand_list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .list p {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #baoiam_ions_head{
+    width: 80%;
+  }
+
+  .home-section .row p:not(.about-slide){
+    font-size: 16px;
+  }
+
+  section.startups h5{
+    font-size: 34px;
+  }
+
+  img{
+    width: 65%;
+  }
 
 }
 

@@ -5,7 +5,7 @@
 # import time 
 
 # time.clock = time.time
-
+# testing
 
 # bot = ChatBot('chatbot',read_only=False,logic_adapters=['chatterbot.logic.BestMatch'])
 

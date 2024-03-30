@@ -313,14 +313,14 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       {% for curr in carriculum %}
       <div class="curriculum-item">
         <h2 class="curriculum-item-header">
-            {{curr.carriculum_title}}
+            {{curr.carriculum_title|safe}}
             <span class="material-symbols-outlined">
               expand_more
               </span>
         </h2>
         <div class="curriculum-item-body">
           <div class="curriculum-item-body-content">
-            {{curr.carriculum_desc}}
+            {{curr.carriculum_desc|safe}}
           </div>
         </div>
       </div>
