@@ -858,8 +858,8 @@
             {% if user.username %}
             <li class="nav-item" id="profile">
               <button type="button" id="profile-btn" class="profile-btn">
-                {% if dash_user.photo %}
-                <img src="{{ dash_user.photo.url }}" alt="Profile Photo">
+                {% if photo %}
+                <img src="{{ photo.url }}" alt="Profile Photo">
             {% else %}
                 <!-- Provide a default image or use a placeholder if the user has no photo -->
                 <img src="{% static 'home/img/4.jpg' %}" alt="Default Profile Photo">
