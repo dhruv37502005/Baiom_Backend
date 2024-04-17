@@ -33,13 +33,20 @@ def itie(request):
         auser = User.objects.get(username=user)  
         dash_user = Dashboard_User.objects.get(user_id=auser.id)
         photo = dash_user.photo
-    return render(request,'ITIE.html',
+        return render(request,'ITIE.html',
                   {'is_itie': True, 
                    'courses':courses , 
                    'testimonials':testimonials, 
                    'categories':categories,
                    'i_plans':i_plans,
                    'photo':photo
+                   })
+    return render(request,'ITIE.html',
+                  {'is_itie': True, 
+                   'courses':courses , 
+                   'testimonials':testimonials, 
+                   'categories':categories,
+                   'i_plans':i_plans
                    })
 
 class DownloadFileView(View):

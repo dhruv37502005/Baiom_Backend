@@ -45,7 +45,8 @@ def career(request):
         auser = User.objects.get(username=user)  
         dash_user = Dashboard_User.objects.get(user_id=auser.id)
         photo = dash_user.photo
-    return render(request, 'career.html',{'is_career': True, 'categories': categories, 'photo':photo})
+        return render(request, 'career.html',{'is_career': True, 'categories': categories, 'photo':photo})
+    return render(request, 'career.html',{'is_career': True, 'categories': categories})
 
 def hire_from_us(request):
     categories = CourseCategory.objects.all()
@@ -54,7 +55,8 @@ def hire_from_us(request):
         auser = User.objects.get(username=user)  
         dash_user = Dashboard_User.objects.get(user_id=auser.id)
         photo = dash_user.photo
-    return render(request, 'hire_from_us.html',{'is_hire': True, 'categories': categories, 'photo':photo})
+        return render(request, 'hire_from_us.html',{'is_hire': True, 'categories': categories, 'photo':photo})
+    return render(request, 'hire_from_us.html',{'is_hire': True, 'categories': categories})
 
 def itie(request):
     categories = CourseCategory.objects.all()
@@ -80,7 +82,8 @@ def pap(request):
         auser = User.objects.get(username=user)  
         dash_user = Dashboard_User.objects.get(user_id=auser.id)
         photo = dash_user.photo
-    return render(request, 'pap.html',{'is_pap': True, 'categories': categories,'photo':photo})
+        return render(request, 'pap.html',{'is_pap': True, 'categories': categories,'photo':photo})
+    return render(request, 'pap.html',{'is_pap': True, 'categories': categories})
 
 def refer_earn(request):
     categories = CourseCategory.objects.all()
@@ -89,7 +92,8 @@ def refer_earn(request):
         auser = User.objects.get(username=user)  
         dash_user = Dashboard_User.objects.get(user_id=auser.id)
         photo = dash_user.photo
-    return render(request, 'referEarn.html',{'is_refer': True, 'categories': categories,'photo':photo})
+        return render(request, 'referEarn.html',{'is_refer': True, 'categories': categories,'photo':photo})
+    return render(request, 'referEarn.html',{'is_refer': True, 'categories': categories})
 
 def maintenance_page(request):
     return render(request, 'maintenance_break.html')
