@@ -51,7 +51,7 @@
           </div>
           <div class="blog-content">
             <h2>{{post.title}}</h2>
-            <p style="margin: 20px 0;">{{ post.content|truncatewords:25 }} <a href="{% url 'blog:post_detail' post_id=post.id %}">Read More</a>
+            <p style="margin: 20px 0;">{{ post.content|truncatewords:25|safe }} <a href="{% url 'blog:post_detail' post_id=post.id %}">Read More</a>
             </p>
             <p style="margin: 20px 0;"><i>Created by:</i> {{ post.created_by.username }}</p>
           </div>

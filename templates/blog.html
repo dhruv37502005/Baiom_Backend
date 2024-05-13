@@ -76,7 +76,7 @@
                 </h2>
                 
                 <p class="description">
-                  {{ category.description|truncatewords:10 }}
+                  {{ category.description|truncatewords:8 }}
                       <a href="{% url 'blog:post_list_by_category' category.id %}" class="course_btn">
                   <span>Read More</span></a>
                 </p>
